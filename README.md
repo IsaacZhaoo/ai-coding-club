@@ -13,7 +13,7 @@ This repository contains all the content (documentation, blog posts, tutorials) 
 
 ## Contributing
 
-We welcome contributions! Please see our [Contributing Guide](https://github.com/IsaacZhaoo/aiCodingClub/blob/main/docs/internal/contributing/CONTRIBUTING.md) for details.
+We welcome contributions! Please open an issue or start a discussion in [GitHub Discussions](https://github.com/IsaacZhaoo/ai-coding-club/discussions) to get started.
 
 ### Content Guidelines
 
