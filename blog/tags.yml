@@ -42,3 +42,8 @@ vision:
   label: Vision
   permalink: /vision
   description: Our vision for AI-powered development
+
+draft-example:
+  label: Draft Example
+  permalink: /draft-example
+  description: Example content demonstrating draft functionality
