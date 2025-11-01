@@ -22,3 +22,23 @@ perspective:
   label: Perspective
   permalink: /perspective
   description: Perspectives on technology and programming
+
+philosophy:
+  label: Philosophy
+  permalink: /philosophy
+  description: Philosophical thoughts on coding and AI
+
+future-of-coding:
+  label: Future of Coding
+  permalink: /future-of-coding
+  description: Exploring the future of programming with AI
+
+about:
+  label: About
+  permalink: /about
+  description: About AI Coding Club and our mission
+
+vision:
+  label: Vision
+  permalink: /vision
+  description: Our vision for AI-powered development
