@@ -1,0 +1,12 @@
+aicodingclub:
+  name: AI Coding Club
+  title: Learn to Code with AI Assistants
+  url: https://aicoding.club
+  image_url: /img/logo.svg
+
+isaac:
+  name: Isaac Zhao
+  title: AI Coding Club Creator
+  # Note: Personal links removed as project is not open-source
+  # url: https://github.com/IsaacZhaoo
+  # image_url: https://github.com/IsaacZhaoo.png

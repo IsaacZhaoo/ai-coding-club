@@ -1,0 +1,54 @@
+{
+  "link.title.Getting Started": {
+    "message": "快速开始",
+    "description": "The title of the footer links column with title=Getting Started in the footer"
+  },
+  "link.title.Learning Path": {
+    "message": "学习路径",
+    "description": "The title of the footer links column with title=Learning Path in the footer"
+  },
+  "link.title.Resources": {
+    "message": "资源",
+    "description": "The title of the footer links column with title=Resources in the footer"
+  },
+  "link.item.label.30-Second Demo": {
+    "message": "30秒演示",
+    "description": "The label of footer link with label=30-Second Demo linking to /docs/csv-to-markdown-demo"
+  },
+  "link.item.label.Stage 0: Vibecoding": {
+    "message": "第0阶段：Vibecoding",
+    "description": "The label of footer link with label=Stage 0: Vibecoding linking to /docs/stages/stage0-vibecoding"
+  },
+  "link.item.label.Quick Start Guide": {
+    "message": "快速入门指南",
+    "description": "The label of footer link with label=Quick Start Guide linking to /docs/intro"
+  },
+  "link.item.label.AI Coding Roadmap": {
+    "message": "AI编程路线图",
+    "description": "The label of footer link with label=AI Coding Roadmap linking to /docs/ai-coding-roadmap"
+  },
+  "link.item.label.Prompt Engineering": {
+    "message": "提示词工程",
+    "description": "The label of footer link with label=Prompt Engineering linking to /docs/prompt-engineering-101"
+  },
+  "link.item.label.Learning Stages": {
+    "message": "学习阶段",
+    "description": "The label of footer link with label=Learning Stages linking to /docs/stages/stage0-vibecoding"
+  },
+  "link.item.label.All Resources": {
+    "message": "所有资源",
+    "description": "The label of footer link with label=All Resources linking to /resources"
+  },
+  "link.item.label.AI Tools Guide": {
+    "message": "AI工具指南",
+    "description": "The label of footer link with label=AI Tools Guide linking to /docs/tools/ai-tools-comparison"
+  },
+  "link.item.label.Blog": {
+    "message": "博客",
+    "description": "The label of footer link with label=Blog linking to /blog"
+  },
+  "copyright": {
+    "message": "版权所有 © 2025 AI Coding Club。让AI助力每个人学会编程。",
+    "description": "The footer copyright"
+  }
+}

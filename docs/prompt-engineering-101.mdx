@@ -1,0 +1,678 @@
+---
+id: prompt-engineering-101
+title: Prompt Engineering 101 - Essential Templates for Coding
+description: Master the art of writing effective prompts to get better code from ChatGPT, Claude, and other AI coding assistants
+keywords: [prompt engineering, chatgpt, claude, ai coding, prompt templates, debugging]
+---
+
+# Prompt Engineering 101: Essential Templates for Coding
+
+## What is Prompt Engineering?
+
+Prompt engineering is the skill of crafting clear, specific instructions for AI tools to get the best possible output. Think of it as learning how to ask the right questions.
+
+**Why does it matter?** The difference between a vague prompt and a well-crafted one can be:
+- **Vague**: "Write me a function" → Generic, unusable code
+- **Well-crafted**: "Write a Python function that takes a list of integers and returns the sum of even numbers. Include error handling for empty lists and non-integer values." → Production-ready code with edge cases handled
+
+**Key principle**: The more context and specificity you provide, the better the AI's response. It's not about typing more - it's about typing smarter.
+
+In this guide, you'll learn 5 essential prompt templates that will 10x your coding productivity.
+
+---
+
+## The 5 Core Prompt Templates
+
+### 1. Explain Like I'm 10 (ELI10)
+
+**Purpose**: Understand complex concepts through simple analogies
+
+**Template**:
+```
+Explain [CONCEPT] in simple terms, as if I'm 10 years old.
+Use everyday analogies and avoid technical jargon.
+
+Example: Explain what an API is.
+```
+
+**When to use**:
+- Learning a new programming concept
+- Understanding unfamiliar technical terms
+- Explaining code to non-technical stakeholders
+
+**Example Usage**:
+
+**Prompt**:
+```
+Explain what an API is in simple terms, as if I'm 10 years old.
+Use everyday analogies and avoid technical jargon.
+```
+
+**AI Response**:
+> Imagine you're at a restaurant. You (the customer) want food, but you can't go into the kitchen and make it yourself. So you look at the menu, tell the waiter what you want, and the waiter brings it to you.
+>
+> An API (Application Programming Interface) is like that waiter. It's a messenger that:
+> 1. Takes your request (what you want)
+> 2. Tells the system (the kitchen) to do something
+> 3. Brings back the response (your food)
+>
+> For example, when you check the weather on your phone, your app uses an API to ask a weather service "What's the weather in New York?" and the API brings back the answer.
+
+**Pro tip**: Follow up with "Give me a real-world coding example" to see it in action.
+
+---
+
+### 2. Code Generator with Comments
+
+**Purpose**: Generate functional code that teaches you while you read it
+
+**Template**:
+```
+Write [LANGUAGE] code that does [TASK].
+
+Requirements:
+- Include detailed comments explaining each step
+- Use clear, descriptive variable names
+- Add error handling for edge cases
+- Follow [STYLE_GUIDE] best practices
+
+Example: Write Python code that reads a CSV file and converts it to JSON.
+```
+
+**When to use**:
+- Building features quickly
+- Learning syntax for a new language
+- Implementing algorithms you understand conceptually
+
+**Example Usage**:
+
+**Prompt**:
+```
+Write Python code that reads a CSV file and converts it to JSON.
+
+Requirements:
+- Include detailed comments explaining each step
+- Use clear, descriptive variable names
+- Add error handling for edge cases
+- Follow PEP 8 style guidelines
+```
+
+**AI Response**:
+```python
+import csv
+import json
+import os
+
+def csv_to_json(csv_file_path, json_file_path):
+    """
+    Converts a CSV file to JSON format.
+
+    Args:
+        csv_file_path (str): Path to the input CSV file
+        json_file_path (str): Path to the output JSON file
+
+    Returns:
+        bool: True if conversion successful, False otherwise
+    """
+
+    # Check if CSV file exists
+    if not os.path.exists(csv_file_path):
+        print(f"Error: {csv_file_path} not found")
+        return False
+
+    try:
+        # Open the CSV file in read mode
+        with open(csv_file_path, 'r', encoding='utf-8') as csv_file:
+            # Create a CSV DictReader object
+            # This automatically uses the first row as keys
+            csv_reader = csv.DictReader(csv_file)
+
+            # Convert all rows to a list of dictionaries
+            data = list(csv_reader)
+
+        # Write the data to a JSON file
+        with open(json_file_path, 'w', encoding='utf-8') as json_file:
+            # indent=2 makes the JSON human-readable
+            # ensure_ascii=False preserves non-English characters
+            json.dump(data, json_file, indent=2, ensure_ascii=False)
+
+        print(f"Successfully converted {csv_file_path} to {json_file_path}")
+        return True
+
+    except csv.Error as e:
+        print(f"CSV Error: {e}")
+        return False
+    except json.JSONDecodeError as e:
+        print(f"JSON Error: {e}")
+        return False
+    except Exception as e:
+        print(f"Unexpected Error: {e}")
+        return False
+
+# Example usage
+if __name__ == "__main__":
+    csv_to_json('data.csv', 'data.json')
+```
+
+**Why this works**: Comments explain the "why", not just the "what". Error handling shows you how to write robust code.
+
+---
+
+### 3. Code Review & Improvement
+
+**Purpose**: Get constructive feedback on your code
+
+**Template**:
+```
+Review the following code and suggest improvements for:
+- Readability (naming, structure, comments)
+- Performance (time/space complexity)
+- Best practices (design patterns, conventions)
+- Edge cases (error handling, validation)
+- Security (if applicable)
+
+[PASTE YOUR CODE]
+
+Please explain each suggestion clearly.
+```
+
+**When to use**:
+- After writing code independently
+- Before submitting pull requests
+- Learning code quality standards
+- Preparing for code interviews
+
+**Example Usage**:
+
+**Prompt**:
+```
+Review the following code and suggest improvements for readability,
+performance, best practices, and edge cases:
+
+def calc(nums):
+    x = 0
+    for n in nums:
+        if n % 2 == 0:
+            x = x + n
+    return x
+```
+
+**AI Response**:
+> **Review of your code:**
+>
+> **Readability Issues:**
+> 1. Function name `calc` is too vague - what does it calculate?
+> 2. Variable names `x` and `n` don't convey meaning
+> 3. No docstring explaining purpose, parameters, or return value
+>
+> **Improved version:**
+> ```python
+> def sum_even_numbers(numbers):
+>     """
+>     Calculates the sum of all even numbers in a list.
+>
+>     Args:
+>         numbers (list): List of integers
+>
+>     Returns:
+>         int: Sum of even numbers, or 0 if list is empty
+>     """
+>     total = 0
+>     for number in numbers:
+>         if number % 2 == 0:
+>             total += number
+>     return total
+> ```
+>
+> **Performance optimization** (for large lists):
+> ```python
+> def sum_even_numbers(numbers):
+>     """Sum of all even numbers in a list."""
+>     return sum(num for num in numbers if num % 2 == 0)
+> ```
+>
+> **Edge cases to handle:**
+> - Empty list → Currently returns 0 (good!)
+> - List with non-integer values → Would crash. Add type checking:
+> ```python
+> if not all(isinstance(num, int) for num in numbers):
+>     raise TypeError("All elements must be integers")
+> ```
+
+**Pro tip**: Ask AI to review your review - "Is there anything else I should consider?"
+
+---
+
+### 4. Debug My Code
+
+**Purpose**: Diagnose and fix errors faster
+
+**Template**:
+```
+I'm getting this error:
+[PASTE COMPLETE ERROR MESSAGE]
+
+Here's my code:
+[PASTE RELEVANT CODE]
+
+Context:
+- What I'm trying to do: [DESCRIBE GOAL]
+- What I've tried: [LIST DEBUGGING STEPS]
+- My environment: [PYTHON 3.9, WINDOWS 11, ETC.]
+
+Please explain:
+1. What's causing the error (root cause)
+2. How to fix it (step-by-step solution)
+3. Why this happens (so I can avoid it in the future)
+```
+
+**When to use**:
+- Stuck on a bug for more than 15 minutes
+- Error message is cryptic
+- Learning to debug independently
+
+**Example Usage**:
+
+**Prompt**:
+```
+I'm getting this error:
+TypeError: 'NoneType' object is not subscriptable
+
+Here's my code:
+def get_weather(city):
+    data = fetch_weather_api(city)
+    return data['temperature']
+
+result = get_weather('InvalidCity')
+
+Context:
+- I'm trying to fetch weather data from an API
+- I've verified the API key is correct
+- Environment: Python 3.10
+
+Please explain:
+1. What's causing the error
+2. How to fix it
+3. Why this happens
+```
+
+**AI Response**:
+> **Root Cause:**
+> The function `fetch_weather_api(city)` is returning `None` (instead of a dictionary) when the city is invalid. Then you're trying to access `None['temperature']`, which causes the error.
+>
+> **Step-by-step fix:**
+> ```python
+> def get_weather(city):
+>     data = fetch_weather_api(city)
+>
+>     # Check if data was successfully fetched
+>     if data is None:
+>         return "Error: Unable to fetch weather data"
+>
+>     # Check if 'temperature' key exists
+>     if 'temperature' not in data:
+>         return "Error: Temperature data not available"
+>
+>     return data['temperature']
+> ```
+>
+> **Why this happens:**
+> APIs often return `None` or empty responses when requests fail (invalid input, network issues, rate limits). Always check if data exists before accessing it.
+>
+> **Better approach using try/except:**
+> ```python
+> def get_weather(city):
+>     try:
+>         data = fetch_weather_api(city)
+>         return data['temperature']
+>     except (TypeError, KeyError) as e:
+>         return f"Error fetching weather: {e}"
+> ```
+
+**Pro tip**: After fixing, ask "Are there any other edge cases I should handle?"
+
+---
+
+### 5. Refactor for Clarity
+
+**Purpose**: Transform messy code into clean, maintainable code
+
+**Template**:
+```
+Refactor this code to be more readable and maintainable.
+Keep the same functionality but improve:
+- Variable and function names
+- Code structure (break into smaller functions if needed)
+- Comments and documentation
+- Remove code duplication
+- Follow [LANGUAGE] conventions
+
+[PASTE CODE]
+
+Explain what changes you made and why.
+```
+
+**When to use**:
+- After getting a feature working (make it clean)
+- Inheriting legacy code
+- Preparing code for team review
+- Learning clean code principles
+
+**Example Usage**:
+
+**Prompt**:
+```
+Refactor this code to be more readable and maintainable:
+
+def process(d):
+    r = []
+    for i in d:
+        if i['a'] > 18 and i['s'] == 'active':
+            r.append({'n': i['n'], 'e': i['e']})
+    return r
+```
+
+**AI Response**:
+> **Refactored version:**
+> ```python
+> def filter_active_adults(users):
+>     """
+>     Filters users who are adults (age > 18) and have active status.
+>
+>     Args:
+>         users (list): List of user dictionaries with keys:
+>                       'name', 'email', 'age', 'status'
+>
+>     Returns:
+>         list: Filtered list of dicts with 'name' and 'email' only
+>     """
+>     filtered_users = []
+>
+>     for user in users:
+>         is_adult = user['age'] > 18
+>         is_active = user['status'] == 'active'
+>
+>         if is_adult and is_active:
+>             filtered_users.append({
+>                 'name': user['name'],
+>                 'email': user['email']
+>             })
+>
+>     return filtered_users
+> ```
+>
+> **Changes made:**
+> 1. **Function name**: `process` → `filter_active_adults` (describes what it does)
+> 2. **Variable names**: `d` → `users`, `r` → `filtered_users`, `i` → `user`
+> 3. **Dictionary keys**: `'a'` → `'age'`, `'n'` → `'name'`, etc.
+> 4. **Readability**: Extracted conditions into named variables
+> 5. **Documentation**: Added docstring with purpose, args, and return value
+>
+> **Even better (Pythonic version):**
+> ```python
+> def filter_active_adults(users):
+>     """Filters users who are adults (age > 18) with active status."""
+>     return [
+>         {'name': user['name'], 'email': user['email']}
+>         for user in users
+>         if user['age'] > 18 and user['status'] == 'active'
+>     ]
+> ```
+
+---
+
+## Advanced Techniques
+
+### Technique 1: Chaining Prompts (Multi-Step Workflow)
+
+For complex projects, break them into sequential prompts:
+
+**Step 1 - Architecture:**
+```
+I want to build a to-do list app with:
+- Add/edit/delete tasks
+- Mark complete
+- Filter by status
+- Save to localStorage
+
+Plan the architecture:
+1. What components/functions do I need?
+2. What data structure should I use?
+3. What's the user flow?
+```
+
+**Step 2 - Implementation:**
+```
+Based on the architecture plan, write the HTML structure
+for the to-do list UI with semantic tags.
+```
+
+**Step 3 - Functionality:**
+```
+Write JavaScript functions for adding a task.
+Use the HTML structure from the previous step.
+```
+
+**Step 4 - Persistence:**
+```
+Add localStorage support to save/load tasks.
+Integrate with the existing addTask() function.
+```
+
+**Why this works**: Breaking complex tasks into smaller prompts gives AI better context and produces more accurate code.
+
+---
+
+### Technique 2: Iterative Refinement
+
+Start broad, then narrow down with follow-up questions:
+
+**Initial Prompt:**
+```
+Explain how databases work.
+```
+
+**Follow-up 1:**
+```
+That's helpful. Now explain the difference between SQL and NoSQL databases.
+```
+
+**Follow-up 2:**
+```
+When should I choose PostgreSQL over MongoDB for a web app?
+```
+
+**Follow-up 3:**
+```
+Show me a code example of connecting to PostgreSQL in Node.js.
+```
+
+**Why this works**: Each response builds on previous context, creating a personalized learning path.
+
+---
+
+### Technique 3: Role-Based Prompts
+
+Ask AI to adopt a specific role for tailored responses:
+
+**As a Teacher:**
+```
+You are a patient coding teacher. Explain async/await in JavaScript
+to a beginner who understands synchronous code but is confused by promises.
+Use analogies and simple examples.
+```
+
+**As a Code Reviewer:**
+```
+You are a senior developer reviewing a junior's pull request.
+Review this code and provide constructive feedback:
+[PASTE CODE]
+```
+
+**As an Interviewer:**
+```
+You are a technical interviewer for a junior developer role.
+Ask me a medium-difficulty coding problem involving arrays.
+Wait for my solution, then provide feedback.
+```
+
+---
+
+## Common Mistakes & How to Fix Them
+
+### Mistake 1: Being Too Vague
+
+**❌ Bad Prompt:**
+```
+Write me a program
+```
+
+**✅ Good Prompt:**
+```
+Write a Python script that:
+1. Reads a CSV file named 'users.csv' with columns: name, age, city
+2. Filters rows where age > 18
+3. Saves the result to 'adults.csv'
+4. Prints how many users were filtered
+```
+
+**Why it's better**: Specific requirements eliminate ambiguity.
+
+---
+
+### Mistake 2: No Context Provided
+
+**❌ Bad Prompt:**
+```
+Fix this error: TypeError on line 12
+```
+
+**✅ Good Prompt:**
+```
+I'm learning Python. I'm trying to concatenate a string and integer
+but getting "TypeError: can only concatenate str (not "int") to str" on line 12.
+
+Here's my code:
+name = "Age: " + 25
+
+How do I fix this? And why does this error happen?
+```
+
+**Why it's better**: Context helps AI provide relevant, educational answers.
+
+---
+
+### Mistake 3: Accepting First Response Without Iteration
+
+**❌ Bad Approach:**
+AI gives code → Copy/paste → Move on
+
+**✅ Good Approach:**
+AI gives code → Read and understand → Ask clarifying questions:
+- "Why did you use a dictionary instead of a list here?"
+- "Can you explain the time complexity of this solution?"
+- "What edge cases does this handle?"
+
+**Why it's better**: Learning happens in the follow-up questions.
+
+---
+
+### Mistake 4: Not Specifying Your Level
+
+**❌ Bad Prompt:**
+```
+Explain machine learning
+```
+
+**✅ Good Prompt:**
+```
+Explain machine learning to a beginner programmer who knows Python basics
+but has no statistics background. Use simple analogies.
+```
+
+**Why it's better**: Tailored to your knowledge level.
+
+---
+
+## Practice Exercises
+
+Apply each template to real problems:
+
+### Exercise 1: ELI10
+```
+Use the ELI10 template to understand:
+1. What is recursion?
+2. What is the difference between == and === in JavaScript?
+3. What are Docker containers?
+```
+
+### Exercise 2: Code Generator
+```
+Generate code for:
+1. A function that checks if a string is a palindrome
+2. A script that scrapes headlines from a news website
+3. A React component for a login form with validation
+```
+
+### Exercise 3: Debug
+```
+Debug this intentionally broken code:
+def calculate_average(numbers):
+    return sum(numbers) / len(numbers)
+
+result = calculate_average([])
+# This will crash! Use the Debug template to fix it.
+```
+
+### Exercise 4: Refactor
+```
+Refactor this messy function:
+def f(x):
+    y=0
+    for i in x:
+        if i>0:y+=i
+    return y
+```
+
+### Exercise 5: Code Review
+```
+Write a simple function (any language), then use the
+Code Review template to get feedback. Implement the suggestions.
+```
+
+---
+
+## Next Steps
+
+**You've learned the 5 core templates. Here's how to master them:**
+
+1. **Practice daily**: Use at least 1 template every coding session
+2. **Build a prompt library**: Save your best prompts in a notebook
+3. **Experiment**: Modify templates for your specific needs
+4. **Share knowledge**: Teach these templates to other learners
+
+**Continue your learning:**
+- **Apply it**: Try the [CSV → Markdown Demo](/docs/csv-to-markdown-demo) using these templates
+- **Plan your journey**: Read the [AI Coding Roadmap](/docs/ai-coding-roadmap)
+
+**Remember**: Prompt engineering is a skill. The more you practice, the better you'll get at communicating with AI tools. Start simple, iterate, and refine.
+
+---
+
+## Quick Reference Card
+
+Bookmark this for daily use:
+
+| Template | When to Use | Key Elements |
+|----------|-------------|--------------|
+| **ELI10** | Learning new concepts | "Explain like I'm 10", analogies, no jargon |
+| **Code Generator** | Building features | Language, task, comments, error handling |
+| **Code Review** | Improving code | Readability, performance, best practices |
+| **Debug** | Fixing errors | Error message, code, context, environment |
+| **Refactor** | Cleaning code | Structure, naming, documentation |
+
+**Pro tip**: Combine templates! Example: "Generate code (Template 2), then review it (Template 3), then explain the key concepts (Template 1)."
+
+---
+
+*Last updated: October 2025*

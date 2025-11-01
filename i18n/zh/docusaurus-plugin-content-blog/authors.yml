@@ -1,0 +1,12 @@
+aicodingclub:
+  name: AI编程俱乐部
+  title: 使用AI助手学习编程
+  url: https://aicoding.club
+  image_url: /img/logo.svg
+
+isaac:
+  name: Isaac Zhao
+  title: AI编程俱乐部创建者
+  # Note: Personal links removed as project is not open-source
+  # url: https://github.com/IsaacZhaoo
+  # image_url: https://github.com/IsaacZhaoo.png

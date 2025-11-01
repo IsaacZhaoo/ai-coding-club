@@ -1,0 +1,24 @@
+announcement:
+  label: Announcement
+  permalink: /announcement
+  description: AI Coding Club announcements and news
+
+welcome:
+  label: Welcome
+  permalink: /welcome
+  description: Welcome posts and introductions
+
+ai:
+  label: AI
+  permalink: /ai
+  description: Articles about artificial intelligence
+
+career:
+  label: Career
+  permalink: /career
+  description: Career advice and insights
+
+perspective:
+  label: Perspective
+  permalink: /perspective
+  description: Perspectives on technology and programming

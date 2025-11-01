@@ -1,0 +1,26 @@
+{
+  "title": {
+    "message": "AI Coding Club",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "AI Coding Club Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Learn": {
+    "message": "学习",
+    "description": "Navbar item with label Learn"
+  },
+  "item.label.Resources": {
+    "message": "资源",
+    "description": "Navbar item with label Resources"
+  },
+  "item.label.Blog": {
+    "message": "博客",
+    "description": "Navbar item with label Blog"
+  },
+  "item.label.Search": {
+    "message": "搜索",
+    "description": "Navbar item with label Search"
+  }
+}

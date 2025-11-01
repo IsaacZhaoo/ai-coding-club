@@ -1,0 +1,7 @@
+{
+  "version": "1.0.0",
+  "minArchitectureVersion": "1.0.0",
+  "structure": "course-based",
+  "createdAt": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+  "description": "AI Coding Club content repository"
+}

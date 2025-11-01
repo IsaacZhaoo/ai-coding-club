@@ -1,0 +1,24 @@
+announcement:
+  label: 公告
+  permalink: /announcement
+  description: AI编程俱乐部的公告和新闻
+
+welcome:
+  label: 欢迎
+  permalink: /welcome
+  description: 欢迎帖子和介绍
+
+ai:
+  label: AI
+  permalink: /ai
+  description: 关于人工智能的文章
+
+career:
+  label: 职业
+  permalink: /career
+  description: 职业建议和见解
+
+perspective:
+  label: 观点
+  permalink: /perspective
+  description: 关于技术和编程的观点

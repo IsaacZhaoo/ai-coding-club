@@ -1,0 +1,8 @@
+{
+  "label": "Expert Insights",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "Insights and wisdom from AI coding experts."
+  }
+}
