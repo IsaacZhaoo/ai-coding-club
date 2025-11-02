@@ -43,6 +43,16 @@ vision:
   permalink: /vision
   description: Our vision for AI-powered development
 
+beginner-friendly:
+  label: Beginner Friendly
+  permalink: /beginner-friendly
+  description: Content specifically designed for complete beginners
+
+ai-assisted-learning:
+  label: AI-Assisted Learning
+  permalink: /ai-assisted-learning
+  description: Learning to code with AI tools like ChatGPT and GitHub Copilot
+
 draft-example:
   label: Draft Example
   permalink: /draft-example
