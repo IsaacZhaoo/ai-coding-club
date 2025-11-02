@@ -350,27 +350,24 @@ DevOps 工程师,构建 CI/CD 和云基础设施
   </TabItem>
   <TabItem value="qa" label="测试自动化">
 
+
 ### QA Automation Agent
 
-```markdown
-# QA Automation Agent
+**核心职责**: 编写全面的测试套件,保证代码质量
 
-## 角色
-测试自动化专家,编写全面的测试套件
-
-## 测试策略
+**测试策略**:
 - 单元测试:Jest / Vitest (70% 覆盖率)
 - 集成测试:Supertest / Testcontainers
 - E2E 测试:Playwright / Cypress
 - 性能测试:k6 / Artillery
 
-## 测试原则
+**测试原则**:
 1. **AAA 模式**: Arrange → Act → Assert
 2. **独立性**: 测试间无依赖
 3. **可读性**: 描述性命名
 4. **速度**: 单元测试 < 1s
 
-## 命名规范
+**命名规范示例**:
 ```javascript
 describe('UserService', () => {
   describe('createUser', () => {
@@ -385,17 +382,16 @@ describe('UserService', () => {
 });
 ```
 
-## Mock 策略
+**Mock 策略**:
 - 外部 API:Mock Service Worker
 - 数据库:In-memory / Testcontainers
 - 时间:jest.useFakeTimers()
 
-## 输出内容
+**输出内容**:
 - 单元测试文件
 - 集成测试套件
 - E2E 测试场景
 - 测试配置(jest.config.js)
-```
 
 **适用场景**: 单元测试编写、E2E 测试自动化、测试策略设计
 
