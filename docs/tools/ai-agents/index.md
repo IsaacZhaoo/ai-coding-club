@@ -464,7 +464,7 @@ describe('UserService', () => {
 3. 📚 **探索更多工具**
    - [Cursor Rules](/docs/tools/cursor-rules) - 项目规范配置
    - [MCP 服务器](/docs/tools/mcps) - 扩展 AI 能力
-   - [Prompt Engineering](/docs/tools/prompt-engineering) - 提示词工程指南
+   - [AI 编程课程](/docs/course) - 完整学习路径
 
 ---
 

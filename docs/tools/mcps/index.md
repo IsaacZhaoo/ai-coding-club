@@ -524,7 +524,7 @@ GITHUB_TOKEN=ghp_your_token_here
 3. 📚 **探索更多工具**
    - [Cursor Rules](/docs/tools/cursor-rules) - 项目规范
    - [AI Agents](/docs/tools/ai-agents) - 专业化助手
-   - [Prompt Engineering](/docs/tools/prompt-engineering) - 提示词工程指南
+   - [AI 编程课程](/docs/course) - 完整学习路径
 
 ---
 
