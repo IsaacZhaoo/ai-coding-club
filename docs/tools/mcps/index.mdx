@@ -4,13 +4,24 @@ description: "使用 Model Context Protocol 扩展 AI 助手能力"
 sidebar_position: 1
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # MCP 服务器指南
 
 **给 AI 助手接入外部工具和数据源**
 
-## 什么是 MCP？
+:::info[一句话解释]
+MCP (Model Context Protocol) 是让 AI 助手访问外部工具、数据库和 API 的开放协议。
+:::
 
 **Model Context Protocol (MCP)** 是一个开放协议，让 AI 助手能够连接外部工具、数据库和 API。
+
+:::tip[为什么重要]
+MCP 让你的 AI 助手能够操作文件系统、数据库、API 等实际工具 - 就像给大脑接上了眼睛、耳朵和手。不再只是"聊天"，而是能真正"做事"。
+:::
+
+## 什么是 MCP？
 
 ### 用人话解释
 
@@ -73,9 +84,16 @@ AI：[自动连接 GitHub API]
 - ✅ Cline（VS Code 扩展）
 - ✅ Continue（开源 AI 助手）
 
+:::note[协议版本兼容性]
+MCP 目前处于快速迭代期。确保你的 AI 工具和 MCP 服务器版本兼容。建议使用官方提供的服务器以获得最佳兼容性。
+:::
+
 ### 步骤 2: 安装 MCP 服务器
 
-**方法 A: 使用官方 MCP 服务器（推荐）**
+<Tabs>
+  <TabItem value="nodejs" label="Node.js/TypeScript" default>
+
+**使用官方 MCP CLI（推荐）**：
 
 ```bash
 # 安装 MCP CLI
@@ -88,9 +106,9 @@ npx @modelcontextprotocol/create-server github
 npx mcp-server-github configure
 ```
 
-**方法 B: 手动配置（以 Cursor 为例）**
+**手动配置（以 Cursor 为例）**：
 
-1. 创建配置文件 `~/.cursor/mcp_servers.json`
+创建配置文件 `~/.cursor/mcp_servers.json`：
 
 ```json
 {
@@ -99,7 +117,7 @@ npx mcp-server-github configure
       "command": "npx",
       "args": ["-y", "@modelcontextprotocol/server-github"],
       "env": {
-        "GITHUB_TOKEN": "your_github_token_here"
+        "GITHUB_TOKEN": "${GITHUB_TOKEN}"
       }
     },
     "filesystem": {
@@ -110,8 +128,59 @@ npx mcp-server-github configure
 }
 ```
 
-2. 重启 Cursor
-3. 在 AI 聊天中输入：`@github` 或 `@filesystem`
+  </TabItem>
+  <TabItem value="python" label="Python">
+
+**安装 Python MCP SDK**：
+
+```bash
+# 安装 MCP Python SDK
+pip install mcp
+
+# 创建自定义 MCP 服务器
+mcp init my-server
+```
+
+**配置示例**：
+
+```json
+{
+  "servers": {
+    "python-server": {
+      "command": "python",
+      "args": ["-m", "mcp_server", "--config", "config.json"],
+      "env": {
+        "API_KEY": "${API_KEY}"
+      }
+    }
+  }
+}
+```
+
+**基础 Python MCP 服务器**：
+
+```python
+from mcp.server import Server
+from mcp.types import Tool, TextContent
+
+app = Server("my-python-server")
+
+@app.call_tool()
+async def get_data(arguments: dict) -> list[TextContent]:
+    # 实现你的工具逻辑
+    result = {"status": "success", "data": arguments}
+    return [TextContent(type="text", text=str(result))]
+
+if __name__ == "__main__":
+    app.run()
+```
+
+  </TabItem>
+</Tabs>
+
+:::warning[安全提示]
+MCP 服务器拥有系统级访问权限（文件、数据库、API）。只安装来自可信来源的服务器，并仔细审查其权限配置。
+:::
 
 ### 步骤 3: 测试 MCP 连接
 
@@ -155,7 +224,7 @@ npm install -g @modelcontextprotocol/server-github
   "github": {
     "command": "mcp-server-github",
     "env": {
-      "GITHUB_TOKEN": "ghp_your_token"
+      "GITHUB_TOKEN": "${GITHUB_TOKEN}"
     }
   }
 }
@@ -187,7 +256,7 @@ npm install -g @modelcontextprotocol/server-postgres
   "postgres": {
     "command": "mcp-server-postgres",
     "env": {
-      "DATABASE_URL": "postgresql://user:pass@localhost:5432/dbname"
+      "DATABASE_URL": "${DATABASE_URL}"
     }
   }
 }
@@ -239,8 +308,8 @@ npm install -g @modelcontextprotocol/server-postgres
   "aws": {
     "command": "mcp-server-aws",
     "env": {
-      "AWS_ACCESS_KEY_ID": "your_key",
-      "AWS_SECRET_ACCESS_KEY": "your_secret",
+      "AWS_ACCESS_KEY_ID": "${AWS_ACCESS_KEY_ID}",
+      "AWS_SECRET_ACCESS_KEY": "${AWS_SECRET_ACCESS_KEY}",
       "AWS_REGION": "us-east-1"
     }
   }
@@ -268,9 +337,9 @@ npm install -g @modelcontextprotocol/server-postgres
   "jira": {
     "command": "mcp-server-jira",
     "env": {
-      "JIRA_URL": "https://your-domain.atlassian.net",
-      "JIRA_EMAIL": "your@email.com",
-      "JIRA_TOKEN": "your_api_token"
+      "JIRA_URL": "${JIRA_URL}",
+      "JIRA_EMAIL": "${JIRA_EMAIL}",
+      "JIRA_TOKEN": "${JIRA_TOKEN}"
     }
   }
 }
@@ -341,6 +410,9 @@ npm install -g @modelcontextprotocol/server-postgres
 
 ### 创建简单的 MCP 服务器
 
+<Tabs>
+  <TabItem value="typescript" label="TypeScript" default>
+
 **示例：内部 API MCP 服务器**
 
 ```typescript
@@ -379,6 +451,48 @@ const transport = new StdioServerTransport();
 await server.connect(transport);
 ```
 
+  </TabItem>
+  <TabItem value="python-custom" label="Python">
+
+**示例：数据处理 MCP 服务器**
+
+```python
+from mcp.server import Server
+from mcp.types import Tool, TextContent
+import pandas as pd
+
+app = Server("data-analyzer")
+
+@app.list_tools()
+async def list_tools() -> list[Tool]:
+    return [
+        Tool(
+            name="analyze_csv",
+            description="Analyze CSV file and return statistics",
+            inputSchema={
+                "type": "object",
+                "properties": {
+                    "file_path": {"type": "string"}
+                },
+                "required": ["file_path"]
+            }
+        )
+    ]
+
+@app.call_tool()
+async def call_tool(name: str, arguments: dict) -> list[TextContent]:
+    if name == "analyze_csv":
+        df = pd.read_csv(arguments["file_path"])
+        stats = df.describe().to_string()
+        return [TextContent(type="text", text=stats)]
+
+if __name__ == "__main__":
+    app.run()
+```
+
+  </TabItem>
+</Tabs>
+
 **配置使用**：
 ```json
 {
@@ -392,6 +506,10 @@ await server.connect(transport);
 ---
 
 ## 安全最佳实践
+
+:::warning[安全优先]
+MCP 服务器可以访问敏感数据和系统资源。必须遵循安全最佳实践以保护你的系统和数据。
+:::
 
 ### 1. API Token 管理
 
@@ -418,7 +536,7 @@ await server.connect(transport);
 ```
 
 ```bash
-# .env 文件
+# .env 文件（确保添加到 .gitignore）
 GITHUB_TOKEN=ghp_your_token_here
 ```
 
@@ -459,78 +577,138 @@ GITHUB_TOKEN=ghp_your_token_here
   - AWS, Azure, GCP 集成
   - [浏览 MCP 库 →](https://vibecodingtools.tech/mcps)
 
-### 学习资源
-
-- [AI 编程助手对比](/docs/tools/ai-tools-comparison) - 了解 MCP 支持情况
-- [实战项目](/docs/course) - MCP 在实际项目中的应用
-
 ---
 
 ## 常见问题
 
-### Q: MCP 会影响 AI 响应速度吗？
+<details>
+  <summary>Q: MCP 会影响 AI 响应速度吗？</summary>
 
-**答案**：
-- 轻微影响（通常 +0.5-2 秒）
-- 取决于外部 API 响应速度
-- 文件系统 MCP 几乎无影响
+  **答案**：
+  - 轻微影响（通常 +0.5-2 秒）
+  - 取决于外部 API 响应速度
+  - 文件系统 MCP 几乎无影响
 
-### Q: MCP 数据会被发送到 AI 服务器吗？
+  :::note[性能优化]
+  如果响应速度慢，检查是否是外部服务（API、数据库）响应慢。可以使用缓存或限制查询范围来优化。
+  :::
+</details>
 
-**答案**：
-- MCP 先在本地执行
-- 只有**结果**发送给 AI（不是原始凭证）
-- 敏感数据可以在本地过滤
+<details>
+  <summary>Q: MCP 数据会被发送到 AI 服务器吗？</summary>
 
-**示例流程**：
-```
-1. AI 请求：@github 获取 Issue
-2. 本地 MCP 服务器：调用 GitHub API
-3. 返回结果：Issue 数据（不包含 Token）
-4. AI 分析：基于返回的数据生成建议
-```
+  **答案**：
+  - MCP 先在本地执行
+  - 只有**结果**发送给 AI（不是原始凭证）
+  - 敏感数据可以在本地过滤
 
-### Q: 一个 AI 助手可以用多少个 MCP 服务器？
+  **示例流程**：
+  ```
+  1. AI 请求：@github 获取 Issue
+  2. 本地 MCP 服务器：调用 GitHub API
+  3. 返回结果：Issue 数据（不包含 Token）
+  4. AI 分析：基于返回的数据生成建议
+  ```
 
-**答案**：
-- 技术上无限制
-- 实践中：5-10 个最常用的
-- 太多会增加配置复杂度
+  :::tip[隐私保护]
+  你可以在 MCP 服务器中实现过滤逻辑，确保敏感信息（密码、密钥、个人信息）不会被发送给 AI。
+  :::
+</details>
 
-**建议**：
-```
-核心 MCP（必装）：
-- Filesystem（本地文件）
-- GitHub（代码仓库）
+<details>
+  <summary>Q: 一个 AI 助手可以用多少个 MCP 服务器？</summary>
 
-按需 MCP：
-- PostgreSQL（如果用 SQL）
-- AWS（如果用云服务）
-- Jira（如果用任务管理）
-```
+  **答案**：
+  - 技术上无限制
+  - 实践中：5-10 个最常用的
+  - 太多会增加配置复杂度
+
+  **建议**：
+  ```
+  核心 MCP（必装）：
+  - Filesystem（本地文件）
+  - GitHub（代码仓库）
+
+  按需 MCP：
+  - PostgreSQL（如果用 SQL）
+  - AWS（如果用云服务）
+  - Jira（如果用任务管理）
+  ```
+</details>
+
+<details>
+  <summary>Q: 如何调试 MCP 服务器连接问题？</summary>
+
+  **排查步骤**：
+  1. **检查配置文件**：确保 JSON 格式正确，路径有效
+  2. **验证环境变量**：`echo $GITHUB_TOKEN` 检查是否设置
+  3. **查看日志**：AI 工具通常有 MCP 连接日志
+  4. **手动测试**：直接运行 MCP 服务器命令测试
+
+  **常见错误**：
+  ```bash
+  # 错误 1: 找不到命令
+  # 解决：检查是否安装了 npx 或 node
+
+  # 错误 2: 权限不足
+  # 解决：检查 Token 权限范围
+
+  # 错误 3: 环境变量未设置
+  # 解决：source .env 或重启终端
+  ```
+
+  :::note[调试模式]
+  大多数 MCP 服务器支持 `--debug` 或 `--verbose` 标志，可以输出详细的调试信息。
+  :::
+</details>
+
+<details>
+  <summary>Q: MCP 和 API 有什么区别？</summary>
+
+  **核心区别**：
+
+  | 特性 | MCP | 传统 API |
+  |------|-----|---------|
+  | 设计目的 | AI 助手集成 | 通用数据交换 |
+  | 调用方式 | 自然语言 (@github) | HTTP 请求 |
+  | 上下文感知 | 是（理解意图） | 否（需明确参数） |
+  | 学习曲线 | 低（自然交互） | 高（需学习 API） |
+
+  **举例**：
+  ```
+  MCP 方式：
+  用户：@github 帮我找出这个项目最活跃的贡献者
+  AI：[理解意图] → [调用多个 GitHub API] → [分析数据] → [返回结果]
+
+  API 方式：
+  1. 查文档找到 /repos/{owner}/{repo}/contributors
+  2. 写代码调用 API
+  3. 解析 JSON 响应
+  4. 手动排序和分析
+  ```
+</details>
 
 ---
 
-## 下一步
+:::tip[推荐学习路径]
+**你刚读完**：MCP 服务器集成指南 ✅
 
-1. ✅ **安装第一个 MCP 服务器**
-   - 推荐从 Filesystem 或 GitHub 开始
-   - 测试基本功能
+**下一步建议**：
+1. ⏭️ [Cursor Rules 配置](/docs/tools/cursor-rules) - 让 AI 遵循你的编码规范
+2. 🤖 [AI Agents 使用指南](/docs/tools/ai-agents) - 专业化 AI 助手配置
+3. 🚀 [开始完整课程](/docs/course) - 系统学习 AI 编程全流程
 
-2. 🔧 **配置常用工作流**
-   - 整合多个 MCP 服务器
-   - 创建自动化流程
-
-3. 📚 **探索更多工具**
-   - [Cursor Rules](/docs/tools/cursor-rules) - 项目规范
-   - [AI Agents](/docs/tools/ai-agents) - 专业化助手
-   - [AI 编程课程](/docs/course) - 完整学习路径
+**相关深度阅读**：
+- [AI 编程路线图](/docs/roadmap) - 完整学习路径
+- [AI 工具对比](/docs/tools/ai-tools-comparison) - 了解 MCP 支持情况
+- [实战项目](/docs/course) - MCP 在项目中的应用
+:::
 
 ---
 
 **最后更新**: 2025-11-02
 
 **相关资源**:
-- [AI 编程助手对比](/docs/tools/ai-tools-comparison)
-- [实战案例](/docs/course) - MCP 在项目中的应用
+- [Cursor Rules](/docs/tools/cursor-rules) - 项目规范配置
+- [AI Agents](/docs/tools/ai-agents) - 专业化助手
 - [MCP 官方文档](https://modelcontextprotocol.io)
