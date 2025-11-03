@@ -1,13 +1,13 @@
 ---
-title: Claude Code指南
-description: Claude Code完整指南
+title: Github Copilot指南
+description: Github Copilot完整指南
 ---
 
-# Claude Code
+# Github Copilot
 
 **敬请期待**
 
-Claude Code的综合指南，包括：
+Github Copilot的综合指南，包括：
 - 设置和配置
 - 最佳实践
 - 真实世界示例
