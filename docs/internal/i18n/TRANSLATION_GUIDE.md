@@ -1,6 +1,6 @@
 # Translation Guide
 
-**Version:** 1.0
+**Version:** 1.1
 **Last Updated:** 2025-11-03
 **Status:** Active
 
@@ -210,7 +210,39 @@ import Translate from '@docusaurus/Translate';
 
 ### Step 2: Translate Markdown Content
 
-#### A. Copy Source File
+#### A. Setup Translation File (Automated)
+
+**Using the translation-setup script (Recommended):**
+
+```bash
+# Automatically create translation file structure
+npm run translation:setup content/docs/intro.md
+
+# This will:
+# 1. Create target i18n directory structure
+# 2. Copy frontmatter from source file
+# 3. Add translation placeholder comments
+# 4. Preserve original content as reference
+```
+
+**Example output:**
+```
+🌐 Setting up translation file structure...
+
+📄 Source file: content/docs/intro.md
+📂 Content type: docs
+🎯 Target path: content/i18n/zh/docusaurus-plugin-content-docs/current/intro.md
+✅ Translation file created
+
+🎉 Translation setup complete!
+```
+
+**Supported content types:**
+- Documentation: `content/docs/`
+- Blog posts: `content/blog/`
+- Course lessons: `content/docs/course/`
+
+**Manual alternative (if needed):**
 
 ```bash
 # Example: Translating intro.md
@@ -556,9 +588,40 @@ npm run serve
 
 ### Tools
 
+- **Translation setup**: `npm run translation:setup <file-path>` - Automate translation file creation
 - **Glossary search**: Use Ctrl+F in glossary.json
-- **Translation check**: `npm run check-translations`
+- **Translation check**: `npm run check:translations`
 - **Generate templates**: `npm run write-translations -- --locale zh`
+
+#### Translation Setup Script
+
+The `translation:setup` script automates the tedious process of creating translation files:
+
+```bash
+# Usage
+npm run translation:setup content/docs/intro.md
+
+# What it does:
+# 1. Validates source file exists and is in content/ directory
+# 2. Determines content type (docs/blog/course)
+# 3. Creates target i18n directory structure
+# 4. Copies frontmatter and preserves structure
+# 5. Adds translation placeholder with original content as reference
+```
+
+**Features:**
+- Automatic path mapping based on content type
+- Preserves frontmatter structure
+- Includes original content as commented reference
+- Error handling for invalid paths
+- Shows helpful next steps
+
+**Path mappings:**
+- `content/docs/` → `content/i18n/zh/docusaurus-plugin-content-docs/current/`
+- `content/blog/` → `content/i18n/zh/docusaurus-plugin-content-blog/`
+
+**Script location:** `/scripts/translation-setup.js`
+**Tests:** Run `npm run test:translation-setup` to verify functionality
 
 ---
 
@@ -582,6 +645,11 @@ npm run serve
 
 ## Version History
 
+- **1.1** (2025-11-03): Added translation-setup automation script
+  - Implemented `translation:setup` script for automated file creation
+  - Added 17 comprehensive tests for translation workflow
+  - Updated workflow documentation with automated approach
+  - Added script documentation to Tools section
 - **1.0** (2025-11-03): Initial translation guide with glossary integration
   - Created comprehensive glossary with 90+ terms
   - Established translation workflow
