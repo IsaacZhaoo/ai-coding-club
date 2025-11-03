@@ -1,0 +1,570 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-11-03",
+  "description": "Translation glossary for AI Coding Club - English to Chinese technical terminology",
+  "terms": [
+    {
+      "category": "tool-names",
+      "en": "ChatGPT",
+      "zh": "ChatGPT",
+      "notes": "Keep in English - brand name"
+    },
+    {
+      "category": "tool-names",
+      "en": "Claude",
+      "zh": "Claude",
+      "notes": "Keep in English - brand name"
+    },
+    {
+      "category": "tool-names",
+      "en": "Cursor",
+      "zh": "Cursor",
+      "notes": "Keep in English - brand name"
+    },
+    {
+      "category": "tool-names",
+      "en": "GitHub",
+      "zh": "GitHub",
+      "notes": "Keep in English - brand name"
+    },
+    {
+      "category": "tool-names",
+      "en": "GitHub Copilot",
+      "zh": "GitHub Copilot",
+      "notes": "Keep in English - brand name"
+    },
+    {
+      "category": "tool-names",
+      "en": "VS Code",
+      "zh": "VS Code",
+      "notes": "Keep in English - brand name"
+    },
+    {
+      "category": "tool-names",
+      "en": "Visual Studio Code",
+      "zh": "Visual Studio Code",
+      "notes": "Keep in English - brand name"
+    },
+    {
+      "category": "tool-names",
+      "en": "Windsurf",
+      "zh": "Windsurf",
+      "notes": "Keep in English - brand name"
+    },
+    {
+      "category": "tool-names",
+      "en": "Gemini",
+      "zh": "Gemini",
+      "notes": "Keep in English - brand name"
+    },
+    {
+      "category": "tool-names",
+      "en": "Perplexity",
+      "zh": "Perplexity",
+      "notes": "Keep in English - brand name"
+    },
+    {
+      "category": "tool-names",
+      "en": "Anthropic",
+      "zh": "Anthropic",
+      "notes": "Keep in English - company name"
+    },
+    {
+      "category": "tool-names",
+      "en": "OpenAI",
+      "zh": "OpenAI",
+      "notes": "Keep in English - company name"
+    },
+    {
+      "category": "programming-concepts",
+      "en": "API",
+      "zh": "API",
+      "notes": "Keep in English - commonly understood acronym"
+    },
+    {
+      "category": "programming-concepts",
+      "en": "Frontend",
+      "zh": "前端",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "programming-concepts",
+      "en": "Backend",
+      "zh": "后端",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "programming-concepts",
+      "en": "Full Stack",
+      "zh": "全栈",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "programming-concepts",
+      "en": "IDE",
+      "zh": "IDE",
+      "notes": "Keep acronym, optionally add 集成开发环境 in context"
+    },
+    {
+      "category": "programming-concepts",
+      "en": "Database",
+      "zh": "数据库",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "programming-concepts",
+      "en": "Repository",
+      "zh": "仓库",
+      "notes": "Git context - standard translation"
+    },
+    {
+      "category": "programming-concepts",
+      "en": "Code editor",
+      "zh": "代码编辑器",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "programming-concepts",
+      "en": "Debugging",
+      "zh": "调试",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "programming-concepts",
+      "en": "Variable",
+      "zh": "变量",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "programming-concepts",
+      "en": "Function",
+      "zh": "函数",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "programming-concepts",
+      "en": "Algorithm",
+      "zh": "算法",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "programming-concepts",
+      "en": "Framework",
+      "zh": "框架",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "programming-concepts",
+      "en": "Library",
+      "zh": "库",
+      "notes": "Programming context"
+    },
+    {
+      "category": "programming-concepts",
+      "en": "Syntax",
+      "zh": "语法",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "programming-concepts",
+      "en": "Terminal",
+      "zh": "终端",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "programming-concepts",
+      "en": "Command line",
+      "zh": "命令行",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "programming-concepts",
+      "en": "Version control",
+      "zh": "版本控制",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "programming-concepts",
+      "en": "Deployment",
+      "zh": "部署",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "programming-concepts",
+      "en": "Bug",
+      "zh": "Bug",
+      "notes": "Keep in English or use 错误/缺陷 based on context"
+    },
+    {
+      "category": "ui-ux-terms",
+      "en": "Homepage",
+      "zh": "首页",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "ui-ux-terms",
+      "en": "Dashboard",
+      "zh": "仪表盘",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "ui-ux-terms",
+      "en": "Navigation",
+      "zh": "导航",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "ui-ux-terms",
+      "en": "Sidebar",
+      "zh": "侧边栏",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "ui-ux-terms",
+      "en": "Search",
+      "zh": "搜索",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "ui-ux-terms",
+      "en": "Footer",
+      "zh": "页脚",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "ui-ux-terms",
+      "en": "Header",
+      "zh": "页头",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "ui-ux-terms",
+      "en": "Button",
+      "zh": "按钮",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "ui-ux-terms",
+      "en": "Link",
+      "zh": "链接",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "ui-ux-terms",
+      "en": "Menu",
+      "zh": "菜单",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "ui-ux-terms",
+      "en": "Dropdown",
+      "zh": "下拉菜单",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "ui-ux-terms",
+      "en": "Modal",
+      "zh": "弹窗",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "educational-terms",
+      "en": "Tutorial",
+      "zh": "教程",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "educational-terms",
+      "en": "Course",
+      "zh": "课程",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "educational-terms",
+      "en": "Lesson",
+      "zh": "课时",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "educational-terms",
+      "en": "Workshop",
+      "zh": "实战演练",
+      "notes": "Contextual translation for practical exercises"
+    },
+    {
+      "category": "educational-terms",
+      "en": "Demo",
+      "zh": "演示",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "educational-terms",
+      "en": "Guide",
+      "zh": "指南",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "educational-terms",
+      "en": "Documentation",
+      "zh": "文档",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "educational-terms",
+      "en": "Roadmap",
+      "zh": "路线图",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "educational-terms",
+      "en": "Learning path",
+      "zh": "学习路径",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "educational-terms",
+      "en": "Beginner",
+      "zh": "初学者",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "educational-terms",
+      "en": "Intermediate",
+      "zh": "中级",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "educational-terms",
+      "en": "Advanced",
+      "zh": "高级",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "educational-terms",
+      "en": "Expert",
+      "zh": "专家",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "educational-terms",
+      "en": "Resources",
+      "zh": "资源",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "educational-terms",
+      "en": "Community",
+      "zh": "社区",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "ai-specific-terms",
+      "en": "Prompt",
+      "zh": "提示词",
+      "notes": "AI context - standard translation"
+    },
+    {
+      "category": "ai-specific-terms",
+      "en": "Prompt engineering",
+      "zh": "提示词工程",
+      "notes": "Standard translation in AI context"
+    },
+    {
+      "category": "ai-specific-terms",
+      "en": "AI assistant",
+      "zh": "AI助手",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "ai-specific-terms",
+      "en": "AI coding",
+      "zh": "AI编程",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "ai-specific-terms",
+      "en": "AI-powered",
+      "zh": "AI驱动",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "ai-specific-terms",
+      "en": "Code generation",
+      "zh": "代码生成",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "ai-specific-terms",
+      "en": "Code completion",
+      "zh": "代码补全",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "ai-specific-terms",
+      "en": "Context window",
+      "zh": "上下文窗口",
+      "notes": "AI context - standard translation"
+    },
+    {
+      "category": "ai-specific-terms",
+      "en": "Model",
+      "zh": "模型",
+      "notes": "AI/ML context"
+    },
+    {
+      "category": "ai-specific-terms",
+      "en": "LLM",
+      "zh": "LLM",
+      "notes": "Keep acronym, optionally add 大语言模型 in context"
+    },
+    {
+      "category": "ai-specific-terms",
+      "en": "Token",
+      "zh": "Token",
+      "notes": "Keep in English in technical context, or 令牌 for general audience"
+    },
+    {
+      "category": "action-verbs",
+      "en": "Build",
+      "zh": "构建",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "action-verbs",
+      "en": "Create",
+      "zh": "创建",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "action-verbs",
+      "en": "Deploy",
+      "zh": "部署",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "action-verbs",
+      "en": "Install",
+      "zh": "安装",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "action-verbs",
+      "en": "Configure",
+      "zh": "配置",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "action-verbs",
+      "en": "Run",
+      "zh": "运行",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "action-verbs",
+      "en": "Execute",
+      "zh": "执行",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "action-verbs",
+      "en": "Debug",
+      "zh": "调试",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "action-verbs",
+      "en": "Test",
+      "zh": "测试",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "action-verbs",
+      "en": "Learn",
+      "zh": "学习",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "action-verbs",
+      "en": "Explore",
+      "zh": "探索",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "action-verbs",
+      "en": "Practice",
+      "zh": "练习",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "action-verbs",
+      "en": "Get started",
+      "zh": "开始",
+      "notes": "Standard translation"
+    },
+    {
+      "category": "project-specific",
+      "en": "AI Coding Club",
+      "zh": "AI Coding Club",
+      "notes": "Keep in English - brand name"
+    },
+    {
+      "category": "project-specific",
+      "en": "Vibecoding",
+      "zh": "Vibecoding",
+      "notes": "Keep in English - specific concept/stage name"
+    },
+    {
+      "category": "project-specific",
+      "en": "Reality Check",
+      "zh": "Reality Check",
+      "notes": "Keep in English - stage name, can add 现实检验 in parentheses"
+    },
+    {
+      "category": "project-specific",
+      "en": "Context Mastery",
+      "zh": "Context Mastery",
+      "notes": "Keep in English - stage name, can add 上下文掌控 in parentheses"
+    }
+  ],
+  "categories": {
+    "tool-names": {
+      "description": "Brand names of AI tools, IDEs, and platforms - keep in English",
+      "translationGuideline": "Do not translate. Maintain original English spelling and capitalization."
+    },
+    "programming-concepts": {
+      "description": "General programming and software development terminology",
+      "translationGuideline": "Use standard Chinese translations. Keep commonly understood acronyms in English (API, IDE, etc.)."
+    },
+    "ui-ux-terms": {
+      "description": "User interface and navigation elements",
+      "translationGuideline": "Use standard Chinese translations for UI elements."
+    },
+    "educational-terms": {
+      "description": "Learning and educational content terminology",
+      "translationGuideline": "Use standard Chinese translations that resonate with learners."
+    },
+    "ai-specific-terms": {
+      "description": "AI and machine learning specific terminology",
+      "translationGuideline": "Use established Chinese translations. Keep technical acronyms (LLM, etc.) in English with optional Chinese explanation in context."
+    },
+    "action-verbs": {
+      "description": "Common action verbs used in instructions and CTAs",
+      "translationGuideline": "Use concise, action-oriented Chinese translations."
+    },
+    "project-specific": {
+      "description": "AI Coding Club specific terms and stage names",
+      "translationGuideline": "Brand name stays in English. Stage names can be kept in English with optional Chinese translation in parentheses for clarity."
+    }
+  },
+  "usageNotes": [
+    "Always check this glossary before translating technical terms",
+    "Maintain consistency across all translated content",
+    "When in doubt, keep technical terms in English rather than creating new Chinese terms",
+    "Brand names and product names should always remain in English",
+    "Code examples, function names, and API endpoints should never be translated",
+    "URLs and file paths should remain in English",
+    "Use the category guidelines to understand translation approach for different term types",
+    "For terms not in this glossary, consult with team or reference existing translations in i18n/zh/code.json",
+    "Update this glossary when new important terms are encountered during translation"
+  ]
+}
