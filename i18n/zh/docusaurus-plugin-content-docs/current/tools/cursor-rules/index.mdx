@@ -1,0 +1,384 @@
+---
+title: "Cursor Rules 配置指南"
+description: "使用 Cursor Rules 让 AI 助手更懂你的代码风格"
+sidebar_position: 1
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Cursor Rules 配置指南
+
+**让 AI 编程助手遵循你的编码规范**
+
+:::info[一句话解释]
+Cursor Rules 是一个配置文件（`.cursorrules`），用于告诉 AI 编程助手（如 Cursor、Windsurf）你的编码偏好和项目规范。
+:::
+
+:::tip[为什么重要]
+有了 Cursor Rules，AI 生成的代码会自动遵循你的项目规范，无需反复提醒。就像给 AI 助手一本"项目手册"，让它从第一行代码就懂你的风格。
+:::
+
+## 什么是 Cursor Rules？
+
+### 为什么需要 Cursor Rules？
+
+想象一下：
+- ❌ **没有 Rules**：AI 每次生成的代码风格不一致，需要反复修正
+- ✅ **有了 Rules**：AI 自动遵循你的规范，一次生成符合要求的代码
+
+### 它能做什么？
+
+```markdown
+✅ 统一代码风格（缩进、命名规范）
+✅ 强制最佳实践（错误处理、类型检查）
+✅ 自动添加文档注释
+✅ 遵循框架约定（React Hooks、Vue Composition API）
+✅ 避免常见错误（内存泄漏、安全漏洞）
+```
+
+---
+
+## 快速开始
+
+### 步骤 1: 创建 `.cursorrules` 文件
+
+在项目根目录创建文件：
+
+```bash
+touch .cursorrules
+```
+
+:::note[文件位置很重要]
+必须放在项目根目录（与 `package.json` 或 `requirements.txt` 同级）。AI 助手会自动读取这个文件。
+:::
+
+### 步骤 2: 添加基础规则
+
+**最简单的例子**（适合新手）：
+
+```markdown
+# 项目：个人博客
+# 技术栈：React + TypeScript
+
+## 编码规范
+- 使用 TypeScript 严格模式
+- 组件使用函数式组件 + Hooks
+- 文件命名：PascalCase（组件）、camelCase（工具函数）
+
+## 代码风格
+- 缩进：2 空格
+- 引号：单引号
+- 分号：必须添加
+
+## 最佳实践
+- 所有函数必须有 JSDoc 注释
+- Props 必须定义 TypeScript 接口
+- 使用 `useState` 和 `useEffect` 时添加注释说明用途
+```
+
+### 步骤 3: 测试效果
+
+在 Cursor 中输入提示词：
+
+```
+创建一个 UserProfile 组件，显示用户头像和名字
+```
+
+**没有 Rules 的输出**：
+```jsx
+function UserProfile(props) {
+  return <div>{props.name}</div>
+}
+```
+
+**有了 Rules 的输出**：
+```tsx
+/**
+ * 用户资料展示组件
+ * @param {UserProfileProps} props - 组件属性
+ */
+interface UserProfileProps {
+  name: string;
+  avatar: string;
+}
+
+export const UserProfile: React.FC<UserProfileProps> = ({ name, avatar }) => {
+  return (
+    <div className="user-profile">
+      <img src={avatar} alt={`${name} avatar`} />
+      <h2>{name}</h2>
+    </div>
+  );
+};
+```
+
+:::warning[常见误区]
+Rules 不是魔法 - 它依赖清晰的提示词。如果你的提示词太模糊，即使有 Rules 也可能得不到理想结果。最佳实践：**明确的提示词 + 详细的 Rules = 完美代码**。
+:::
+
+---
+
+## 常用场景的 Rules 模板
+
+根据你的技术栈选择合适的模板：
+
+<Tabs>
+  <TabItem value="react" label="React + TypeScript" default>
+
+```markdown
+# React TypeScript 最佳实践
+
+## 组件规范
+- 使用函数式组件
+- Props 必须定义 TypeScript 接口
+- 避免使用 `any` 类型
+
+## Hooks 使用规范
+- useState: 明确初始值类型
+- useEffect: 必须添加依赖数组
+- 自定义 Hooks: 以 `use` 开头命名
+
+## 文件结构
+```
+src/
+  components/
+    Button/
+      Button.tsx
+      Button.test.tsx
+      Button.module.css
+```
+
+## 错误处理
+- 使用 ErrorBoundary 包裹组件
+- 异步操作使用 try-catch
+- 表单验证使用 React Hook Form
+```
+
+  </TabItem>
+  <TabItem value="python" label="Python FastAPI">
+
+```markdown
+# Python FastAPI 项目规范
+
+## 编码风格
+- 遵循 PEP 8 规范
+- 使用 Black 格式化
+- 类型注解：所有函数参数和返回值
+
+## API 设计
+- 路由使用 RESTful 风格
+- 请求体使用 Pydantic 模型
+- 返回统一的响应格式
+
+## 安全规范
+- 所有密码使用 bcrypt 加密
+- JWT Token 过期时间：15分钟
+- 敏感信息不记录到日志
+
+## 数据库操作
+- 使用 SQLAlchemy ORM
+- 异步操作使用 async/await
+- 事务处理使用 context manager
+```
+
+  </TabItem>
+  <TabItem value="vue" label="Vue 3">
+
+```markdown
+# Vue 3 Composition API 规范
+
+## 组件规范
+- 使用 `<script setup>` 语法
+- Props 使用 TypeScript 接口定义
+- 组件命名：PascalCase
+
+## Composition API
+- 响应式数据使用 ref/reactive
+- 计算属性使用 computed
+- 生命周期钩子按顺序排列
+
+## 样式规范
+- 使用 scoped CSS
+- 类名使用 BEM 命名法
+- 颜色变量统一在 CSS Variables 定义
+```
+
+  </TabItem>
+</Tabs>
+
+:::tip[学习资源]
+想要更多框架模板？访问 [Vibe Coding Tools](https://vibecodingtools.tech/rules) 查看 400+ 开源 Cursor Rules 模板，涵盖 React、Vue、Angular、Python、Go 等主流技术栈。
+:::
+
+---
+
+## 高级技巧
+
+### 技巧 1: 多层级 Rules
+
+**项目级 Rules**（`.cursorrules` 在根目录）：
+```markdown
+# 全局规范
+- 代码风格：遵循 ESLint 配置
+- 提交规范：使用 Conventional Commits
+```
+
+**目录级 Rules**（`src/components/.cursorrules`）：
+```markdown
+# 组件特殊规范
+- 所有组件必须有 Storybook 故事
+- Props 必须有默认值
+```
+
+:::note[优先级规则]
+子目录的 Rules 会覆盖根目录的 Rules。如果有冲突，离文件更近的 Rules 优先级更高。
+:::
+
+### 技巧 2: 引用外部规范
+
+```markdown
+# 参考规范文档
+- 代码风格：https://github.com/airbnb/javascript
+- React 规范：https://react.dev/learn
+- TypeScript 规范：https://www.typescriptlang.org/docs/handbook/
+
+## 我们的特殊约定
+[添加项目特定的规则]
+```
+
+### 技巧 3: 动态 Rules（根据文件类型）
+
+```markdown
+# 根据文件类型应用不同规则
+
+## .tsx 文件（React 组件）
+- 导出：命名导出优先于默认导出
+- 样式：使用 CSS Modules
+
+## .ts 文件（工具函数）
+- 纯函数优先
+- 必须有单元测试
+
+## .test.ts 文件（测试）
+- 使用 describe/it 结构
+- 测试命名：should_[action]_when_[condition]
+```
+
+---
+
+:::note[准备好实践了吗?]
+想要系统学习 AI 编程? 我们的[入门课程](/docs/course)从零开始,手把手教你使用这些工具。
+
+👉 [开始学习 AI 编程 →](/docs/course)
+:::
+
+---
+
+## 常见问题
+
+<details>
+  <summary>Q: Rules 文件放在哪里？</summary>
+
+  **答案**：
+  - **项目根目录**：适用于整个项目
+  - **子目录**：只适用于该目录及子目录
+  - **优先级**：子目录 Rules > 根目录 Rules
+
+  :::tip[最佳实践]
+  大型项目建议在根目录放通用规范，在特定模块目录放专项规范。例如：根目录规定代码风格，`src/api/` 目录规定接口设计规范。
+  :::
+</details>
+
+<details>
+  <summary>Q: Rules 太长了怎么办？</summary>
+
+  **答案**：分类组织，使用清晰的标题
+
+  ```markdown
+  # 📝 编码规范
+  [规范内容]
+
+  # 🎨 代码风格
+  [风格内容]
+
+  # 🔒 安全规范
+  [安全内容]
+
+  # 📦 依赖管理
+  [依赖内容]
+  ```
+
+  :::note[长度建议]
+  保持 Rules 在 300-500 行以内。过长的 Rules 会影响 AI 响应速度。如果超过 500 行，考虑拆分成多个文件。
+  :::
+</details>
+
+<details>
+  <summary>Q: 如何让 AI 严格遵守 Rules？</summary>
+
+  **提示词技巧**：
+  ```
+  请严格按照 .cursorrules 文件的规范，
+  创建一个用户登录表单组件
+  ```
+
+  在提示词中明确提到 `.cursorrules` 可以提高 AI 的遵守率。
+</details>
+
+<details>
+  <summary>Q: Rules 会影响 AI 性能吗？</summary>
+
+  **答案**：
+  - ✅ Rules < 500 行：几乎无影响
+  - ⚠️ Rules > 1000 行：可能稍慢
+  - 💡 建议：保持 Rules 精简，聚焦核心规范
+
+  性能影响主要来自 AI 需要处理的上下文长度。精简的 Rules 既提高响应速度，又让 AI 更容易理解重点。
+</details>
+
+---
+
+## 推荐 Rules 资源
+
+### 官方资源
+
+- [Cursor 官方文档](https://cursor.sh/docs)
+- [Windsurf Rules 指南](https://windsurf.dev)
+
+### 社区资源
+
+- **Vibe Coding Tools** - 400+ 开源 Cursor Rules
+  - React, Vue, Angular 框架规范
+  - Python, JavaScript, TypeScript 语言规范
+  - Clean Code, SOLID 原则
+  - [访问资源库 →](https://vibecodingtools.tech/rules)
+
+- **Awesome Cursor Rules** - GitHub 精选集合
+  - 按技术栈分类
+  - 实际项目案例
+  - 社区贡献
+
+---
+
+:::tip[推荐学习路径]
+**你刚读完**：Cursor Rules 配置指南 ✅
+
+**下一步建议**：
+1. ⏭️ [AI Agents 使用指南](/docs/tools/ai-agents) - 学习专业化 AI 助手配置
+2. 🔄 [开始完整课程](/docs/course) - 系统学习 AI 编程全流程
+3. 🛠️ [AI 工具对比](/docs/tools/ai-tools-comparison) - 了解不同 AI 编程工具
+
+**相关深度阅读**：
+- [AI 编程路线图](/docs/roadmap) - 完整学习路径
+- [Prompt Engineering 101](/docs/prompt-engineering-101) - 提示词基础
+- [MCP 服务器](/docs/tools/mcps) - 扩展 AI 能力边界
+:::
+
+---
+
+**最后更新**: 2025-11-02
+
+**相关资源**:
+- [AI Agents 使用指南](/docs/tools/ai-agents) - 专业化 AI 助手
+- [MCP 服务器](/docs/tools/mcps) - 扩展 AI 能力

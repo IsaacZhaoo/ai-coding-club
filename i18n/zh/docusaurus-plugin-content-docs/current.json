@@ -4,15 +4,39 @@
     "description": "The label for version current"
   },
   "sidebar.tutorialSidebar.category.Learning Stages": {
-    "message": "Learning Stages",
+    "message": "学习阶段",
     "description": "The label for category 'Learning Stages' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.category.Core Tutorials": {
-    "message": "Core Tutorials",
+    "message": "核心教程",
     "description": "The label for category 'Core Tutorials' in sidebar 'tutorialSidebar'"
   },
   "sidebar.tutorialSidebar.doc.🗺️ AI-Enhanced Roadmap": {
-    "message": "🗺️ AI-Enhanced Roadmap",
+    "message": "🗺️ AI 增强路线图",
     "description": "The label for the doc item '🗺️ AI-Enhanced Roadmap' in sidebar 'tutorialSidebar', linking to the doc roadmap-v1.1"
+  },
+  "sidebar.toolsSidebar.doc.📊 Tools Comparison": {
+    "message": "📊 工具对比",
+    "description": "The label for the doc item '📊 Tools Comparison' in sidebar 'toolsSidebar', linking to the doc tools/ai-tools-comparison"
+  },
+  "sidebar.tutorialSidebar.doc.Learning Roadmap": {
+    "message": "学习路线图",
+    "description": "The label for the doc item 'Learning Roadmap' in sidebar 'tutorialSidebar', linking to the doc roadmap"
+  },
+  "sidebar.tutorialSidebar.doc.Stage 0: Vibecoding": {
+    "message": "阶段 0：Vibecoding",
+    "description": "The label for the doc item 'Stage 0: Vibecoding' in sidebar 'tutorialSidebar', linking to the doc stages/stage0-vibecoding"
+  },
+  "sidebar.tutorialSidebar.doc.Stage 1: Reality Check": {
+    "message": "阶段 1：现实检验",
+    "description": "The label for the doc item 'Stage 1: Reality Check' in sidebar 'tutorialSidebar', linking to the doc stages/stage1-reality-check"
+  },
+  "sidebar.tutorialSidebar.doc.Stage 2: Context & Architecture": {
+    "message": "阶段 2：上下文与架构",
+    "description": "The label for the doc item 'Stage 2: Context & Architecture' in sidebar 'tutorialSidebar', linking to the doc stages/stage2-context"
+  },
+  "sidebar.tutorialSidebar.doc.CSV → Markdown in 30 Seconds (Practical Demo)": {
+    "message": "CSV → Markdown 30秒实战",
+    "description": "The label for the doc item 'CSV → Markdown in 30 Seconds (Practical Demo)' in sidebar 'tutorialSidebar', linking to the doc csv-to-markdown-demo"
   }
 }

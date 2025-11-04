@@ -7,7 +7,7 @@ tags: [philosophy, ai, future-of-coding, career]
 keywords: [AI replace programmers, future of software engineering 2025, AI coding tools impact, developer jobs AI era]
 ---
 
-Last month, a junior developer got fired from a startup I know. Not because AI replaced him—because he refused to use AI while his peers did.
+Last month, a junior developer got fired from a startup. Not because AI replaced him—because he refused to use AI while his peers did.
 
 His code took twice as long. His bugs took three times longer to fix. And when the team moved to AI-assisted development, he became a bottleneck.
 
@@ -35,9 +35,9 @@ Let's look at what's actually happening in 2025:
 
 So what's really going on? **The job isn't disappearing. It's changing.**
 
-## What AI Actually Does (From Someone Who Uses It Daily)
+## What AI Actually Does (From Daily Testing)
 
-I've been coding with AI for 2 years. Here's what it handles:
+After 2 years of testing AI coding tools across our community, here's what we've found:
 
 **AI eliminates:**
 - Writing boilerplate code
@@ -67,9 +67,9 @@ When calculators were invented, people worried mathematicians would become obsol
 
 AI is doing the exact same thing for coding.
 
-I asked ChatGPT to build a to-do app. It took 3 minutes.
+We asked ChatGPT to build a to-do app. It took 3 minutes.
 
-Then I asked it to scale the app to 1 million users. **That's where it failed.**
+Then we asked it to scale the app to 1 million users. **That's where it failed.**
 
 AI can write code. It can't design systems. It can't make architectural decisions. It can't debug production issues with incomplete data.
 
@@ -92,9 +92,9 @@ Here's what separated the developer who got fired from the ones who thrived:
 4. **Debugging** - Tracing bugs AI can't see
 5. **Product thinking** - Knowing what problem you're solving
 
-**Real example from my team:**
+**Real example from our community:**
 
-Junior dev Sarah uses AI to write her code, but she knows when to question it:
+Sarah, a junior developer in our community, uses AI to write her code but knows when to question it:
 
 ```python
 # AI suggested this for handling user authentication
@@ -153,9 +153,9 @@ Entry-level jobs grew 47% last year. But what companies want is different:
 
 Translation: **Less tedious work, more thinking.**
 
-## The Jobs of Tomorrow (What I'm Seeing Emerge)
+## The Jobs of Tomorrow (What We're Seeing Emerge)
 
-Based on job postings I've analyzed over the last 6 months:
+Based on job posting analysis over the last 6 months:
 
 ### Roles Growing Fast
 - **AI prompt engineer** for coding tools (155% increase in NLP roles)
@@ -164,7 +164,7 @@ Based on job postings I've analyzed over the last 6 months:
 - **AI-assisted full-stack** (expects AI proficiency from Day 1)
 
 ### Skills Employers Now Require
-From 47 recent junior dev job postings I reviewed:
+From 47 recent junior dev job postings analyzed:
 - **39 mentioned "experience with AI coding assistants"**
 - **31 required GitHub Copilot or similar tools**
 - **28 wanted "prompt engineering skills"**
@@ -266,7 +266,7 @@ If you're learning to code in 2025, you're entering at a pivotal moment. The bor
 - Ignore AI and become obsolete
 - Wait and see (worst option)
 
-I know which one I'm choosing.
+We're choosing the first path. Join us?
 
 ---
 

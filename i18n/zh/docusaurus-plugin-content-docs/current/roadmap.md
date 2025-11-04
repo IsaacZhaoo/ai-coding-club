@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: 学习路线图
+sidebar_label: 学习路线图
 description: 从零基础到 AI 驱动开发者的完整旅程
 ---
 

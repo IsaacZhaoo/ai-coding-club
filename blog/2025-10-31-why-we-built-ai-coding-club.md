@@ -9,7 +9,7 @@ keywords: [learn coding with AI, AI coding for beginners, ChatGPT programming tu
 
 Here's a secret: you don't need to spend $10,000 on a bootcamp or 6 months memorizing syntax to start building real software.
 
-I proved it last month. I gave 5 complete beginners (a teacher, a barista, a retired accountant, a high school student, and a stay-at-home parent) one challenge: **build something useful in 2 weeks using AI coding tools**.
+Last month, we tested something bold. Five complete beginners (a teacher, a barista, a retired accountant, a high school student, and a stay-at-home parent) joined us for one challenge: **build something useful in 2 weeks using AI coding tools**.
 
 All 5 shipped working projects. The barista built a tip calculator app. The teacher created a classroom assignment tracker. The retiree automated his fantasy football league stats.
 
@@ -30,11 +30,11 @@ Yet when you search "learn to code 2025," what do you find?
 
 It's like teaching someone to be a professional writer in 2025 without mentioning spell-check, grammar tools, or Google Docs. Technically possible, but why would you?
 
-## The Experiment That Changed My Mind
+## The Experiment That Changed Everything
 
-I was skeptical too. For months, I heard people say "AI makes coding easier for beginners," but I didn't believe it would work for *complete* beginners. People with zero programming background. People who'd never seen a terminal before.
+Many of us were skeptical. You've probably heard claims that "AI makes coding easier for beginners"—but does it really work for *complete* beginners? People with zero programming background. People who'd never seen a terminal before.
 
-So I ran an experiment.
+We decided to find out.
 
 ### Meet the 5 Beginners
 
@@ -46,19 +46,19 @@ So I ran an experiment.
 
 **Combined programming experience:** Zero.
 
-**What I gave them:**
+**What they started with:**
 1. ChatGPT free account
 2. VS Code installation guide
 3. Our 5-page "Prompt Engineering for Beginners" cheat sheet
 4. 2 weeks, 1 hour per day
 
-**What I didn't give them:**
+**What they didn't get:**
 - Syntax tutorials
 - Computer science theory
 - Algorithm training
 - Traditional coding lessons
 
-### The Results (That Surprised Me)
+### The Results (That Surprised Us)
 
 **Week 1:**
 - Day 1-2: All 5 struggled. "This feels like cheating." "Am I actually learning?"
@@ -129,7 +129,7 @@ Stack Overflow's 2024 survey backs this up: **Only 43% of developers fully trust
 
 ## Why We Built AI Coding Club
 
-After the experiment, I realized: **There's no learning platform designed for AI-assisted beginners**.
+After the experiment, we realized: **There's no learning platform designed for AI-assisted beginners**.
 
 Everything either:
 1. Ignores AI entirely (teaching like it's 2015)
@@ -241,9 +241,9 @@ build a tip calculator. Start with the simplest version in JavaScript.
 
 ## One Last Thing
 
-I built AI Coding Club because I wasted 6 months learning the wrong way. I memorized syntax I immediately forgot. I followed tutorials without understanding. I felt like an impostor using Stack Overflow.
+AI Coding Club exists because many of us wasted months learning the wrong way. We memorized syntax we immediately forgot. We followed tutorials without understanding. We felt like impostors asking for help.
 
-If that sounds familiar—**you're not alone**.
+If that sounds familiar—**you're not alone**. Let's fix this together.
 
 The 5 beginners from the experiment? They're all still coding. Sarah's flashcard app is used by 3 other teachers now. Marcus got his first freelance gig. Elena automated 4 reports at her company.
 
@@ -256,7 +256,7 @@ You just need to know how to use it.
 ---
 
 **Questions? Feedback? Complaints?**
-[GitHub Issues](https://github.com/IsaacZhaoo/aicodingclub/issues) - I read every one.
+[GitHub Issues](https://github.com/IsaacZhaoo/aicodingclub/issues) - We read every one.
 
 **Built something using AI?**
-[Show us](https://github.com/IsaacZhaoo/aicodingclub/discussions) - we want to feature it!
+[Show us](https://github.com/IsaacZhaoo/aicodingclub/discussions) - We want to feature it!
