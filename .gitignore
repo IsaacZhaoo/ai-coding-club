@@ -9,3 +9,9 @@
 *.tmp
 *.bak
 *~
+
+# AI CLI
+.claude
+
+# Local Config
+.githooks
