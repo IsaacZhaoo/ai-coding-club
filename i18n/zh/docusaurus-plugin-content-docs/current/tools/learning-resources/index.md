@@ -10,9 +10,10 @@ description: 精选的教程、文档和社区资源
 
 精选的教程、官方文档、交互式平台和社区资源集合，用于学习AI辅助编程。
 
-:::info 🔜 Coming Soon | 敬请期待
+:::info
+**🔜 敬请期待**
+
 我们正在为你精选最优质的 AI 编程学习资源！
-**We're curating the best AI coding learning resources for you!**
 
 **即将推出：**
 - 📺 视频教程和课程

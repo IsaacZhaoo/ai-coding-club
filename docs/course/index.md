@@ -17,9 +17,10 @@ Start your journey! Learn what AI coding is, have your first conversations with 
 
 [Begin Phase 1 →](01-foundations/01-welcome.md)
 
-:::info 🔜 Phase 2: Essential Skills | 基础技能 (Coming Soon)
+:::tip
+**🔜 Phase 2: Essential Skills (Coming Soon)**
+
 Master the fundamental tools and techniques every developer needs.
-**掌握每位开发者必备的基础工具和技术。**
 
 **You'll learn:**
 - 💻 Command line mastery
@@ -30,9 +31,10 @@ Master the fundamental tools and techniques every developer needs.
 💬 [Follow updates on GitHub Discussions](https://github.com/IsaacZhaoo/aiCodingClub/discussions)
 :::
 
-:::info 🔜 Phase 3: Building Projects | 构建项目 (Coming Soon)
+:::info
+**🔜 Phase 3: Building Projects (Coming Soon)**
+
 Apply your skills to build real projects from planning to deployment.
-**应用所学技能，从规划到部署构建真实项目。**
 
 **You'll build:**
 - 📋 Project planning & architecture
@@ -43,9 +45,10 @@ Apply your skills to build real projects from planning to deployment.
 💬 [Follow updates on GitHub Discussions](https://github.com/IsaacZhaoo/aiCodingClub/discussions)
 :::
 
-:::info 🔜 Phase 4: Specialization | 专业化 (Coming Soon)
+:::note
+**🔜 Phase 4: Specialization (Coming Soon)**
+
 Choose your path: frontend, backend, or data/automation specialization.
-**选择你的方向：前端、后端或数据/自动化专业化。**
 
 **Specialization paths:**
 - 🌐 Frontend Development
@@ -55,9 +58,10 @@ Choose your path: frontend, backend, or data/automation specialization.
 💬 [Follow updates on GitHub Discussions](https://github.com/IsaacZhaoo/aiCodingClub/discussions)
 :::
 
-:::info 🔜 Phase 5: Career | 职业发展 (Coming Soon)
+:::caution
+**🔜 Phase 5: Career (Coming Soon)**
+
 Prepare for the job market with portfolio building and interview preparation.
-**通过作品集构建和面试准备进入就业市场。**
 
 **Career preparation:**
 - 💼 Portfolio projects

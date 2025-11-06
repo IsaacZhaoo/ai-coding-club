@@ -10,9 +10,10 @@ description: Production-ready code snippets organized by language
 
 A curated collection of production-ready code snippets for Python, JavaScript, TypeScript, and more. All snippets are tested, documented, and ready to use.
 
-:::info 🔜 Coming Soon | 敬请期待
+:::info
+**🔜 Coming Soon**
+
 A comprehensive, battle-tested snippet library is being built for you!
-**为你精心构建的全面、经过实战检验的代码片段库即将推出！**
 
 **What's coming:**
 

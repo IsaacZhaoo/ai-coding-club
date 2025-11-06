@@ -10,9 +10,10 @@ description: Boost efficiency with IDE configurations and workflows
 
 IDE configurations, extensions, and workflows designed to maximize your productivity when coding with AI assistants.
 
-:::info 🔜 Coming Soon | 敬请期待
+:::info
+**🔜 Coming Soon**
+
 Level up your productivity with AI-optimized development workflows!
-**通过 AI 优化的开发工作流提升你的生产力！**
 
 **What's coming:**
 - ⚙️ Cursor Rules configurations and best practices

@@ -10,9 +10,10 @@ description: 用预配置模板快速启动你的项目
 
 预配置的项目模板具有AI优化的设置。跳过样板代码，立即开始构建功能。
 
-:::info 🔜 Coming Soon | 敬请期待
-AI-optimized project templates to jumpstart your development!
-**为你准备的 AI 优化项目模板，快速启动开发！**
+:::info
+**🔜 敬请期待**
+
+为你准备的 AI 优化项目模板，快速启动开发！
 
 **🚀 Template Collection:**
 

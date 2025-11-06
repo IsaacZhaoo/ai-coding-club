@@ -10,9 +10,10 @@ description: 按语言组织的生产级代码片段
 
 精选的生产级代码片段集合，涵盖 Python、JavaScript、TypeScript 等。所有片段均已测试、文档完善且可直接使用。
 
-:::info 🔜 Coming Soon | 敬请期待
-A comprehensive, battle-tested snippet library is being built for you!
-**为你精心构建的全面、经过实战检验的代码片段库即将推出！**
+:::info
+**🔜 敬请期待**
+
+为你精心构建的全面、经过实战检验的代码片段库即将推出！
 
 **What's coming:**
 

@@ -10,9 +10,10 @@ description: 用IDE配置和工作流提升效率
 
 IDE配置、扩展和工作流设计用来在使用AI助手编码时最大化你的生产力。
 
-:::info 🔜 Coming Soon | 敬请期待
-Level up your productivity with AI-optimized development workflows!
-**通过 AI 优化的开发工作流提升你的生产力！**
+:::info
+**🔜 敬请期待**
+
+通过 AI 优化的开发工作流提升你的生产力！
 
 **What's coming:**
 - ⚙️ Cursor Rules configurations and best practices

@@ -17,9 +17,10 @@ description: 完整的初学者到求职就绪的课程，使用AI助手学习�
 
 [开始第1阶段 →](01-foundations/01-welcome.md)
 
-:::info 🔜 第2阶段：核心技能 | Phase 2: Essential Skills（敬请期待）
+:::tip
+**🔜 第2阶段：核心技能（敬请期待）**
+
 掌握每位开发者必备的基础工具和技术。
-**Master the fundamental tools and techniques every developer needs.**
 
 **你将学习：**
 - 💻 命令行精通
@@ -30,9 +31,10 @@ description: 完整的初学者到求职就绪的课程，使用AI助手学习�
 💬 [在 GitHub Discussions 关注更新](https://github.com/IsaacZhaoo/aiCodingClub/discussions)
 :::
 
-:::info 🔜 第3阶段：构建项目 | Phase 3: Building Projects（敬请期待）
+:::info
+**🔜 第3阶段：构建项目（敬请期待）**
+
 应用所学技能，从规划到部署构建真实项目。
-**Apply your skills to build real projects from planning to deployment.**
 
 **你将构建：**
 - 📋 项目规划与架构
@@ -43,9 +45,10 @@ description: 完整的初学者到求职就绪的课程，使用AI助手学习�
 💬 [在 GitHub Discussions 关注更新](https://github.com/IsaacZhaoo/aiCodingClub/discussions)
 :::
 
-:::info 🔜 第4阶段：专业化 | Phase 4: Specialization（敬请期待）
+:::note
+**🔜 第4阶段：专业化（敬请期待）**
+
 选择你的方向：前端、后端或数据/自动化专业化。
-**Choose your path: frontend, backend, or data/automation specialization.**
 
 **专业化路径：**
 - 🌐 前端开发
@@ -55,9 +58,10 @@ description: 完整的初学者到求职就绪的课程，使用AI助手学习�
 💬 [在 GitHub Discussions 关注更新](https://github.com/IsaacZhaoo/aiCodingClub/discussions)
 :::
 
-:::info 🔜 第5阶段：职业发展 | Phase 5: Career（敬请期待）
+:::caution
+**🔜 第5阶段：职业发展（敬请期待）**
+
 通过作品集构建和面试准备进入就业市场。
-**Prepare for the job market with portfolio building and interview preparation.**
 
 **职业准备：**
 - 💼 作品集项目

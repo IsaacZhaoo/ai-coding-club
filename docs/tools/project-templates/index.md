@@ -10,9 +10,10 @@ description: Jumpstart your projects with pre-configured templates
 
 Pre-configured project templates with AI-optimized setups. Skip the boilerplate and start building features immediately.
 
-:::info 🔜 Coming Soon | 敬请期待
+:::info
+**🔜 Coming Soon**
+
 AI-optimized project templates to jumpstart your development!
-**为你准备的 AI 优化项目模板，快速启动开发！**
 
 **🚀 Template Collection:**
 

@@ -10,9 +10,10 @@ description: AI 驱动的界面构建工具
 
 AI 驱动的 UI 生成器正在彻底改变前端开发。这些工具让你用简单的中文描述你想要的内容，即可立即获得生产就绪的组件。
 
-:::info 🔜 Coming Soon | 敬请期待
-Comprehensive guides to the best AI UI generation tools are on the way!
-**最佳 AI UI 生成工具的全面指南即将推出！**
+:::info
+**🔜 敬请期待**
+
+最佳 AI UI 生成工具的全面指南即将推出！
 
 **What's coming:**
 - 🎨 **v0.dev by Vercel** - Complete guide to text-to-React components
@@ -28,9 +29,9 @@ Comprehensive guides to the best AI UI generation tools are on the way!
 
 ## 💡 Start Building Now | 现在开始构建
 
-While we prepare detailed guides, explore:
-- 📊 [AI Tools Comparison](/docs/tools/ai-tools-comparison) - Quick overview of UI generators
-- 🏗️ [Building Projects](/docs/course/03-building-projects) - Learn project development fundamentals
-- 🎯 [Frontend Specialization](/docs/course/04-specialization/02-frontend) - Deep dive into frontend development
+在我们准备详细指南时，探索：
+- 📊 [AI工具对比](/docs/tools/ai-tools-comparison) - UI生成器快速概览
+- 🏗️ [构建项目课程](/docs/course) - 学习项目开发基础
+- 📚 [学习路线图](/docs/roadmap) - 你的完整学习路径
 
 最后更新：{new Date().toLocaleDateString()}

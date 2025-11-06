@@ -10,9 +10,10 @@ description: Curated tutorials, documentation, and community resources
 
 A handpicked collection of tutorials, official documentation, interactive playgrounds, and community resources for learning AI-assisted coding.
 
-:::info 🔜 Coming Soon | 敬请期待
+:::info
+**🔜 Coming Soon**
+
 We're curating the best AI coding learning resources for you!
-**我们正在为你精选最优质的 AI 编程学习资源！**
 
 **What's coming:**
 - 📺 Video tutorials and courses
