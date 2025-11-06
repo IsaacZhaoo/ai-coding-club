@@ -28,7 +28,7 @@ Master the fundamental tools and techniques every developer needs.
 - 🧪 Testing strategies
 - 💡 Advanced prompting techniques
 
-💬 [Follow updates on GitHub Discussions](https://github.com/IsaacZhaoo/aiCodingClub/discussions)
+💬 [Follow updates on GitHub Discussions](https://github.com/IsaacZhaoo/ai-coding-club/discussions)
 :::
 
 :::info
@@ -42,7 +42,7 @@ Apply your skills to build real projects from planning to deployment.
 - 📦 Production-ready code
 - 🚀 Deployed projects
 
-💬 [Follow updates on GitHub Discussions](https://github.com/IsaacZhaoo/aiCodingClub/discussions)
+💬 [Follow updates on GitHub Discussions](https://github.com/IsaacZhaoo/ai-coding-club/discussions)
 :::
 
 :::note
@@ -55,7 +55,7 @@ Choose your path: frontend, backend, or data/automation specialization.
 - ⚙️ Backend Engineering
 - 📊 Data & Automation
 
-💬 [Follow updates on GitHub Discussions](https://github.com/IsaacZhaoo/aiCodingClub/discussions)
+💬 [Follow updates on GitHub Discussions](https://github.com/IsaacZhaoo/ai-coding-club/discussions)
 :::
 
 :::caution
@@ -68,7 +68,7 @@ Prepare for the job market with portfolio building and interview preparation.
 - 📝 Resume & GitHub profile
 - 🎯 Interview strategies
 
-💬 [Follow updates on GitHub Discussions](https://github.com/IsaacZhaoo/aiCodingClub/discussions)
+💬 [Follow updates on GitHub Discussions](https://github.com/IsaacZhaoo/ai-coding-club/discussions)
 :::
 
 ## Learning Approach

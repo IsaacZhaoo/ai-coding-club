@@ -22,7 +22,7 @@ We're curating the best AI coding learning resources for you!
 - 👥 Developer communities and forums
 - 📰 Must-follow newsletters and blogs
 
-💬 [Join our GitHub Discussions](https://github.com/IsaacZhaoo/aiCodingClub/discussions) to stay updated!
+💬 [Join our GitHub Discussions](https://github.com/IsaacZhaoo/ai-coding-club/discussions) to stay updated!
 :::
 
 ## 💡 Start Learning Now | 现在开始学习

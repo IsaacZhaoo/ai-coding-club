@@ -22,7 +22,7 @@ IDE配置、扩展和工作流设计用来在使用AI助手编码时最大化你
 - 🐛 Advanced debugging tools and techniques
 - ⚡ CLI productivity hacks and scripts
 
-💬 [加入我们的 GitHub Discussions](https://github.com/IsaacZhaoo/aiCodingClub/discussions) 保持更新！
+💬 [加入我们的 GitHub Discussions](https://github.com/IsaacZhaoo/ai-coding-club/discussions) 保持更新！
 :::
 
 ## 💡 Get Productive Now | 立即提升效率

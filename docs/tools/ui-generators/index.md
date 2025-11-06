@@ -24,7 +24,7 @@ Comprehensive guides to the best AI UI generation tools are on the way!
 - 📊 **Comparison tables** - Which tool for which use case
 - ✨ **Best practices** - Tips for production-ready UI generation
 
-💬 [Join our GitHub Discussions](https://github.com/IsaacZhaoo/aiCodingClub/discussions) to share your favorite tools and stay updated!
+💬 [Join our GitHub Discussions](https://github.com/IsaacZhaoo/ai-coding-club/discussions) to share your favorite tools and stay updated!
 :::
 
 ## 💡 Start Building Now | 现在开始构建

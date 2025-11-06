@@ -35,7 +35,7 @@ description: 按语言组织的生产级代码片段
 - FastAPI, Django, Express
 - Tailwind CSS, styled-components
 
-💬 [加入我们的 GitHub Discussions](https://github.com/IsaacZhaoo/aiCodingClub/discussions) 分享你自己的代码片段并保持更新！
+💬 [加入我们的 GitHub Discussions](https://github.com/IsaacZhaoo/ai-coding-club/discussions) 分享你自己的代码片段并保持更新！
 :::
 
 ## 💡 Get Snippets Now | 立即获取代码

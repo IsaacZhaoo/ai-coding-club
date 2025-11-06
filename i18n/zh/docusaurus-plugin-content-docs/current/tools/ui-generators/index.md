@@ -24,7 +24,7 @@ AI 驱动的 UI 生成器正在彻底改变前端开发。这些工具让你用�
 - 📊 **Comparison tables** - Which tool for which use case
 - ✨ **Best practices** - Tips for production-ready UI generation
 
-💬 [加入我们的 GitHub Discussions](https://github.com/IsaacZhaoo/aiCodingClub/discussions) 分享你喜欢的工具并保持更新！
+💬 [加入我们的 GitHub Discussions](https://github.com/IsaacZhaoo/ai-coding-club/discussions) 分享你喜欢的工具并保持更新！
 :::
 
 ## 💡 Start Building Now | 现在开始构建

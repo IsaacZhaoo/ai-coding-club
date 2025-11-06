@@ -22,7 +22,7 @@ description: 精选的教程、文档和社区资源
 - 👥 开发者社区和论坛
 - 📰 必关注的通讯和博客
 
-💬 [加入我们的 GitHub Discussions](https://github.com/IsaacZhaoo/aiCodingClub/discussions) 保持更新！
+💬 [加入我们的 GitHub Discussions](https://github.com/IsaacZhaoo/ai-coding-club/discussions) 保持更新！
 :::
 
 ## 💡 现在开始学习 | Start Learning Now

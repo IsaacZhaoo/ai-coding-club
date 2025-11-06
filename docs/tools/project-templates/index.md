@@ -39,7 +39,7 @@ AI-optimized project templates to jumpstart your development!
 - ✅ Deployment guides (Vercel, Railway, etc.)
 - ✅ Testing setup and CI/CD examples
 
-💬 [Join our GitHub Discussions](https://github.com/IsaacZhaoo/aiCodingClub/discussions) to request templates and stay updated!
+💬 [Join our GitHub Discussions](https://github.com/IsaacZhaoo/ai-coding-club/discussions) to request templates and stay updated!
 :::
 
 ## 💡 Start Building Now | 立即开始构建
@@ -47,6 +47,6 @@ AI-optimized project templates to jumpstart your development!
 While we prepare the templates:
 - 🏗️ [Building Projects Course](/docs/course/03-building-projects) - Learn to build from scratch
 - 📋 [Project Planning Guide](/docs/course/building-projects/project-planning) - Plan before you code
-- 🌐 [GitHub Discussions](https://github.com/IsaacZhaoo/aiCodingClub/discussions) - Share your project ideas
+- 🌐 [GitHub Discussions](https://github.com/IsaacZhaoo/ai-coding-club/discussions) - Share your project ideas
 
 Last updated: {new Date().toLocaleDateString()}

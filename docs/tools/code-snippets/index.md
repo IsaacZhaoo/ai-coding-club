@@ -35,7 +35,7 @@ A comprehensive, battle-tested snippet library is being built for you!
 - FastAPI, Django, Express
 - Tailwind CSS, styled-components
 
-💬 [Join our GitHub Discussions](https://github.com/IsaacZhaoo/aiCodingClub/discussions) to share your own snippets and stay updated!
+💬 [Join our GitHub Discussions](https://github.com/IsaacZhaoo/ai-coding-club/discussions) to share your own snippets and stay updated!
 :::
 
 ## 💡 Get Snippets Now | 立即获取代码

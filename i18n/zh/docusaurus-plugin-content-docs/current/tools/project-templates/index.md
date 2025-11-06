@@ -39,7 +39,7 @@ description: 用预配置模板快速启动你的项目
 - ✅ Deployment guides (Vercel, Railway, etc.)
 - ✅ Testing setup and CI/CD examples
 
-💬 [加入我们的 GitHub Discussions](https://github.com/IsaacZhaoo/aiCodingClub/discussions) 请求模板并保持更新！
+💬 [加入我们的 GitHub Discussions](https://github.com/IsaacZhaoo/ai-coding-club/discussions) 请求模板并保持更新！
 :::
 
 ## 💡 Start Building Now | 立即开始构建
@@ -47,6 +47,6 @@ description: 用预配置模板快速启动你的项目
 While we prepare the templates:
 - 🏗️ [Building Projects Course](/docs/course/03-building-projects) - Learn to build from scratch
 - 📋 [Project Planning Guide](/docs/course/building-projects/project-planning) - Plan before you code
-- 🌐 [GitHub Discussions](https://github.com/IsaacZhaoo/aiCodingClub/discussions) - Share your project ideas
+- 🌐 [GitHub Discussions](https://github.com/IsaacZhaoo/ai-coding-club/discussions) - Share your project ideas
 
 最后更新：{new Date().toLocaleDateString()}

@@ -28,7 +28,7 @@ description: 完整的初学者到求职就绪的课程，使用AI助手学习�
 - 🧪 测试策略
 - 💡 高级提示技巧
 
-💬 [在 GitHub Discussions 关注更新](https://github.com/IsaacZhaoo/aiCodingClub/discussions)
+💬 [在 GitHub Discussions 关注更新](https://github.com/IsaacZhaoo/ai-coding-club/discussions)
 :::
 
 :::info
@@ -42,7 +42,7 @@ description: 完整的初学者到求职就绪的课程，使用AI助手学习�
 - 📦 生产就绪代码
 - 🚀 已部署的项目
 
-💬 [在 GitHub Discussions 关注更新](https://github.com/IsaacZhaoo/aiCodingClub/discussions)
+💬 [在 GitHub Discussions 关注更新](https://github.com/IsaacZhaoo/ai-coding-club/discussions)
 :::
 
 :::note
@@ -55,7 +55,7 @@ description: 完整的初学者到求职就绪的课程，使用AI助手学习�
 - ⚙️ 后端工程
 - 📊 数据与自动化
 
-💬 [在 GitHub Discussions 关注更新](https://github.com/IsaacZhaoo/aiCodingClub/discussions)
+💬 [在 GitHub Discussions 关注更新](https://github.com/IsaacZhaoo/ai-coding-club/discussions)
 :::
 
 :::caution
@@ -68,7 +68,7 @@ description: 完整的初学者到求职就绪的课程，使用AI助手学习�
 - 📝 简历 & GitHub 个人资料
 - 🎯 面试策略
 
-💬 [在 GitHub Discussions 关注更新](https://github.com/IsaacZhaoo/aiCodingClub/discussions)
+💬 [在 GitHub Discussions 关注更新](https://github.com/IsaacZhaoo/ai-coding-club/discussions)
 :::
 
 ## 学习方法

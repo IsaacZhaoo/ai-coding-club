@@ -22,7 +22,7 @@ Level up your productivity with AI-optimized development workflows!
 - 🐛 Advanced debugging tools and techniques
 - ⚡ CLI productivity hacks and scripts
 
-💬 [Join our GitHub Discussions](https://github.com/IsaacZhaoo/aiCodingClub/discussions) to stay updated!
+💬 [Join our GitHub Discussions](https://github.com/IsaacZhaoo/ai-coding-club/discussions) to stay updated!
 :::
 
 ## 💡 Get Productive Now | 立即提升效率
