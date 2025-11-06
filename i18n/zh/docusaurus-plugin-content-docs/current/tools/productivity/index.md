@@ -10,19 +10,25 @@ description: 用IDE配置和工作流提升效率
 
 IDE配置、扩展和工作流设计用来在使用AI助手编码时最大化你的生产力。
 
-## 🚀 即将推出
+:::info 🔜 Coming Soon | 敬请期待
+Level up your productivity with AI-optimized development workflows!
+**通过 AI 优化的开发工作流提升你的生产力！**
 
-关于以下内容的综合指南：
-- Cursor Rules配置
-- VS Code扩展
-- Git工作流
-- 调试工具
-- CLI生产力工具
+**What's coming:**
+- ⚙️ Cursor Rules configurations and best practices
+- 🔌 Essential VS Code extensions for AI coding
+- 🔄 Streamlined Git workflows and automation
+- 🐛 Advanced debugging tools and techniques
+- ⚡ CLI productivity hacks and scripts
 
-## 💡 同时
+💬 [加入我们的 GitHub Discussions](https://github.com/IsaacZhaoo/aiCodingClub/discussions) 保持更新！
+:::
 
-- 学习[IDE设置](/docs/course/essential-skills/ide-setup)
-- 查看[Git & GitHub 101](/docs/course/essential-skills/git-github)
-- 浏览[命令行基础](/docs/course/essential-skills/command-line)
+## 💡 Get Productive Now | 立即提升效率
+
+While we prepare detailed guides, start with these fundamentals:
+- 🛠️ [IDE Setup Guide](/docs/course/essential-skills/ide-setup) - Configure your environment
+- 🔄 [Git & GitHub 101](/docs/course/essential-skills/git-github) - Version control basics
+- 💻 [Command Line Essentials](/docs/course/essential-skills/command-line) - Terminal mastery
 
 最后更新：{new Date().toLocaleDateString()}

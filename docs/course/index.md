@@ -17,25 +17,55 @@ Start your journey! Learn what AI coding is, have your first conversations with 
 
 [Begin Phase 1 →](01-foundations/01-welcome.md)
 
-### 🛠️ Phase 2: Essential Skills (8 Lessons)
-Master the fundamental tools and techniques every developer needs: command line, Git, testing, and advanced prompting.
+:::info 🔜 Phase 2: Essential Skills | 基础技能 (Coming Soon)
+Master the fundamental tools and techniques every developer needs.
+**掌握每位开发者必备的基础工具和技术。**
 
-[Explore Phase 2 →](02-essential-skills)
+**You'll learn:**
+- 💻 Command line mastery
+- 🔄 Git & GitHub workflows
+- 🧪 Testing strategies
+- 💡 Advanced prompting techniques
 
-### 🏗️ Phase 3: Building Projects (7 Lessons)
+💬 [Follow updates on GitHub Discussions](https://github.com/IsaacZhaoo/aiCodingClub/discussions)
+:::
+
+:::info 🔜 Phase 3: Building Projects | 构建项目 (Coming Soon)
 Apply your skills to build real projects from planning to deployment.
+**应用所学技能，从规划到部署构建真实项目。**
 
-[Start Building →](03-building-projects)
+**You'll build:**
+- 📋 Project planning & architecture
+- 🏗️ Full-stack applications
+- 📦 Production-ready code
+- 🚀 Deployed projects
 
-### 🎯 Phase 4: Specialization (6 Lessons)
+💬 [Follow updates on GitHub Discussions](https://github.com/IsaacZhaoo/aiCodingClub/discussions)
+:::
+
+:::info 🔜 Phase 4: Specialization | 专业化 (Coming Soon)
 Choose your path: frontend, backend, or data/automation specialization.
+**选择你的方向：前端、后端或数据/自动化专业化。**
 
-[Pick Your Path →](04-specialization)
+**Specialization paths:**
+- 🌐 Frontend Development
+- ⚙️ Backend Engineering
+- 📊 Data & Automation
 
-### 🚀 Phase 5: Career (2 Lessons)
+💬 [Follow updates on GitHub Discussions](https://github.com/IsaacZhaoo/aiCodingClub/discussions)
+:::
+
+:::info 🔜 Phase 5: Career | 职业发展 (Coming Soon)
 Prepare for the job market with portfolio building and interview preparation.
+**通过作品集构建和面试准备进入就业市场。**
 
-[Launch Your Career →](05-career)
+**Career preparation:**
+- 💼 Portfolio projects
+- 📝 Resume & GitHub profile
+- 🎯 Interview strategies
+
+💬 [Follow updates on GitHub Discussions](https://github.com/IsaacZhaoo/aiCodingClub/discussions)
+:::
 
 ## Learning Approach
 

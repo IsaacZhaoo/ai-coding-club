@@ -207,6 +207,13 @@ graph TB
 
 **预计时间：** 2-3 天
 
+:::tip 🎓 阶段 0 完成！接下来学什么？
+恭喜完成 Vibecoding 阶段！接下来你将学习 AI 的真实能力边界。
+**Congratulations on completing Stage 0! Next, you'll learn the true capabilities and limitations of AI.**
+
+👉 准备好升级了吗？[继续阶段 1: Reality Check](#-阶段-1-reality-check)
+:::
+
 ---
 
 ## 🧠 阶段 1: Reality Check
@@ -331,6 +338,13 @@ graph TB
 - ✅ 理解"安全是持续的过程，不是一次性任务"
 
 **预计时间：** 2-3 天
+
+:::tip 💪 阶段 1 完成！准备好学习高级主题了吗？
+你已经理解了 AI 的能力边界！现在让我们学习如何给 AI 提供最佳上下文。
+**You now understand AI's boundaries! Let's learn how to provide optimal context to AI.**
+
+👉 继续你的学习旅程：[阶段 2: 上下文与架构](#️-阶段-2-上下文与架构)
+:::
 
 ---
 
@@ -477,6 +491,17 @@ graph TB
 
 **预计时间：** 1-2 周
 
+:::success 🎉 恭喜！你现在是一位 AI 驱动的开发者了！
+恭喜你完成所有阶段！你已具备使用 AI 高效开发的核心能力。
+**Congratulations on completing all stages! You now have the core skills to develop efficiently with AI.**
+
+**接下来做什么？**
+- 🌟 选择一个[专精路径](#-可选技能树)来深化专业技能
+- 💼 构建一个作品集项目来展示你的能力
+- 🤝 加入我们的[社区讨论](https://github.com/IsaacZhaoo/aiCodingClub/discussions)与其他学习者交流
+- 📚 探索我们的[完整课程](/docs/course/)获取结构化课程内容
+:::
+
 ---
 
 ## 📊 时间估算
@@ -511,11 +536,16 @@ graph LR
     style Cloud fill:#00BCD4,color:#fff
 ```
 
-**专精路径**（即将推出）：
-- 🌐 **全栈 Web 开发** - 构建生产级 Web 应用
-- 🤖 **AI 应用开发** - RAG 系统、智能体、LangChain
-- 📊 **数据工程** - 数据管道、分析、可视化
-- ☁️ **DevOps 与云** - Docker、Kubernetes、CI/CD、AWS/Azure
+:::info 🚀 敬请期待 | Coming Soon
+深度专业化路径正在精心制作中！关注以获取最新更新。
+**In-depth specialization paths are being carefully crafted! Follow for updates.**
+:::
+
+**选择你的专精方向：**
+- 🌐 **全栈 Web 开发** 🔜 - 构建生产级 Web 应用
+- 🤖 **AI 应用开发** 🔜 - RAG 系统、智能体、LangChain
+- 📊 **数据工程** 🔜 - 数据管道、分析、可视化
+- ☁️ **DevOps 与云** 🔜 - Docker、Kubernetes、CI/CD、AWS/Azure
 
 ---
 

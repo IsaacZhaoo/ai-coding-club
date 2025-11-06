@@ -10,20 +10,26 @@ description: Curated tutorials, documentation, and community resources
 
 A handpicked collection of tutorials, official documentation, interactive playgrounds, and community resources for learning AI-assisted coding.
 
-## 🚀 Coming Soon
+:::info 🔜 Coming Soon | 敬请期待
+We're curating the best AI coding learning resources for you!
+**我们正在为你精选最优质的 AI 编程学习资源！**
 
-Organized collection of:
-- 📺 Video tutorials
-- 🎮 Interactive playgrounds
-- 📖 Official documentation
-- 👥 Communities and forums
-- 📰 Newsletters and blogs
+**What's coming:**
+- 📺 Video tutorials and courses
+- 🎮 Interactive coding playgrounds
+- 📖 Official documentation guides
+- 👥 Developer communities and forums
+- 📰 Must-follow newsletters and blogs
 
-## 💡 In the Meantime
+💬 [Join our GitHub Discussions](https://github.com/IsaacZhaoo/aiCodingClub/discussions) to stay updated!
+:::
 
-- Start with our [Course](/docs/course) (31 lessons)
-- Read the [Blog](/blog) for latest updates
-- Join [GitHub Discussions](https://github.com/IsaacZhaoo/aiCodingClub/discussions)
-- Check [AI Tools Comparison](/docs/tools/ai-tools-comparison)
+## 💡 Start Learning Now | 现在开始学习
+
+While we prepare this section, explore these resources:
+- 📚 [AI Coding Course](/docs/course) - 31 structured lessons
+- 🗺️ [Learning Roadmap](/docs/roadmap) - Your guided path
+- 📰 [Blog](/blog) - Latest AI coding insights
+- 📊 [Tools Comparison](/docs/tools/ai-tools-comparison) - Find your perfect tool
 
 Last updated: {new Date().toLocaleDateString()}

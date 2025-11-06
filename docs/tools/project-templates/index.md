@@ -10,26 +10,42 @@ description: Jumpstart your projects with pre-configured templates
 
 Pre-configured project templates with AI-optimized setups. Skip the boilerplate and start building features immediately.
 
-## 🚀 Coming Soon
+:::info 🔜 Coming Soon | 敬请期待
+AI-optimized project templates to jumpstart your development!
+**为你准备的 AI 优化项目模板，快速启动开发！**
 
-Project templates for:
-- Next.js + TypeScript + Tailwind
-- Python CLI tools
-- FastAPI backends
-- React Dashboards
-- Full-stack starters
+**🚀 Template Collection:**
 
-Each template includes:
-- ✅ Complete setup
-- ✅ AI-optimized configuration
-- ✅ Example code
-- ✅ Documentation
-- ✅ Deployment guides
+**Frontend:**
+- ⚛️ Next.js 14 + TypeScript + Tailwind CSS + shadcn/ui
+- 🎨 React Dashboard with authentication & charts
+- 📱 Responsive landing page templates
 
-## 💡 In the Meantime
+**Backend:**
+- 🐍 FastAPI + SQLAlchemy + Async patterns
+- 🎯 Express + TypeScript + Prisma
+- 🔥 Python CLI tool boilerplate
 
-- Follow our [Course](/docs/course/03-building-projects) to build projects from scratch
-- Browse [GitHub](https://github.com/IsaacZhaoo/aiCodingClub) for starter code
-- Check [Project Planning Guide](/docs/course/building-projects/project-planning)
+**Full-Stack:**
+- 🌐 T3 Stack (Next.js + tRPC + Prisma)
+- 💫 MERN stack with TypeScript
+- 🚀 Python + React starter
+
+**Each template includes:**
+- ✅ Complete setup with AI-optimized configurations
+- ✅ Working example code and features
+- ✅ Comprehensive documentation
+- ✅ Deployment guides (Vercel, Railway, etc.)
+- ✅ Testing setup and CI/CD examples
+
+💬 [Join our GitHub Discussions](https://github.com/IsaacZhaoo/aiCodingClub/discussions) to request templates and stay updated!
+:::
+
+## 💡 Start Building Now | 立即开始构建
+
+While we prepare the templates:
+- 🏗️ [Building Projects Course](/docs/course/03-building-projects) - Learn to build from scratch
+- 📋 [Project Planning Guide](/docs/course/building-projects/project-planning) - Plan before you code
+- 🌐 [GitHub Discussions](https://github.com/IsaacZhaoo/aiCodingClub/discussions) - Share your project ideas
 
 Last updated: {new Date().toLocaleDateString()}

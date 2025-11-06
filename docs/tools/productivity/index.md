@@ -10,19 +10,25 @@ description: Boost efficiency with IDE configurations and workflows
 
 IDE configurations, extensions, and workflows designed to maximize your productivity when coding with AI assistants.
 
-## 🚀 Coming Soon
+:::info 🔜 Coming Soon | 敬请期待
+Level up your productivity with AI-optimized development workflows!
+**通过 AI 优化的开发工作流提升你的生产力！**
 
-Comprehensive guides for:
-- Cursor Rules configurations
-- VS Code extensions
-- Git workflows
-- Debugging tools
-- CLI productivity tools
+**What's coming:**
+- ⚙️ Cursor Rules configurations and best practices
+- 🔌 Essential VS Code extensions for AI coding
+- 🔄 Streamlined Git workflows and automation
+- 🐛 Advanced debugging tools and techniques
+- ⚡ CLI productivity hacks and scripts
 
-## 💡 In the Meantime
+💬 [Join our GitHub Discussions](https://github.com/IsaacZhaoo/aiCodingClub/discussions) to stay updated!
+:::
 
-- Learn [IDE Setup](/docs/course/essential-skills/ide-setup)
-- Check [Git & GitHub 101](/docs/course/essential-skills/git-github)
-- Browse [Command Line Basics](/docs/course/essential-skills/command-line)
+## 💡 Get Productive Now | 立即提升效率
+
+While we prepare detailed guides, start with these fundamentals:
+- 🛠️ [IDE Setup Guide](/docs/course/essential-skills/ide-setup) - Configure your environment
+- 🔄 [Git & GitHub 101](/docs/course/essential-skills/git-github) - Version control basics
+- 💻 [Command Line Essentials](/docs/course/essential-skills/command-line) - Terminal mastery
 
 Last updated: {new Date().toLocaleDateString()}

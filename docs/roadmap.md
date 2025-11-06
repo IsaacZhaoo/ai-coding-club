@@ -206,6 +206,13 @@ graph TB
 
 **Estimated time:** 2-3 days
 
+:::tip 🎓 Stage 0 Complete! What's Next?
+恭喜完成 Vibecoding 阶段！接下来你将学习 AI 的真实能力边界。
+**Congratulations on completing Stage 0! Next, you'll learn the true capabilities and limitations of AI.**
+
+👉 Ready to level up? [Continue to Stage 1: Reality Check](#-stage-1-reality-check)
+:::
+
 ---
 
 ## 🧠 Stage 1: Reality Check
@@ -330,6 +337,13 @@ graph TB
 - ✅ Understand "security is continuous, not one-time"
 
 **Estimated time:** 2-3 days
+
+:::tip 💪 Stage 1 Complete! Ready for Advanced Topics?
+你已经理解了 AI 的能力边界！现在让我们学习如何给 AI 提供最佳上下文。
+**You now understand AI's boundaries! Let's learn how to provide optimal context to AI.**
+
+👉 Continue your journey: [Stage 2: Context & Architecture](#️-stage-2-context--architecture)
+:::
 
 ---
 
@@ -476,6 +490,17 @@ graph TB
 
 **Estimated time:** 1-2 weeks
 
+:::success 🎉 Congratulations! You're Now an AI-Powered Developer!
+恭喜你完成所有阶段！你已具备使用 AI 高效开发的核心能力。
+**Congratulations on completing all stages! You now have the core skills to develop efficiently with AI.**
+
+**What's next?**
+- 🌟 Choose a [specialization path](#-optional-skill-tree) to deepen your expertise
+- 💼 Build a portfolio project to showcase your skills
+- 🤝 Join our [community discussions](https://github.com/IsaacZhaoo/aiCodingClub/discussions) to connect with other learners
+- 📚 Explore our [comprehensive course](/docs/course/) for structured lessons
+:::
+
 ---
 
 ## 📊 Time Estimates
@@ -510,11 +535,16 @@ graph LR
     style Cloud fill:#00BCD4,color:#fff
 ```
 
-**Specialization paths** (coming soon):
-- 🌐 **Full-Stack Web Development** - Build production-ready web apps
-- 🤖 **AI Application Development** - RAG systems, agents, LangChain
-- 📊 **Data Engineering** - Data pipelines, analysis, visualization
-- ☁️ **DevOps & Cloud** - Docker, Kubernetes, CI/CD, AWS/Azure
+:::info 🚀 Coming Soon | 敬请期待
+深度专业化路径正在制作中！订阅以获取更新通知。
+**Specialization paths are in development! Subscribe for updates.**
+:::
+
+**Choose your specialization:**
+- 🌐 **Full-Stack Web Development** 🔜 - Build production-ready web apps
+- 🤖 **AI Application Development** 🔜 - RAG systems, agents, LangChain
+- 📊 **Data Engineering** 🔜 - Data pipelines, analysis, visualization
+- ☁️ **DevOps & Cloud** 🔜 - Docker, Kubernetes, CI/CD, AWS/Azure
 
 ---
 

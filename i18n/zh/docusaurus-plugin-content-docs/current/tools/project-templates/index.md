@@ -10,26 +10,42 @@ description: 用预配置模板快速启动你的项目
 
 预配置的项目模板具有AI优化的设置。跳过样板代码，立即开始构建功能。
 
-## 🚀 即将推出
+:::info 🔜 Coming Soon | 敬请期待
+AI-optimized project templates to jumpstart your development!
+**为你准备的 AI 优化项目模板，快速启动开发！**
 
-项目模板：
-- Next.js + TypeScript + Tailwind
-- Python CLI工具
-- FastAPI后端
-- React仪表盘
-- 全栈启动器
+**🚀 Template Collection:**
 
-每个模板包括：
-- ✅ 完整设置
-- ✅ AI优化的配置
-- ✅ 示例代码
-- ✅ 文档
-- ✅ 部署指南
+**Frontend:**
+- ⚛️ Next.js 14 + TypeScript + Tailwind CSS + shadcn/ui
+- 🎨 React Dashboard with authentication & charts
+- 📱 Responsive landing page templates
 
-## 💡 同时
+**Backend:**
+- 🐍 FastAPI + SQLAlchemy + Async patterns
+- 🎯 Express + TypeScript + Prisma
+- 🔥 Python CLI tool boilerplate
 
-- 遵循我们的[课程](/docs/course/03-building-projects)从零开始构建项目
-- 浏览[GitHub](https://github.com/IsaacZhaoo/aiCodingClub)了解启动代码
-- 查看[项目规划指南](/docs/course/building-projects/project-planning)
+**Full-Stack:**
+- 🌐 T3 Stack (Next.js + tRPC + Prisma)
+- 💫 MERN stack with TypeScript
+- 🚀 Python + React starter
+
+**Each template includes:**
+- ✅ Complete setup with AI-optimized configurations
+- ✅ Working example code and features
+- ✅ Comprehensive documentation
+- ✅ Deployment guides (Vercel, Railway, etc.)
+- ✅ Testing setup and CI/CD examples
+
+💬 [加入我们的 GitHub Discussions](https://github.com/IsaacZhaoo/aiCodingClub/discussions) 请求模板并保持更新！
+:::
+
+## 💡 Start Building Now | 立即开始构建
+
+While we prepare the templates:
+- 🏗️ [Building Projects Course](/docs/course/03-building-projects) - Learn to build from scratch
+- 📋 [Project Planning Guide](/docs/course/building-projects/project-planning) - Plan before you code
+- 🌐 [GitHub Discussions](https://github.com/IsaacZhaoo/aiCodingClub/discussions) - Share your project ideas
 
 最后更新：{new Date().toLocaleDateString()}

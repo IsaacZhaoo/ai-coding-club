@@ -17,25 +17,55 @@ description: 完整的初学者到求职就绪的课程，使用AI助手学习�
 
 [开始第1阶段 →](01-foundations/01-welcome.md)
 
-### 🛠️ 第2阶段：核心技能（8课时）
-掌握每个开发者都需要的基础工具和技术：命令行、Git、测试和高级提示工程。
+:::info 🔜 第2阶段：核心技能 | Phase 2: Essential Skills（敬请期待）
+掌握每位开发者必备的基础工具和技术。
+**Master the fundamental tools and techniques every developer needs.**
 
-[探索第2阶段 →](02-essential-skills)
+**你将学习：**
+- 💻 命令行精通
+- 🔄 Git & GitHub 工作流
+- 🧪 测试策略
+- 💡 高级提示技巧
 
-### 🏗️ 第3阶段：构建项目（7课时）
-应用你的技能，从规划到部署构建真实项目。
+💬 [在 GitHub Discussions 关注更新](https://github.com/IsaacZhaoo/aiCodingClub/discussions)
+:::
 
-[开始构建 →](03-building-projects)
+:::info 🔜 第3阶段：构建项目 | Phase 3: Building Projects（敬请期待）
+应用所学技能，从规划到部署构建真实项目。
+**Apply your skills to build real projects from planning to deployment.**
 
-### 🎯 第4阶段：专业化（6课时）
-选择你的路径：前端、后端或数据/自动化专业化。
+**你将构建：**
+- 📋 项目规划与架构
+- 🏗️ 全栈应用程序
+- 📦 生产就绪代码
+- 🚀 已部署的项目
 
-[选择你的路径 →](04-specialization)
+💬 [在 GitHub Discussions 关注更新](https://github.com/IsaacZhaoo/aiCodingClub/discussions)
+:::
 
-### 🚀 第5阶段：职业（2课时）
-通过作品集构建和面试准备为就业市场做准备。
+:::info 🔜 第4阶段：专业化 | Phase 4: Specialization（敬请期待）
+选择你的方向：前端、后端或数据/自动化专业化。
+**Choose your path: frontend, backend, or data/automation specialization.**
 
-[启动你的职业 →](05-career)
+**专业化路径：**
+- 🌐 前端开发
+- ⚙️ 后端工程
+- 📊 数据与自动化
+
+💬 [在 GitHub Discussions 关注更新](https://github.com/IsaacZhaoo/aiCodingClub/discussions)
+:::
+
+:::info 🔜 第5阶段：职业发展 | Phase 5: Career（敬请期待）
+通过作品集构建和面试准备进入就业市场。
+**Prepare for the job market with portfolio building and interview preparation.**
+
+**职业准备：**
+- 💼 作品集项目
+- 📝 简历 & GitHub 个人资料
+- 🎯 面试策略
+
+💬 [在 GitHub Discussions 关注更新](https://github.com/IsaacZhaoo/aiCodingClub/discussions)
+:::
 
 ## 学习方法
 

@@ -10,18 +10,38 @@ description: 按语言组织的生产级代码片段
 
 精选的生产级代码片段集合，涵盖 Python、JavaScript、TypeScript 等。所有片段均已测试、文档完善且可直接使用。
 
-## 🚀 即将推出
+:::info 🔜 Coming Soon | 敬请期待
+A comprehensive, battle-tested snippet library is being built for you!
+**为你精心构建的全面、经过实战检验的代码片段库即将推出！**
 
-我们正在构建一个综合片段库，按以下方式组织：
-- 语言（Python、JavaScript、TypeScript 等）
-- 使用场景（API 调用、数据处理、UI 模式）
-- 框架（React、Next.js、FastAPI、Django）
+**What's coming:**
 
-## 💡 目前可用资源
+**📚 By Language:**
+- 🐍 Python - Data processing, APIs, automation
+- ⚡ JavaScript/TypeScript - Modern ES6+, async patterns
+- ⚛️ React - Hooks, components, state management
+- 🎯 Node.js - Backend utilities, middleware
 
-在片段库建设期间：
-- 查看我们的[课程](/docs/course)获取代码示例
-- 浏览[提示词模板](/docs/tools/prompt-engineering/templates)生成代码片段
-- 在[讨论区](https://github.com/IsaacZhaoo/aiCodingClub/discussions)分享你的代码片段
+**🎯 By Use Case:**
+- 🌐 API integrations (REST, GraphQL)
+- 📊 Data processing & validation
+- 🎨 UI patterns & components
+- 🔐 Authentication & security
+- 🚀 Performance optimization
+
+**🛠️ By Framework:**
+- React, Next.js, Vue, Svelte
+- FastAPI, Django, Express
+- Tailwind CSS, styled-components
+
+💬 [加入我们的 GitHub Discussions](https://github.com/IsaacZhaoo/aiCodingClub/discussions) 分享你自己的代码片段并保持更新！
+:::
+
+## 💡 Get Snippets Now | 立即获取代码
+
+While we build the library, explore:
+- 📚 [Course Code Examples](/docs/course) - Working code from 31 lessons
+- 💡 [Prompt Templates](/docs/tools/prompt-engineering/templates) - Generate custom snippets with AI
+- 🏗️ [Project Templates](/docs/tools/project-templates) - Complete starter projects
 
 最后更新：{new Date().toLocaleDateString()}
