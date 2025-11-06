@@ -11,17 +11,13 @@
     "message": "核心教程",
     "description": "The label for category 'Core Tutorials' in sidebar 'tutorialSidebar'"
   },
-  "sidebar.tutorialSidebar.doc.🗺️ AI-Enhanced Roadmap": {
-    "message": "🗺️ AI 增强路线图",
-    "description": "The label for the doc item '🗺️ AI-Enhanced Roadmap' in sidebar 'tutorialSidebar', linking to the doc roadmap-v1.1"
+  "sidebar.tutorialSidebar.doc.🗺️ Learning Roadmap": {
+    "message": "🗺️ 学习路线图",
+    "description": "The label for the doc item '🗺️ Learning Roadmap' in sidebar 'tutorialSidebar', linking to the doc roadmap"
   },
   "sidebar.toolsSidebar.doc.📊 Tools Comparison": {
     "message": "📊 工具对比",
     "description": "The label for the doc item '📊 Tools Comparison' in sidebar 'toolsSidebar', linking to the doc tools/ai-tools-comparison"
-  },
-  "sidebar.tutorialSidebar.doc.Learning Roadmap": {
-    "message": "学习路线图",
-    "description": "The label for the doc item 'Learning Roadmap' in sidebar 'tutorialSidebar', linking to the doc roadmap"
   },
   "sidebar.tutorialSidebar.doc.Stage 0: Vibecoding": {
     "message": "阶段 0：Vibecoding",
