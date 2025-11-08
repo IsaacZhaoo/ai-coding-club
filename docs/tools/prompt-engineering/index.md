@@ -232,9 +232,6 @@ Use the "Custom Instructions" feature to set default behavior.
 
 ## 📖 Learn More
 
-{/* Phase 2 course link - Coming soon
-- [Advanced Prompting Course](/docs/course/essential-skills/advanced-prompting) - Learn fundamentals
-*/}
 - [Code Snippets](/docs/tools/code-snippets) - Ready-to-use code
 - [Best Practices Guide](/docs/tools/prompt-engineering/best-practices) - Advanced tips
 

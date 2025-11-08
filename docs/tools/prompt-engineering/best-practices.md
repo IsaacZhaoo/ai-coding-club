@@ -21,8 +21,5 @@ Coming soon: comprehensive guide to advanced prompting techniques.
 
 - Check [Prompt Engineering 101](/docs/prompt-engineering-101)
 - Browse [Templates](/docs/tools/prompt-engineering/templates)
-{/* Phase 2 course link - Coming soon
-- Read [Course: Advanced Prompting](/docs/course/essential-skills/advanced-prompting)
-*/}
 
 Last updated: {new Date().toLocaleDateString()}

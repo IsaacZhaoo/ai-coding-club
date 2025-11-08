@@ -44,11 +44,7 @@ AI-optimized project templates to jumpstart your development!
 
 ## 💡 Start Building Now | 立即开始构建
 
-While we prepare the templates:
-{/* Phase 3 course links - Coming soon
-- 🏗️ [Building Projects Course](/docs/course/03-building-projects) - Learn to build from scratch
-- 📋 [Project Planning Guide](/docs/course/building-projects/project-planning) - Plan before you code
-*/}
+While we prepare the templates, join our community:
 - 🌐 [GitHub Discussions](https://github.com/IsaacZhaoo/ai-coding-club/discussions) - Share your project ideas
 
 Last updated: {new Date().toLocaleDateString()}
