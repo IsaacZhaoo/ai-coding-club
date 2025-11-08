@@ -28,10 +28,10 @@ Level up your productivity with AI-optimized development workflows!
 ## 💡 Get Productive Now | 立即提升效率
 
 While we prepare detailed guides, explore our foundation courses:
-<!-- Phase 2 Essential Skills courses - Coming soon
+{/* Phase 2 Essential Skills courses - Coming soon
 - 🛠️ [IDE Setup Guide](/docs/course/essential-skills/ide-setup) - Configure your environment
 - 🔄 [Git & GitHub 101](/docs/course/essential-skills/git-github) - Version control basics
 - 💻 [Command Line Essentials](/docs/course/essential-skills/command-line) - Terminal mastery
--->
+*/}
 
 Last updated: {new Date().toLocaleDateString()}
