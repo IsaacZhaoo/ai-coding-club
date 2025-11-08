@@ -147,7 +147,9 @@ Start with **Codeium** (free) to learn without financial commitment. Upgrade to 
 
 - [AI Tools Comparison Table](/docs/tools/ai-tools-comparison) - Detailed comparison
 - [Prompt Engineering Guide](/docs/tools/prompt-engineering) - Get better results
+<!-- Phase 2 course link - Coming soon
 - [Course: Essential Skills](/docs/course/02-essential-skills) - Learn AI coding fundamentals
+-->
 
 ---
 
