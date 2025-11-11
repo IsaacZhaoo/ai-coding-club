@@ -1076,7 +1076,7 @@ Conversation Starters:
 
 ## Code Review Prompt
 ```
-Act as a senior software engineer. Review this {language} code for:
+Act as a senior software engineer. Review this [language] code for:
 
 1. **Bugs and Logic Errors**
    - Off-by-one errors
@@ -1097,7 +1097,7 @@ Act as a senior software engineer. Review this {language} code for:
    - Memory leaks
    - N+1 queries
 
-4. **Code Style** (follow {style_guide})
+4. **Code Style** (follow [style_guide])
    - Naming conventions
    - Code organization
    - Comments and documentation
@@ -1123,10 +1123,10 @@ Code to review:
 
 ## Test Generation Prompt
 ```
-Generate comprehensive {framework} tests for this {language} function:
+Generate comprehensive [framework] tests for this [language] function:
 
-```{language}
-{paste_code_here}
+```[language]
+[paste_code_here]
 ```
 
 Requirements:
@@ -1225,33 +1225,33 @@ Format: \{JSDoc/TSDoc/Python docstring/etc\}
 
 ## Debugging Prompt
 ```
-I'm debugging a \{language\} issue:
+I'm debugging a [language] issue:
 
 **Error Message:**
 ```
-\{paste_error\}
+[paste_error]
 ```
 
 **Code:**
-```{language}
-{paste_code}
+```[language]
+[paste_code]
 ```
 
 **Context:**
-- Framework/Library: {framework} version {version}
-- Environment: {dev/staging/production}
-- When it happens: {trigger_condition}
+- Framework/Library: [framework] version [version]
+- Environment: [dev/staging/production]
+- When it happens: [trigger_condition]
 
 **What I've tried:**
-1. {action_1}
-2. {action_2}
-3. {action_3}
+1. [action_1]
+2. [action_2]
+3. [action_3]
 
 **Expected behavior:**
-{describe_expected}
+[describe_expected]
 
 **Actual behavior:**
-{describe_actual}
+[describe_actual]
 
 Please:
 1. Explain the root cause
@@ -1263,7 +1263,7 @@ Please:
 
 ## Refactoring Prompt
 ```
-Refactor this {language} code to improve:
+Refactor this [language] code to improve:
 
 1. **Readability**
    - Better variable names
@@ -1372,10 +1372,10 @@ def review_code(file_path):
     4. Code style
     5. Missing edge cases
 
-    File: {file_path}
+    File: [file_path]
 
     ```
-    {code}
+    [code]
     ```
 
     Provide specific, actionable feedback.
