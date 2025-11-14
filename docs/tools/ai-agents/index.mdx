@@ -1,175 +1,175 @@
 ---
-title: "AI Agents 使用指南"
-description: "配置专业化 AI Agent,让 AI 助手成为领域专家"
+title: "AI Agents Usage Guide"
+description: "Configure specialized AI Agents to turn AI assistants into domain experts"
 sidebar_position: 1
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# AI Agents 使用指南
+# AI Agents Usage Guide
 
-**让 AI 助手变成前端专家、后端架构师、或 DevOps 工程师**
+**Turn AI assistants into frontend experts, backend architects, or DevOps engineers**
 
-:::info[一句话解释]
-AI Agents 是预配置的专业化 AI 助手,拥有特定领域的深度知识和标准工作流程。
+:::info[One-sentence explanation]
+AI Agents are pre-configured specialized AI assistants with deep domain knowledge and standard workflows.
 :::
 
-AI Agent 是一种**预配置的 AI 助手角色**,拥有特定领域的专业知识和工作流程。
+An AI Agent is a **pre-configured AI assistant role** with specialized domain knowledge and workflows.
 
-:::tip[为什么重要]
-Agents 让 AI 从"通用实习生"升级为"领域专家",自动遵循最佳实践,减少 50% 提示词编写时间,提升代码质量到生产级别。
+:::tip[Why it matters]
+Agents upgrade AI from "general intern" to "domain expert", automatically following best practices, reducing prompt writing time by 50%, and elevating code quality to production level.
 :::
 
-## 什么是 AI Agent?
+## What is an AI Agent?
 
-### 类比理解
+### Analogy
 
 ```text
-普通 AI 助手  = 通用实习生(什么都懂一点)
-AI Agent     = 专业工程师(某个领域的专家)
+Regular AI Assistant = General Intern (knows a little about everything)
+AI Agent           = Professional Engineer (expert in specific domain)
 ```
 
-### 实际例子
+### Real Example
 
-**场景**:你需要设计一个 REST API
+**Scenario**: You need to design a REST API
 
-❌ **普通 AI 助手**:
+❌ **Regular AI Assistant**:
 ```text
-用户:帮我设计一个用户管理 API
-AI:好的,我可以创建 /users 路由...
-[需要你不断补充细节]
+User: Help me design a user management API
+AI: OK, I can create /users routes...
+[Requires you to constantly add details]
 ```
 
 ✅ **Backend API Agent**:
 ```text
-用户:设计用户管理 API
-Agent:我会为你创建符合 RESTful 规范的 API:
+User: Design user management API
+Agent: I'll create a RESTful API for you:
 
-📋 API 设计
-- GET /api/v1/users (分页、过滤)
-- POST /api/v1/users (参数验证)
-- PUT /api/v1/users/:id (部分更新用 PATCH)
-- DELETE /api/v1/users/:id (软删除)
+📋 API Design
+- GET /api/v1/users (pagination, filtering)
+- POST /api/v1/users (parameter validation)
+- PUT /api/v1/users/:id (use PATCH for partial updates)
+- DELETE /api/v1/users/:id (soft delete)
 
-🔒 安全措施
-- JWT 认证
+🔒 Security Measures
+- JWT authentication
 - Rate limiting
 - Input sanitization
 
-📝 自动生成
-- OpenAPI 文档
-- 请求/响应示例
-- 错误处理代码
+📝 Auto-generated
+- OpenAPI documentation
+- Request/response examples
+- Error handling code
 ```
 
 ---
 
-## 为什么使用 Agents?
+## Why Use Agents?
 
-### 优势对比
+### Advantage Comparison
 
-| 功能 | 普通 AI | AI Agent |
-|------|---------|----------|
-| **知识深度** | 广泛但浅 | 专精某领域 |
-| **代码质量** | 基础可用 | 生产级别 |
-| **最佳实践** | 需要提醒 | 自动遵循 |
-| **工作流程** | 需要指导 | 自带流程 |
-| **错误预防** | 基础检查 | 领域经验 |
+| Feature | Regular AI | AI Agent |
+|---------|-----------|----------|
+| **Knowledge Depth** | Broad but shallow | Specialized in domain |
+| **Code Quality** | Basic usable | Production-level |
+| **Best Practices** | Needs reminders | Automatically follows |
+| **Workflow** | Needs guidance | Built-in process |
+| **Error Prevention** | Basic checks | Domain experience |
 
-### 实际收益
+### Real Benefits
 
 ```markdown
-⏱️ 节省时间:减少 50% 的提示词编写
-✅ 提升质量:代码符合行业标准
-📚 学习效果:从 Agent 输出中学习最佳实践
-🔄 一致性:团队使用相同的 Agent 保持代码风格统一
+⏱️ Time Saved: 50% less prompt writing
+✅ Quality Boost: Code meets industry standards
+📚 Learning Effect: Learn best practices from Agent output
+🔄 Consistency: Team using same Agent maintains uniform code style
 ```
 
-:::warning[信任边界]
-Agents 虽然专业,但仍需人工审查。关键决策(架构设计、安全配置、数据库 schema)必须由人类最终确认。Agent 是助手,不是决策者。
+:::warning[Trust boundary]
+Agents are professional but still require human review. Critical decisions (architecture design, security config, database schema) must be confirmed by humans. Agents are assistants, not decision-makers.
 :::
 
 ---
 
-## 快速开始
+## Quick Start
 
-### 步骤 1: 选择合适的 Agent
+### Step 1: Choose the Right Agent
 
-**根据你的任务选择**:
+**Select based on your task**:
 
-| 任务类型 | 推荐 Agent | 适用场景 |
-|---------|-----------|---------|
-| 前端开发 | Frontend Developer Agent | React/Vue 组件、UI 交互 |
-| 后端 API | Backend Architect Agent | RESTful API、数据库设计 |
-| 数据处理 | Data Engineer Agent | ETL 流程、数据分析 |
-| DevOps | DevOps Engineer Agent | CI/CD、Docker、K8s |
-| 测试 | QA Automation Agent | 单元测试、E2E 测试 |
+| Task Type | Recommended Agent | Use Case |
+|-----------|------------------|----------|
+| Frontend Development | Frontend Developer Agent | React/Vue components, UI interactions |
+| Backend API | Backend Architect Agent | RESTful API, database design |
+| Data Processing | Data Engineer Agent | ETL processes, data analysis |
+| DevOps | DevOps Engineer Agent | CI/CD, Docker, K8s |
+| Testing | QA Automation Agent | Unit tests, E2E tests |
 
-### 步骤 2: 配置 Agent
+### Step 2: Configure Agent
 
-**方法 A: 在 Cursor/Windsurf 中添加 Agent**
+**Method A: Add Agent in Cursor/Windsurf**
 
-1. 打开 AI 助手设置
-2. 创建新的 Agent 或 Custom Instructions
-3. 粘贴 Agent 配置(见下方模板)
-4. 保存并命名
+1. Open AI assistant settings
+2. Create new Agent or Custom Instructions
+3. Paste Agent configuration (see templates below)
+4. Save and name
 
-**方法 B: 使用 `.ai-agents` 配置文件**(推荐)
+**Method B: Use `.ai-agents` config file** (Recommended)
 
 ```bash
-# 在项目根目录创建
+# Create in project root
 touch .ai-agents
 ```
 
 ```markdown
-# .ai-agents 文件示例
+# .ai-agents file example
 
 ## Frontend Developer Agent
 
-你是一个资深前端开发专家,擅长 React 和 TypeScript。
+You are a senior frontend development expert, skilled in React and TypeScript.
 
-### 技术栈
+### Tech Stack
 - React 19 + TypeScript 5.x
 - Tailwind CSS
 - React Hook Form
 - TanStack Query
 
-### 编码规范
-1. 组件使用函数式 + Hooks
-2. 类型严格定义(no `any`)
-3. 样式使用 Tailwind utility classes
-4. 状态管理优先 React Context
+### Coding Standards
+1. Components use functional + Hooks
+2. Types strictly defined (no `any`)
+3. Styles use Tailwind utility classes
+4. State management prioritizes React Context
 
-### 工作流程
-1. 分析需求 → 2. 设计组件结构 → 3. 实现代码 → 4. 添加测试
+### Workflow
+1. Analyze requirements → 2. Design component structure → 3. Implement code → 4. Add tests
 
-### 输出格式
-- 组件代码(.tsx)
-- 类型定义(types.ts)
-- 样式(如需自定义 CSS)
-- 单元测试(.test.tsx)
+### Output Format
+- Component code (.tsx)
+- Type definitions (types.ts)
+- Styles (if custom CSS needed)
+- Unit tests (.test.tsx)
 ```
 
-:::note[配置文件位置]
-`.ai-agents` 文件放在项目根目录(与 `package.json` 同级)。部分 AI 工具支持自动读取,不支持的可以手动复制配置内容。
+:::note[Config file location]
+Place `.ai-agents` file in project root (same level as `package.json`). Some AI tools support auto-reading; for others, manually copy config content.
 :::
 
-### 步骤 3: 测试 Agent
+### Step 3: Test Agent
 
-**测试提示词**:
+**Test prompt**:
 ```
-创建一个带表单验证的用户注册组件
+Create a user registration component with form validation
 ```
 
-**Agent 输出示例**:
+**Agent output example**:
 ```tsx
 // UserRegistration.tsx
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 
-// 1. 类型定义
+// 1. Type definitions
 const registrationSchema = z.object({
   email: z.string().email('Invalid email'),
   password: z.string().min(8, 'Password must be 8+ characters'),
@@ -181,7 +181,7 @@ const registrationSchema = z.object({
 
 type RegistrationForm = z.infer<typeof registrationSchema>;
 
-// 2. 组件实现
+// 2. Component implementation
 export const UserRegistration: React.FC = () => {
   const {
     register,
@@ -192,113 +192,113 @@ export const UserRegistration: React.FC = () => {
   });
 
   const onSubmit = async (data: RegistrationForm) => {
-    // API 调用逻辑
+    // API call logic
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="max-w-md mx-auto">
-      {/* 表单字段 */}
+      {/* Form fields */}
     </form>
   );
 };
 
-// 3. 测试
-// UserRegistration.test.tsx (自动生成)
+// 3. Tests
+// UserRegistration.test.tsx (auto-generated)
 ```
 
 ---
 
-## 常用 Agent 模板
+## Common Agent Templates
 
-根据你的技术栈选择合适的专业 Agent 配置:
+Choose the right professional Agent configuration based on your tech stack:
 
 <Tabs>
-  <TabItem value="frontend" label="前端开发" default>
+  <TabItem value="frontend" label="Frontend Development" default>
 
 ### Frontend Developer Agent
 
 ```markdown
 # Frontend Developer Agent
 
-## 角色
-资深前端工程师,专注现代 Web 应用开发
+## Role
+Senior frontend engineer focusing on modern web application development
 
-## 技术栈
+## Tech Stack
 - React 19 / Next.js 15
 - TypeScript 5.x
 - Tailwind CSS
 - React Hook Form + Zod
 
-## 核心原则
-1. **类型安全**: 所有数据流必须有类型
-2. **可访问性**: 遵循 WCAG 2.1 AA 标准
-3. **性能优化**: 使用 React.memo、useMemo、useCallback
-4. **测试覆盖**: 关键组件必须有测试
+## Core Principles
+1. **Type Safety**: All data flows must be typed
+2. **Accessibility**: Follow WCAG 2.1 AA standards
+3. **Performance**: Use React.memo, useMemo, useCallback
+4. **Test Coverage**: Critical components must have tests
 
-## 输出规范
-- 组件文件:PascalCase.tsx
-- Hooks:use + PascalCase
-- 工具函数:camelCase.ts
-- 样式:Tailwind utilities(避免自定义 CSS)
+## Output Standards
+- Component files: PascalCase.tsx
+- Hooks: use + PascalCase
+- Utility functions: camelCase.ts
+- Styles: Tailwind utilities (avoid custom CSS)
 
-## 错误处理
-- 表单验证:React Hook Form + Zod
-- API 错误:Toast 通知 + Error Boundary
-- 加载状态:Skeleton 或 Spinner
+## Error Handling
+- Form validation: React Hook Form + Zod
+- API errors: Toast notifications + Error Boundary
+- Loading states: Skeleton or Spinner
 
-## 最佳实践
-- 组件拆分:单一职责,<200 行
-- Props drilling:避免超过 2 层
-- 状态提升:共享状态用 Context
-- 副作用:清理 useEffect 订阅
+## Best Practices
+- Component splitting: Single responsibility, <200 lines
+- Props drilling: Avoid more than 2 levels
+- State lifting: Use Context for shared state
+- Side effects: Clean up useEffect subscriptions
 ```
 
-**适用场景**: React/Vue 组件开发、UI 交互实现、表单处理
+**Use Cases**: React/Vue component development, UI interactions, form handling
 
   </TabItem>
-  <TabItem value="backend" label="后端开发">
+  <TabItem value="backend" label="Backend Development">
 
 ### Backend API Architect Agent
 
 ```markdown
 # Backend API Architect Agent
 
-## 角色
-后端架构师,设计可扩展的 RESTful API
+## Role
+Backend architect designing scalable RESTful APIs
 
-## 技术栈
+## Tech Stack
 - Python FastAPI / Node.js Express
 - PostgreSQL + Redis
 - JWT Authentication
 - Docker
 
-## API 设计原则
-1. **RESTful 规范**: 资源导向,HTTP 方法语义化
-2. **版本管理**: /api/v1/ 前缀
-3. **统一响应**: { data, error, meta }
-4. **分页**: limit/offset 或 cursor-based
+## API Design Principles
+1. **RESTful Standards**: Resource-oriented, semantic HTTP methods
+2. **Version Management**: /api/v1/ prefix
+3. **Unified Response**: { data, error, meta }
+4. **Pagination**: limit/offset or cursor-based
 
-## 安全规范
-- 认证:JWT (Access + Refresh Token)
-- 授权:RBAC(Role-Based Access Control)
-- 限流:Redis + Token Bucket
-- 输入验证:Pydantic / Joi
+## Security Standards
+- Authentication: JWT (Access + Refresh Token)
+- Authorization: RBAC (Role-Based Access Control)
+- Rate Limiting: Redis + Token Bucket
+- Input Validation: Pydantic / Joi
 
-## 数据库设计
-- 命名:snake_case
-- 主键:UUID 或 BIGINT
-- 时间戳:created_at, updated_at
-- 软删除:deleted_at
+## Database Design
+- Naming: snake_case
+- Primary Key: UUID or BIGINT
+- Timestamps: created_at, updated_at
+- Soft Delete: deleted_at
 
-## 输出内容
-1. API 端点定义
-2. 请求/响应 Schema
-3. 数据库 Migration
-4. OpenAPI 文档
-5. 单元测试
+## Output Contents
+1. API endpoint definitions
+2. Request/response schemas
+3. Database migrations
+4. OpenAPI documentation
+5. Unit tests
 ```
 
-**适用场景**: RESTful API 设计、数据库架构、认证授权系统
+**Use Cases**: RESTful API design, database architecture, authentication/authorization systems
 
   </TabItem>
   <TabItem value="devops" label="DevOps">
@@ -308,66 +308,65 @@ export const UserRegistration: React.FC = () => {
 ```markdown
 # DevOps Engineer Agent
 
-## 角色
-DevOps 工程师,构建 CI/CD 和云基础设施
+## Role
+DevOps engineer building CI/CD and cloud infrastructure
 
-## 技术栈
+## Tech Stack
 - Docker + Kubernetes
 - GitHub Actions / GitLab CI
 - AWS / Azure / GCP
 - Terraform / Ansible
 
-## CI/CD 流程
-1. 代码推送 → 2. 自动测试 → 3. 构建镜像 → 4. 部署到环境
+## CI/CD Pipeline
+1. Code push → 2. Automated tests → 3. Build images → 4. Deploy to environment
 
-## 容器化原则
-- 镜像:多阶段构建,Alpine base
-- 配置:环境变量 + Secrets
-- 健康检查:Liveness + Readiness Probe
-- 日志:stdout/stderr(不写文件)
+## Containerization Principles
+- Images: Multi-stage builds, Alpine base
+- Configuration: Environment variables + Secrets
+- Health checks: Liveness + Readiness Probe
+- Logging: stdout/stderr (no file writes)
 
-## K8s 部署
-- Deployment:滚动更新
-- Service:ClusterIP + Ingress
-- ConfigMap:配置分离
-- HPA:自动扩缩容
+## K8s Deployment
+- Deployment: Rolling updates
+- Service: ClusterIP + Ingress
+- ConfigMap: Configuration separation
+- HPA: Auto-scaling
 
-## 监控告警
-- Metrics:Prometheus
-- Logs:ELK / Loki
-- Tracing:Jaeger
-- Alerts:Slack / PagerDuty
+## Monitoring & Alerts
+- Metrics: Prometheus
+- Logs: ELK / Loki
+- Tracing: Jaeger
+- Alerts: Slack / PagerDuty
 
-## 输出内容
+## Output Contents
 - Dockerfile
 - docker-compose.yml
 - K8s manifests (deployment, service, ingress)
 - CI/CD pipeline (.github/workflows/)
 ```
 
-**适用场景**: Docker 容器化、Kubernetes 部署、CI/CD 流程配置
+**Use Cases**: Docker containerization, Kubernetes deployment, CI/CD pipeline configuration
 
   </TabItem>
-  <TabItem value="qa" label="测试自动化">
-
+  <TabItem value="qa" label="QA Automation">
 
 ### QA Automation Agent
 
-**核心职责**: 编写全面的测试套件,保证代码质量
+**Core Responsibilities**: Write comprehensive test suites to ensure code quality
 
-**测试策略**:
-- 单元测试:Jest / Vitest (70% 覆盖率)
-- 集成测试:Supertest / Testcontainers
-- E2E 测试:Playwright / Cypress
-- 性能测试:k6 / Artillery
+**Testing Strategy**:
+- Unit tests: Jest / Vitest (70% coverage)
+- Integration tests: Supertest / Testcontainers
+- E2E tests: Playwright / Cypress
+- Performance tests: k6 / Artillery
 
-**测试原则**:
-1. **AAA 模式**: Arrange → Act → Assert
-2. **独立性**: 测试间无依赖
-3. **可读性**: 描述性命名
-4. **速度**: 单元测试 < 1s
+**Testing Principles**:
+1. **AAA Pattern**: Arrange → Act → Assert
+2. **Independence**: No dependencies between tests
+3. **Readability**: Descriptive naming
+4. **Speed**: Unit tests < 1s
 
-**命名规范示例**:
+**Naming Convention Example**:
 ```javascript
 describe('UserService', () => {
   describe('createUser', () => {
@@ -382,225 +381,225 @@ describe('UserService', () => {
 });
 ```
 
-**Mock 策略**:
-- 外部 API:Mock Service Worker
-- 数据库:In-memory / Testcontainers
-- 时间:jest.useFakeTimers()
+**Mock Strategy**:
+- External APIs: Mock Service Worker
+- Database: In-memory / Testcontainers
+- Time: jest.useFakeTimers()
 
-**输出内容**:
-- 单元测试文件
-- 集成测试套件
-- E2E 测试场景
-- 测试配置(jest.config.js)
+**Output Contents**:
+- Unit test files
+- Integration test suites
+- E2E test scenarios
+- Test configuration (jest.config.js)
 
-**适用场景**: 单元测试编写、E2E 测试自动化、测试策略设计
+**Use Cases**: Unit test writing, E2E test automation, test strategy design
 
   </TabItem>
 </Tabs>
 
-:::tip[学习资源]
-想要更多专业 Agent 配置? 访问 [Vibe Coding Tools](https://vibecodingtools.tech/agents) 浏览 200+ 生产级 Agent 模板,涵盖前端、后端、DevOps、数据工程等领域。
+:::tip[Learning resources]
+Want more professional Agent configurations? Visit [Vibe Coding Tools](https://vibecodingtools.tech/agents) to browse 200+ production-grade Agent templates covering frontend, backend, DevOps, data engineering, and more.
 :::
 
 ---
 
-:::note[想要深入学习?]
-AI Agents 是高级技能,需要理解编程基础和提示工程。
+:::note[Want to learn more?]
+AI Agents are advanced skills requiring understanding of programming basics and prompt engineering.
 
-👉 [查看完整课程大纲 →](/docs/course)
+👉 [View complete course outline →](/docs/course)
 :::
 
 ---
 
-## 进阶技巧
+## Advanced Tips
 
-### 技巧 1: 组合多个 Agents
+### Tip 1: Combine Multiple Agents
 
-**场景**:开发一个完整功能
+**Scenario**: Develop a complete feature
 
 ```text
-1. Backend Architect Agent → 设计 API
-2. Frontend Developer Agent → 实现 UI
-3. QA Automation Agent → 编写测试
-4. DevOps Engineer Agent → 部署上线
+1. Backend Architect Agent → Design API
+2. Frontend Developer Agent → Implement UI
+3. QA Automation Agent → Write tests
+4. DevOps Engineer Agent → Deploy to production
 ```
 
-:::note[工作流程建议]
-大型功能开发时,按阶段切换 Agent。每个阶段完成后验收,再切换到下一个 Agent。避免在同一对话中频繁切换角色。
+:::note[Workflow suggestion]
+For large feature development, switch Agents by phase. Complete and review each phase before switching to the next Agent. Avoid frequent role switching in the same conversation.
 :::
 
-### 技巧 2: 自定义 Agent 模板
+### Tip 2: Customize Agent Templates
 
-**创建你自己的专属 Agent**:
+**Create your own specialized Agent**:
 
 ```markdown
-# [你的领域] Agent
+# [Your Domain] Agent
 
-## 背景
-[你的公司/项目特点]
+## Background
+[Your company/project characteristics]
 
-## 技术栈
-[实际使用的技术]
+## Tech Stack
+[Technologies actually used]
 
-## 代码规范
-[团队约定的规范]
+## Code Standards
+[Team-agreed standards]
 
-## 特殊要求
-[项目特殊需求]
+## Special Requirements
+[Project-specific needs]
 ```
 
-### 技巧 3: Agent + Cursor Rules 联用
+### Tip 3: Agent + Cursor Rules Combined
 
-**最佳组合**:
-- `.cursorrules` → 项目级规范(适用所有代码)
-- `.ai-agents` → 任务级专家(特定领域深度)
+**Best Combination**:
+- `.cursorrules` → Project-level standards (applies to all code)
+- `.ai-agents` → Task-level experts (domain-specific depth)
 
-:::tip[配置优先级]
-当 Cursor Rules 和 Agent 配置有冲突时,明确在提示词中说明优先级。例如:"按照 Agent 的 API 设计原则,覆盖 Rules 中的命名规范"。
+:::tip[Configuration priority]
+When Cursor Rules and Agent configurations conflict, explicitly state priority in prompts. Example: "Follow Agent's API design principles, overriding Rules naming conventions."
 :::
 
 ---
 
-## 常见问题
+## FAQ
 
 <details>
-  <summary>Q: Agent 和 Cursor Rules 有什么区别?</summary>
+  <summary>Q: What's the difference between Agent and Cursor Rules?</summary>
 
-  **答案**:
-  - **Cursor Rules**:项目规范(代码风格、命名约定)
-  - **AI Agent**:角色定位(专业知识、工作流程)
+  **Answer**:
+  - **Cursor Rules**: Project standards (code style, naming conventions)
+  - **AI Agent**: Role positioning (specialized knowledge, workflows)
 
-  **类比**:
-  - Cursor Rules = 公司规章制度(适用所有员工)
-  - AI Agent = 岗位职责说明(前端、后端、DevOps)
+  **Analogy**:
+  - Cursor Rules = Company regulations (apply to all employees)
+  - AI Agent = Job descriptions (frontend, backend, DevOps)
 
-  :::tip[最佳实践]
-  两者结合使用效果最佳。Cursor Rules 定义项目通用规范,Agents 提供领域专业知识。
+  :::tip[Best practice]
+  Using both together works best. Cursor Rules define project-wide standards, Agents provide domain expertise.
   :::
 </details>
 
 <details>
-  <summary>Q: 一个项目可以用多个 Agents 吗?</summary>
+  <summary>Q: Can one project use multiple Agents?</summary>
 
-  **答案**:可以! 根据任务切换 Agent
+  **Answer**: Yes! Switch Agents based on tasks
 
-  **示例工作流**:
+  **Example workflow**:
   ```
-  周一:Backend Agent(开发 API)
-  周二:Frontend Agent(实现 UI)
-  周三:QA Agent(编写测试)
-  周四:DevOps Agent(配置部署)
+  Monday: Backend Agent (develop API)
+  Tuesday: Frontend Agent (implement UI)
+  Wednesday: QA Agent (write tests)
+  Thursday: DevOps Agent (configure deployment)
   ```
 
-  **切换方法**:
-  - 在 AI 工具设置中选择不同 Agent 配置
-  - 或在提示词中明确说明:"以 Backend Architect Agent 的身份..."
+  **Switching methods**:
+  - Select different Agent configurations in AI tool settings
+  - Or explicitly state in prompt: "As Backend Architect Agent..."
 </details>
 
 <details>
-  <summary>Q: Agent 配置需要多长?</summary>
+  <summary>Q: How long should Agent configuration be?</summary>
 
-  **答案**:
-  - 最小化:50-100 行(核心原则)
-  - 标准:200-300 行(完整规范)
-  - 详细:500+ 行(企业级模板)
+  **Answer**:
+  - Minimal: 50-100 lines (core principles)
+  - Standard: 200-300 lines (complete specifications)
+  - Detailed: 500+ lines (enterprise templates)
 
-  **建议**:从简单开始,逐步完善
+  **Recommendation**: Start simple, gradually improve
 
-  :::warning[避免过度配置]
-  配置过长会影响 AI 响应速度和理解准确度。保持在 300 行以内,聚焦最关键的规范和原则。
+  :::warning[Avoid over-configuration]
+  Overly long configurations affect AI response speed and understanding accuracy. Keep under 300 lines, focus on most critical standards and principles.
   :::
 </details>
 
 <details>
-  <summary>Q: Agent 会自动运行代码吗?</summary>
+  <summary>Q: Will Agents automatically run code?</summary>
 
-  **答案**:不会,Agent 只生成代码建议
+  **Answer**: No, Agents only generate code suggestions
 
-  **安全机制**:
-  - Agent 只提供代码和配置建议
-  - 所有操作需要你明确确认和执行
-  - 不会自动修改文件或运行命令
+  **Safety mechanisms**:
+  - Agents only provide code and configuration suggestions
+  - All operations require your explicit confirmation and execution
+  - Won't automatically modify files or run commands
 
-  :::warning[安全提醒]
-  永远不要盲目执行 Agent 生成的代码,特别是涉及:
-  - 数据库删除操作
-  - 系统命令执行
-  - 外部 API 调用
-  - 凭证和密钥配置
+  :::warning[Security reminder]
+  Never blindly execute Agent-generated code, especially involving:
+  - Database deletion operations
+  - System command execution
+  - External API calls
+  - Credentials and key configuration
 
-  先理解代码逻辑,再在安全环境中测试。
+  First understand code logic, then test in safe environment.
   :::
 </details>
 
 <details>
-  <summary>Q: Agent 配置会影响性能吗?</summary>
+  <summary>Q: Does Agent configuration affect performance?</summary>
 
-  **答案**:
-  - ✅ 配置 < 300 行:几乎无影响
-  - ⚠️ 配置 > 500 行:可能稍慢
-  - 💡 建议:精简配置,聚焦核心
+  **Answer**:
+  - ✅ Configuration < 300 lines: almost no impact
+  - ⚠️ Configuration > 500 lines: may be slightly slower
+  - 💡 Recommendation: Streamline config, focus on core
 
-  **优化建议**:
-  1. 只包含必要的规范和原则
-  2. 使用清晰的标题和分类
-  3. 避免重复内容
-  4. 定期审查和更新配置
+  **Optimization suggestions**:
+  1. Only include necessary standards and principles
+  2. Use clear headings and categories
+  3. Avoid duplicate content
+  4. Regularly review and update configuration
 </details>
 
 <details>
-  <summary>Q: 免费 AI 工具支持 Agents 吗?</summary>
+  <summary>Q: Do free AI tools support Agents?</summary>
 
-  **答案**:取决于具体工具
+  **Answer**: Depends on specific tool
 
-  **支持情况**:
-  - ✅ **Cursor**(免费版):支持 Custom Instructions
-  - ✅ **Windsurf**(免费版):支持 Agent 配置
-  - ⚠️ **GitHub Copilot**(免费版):有限支持
-  - ❌ **部分工具**:需要付费订阅
+  **Support status**:
+  - ✅ **Cursor** (free version): Supports Custom Instructions
+  - ✅ **Windsurf** (free version): Supports Agent configuration
+  - ⚠️ **GitHub Copilot** (free version): Limited support
+  - ❌ **Some tools**: Require paid subscription
 
-  **替代方案**:
-  - 在提示词中包含 Agent 配置内容
-  - 使用项目级 `.cursorrules` 文件模拟 Agent 行为
+  **Alternatives**:
+  - Include Agent configuration content in prompts
+  - Use project-level `.cursorrules` file to simulate Agent behavior
 </details>
 
 ---
 
-## 推荐 Agent 资源
+## Recommended Agent Resources
 
-### 社区资源
+### Community Resources
 
-- **Vibe Coding Tools - AI Agents 库**
-  - 200+ 专业 Agent 配置
-  - React, Vue, Python, DevOps 专家
-  - 生产级最佳实践
-  - [浏览 Agents 库 →](https://vibecodingtools.tech/agents)
+- **Vibe Coding Tools - AI Agents Library**
+  - 200+ professional Agent configurations
+  - React, Vue, Python, DevOps experts
+  - Production-grade best practices
+  - [Browse Agents library →](https://vibecodingtools.tech/agents)
 
-### 学习资源
+### Learning Resources
 
-- [AI Coding Course](/docs/course) - 完整课程
-- [AI 工具对比](/docs/tools/ai-tools-comparison) - 了解不同工具的 Agent 支持
+- [AI Coding Course](/docs/course) - Complete course
+- [AI Tools Comparison](/docs/tools/ai-tools-comparison) - Understand different tools' Agent support
 
 ---
 
-:::tip[推荐学习路径]
-**你刚读完**:AI Agents 使用指南 ✅
+:::tip[Recommended learning path]
+**You just read**: AI Agents Usage Guide ✅
 
-**下一步建议**:
-1. ⏭️ [MCP 服务器](/docs/tools/mcps) - 通过 MCP 扩展 Agent 能力边界
-2. 🔄 [返回 Cursor Rules](/docs/tools/cursor-rules) - 学习项目规范配置
-3. 🛠️ [AI 工具对比](/docs/tools/ai-tools-comparison) - 选择最佳 AI 编程工具
+**Next steps**:
+1. ⏭️ [MCP Servers](/docs/tools/mcps) - Extend Agent capabilities through MCP
+2. 🔄 [Back to Cursor Rules](/docs/tools/cursor-rules) - Learn project standard configuration
+3. 🛠️ [AI Tools Comparison](/docs/tools/ai-tools-comparison) - Choose best AI coding tool
 
-**相关深度阅读**:
-- [AI 编程路线图](/docs/roadmap) - 完整学习路径
-- [开始完整课程](/docs/course) - 系统学习 AI 编程全流程
-- [Prompt Engineering 101](/docs/prompt-engineering-101) - 优化 Agent 提示词技巧
+**Related in-depth reading**:
+- [AI Coding Roadmap](/docs/roadmap) - Complete learning path
+- [Start complete course](/docs/course) - Systematically learn AI coding workflow
+- [Prompt Engineering 101](/docs/prompt-engineering-101) - Optimize Agent prompt techniques
 :::
 
 ---
 
-**最后更新**: 2025-11-02
+**Last updated**: 2025-11-02
 
-**相关资源**:
-- [Cursor Rules 配置指南](/docs/tools/cursor-rules) - 项目规范配置
-- [MCP 服务器](/docs/tools/mcps) - 扩展 AI 能力
+**Related resources**:
+- [Cursor Rules Configuration Guide](/docs/tools/cursor-rules) - Project standard configuration
+- [MCP Servers](/docs/tools/mcps) - Extend AI capabilities

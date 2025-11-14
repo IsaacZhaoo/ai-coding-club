@@ -1,102 +1,102 @@
 ---
-title: "Cursor Rules 配置指南"
-description: "使用 Cursor Rules 让 AI 助手更懂你的代码风格"
+title: "Cursor Rules Configuration Guide"
+description: "Make AI assistants understand your coding style with Cursor Rules"
 sidebar_position: 1
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Cursor Rules 配置指南
+# Cursor Rules Configuration Guide
 
-**让 AI 编程助手遵循你的编码规范**
+**Make AI coding assistants follow your coding standards**
 
-:::info[一句话解释]
-Cursor Rules 是一个配置文件（`.cursorrules`），用于告诉 AI 编程助手（如 Cursor、Windsurf）你的编码偏好和项目规范。
+:::info[One-sentence explanation]
+Cursor Rules is a configuration file (`.cursorrules`) that tells AI coding assistants (like Cursor, Windsurf) your coding preferences and project conventions.
 :::
 
-:::tip[为什么重要]
-有了 Cursor Rules，AI 生成的代码会自动遵循你的项目规范，无需反复提醒。就像给 AI 助手一本"项目手册"，让它从第一行代码就懂你的风格。
+:::tip[Why it matters]
+With Cursor Rules, AI-generated code automatically follows your project standards without repeated reminders. It's like giving the AI assistant a "project manual" so it understands your style from the first line of code.
 :::
 
-## 什么是 Cursor Rules？
+## What are Cursor Rules?
 
-### 为什么需要 Cursor Rules？
+### Why do you need Cursor Rules?
 
-想象一下：
-- ❌ **没有 Rules**：AI 每次生成的代码风格不一致，需要反复修正
-- ✅ **有了 Rules**：AI 自动遵循你的规范，一次生成符合要求的代码
+Imagine:
+- ❌ **Without Rules**: AI generates inconsistent code styles that need repeated corrections
+- ✅ **With Rules**: AI automatically follows your standards, generating compliant code in one go
 
-### 它能做什么？
+### What can it do?
 
 ```markdown
-✅ 统一代码风格（缩进、命名规范）
-✅ 强制最佳实践（错误处理、类型检查）
-✅ 自动添加文档注释
-✅ 遵循框架约定（React Hooks、Vue Composition API）
-✅ 避免常见错误（内存泄漏、安全漏洞）
+✅ Unify code style (indentation, naming conventions)
+✅ Enforce best practices (error handling, type checking)
+✅ Auto-add documentation comments
+✅ Follow framework conventions (React Hooks, Vue Composition API)
+✅ Avoid common mistakes (memory leaks, security vulnerabilities)
 ```
 
 ---
 
-## 快速开始
+## Quick Start
 
-### 步骤 1: 创建 `.cursorrules` 文件
+### Step 1: Create `.cursorrules` file
 
-在项目根目录创建文件：
+Create the file in your project root:
 
 ```bash
 touch .cursorrules
 ```
 
-:::note[文件位置很重要]
-必须放在项目根目录（与 `package.json` 或 `requirements.txt` 同级）。AI 助手会自动读取这个文件。
+:::note[File location matters]
+Must be placed in the project root directory (same level as `package.json` or `requirements.txt`). AI assistants will automatically read this file.
 :::
 
-### 步骤 2: 添加基础规则
+### Step 2: Add basic rules
 
-**最简单的例子**（适合新手）：
+**Simplest example** (beginner-friendly):
 
 ```markdown
-# 项目：个人博客
-# 技术栈：React + TypeScript
+# Project: Personal Blog
+# Tech Stack: React + TypeScript
 
-## 编码规范
-- 使用 TypeScript 严格模式
-- 组件使用函数式组件 + Hooks
-- 文件命名：PascalCase（组件）、camelCase（工具函数）
+## Coding Standards
+- Use TypeScript strict mode
+- Use functional components + Hooks
+- File naming: PascalCase (components), camelCase (utility functions)
 
-## 代码风格
-- 缩进：2 空格
-- 引号：单引号
-- 分号：必须添加
+## Code Style
+- Indentation: 2 spaces
+- Quotes: single quotes
+- Semicolons: required
 
-## 最佳实践
-- 所有函数必须有 JSDoc 注释
-- Props 必须定义 TypeScript 接口
-- 使用 `useState` 和 `useEffect` 时添加注释说明用途
+## Best Practices
+- All functions must have JSDoc comments
+- Props must define TypeScript interfaces
+- Add comments when using `useState` and `useEffect` to explain purpose
 ```
 
-### 步骤 3: 测试效果
+### Step 3: Test the effect
 
-在 Cursor 中输入提示词：
+In Cursor, enter the prompt:
 
 ```
-创建一个 UserProfile 组件，显示用户头像和名字
+Create a UserProfile component that displays user avatar and name
 ```
 
-**没有 Rules 的输出**：
+**Output without Rules**:
 ```jsx
 function UserProfile(props) {
   return <div>{props.name}</div>
 }
 ```
 
-**有了 Rules 的输出**：
+**Output with Rules**:
 ```tsx
 /**
- * 用户资料展示组件
- * @param {UserProfileProps} props - 组件属性
+ * User profile display component
+ * @param {UserProfileProps} props - Component properties
  */
 interface UserProfileProps {
   name: string;
@@ -113,33 +113,33 @@ export const UserProfile: React.FC<UserProfileProps> = ({ name, avatar }) => {
 };
 ```
 
-:::warning[常见误区]
-Rules 不是魔法 - 它依赖清晰的提示词。如果你的提示词太模糊，即使有 Rules 也可能得不到理想结果。最佳实践：**明确的提示词 + 详细的 Rules = 完美代码**。
+:::warning[Common misconception]
+Rules are not magic - they rely on clear prompts. If your prompts are too vague, even with Rules you may not get ideal results. Best practice: **Clear prompts + Detailed Rules = Perfect code**.
 :::
 
 ---
 
-## 常用场景的 Rules 模板
+## Common Scenario Rule Templates
 
-根据你的技术栈选择合适的模板：
+Choose the right template based on your tech stack:
 
 <Tabs>
   <TabItem value="react" label="React + TypeScript" default>
 
 ```markdown
-# React TypeScript 最佳实践
+# React TypeScript Best Practices
 
-## 组件规范
-- 使用函数式组件
-- Props 必须定义 TypeScript 接口
-- 避免使用 `any` 类型
+## Component Standards
+- Use functional components
+- Props must define TypeScript interfaces
+- Avoid using `any` type
 
-## Hooks 使用规范
-- useState: 明确初始值类型
-- useEffect: 必须添加依赖数组
-- 自定义 Hooks: 以 `use` 开头命名
+## Hooks Usage Standards
+- useState: explicitly type initial values
+- useEffect: must include dependency array
+- Custom Hooks: name starting with `use`
 
-## 文件结构
+## File Structure
 ```
 src/
   components/
@@ -149,236 +149,236 @@ src/
       Button.module.css
 ```
 
-## 错误处理
-- 使用 ErrorBoundary 包裹组件
-- 异步操作使用 try-catch
-- 表单验证使用 React Hook Form
+## Error Handling
+- Wrap components with ErrorBoundary
+- Use try-catch for async operations
+- Form validation using React Hook Form
 ```
 
   </TabItem>
   <TabItem value="python" label="Python FastAPI">
 
 ```markdown
-# Python FastAPI 项目规范
+# Python FastAPI Project Standards
 
-## 编码风格
-- 遵循 PEP 8 规范
-- 使用 Black 格式化
-- 类型注解：所有函数参数和返回值
+## Coding Style
+- Follow PEP 8 standards
+- Use Black formatter
+- Type annotations: all function parameters and return values
 
-## API 设计
-- 路由使用 RESTful 风格
-- 请求体使用 Pydantic 模型
-- 返回统一的响应格式
+## API Design
+- Routes use RESTful style
+- Request body uses Pydantic models
+- Return unified response format
 
-## 安全规范
-- 所有密码使用 bcrypt 加密
-- JWT Token 过期时间：15分钟
-- 敏感信息不记录到日志
+## Security Standards
+- All passwords encrypted with bcrypt
+- JWT Token expiration: 15 minutes
+- Sensitive info not logged
 
-## 数据库操作
-- 使用 SQLAlchemy ORM
-- 异步操作使用 async/await
-- 事务处理使用 context manager
+## Database Operations
+- Use SQLAlchemy ORM
+- Async operations use async/await
+- Transaction handling use context manager
 ```
 
   </TabItem>
   <TabItem value="vue" label="Vue 3">
 
 ```markdown
-# Vue 3 Composition API 规范
+# Vue 3 Composition API Standards
 
-## 组件规范
-- 使用 `<script setup>` 语法
-- Props 使用 TypeScript 接口定义
-- 组件命名：PascalCase
+## Component Standards
+- Use `<script setup>` syntax
+- Props defined with TypeScript interfaces
+- Component naming: PascalCase
 
 ## Composition API
-- 响应式数据使用 ref/reactive
-- 计算属性使用 computed
-- 生命周期钩子按顺序排列
+- Reactive data use ref/reactive
+- Computed properties use computed
+- Lifecycle hooks in order
 
-## 样式规范
-- 使用 scoped CSS
-- 类名使用 BEM 命名法
-- 颜色变量统一在 CSS Variables 定义
+## Style Standards
+- Use scoped CSS
+- Class names use BEM naming
+- Color variables unified in CSS Variables
 ```
 
   </TabItem>
 </Tabs>
 
-:::tip[学习资源]
-想要更多框架模板？访问 [Vibe Coding Tools](https://vibecodingtools.tech/rules) 查看 400+ 开源 Cursor Rules 模板，涵盖 React、Vue、Angular、Python、Go 等主流技术栈。
+:::tip[Learning resources]
+Want more framework templates? Visit [Vibe Coding Tools](https://vibecodingtools.tech/rules) to see 400+ open-source Cursor Rules templates covering React, Vue, Angular, Python, Go, and other mainstream tech stacks.
 :::
 
 ---
 
-## 高级技巧
+## Advanced Tips
 
-### 技巧 1: 多层级 Rules
+### Tip 1: Multi-level Rules
 
-**项目级 Rules**（`.cursorrules` 在根目录）：
+**Project-level Rules** (`.cursorrules` in root):
 ```markdown
-# 全局规范
-- 代码风格：遵循 ESLint 配置
-- 提交规范：使用 Conventional Commits
+# Global Standards
+- Code style: follow ESLint config
+- Commit standards: use Conventional Commits
 ```
 
-**目录级 Rules**（`src/components/.cursorrules`）：
+**Directory-level Rules** (`src/components/.cursorrules`):
 ```markdown
-# 组件特殊规范
-- 所有组件必须有 Storybook 故事
-- Props 必须有默认值
+# Component-specific standards
+- All components must have Storybook stories
+- Props must have default values
 ```
 
-:::note[优先级规则]
-子目录的 Rules 会覆盖根目录的 Rules。如果有冲突，离文件更近的 Rules 优先级更高。
+:::note[Priority rules]
+Child directory Rules override root directory Rules. In case of conflicts, Rules closer to the file have higher priority.
 :::
 
-### 技巧 2: 引用外部规范
+### Tip 2: Reference external standards
 
 ```markdown
-# 参考规范文档
-- 代码风格：https://github.com/airbnb/javascript
-- React 规范：https://react.dev/learn
-- TypeScript 规范：https://www.typescriptlang.org/docs/handbook/
+# Reference standard documentation
+- Code style: https://github.com/airbnb/javascript
+- React standards: https://react.dev/learn
+- TypeScript standards: https://www.typescriptlang.org/docs/handbook/
 
-## 我们的特殊约定
-[添加项目特定的规则]
+## Our special conventions
+[Add project-specific rules]
 ```
 
-### 技巧 3: 动态 Rules（根据文件类型）
+### Tip 3: Dynamic Rules (by file type)
 
 ```markdown
-# 根据文件类型应用不同规则
+# Apply different rules based on file type
 
-## .tsx 文件（React 组件）
-- 导出：命名导出优先于默认导出
-- 样式：使用 CSS Modules
+## .tsx files (React components)
+- Export: named exports preferred over default exports
+- Styles: use CSS Modules
 
-## .ts 文件（工具函数）
-- 纯函数优先
-- 必须有单元测试
+## .ts files (utility functions)
+- Pure functions preferred
+- Must have unit tests
 
-## .test.ts 文件（测试）
-- 使用 describe/it 结构
-- 测试命名：should_[action]_when_[condition]
+## .test.ts files (tests)
+- Use describe/it structure
+- Test naming: should_[action]_when_[condition]
 ```
 
 ---
 
-:::note[准备好实践了吗?]
-想要系统学习 AI 编程? 我们的[入门课程](/docs/course)从零开始,手把手教你使用这些工具。
+:::note[Ready to practice?]
+Want to systematically learn AI coding? Our [beginner course](/docs/course) starts from scratch and teaches you these tools step by step.
 
-👉 [开始学习 AI 编程 →](/docs/course)
+👉 [Start learning AI coding →](/docs/course)
 :::
 
 ---
 
-## 常见问题
+## FAQ
 
 <details>
-  <summary>Q: Rules 文件放在哪里？</summary>
+  <summary>Q: Where to place the Rules file?</summary>
 
-  **答案**：
-  - **项目根目录**：适用于整个项目
-  - **子目录**：只适用于该目录及子目录
-  - **优先级**：子目录 Rules > 根目录 Rules
+  **Answer**:
+  - **Project root**: applies to entire project
+  - **Subdirectories**: only applies to that directory and subdirectories
+  - **Priority**: subdirectory Rules > root directory Rules
 
-  :::tip[最佳实践]
-  大型项目建议在根目录放通用规范，在特定模块目录放专项规范。例如：根目录规定代码风格，`src/api/` 目录规定接口设计规范。
+  :::tip[Best practice]
+  For large projects, put general standards in root directory, specific standards in module directories. For example: root directory defines code style, `src/api/` directory defines API design standards.
   :::
 </details>
 
 <details>
-  <summary>Q: Rules 太长了怎么办？</summary>
+  <summary>Q: What if Rules are too long?</summary>
 
-  **答案**：分类组织，使用清晰的标题
+  **Answer**: Organize by category with clear headings
 
   ```markdown
-  # 📝 编码规范
-  [规范内容]
+  # 📝 Coding Standards
+  [Standards content]
 
-  # 🎨 代码风格
-  [风格内容]
+  # 🎨 Code Style
+  [Style content]
 
-  # 🔒 安全规范
-  [安全内容]
+  # 🔒 Security Standards
+  [Security content]
 
-  # 📦 依赖管理
-  [依赖内容]
+  # 📦 Dependency Management
+  [Dependency content]
   ```
 
-  :::note[长度建议]
-  保持 Rules 在 300-500 行以内。过长的 Rules 会影响 AI 响应速度。如果超过 500 行，考虑拆分成多个文件。
+  :::note[Length suggestion]
+  Keep Rules within 300-500 lines. Overly long Rules affect AI response speed. If exceeding 500 lines, consider splitting into multiple files.
   :::
 </details>
 
 <details>
-  <summary>Q: 如何让 AI 严格遵守 Rules？</summary>
+  <summary>Q: How to make AI strictly follow Rules?</summary>
 
-  **提示词技巧**：
+  **Prompt technique**:
   ```
-  请严格按照 .cursorrules 文件的规范，
-  创建一个用户登录表单组件
+  Please strictly follow the .cursorrules file specifications,
+  create a user login form component
   ```
 
-  在提示词中明确提到 `.cursorrules` 可以提高 AI 的遵守率。
+  Explicitly mentioning `.cursorrules` in prompts can improve AI compliance.
 </details>
 
 <details>
-  <summary>Q: Rules 会影响 AI 性能吗？</summary>
+  <summary>Q: Do Rules affect AI performance?</summary>
 
-  **答案**：
-  - ✅ Rules < 500 行：几乎无影响
-  - ⚠️ Rules > 1000 行：可能稍慢
-  - 💡 建议：保持 Rules 精简，聚焦核心规范
+  **Answer**:
+  - ✅ Rules < 500 lines: almost no impact
+  - ⚠️ Rules > 1000 lines: may be slightly slower
+  - 💡 Recommendation: keep Rules concise, focus on core standards
 
-  性能影响主要来自 AI 需要处理的上下文长度。精简的 Rules 既提高响应速度，又让 AI 更容易理解重点。
+  Performance impact mainly comes from context length AI needs to process. Concise Rules both improve response speed and make it easier for AI to understand key points.
 </details>
 
 ---
 
-## 推荐 Rules 资源
+## Recommended Rules Resources
 
-### 官方资源
+### Official Resources
 
-- [Cursor 官方文档](https://cursor.sh/docs)
-- [Windsurf Rules 指南](https://windsurf.dev)
+- [Cursor Official Docs](https://cursor.sh/docs)
+- [Windsurf Rules Guide](https://windsurf.dev)
 
-### 社区资源
+### Community Resources
 
-- **Vibe Coding Tools** - 400+ 开源 Cursor Rules
-  - React, Vue, Angular 框架规范
-  - Python, JavaScript, TypeScript 语言规范
-  - Clean Code, SOLID 原则
-  - [访问资源库 →](https://vibecodingtools.tech/rules)
+- **Vibe Coding Tools** - 400+ open-source Cursor Rules
+  - React, Vue, Angular framework standards
+  - Python, JavaScript, TypeScript language standards
+  - Clean Code, SOLID principles
+  - [Visit resource library →](https://vibecodingtools.tech/rules)
 
-- **Awesome Cursor Rules** - GitHub 精选集合
-  - 按技术栈分类
-  - 实际项目案例
-  - 社区贡献
+- **Awesome Cursor Rules** - GitHub curated collection
+  - Organized by tech stack
+  - Real project examples
+  - Community contributions
 
 ---
 
-:::tip[推荐学习路径]
-**你刚读完**：Cursor Rules 配置指南 ✅
+:::tip[Recommended learning path]
+**You just read**: Cursor Rules Configuration Guide ✅
 
-**下一步建议**：
-1. ⏭️ [AI Agents 使用指南](/docs/tools/ai-agents) - 学习专业化 AI 助手配置
-2. 🔄 [开始完整课程](/docs/course) - 系统学习 AI 编程全流程
-3. 🛠️ [AI 工具对比](/docs/tools/ai-tools-comparison) - 了解不同 AI 编程工具
+**Next steps**:
+1. ⏭️ [AI Agents Usage Guide](/docs/tools/ai-agents) - Learn specialized AI assistant configuration
+2. 🔄 [Start complete course](/docs/course) - Systematically learn AI coding workflow
+3. 🛠️ [AI Tools Comparison](/docs/tools/ai-tools-comparison) - Understand different AI coding tools
 
-**相关深度阅读**：
-- [AI 编程路线图](/docs/roadmap) - 完整学习路径
-- [Prompt Engineering 101](/docs/prompt-engineering-101) - 提示词基础
-- [MCP 服务器](/docs/tools/mcps) - 扩展 AI 能力边界
+**Related in-depth reading**:
+- [AI Coding Roadmap](/docs/roadmap) - Complete learning path
+- [Prompt Engineering 101](/docs/prompt-engineering-101) - Prompt basics
+- [MCP Servers](/docs/tools/mcps) - Extend AI capability boundaries
 :::
 
 ---
 
-**最后更新**: 2025-11-02
+**Last updated**: 2025-11-02
 
-**相关资源**:
-- [AI Agents 使用指南](/docs/tools/ai-agents) - 专业化 AI 助手
-- [MCP 服务器](/docs/tools/mcps) - 扩展 AI 能力
+**Related resources**:
+- [AI Agents Usage Guide](/docs/tools/ai-agents) - Specialized AI assistants
+- [MCP Servers](/docs/tools/mcps) - Extend AI capabilities
