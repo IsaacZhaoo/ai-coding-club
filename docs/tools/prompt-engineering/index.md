@@ -234,37 +234,37 @@ Use the "Custom Instructions" feature to set default behavior.
 
 Want to understand how professional AI coding tools work under the hood? Explore our deep-dive analyses of system prompts from popular tools:
 
-### [Cursor 系统提示词分析](/docs/tools/prompt-engineering/tools/cursor-prompts)
-深入剖析 Cursor 的核心设计哲学和5大关键模式:
-- 上下文优先策略
-- 工具透明化原则
-- 主动执行机制
-- 语义搜索优先
-- 简化代码编辑格式
+### [Cursor System Prompts Analysis](/docs/tools/prompt-engineering/tools/cursor-prompts)
+Deep dive into Cursor's core design philosophy and 5 key patterns:
+- Context-First Strategy
+- Tool Transparency Principle
+- Proactive Execution Mechanism
+- Semantic Search First
+- Simplified Code Editing Format
 
-**适合**: 想要理解 AI 编程助手如何工作,并将这些模式应用到自己工作流中的开发者
+**Best for**: Developers who want to understand how AI coding assistants work and apply these patterns to their own workflows
 
-### [Claude Code 系统提示词分析](/docs/tools/prompt-engineering/tools/claude-code-prompts)
-深入剖析 Claude Code CLI 工具的极简主义设计哲学和6大关键模式:
-- 极简主义沟通策略
-- 编辑优先,永不创建
-- 专业客观性原则
-- 上下文感知的工具委派
-- 并行执行优先
-- Git 安全协议
+### [Claude Code System Prompts Analysis](/docs/tools/prompt-engineering/tools/claude-code-prompts)
+Deep dive into Claude Code CLI tool's extreme minimalism design philosophy and 6 key patterns:
+- Extreme Minimalism Communication Strategy
+- Edit-First, Create-Never Philosophy
+- Professional Objectivity Principle
+- Context-Aware Tool Delegation
+- Parallel Execution Priority
+- Git Safety Protocol
 
-**适合**: 想要理解 CLI 优化的 AI 工具设计,学习极简高效交互模式的开发者
+**Best for**: Developers who want to understand CLI-optimized AI tool design and learn minimalist efficient interaction patterns
 
-### [Cline 系统提示词分析](/docs/tools/prompt-engineering/tools/cline-prompts)
-深入剖析 Cline 开源 AI 编程助手的用户审批优先设计和6大关键模式:
-- 强制审批的迭代执行
-- 单工具原则
-- 双模式架构(PLAN/ACT)
-- 渐进式上下文收集
-- 审批分层机制
-- 搜索/替换块系统
+### [Cline System Prompts Analysis](/docs/tools/prompt-engineering/tools/cline-prompts)
+Deep dive into Cline open-source AI coding assistant's user approval-first design and 6 key patterns:
+- Mandatory Iterative Execution with Approval
+- One Tool Per Message Principle
+- Dual-Mode Architecture (PLAN/ACT)
+- Progressive Context Gathering
+- Approval Stratification Mechanism
+- Search/Replace Block System
 
-**适合**: 想要理解开源 AI 工具设计,学习安全审批工作流的开发者
+**Best for**: Developers who want to understand open-source AI tool design and learn safe approval workflows
 
 ---
 

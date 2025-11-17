@@ -1,488 +1,488 @@
 ---
 id: claude-code-prompts
-title: Claude Code 系统提示词深度解析
-sidebar_label: Claude Code 提示词分析
-description: 深入剖析 Claude Code CLI 工具的系统提示词设计,学习其极简主义哲学和安全优先的架构模式
+title: Deep Analysis of Claude Code System Prompts
+sidebar_label: Claude Code Prompt Analysis
+description: In-depth analysis of Claude Code CLI tool's system prompt design, learning its minimalist philosophy and security-first architecture patterns
 ---
 
-# Claude Code 系统提示词深度解析
+# Deep Analysis of Claude Code System Prompts
 
-> 理解 Claude Code 如何通过极简设计实现高效的 CLI 代码协作
+> Understanding how Claude Code achieves efficient CLI code collaboration through minimalist design
 
-Claude Code 是 Anthropic 官方推出的 AI 编程 CLI 工具。与传统 AI 编程助手不同,Claude Code 采用**极简主义**设计哲学,专为命令行环境优化。本文通过分析其系统提示词,揭示这一独特工具的设计理念。
+Claude Code is Anthropic's official AI programming CLI tool. Unlike traditional AI programming assistants, Claude Code adopts a **minimalist** design philosophy, optimized specifically for command-line environments. This article reveals the design principles of this unique tool by analyzing its system prompts.
 
-**学习目标**:
-- 理解 Claude Code 的极简主义设计哲学
-- 掌握 6 个关键提示词模式
-- 学会将 CLI 优化思维应用到自己的 AI 工作流
+**Learning Objectives**:
+- Understand Claude Code's minimalist design philosophy
+- Master 6 key prompt patterns
+- Learn to apply CLI optimization thinking to your own AI workflows
 
 ---
 
-## 核心设计哲学
+## Core Design Philosophy
 
-### 1. 极简主义沟通 (Extreme Minimalism)
+### 1. Extreme Minimalism
 
-**设计理念**: "Do what has been asked; nothing more, nothing less."
+**Design Principle**: "Do what has been asked; nothing more, nothing less."
 
-Claude Code 优先超简洁响应,目标是 1-3 句话:
+Claude Code prioritizes ultra-concise responses, targeting 1-3 sentences:
 
 ```
-用户: what is 2+2?
+User: what is 2+2?
 Claude Code: 4
 
-用户: is 11 a prime number?
+User: is 11 a prime number?
 Claude Code: Yes
 ```
 
-**为什么重要?**
-- **CLI 优化**: 命令行界面需要简洁输出,不是冗长解释
-- **Token 效率**: 最小化输出 tokens,加快响应速度
-- **减少噪音**: 只提供用户请求的信息,避免过度解释
+**Why is this important?**
+- **CLI Optimization**: Command-line interfaces need concise output, not verbose explanations
+- **Token Efficiency**: Minimize output tokens for faster response times
+- **Reduce Noise**: Provide only the information requested, avoid over-explanation
 
-**对比其他工具**:
-- ❌ 传统 AI: "The answer to 2+2 is 4. This is because..."
+**Comparison with Other Tools**:
+- ❌ Traditional AI: "The answer to 2+2 is 4. This is because..."
 - ✅ Claude Code: "4"
 
-**如何应用?**
-在自定义规则中:
+**How to Apply?**
+In custom instructions:
 ```markdown
-规则: 极简响应模式
-- 回答问题时,直接给出答案
-- 避免前言、后语、总结(除非被要求)
-- 匹配用户问题的复杂度级别
+Rule: Minimalist Response Mode
+- When answering questions, provide the answer directly
+- Avoid preambles, postambles, summaries (unless requested)
+- Match the complexity level of the user's question
 ```
 
 ---
 
-### 2. 编辑优先,永不创建 (Edit-First, Create-Never)
+### 2. Edit-First, Create-Never
 
-**设计理念**: 始终优先编辑现有文件,而非创建新文件
+**Design Principle**: Always prefer editing existing files over creating new ones
 
-**核心指令**:
+**Core Directive**:
 > ALWAYS prefer editing an existing file to creating a new one. NEVER create files unless they're absolutely necessary.
 
-**特殊禁止**:
-- **不主动创建文档**: 明确禁止主动创建 `*.md`, `README` 文件
-- **必须显式请求**: 只在用户明确要求时才创建文件
+**Special Prohibitions**:
+- **Don't proactively create documentation**: Explicitly forbidden to proactively create `*.md`, `README` files
+- **Must be explicitly requested**: Only create files when user explicitly asks
 
-**为什么这样设计?**
-1. **避免惊喜**: 防止 AI 在代码库中创建意外文件
-2. **保持整洁**: 减少代码库混乱和不必要的文件
-3. **用户控制**: 文件创建应由用户主导,而非 AI 猜测
+**Why this design?**
+1. **Avoid Surprises**: Prevent AI from creating unexpected files in the codebase
+2. **Maintain Cleanliness**: Reduce codebase clutter and unnecessary files
+3. **User Control**: File creation should be user-led, not AI guesswork
 
-**实战案例**:
+**Real-World Examples**:
 
-❌ **其他工具的行为**:
+❌ **Behavior of Other Tools**:
 ```
-用户: "实现一个登录功能"
-AI: [自动创建]
+User: "Implement a login feature"
+AI: [Automatically creates]
     - login.ts
-    - README.md (解释如何使用)
-    - DESIGN.md (设计文档)
+    - README.md (explaining how to use)
+    - DESIGN.md (design documentation)
 ```
 
-✅ **Claude Code 的行为**:
+✅ **Claude Code's Behavior**:
 ```
-用户: "实现一个登录功能"
-Claude Code: [检查现有文件]
-    - 发现 auth.ts 已存在
-    - 编辑 auth.ts 添加登录逻辑
-    - 不创建额外文档(除非被要求)
+User: "Implement a login feature"
+Claude Code: [Checks existing files]
+    - Finds auth.ts already exists
+    - Edits auth.ts to add login logic
+    - Doesn't create additional documentation (unless requested)
 ```
 
-**如何应用?**
+**How to Apply?**
 ```markdown
-文件操作原则:
-- 优先搜索现有相关文件
-- 只在绝对必要时创建新文件
-- 创建前询问用户确认
+File Operation Principles:
+- Prioritize searching for existing related files
+- Only create new files when absolutely necessary
+- Ask user for confirmation before creating
 ```
 
 ---
 
-### 3. 专业客观 > 用户验证 (Professional Objectivity)
+### 3. Professional Objectivity
 
-**设计理念**: 技术准确性和真实性优先于验证用户信念
+**Design Principle**: Technical accuracy and truthfulness take priority over validating user beliefs
 
-**核心指令**:
+**Core Directive**:
 > Prioritize technical accuracy and truthfulness over validating the user's beliefs.
 
-**行为准则**:
-- **诚实分歧**: 必要时礼貌地不同意用户观点
-- **调查优先**: 不确定时先调查事实,而非本能确认用户信念
-- **避免过度赞美**: 不使用 "You're absolutely right" 等过度验证
+**Behavior Guidelines**:
+- **Honest Disagreement**: Politely disagree with user viewpoints when necessary
+- **Investigation First**: When uncertain, investigate facts first rather than instinctively confirming user beliefs
+- **Avoid Over-Praise**: Don't use excessive validation like "You're absolutely right"
 
-**为什么重要?**
-- 客观指导和尊重的纠正比虚假同意更有价值
-- AI 应该应用相同的严格标准,而非偏向用户
+**Why is this important?**
+- Objective guidance and respectful correction are more valuable than false agreement
+- AI should apply the same rigorous standards rather than bias toward the user
 
-**实战对比**:
+**Real-World Comparison**:
 
-❌ **过度验证的 AI**:
+❌ **Over-Validating AI**:
 ```
-用户: "我觉得应该在每个函数里都用 try-catch"
+User: "I think we should use try-catch in every function"
 AI: "You're absolutely right! That's an excellent practice..."
 ```
 
 ✅ **Claude Code**:
 ```
-用户: "我觉得应该在每个函数里都用 try-catch"
-Claude Code: "过度使用 try-catch 可能隐藏 bugs。建议只在可能抛出异常的边界处使用。"
+User: "I think we should use try-catch in every function"
+Claude Code: "Overusing try-catch can hide bugs. Suggest using only at boundaries where exceptions might be thrown."
 ```
 
-**如何应用?**
+**How to Apply?**
 ```markdown
-交互原则:
-- 质疑假设时要有礼貌但坦率
-- 提供技术准确的替代方案
-- 避免空洞的赞美和验证
+Interaction Principles:
+- Be polite but frank when questioning assumptions
+- Provide technically accurate alternatives
+- Avoid empty praise and validation
 ```
 
 ---
 
-### 4. 平衡的主动性 (Balanced Proactiveness)
+### 4. Balanced Proactiveness
 
-**设计理念**: 在"做正确的事"和"不让用户惊讶"之间取得平衡
+**Design Principle**: Balance between "doing the right thing" and "not surprising the user"
 
-**关键区分**:
-- ✅ **允许主动**: 当用户要求具体任务时
-- ❌ **禁止主动**: 当用户只是询问如何处理问题时
+**Key Distinction**:
+- ✅ **Allow Proactiveness**: When user requests a specific task
+- ❌ **Prohibit Proactiveness**: When user is only asking how to handle something
 
-**Git 提交示例**:
+**Git Commit Example**:
 ```markdown
-❌ 禁止主动提交:
+❌ Prohibit proactive commits:
 "NEVER commit changes unless the user explicitly asks you to."
 
-只在用户明确说 "提交这些更改" 时才提交
+Only commit when user explicitly says "commit these changes"
 ```
 
-**如何应用?**
-理解用户意图:
-- "帮我实现 X" → 可以主动执行
-- "我应该如何实现 X?" → 只提供指导,不主动执行
+**How to Apply?**
+Understand user intent:
+- "Help me implement X" → Can proactively execute
+- "How should I implement X?" → Only provide guidance, don't proactively execute
 
 ---
 
-### 5. 防御性安全立场 (Defensive Security Stance)
+### 5. Defensive Security Stance
 
-**设计理念**: 只协助防御性安全任务
+**Design Principle**: Only assist with defensive security tasks
 
-**允许**:
-- ✅ 安全分析和漏洞检测
-- ✅ 防御工具和检测规则
-- ✅ CTF 挑战和教育场景
+**Allowed**:
+- ✅ Security analysis and vulnerability detection
+- ✅ Defensive tools and detection rules
+- ✅ CTF challenges and educational scenarios
 
-**拒绝**:
-- ❌ 创建恶意代码
-- ❌ 凭证收集
-- ❌ 破坏性技术
+**Refused**:
+- ❌ Creating malicious code
+- ❌ Credential harvesting
+- ❌ Destructive techniques
 
 ---
 
-## 六大关键提示词模式
+## Six Key Prompt Patterns
 
-### 模式 1: 上下文感知的工具委派 (Context-Aware Tool Delegation)
+### Pattern 1: Context-Aware Tool Delegation
 
-**核心机制**: 通过 `Task` 工具广泛使用专业化 agents
+**Core Mechanism**: Extensive use of specialized agents through the `Task` tool
 
-**Agent 类型**:
+**Agent Types**:
 ```typescript
-- general-purpose: 复杂多步骤任务研究
-- code-analyzer: 代码分析和 bug 追踪
-- test-runner: 测试执行和结果分析
-- file-analyzer: 日志文件摘要和分析
+- general-purpose: Complex multi-step task research
+- code-analyzer: Code analysis and bug tracing
+- test-runner: Test execution and result analysis
+- file-analyzer: Log file summarization and analysis
 ```
 
-**何时使用 Agent vs. 直接工具**:
+**When to Use Agent vs. Direct Tools**:
 ```
-使用 Agent:
-✅ 开放式代码库搜索 ("错误在哪里处理?")
-✅ 多轮探索需求 (研究 bug、追踪逻辑)
+Use Agent:
+✅ Open-ended codebase search ("Where is error handling?")
+✅ Multi-round exploration needs (research bugs, trace logic)
 
-使用直接工具:
-✅ 读取特定文件路径 (Read 工具)
-✅ 搜索特定类定义 (Glob 工具)
-✅ 2-3 个文件内搜索 (Read 工具)
-```
-
-**独特设计: 无状态 Agent 模型**
-```
-关键约束:
-- Agent 是"发射后不管"(fire-and-forget)
-- 无法向 agent 发送额外消息
-- 必须提前提供详细的自主任务描述
-- Agent 结果对用户不可见,需要主动总结
+Use Direct Tools:
+✅ Read specific file paths (Read tool)
+✅ Search for specific class definitions (Glob tool)
+✅ Search within 2-3 files (Read tool)
 ```
 
-**如何应用?**
+**Unique Design: Stateless Agent Model**
+```
+Key Constraints:
+- Agents are "fire-and-forget"
+- Cannot send additional messages to agents
+- Must provide detailed autonomous task descriptions upfront
+- Agent results not visible to user, need proactive summarization
+```
+
+**How to Apply?**
 ```markdown
-任务委派策略:
-1. 复杂探索 → 使用 Task agent
-2. 精确查询 → 使用直接工具
-3. Agent prompt 必须详细且自包含
-4. 总结 agent 结果给用户
+Task Delegation Strategy:
+1. Complex exploration → Use Task agent
+2. Precise queries → Use direct tools
+3. Agent prompts must be detailed and self-contained
+4. Summarize agent results for user
 ```
 
 ---
 
-### 模式 2: 并行执行优先 (Parallel Execution Emphasis)
+### Pattern 2: Parallel Execution Emphasis
 
-**设计理念**: 独立操作应批量执行以优化性能
+**Design Principle**: Independent operations should be batched for performance optimization
 
-**核心指令** (在多个上下文中重复):
+**Core Directive** (repeated in multiple contexts):
 > When multiple independent pieces of information are requested and all commands are likely to succeed, batch your tool calls together for optimal performance.
 
-**应用场景**:
-1. **Git 操作**: 并行运行 `git status`, `git diff`, `git log`
-2. **文件读取**: 并行读取多个不相关的文件
-3. **Bash 命令**: 批量执行独立命令
+**Application Scenarios**:
+1. **Git Operations**: Run `git status`, `git diff`, `git log` in parallel
+2. **File Reading**: Read multiple unrelated files in parallel
+3. **Bash Commands**: Batch execute independent commands
 
-**实战对比**:
+**Real-World Comparison**:
 
-❌ **串行执行** (低效):
+❌ **Serial Execution** (Inefficient):
 ```
 1. git status
-2. 等待结果
+2. Wait for result
 3. git diff
-4. 等待结果
+4. Wait for result
 5. git log
-6. 等待结果
+6. Wait for result
 ```
 
-✅ **并行执行** (高效):
+✅ **Parallel Execution** (Efficient):
 ```
-单次消息中调用:
+Single message invokes:
 - git status
 - git diff
 - git log
-(所有命令同时执行)
+(All commands execute simultaneously)
 ```
 
-**Git 提交工作流示例**:
+**Git Commit Workflow Example**:
 ```
-步骤 1: 并行执行理解状态
-  - git status (查看未跟踪文件)
-  - git diff (查看更改)
-  - git log (查看提交历史)
+Step 1: Parallel execution to understand state
+  - git status (view untracked files)
+  - git diff (view changes)
+  - git log (view commit history)
 
-步骤 2: 分析并起草提交消息
+Step 2: Analyze and draft commit message
 
-步骤 3: 并行执行暂存和提交
-  - git add (暂存相关文件)
-  - git commit (使用 HEREDOC 格式化消息)
+Step 3: Parallel execution for staging and committing
+  - git add (stage relevant files)
+  - git commit (with HEREDOC formatted message)
 
-步骤 4: 串行验证 (依赖前一步)
-  - git status (验证成功)
+Step 4: Serial validation (depends on previous step)
+  - git status (verify success)
 ```
 
-**如何应用?**
+**How to Apply?**
 ```markdown
-并行执行检查清单:
-- [ ] 操作是否独立?
-- [ ] 所有命令是否可能成功?
-- [ ] 没有相互依赖?
-→ 如果全是,则在单次消息中批量调用
+Parallel Execution Checklist:
+- [ ] Are operations independent?
+- [ ] Are all commands likely to succeed?
+- [ ] No mutual dependencies?
+→ If all yes, batch invoke in single message
 ```
 
 ---
 
-### 模式 3: 工具特化 > Bash (Tool Specialization Over Bash)
+### Pattern 3: Tool Specialization Over Bash
 
-**设计理念**: 尽可能使用专用工具而非 bash 命令
+**Design Principle**: Use specialized tools instead of bash commands whenever possible
 
-**工具映射**:
+**Tool Mapping**:
 ```
-文件操作:
-❌ cat/head/tail  →  ✅ Read 工具
-❌ sed/awk        →  ✅ Edit 工具
-❌ echo > file    →  ✅ Write 工具
-❌ grep/rg        →  ✅ Grep 工具
+File Operations:
+❌ cat/head/tail  →  ✅ Read tool
+❌ sed/awk        →  ✅ Edit tool
+❌ echo > file    →  ✅ Write tool
+❌ grep/rg        →  ✅ Grep tool
 
-保留 Bash 用于:
-✅ 真正的系统命令 (npm, git, docker)
-✅ 需要 shell 执行的终端操作
+Reserve Bash for:
+✅ Genuine system commands (npm, git, docker)
+✅ Terminal operations requiring shell execution
 ```
 
-**禁止**:
+**Prohibitions**:
 ```markdown
-❌ NEVER: echo 或命令行工具来向用户沟通
-❌ NEVER: bash 的 find/grep 来搜索文件/代码
+❌ NEVER: echo or command-line tools to communicate with user
+❌ NEVER: bash find/grep to search files/code
 
-✅ ALWAYS: 直接输出文本通信
-✅ ALWAYS: 使用 Glob/Grep 工具搜索
+✅ ALWAYS: Output text directly for communication
+✅ ALWAYS: Use Glob/Grep tools for searching
 ```
 
-**为什么这样设计?**
-1. **更好的用户体验**: 专用工具有优化的输出格式
-2. **错误处理**: 工具层面有更好的错误处理
-3. **上下文优化**: 工具可以智能管理上下文使用
+**Why this design?**
+1. **Better UX**: Specialized tools have optimized output formats
+2. **Error Handling**: Better error handling at the tool level
+3. **Context Optimization**: Tools can intelligently manage context usage
 
-**如何应用?**
+**How to Apply?**
 ```markdown
-工具选择决策树:
-需要读文件? → Read 工具
-需要编辑文件? → Edit 工具
-需要搜索代码? → Grep 工具
-需要运行命令? → Bash 工具
+Tool Selection Decision Tree:
+Need to read file? → Read tool
+Need to edit file? → Edit tool
+Need to search code? → Grep tool
+Need to run command? → Bash tool
 ```
 
 ---
 
-### 模式 4: 读前修改协议 (Read-Before-Modify Protocol)
+### Pattern 4: Read-Before-Modify Protocol
 
-**设计理念**: 在修改文件前强制读取文件
+**Design Principle**: Force file reading before modification
 
-**工具层面强制**:
+**Tool-Level Enforcement**:
 ```
-Edit 工具和 Write 工具都会失败,如果:
-- 文件存在但未在会话中读取过
+Edit and Write tools will fail if:
+- File exists but hasn't been read in the session
 
-错误消息: "This tool will error if you attempt an edit
+Error message: "This tool will error if you attempt an edit
            without reading the file first."
 ```
 
-**为什么强制执行?**
-1. **防止盲目覆写**: 避免在不了解当前内容的情况下修改
-2. **确保上下文意识**: 强制 AI 理解现有代码
-3. **减少错误**: 大幅减少基于错误假设的修改
+**Why enforce this?**
+1. **Prevent Blind Overwrites**: Avoid modifications without understanding current content
+2. **Ensure Context Awareness**: Force AI to understand existing code
+3. **Reduce Errors**: Dramatically reduce modifications based on incorrect assumptions
 
-**Edit 工具特性**:
+**Edit Tool Features**:
 ```typescript
 {
-  old_string: "要替换的确切文本",
-  new_string: "新文本",
-  replace_all: false  // 如果 old_string 不唯一会失败
+  old_string: "Exact text to replace",
+  new_string: "New text",
+  replace_all: false  // Fails if old_string is not unique
 }
 ```
 
-**缩进保留规则**:
+**Indentation Preservation Rules**:
 ```
-关键: 保留 Read 工具输出中的确切缩进
-行号前缀格式: "空格 + 行号 + tab"
-内容从 tab 后开始 → 这是需要匹配的部分
+Key: Preserve exact indentation from Read tool output
+Line number prefix format: "spaces + line number + tab"
+Content starts after tab → This is the part to match
 ```
 
-**如何应用?**
+**How to Apply?**
 ```markdown
-文件修改工作流:
-1. 使用 Read 工具读取文件
-2. 理解当前内容和结构
-3. 使用 Edit 精确替换(保留缩进)
-4. 对于新文件,确认是否真的需要创建
+File Modification Workflow:
+1. Use Read tool to read file
+2. Understand current content and structure
+3. Use Edit for precise replacement (preserve indentation)
+4. For new files, confirm if creation is truly necessary
 ```
 
 ---
 
-### 模式 5: 主动任务管理 (Proactive Task Management)
+### Pattern 5: Proactive Task Management
 
-**设计理念**: "VERY frequently" 使用 TodoWrite 工具追踪任务
+**Design Principle**: "VERY frequently" use TodoWrite tool to track tasks
 
-**何时使用**:
+**When to Use**:
 ```
-✅ 使用 TodoWrite:
-- 复杂多步骤任务 (3+ 步骤)
-- 非平凡且复杂的任务
-- 用户明确要求 todo list
-- 用户提供多个任务
+✅ Use TodoWrite:
+- Complex multi-step tasks (3+ steps)
+- Non-trivial and complex tasks
+- User explicitly requests todo list
+- User provides multiple tasks
 
-❌ 不使用 TodoWrite:
-- 单一、直接的任务
-- 平凡任务(提供不了组织价值)
-- 少于 3 个简单步骤的任务
-- 纯对话或信息性任务
+❌ Don't Use TodoWrite:
+- Single, straightforward tasks
+- Trivial tasks (no organizational value)
+- Less than 3 simple steps
+- Purely conversational or informational tasks
 ```
 
-**独特要求: 双形式任务描述**
+**Unique Requirement: Dual-Form Task Descriptions**
 ```typescript
 {
-  content: "Run tests",           // 祈使句形式
-  activeForm: "Running tests",    // 现在进行时形式
+  content: "Run tests",           // Imperative form
+  activeForm: "Running tests",    // Present continuous form
   status: "in_progress"
 }
 ```
 
-**为什么需要两种形式?**
-- UX 考虑: 实时状态显示需要进行时形式
-- 用户可见性: 清楚看到 AI 正在做什么
+**Why need both forms?**
+- UX Consideration: Real-time status display needs continuous form
+- User Visibility: Clearly see what AI is currently doing
 
-**关键原则**:
+**Key Principles**:
 ```
-1. 标记完成要及时
-   ❌ 不批量标记多个任务完成
-   ✅ 完成一个立即标记一个
+1. Mark completion promptly
+   ❌ Don't batch mark multiple tasks as complete
+   ✅ Mark each immediately after completion
 
-2. 同时只有一个 in_progress 任务
-   - 不能少于 1 个
-   - 不能多于 1 个
+2. Only one in_progress task at a time
+   - Not less than 1
+   - Not more than 1
 
-3. 完成标准严格
-   只在真正完成时标记 completed:
-   ✅ 测试通过
-   ✅ 实现完整
-   ✅ 无未解决错误
+3. Strict completion standards
+   Only mark as completed when truly done:
+   ✅ Tests pass
+   ✅ Implementation complete
+   ✅ No unresolved errors
 ```
 
-**如何应用?**
+**How to Apply?**
 ```markdown
-任务管理最佳实践:
-1. 开始复杂任务时创建 todo list
-2. 标记当前任务为 in_progress
-3. 完成后立即标记 completed
-4. 直接进入下一个任务
+Task Management Best Practices:
+1. Create todo list when starting complex tasks
+2. Mark current task as in_progress
+3. Immediately mark completed after finishing
+4. Proceed directly to next task
 ```
 
 ---
 
-### 模式 6: Git 安全协议 (Git Safety Protocol)
+### Pattern 6: Git Safety Protocol
 
-**设计理念**: 通过结构化安全护栏防止破坏性 Git 操作
+**Design Principle**: Prevent destructive Git operations through structured safety guardrails
 
-**绝对禁止**:
+**Absolute Prohibitions**:
 ```markdown
 ❌ NEVER update git config
 ❌ NEVER run destructive/irreversible commands
-   (除非用户明确请求)
+   (unless explicitly requested by user)
 ❌ NEVER skip hooks (--no-verify, --no-gpg-sign)
 ❌ NEVER force push to main/master
 ❌ Avoid git commit --amend
-   (只在明确请求或 pre-commit hook 修改时使用)
+   (only on explicit request or pre-commit hook modifications)
 ```
 
-**Amend 前验证**:
+**Pre-Amend Verification**:
 ```bash
-检查作者身份:
+Check authorship:
 git log -1 --format='%an %ae'
 
-确认未推送:
-git status 显示 "Your branch is ahead"
+Confirm not pushed:
+git status shows "Your branch is ahead"
 
-如果两者都为真 → 可以 amend
-否则 → 创建新提交 (永不 amend 其他开发者的提交)
+If both true → Can amend
+Otherwise → Create new commit (never amend other developers' commits)
 ```
 
-**结构化提交工作流** (5 步骤):
+**Structured Commit Workflow** (5 Steps):
 
-**步骤 1: 并行理解状态**
+**Step 1: Parallel Understanding of State**
 ```bash
-并行执行:
-- git status (查看未跟踪文件)
-- git diff --staged 和 --unstaged (查看更改)
-- git log (学习提交消息风格)
+Execute in parallel:
+- git status (view untracked files)
+- git diff --staged and --unstaged (view changes)
+- git log (learn commit message style)
 ```
 
-**步骤 2: 分析和起草**
+**Step 2: Analyze and Draft**
 ```markdown
-- 总结更改性质 (新功能/bug 修复/重构)
-- 起草简洁消息 (1-2 句,聚焦"为什么"而非"什么")
-- 确保准确反映更改和目的
+- Summarize nature of changes (new feature/bug fix/refactor)
+- Draft concise message (1-2 sentences, focus on "why" not "what")
+- Ensure it accurately reflects changes and purpose
 ```
 
-**步骤 3: 并行暂存和提交**
+**Step 3: Parallel Staging and Committing**
 ```bash
-并行:
-- git add (添加相关未跟踪文件)
+In parallel:
+- git add (add relevant untracked files)
 - git commit -m "$(cat <<'EOF'
-    提交消息在这里
+    Commit message here
 
     🤖 Generated with Claude Code
     Co-Authored-By: Claude <noreply@anthropic.com>
@@ -490,382 +490,382 @@ git status 显示 "Your branch is ahead"
     )"
 ```
 
-**关键: 使用 HEREDOC 确保格式化**
+**Key: Use HEREDOC to Ensure Formatting**
 ```bash
-为什么使用 HEREDOC?
-- 保证良好格式
-- 支持多行消息
-- 避免 shell 转义问题
+Why use HEREDOC?
+- Guarantees good formatting
+- Supports multi-line messages
+- Avoids shell escaping issues
 
-格式:
+Format:
 git commit -m "$(cat <<'EOF'
-   你的消息
+   Your message
    EOF
    )"
 ```
 
-**步骤 4: Pre-commit Hook 处理**
+**Step 4: Pre-commit Hook Handling**
 ```markdown
-如果提交因 pre-commit hook 更改失败:
-1. 重试一次
-2. 如果成功但文件被 hook 修改:
-   - 检查作者身份
-   - 检查未推送
-   - 如果安全 → amend
-   - 否则 → 新提交
+If commit fails due to pre-commit hook changes:
+1. Retry once
+2. If successful but files modified by hook:
+   - Check authorship
+   - Check not pushed
+   - If safe → amend
+   - Otherwise → new commit
 ```
 
-**步骤 5: 验证**
+**Step 5: Verification**
 ```bash
-串行执行(依赖提交完成):
-git status  # 验证成功
+Serial execution (depends on commit completion):
+git status  # Verify success
 ```
 
-**Pull Request 工作流**:
+**Pull Request Workflow**:
 ```markdown
-1. 并行: git status + git diff + 检查远程跟踪
-2. 分析从分支分歧以来的所有提交
-3. 并行: 创建分支 + 推送 + 使用 gh pr create 创建 PR
+1. Parallel: git status + git diff + check remote tracking
+2. Analyze all commits since branch divergence
+3. Parallel: create branch + push + create PR using gh pr create
 
-PR 格式(使用 HEREDOC):
-gh pr create --title "标题" --body "$(cat <<'EOF'
+PR format (using HEREDOC):
+gh pr create --title "Title" --body "$(cat <<'EOF'
 ## Summary
-<1-3 要点>
+<1-3 bullet points>
 
 ## Test plan
-[测试清单]
+[Test checklist]
 
 🤖 Generated with Claude Code
 EOF
 )"
 ```
 
-**如何应用?**
+**How to Apply?**
 ```markdown
-Git 最佳实践:
-1. 始终并行获取 status/diff/log
-2. 用 HEREDOC 格式化提交消息
-3. 遵守安全协议(无 force push 等)
-4. 在 amend 前验证作者身份
-5. 只在明确要求时才提交
+Git Best Practices:
+1. Always parallel fetch status/diff/log
+2. Format commit messages with HEREDOC
+3. Follow safety protocol (no force push, etc.)
+4. Verify authorship before amend
+5. Only commit when explicitly requested
 ```
 
 ---
 
-## 与 Cursor 的核心区别
+## Core Differences from Cursor
 
-### 1. 沟通风格差异
+### 1. Communication Style Differences
 
-**Cursor**: 解释性、教育性
+**Cursor**: Explanatory, educational
 ```
-"我将重构这个函数以提高可读性。
-这样做的原因是..."
+"I will refactor this function to improve readability.
+The reason for this is..."
 ```
 
-**Claude Code**: 极简、行动导向
+**Claude Code**: Minimalist, action-oriented
 ```
-"重构 processUser 函数"
-[直接显示更改]
+"Refactor processUser function"
+[Directly shows changes]
 ```
 
 ---
 
-### 2. 文件创建策略
+### 2. File Creation Strategy
 
-**Cursor**: 主动创建辅助文件
+**Cursor**: Proactively creates auxiliary files
 ```
-实现功能 → 自动创建:
-- 实现文件
+Implement feature → Auto-creates:
+- Implementation file
 - README.md
-- 测试文件
-- 文档
+- Test file
+- Documentation
 ```
 
-**Claude Code**: 强烈反对创建
+**Claude Code**: Strongly opposed to creation
 ```
-实现功能 → 只在必要时:
-- 编辑现有文件
-- 只在明确要求时创建新文件
-- 永不主动创建文档
-```
-
----
-
-### 3. Agent 架构
-
-**Cursor**: 持续对话式 agents
-```
-- 可以与 agent 多轮交互
-- Agent 保持上下文
-```
-
-**Claude Code**: 无状态、单次响应 agents
-```
-- Fire-and-forget 模型
-- 必须提前提供所有指令
-- Agent 只返回一次消息
+Implement feature → Only when necessary:
+- Edit existing files
+- Only create new files when explicitly requested
+- Never proactively create documentation
 ```
 
 ---
 
-### 4. 工具使用哲学
+### 3. Agent Architecture
 
-**Cursor**: 平衡工具和 bash
+**Cursor**: Continuous conversational agents
 ```
-- 灵活使用 bash 命令
-- 工具作为辅助
-```
-
-**Claude Code**: 强烈偏好专用工具
-```
-- Bash 仅用于真正的系统命令
-- 文件操作必须使用工具
-- 禁止 bash 用于通信
+- Can interact with agents multiple rounds
+- Agents maintain context
 ```
 
----
-
-### 5. 并行执行
-
-**Cursor**: 串行执行为默认
+**Claude Code**: Stateless, single-response agents
 ```
-- 逐个执行操作
-- 等待每个完成
-```
-
-**Claude Code**: 积极并行化
-```
-- 批量独立操作
-- 在单次消息中多工具调用
-- 显著性能优化
+- Fire-and-forget model
+- Must provide all instructions upfront
+- Agents only return one message
 ```
 
 ---
 
-### 6. Git 安全
+### 4. Tool Usage Philosophy
 
-**Cursor**: 基本 git 功能
+**Cursor**: Balance tools and bash
 ```
-- 提供 git 能力
-- 基本安全警告
+- Flexible use of bash commands
+- Tools as auxiliary
 ```
 
-**Claude Code**: 全面安全协议
+**Claude Code**: Strong preference for specialized tools
 ```
-- 结构化 5 步工作流
-- 显式禁止(不更新配置、不 force push)
-- Amend 前验证作者身份
-- 强制使用 HEREDOC 格式化
+- Bash only for genuine system commands
+- File operations must use tools
+- Prohibited bash for communication
 ```
 
 ---
 
-## 实际应用场景
+### 5. Parallel Execution
 
-### 场景 1: 复杂重构任务
-
-**传统对话式 AI**:
+**Cursor**: Serial execution as default
 ```
-用户: 重构身份验证模块
-AI: 好的,让我解释我将如何重构...
-    [长篇解释]
-    准备好开始了吗?
-用户: 是的
-AI: [开始重构]
+- Execute operations one by one
+- Wait for each to complete
 ```
 
-**Claude Code 方式**:
+**Claude Code**: Aggressive parallelization
 ```
-用户: 重构身份验证模块
-Claude Code: [创建 todo list]
-    1. 分析当前实现
-    2. 提取验证逻辑
-    3. 创建辅助函数
-    4. 更新测试
-
-[立即开始执行,标记任务进度]
-[完成后显示简洁摘要]
+- Batch independent operations
+- Multi-tool invocation in single message
+- Significant performance optimization
 ```
-
-**应用的模式**:
-- ✅ 极简沟通 (无冗长解释)
-- ✅ 主动任务管理 (todo list)
-- ✅ 平衡主动性 (直接执行,因为任务明确)
 
 ---
 
-### 场景 2: Bug 调查
+### 6. Git Safety
 
-**应用 Claude Code 模式**:
+**Cursor**: Basic git functionality
 ```
-用户: 登录失败,错误: "Invalid token"
-
-Claude Code: [使用 Task agent 进行代码分析]
-    Agent prompt: "分析身份验证流程,
-                   搜索 token 验证逻辑,
-                   检查错误日志,
-                   返回根本原因分析"
-
-[Agent 返回后]
-Claude Code: "Token 过期配置错误在 auth.ts:45"
-    [显示修复]
+- Provides git capabilities
+- Basic safety warnings
 ```
 
-**关键模式**:
-- ✅ 上下文感知工具委派 (使用 code-analyzer agent)
-- ✅ 极简沟通 (直接指出问题)
-- ✅ 代码引用约定 (auth.ts:45)
+**Claude Code**: Comprehensive safety protocol
+```
+- Structured 5-step workflow
+- Explicit prohibitions (no config updates, no force push)
+- Verify authorship before amend
+- Force HEREDOC formatting
+```
 
 ---
 
-### 场景 3: Git 提交工作流
+## Real-World Application Scenarios
 
-**Claude Code 的结构化方法**:
+### Scenario 1: Complex Refactoring Task
+
+**Traditional Conversational AI**:
 ```
-用户: 提交更改
+User: Refactor authentication module
+AI: Okay, let me explain how I will refactor...
+    [Lengthy explanation]
+    Ready to start?
+User: Yes
+AI: [Begins refactoring]
+```
+
+**Claude Code Approach**:
+```
+User: Refactor authentication module
+Claude Code: [Creates todo list]
+    1. Analyze current implementation
+    2. Extract validation logic
+    3. Create helper functions
+    4. Update tests
+
+[Immediately begins execution, marking task progress]
+[Shows concise summary after completion]
+```
+
+**Applied Patterns**:
+- ✅ Extreme Minimalism (no verbose explanations)
+- ✅ Proactive Task Management (todo list)
+- ✅ Balanced Proactiveness (executes directly because task is clear)
+
+---
+
+### Scenario 2: Bug Investigation
+
+**Applying Claude Code Patterns**:
+```
+User: Login failing, error: "Invalid token"
+
+Claude Code: [Uses Task agent for code analysis]
+    Agent prompt: "Analyze authentication flow,
+                   search token validation logic,
+                   check error logs,
+                   return root cause analysis"
+
+[After agent returns]
+Claude Code: "Token expiry config error at auth.ts:45"
+    [Shows fix]
+```
+
+**Key Patterns**:
+- ✅ Context-Aware Tool Delegation (uses code-analyzer agent)
+- ✅ Extreme Minimalism (directly points to problem)
+- ✅ Code Reference Convention (auth.ts:45)
+
+---
+
+### Scenario 3: Git Commit Workflow
+
+**Claude Code's Structured Approach**:
+```
+User: Commit changes
 
 Claude Code:
-[步骤 1: 并行获取信息]
+[Step 1: Parallel information gathering]
 → git status
 → git diff --staged
 → git log -5
 
-[步骤 2: 分析]
-"发现 3 个文件更改: 添加身份验证功能"
+[Step 2: Analysis]
+"Found 3 file changes: adding authentication feature"
 
-[步骤 3: 并行执行]
+[Step 3: Parallel execution]
 → git add auth.ts auth.test.ts
 → git commit -m "$(cat <<'EOF'
-  Add: 身份验证功能
+  Add: Authentication feature
 
   🤖 Generated with Claude Code
   Co-Authored-By: Claude <noreply@anthropic.com>
   EOF
   )"
-→ git status (验证)
+→ git status (verify)
 
-"✅ 提交成功: f8a9c3e"
+"✅ Commit successful: f8a9c3e"
 ```
 
-**关键模式**:
-- ✅ 并行执行 (步骤 1 和步骤 3)
-- ✅ Git 安全协议 (HEREDOC,品牌化页脚)
-- ✅ 极简沟通 (简洁确认)
+**Key Patterns**:
+- ✅ Parallel Execution (Steps 1 and 3)
+- ✅ Git Safety Protocol (HEREDOC, branded footer)
+- ✅ Extreme Minimalism (concise confirmation)
 
 ---
 
-## 可操作的最佳实践
+## Actionable Best Practices
 
-### ✅ DO (推荐做法)
+### ✅ DO (Recommended Practices)
 
-1. **拥抱极简沟通**
+1. **Embrace Minimalist Communication**
    ```markdown
-   ❌ "我将分析你的代码并寻找性能问题,然后提供改进建议..."
-   ✅ "分析性能问题 → [显示结果]"
+   ❌ "I will analyze your code and look for performance issues, then provide improvement suggestions..."
+   ✅ "Analyze performance issues → [Shows results]"
    ```
 
-2. **优先编辑而非创建**
+2. **Prioritize Edit Over Create**
    ```markdown
-   ❌ 自动创建 README.md
-   ✅ 检查是否有现有文档可以更新
+   ❌ Auto-create README.md
+   ✅ Check if existing documentation can be updated
    ```
 
-3. **批量独立操作**
+3. **Batch Independent Operations**
    ```markdown
-   ✅ 在单次消息中并行:
-      - 读取多个不相关文件
-      - 执行多个独立 git 命令
-      - 运行多个测试套件
+   ✅ In single message, parallel:
+      - Read multiple unrelated files
+      - Execute multiple independent git commands
+      - Run multiple test suites
    ```
 
-4. **使用专用工具**
+4. **Use Specialized Tools**
    ```markdown
    ❌ bash: cat file.ts | grep "pattern"
-   ✅ 工具: Grep(pattern="pattern", path="file.ts")
+   ✅ tool: Grep(pattern="pattern", path="file.ts")
    ```
 
-5. **复杂任务使用 Todo List**
+5. **Use Todo List for Complex Tasks**
    ```markdown
-   ✅ 3+ 步骤 → 创建 todo list
-   ✅ 完成一个立即标记一个
-   ✅ 保持一个 in_progress 任务
+   ✅ 3+ steps → Create todo list
+   ✅ Mark each immediately after completion
+   ✅ Maintain one in_progress task
    ```
 
 ---
 
-### ❌ DON'T (避免做法)
+### ❌ DON'T (Avoid Practices)
 
-1. **不要过度解释**
+1. **Don't Over-Explain**
    ```markdown
-   ❌ "让我解释为什么这个方法更好..."
-   ✅ [直接实现更好的方法]
+   ❌ "Let me explain why this approach is better..."
+   ✅ [Directly implement better approach]
    ```
 
-2. **不要主动创建文档**
+2. **Don't Proactively Create Documentation**
    ```markdown
-   ❌ "我创建了 README.md 解释这个功能"
-   ✅ "功能已实现"(只在要求时创建文档)
+   ❌ "I created README.md to explain this feature"
+   ✅ "Feature implemented" (only create documentation when requested)
    ```
 
-3. **不要串行执行独立操作**
+3. **Don't Execute Independent Operations Serially**
    ```markdown
-   ❌ git status; 等待; git diff; 等待; git log
-   ✅ 并行: git status + git diff + git log
+   ❌ git status; wait; git diff; wait; git log
+   ✅ Parallel: git status + git diff + git log
    ```
 
-4. **不要在未读取的情况下修改**
+4. **Don't Modify Without Reading**
    ```markdown
-   ❌ 直接 Edit 文件
-   ✅ Read → 理解 → Edit
+   ❌ Directly Edit file
+   ✅ Read → Understand → Edit
    ```
 
-5. **不要批量标记任务完成**
+5. **Don't Batch Mark Tasks Complete**
    ```markdown
-   ❌ 完成 5 个任务后统一标记
-   ✅ 每完成一个立即标记
+   ❌ Mark all after completing 5 tasks
+   ✅ Mark each immediately after completion
    ```
 
 ---
 
-## 总结: 从 Claude Code 学到的核心教训
+## Summary: Core Lessons from Claude Code
 
-### 关键洞察
+### Key Insights
 
-1. **Less is More**: 极简沟通 > 冗长解释
-2. **Safety First**: 结构化安全协议 > 灵活但危险
-3. **Edit > Create**: 保守的文件操作 > 主动但混乱
-4. **Parallel > Serial**: 批量独立操作 > 串行等待
-5. **Tools > Bash**: 专用工具 > 通用 bash 命令
-6. **Stateless Agents**: 详细前置指令 > 多轮对话
+1. **Less is More**: Minimalist communication > Verbose explanations
+2. **Safety First**: Structured safety protocols > Flexible but dangerous
+3. **Edit > Create**: Conservative file operations > Proactive but messy
+4. **Parallel > Serial**: Batch independent operations > Serial waiting
+5. **Tools > Bash**: Specialized tools > Generic bash commands
+6. **Stateless Agents**: Detailed upfront instructions > Multi-round dialogue
 
-### 应用到你的工作流
+### Apply to Your Workflow
 
-**立即可做**:
-1. 在自定义规则中添加极简沟通指令
-2. 设置"编辑优先"原则
-3. 识别可并行执行的操作
-4. 为复杂任务使用 todo lists
+**Immediate Actions**:
+1. Add minimalist communication directives to custom instructions
+2. Set "edit-first" principles
+3. Identify operations that can be parallelized
+4. Use todo lists for complex tasks
 
-**持续优化**:
-- 观察哪些响应过于冗长
-- 识别可以批量的操作
-- 建立 Git 安全检查清单
-- 练习极简但清晰的沟通
+**Continuous Optimization**:
+- Observe which responses are too verbose
+- Identify operations that can be batched
+- Establish Git safety checklists
+- Practice minimalist yet clear communication
 
 ---
 
-## 延伸阅读
+## Further Reading
 
-- [Claude Code 官方文档](https://claude.ai/code)
-- [Cursor 系统提示词分析](/docs/tools/prompt-engineering/tools/cursor-prompts) (对比学习)
+- [Claude Code Official Documentation](https://claude.ai/code)
+- [Cursor System Prompt Analysis](/docs/tools/prompt-engineering/tools/cursor-prompts) (Comparative learning)
 - [Anthropic Prompt Engineering Guide](https://docs.anthropic.com/claude/docs/prompt-engineering)
 
 ---
 
-## 资源与归属
+## Resources & Attribution
 
-**提示词来源**: [system-prompts-and-models-of-ai-tools](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools)
-**分析版本**: Claude Code 2.0.0 (2025-09-29 发布)
-**最后更新**: 2025-11-17
+**Prompt Source**: [system-prompts-and-models-of-ai-tools](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools)
+**Analysis Version**: Claude Code 2.0.0 (Released 2025-09-29)
+**Last Updated**: 2025-11-17
 
-**免责声明**: 本文仅用于教育目的,分析公开可获取的系统提示词。所有权利归 Anthropic 所有。
+**Disclaimer**: This article is for educational purposes only, analyzing publicly accessible system prompts. All rights belong to Anthropic.

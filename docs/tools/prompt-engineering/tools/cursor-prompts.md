@@ -1,151 +1,151 @@
 ---
 id: cursor-prompts
-title: Cursor 系统提示词深度解析
-sidebar_label: Cursor 提示词分析
-description: 深入剖析 Cursor AI 编程助手的系统提示词设计,学习其核心模式和最佳实践
+title: In-Depth Analysis of Cursor System Prompts
+sidebar_label: Cursor Prompt Analysis
+description: Deep dive into the system prompt design of Cursor AI coding assistant, learn its core patterns and best practices
 ---
 
-# Cursor 系统提示词深度解析
+# In-Depth Analysis of Cursor System Prompts
 
-> 理解 Cursor 如何通过精心设计的提示词实现智能代码协作
+> Understanding how Cursor achieves intelligent code collaboration through carefully designed prompts
 
-Cursor 是目前最流行的 AI 编程助手之一。本文通过分析其系统提示词,揭示 Cursor 如何实现高效的 AI-人类协作编程体验。
+Cursor is one of the most popular AI coding assistants today. This article reveals how Cursor achieves an efficient AI-human collaborative coding experience by analyzing its system prompts.
 
-**学习目标**:
-- 理解 Cursor 的核心设计哲学
-- 掌握 5 个关键提示词模式
-- 学会将这些模式应用到自己的 AI 工作流中
+**Learning Objectives**:
+- Understand Cursor's core design philosophy
+- Master 5 key prompt patterns
+- Learn to apply these patterns to your own AI workflows
 
 ---
 
-## 核心设计哲学
+## Core Design Philosophy
 
-Cursor 的提示词设计体现了三大核心原则:
+Cursor's prompt design embodies three core principles:
 
-### 1. 上下文优先 (Context-First)
+### 1. Context-First
 
-**设计理念**: AI 需要"看到"开发者看到的一切
+**Design Philosophy**: AI needs to "see" everything the developer sees
 
-Cursor 自动附加丰富的上下文信息:
-- **当前文件**: 用户正在编辑的文件
-- **光标位置**: 精确到行和列
-- **打开的文件**: 最近查看的相关文件
-- **编辑历史**: 会话中的修改记录
-- **Linter 错误**: 实时的代码质量问题
+Cursor automatically attaches rich contextual information:
+- **Current file**: The file being edited by the user
+- **Cursor position**: Precise line and column location
+- **Open files**: Recently viewed related files
+- **Edit history**: Modification records within the session
+- **Linter errors**: Real-time code quality issues
 
-**为什么重要?**
-人类开发者依赖视觉和记忆来保持开发上下文,而 AI 需要显式提供这些信息。Cursor 通过自动化上下文收集,让 AI "看到"完整的开发场景。
+**Why is this important?**
+Human developers rely on visual cues and memory to maintain development context, while AI needs this information explicitly provided. Cursor automates context collection, allowing AI to "see" the complete development scenario.
 
-**如何应用?**
-在自定义 AI 工作流中:
+**How to apply?**
+In custom AI workflows:
 ```markdown
-当你请求 AI 帮助时,始终提供:
-- 相关代码文件
-- 错误信息的完整堆栈
-- 你正在尝试的操作
-- 之前的尝试和结果
+When requesting AI help, always provide:
+- Relevant code files
+- Complete error stack traces
+- The operation you're attempting
+- Previous attempts and results
 ```
 
 ---
 
-### 2. 工具透明化 (Tool Transparency)
+### 2. Tool Transparency
 
-**设计理念**: 用户不需要知道 AI 如何工作,只需看到结果
+**Design Philosophy**: Users don't need to know how AI works, only see the results
 
-Cursor 明确指示 AI:
+Cursor explicitly instructs the AI:
 > **NEVER refer to tool names when speaking to the USER**
 
-例如:
+For example:
 - ❌ "I need to use the `edit_file` tool to edit your file"
 - ✅ "I will edit your file"
 
-**为什么重要?**
-保持对话的自然性。用户关心的是"做什么",而不是"用什么工具做"。
+**Why is this important?**
+Maintains natural conversation flow. Users care about "what to do", not "what tools to use".
 
-**如何应用?**
-在编写自定义规则时:
+**How to apply?**
+When writing custom rules:
 ```markdown
-规则: 在解释操作时,使用自然语言而非技术术语
-- 说"我会搜索代码库"而非"我将调用 codebase_search 函数"
-- 说"让我读取那个文件"而非"执行 read_file 操作"
+Rule: When explaining operations, use natural language instead of technical terms
+- Say "I'll search the codebase" not "I will call the codebase_search function"
+- Say "Let me read that file" not "Executing read_file operation"
 ```
 
 ---
 
-### 3. 主动执行 (Proactive Execution)
+### 3. Proactive Execution
 
-**设计理念**: 计划好后立即执行,不等待确认
+**Design Philosophy**: Execute immediately after planning, don't wait for confirmation
 
-Cursor 的关键指令:
+Cursor's key instruction:
 > If you make a plan, **immediately follow it**, do not wait for the user to confirm or tell you to go ahead.
 
-**唯一的停止条件**:
-1. 需要用户提供额外信息
-2. 有多个选项需要用户决策
+**Only stop when**:
+1. Need additional information from the user
+2. Multiple options require user decision
 
-**为什么重要?**
-减少来回确认,提升开发速度。传统编程助手常陷入"计划 → 等待确认 → 执行"的低效循环。
+**Why is this important?**
+Reduces back-and-forth confirmation, improves development speed. Traditional coding assistants often fall into inefficient "plan → wait for confirmation → execute" loops.
 
-**如何应用?**
-在 Cursor Rules 中:
+**How to apply?**
+In Cursor Rules:
 ```markdown
-当你制定了完整的实施计划时:
-- 立即开始第一步
-- 只在遇到模糊选择时询问
-- 完成每一步后直接进入下一步
+When you've formulated a complete implementation plan:
+- Start the first step immediately
+- Only ask when facing ambiguous choices
+- Move directly to the next step after completing each one
 ```
 
 ---
 
-## 五大关键提示词模式
+## Five Key Prompt Patterns
 
-### 模式 1: 语义搜索优先 (Semantic Search First)
+### Pattern 1: Semantic Search First
 
-**Cursor 的工具选择逻辑**:
+**Cursor's Tool Selection Logic**:
 
 ```
-codebase_search (语义搜索):
-  用途: 通过含义查找代码
-  场景: "在哪里实现了用户认证?"
+codebase_search (semantic search):
+  Purpose: Find code by meaning
+  Scenario: "Where is user authentication implemented?"
 
-grep (精确文本搜索):
-  用途: 查找确切的字符串
-  场景: "找到所有 console.log 调用"
+grep (exact text search):
+  Purpose: Find exact strings
+  Scenario: "Find all console.log calls"
 
-read_file (直接读取):
-  用途: 已知文件路径,需要内容
-  场景: "读取 auth.ts 文件"
+read_file (direct read):
+  Purpose: Known file path, need content
+  Scenario: "Read the auth.ts file"
 ```
 
-**核心原则**: 优先使用语义搜索理解代码意图,而非机械的文本匹配
+**Core Principle**: Prioritize semantic search to understand code intent, rather than mechanical text matching
 
-**实战示例**:
+**Practical Examples**:
 
-**❌ 糟糕的查询**:
+**❌ Poor Query**:
 ```
 Query: "MyInterface frontend"
-问题: 过于简短,缺乏上下文
+Issue: Too brief, lacks context
 ```
 
-**✅ 优秀的查询**:
+**✅ Good Query**:
 ```
 Query: "Where is MyInterface implemented in the frontend?"
-优点: 完整的问题,明确的上下文
+Advantage: Complete question, clear context
 ```
 
-**如何应用?**
-当你需要 AI 理解代码时:
-- 用完整的问题,而非关键词
-- 包含具体的上下文 (frontend/backend/特定模块)
-- 描述你要找的行为,而非代码片段
+**How to apply?**
+When you need AI to understand code:
+- Use complete questions, not keywords
+- Include specific context (frontend/backend/specific module)
+- Describe the behavior you're looking for, not code snippets
 
 ---
 
-### 模式 2: 简化代码编辑格式 (Simplified Edit Format)
+### Pattern 2: Simplified Edit Format
 
-**Cursor 的创新**: 差异式代码编辑
+**Cursor's Innovation**: Differential code editing
 
-传统方式需要重写整个文件,Cursor 只显示变更:
+Traditional approach requires rewriting entire files, Cursor only shows changes:
 
 ```typescript
 // ... existing code ...
@@ -155,51 +155,51 @@ Query: "Where is MyInterface implemented in the frontend?"
 // ... existing code ...
 ```
 
-**为什么这样设计?**
+**Why this design?**
 
-1. **节省 Token**: 不重复显示未修改的代码
-2. **用户友好**: 开发者快速定位变更
-3. **Apply Model 友好**: 专门的小模型易于解析和应用
+1. **Save Tokens**: Don't repeat unmodified code
+2. **User-Friendly**: Developers quickly locate changes
+3. **Apply Model Friendly**: Specialized small models easily parse and apply
 
-**实战对比**:
+**Practical Comparison**:
 
-**传统方式** (200 行文件修改 2 行):
+**Traditional Way** (modifying 2 lines in a 200-line file):
 ```typescript
-// 完整显示 200 行代码
+// Display complete 200 lines of code
 function authenticate(user) {
-  // ... 198 行 ...
+  // ... 198 lines ...
 }
 ```
-Token 消耗: ~2000
+Token cost: ~2000
 
-**Cursor 方式**:
+**Cursor Way**:
 ```typescript
 function authenticate(user) {
   // ... existing code ...
 
   if (!user.email) {
-    throw new Error('Email is required');  // 新增
+    throw new Error('Email is required');  // Added
   }
 
   // ... existing code ...
 }
 ```
-Token 消耗: ~200 (节省 90%)
+Token cost: ~200 (90% savings)
 
-**如何应用?**
-在 Cursor Rules 中添加:
+**How to apply?**
+Add to Cursor Rules:
 ```markdown
-代码编辑规则:
-- 只显示需要修改的代码块
-- 用 "// ... existing code ..." 标记未变更区域
-- 始终包含足够的上下文让我定位修改位置
+Code editing rules:
+- Only show code blocks that need modification
+- Mark unchanged regions with "// ... existing code ..."
+- Always include enough context for me to locate the modification
 ```
 
 ---
 
-### 模式 3: 结构化工具调用 (Structured Tool Calling)
+### Pattern 3: Structured Tool Calling
 
-**Cursor 的严格规则**:
+**Cursor's Strict Rules**:
 
 ```
 1. ALWAYS follow the tool call schema exactly
@@ -208,7 +208,7 @@ Token 消耗: ~200 (节省 90%)
 4. Only use standard tool call format
 ```
 
-**关键洞察**: 工具调用是协议,不是建议
+**Key Insight**: Tool calling is a protocol, not a suggestion
 
 **Example: File Reading**
 
@@ -222,19 +222,19 @@ Token 消耗: ~200 (节省 90%)
 }
 ```
 
-**必须包含 explanation**: 为什么使用这个工具,如何帮助完成任务
+**Must include explanation**: Why use this tool, how it helps complete the task
 
-**如何应用?**
-当定义自定义工具时:
-- 明确每个参数的类型和用途
-- 要求 AI 解释工具调用的理由
-- 设置工具选择的优先级规则
+**How to apply?**
+When defining custom tools:
+- Clarify the type and purpose of each parameter
+- Require AI to explain the reasoning for tool calls
+- Set priority rules for tool selection
 
 ---
 
-### 模式 4: 智能上下文管理 (Smart Context Management)
+### Pattern 4: Smart Context Management
 
-**Cursor 如何决定包含什么?**
+**How does Cursor decide what to include?**
 
 ```xml
 <attached_files>
@@ -245,221 +245,221 @@ Token 消耗: ~200 (节省 90%)
 </attached_files>
 ```
 
-**策略**:
-- **Relevance First**: 只包含与任务相关的文件
-- **Snippets Over Full**: 优先显示关键代码片段
-- **Recent Activity**: 最近查看/编辑的文件优先
+**Strategy**:
+- **Relevance First**: Only include files relevant to the task
+- **Snippets Over Full**: Prioritize key code snippets
+- **Recent Activity**: Recently viewed/edited files get priority
 
-**Token 预算管理**:
+**Token Budget Management**:
 
-假设上下文窗口 = 200k tokens
+Assuming context window = 200k tokens
 - System Prompt: ~5k
 - User Messages: ~10k
-- **可用于上下文**: ~185k
+- **Available for context**: ~185k
 
-Cursor 智能分配:
-- 当前文件: 全部内容
-- 相关文件: 关键片段
-- 历史对话: 最近 N 轮
+Cursor intelligently allocates:
+- Current file: Full content
+- Related files: Key snippets
+- History: Recent N turns
 
-**如何应用?**
-优化你的 AI 对话:
+**How to apply?**
+Optimize your AI conversations:
 ```markdown
-主动管理上下文:
-- 新任务开始时,清理不相关的历史
-- 使用 @file 精确指定需要的文件
-- 避免一次性附加整个代码库
+Actively manage context:
+- Clear irrelevant history when starting new tasks
+- Use @file to precisely specify needed files
+- Avoid attaching entire codebase at once
 ```
 
 ---
 
-### 模式 5: 渐进式信息收集 (Progressive Information Gathering)
+### Pattern 5: Progressive Information Gathering
 
-**Cursor 的指导原则**:
+**Cursor's Guiding Principle**:
 
 > If you need additional information that you can get via tool calls, **prefer that over asking the user**.
 
-**决策树**:
+**Decision Tree**:
 
 ```
-需要信息?
-  ├─ 能通过工具获取? → 调用工具 (read_file, grep, codebase_search)
-  └─ 无法通过工具获取? → 询问用户
+Need information?
+  ├─ Can get via tools? → Call tools (read_file, grep, codebase_search)
+  └─ Cannot get via tools? → Ask user
 
-工具调用后:
-  ├─ 信息充足? → 继续执行
-  └─ 仍需更多? → 调用更多工具或询问用户
+After tool calls:
+  ├─ Sufficient info? → Continue execution
+  └─ Need more? → Call more tools or ask user
 ```
 
-**实战案例**:
+**Practical Case**:
 
-**场景**: 用户要求 "优化数据库查询"
+**Scenario**: User requests "Optimize database query"
 
-**❌ 低效方式**:
+**❌ Inefficient Way**:
 ```
-AI: "请问你想优化哪个查询?在哪个文件?"
-[等待用户回复]
+AI: "Which query do you want to optimize? In which file?"
+[Wait for user response]
 ```
 
-**✅ Cursor 方式**:
+**✅ Cursor Way**:
 ```
-AI: [自动执行]
+AI: [Auto-execute]
 1. codebase_search("database query performance slow")
 2. grep("SELECT.*FROM.*WHERE")
-3. 分析结果,发现 3 个潜在优化点
-4. 向用户展示发现并建议优化
+3. Analyze results, find 3 potential optimization points
+4. Present findings and suggest optimizations to user
 ```
 
-**如何应用?**
-训练你的 AI 交互习惯:
-- 提出问题时,包含足够背景让 AI 自己探索
-- 鼓励 AI 主动使用工具而非被动等待
-- 只在 AI 真正无法获取信息时提供输入
+**How to apply?**
+Train your AI interaction habits:
+- When asking questions, include enough background for AI to explore independently
+- Encourage AI to proactively use tools rather than passively wait
+- Only provide input when AI truly cannot obtain information
 
 ---
 
-## 实际应用场景
+## Practical Application Scenarios
 
-### 场景 1: 重构代码
+### Scenario 1: Code Refactoring
 
-**传统对话**:
+**Traditional Dialogue**:
 ```
-User: 重构这个函数
-AI: 好的,请问你想怎么重构?
-User: 让它更模块化
-AI: 理解了,请问具体要拆分成几个函数?
-[来回多轮]
+User: Refactor this function
+AI: Sure, how would you like to refactor it?
+User: Make it more modular
+AI: Understood, how many functions should I split it into?
+[Multiple back-and-forth exchanges]
 ```
 
-**应用 Cursor 模式后**:
+**After Applying Cursor Patterns**:
 ```
-User: 重构 processUser 函数,让它更模块化 @src/user.ts
+User: Refactor the processUser function to make it more modular @src/user.ts
 
-AI: [立即执行]
-1. 读取 user.ts
-2. 分析函数职责
-3. 自动拆分为:
+AI: [Immediate execution]
+1. Read user.ts
+2. Analyze function responsibilities
+3. Auto-split into:
    - validateUser()
    - saveUser()
    - notifyUser()
-4. 展示重构后的代码
+4. Present refactored code
 ```
 
-**关键应用**:
-- ✅ 模式 3: 主动执行,不等待确认
-- ✅ 模式 5: 渐进式信息收集
+**Key Applications**:
+- ✅ Pattern 3: Proactive execution, don't wait for confirmation
+- ✅ Pattern 5: Progressive information gathering
 
 ---
 
-### 场景 2: Bug 排查
+### Scenario 2: Bug Investigation
 
-**应用 Cursor 模式**:
+**Applying Cursor Patterns**:
 ```
-User: 用户登录失败,错误信息是 "Invalid token" @logs/error.log
+User: User login failed, error message is "Invalid token" @logs/error.log
 
-AI: [分析流程]
-1. 语义搜索: "token validation authentication"
-2. 读取相关文件: auth.ts, middleware.ts
-3. 检查 error.log 中的堆栈信息
-4. 发现问题: Token 过期时间配置错误
-5. 展示修复方案
+AI: [Analysis workflow]
+1. Semantic search: "token validation authentication"
+2. Read related files: auth.ts, middleware.ts
+3. Check stack trace in error.log
+4. Identify issue: Token expiration time configuration error
+5. Present fix solution
 ```
 
-**关键应用**:
-- ✅ 模式 1: 语义搜索优先
-- ✅ 模式 4: 智能上下文管理
-- ✅ 模式 5: 主动工具调用
+**Key Applications**:
+- ✅ Pattern 1: Semantic search first
+- ✅ Pattern 4: Smart context management
+- ✅ Pattern 5: Proactive tool calling
 
 ---
 
-## 可操作的最佳实践
+## Actionable Best Practices
 
-基于 Cursor 的提示词设计,这里是你可以立即应用的技巧:
+Based on Cursor's prompt design, here are techniques you can apply immediately:
 
-### ✅ DO (推荐做法)
+### ✅ DO (Recommended Practices)
 
-1. **提供完整上下文**
+1. **Provide Complete Context**
    ```markdown
-   ❌ "这个函数有 bug"
-   ✅ "processPayment 函数在处理退款时抛出 NullPointerException @src/payment.ts"
+   ❌ "This function has a bug"
+   ✅ "processPayment function throws NullPointerException when handling refunds @src/payment.ts"
    ```
 
-2. **使用语义化问题**
+2. **Use Semantic Questions**
    ```markdown
-   ❌ "找 API"
-   ✅ "在哪里定义了用户认证相关的 API 端点?"
+   ❌ "Find API"
+   ✅ "Where are the API endpoints for user authentication defined?"
    ```
 
-3. **明确期望的行动**
+3. **Clarify Expected Actions**
    ```markdown
-   ❌ "看看这个"
-   ✅ "分析这个性能瓶颈并提供优化建议 @profile.json"
+   ❌ "Look at this"
+   ✅ "Analyze this performance bottleneck and provide optimization suggestions @profile.json"
    ```
 
-4. **允许 AI 主动探索**
+4. **Allow AI to Explore Proactively**
    ```markdown
-   ✅ "帮我理解购物车功能的实现逻辑"
-   (让 AI 自己搜索和阅读相关代码)
+   ✅ "Help me understand the implementation logic of the shopping cart feature"
+   (Let AI search and read related code on its own)
    ```
 
-### ❌ DON'T (避免做法)
+### ❌ DON'T (Practices to Avoid)
 
-1. **不要过度解释技术细节**
+1. **Don't Over-Explain Technical Details**
    ```markdown
-   ❌ "使用 codebase_search 工具查找..."
-   ✅ "找到处理文件上传的代码"
+   ❌ "Use the codebase_search tool to find..."
+   ✅ "Find the code that handles file uploads"
    ```
 
-2. **不要要求重复显示未改代码**
+2. **Don't Request Repeated Display of Unchanged Code**
    ```markdown
-   ❌ "重写整个文件"
-   ✅ "只显示需要修改的部分"
+   ❌ "Rewrite the entire file"
+   ✅ "Only show the parts that need modification"
    ```
 
-3. **不要手动提供 AI 能获取的信息**
+3. **Don't Manually Provide Information AI Can Obtain**
    ```markdown
-   ❌ "这个文件的内容是... [粘贴 500 行]"
-   ✅ "分析 @src/大文件.ts 的性能问题"
+   ❌ "This file's content is... [paste 500 lines]"
+   ✅ "Analyze performance issues in @src/large-file.ts"
    ```
 
 ---
 
-## 总结: 从 Cursor 学到的核心教训
+## Summary: Core Lessons from Cursor
 
-### 关键洞察
+### Key Insights
 
-1. **上下文 > 一切**: 丰富的上下文是高质量 AI 输出的基础
-2. **自然 > 技术**: 保持对话自然,隐藏实现细节
-3. **行动 > 计划**: 减少确认环节,提升执行效率
-4. **语义 > 文本**: 优先理解意图,而非精确匹配
-5. **工具 > 询问**: 能自动获取的信息就不要问用户
+1. **Context > Everything**: Rich context is the foundation of high-quality AI output
+2. **Natural > Technical**: Keep conversations natural, hide implementation details
+3. **Action > Planning**: Reduce confirmation steps, improve execution efficiency
+4. **Semantic > Text**: Prioritize understanding intent over exact matching
+5. **Tools > Asking**: Don't ask users for information that can be automatically obtained
 
-### 应用到你的工作流
+### Apply to Your Workflow
 
-**立即可做**:
-1. 更新你的 Cursor Rules,加入上述模式
-2. 训练自己提供更完整的上下文
-3. 允许 AI 更自主地探索和执行
+**Immediate Actions**:
+1. Update your Cursor Rules to include the above patterns
+2. Train yourself to provide more complete context
+3. Allow AI to explore and execute more autonomously
 
-**持续优化**:
-- 观察哪些对话模式最高效
-- 记录重复的低效交互
-- 迭代你的提示词规则
+**Continuous Optimization**:
+- Observe which dialogue patterns are most efficient
+- Document repetitive inefficient interactions
+- Iterate on your prompt rules
 
 ---
 
-## 延伸阅读
+## Further Reading
 
-- [Cursor 官方文档](https://docs.cursor.com)
+- [Cursor Official Documentation](https://docs.cursor.com)
 - [Anthropic Prompt Engineering Guide](https://docs.anthropic.com/claude/docs/prompt-engineering)
-- [AI Coding Club: Vibe Coding 工作流](/docs/zh/vibe/03-vibe-coding-workflow)
+- [AI Coding Club: Vibe Coding](/docs/stages/stage0-vibecoding)
 
 ---
 
-## 资源与归属
+## Resources & Attribution
 
-**提示词来源**: [system-prompts-and-models-of-ai-tools](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools)
-**分析版本**: Cursor Agent Prompt 2.0 (2024)
-**最后更新**: 2025-11-17
+**Prompt Source**: [system-prompts-and-models-of-ai-tools](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools)
+**Analysis Version**: Cursor Agent Prompt 2.0 (2024)
+**Last Updated**: 2025-11-17
 
-**免责声明**: 本文仅用于教育目的,分析公开可获取的系统提示词。所有权利归 Cursor/Anysphere 所有。
+**Disclaimer**: This article is for educational purposes only, analyzing publicly available system prompts. All rights belong to Cursor/Anysphere.
