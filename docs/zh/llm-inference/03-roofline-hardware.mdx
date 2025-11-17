@@ -1,0 +1,47 @@
+---
+id: 03-roofline-hardware
+title: Roofline 模型 & 硬件视角
+sidebar_label: "03 · Roofline & 硬件"
+description: "从 Roofline 模型理解性能瓶颈,从硬件视角优化推理系统"
+---
+
+# Roofline 模型 & 硬件视角
+
+> 本节内容将基于 test.txt 进行重构,敬请期待
+
+## 核心内容预告
+
+### Roofline 模型
+
+**核心概念**:
+- 计算强度 (Arithmetic Intensity)
+- 内存带宽墙 (Memory Bandwidth Bound)
+- 计算峰值 (Compute Bound)
+
+**应用**:
+- 识别性能瓶颈
+- 指导优化方向
+- 评估硬件选型
+
+### 硬件综述
+
+**GPU 优化**:
+- 内存层级: HBM、L2 Cache、Shared Memory
+- 计算单元: Tensor Core、CUDA Core
+- 通信: NVLink、PCIe
+
+**多机协同**:
+- 张量并行 (Tensor Parallelism)
+- 流水线并行 (Pipeline Parallelism)
+- 数据并行 (Data Parallelism)
+
+**边缘部署**:
+- FPGA 加速
+- 量化推理
+- 模型压缩
+
+---
+
+**状态**: 🚧 内容重构中,预计完成时间: TBD
+
+[← 上一节: 推理引擎实现](./02-inference-engines) | [下一节: 专题深入 →](./10-special-topics)

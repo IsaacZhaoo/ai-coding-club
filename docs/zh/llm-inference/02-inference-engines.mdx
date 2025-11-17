@@ -1,0 +1,47 @@
+---
+id: 02-inference-engines
+title: "推理引擎实现: vLLM & SGLang"
+sidebar_label: "02 · 推理引擎"
+description: "深度解析 vLLM 和 SGLang 的核心技术与架构设计"
+---
+
+# 推理引擎实现: vLLM & SGLang
+
+> 本节内容将基于 test.txt 进行重构,敬请期待
+
+## 核心内容预告
+
+### vLLM: 高吞吐量推理系统
+
+**博客**: Inside vLLM: Anatomy of a High-Throughput LLM Inference System
+
+**核心技术**:
+- PagedAttention: 分页式 KV Cache 管理
+- 动态批处理 (Continuous Batching)
+- 分块预填充 (Chunked Prefill)
+- 前缀缓存 (Prefix Caching)
+
+### SGLang: 开源高效服务框架
+
+**博客**: SGLang - 高效且开源的 LLM 服务框架
+
+**核心技术**:
+- RadixAttention: 高效前缀匹配
+- PD 分离架构: Prefilling/Decoding 解耦
+- RDMA KV 传输: 跨节点缓存共享
+- 推测解码集成 (EAGLE-2/3)
+
+### 系统对比
+
+| 特性 | vLLM | SGLang |
+|------|------|--------|
+| KV Cache | PagedAttention | RadixAttention |
+| 架构 | 统一调度 | PD 分离 |
+| 社区 | UC Berkeley | LMSYS |
+| 适用场景 | 通用推理 | 大规模并发 |
+
+---
+
+**状态**: 🚧 内容重构中,预计完成时间: TBD
+
+[← 上一节: 全局综述](./01-global-survey) | [下一节: Roofline 模型 →](./03-roofline-hardware)
