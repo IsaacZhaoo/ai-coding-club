@@ -244,6 +244,28 @@ Want to understand how professional AI coding tools work under the hood? Explore
 
 **适合**: 想要理解 AI 编程助手如何工作,并将这些模式应用到自己工作流中的开发者
 
+### [Claude Code 系统提示词分析](/docs/tools/prompt-engineering/tools/claude-code-prompts)
+深入剖析 Claude Code CLI 工具的极简主义设计哲学和6大关键模式:
+- 极简主义沟通策略
+- 编辑优先,永不创建
+- 专业客观性原则
+- 上下文感知的工具委派
+- 并行执行优先
+- Git 安全协议
+
+**适合**: 想要理解 CLI 优化的 AI 工具设计,学习极简高效交互模式的开发者
+
+### [Cline 系统提示词分析](/docs/tools/prompt-engineering/tools/cline-prompts)
+深入剖析 Cline 开源 AI 编程助手的用户审批优先设计和6大关键模式:
+- 强制审批的迭代执行
+- 单工具原则
+- 双模式架构(PLAN/ACT)
+- 渐进式上下文收集
+- 审批分层机制
+- 搜索/替换块系统
+
+**适合**: 想要理解开源 AI 工具设计,学习安全审批工作流的开发者
+
 ---
 
 ## 📖 Learn More
