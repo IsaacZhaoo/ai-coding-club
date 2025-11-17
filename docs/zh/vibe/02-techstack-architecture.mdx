@@ -1,37 +1,411 @@
 ---
 id: 02-techstack-architecture
-title: 技术选型与架构
-sidebar_label: "02 · 技术选型与架构"
-description: Supabase + TypeScript + Vercel 技术栈深度解析
+title: "技术选型与架构设计"
+sidebar_label: "02 · 技术栈与架构"
+description: "学习如何使用 AI 进行技术选型,并准备核心上下文文档"
 ---
 
-# 技术选型与架构
+# 技术选型与架构设计
 
-> 本节内容将基于 vibe.txt 进行重构,敬请期待
+> 让 AI 成为你的架构师,构建坚实的技术基础
 
-## 核心内容预告
-
-### 推荐技术栈
-
-- **后端**: Supabase (PostgreSQL + 实时数据库 + 认证)
-- **前端**: TypeScript + React / Next.js
-- **部署**: Vercel
-- **AI 工具**: Cursor / Claude Code
-
-### 为什么这套栈适合 AI 协作?
-
-1. **声明式开发**: AI 容易理解和生成
-2. **文档完善**: AI 训练数据中包含大量示例
-3. **生态完整**: 减少"造轮子",专注业务逻辑
-
-### 其他技术栈的适配
-
-- Python + FastAPI / Django
-- Java + Spring Boot
-- Go + Gin
+完成本节后,你将掌握如何让 AI 推荐技术栈、理解现代 BaaS 方案的优势,以及如何准备核心上下文文档。
 
 ---
 
-**状态**: 🚧 内容重构中,预计完成时间: TBD
+## 一、技术选型: 让 AI 成为架构师
 
-[← 上一节: 从想法到 PRD](./01-idea-to-prd) | [下一节: 共鸣编程工作流 →](./03-vibe-coding-workflow)
+### 1.1 为什么技术选型如此重要?
+
+**类比**: 技术栈 = 建筑材料
+- 用错材料 → 性能瓶颈或成本过高
+- 选对技术 → 开发效率提升 10 倍
+
+**影响因素**:
+- 开发效率 (Time to Market)
+- 长期维护成本
+- 可扩展性
+
+### 1.2 AI 架构师提示词
+
+```
+你是一位经验丰富的解决方案架构师,擅长为独立开发者设计技术方案。
+核心原则:在保证系统健壮性和可扩展性的前提下,最大化开发效率、最小化运维成本。
+
+这是我的产品 PRD:
+[粘贴完整 PRD]
+
+请推荐 2-3 套技术栈组合(前端+后端+数据库+部署),并从以下维度分析:
+• 开发效率
+• 维护成本
+• 可扩展性
+• 学习曲线
+• 社区生态
+
+最后推荐一个最适合的方案,并说明理由。
+```
+
+### 1.3 典型方案对比
+
+| 方案 | 技术栈 | 优势 | 适合场景 |
+|------|--------|------|----------|
+| **经典全栈** | Next.js + Node.js + MongoDB + AWS | 灵活,成熟 | 大团队,复杂业务 |
+| **现代 BaaS** | Next.js + Supabase + Vercel | 极快开发,运维简单 | **独立开发,快速迭代** ⭐ |
+| **传统企业** | Spring Boot + MySQL + 自部署 | 控制力强 | 企业级项目 |
+
+---
+
+## 二、推荐方案: Supabase + TypeScript + Vercel
+
+### 2.1 为什么选择这套组合?
+
+**三大优势**:
+
+1. **开发效率极致**
+   - Supabase 提供开箱即用的后端服务
+   - 从创意到上线只需 2-4 周
+
+2. **运维成本极低**
+   - 免费额度足够 MVP
+   - 无需专职运维
+   - 自动扩容
+
+3. **质量不妥协**
+   - TypeScript 保证代码质量
+   - 企业级安全 (RLS)
+   - 可扩展至百万用户
+
+### 2.2 技术栈详解
+
+#### Supabase: 后端瑞士军刀
+
+**核心功能**:
+- PostgreSQL 数据库
+- 用户认证系统
+- 文件存储
+- 实时订阅
+- Serverless 函数
+
+**示例对比**:
+```typescript
+// 传统方式: 50+ 行代码
+// Supabase: 3 行搞定
+const { data, error } = await supabase.auth.signUp({
+  email: 'user@example.com',
+  password: 'secure123'
+})
+```
+
+#### TypeScript + Next.js: 现代前端
+
+**TypeScript 价值**:
+- 编译期发现 80% 错误
+- IDE 智能提示
+- 重构更安全
+
+**Next.js 优势**:
+- 文件式路由
+- 服务端渲染 (SEO 友好)
+- API Routes
+
+#### Vercel: 零配置部署
+
+**一键部署**:
+1. 推送代码到 GitHub
+2. Vercel 自动构建
+3. 2 分钟后上线,HTTPS 域名
+
+---
+
+## 三、核心上下文文档准备
+
+### 3.1 为什么需要这些文档?
+
+**类比**: 上下文文档 = 施工图
+- 没有施工图 → AI 只能瞎猜
+- 有了施工图 → AI 精确执行
+
+**四大核心文档**:
+1. `PRD.md` - 产品需求 (已完成)
+2. `schema.sql` - 数据库结构
+3. `rls.sql` - 安全策略
+4. `api.md` - 接口设计
+
+### 3.2 设计数据库结构 (schema.sql)
+
+**步骤 1: AI 生成初稿**
+
+```
+基于这份 PRD [粘贴],设计符合第三范式的 PostgreSQL 表结构。
+
+要求:
+1. 使用 SQL DDL 语法
+2. 为关键字段添加注释
+3. 说明表关系
+4. 考虑扩展性
+```
+
+**步骤 2: 示例输出**
+
+```sql
+-- 用户表
+CREATE TABLE users (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  email TEXT UNIQUE NOT NULL,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- 播客总结表
+CREATE TABLE summaries (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id UUID REFERENCES users(id) ON DELETE CASCADE,
+  podcast_url TEXT NOT NULL,
+  title TEXT NOT NULL,
+  summary_text TEXT,
+  transcript TEXT,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+
+  -- 性能优化索引
+  INDEX idx_user_summaries ON summaries(user_id, created_at DESC)
+);
+```
+
+**步骤 3: 交叉验证**
+
+```
+请以数据库专家身份审查这份 schema:
+[粘贴 schema]
+
+关注:
+1. 是否有冗余字段?
+2. 索引设计是否合理?
+3. 字段类型是否最优?
+```
+
+### 3.3 定义行级安全策略 (rls.sql)
+
+**RLS 是什么?**
+Row-Level Security = 数据库级别的权限控制,比应用层更安全。
+
+**提示词**:
+```
+基于 PRD 和 schema,为每张表设计 RLS 策略。
+
+规则:
+- 用户只能访问自己的数据
+- 未登录用户只能读公开内容
+```
+
+**示例策略**:
+
+```sql
+ALTER TABLE summaries ENABLE ROW LEVEL SECURITY;
+
+-- 用户只能查看自己的总结
+CREATE POLICY "Users can view own summaries"
+  ON summaries FOR SELECT
+  USING (auth.uid() = user_id);
+
+-- 用户只能插入自己的数据
+CREATE POLICY "Users can insert own summaries"
+  ON summaries FOR INSERT
+  WITH CHECK (auth.uid() = user_id);
+
+-- 用户只能删除自己的总结
+CREATE POLICY "Users can delete own summaries"
+  ON summaries FOR DELETE
+  USING (auth.uid() = user_id);
+```
+
+### 3.4 设计 API 端点 (api.md)
+
+**提示词**:
+```
+根据 PRD、schema 和 rls,设计 RESTful API。
+
+格式要求:
+1. Markdown 表格
+2. 包含: HTTP 方法、URL、功能
+3. 提供请求/响应示例
+```
+
+**示例输出**:
+
+```markdown
+## API 端点设计
+
+### 用户认证
+
+| 方法 | 端点 | 功能 | 请求体 | 响应体 |
+|------|------|------|--------|--------|
+| POST | `/api/auth/signup` | 用户注册 | `{ "email": "...", "password": "..." }` | `{ "user": {...}, "session": {...} }` |
+| POST | `/api/auth/login` | 用户登录 | 同上 | 同上 |
+
+### 播客总结
+
+| 方法 | 端点 | 功能 | 请求体 | 响应体 |
+|------|------|------|--------|--------|
+| POST | `/api/summaries` | 创建总结 | `{ "podcast_url": "..." }` | `{ "id": "...", "status": "processing" }` |
+| GET | `/api/summaries/:id` | 获取详情 | - | `{ "title": "...", "summary": [...] }` |
+| DELETE | `/api/summaries/:id` | 删除总结 | - | `{ "success": true }` |
+```
+
+### 3.5 文件组织
+
+```
+your-project/
+├── docs/
+│   ├── PRD.md
+│   ├── schema.sql
+│   ├── rls.sql
+│   └── api.md
+├── src/
+└── README.md
+```
+
+---
+
+## 四、视觉设计基础
+
+### 4.1 确立设计语言
+
+**提示词**:
+```
+你是顶级 UI/UX 设计总监。
+我的产品: [描述]
+目标用户: [画像]
+期望感觉: [高效/专业/温暖...]
+
+推荐 2-3 种设计风格并说明理由。
+```
+
+### 4.2 配色方案
+
+**提示词**:
+```
+基于设计风格,生成配色方案:
+- 主色调 (Primary)
+- 辅助色 (Accent)
+- 背景色
+- 文本色
+
+要求: HEX 色码,符合 WCAG 无障碍标准
+```
+
+**示例**:
+```
+主色: #3B82F6 (专业蓝)
+辅助: #10B981 (成功绿)
+背景: #F9FAFB (柔和灰)
+文本: #1F2937 (深灰)
+```
+
+### 4.3 UI 原型
+
+**方法 A**: AI 生成设计稿
+```
+为 [页面名] 生成 UI 设计稿,包含:
+- [元素 1]
+- [元素 2]
+遵循极简风格和我们的配色。
+```
+
+**方法 B**: 使用 https://21st.dev/
+- 浏览精美元素
+- 复制提示词
+- AI 为你实现
+
+---
+
+## 五、普适的"道"与"术"
+
+### 从 Supabase 到通用思维
+
+| Supabase 的"术" | 普适的"道" | 核心问题 |
+|----------------|-----------|----------|
+| schema.sql | 数据模型定义 | 要处理什么数据? |
+| rls.sql | 访问控制逻辑 | 谁能访问哪些数据? |
+| api.md | 应用接口契约 | 系统如何通信? |
+
+**其他技术栈参考**:
+
+**Django + MySQL**:
+- 数据模型 → `models.py`
+- 访问控制 → Django Permissions
+- API → Django REST Framework
+
+**Spring Boot**:
+- 数据模型 → JPA Entities
+- 访问控制 → Spring Security
+- API → REST Controllers
+
+---
+
+## 六、核心文档使用场景
+
+这些文档将贯穿整个开发过程:
+
+**PRD.md**:
+- 开发新功能时提供相关章节
+
+**schema.sql**:
+- AI 编写数据库交互代码时必须提供
+- **不得随意修改**
+
+**rls.sql**:
+- 编写查询时提醒安全策略
+- **不得随意修改**
+
+**api.md**:
+- 开发前端时,AI 据此生成 fetch 代码
+
+---
+
+## 七、实战练习
+
+### 练习 1: 为你的项目设计 schema
+
+使用 AI 为练习 1(CodeSnippet)设计数据库结构:
+
+```
+基于以下需求设计 schema:
+- 用户可以记录代码片段
+- 片段包含:代码、语言、标签、笔记
+- 支持按标签和日期查询
+
+要求: PostgreSQL DDL,考虑索引优化
+```
+
+### 练习 2: 设计 RLS 策略
+
+为上面的 schema 设计安全策略,确保:
+- 用户只能看自己的片段
+- 支持未来"公开分享"功能
+
+---
+
+## 八、检查清单
+
+- [ ] 完成技术选型,明确技术栈
+- [ ] 创建 `schema.sql` 并通过审查
+- [ ] 创建 `rls.sql` 并测试策略
+- [ ] 创建 `api.md` 定义所有端点
+- [ ] (可选) 生成 `design_system.md`
+- [ ] 将所有文档保存在 `docs/` 目录
+
+---
+
+## 九、下一步
+
+技术蓝图已完成,下一步是 **工具选择与工作流搭建**。
+
+你将学习:
+- Cursor vs Claude Code 的选择
+- 如何配置全局和项目规则
+- 上下文管理核心技巧
+
+[← 上一节: 从想法到 PRD](./01-idea-to-prd) | [下一节: Vibe Coding 工作流 →](./03-vibe-coding-workflow)
+
+---
+
+**你的技术基础已经建立,准备开始真正的编码之旅!** 🚀
