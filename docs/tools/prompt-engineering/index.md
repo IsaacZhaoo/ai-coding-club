@@ -230,10 +230,27 @@ Use the "Custom Instructions" feature to set default behavior.
 
 ---
 
+## 🔍 System Prompts Deep Dives
+
+Want to understand how professional AI coding tools work under the hood? Explore our deep-dive analyses of system prompts from popular tools:
+
+### [Cursor 系统提示词分析](/docs/tools/prompt-engineering/tools/cursor-prompts)
+深入剖析 Cursor 的核心设计哲学和5大关键模式:
+- 上下文优先策略
+- 工具透明化原则
+- 主动执行机制
+- 语义搜索优先
+- 简化代码编辑格式
+
+**适合**: 想要理解 AI 编程助手如何工作,并将这些模式应用到自己工作流中的开发者
+
+---
+
 ## 📖 Learn More
 
 - [Code Snippets](/docs/tools/code-snippets) - Ready-to-use code
 - [Best Practices Guide](/docs/tools/prompt-engineering/best-practices) - Advanced tips
+- [System Prompts Repository](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools) - Source of our analyses
 
 ---
 
