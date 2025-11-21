@@ -147,7 +147,6 @@ Claude Code将Anthropic最强大的AI模型带到你的终端。在架构决策�
 
 - [AI工具对比表](/docs/tools/ai-tools-comparison) - 详细对比
 - [提示词工程指南](/docs/tools/prompt-engineering) - 获得更好的结果
-- [课程：必修技能](/docs/course/02-essential-skills) - 学习AI编程基础
 
 ---
 

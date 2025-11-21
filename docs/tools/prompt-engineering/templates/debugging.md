@@ -322,7 +322,6 @@ What should I try next?
 
 - [Refactoring Templates](/docs/tools/prompt-engineering/templates/refactoring)
 - [Testing Templates](/docs/tools/prompt-engineering/templates/testing)
-- [Course: Debugging with AI](/docs/course/02-essential-skills/06-debugging-with-ai)
 
 ---
 

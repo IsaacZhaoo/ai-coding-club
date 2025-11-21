@@ -27,9 +27,6 @@ IDE配置、扩展和工作流设计用来在使用AI助手编码时最大化你
 
 ## 💡 Get Productive Now | 立即提升效率
 
-While we prepare detailed guides, start with these fundamentals:
-- 🛠️ [IDE Setup Guide](/docs/course/essential-skills/ide-setup) - Configure your environment
-- 🔄 [Git & GitHub 101](/docs/course/essential-skills/git-github) - Version control basics
-- 💻 [Command Line Essentials](/docs/course/essential-skills/command-line) - Terminal mastery
+在我们准备详细的生产力指南的同时，请查看我们的 [AI 编程路线图](/docs/ai-coding-roadmap) 开始学习！
 
 最后更新：{new Date().toLocaleDateString()}

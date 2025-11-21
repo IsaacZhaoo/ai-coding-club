@@ -232,7 +232,6 @@ description: 掌握AI交流的现成提示词模板
 
 ## 📖 了解更多
 
-- [高级提示词课程](/docs/course/essential-skills/advanced-prompting) - 学习基础知识
 - [代码片段](/docs/tools/code-snippets) - 现成可用的代码
 - [最佳实践指南](/docs/tools/prompt-engineering/best-practices) - 高级技巧
 

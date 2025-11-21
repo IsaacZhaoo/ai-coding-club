@@ -44,9 +44,7 @@ description: 用预配置模板快速启动你的项目
 
 ## 💡 Start Building Now | 立即开始构建
 
-While we prepare the templates:
-- 🏗️ [Building Projects Course](/docs/course/03-building-projects) - Learn to build from scratch
-- 📋 [Project Planning Guide](/docs/course/building-projects/project-planning) - Plan before you code
-- 🌐 [GitHub Discussions](https://github.com/IsaacZhaoo/ai-coding-club/discussions) - Share your project ideas
+在我们准备模板的同时，加入我们的社区：
+- 🌐 [GitHub Discussions](https://github.com/IsaacZhaoo/ai-coding-club/discussions) - 分享你的项目想法
 
 最后更新：{new Date().toLocaleDateString()}

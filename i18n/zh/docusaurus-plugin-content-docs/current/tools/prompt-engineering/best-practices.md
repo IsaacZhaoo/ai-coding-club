@@ -21,6 +21,5 @@ description: 获得更好的AI编程结果的高级技巧
 
 - 查看[提示词工程101](/docs/prompt-engineering-101)
 - 浏览[模板](/docs/tools/prompt-engineering/templates)
-- 阅读[课程：高级提示词](/docs/course/essential-skills/advanced-prompting)
 
 最后更新：{new Date().toLocaleDateString()}
