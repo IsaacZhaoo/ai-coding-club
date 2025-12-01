@@ -1,0 +1,8 @@
+{
+  "label": "脚本片段库",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "可直接复用的常用代码片段集合"
+  }
+}
