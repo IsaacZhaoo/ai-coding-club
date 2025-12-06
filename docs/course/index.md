@@ -15,7 +15,7 @@ The course is organized into 5 progressive phases:
 ### 🌱 Phase 1: Foundations (8 Lessons)
 Start your journey! Learn what AI coding is, have your first conversations with AI, and build your first program.
 
-[Begin Phase 1 →](./01-foundations/01-welcome)
+[Begin Phase 1 →](./foundations/welcome)
 
 :::tip
 **🔜 Phase 2: Essential Skills (Coming Soon)**
