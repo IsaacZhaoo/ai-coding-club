@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-sidebar_label: 'Hands-On: Building Your First Program with AI'
+sidebar_label: 'Lesson 4: Building Your First Program'
 title: 'Hands-On: Building Your First Program with AI'
 description: 'Hands-On: Building Your First Program with AI'
 ---

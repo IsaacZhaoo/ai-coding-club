@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-sidebar_label: 'Understanding AI Output: What''s Really Happening'
+sidebar_label: 'Lesson 5: Understanding AI Output'
 title: 'Understanding AI Output: What''s Really Happening'
 description: 'Understanding AI Output: What''s Really Happening'
 ---

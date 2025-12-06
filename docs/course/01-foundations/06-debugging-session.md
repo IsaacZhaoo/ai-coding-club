@@ -1,6 +1,6 @@
 ---
 sidebar_position: 6
-sidebar_label: 'Spotting the Glitch: How to Debug AI-Generated ...'
+sidebar_label: 'Lesson 6: Debugging AI-Generated Code'
 title: 'Spotting the Glitch: How to Debug AI-Generated Code'
 description: 'Spotting the Glitch: How to Debug AI-Generated Code'
 ---

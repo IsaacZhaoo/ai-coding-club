@@ -1,6 +1,6 @@
 ---
 sidebar_position: 7
-sidebar_label: 'AI Isn''t Magic: A Reality Check for Developers'
+sidebar_label: 'Lesson 7: AI Reality Check'
 title: 'AI Isn''t Magic: A Reality Check for Developers'
 description: 'AI Isn''t Magic: A Reality Check for Developers'
 ---

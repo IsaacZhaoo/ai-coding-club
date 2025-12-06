@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-sidebar_label: 'Your First Conversation with AI: Vibecoding 101'
+sidebar_label: 'Lesson 3: Your First Conversation with AI'
 title: 'Your First Conversation with AI: Vibecoding 101'
 description: 'Your First Conversation with AI: Vibecoding 101'
 ---

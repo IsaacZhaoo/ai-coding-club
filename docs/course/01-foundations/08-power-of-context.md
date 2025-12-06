@@ -1,6 +1,6 @@
 ---
 sidebar_position: 8
-sidebar_label: 'The Secret to Better AI: Mastering the Art of C...'
+sidebar_label: 'Lesson 8: The Power of Context'
 title: 'The Secret to Better AI: Mastering the Art of Context'
 description: 'The Secret to Better AI: Mastering the Art of Context'
 ---
