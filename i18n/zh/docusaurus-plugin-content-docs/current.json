@@ -1,6 +1,6 @@
 {
   "version.label": {
-    "message": "Next",
+    "message": "最新",
     "description": "The label for version current"
   },
   "sidebar.tutorialSidebar.category.Learning Stages": {
@@ -15,9 +15,29 @@
     "message": "🗺️ 学习路线图",
     "description": "The label for the doc item '🗺️ Learning Roadmap' in sidebar 'tutorialSidebar', linking to the doc roadmap"
   },
+  "sidebar.toolsSidebar.category.🎯 Cursor Rules": {
+    "message": "🎯 Cursor 规则",
+    "description": "The label for category '🎯 Cursor Rules' in sidebar 'toolsSidebar'"
+  },
+  "sidebar.toolsSidebar.category.🤖 AI Agents": {
+    "message": "🤖 AI 智能体",
+    "description": "The label for category '🤖 AI Agents' in sidebar 'toolsSidebar'"
+  },
+  "sidebar.toolsSidebar.category.🔌 MCP Servers": {
+    "message": "🔌 MCP 服务器",
+    "description": "The label for category '🔌 MCP Servers' in sidebar 'toolsSidebar'"
+  },
   "sidebar.toolsSidebar.doc.📊 Tools Comparison": {
     "message": "📊 工具对比",
     "description": "The label for the doc item '📊 Tools Comparison' in sidebar 'toolsSidebar', linking to the doc tools/ai-tools-comparison"
+  },
+  "sidebar.courseSidebar.category.🌱 Phase 1: Foundations": {
+    "message": "🌱 第一阶段：基础知识",
+    "description": "The label for category '🌱 Phase 1: Foundations' in sidebar 'courseSidebar'"
+  },
+  "sidebar.courseSidebar.doc.📚 Course Overview": {
+    "message": "📚 课程概览",
+    "description": "The label for the doc item '📚 Course Overview' in sidebar 'courseSidebar', linking to the doc course/index"
   },
   "sidebar.tutorialSidebar.doc.Stage 0: Vibecoding": {
     "message": "阶段 0：Vibecoding",
@@ -34,5 +54,65 @@
   "sidebar.tutorialSidebar.doc.CSV → Markdown in 30 Seconds (Practical Demo)": {
     "message": "CSV → Markdown 30秒实战",
     "description": "The label for the doc item 'CSV → Markdown in 30 Seconds (Practical Demo)' in sidebar 'tutorialSidebar', linking to the doc csv-to-markdown-demo"
+  },
+  "sidebar.tutorialSidebar.doc.Stage 0: AI对话基础": {
+    "message": "Stage 0: AI对话基础",
+    "description": "The label for the doc item 'Stage 0: AI对话基础' in sidebar 'tutorialSidebar', linking to the doc roadmap/stage0"
+  },
+  "sidebar.tutorialSidebar.doc.Stage 1: AI现实与局限": {
+    "message": "Stage 1: AI现实与局限",
+    "description": "The label for the doc item 'Stage 1: AI现实与局限' in sidebar 'tutorialSidebar', linking to the doc roadmap/stage1"
+  },
+  "sidebar.tutorialSidebar.doc.Stage 2: 上下文与架构": {
+    "message": "Stage 2: 上下文与架构",
+    "description": "The label for the doc item 'Stage 2: 上下文与架构' in sidebar 'tutorialSidebar', linking to the doc roadmap/stage2"
+  },
+  "sidebar.toolsSidebar.category.AI 编码助手": {
+    "message": "AI 编码助手",
+    "description": "The label for category 'AI 编码助手' in sidebar 'toolsSidebar'"
+  },
+  "sidebar.toolsSidebar.category.提示工程": {
+    "message": "提示工程",
+    "description": "The label for category '提示工程' in sidebar 'toolsSidebar'"
+  },
+  "sidebar.toolsSidebar.category.提示模板": {
+    "message": "提示模板",
+    "description": "The label for category '提示模板' in sidebar 'toolsSidebar'"
+  },
+  "sidebar.courseSidebar.doc.Phase 1 Overview": {
+    "message": "第一阶段概览",
+    "description": "The label for the doc item 'Phase 1 Overview' in sidebar 'courseSidebar', linking to the doc course/foundations/index"
+  },
+  "sidebar.courseSidebar.doc.Lesson 1: Welcome & First Steps": {
+    "message": "第1课：欢迎与入门",
+    "description": "The label for the doc item 'Lesson 1: Welcome & First Steps' in sidebar 'courseSidebar', linking to the doc course/foundations/welcome"
+  },
+  "sidebar.courseSidebar.doc.Lesson 2: Don't Fear AI": {
+    "message": "第2课：不要害怕AI",
+    "description": "The label for the doc item 'Lesson 2: Don't Fear AI' in sidebar 'courseSidebar', linking to the doc course/foundations/why-ai-wont-replace"
+  },
+  "sidebar.courseSidebar.doc.Lesson 3: Your First Conversation with AI": {
+    "message": "第3课：与AI的第一次对话",
+    "description": "The label for the doc item 'Lesson 3: Your First Conversation with AI' in sidebar 'courseSidebar', linking to the doc course/foundations/first-conversation"
+  },
+  "sidebar.courseSidebar.doc.Lesson 4: Building Your First Program": {
+    "message": "第4课：构建你的第一个程序",
+    "description": "The label for the doc item 'Lesson 4: Building Your First Program' in sidebar 'courseSidebar', linking to the doc course/foundations/hands-on"
+  },
+  "sidebar.courseSidebar.doc.Lesson 5: Understanding AI Output": {
+    "message": "第5课：理解AI输出",
+    "description": "The label for the doc item 'Lesson 5: Understanding AI Output' in sidebar 'courseSidebar', linking to the doc course/foundations/understanding-output"
+  },
+  "sidebar.courseSidebar.doc.Lesson 6: Debugging AI-Generated Code": {
+    "message": "第6课：调试AI生成的代码",
+    "description": "The label for the doc item 'Lesson 6: Debugging AI-Generated Code' in sidebar 'courseSidebar', linking to the doc course/foundations/debugging-session"
+  },
+  "sidebar.courseSidebar.doc.Lesson 7: AI Reality Check": {
+    "message": "第7课：AI现实检验",
+    "description": "The label for the doc item 'Lesson 7: AI Reality Check' in sidebar 'courseSidebar', linking to the doc course/foundations/reality-check"
+  },
+  "sidebar.courseSidebar.doc.Lesson 8: The Power of Context": {
+    "message": "第8课：上下文的力量",
+    "description": "The label for the doc item 'Lesson 8: The Power of Context' in sidebar 'courseSidebar', linking to the doc course/foundations/power-of-context"
   }
 }

@@ -3,7 +3,7 @@
     "message": "30秒用AI创建你的第一个脚本"
   },
   "homepage.hero.subtitle": {
-    "message": "从零开始，让AI成为你的编程向导。无需注册，无需付费，立即开始编程。"
+    "message": "从零开始,让AI成为你的编程向导。无需注册,无需付费,立即开始编程。"
   },
   "homepage.cta.demo": {
     "message": "查看30秒演示 →"
@@ -11,38 +11,59 @@
   "homepage.cta.roadmap": {
     "message": "AI增强学习路径"
   },
-  "homepage.demo.title": {
-    "message": "30秒内完成 CSV → Markdown 转换"
+  "homepage.path.title": {
+    "message": "你的学习路径"
   },
-  "homepage.demo.placeholder": {
-    "message": "📹 演示视频将嵌入此处"
+  "homepage.path.subtitle": {
+    "message": "从零基础到就业准备的4个清晰阶段"
   },
-  "homepage.demo.description": {
-    "message": "展示：CSV 数据 → ChatGPT 提示词 → Markdown 表格输出"
+  "homepage.path.step1.title": {
+    "message": "30秒演示"
+  },
+  "homepage.path.step1.description": {
+    "message": "立即看到效果"
+  },
+  "homepage.path.step2.title": {
+    "message": "学习基础"
+  },
+  "homepage.path.step2.description": {
+    "message": "31课从零到精通"
+  },
+  "homepage.path.step3.title": {
+    "message": "构建项目"
+  },
+  "homepage.path.step3.description": {
+    "message": "真实世界实践"
+  },
+  "homepage.path.step4.title": {
+    "message": "就业准备"
+  },
+  "homepage.path.step4.description": {
+    "message": "作品集和面试准备"
   },
   "homepage.title": {
     "message": "首页"
   },
   "homepage.description": {
-    "message": "从零开始，用AI学习编程"
+    "message": "从零开始,用AI学习编程"
   },
   "homepage.feature1.title": {
     "message": "30秒快速开始"
   },
   "homepage.feature1.description": {
-    "message": "无需注册账号。复制提示词，在 ChatGPT 中尝试，立即看到结果。"
+    "message": "无需注册账号。复制提示词，在ChatGPT中尝试，立即看到结果。"
   },
   "homepage.feature2.title": {
     "message": "精选资源"
   },
   "homepage.feature2.description": {
-    "message": "质量优于数量。10-20个精心挑选的资源，而不是令人不知所措的100+链接堆积。"
+    "message": "质量优于数量。10-20个精心挑选的资源，而非令人眼花缭乱的100+链接堆砌。"
   },
   "homepage.feature3.title": {
     "message": "AI优先学习路径"
   },
   "homepage.feature3.description": {
-    "message": "学习如何利用 ChatGPT、Claude 和 Cursor 来加速你的编程之旅。"
+    "message": "学习如何利用ChatGPT、Claude和Cursor加速你的编程之旅。"
   },
   "theme.ErrorPageContent.title": {
     "message": "页面已崩溃。",
@@ -89,7 +110,7 @@
     "description": "The label of the link targeting the tag list page"
   },
   "theme.colorToggle.ariaLabel.mode.system": {
-    "message": "系统模式",
+    "message": "跟随系统",
     "description": "The name for the system color mode"
   },
   "theme.colorToggle.ariaLabel.mode.light": {
@@ -101,7 +122,7 @@
     "description": "The name for the dark color mode"
   },
   "theme.colorToggle.ariaLabel": {
-    "message": "切换浅色/暗黑模式（当前为{mode}）",
+    "message": "切换浅色/暗黑模式（当前：{mode}）",
     "description": "The ARIA label for the color mode toggle"
   },
   "theme.docs.breadcrumbs.navAriaLabel": {
@@ -151,17 +172,13 @@
     "message": "最新版本",
     "description": "The label used for the latest version suggestion link label"
   },
-  "theme.common.headingLinkTitle": {
-    "message": "{heading}的直接链接",
-    "description": "Title for link to heading"
-  },
   "theme.common.editThisPage": {
     "message": "编辑此页",
     "description": "The link label to edit the current page"
   },
-  "theme.navbar.mobileVersionsDropdown.label": {
-    "message": "选择版本",
-    "description": "The label for the navbar versions dropdown on mobile view"
+  "theme.common.headingLinkTitle": {
+    "message": "{heading}的直接链接",
+    "description": "Title for link to heading"
   },
   "theme.lastUpdated.atDate": {
     "message": "于 {date} ",
@@ -179,9 +196,17 @@
     "message": "找不到页面",
     "description": "The title of the 404 page"
   },
+  "theme.navbar.mobileVersionsDropdown.label": {
+    "message": "选择版本",
+    "description": "The label for the navbar versions dropdown on mobile view"
+  },
   "theme.tags.tagsListLabel": {
     "message": "标签：",
     "description": "The label alongside a tag list"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "关闭",
+    "description": "The ARIA label for close button of announcement bar"
   },
   "theme.admonition.caution": {
     "message": "警告",
@@ -207,10 +232,6 @@
     "message": "注意",
     "description": "The default label used for the Warning admonition (:::warning)"
   },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "关闭",
-    "description": "The ARIA label for close button of announcement bar"
-  },
   "theme.blog.sidebar.navAriaLabel": {
     "message": "最近博文导航",
     "description": "The ARIA label for recent posts in the blog sidebar"
@@ -227,14 +248,6 @@
     "message": "(opens in new tab)",
     "description": "The ARIA label for the external link icon"
   },
-  "theme.NavBar.navAriaLabel": {
-    "message": "主导航",
-    "description": "The ARIA label for the main navigation"
-  },
-  "theme.navbar.mobileLanguageDropdown.label": {
-    "message": "选择语言",
-    "description": "The label for the mobile language switcher dropdown"
-  },
   "theme.NotFound.p1": {
     "message": "我们找不到您要找的页面。",
     "description": "The first paragraph of the 404 page"
@@ -243,9 +256,17 @@
     "message": "请联系原始链接来源网站的所有者，并告知他们链接已损坏。",
     "description": "The 2nd paragraph of the 404 page"
   },
+  "theme.NavBar.navAriaLabel": {
+    "message": "主导航",
+    "description": "The ARIA label for the main navigation"
+  },
   "theme.TOCCollapsible.toggleButtonLabel": {
     "message": "本页总览",
     "description": "The label used by the button on the collapsible TOC component"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "选择语言",
+    "description": "The label for the mobile language switcher dropdown"
   },
   "theme.blog.post.readMore": {
     "message": "阅读更多",
@@ -254,6 +275,10 @@
   "theme.blog.post.readMoreLabel": {
     "message": "阅读 {title} 的全文",
     "description": "The ARIA label for the link to full blog posts from excerpts"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "阅读需 {readingTime} 分钟",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.CodeBlock.copy": {
     "message": "复制",
@@ -271,17 +296,9 @@
     "message": "切换自动换行",
     "description": "The title attribute for toggle word wrapping button of code block lines"
   },
-  "theme.blog.post.readingTime.plurals": {
-    "message": "阅读需 {readingTime} 分钟",
-    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
   "theme.docs.breadcrumbs.home": {
     "message": "主页面",
     "description": "The ARIA label for the home page in the breadcrumbs"
-  },
-  "theme.docs.sidebar.navAriaLabel": {
-    "message": "文档侧边栏",
-    "description": "The ARIA label for the sidebar navigation"
   },
   "theme.docs.sidebar.collapseButtonTitle": {
     "message": "收起侧边栏",
@@ -291,9 +308,21 @@
     "message": "收起侧边栏",
     "description": "The title attribute for collapse button of doc sidebar"
   },
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "文档侧边栏",
+    "description": "The ARIA label for the sidebar navigation"
+  },
   "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
     "message": "关闭导航栏",
     "description": "The ARIA label for close button of mobile sidebar"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
+    "message": "Expand the dropdown",
+    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
+    "message": "Collapse the dropdown",
+    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
   },
   "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
     "message": "切换导航栏",
@@ -302,14 +331,6 @@
   "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
     "message": "← 回到主菜单",
     "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
-  },
-  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
-    "message": "展开下拉菜单",
-    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
-  },
-  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
-    "message": "折叠下拉菜单",
-    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
   },
   "theme.docs.sidebar.expandButtonTitle": {
     "message": "展开侧边栏",
@@ -338,18 +359,6 @@
   "theme.IdealImageMessage.error": {
     "message": "出现错误，点击重试",
     "description": "When the image fails to load for unknown error"
-  },
-  "theme.ErrorPageContent.tryAgain": {
-    "message": "重试",
-    "description": "The label of the button to try again rendering when the React error boundary captures an error"
-  },
-  "theme.common.skipToMainContent": {
-    "message": "跳到主要内容",
-    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
-  },
-  "theme.tags.tagsPageTitle": {
-    "message": "标签",
-    "description": "The title of the tag list page"
   },
   "theme.blog.post.plurals": {
     "message": "{count} 篇博文",
@@ -390,5 +399,716 @@
   "theme.contentVisibility.draftBanner.message": {
     "message": "此页面是草稿，仅在开发环境中可见，不会包含在正式版本中。",
     "description": "The draft content banner message"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "重试",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.common.skipToMainContent": {
+    "message": "跳到主要内容",
+    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+  },
+  "theme.tags.tagsPageTitle": {
+    "message": "标签",
+    "description": "The title of the tag list page"
+  },
+  "search.placeholder": {
+    "message": "搜索文档、教程和学习资源..."
+  },
+  "search.clear": {
+    "message": "清除"
+  },
+  "search.loadMore": {
+    "message": "加载更多结果"
+  },
+  "search.label": {
+    "message": "站内搜索"
+  },
+  "search.filters": {
+    "message": "筛选器"
+  },
+  "search.zeroResults": {
+    "message": "未找到与 [SEARCH_TERM] 匹配的结果"
+  },
+  "search.manyResults": {
+    "message": "找到 [COUNT] 条与 [SEARCH_TERM] 相关的结果"
+  },
+  "search.oneResult": {
+    "message": "找到 [COUNT] 条与 [SEARCH_TERM] 相关的结果"
+  },
+  "search.altSearch": {
+    "message": "未找到 [SEARCH_TERM]，已显示与 [DIFFERENT_TERM] 相关的结果"
+  },
+  "search.suggestion": {
+    "message": "未找到 [SEARCH_TERM]。你可以尝试以下搜索："
+  },
+  "search.searching": {
+    "message": "正在搜索 [SEARCH_TERM]..."
+  },
+  "search.loading": {
+    "message": "搜索界面加载中..."
+  },
+  "search.loadError": {
+    "message": "Pagefind UI 加载失败"
+  },
+  "resources.page.title": {
+    "message": "学习资源"
+  },
+  "resources.page.description": {
+    "message": "精选 AI 编程学习资源"
+  },
+  "resources.heading": {
+    "message": "学习资源"
+  },
+  "resources.subtitle": {
+    "message": "精选 AI 编程学习资源。质量优于数量。"
+  },
+  "resources.section.tutorials": {
+    "message": "精选教程"
+  },
+  "resources.section.description": {
+    "message": "通过这些按技能水平组织的精选视频教程，开始你的 AI 编程之旅。"
+  },
+  "resources.video.beginner.promptEngineering.title": {
+    "message": "提示词工程教程 - 掌握 ChatGPT 与 LLM 输出"
+  },
+  "resources.video.beginner.promptEngineering.caption": {
+    "message": "freeCodeCamp 41 分钟详解提示词工程，涵盖 LLM 概念、最佳实践与实操技巧。"
+  },
+  "resources.video.beginner.howToCode.title": {
+    "message": "如何用 AI 编程（零基础也能上手）"
+  },
+  "resources.video.beginner.howToCode.caption": {
+    "message": "Rob Mulla 演示 3 个实用 AI 编程项目：数据抓取、批量图片处理与仪表盘搭建，13 分钟学会。"
+  },
+  "resources.video.beginner.masterclass.title": {
+    "message": "大师课：面向开发者的 AI 驱动开发"
+  },
+  "resources.video.beginner.masterclass.caption": {
+    "message": "Fireship 8 分钟速成课，展示如何结合 AI、React 与 TypeScript 构建实用应用。"
+  },
+  "resources.video.intermediate.youAreUsingWrong.title": {
+    "message": "你一直在错误地使用 AI 编程工具"
+  },
+  "resources.video.intermediate.youAreUsingWrong.caption": {
+    "message": "Theo 43 分钟深入解析 AI 辅助开发的常见误区、工具使用策略与工作流优化。"
+  },
+  "resources.video.intermediate.aiCodeHere.title": {
+    "message": "AI 代码已成现实，我们必须负责任地使用"
+  },
+  "resources.video.intermediate.aiCodeHere.caption": {
+    "message": "Theo 40 分钟剖析安全考量、代码评审、成本和风险管理，助你在生产环境中正确使用 AI。"
+  },
+  "resources.level.beginner": {
+    "message": "初学者"
+  },
+  "resources.level.beginner.title": {
+    "message": "初学者水平"
+  },
+  "resources.level.beginner.desc": {
+    "message": "适合开始使用 AI 辅助编程的所有人的基础知识。"
+  },
+  "resources.level.intermediate": {
+    "message": "中级"
+  },
+  "resources.level.intermediate.title": {
+    "message": "中级水平"
+  },
+  "resources.level.intermediate.desc": {
+    "message": "为提升 AI 编程技能的开发者提供的战略思维和负责任的实践。"
+  },
+  "resources.level.advanced": {
+    "message": "高级"
+  },
+  "resources.section.playlists": {
+    "message": "精选播放列表"
+  },
+  "resources.section.playlists.desc": {
+    "message": "由 AI 和 Web 开发社区受尊敬的创作者精心策划的扩展学习路径。"
+  },
+  "resources.playlist.codingWithAI.title": {
+    "message": "Coding with AI（Copilot）教程"
+  },
+  "resources.playlist.codingWithAI.meta": {
+    "message": "Net Ninja 出品 - 11 个视频"
+  },
+  "resources.playlist.codingWithAI.desc": {
+    "message": "面向初学者的系统系列，聚焦 GitHub Copilot 与 AI 辅助开发，从环境配置到实践全覆盖。"
+  },
+  "resources.playlist.fireship.title": {
+    "message": "Fireship（核心科技资讯与教程）"
+  },
+  "resources.playlist.fireship.meta": {
+    "message": "Fireship 出品 - 63 个视频（持续更新）"
+  },
+  "resources.playlist.fireship.desc": {
+    "message": "高频更新的速递教程集合，覆盖 AI 动态、新兴技术与开发最佳实践。"
+  },
+  "resources.playlist.watchPlaylist": {
+    "message": "观看播放列表"
+  },
+  "resources.filter.language": {
+    "message": "语言："
+  },
+  "resources.filter.allLanguages": {
+    "message": "所有语言"
+  },
+  "resources.filter.english": {
+    "message": "英语"
+  },
+  "resources.filter.chinese": {
+    "message": "中文"
+  },
+  "resources.filter.level": {
+    "message": "水平："
+  },
+  "resources.filter.allLevels": {
+    "message": "所有水平"
+  },
+  "resources.filter.beginner": {
+    "message": "初学者"
+  },
+  "resources.filter.intermediate": {
+    "message": "中级"
+  },
+  "resources.filter.advanced": {
+    "message": "高级"
+  },
+  "resources.filter.type": {
+    "message": "类型："
+  },
+  "resources.filter.allTypes": {
+    "message": "所有类型"
+  },
+  "resources.filter.course": {
+    "message": "课程"
+  },
+  "resources.filter.documentation": {
+    "message": "文档"
+  },
+  "resources.filter.tool": {
+    "message": "工具"
+  },
+  "resources.filter.video": {
+    "message": "视频"
+  },
+  "resources.results.showing": {
+    "message": "显示 {total} 个资源中的 {count} 个"
+  },
+  "resources.results.noMatch": {
+    "message": "没有资源与你的筛选条件匹配。请尝试调整你的选择。"
+  },
+  "resources.type.course": {
+    "message": "课程"
+  },
+  "resources.type.documentation": {
+    "message": "文档"
+  },
+  "resources.type.tool": {
+    "message": "工具"
+  },
+  "resources.type.video": {
+    "message": "视频"
+  },
+  "resources.lang.english": {
+    "message": "英语"
+  },
+  "resources.lang.chinese": {
+    "message": "中文"
+  },
+  "resources.card.updated": {
+    "message": "更新于"
+  },
+  "video.viewOnX": {
+    "message": "前往 X 查看"
+  },
+  "video.watchOnYouTube": {
+    "message": "在 YouTube 播放"
+  },
+  "video.error.noId": {
+    "message": "VideoEmbed 组件需要提供 videoId 或 twitterId"
+  },
+  "video.twitter.unavailable": {
+    "message": "Twitter/X 嵌入在您所在地区不可用"
+  },
+  "tools.page.title": {
+    "message": "AI Coding Tools"
+  },
+  "tools.page.description": {
+    "message": "Curated directory of AI-powered coding tools and platforms. Discover the best AI assistants, code editors, no-code tools, and learning resources for developers."
+  },
+  "tools.heading": {
+    "message": "AI Coding Tools"
+  },
+  "tools.subtitle": {
+    "message": "Discover and compare the best AI-powered coding tools and platforms"
+  },
+  "tools.sidebar.categories": {
+    "message": "Categories"
+  },
+  "tools.sidebar.nav": {
+    "message": "Category navigation"
+  },
+  "tools.sidebar.toggle": {
+    "message": "Toggle sidebar"
+  },
+  "tools.filters.title": {
+    "message": "Filters"
+  },
+  "tools.filter.pricing": {
+    "message": "Pricing:"
+  },
+  "tools.filter.allPricing": {
+    "message": "All Pricing"
+  },
+  "tools.filter.featuredOnly": {
+    "message": "Featured Only"
+  },
+  "tools.filter.privacyFocused": {
+    "message": "Privacy-Focused"
+  },
+  "tools.results.showing": {
+    "message": "Showing {count} of {total} tools"
+  },
+  "tools.results.noMatch": {
+    "message": "No tools match your filters. Try adjusting your selection."
+  },
+  "tools.pricing.free": {
+    "message": "Free"
+  },
+  "tools.pricing.freemium": {
+    "message": "Freemium"
+  },
+  "tools.pricing.paid": {
+    "message": "Paid"
+  },
+  "tools.category.aiAssistant": {
+    "message": "AI Assistant"
+  },
+  "tools.category.codeEditor": {
+    "message": "Code Editor"
+  },
+  "tools.category.noCode": {
+    "message": "No-Code"
+  },
+  "tools.category.devTool": {
+    "message": "Dev Tool"
+  },
+  "tools.category.learning": {
+    "message": "Learning"
+  },
+  "tools.badge.featured": {
+    "message": "Featured"
+  },
+  "tools.badge.privacy": {
+    "message": "Privacy"
+  },
+  "tools.features.label": {
+    "message": "Key features"
+  },
+  "tools.action.visit": {
+    "message": "Visit"
+  },
+  "tools.action.docs": {
+    "message": "Docs"
+  },
+  "tools.action.tutorial": {
+    "message": "Tutorial"
+  },
+  "tools.claude.name": {
+    "message": "Claude"
+  },
+  "tools.claude.description": {
+    "message": "具有超长上下文的高级 AI 助手，适用于编程、分析和技术写作"
+  },
+  "tools.copilot.name": {
+    "message": "GitHub Copilot"
+  },
+  "tools.copilot.description": {
+    "message": "在 IDE 中直接提供代码补全建议的 AI 编程伙伴"
+  },
+  "tools.cursor.name": {
+    "message": "Cursor"
+  },
+  "tools.cursor.description": {
+    "message": "AI 优先的代码编辑器，内置聊天和全代码库上下文理解"
+  },
+  "tools.replit.name": {
+    "message": "Replit"
+  },
+  "tools.replit.description": {
+    "message": "基于浏览器的 IDE，具有 AI 结对编程和即时部署功能"
+  },
+  "tools.codeium.name": {
+    "message": "Codeium"
+  },
+  "tools.codeium.description": {
+    "message": "免费的 AI 自动补全，支持 70 多种语言和多个 IDE"
+  },
+  "tools.chatgpt.name": {
+    "message": "ChatGPT"
+  },
+  "tools.chatgpt.description": {
+    "message": "OpenAI 的对话式 AI，具有代码生成、网页浏览和多模态功能"
+  },
+  "tools.gemini.name": {
+    "message": "Gemini"
+  },
+  "tools.gemini.description": {
+    "message": "谷歌的 AI 助手，集成搜索、超长上下文窗口和多模态理解能力"
+  },
+  "tools.ollama.name": {
+    "message": "Ollama"
+  },
+  "tools.ollama.description": {
+    "message": "在本地机器上运行大语言模型，完全隐私保护且无需联网"
+  },
+  "tools.lmstudio.name": {
+    "message": "LM Studio"
+  },
+  "tools.lmstudio.description": {
+    "message": "桌面 GUI 工具，用于发现、下载和运行支持 GPU 加速的本地 AI 模型"
+  },
+  "tools.phind.name": {
+    "message": "Phind"
+  },
+  "tools.phind.description": {
+    "message": "专为开发者设计的 AI 搜索引擎，提供引用来源和快速响应"
+  },
+  "tools.perplexity.name": {
+    "message": "Perplexity"
+  },
+  "tools.perplexity.description": {
+    "message": "AI 搜索引擎，提供来源引用、后续问题和学术研究能力"
+  },
+  "tools.codeium-chat.name": {
+    "message": "Codeium Chat"
+  },
+  "tools.codeium-chat.description": {
+    "message": "代码专注的聊天界面，集成 IDE 和上下文感知建议，个人用户免费"
+  },
+  "tools.windsurf.name": {
+    "message": "Windsurf"
+  },
+  "tools.windsurf.description": {
+    "message": "AI 优先的代码编辑器，配备 Cascade AI 系统和高性能，由 Codeium 团队开发"
+  },
+  "tools.vscode-copilot.name": {
+    "message": "VS Code + Copilot"
+  },
+  "tools.vscode-copilot.description": {
+    "message": "流行的代码编辑器，集成 GitHub Copilot、丰富的扩展和调试工具"
+  },
+  "tools.github-copilot.name": {
+    "message": "GitHub Copilot"
+  },
+  "tools.github-copilot.description": {
+    "message": "AI 结对编程工具，提供实时代码建议、上下文感知补全和聊天界面"
+  },
+  "tools.continue.name": {
+    "message": "Continue.dev"
+  },
+  "tools.continue.description": {
+    "message": "开源 AI 编程助手，支持自定义 LLM、自托管选项和 VS Code/JetBrains"
+  },
+  "tools.tabnine.name": {
+    "message": "Tabnine"
+  },
+  "tools.tabnine.description": {
+    "message": "AI 代码补全工具，具有私有模型训练、团队学习和企业安全功能"
+  },
+  "tools.v0.name": {
+    "message": "v0.dev"
+  },
+  "tools.v0.description": {
+    "message": "通过聊天驱动生成 React 组件，集成 shadcn/ui 和 Tailwind CSS，由 Vercel 开发"
+  },
+  "tools.bolt.name": {
+    "message": "Bolt.new"
+  },
+  "tools.bolt.description": {
+    "message": "在浏览器中即时生成和部署全栈应用，提供实时预览"
+  },
+  "tools.lovable.name": {
+    "message": "Lovable"
+  },
+  "tools.lovable.description": {
+    "message": "AI 应用生成器，创建包含数据库和一键部署的全栈应用"
+  },
+  "tools.replit-ai.name": {
+    "message": "Replit AI"
+  },
+  "tools.replit-ai.description": {
+    "message": "基于浏览器的 IDE，具有 AI 代码生成、即时托管和协作编辑功能"
+  },
+  "tools.marblism.name": {
+    "message": "Marblism"
+  },
+  "tools.marblism.description": {
+    "message": "生成完整的 SaaS 应用，包含 TypeScript、React、身份验证和 API 生成"
+  },
+  "tools.supermaven.name": {
+    "message": "Supermaven"
+  },
+  "tools.supermaven.description": {
+    "message": "超快速的 AI 代码补全，30 万 token 上下文窗口，跨多个 IDE 低延迟"
+  },
+  "tools.aider.name": {
+    "message": "Aider"
+  },
+  "tools.aider.description": {
+    "message": "终端中的 AI 结对编程，集成 git 和多文件编辑功能"
+  },
+  "tools.github-copilot-cli.name": {
+    "message": "GitHub Copilot CLI"
+  },
+  "tools.github-copilot-cli.description": {
+    "message": "自然语言命令行界面，提供 shell 建议和 git 操作辅助"
+  },
+  "tools.codecademy.name": {
+    "message": "Codecademy"
+  },
+  "tools.codecademy.description": {
+    "message": "交互式编程课程，包含职业路径、实际项目和技能评估"
+  },
+  "tools.freecodecamp.name": {
+    "message": "freeCodeCamp"
+  },
+  "tools.freecodecamp.description": {
+    "message": "免费的编程课程，提供认证、练习项目和活跃的学习社区"
+  },
+  "tools.aiTools.heading": {
+    "message": "AI 编程工具目录"
+  },
+  "tools.aiTools.subtitle": {
+    "message": "发现 AI 驱动的编程助手、编辑器和平台"
+  },
+  "tools.interactive.heading": {
+    "message": "交互式实用工具"
+  },
+  "tools.interactive.subtitle": {
+    "message": "注重隐私的浏览器工具，专为开发者和创作者设计。所有处理均在本地进行 - 无需上传文件。"
+  },
+  "tools.interactive.page.title": {
+    "message": "交互式实用工具"
+  },
+  "tools.interactive.page.description": {
+    "message": "注重隐私的浏览器工具，专为开发者和创作者设计。PDF 压缩、图片处理、数据转换等 - 全部在浏览器本地运行。"
+  },
+  "tools.interactive.search.placeholder": {
+    "message": "搜索工具..."
+  },
+  "tools.interactive.category.all": {
+    "message": "全部"
+  },
+  "tools.interactive.results.showing": {
+    "message": "显示 {count} 个，共 {total} 个工具"
+  },
+  "tools.interactive.results.noMatch": {
+    "message": "没有匹配的工具。请调整筛选条件。"
+  },
+  "tools.interactive.privacy.heading": {
+    "message": "隐私优先"
+  },
+  "tools.interactive.privacy.description": {
+    "message": "所有工具完全在浏览器中运行。文件不会离开您的设备。无上传、无跟踪、无数据收集。"
+  },
+  "tools.cta.interactive.heading": {
+    "message": "寻找交互式实用工具？"
+  },
+  "tools.cta.interactive.description": {
+    "message": "探索 26+ 个注重隐私的浏览器工具，包括 PDF 压缩、图片处理、数据转换等 - 全部在浏览器本地运行。"
+  },
+  "tools.cta.interactive.button": {
+    "message": "探索交互式工具 →"
+  },
+  "tools.interactive.category.document": {
+    "message": "文档"
+  },
+  "tools.interactive.category.media": {
+    "message": "媒体"
+  },
+  "tools.interactive.category.data": {
+    "message": "数据"
+  },
+  "tools.interactive.category.dev": {
+    "message": "开发"
+  },
+  "tools.interactive.category.image": {
+    "message": "图片"
+  },
+  "tools.interactive.status.active": {
+    "message": "已上线"
+  },
+  "tools.interactive.status.beta": {
+    "message": "测试版"
+  },
+  "tools.interactive.status.planned": {
+    "message": "即将推出"
+  },
+  "tools.interactive.techStack": {
+    "message": "技术："
+  },
+  "tools.interactive.action.use": {
+    "message": "使用工具"
+  },
+  "tools.updated": {
+    "message": "更新时间："
+  },
+  "tools.interactive.pdfCompress.name": {
+    "message": "PDF 压缩工具"
+  },
+  "tools.interactive.pdfCompress.description": {
+    "message": "在本地压缩 PDF 文件，无需上传。注重隐私，快速处理。"
+  },
+  "tools.interactive.jsonCsv.name": {
+    "message": "JSON ⇄ CSV 转换器"
+  },
+  "tools.interactive.jsonCsv.description": {
+    "message": "在 JSON 和 CSV 格式之间转换，支持字段映射和排序功能。"
+  },
+  "tools.interactive.videoExtract.name": {
+    "message": "视频提取音频"
+  },
+  "tools.interactive.videoExtract.description": {
+    "message": "使用 WebCodecs 从视频文件中提取音轨并生成缩略图。"
+  },
+  "tools.interactive.imageCompress.name": {
+    "message": "图片压缩工具"
+  },
+  "tools.interactive.imageCompress.description": {
+    "message": "压缩 PNG、JPG 和 WebP 图片，支持批量处理和 EXIF 信息删除。"
+  },
+  "tools.interactive.regexPlayground.name": {
+    "message": "正则表达式测试工具"
+  },
+  "tools.interactive.regexPlayground.description": {
+    "message": "测试和调试正则表达式，支持语法高亮和匹配可视化。"
+  },
+  "tools.interactive.uuidHash.name": {
+    "message": "UUID & 哈希生成器"
+  },
+  "tools.interactive.uuidHash.description": {
+    "message": "使用浏览器原生加密 API 生成 UUID 和创建 MD5/SHA 哈希。"
+  },
+  "tools.interactive.tokenizer.name": {
+    "message": "Token 计数器 & LLM 成本计算器"
+  },
+  "tools.interactive.tokenizer.description": {
+    "message": "计算 GPT 模型的 token 数量并估算 API 成本，使用 tiktoken 实现。"
+  },
+  "tools.interactive.diffViewer.name": {
+    "message": "差异对比与合并查看器"
+  },
+  "tools.interactive.diffViewer.description": {
+    "message": "比较文本或 JSON 文件，提供逐行和字符级差异可视化。"
+  },
+  "tools.interactive.markdownTable.name": {
+    "message": "Markdown 表格生成器"
+  },
+  "tools.interactive.markdownTable.description": {
+    "message": "将 CSV/Excel 转换为 Markdown 表格，支持可视化编辑和对齐控制。"
+  },
+  "tools.interactive.barcodeQrcode.name": {
+    "message": "条形码 & 二维码生成器"
+  },
+  "tools.interactive.barcodeQrcode.description": {
+    "message": "生成二维码和条形码，支持批量处理和 SVG/PNG 导出。"
+  },
+  "tools.interactive.pdfMerge.name": {
+    "message": "PDF 合并与拆分"
+  },
+  "tools.interactive.pdfMerge.description": {
+    "message": "合并多个 PDF 或拆分为单独文件 - 100% 客户端处理"
+  },
+  "tools.interactive.pdfOcr.name": {
+    "message": "PDF 文字识别 (OCR)"
+  },
+  "tools.interactive.pdfOcr.description": {
+    "message": "使用光学字符识别从扫描 PDF 中提取文本 - 注重隐私"
+  },
+  "tools.interactive.pdfSignStamp.name": {
+    "message": "PDF 签名与盖章"
+  },
+  "tools.interactive.pdfSignStamp.description": {
+    "message": "在 PDF 文档上添加签名和印章，无需上传到服务器"
+  },
+  "tools.interactive.pdfToImages.name": {
+    "message": "PDF 转图片"
+  },
+  "tools.interactive.pdfToImages.description": {
+    "message": "将 PDF 页面转换为 PNG/JPG 图片，可控制质量 - 完全客户端处理"
+  },
+  "tools.interactive.audioTrimMerge.name": {
+    "message": "音频剪辑与合并"
+  },
+  "tools.interactive.audioTrimMerge.description": {
+    "message": "使用波形可视化剪切和合并音频文件 - 基于浏览器处理"
+  },
+  "tools.interactive.audioToText.name": {
+    "message": "音频转文字 (ASR)"
+  },
+  "tools.interactive.audioToText.description": {
+    "message": "使用自动语音识别将音频转录为文本 - 注重隐私"
+  },
+  "tools.interactive.videoConvert.name": {
+    "message": "视频转换/压缩"
+  },
+  "tools.interactive.videoConvert.description": {
+    "message": "使用 WebCodecs 将视频转换和压缩为不同格式"
+  },
+  "tools.interactive.subtitleEditor.name": {
+    "message": "字幕编辑器"
+  },
+  "tools.interactive.subtitleEditor.description": {
+    "message": "编辑 SRT/VTT 字幕文件，支持时间轴预览和同步控制"
+  },
+  "tools.interactive.imageResize.name": {
+    "message": "图片缩放/裁剪"
+  },
+  "tools.interactive.imageResize.description": {
+    "message": "缩放和裁剪图片，支持宽高比控制和批量处理"
+  },
+  "tools.interactive.imageRedact.name": {
+    "message": "图片隐私保护"
+  },
+  "tools.interactive.imageRedact.description": {
+    "message": "模糊或移除图片中的敏感信息 - 100% 客户端处理"
+  },
+  "tools.interactive.qrcodeDecoder.name": {
+    "message": "二维码解码器"
+  },
+  "tools.interactive.qrcodeDecoder.description": {
+    "message": "从图片或摄像头扫描和解码二维码 - 不向服务器发送数据"
+  },
+  "tools.interactive.csvSql.name": {
+    "message": "CSV SQL 查询"
+  },
+  "tools.interactive.csvSql.description": {
+    "message": "使用 SQL 查询 CSV 文件，浏览器内数据库 - 注重隐私的分析"
+  },
+  "tools.interactive.csvJoinDedup.name": {
+    "message": "CSV 合并/去重"
+  },
+  "tools.interactive.csvJoinDedup.description": {
+    "message": "使用字段匹配逻辑合并 CSV 文件并删除重复项"
+  },
+  "tools.interactive.cronHelper.name": {
+    "message": "Cron 表达式助手"
+  },
+  "tools.interactive.cronHelper.description": {
+    "message": "构建和验证 cron 计划，提供人类可读的描述"
+  },
+  "tools.interactive.openapiClient.name": {
+    "message": "OpenAPI 客户端生成器"
+  },
+  "tools.interactive.openapiClient.description": {
+    "message": "从 OpenAPI/Swagger 规范生成 API 客户端代码 - 支持多种语言"
+  },
+  "tools.interactive.sqlSanitizer.name": {
+    "message": "SQL 格式化/验证器"
+  },
+  "tools.interactive.sqlSanitizer.description": {
+    "message": "格式化和验证 SQL 查询，支持语法高亮和错误检测"
   }
 }

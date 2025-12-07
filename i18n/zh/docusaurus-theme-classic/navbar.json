@@ -1,31 +1,55 @@
 {
   "title": {
-    "message": "AI Coding Club",
+    "message": "AI 编程俱乐部",
     "description": "The title in the navbar"
   },
   "logo.alt": {
-    "message": "AI Coding Club Logo",
+    "message": "AI 编程俱乐部标志",
     "description": "The alt text of navbar logo"
   },
-  "item.label.📖 Learn": {
-    "message": "📖 学习",
-    "description": "Navbar item with label Learn"
+  "item.label.📖 Tutorials": {
+    "message": "📖 教程",
+    "description": "Navbar item with label 📖 Tutorials"
   },
   "item.label.📚 Course": {
     "message": "📚 课程",
-    "description": "Navbar item with label Course"
+    "description": "Navbar item with label 📚 Course"
   },
   "item.label.🛠️ Tools": {
     "message": "🛠️ 工具",
-    "description": "Navbar item with label Tools"
+    "description": "Navbar item with label 🛠️ Tools"
+  },
+  "item.label.⚡ Interactive Tools": {
+    "message": "⚡ 交互式工具",
+    "description": "Navbar item with label ⚡ Interactive Tools"
+  },
+  "item.label.🤖 AI Tools Directory": {
+    "message": "🤖 AI工具目录",
+    "description": "Navbar item with label 🤖 AI Tools Directory"
+  },
+  "item.label.📚 AI Tools Docs": {
+    "message": "📚 AI工具文档",
+    "description": "Navbar item with label 📚 AI Tools Docs"
   },
   "item.label.📦 Resources": {
     "message": "📦 资源",
-    "description": "Navbar item with label Resources"
+    "description": "Navbar item with label 📦 Resources"
   },
   "item.label.📰 Blog": {
     "message": "📰 博客",
-    "description": "Navbar item with label Blog"
+    "description": "Navbar item with label 📰 Blog"
+  },
+  "item.label.🌐 More": {
+    "message": "🌐 更多",
+    "description": "Navbar item with label 🌐 More"
+  },
+  "item.label.🐱 Meows App": {
+    "message": "🐱 Meows应用",
+    "description": "Navbar item with label 🐱 Meows App"
+  },
+  "item.label.📖 AI Novel": {
+    "message": "📖 AI小说",
+    "description": "Navbar item with label 📖 AI Novel"
   },
   "item.label.Search": {
     "message": "搜索",

@@ -50,5 +50,29 @@
   "copyright": {
     "message": "版权所有 © 2025 AI Coding Club。让AI助力每个人学会编程。",
     "description": "The footer copyright"
+  },
+  "link.title.About": {
+    "message": "关于",
+    "description": "The title of the footer links column with title=About in the footer"
+  },
+  "link.item.label.About": {
+    "message": "关于",
+    "description": "The label of footer link with label=About"
+  },
+  "link.item.label.Contact": {
+    "message": "联系我们",
+    "description": "The label of footer link with label=Contact"
+  },
+  "link.item.label.Privacy Policy": {
+    "message": "隐私政策",
+    "description": "The label of footer link with label=Privacy Policy"
+  },
+  "link.item.label.Terms of Use": {
+    "message": "使用条款",
+    "description": "The label of footer link with label=Terms of Use"
+  },
+  "link.item.label.Main Site": {
+    "message": "主站",
+    "description": "The label of footer link with label=Main Site"
   }
 }
