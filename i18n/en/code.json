@@ -1,0 +1,1048 @@
+{
+  "homepage.hero.title": {
+    "message": "Build Your First Script in 30 Seconds with AI"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Learn to code from zero with AI as your guide. No signup, no fees, just start coding."
+  },
+  "homepage.cta.demo": {
+    "message": "See 30-Second Demo →"
+  },
+  "homepage.cta.roadmap": {
+    "message": "AI-Enhanced Learning Path"
+  },
+  "homepage.demo.title": {
+    "message": "See AI in Action"
+  },
+  "homepage.demo.subtitle": {
+    "message": "Watch how AI automates tasks in real-time - no coding experience needed"
+  },
+  "homepage.demo.callout": {
+    "message": "This is what AI-powered coding looks like. Ready to learn how?"
+  },
+  "homepage.demo.cta": {
+    "message": "Start Learning →"
+  },
+  "homepage.title": {
+    "message": "Home"
+  },
+  "homepage.description": {
+    "message": "Learn to code with AI - from zero to hero"
+  },
+  "homepage.feature1.title": {
+    "message": "Start in 30 Seconds"
+  },
+  "homepage.feature1.description": {
+    "message": "No account signup required. Copy a prompt, try it in ChatGPT, and see results instantly."
+  },
+  "homepage.feature2.title": {
+    "message": "Curated Resources"
+  },
+  "homepage.feature2.description": {
+    "message": "Quality over quantity. 10-20 hand-picked resources, not overwhelming 100+ link dumps."
+  },
+  "homepage.feature3.title": {
+    "message": "AI-First Learning Path"
+  },
+  "homepage.feature3.description": {
+    "message": "Learn how to leverage ChatGPT, Claude, and Cursor to boost your coding journey."
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "This page crashed.",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "Scroll back to top",
+    "description": "The ARIA label for the back to top button"
+  },
+  "theme.blog.archive.title": {
+    "message": "Archive",
+    "description": "The page & hero title of the blog archive page"
+  },
+  "theme.blog.archive.description": {
+    "message": "Archive",
+    "description": "The page & hero description of the blog archive page"
+  },
+  "theme.blog.paginator.navAriaLabel": {
+    "message": "Blog list page navigation",
+    "description": "The ARIA label for the blog pagination"
+  },
+  "theme.blog.paginator.newerEntries": {
+    "message": "Newer entries",
+    "description": "The label used to navigate to the newer blog posts page (previous page)"
+  },
+  "theme.blog.paginator.olderEntries": {
+    "message": "Older entries",
+    "description": "The label used to navigate to the older blog posts page (next page)"
+  },
+  "theme.blog.post.paginator.navAriaLabel": {
+    "message": "Blog post page navigation",
+    "description": "The ARIA label for the blog posts pagination"
+  },
+  "theme.blog.post.paginator.newerPost": {
+    "message": "Newer post",
+    "description": "The blog post button label to navigate to the newer/previous post"
+  },
+  "theme.blog.post.paginator.olderPost": {
+    "message": "Older post",
+    "description": "The blog post button label to navigate to the older/next post"
+  },
+  "theme.tags.tagsPageLink": {
+    "message": "View all tags",
+    "description": "The label of the link targeting the tag list page"
+  },
+  "theme.colorToggle.ariaLabel.mode.system": {
+    "message": "system mode",
+    "description": "The name for the system color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.light": {
+    "message": "light mode",
+    "description": "The name for the light color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.dark": {
+    "message": "dark mode",
+    "description": "The name for the dark color mode"
+  },
+  "theme.colorToggle.ariaLabel": {
+    "message": "Switch between dark and light mode (currently {mode})",
+    "description": "The ARIA label for the color mode toggle"
+  },
+  "theme.docs.breadcrumbs.navAriaLabel": {
+    "message": "Breadcrumbs",
+    "description": "The ARIA label for the breadcrumbs"
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "1 item|{count} items",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "theme.docs.paginator.navAriaLabel": {
+    "message": "Docs pages",
+    "description": "The ARIA label for the docs pagination"
+  },
+  "theme.docs.paginator.previous": {
+    "message": "Previous",
+    "description": "The label used to navigate to the previous doc"
+  },
+  "theme.docs.paginator.next": {
+    "message": "Next",
+    "description": "The label used to navigate to the next doc"
+  },
+  "theme.docs.tagDocListPageTitle.nDocsTagged": {
+    "message": "One doc tagged|{count} docs tagged",
+    "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.docs.tagDocListPageTitle": {
+    "message": "{nDocsTagged} with \"{tagName}\"",
+    "description": "The title of the page for a docs tag"
+  },
+  "theme.docs.versionBadge.label": {
+    "message": "Version: {versionLabel}"
+  },
+  "theme.docs.versions.unreleasedVersionLabel": {
+    "message": "This is unreleased documentation for {siteTitle} {versionLabel} version.",
+    "description": "The label used to tell the user that he's browsing an unreleased doc version"
+  },
+  "theme.docs.versions.unmaintainedVersionLabel": {
+    "message": "This is documentation for {siteTitle} {versionLabel}, which is no longer actively maintained.",
+    "description": "The label used to tell the user that he's browsing an unmaintained doc version"
+  },
+  "theme.docs.versions.latestVersionSuggestionLabel": {
+    "message": "For up-to-date documentation, see the {latestVersionLink} ({versionLabel}).",
+    "description": "The label used to tell the user to check the latest version"
+  },
+  "theme.docs.versions.latestVersionLinkLabel": {
+    "message": "latest version",
+    "description": "The label used for the latest version suggestion link label"
+  },
+  "theme.common.editThisPage": {
+    "message": "Edit this page",
+    "description": "The link label to edit the current page"
+  },
+  "theme.common.headingLinkTitle": {
+    "message": "Direct link to {heading}",
+    "description": "Title for link to heading"
+  },
+  "theme.lastUpdated.atDate": {
+    "message": " on {date}",
+    "description": "The words used to describe on which date a page has been last updated"
+  },
+  "theme.lastUpdated.byUser": {
+    "message": " by {user}",
+    "description": "The words used to describe by who the page has been last updated"
+  },
+  "theme.lastUpdated.lastUpdatedAtBy": {
+    "message": "Last updated{atDate}{byUser}",
+    "description": "The sentence used to display when a page has been last updated, and by who"
+  },
+  "theme.NotFound.title": {
+    "message": "Page Not Found",
+    "description": "The title of the 404 page"
+  },
+  "theme.navbar.mobileVersionsDropdown.label": {
+    "message": "Versions",
+    "description": "The label for the navbar versions dropdown on mobile view"
+  },
+  "theme.tags.tagsListLabel": {
+    "message": "Tags:",
+    "description": "The label alongside a tag list"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "Close",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.admonition.caution": {
+    "message": "caution",
+    "description": "The default label used for the Caution admonition (:::caution)"
+  },
+  "theme.admonition.danger": {
+    "message": "danger",
+    "description": "The default label used for the Danger admonition (:::danger)"
+  },
+  "theme.admonition.info": {
+    "message": "info",
+    "description": "The default label used for the Info admonition (:::info)"
+  },
+  "theme.admonition.note": {
+    "message": "note",
+    "description": "The default label used for the Note admonition (:::note)"
+  },
+  "theme.admonition.tip": {
+    "message": "tip",
+    "description": "The default label used for the Tip admonition (:::tip)"
+  },
+  "theme.admonition.warning": {
+    "message": "warning",
+    "description": "The default label used for the Warning admonition (:::warning)"
+  },
+  "theme.blog.sidebar.navAriaLabel": {
+    "message": "Blog recent posts navigation",
+    "description": "The ARIA label for recent posts in the blog sidebar"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "Expand sidebar category '{label}'",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "Collapse sidebar category '{label}'",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(opens in new tab)",
+    "description": "The ARIA label for the external link icon"
+  },
+  "theme.NotFound.p1": {
+    "message": "We could not find what you were looking for.",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "Please contact the owner of the site that linked you to the original URL and let them know their link is broken.",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.NavBar.navAriaLabel": {
+    "message": "Main",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "On this page",
+    "description": "The label used by the button on the collapsible TOC component"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "Languages",
+    "description": "The label for the mobile language switcher dropdown"
+  },
+  "theme.blog.post.readMore": {
+    "message": "Read more",
+    "description": "The label used in blog post item excerpts to link to full blog posts"
+  },
+  "theme.blog.post.readMoreLabel": {
+    "message": "Read more about {title}",
+    "description": "The ARIA label for the link to full blog posts from excerpts"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "One min read|{readingTime} min read",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "Copy",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "Copied",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "Copy code to clipboard",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "Toggle word wrap",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "Home page",
+    "description": "The ARIA label for the home page in the breadcrumbs"
+  },
+  "theme.docs.sidebar.collapseButtonTitle": {
+    "message": "Collapse sidebar",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.collapseButtonAriaLabel": {
+    "message": "Collapse sidebar",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "Docs sidebar",
+    "description": "The ARIA label for the sidebar navigation"
+  },
+  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
+    "message": "Close navigation bar",
+    "description": "The ARIA label for close button of mobile sidebar"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
+    "message": "Expand the dropdown",
+    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
+    "message": "Collapse the dropdown",
+    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
+  },
+  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
+    "message": "Toggle navigation bar",
+    "description": "The ARIA label for hamburger menu button of mobile navigation"
+  },
+  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
+    "message": "← Back to main menu",
+    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
+  },
+  "theme.docs.sidebar.expandButtonTitle": {
+    "message": "Expand sidebar",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.docs.sidebar.expandButtonAriaLabel": {
+    "message": "Expand sidebar",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.IdealImageMessage.loading": {
+    "message": "Loading...",
+    "description": "When the full-scale image is loading"
+  },
+  "theme.IdealImageMessage.load": {
+    "message": "Click to load{sizeMessage}",
+    "description": "To prompt users to load the full image. sizeMessage is a parenthesized size figure."
+  },
+  "theme.IdealImageMessage.offline": {
+    "message": "Your browser is offline. Image not loaded",
+    "description": "When the user is viewing an offline document"
+  },
+  "theme.IdealImageMessage.404error": {
+    "message": "404. Image not found",
+    "description": "When the image is not found"
+  },
+  "theme.IdealImageMessage.error": {
+    "message": "Error. Click to reload",
+    "description": "When the image fails to load for unknown error"
+  },
+  "theme.blog.post.plurals": {
+    "message": "One post|{count} posts",
+    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.blog.tagTitle": {
+    "message": "{nPosts} tagged with \"{tagName}\"",
+    "description": "The title of the page for a blog tag"
+  },
+  "theme.blog.author.pageTitle": {
+    "message": "{authorName} - {nPosts}",
+    "description": "The title of the page for a blog author"
+  },
+  "theme.blog.authorsList.pageTitle": {
+    "message": "Authors",
+    "description": "The title of the authors page"
+  },
+  "theme.blog.authorsList.viewAll": {
+    "message": "View all authors",
+    "description": "The label of the link targeting the blog authors page"
+  },
+  "theme.blog.author.noPosts": {
+    "message": "This author has not written any posts yet.",
+    "description": "The text for authors with 0 blog post"
+  },
+  "theme.contentVisibility.unlistedBanner.title": {
+    "message": "Unlisted page",
+    "description": "The unlisted content banner title"
+  },
+  "theme.contentVisibility.unlistedBanner.message": {
+    "message": "This page is unlisted. Search engines will not index it, and only users having a direct link can access it.",
+    "description": "The unlisted content banner message"
+  },
+  "theme.contentVisibility.draftBanner.title": {
+    "message": "Draft page",
+    "description": "The draft content banner title"
+  },
+  "theme.contentVisibility.draftBanner.message": {
+    "message": "This page is a draft. It will only be visible in dev and be excluded from the production build.",
+    "description": "The draft content banner message"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "Try again",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.common.skipToMainContent": {
+    "message": "Skip to main content",
+    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+  },
+  "theme.tags.tagsPageTitle": {
+    "message": "Tags",
+    "description": "The title of the tag list page"
+  },
+  "search.placeholder": {
+    "message": "Search documentation, tutorials, and resources..."
+  },
+  "search.clear": {
+    "message": "Clear"
+  },
+  "search.loadMore": {
+    "message": "Load more results"
+  },
+  "search.label": {
+    "message": "Search this site"
+  },
+  "search.filters": {
+    "message": "Filters"
+  },
+  "search.zeroResults": {
+    "message": "No results for [SEARCH_TERM]"
+  },
+  "search.manyResults": {
+    "message": "[COUNT] results for [SEARCH_TERM]"
+  },
+  "search.oneResult": {
+    "message": "[COUNT] result for [SEARCH_TERM]"
+  },
+  "search.altSearch": {
+    "message": "No results for [SEARCH_TERM]. Showing results for [DIFFERENT_TERM] instead"
+  },
+  "search.suggestion": {
+    "message": "No results for [SEARCH_TERM]. Try one of the following searches:"
+  },
+  "search.searching": {
+    "message": "Searching for [SEARCH_TERM]..."
+  },
+  "search.loadError": {
+    "message": "Pagefind UI failed to load"
+  },
+  "search.loading": {
+    "message": "Loading search..."
+  },
+  "video.viewOnX": {
+    "message": "View on X"
+  },
+  "video.watchOnYouTube": {
+    "message": "Watch on YouTube"
+  },
+  "video.error.noId": {
+    "message": "VideoEmbed: Either videoId or twitterId must be provided"
+  },
+  "video.twitter.unavailable": {
+    "message": "Twitter/X embed unavailable in your region"
+  },
+  "resources.type.course": {
+    "message": "Course"
+  },
+  "resources.type.documentation": {
+    "message": "Documentation"
+  },
+  "resources.type.tool": {
+    "message": "Tool"
+  },
+  "resources.type.video": {
+    "message": "Video"
+  },
+  "resources.level.beginner": {
+    "message": "Beginner"
+  },
+  "resources.level.intermediate": {
+    "message": "Intermediate"
+  },
+  "resources.level.advanced": {
+    "message": "Advanced"
+  },
+  "resources.lang.english": {
+    "message": "English"
+  },
+  "resources.lang.chinese": {
+    "message": "中文"
+  },
+  "resources.card.updated": {
+    "message": "Updated"
+  },
+  "resources.page.title": {
+    "message": "Resources"
+  },
+  "resources.page.description": {
+    "message": "Curated AI coding learning resources"
+  },
+  "resources.heading": {
+    "message": "Learning Resources"
+  },
+  "resources.subtitle": {
+    "message": "Hand-picked resources for learning to code with AI. Quality over quantity."
+  },
+  "resources.section.tutorials": {
+    "message": "Featured Tutorials"
+  },
+  "resources.section.description": {
+    "message": "Start your AI coding journey with these carefully selected video tutorials, organized by skill level."
+  },
+  "resources.level.beginner.title": {
+    "message": "Beginner Level"
+  },
+  "resources.level.beginner.desc": {
+    "message": "Essential foundations for anyone getting started with AI-assisted coding."
+  },
+  "resources.level.intermediate.title": {
+    "message": "Intermediate Level"
+  },
+  "resources.level.intermediate.desc": {
+    "message": "Strategic thinking and responsible practices for developers advancing their AI coding skills."
+  },
+  "resources.section.playlists": {
+    "message": "Curated Playlists"
+  },
+  "resources.section.playlists.desc": {
+    "message": "Extended learning paths curated by respected creators in the AI and web development communities."
+  },
+  "resources.playlist.watchPlaylist": {
+    "message": "Watch Playlist"
+  },
+  "resources.filter.language": {
+    "message": "Language:"
+  },
+  "resources.filter.allLanguages": {
+    "message": "All Languages"
+  },
+  "resources.filter.english": {
+    "message": "English"
+  },
+  "resources.filter.chinese": {
+    "message": "中文"
+  },
+  "resources.filter.level": {
+    "message": "Level:"
+  },
+  "resources.filter.allLevels": {
+    "message": "All Levels"
+  },
+  "resources.filter.beginner": {
+    "message": "Beginner"
+  },
+  "resources.filter.intermediate": {
+    "message": "Intermediate"
+  },
+  "resources.filter.advanced": {
+    "message": "Advanced"
+  },
+  "resources.filter.type": {
+    "message": "Type:"
+  },
+  "resources.filter.allTypes": {
+    "message": "All Types"
+  },
+  "resources.filter.course": {
+    "message": "Course"
+  },
+  "resources.filter.documentation": {
+    "message": "Documentation"
+  },
+  "resources.filter.tool": {
+    "message": "Tool"
+  },
+  "resources.filter.video": {
+    "message": "Video"
+  },
+  "resources.results.showing": {
+    "message": "Showing {count} of {total} resources"
+  },
+  "resources.results.noMatch": {
+    "message": "No resources match your filters. Try adjusting your selection."
+  },
+  "tools.page.title": {
+    "message": "AI Coding Tools"
+  },
+  "tools.page.description": {
+    "message": "Curated directory of AI-powered coding tools and platforms. Discover the best AI assistants, code editors, no-code tools, and learning resources for developers."
+  },
+  "tools.heading": {
+    "message": "AI Coding Tools"
+  },
+  "tools.subtitle": {
+    "message": "Discover and compare the best AI-powered coding tools and platforms"
+  },
+  "tools.sidebar.categories": {
+    "message": "Categories"
+  },
+  "tools.sidebar.nav": {
+    "message": "Category navigation"
+  },
+  "tools.sidebar.toggle": {
+    "message": "Toggle sidebar"
+  },
+  "tools.filters.title": {
+    "message": "Filters"
+  },
+  "tools.filter.pricing": {
+    "message": "Pricing:"
+  },
+  "tools.filter.allPricing": {
+    "message": "All Pricing"
+  },
+  "tools.filter.featuredOnly": {
+    "message": "Featured Only"
+  },
+  "tools.filter.privacyFocused": {
+    "message": "Privacy-Focused"
+  },
+  "tools.results.showing": {
+    "message": "Showing {count} of {total} tools"
+  },
+  "tools.results.noMatch": {
+    "message": "No tools match your filters. Try adjusting your selection."
+  },
+  "tools.pricing.free": {
+    "message": "Free"
+  },
+  "tools.pricing.freemium": {
+    "message": "Freemium"
+  },
+  "tools.pricing.paid": {
+    "message": "Paid"
+  },
+  "tools.category.aiAssistant": {
+    "message": "AI Assistant"
+  },
+  "tools.category.codeEditor": {
+    "message": "Code Editor"
+  },
+  "tools.category.noCode": {
+    "message": "No-Code"
+  },
+  "tools.category.devTool": {
+    "message": "Dev Tool"
+  },
+  "tools.category.learning": {
+    "message": "Learning"
+  },
+  "tools.badge.featured": {
+    "message": "Featured"
+  },
+  "tools.badge.privacy": {
+    "message": "Privacy"
+  },
+  "tools.features.label": {
+    "message": "Key features"
+  },
+  "tools.action.visit": {
+    "message": "Visit"
+  },
+  "tools.action.docs": {
+    "message": "Docs"
+  },
+  "tools.action.tutorial": {
+    "message": "Tutorial"
+  },
+  "tools.claude.name": {
+    "message": "Claude"
+  },
+  "tools.claude.description": {
+    "message": "Advanced AI assistant with extended context for coding, analysis, and technical writing"
+  },
+  "tools.copilot.name": {
+    "message": "GitHub Copilot"
+  },
+  "tools.copilot.description": {
+    "message": "AI pair programmer that suggests code completions directly in your IDE"
+  },
+  "tools.cursor.name": {
+    "message": "Cursor"
+  },
+  "tools.cursor.description": {
+    "message": "AI-first code editor with built-in chat and codebase-wide context understanding"
+  },
+  "tools.replit.name": {
+    "message": "Replit"
+  },
+  "tools.replit.description": {
+    "message": "Browser-based IDE with AI pair programming and instant deployment capabilities"
+  },
+  "tools.codeium.name": {
+    "message": "Codeium"
+  },
+  "tools.codeium.description": {
+    "message": "Free AI-powered autocomplete supporting 70+ languages across multiple IDEs"
+  },
+  "tools.chatgpt.name": {
+    "message": "ChatGPT"
+  },
+  "tools.chatgpt.description": {
+    "message": "OpenAI's conversational AI with code generation, web browsing, and multimodal capabilities"
+  },
+  "tools.gemini.name": {
+    "message": "Gemini"
+  },
+  "tools.gemini.description": {
+    "message": "Google's AI assistant with search integration, long context window, and multimodal understanding"
+  },
+  "tools.ollama.name": {
+    "message": "Ollama"
+  },
+  "tools.ollama.description": {
+    "message": "Run large language models locally on your machine with complete privacy and no internet required"
+  },
+  "tools.lmstudio.name": {
+    "message": "LM Studio"
+  },
+  "tools.lmstudio.description": {
+    "message": "Desktop GUI for discovering, downloading, and running local AI models with GPU acceleration"
+  },
+  "tools.phind.name": {
+    "message": "Phind"
+  },
+  "tools.phind.description": {
+    "message": "AI-powered search engine specifically designed for developers with cited sources and fast responses"
+  },
+  "tools.perplexity.name": {
+    "message": "Perplexity"
+  },
+  "tools.perplexity.description": {
+    "message": "AI search engine with source citations, follow-up questions, and academic research capabilities"
+  },
+  "tools.codeium-chat.name": {
+    "message": "Codeium Chat"
+  },
+  "tools.codeium-chat.description": {
+    "message": "Code-focused chat interface with IDE integration and context-aware suggestions, free for individuals"
+  },
+  "tools.windsurf.name": {
+    "message": "Windsurf"
+  },
+  "tools.windsurf.description": {
+    "message": "AI-first code editor with Cascade AI system and fast performance, built by Codeium team"
+  },
+  "tools.vscode-copilot.name": {
+    "message": "VS Code + Copilot"
+  },
+  "tools.vscode-copilot.description": {
+    "message": "Popular code editor with GitHub Copilot integration, extensive extensions, and debugging tools"
+  },
+  "tools.github-copilot.name": {
+    "message": "GitHub Copilot"
+  },
+  "tools.github-copilot.description": {
+    "message": "AI pair programmer with real-time code suggestions, context-aware completions, and chat interface"
+  },
+  "tools.continue.name": {
+    "message": "Continue.dev"
+  },
+  "tools.continue.description": {
+    "message": "Open-source AI coding assistant supporting custom LLMs, self-hosted options, and VS Code/JetBrains"
+  },
+  "tools.tabnine.name": {
+    "message": "Tabnine"
+  },
+  "tools.tabnine.description": {
+    "message": "AI code completion with private model training, team learning, and enterprise security features"
+  },
+  "tools.v0.name": {
+    "message": "v0.dev"
+  },
+  "tools.v0.description": {
+    "message": "Generate React components with shadcn/ui and Tailwind CSS through chat-driven iteration by Vercel"
+  },
+  "tools.bolt.name": {
+    "message": "Bolt.new"
+  },
+  "tools.bolt.description": {
+    "message": "Generate and deploy full-stack applications instantly in the browser with real-time preview"
+  },
+  "tools.lovable.name": {
+    "message": "Lovable"
+  },
+  "tools.lovable.description": {
+    "message": "AI app generator creating full-stack applications with database and one-click deployment"
+  },
+  "tools.replit-ai.name": {
+    "message": "Replit AI"
+  },
+  "tools.replit-ai.description": {
+    "message": "Browser-based IDE with AI code generation, instant hosting, and collaborative editing features"
+  },
+  "tools.marblism.name": {
+    "message": "Marblism"
+  },
+  "tools.marblism.description": {
+    "message": "Generate complete SaaS applications with TypeScript, React, authentication, and API generation"
+  },
+  "tools.supermaven.name": {
+    "message": "Supermaven"
+  },
+  "tools.supermaven.description": {
+    "message": "Ultra-fast AI code completion with 300K token context window and low latency across multiple IDEs"
+  },
+  "tools.aider.name": {
+    "message": "Aider"
+  },
+  "tools.aider.description": {
+    "message": "AI pair programming in the terminal with git integration and multi-file editing capabilities"
+  },
+  "tools.github-copilot-cli.name": {
+    "message": "GitHub Copilot CLI"
+  },
+  "tools.github-copilot-cli.description": {
+    "message": "Natural language command-line interface with shell suggestions and git operation assistance"
+  },
+  "tools.codecademy.name": {
+    "message": "Codecademy"
+  },
+  "tools.codecademy.description": {
+    "message": "Interactive coding lessons with career paths, real-world projects, and skill assessments"
+  },
+  "tools.freecodecamp.name": {
+    "message": "freeCodeCamp"
+  },
+  "tools.freecodecamp.description": {
+    "message": "Free coding curriculum with certifications, practice projects, and active learning community"
+  },
+  "tools.aiTools.heading": {
+    "message": "AI Coding Tools Directory"
+  },
+  "tools.aiTools.subtitle": {
+    "message": "Discover AI-powered coding assistants, editors, and platforms"
+  },
+  "tools.interactive.heading": {
+    "message": "Interactive Utility Tools"
+  },
+  "tools.interactive.subtitle": {
+    "message": "Privacy-focused browser tools for developers and creators. All processing happens locally - no uploads required."
+  },
+  "tools.interactive.page.title": {
+    "message": "Interactive Utility Tools"
+  },
+  "tools.interactive.page.description": {
+    "message": "Privacy-focused browser tools for developers and creators. PDF compression, image processing, data conversion, and more - all running locally in your browser."
+  },
+  "tools.interactive.search.placeholder": {
+    "message": "Search tools..."
+  },
+  "tools.interactive.category.all": {
+    "message": "All"
+  },
+  "tools.interactive.results.showing": {
+    "message": "Showing {count} of {total} tools"
+  },
+  "tools.interactive.results.noMatch": {
+    "message": "No tools match your search. Try adjusting your filters."
+  },
+  "tools.interactive.privacy.heading": {
+    "message": "Privacy First"
+  },
+  "tools.interactive.privacy.description": {
+    "message": "All tools run entirely in your browser. Your files never leave your device. No uploads, no tracking, no data collection."
+  },
+  "tools.cta.interactive.heading": {
+    "message": "Looking for Interactive Utility Tools?"
+  },
+  "tools.cta.interactive.description": {
+    "message": "Explore 26+ privacy-focused browser tools including PDF compression, image processing, data conversion, and more - all running locally in your browser."
+  },
+  "tools.cta.interactive.button": {
+    "message": "Explore Interactive Tools →"
+  },
+  "tools.interactive.category.document": {
+    "message": "Document"
+  },
+  "tools.interactive.category.media": {
+    "message": "Media"
+  },
+  "tools.interactive.category.data": {
+    "message": "Data"
+  },
+  "tools.interactive.category.dev": {
+    "message": "Developer"
+  },
+  "tools.interactive.category.image": {
+    "message": "Image"
+  },
+  "tools.interactive.status.active": {
+    "message": "Active"
+  },
+  "tools.interactive.status.beta": {
+    "message": "Beta"
+  },
+  "tools.interactive.status.planned": {
+    "message": "Coming Soon"
+  },
+  "tools.interactive.techStack": {
+    "message": "Tech:"
+  },
+  "tools.interactive.action.use": {
+    "message": "Use Tool"
+  },
+  "tools.updated": {
+    "message": "Updated:"
+  },
+  "tools.interactive.pdfCompress.name": {
+    "message": "PDF Compressor"
+  },
+  "tools.interactive.pdfCompress.description": {
+    "message": "Compress PDF files locally without uploading. Privacy-focused and fast."
+  },
+  "tools.interactive.jsonCsv.name": {
+    "message": "JSON ⇄ CSV Converter"
+  },
+  "tools.interactive.jsonCsv.description": {
+    "message": "Convert between JSON and CSV formats with field mapping and sorting capabilities."
+  },
+  "tools.interactive.videoExtract.name": {
+    "message": "Video Extract Audio"
+  },
+  "tools.interactive.videoExtract.description": {
+    "message": "Extract audio tracks from video files and generate thumbnails using WebCodecs."
+  },
+  "tools.interactive.imageCompress.name": {
+    "message": "Image Compressor"
+  },
+  "tools.interactive.imageCompress.description": {
+    "message": "Compress PNG, JPG, and WebP images with batch processing and EXIF removal."
+  },
+  "tools.interactive.regexPlayground.name": {
+    "message": "Regex Playground"
+  },
+  "tools.interactive.regexPlayground.description": {
+    "message": "Test and debug regular expressions with syntax highlighting and match visualization."
+  },
+  "tools.interactive.uuidHash.name": {
+    "message": "UUID & Hash Generator"
+  },
+  "tools.interactive.uuidHash.description": {
+    "message": "Generate UUIDs and create MD5/SHA hashes using browser-native crypto API."
+  },
+  "tools.interactive.tokenizer.name": {
+    "message": "Token Counter & LLM Cost Calculator"
+  },
+  "tools.interactive.tokenizer.description": {
+    "message": "Count tokens for GPT models and calculate API costs with tiktoken implementation."
+  },
+  "tools.interactive.diffViewer.name": {
+    "message": "Diff & Merge Viewer"
+  },
+  "tools.interactive.diffViewer.description": {
+    "message": "Compare text or JSON files with line-by-line and character-level diff visualization."
+  },
+  "tools.interactive.markdownTable.name": {
+    "message": "Markdown Table Generator"
+  },
+  "tools.interactive.markdownTable.description": {
+    "message": "Convert CSV/Excel to Markdown tables with visual editing and alignment control."
+  },
+  "tools.interactive.barcodeQrcode.name": {
+    "message": "Barcode & QR Code Generator"
+  },
+  "tools.interactive.barcodeQrcode.description": {
+    "message": "Generate QR codes and barcodes with batch processing and SVG/PNG export."
+  },
+  "tools.interactive.pdfMerge.name": {
+    "message": "PDF Merge & Split"
+  },
+  "tools.interactive.pdfMerge.description": {
+    "message": "Combine multiple PDFs or split into separate files - 100% client-side processing"
+  },
+  "tools.interactive.pdfOcr.name": {
+    "message": "PDF OCR"
+  },
+  "tools.interactive.pdfOcr.description": {
+    "message": "Extract text from scanned PDFs using optical character recognition - privacy-first processing"
+  },
+  "tools.interactive.pdfSignStamp.name": {
+    "message": "PDF Sign & Stamp"
+  },
+  "tools.interactive.pdfSignStamp.description": {
+    "message": "Add signatures and stamps to PDF documents without uploading to servers"
+  },
+  "tools.interactive.pdfToImages.name": {
+    "message": "PDF to Images"
+  },
+  "tools.interactive.pdfToImages.description": {
+    "message": "Convert PDF pages to PNG/JPG images with quality control - fully client-side"
+  },
+  "tools.interactive.audioTrimMerge.name": {
+    "message": "Audio Trim & Merge"
+  },
+  "tools.interactive.audioTrimMerge.description": {
+    "message": "Cut and combine audio files with waveform visualization - browser-based processing"
+  },
+  "tools.interactive.audioToText.name": {
+    "message": "Audio to Text (ASR)"
+  },
+  "tools.interactive.audioToText.description": {
+    "message": "Transcribe audio to text using automatic speech recognition - privacy-focused"
+  },
+  "tools.interactive.videoConvert.name": {
+    "message": "Video Convert/Compress"
+  },
+  "tools.interactive.videoConvert.description": {
+    "message": "Convert and compress videos to different formats using WebCodecs"
+  },
+  "tools.interactive.subtitleEditor.name": {
+    "message": "Subtitle Editor"
+  },
+  "tools.interactive.subtitleEditor.description": {
+    "message": "Edit SRT/VTT subtitle files with timeline preview and sync controls"
+  },
+  "tools.interactive.imageResize.name": {
+    "message": "Image Resize/Crop"
+  },
+  "tools.interactive.imageResize.description": {
+    "message": "Resize and crop images with aspect ratio control and batch processing"
+  },
+  "tools.interactive.imageRedact.name": {
+    "message": "Image Redact/Privacy"
+  },
+  "tools.interactive.imageRedact.description": {
+    "message": "Blur or remove sensitive information from images - 100% client-side"
+  },
+  "tools.interactive.qrcodeDecoder.name": {
+    "message": "QR Code Decoder"
+  },
+  "tools.interactive.qrcodeDecoder.description": {
+    "message": "Scan and decode QR codes from images or camera - no data sent to servers"
+  },
+  "tools.interactive.csvSql.name": {
+    "message": "SQL on CSV"
+  },
+  "tools.interactive.csvSql.description": {
+    "message": "Query CSV files using SQL with in-browser database - privacy-first analytics"
+  },
+  "tools.interactive.csvJoinDedup.name": {
+    "message": "CSV Join/Deduplicate"
+  },
+  "tools.interactive.csvJoinDedup.description": {
+    "message": "Merge CSV files and remove duplicates with field matching logic"
+  },
+  "tools.interactive.cronHelper.name": {
+    "message": "Cron Expression Helper"
+  },
+  "tools.interactive.cronHelper.description": {
+    "message": "Build and validate cron schedules with human-readable descriptions"
+  },
+  "tools.interactive.openapiClient.name": {
+    "message": "OpenAPI Client Generator"
+  },
+  "tools.interactive.openapiClient.description": {
+    "message": "Generate API client code from OpenAPI/Swagger specs - supports multiple languages"
+  },
+  "tools.interactive.sqlSanitizer.name": {
+    "message": "SQL Formatter/Sanitizer"
+  },
+  "tools.interactive.sqlSanitizer.description": {
+    "message": "Format and validate SQL queries with syntax highlighting and error detection"
+  }
+}

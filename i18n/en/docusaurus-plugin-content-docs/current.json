@@ -1,0 +1,42 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Learning Stages": {
+    "message": "Learning Stages",
+    "description": "The label for category 'Learning Stages' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.Core Tutorials": {
+    "message": "Core Tutorials",
+    "description": "The label for category 'Core Tutorials' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.doc.🗺️ Learning Roadmap": {
+    "message": "🗺️ Learning Roadmap",
+    "description": "The label for the doc item '🗺️ Learning Roadmap' in sidebar 'tutorialSidebar', linking to the doc roadmap"
+  },
+  "sidebar.toolsSidebar.category.🎯 Cursor Rules": {
+    "message": "🎯 Cursor Rules",
+    "description": "The label for category '🎯 Cursor Rules' in sidebar 'toolsSidebar'"
+  },
+  "sidebar.toolsSidebar.category.🤖 AI Agents": {
+    "message": "🤖 AI Agents",
+    "description": "The label for category '🤖 AI Agents' in sidebar 'toolsSidebar'"
+  },
+  "sidebar.toolsSidebar.category.🔌 MCP Servers": {
+    "message": "🔌 MCP Servers",
+    "description": "The label for category '🔌 MCP Servers' in sidebar 'toolsSidebar'"
+  },
+  "sidebar.toolsSidebar.doc.📊 Tools Comparison": {
+    "message": "📊 Tools Comparison",
+    "description": "The label for the doc item '📊 Tools Comparison' in sidebar 'toolsSidebar', linking to the doc tools/ai-tools-comparison"
+  },
+  "sidebar.courseSidebar.category.🌱 Phase 1: Foundations": {
+    "message": "🌱 Phase 1: Foundations",
+    "description": "The label for category '🌱 Phase 1: Foundations' in sidebar 'courseSidebar'"
+  },
+  "sidebar.courseSidebar.doc.📚 Course Overview": {
+    "message": "📚 Course Overview",
+    "description": "The label for the doc item '📚 Course Overview' in sidebar 'courseSidebar', linking to the doc course/index"
+  }
+}

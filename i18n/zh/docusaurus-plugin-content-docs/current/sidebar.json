@@ -1,0 +1,58 @@
+{
+  "sidebar.tutorialSidebar.category.Learning Stages": {
+    "message": "学习阶段",
+    "description": "The label for the Learning Stages category in the sidebar"
+  },
+  "sidebar.tutorialSidebar.category.Core Tutorials": {
+    "message": "核心教程",
+    "description": "The label for the Core Tutorials category in the sidebar"
+  },
+  "sidebar.tutorialSidebar.doc.🗺️ AI-Enhanced Roadmap": {
+    "message": "🗺️ AI增强路线图",
+    "description": "The label for the doc item '🗺️ AI-Enhanced Roadmap' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.toolsSidebar.doc.📊 Tools Comparison": {
+    "message": "📊 工具对比",
+    "description": "The label for the doc item '📊 Tools Comparison' in sidebar 'toolsSidebar'"
+  },
+  "sidebar.toolsSidebar.category.🎨 UI Generators": {
+    "message": "🎨 UI 生成器",
+    "description": "The label for UI Generators category in the sidebar"
+  },
+  "sidebar.toolsSidebar.category.📦 Code Snippets": {
+    "message": "📦 代码片段",
+    "description": "The label for Code Snippets category in the sidebar"
+  },
+  "sidebar.toolsSidebar.category.🏗️ Project Templates": {
+    "message": "🏗️ 项目模板",
+    "description": "The label for Project Templates category in the sidebar"
+  },
+  "sidebar.toolsSidebar.category.📚 Learning Resources": {
+    "message": "📚 学习资源",
+    "description": "The label for Learning Resources category in the sidebar"
+  },
+  "sidebar.toolsSidebar.category.🎯 Cursor Rules": {
+    "message": "🎯 Cursor 规则",
+    "description": "The label for Cursor Rules category in the sidebar"
+  },
+  "sidebar.toolsSidebar.category.🤖 AI Agents": {
+    "message": "🤖 AI 智能体",
+    "description": "The label for AI Agents category in the sidebar"
+  },
+  "sidebar.toolsSidebar.category.🔌 MCP Servers": {
+    "message": "🔌 MCP 服务器",
+    "description": "The label for MCP Servers category in the sidebar"
+  },
+  "sidebar.toolsSidebar.category.⚡ Productivity": {
+    "message": "⚡ 效率工具",
+    "description": "The label for Productivity category in the sidebar"
+  },
+  "sidebar.courseSidebar.doc.📚 Course Overview": {
+    "message": "📚 课程概览",
+    "description": "The label for the doc item '📚 Course Overview' in sidebar 'courseSidebar'"
+  },
+  "sidebar.courseSidebar.category.🌱 Phase 1: Foundations": {
+    "message": "🌱 第一阶段：基础",
+    "description": "The label for Phase 1: Foundations category in the sidebar"
+  }
+}
