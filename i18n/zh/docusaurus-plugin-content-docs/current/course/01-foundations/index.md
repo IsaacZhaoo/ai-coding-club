@@ -2,7 +2,7 @@
 sidebar_position: 1
 title: 第1阶段 - 基础
 description: 使用AI编程基础概念和第一个程序开始你的AI编程旅程
-slug: /course/01-foundations
+slug: /course/foundations
 ---
 
 # 第1阶段：基础

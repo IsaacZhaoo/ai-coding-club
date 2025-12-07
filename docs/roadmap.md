@@ -498,7 +498,7 @@ graph TB
 - 🌟 Choose a [specialization path](#-optional-skill-tree) to deepen your expertise
 - 💼 Build a portfolio project to showcase your skills
 - 🤝 Join our [community discussions](https://github.com/IsaacZhaoo/aiCodingClub/discussions) to connect with other learners
-- 📚 Explore our [comprehensive course](/docs/course/) for structured lessons
+- 📚 Explore our [comprehensive course](/docs/course) for structured lessons
 :::
 
 ---

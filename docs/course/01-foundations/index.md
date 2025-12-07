@@ -2,7 +2,7 @@
 sidebar_position: 1
 title: Phase 1 - Foundations
 description: Start your AI coding journey with foundational concepts and first programs
-slug: /course/01-foundations
+slug: /course/foundations
 ---
 
 # Phase 1: Foundations
