@@ -1,64 +1,64 @@
 ---
 id: stage2
-title: "Stage 2: 上下文与架构"
+title: "Stage 2: Context & Architecture"
 slug: /roadmap/stage2
 sidebar_position: 3
-keywords: [AI编程, 上下文, 项目架构, 提示工程, RAG]
+keywords: [AI coding, context, project architecture, prompt engineering, RAG]
 ---
 
 import VideoEmbed from '@site/src/components/VideoEmbed';
 
-# Stage 2: 上下文与架构
+# Stage 2: Context & Architecture
 
-**掌握如何为 AI 提供有效上下文，获得更好的代码**
+**Master how to provide effective context to AI for better code**
 
-## 为什么上下文很重要？
+## Why Context Matters
 
-AI 编程助手的表现完全取决于你提供的上下文。这个阶段教你如何组织项目和提示词，让 AI 发挥最大效能。
+AI coding assistants' performance depends entirely on the context you provide. This stage teaches you how to organize projects and prompts to maximize AI effectiveness.
 
 <VideoEmbed
   videoId="dJhlMn2otxA"
   title="Learn to Code using AI - ChatGPT Programming Tutorial"
-  caption="这个来自 freeCodeCamp 的完整课程教你如何有效使用 AI 进行编程。学习如何提供正确的上下文、结构化提示词、利用 AI 工具构建真实应用。"
-  linkText="在 YouTube 观看"
+  caption="This complete course from freeCodeCamp teaches you how to effectively use AI for programming. Learn how to provide the right context, structure prompts, and leverage AI tools to build real applications."
+  linkText="Watch on YouTube"
   linkUrl="https://www.youtube.com/watch?v=dJhlMn2otxA"
   aspectRatio="16/9"
 />
 
-## 学习成果
+## Learning Outcomes
 
-在这个阶段，你将：
-- 设计 AI 友好的项目架构
-- 在提示词中提供有效上下文
-- 了解 RAG（检索增强生成）技术
-- 组织代码让 AI 更好理解
-- 善用文档和示例
+In this stage, you will:
+- Design AI-friendly project architecture
+- Provide effective context in prompts
+- Understand RAG (Retrieval-Augmented Generation) techniques
+- Organize code for better AI comprehension
+- Make good use of documentation and examples
 
-## 上下文的三个层次
+## Three Levels of Context
 
-### 1. 即时上下文 (Immediate Context)
+### 1. Immediate Context
 
-**当前对话中直接提供的信息**
-
-```
-好的即时上下文示例：
-
-"我正在开发一个 Python 脚本处理 Excel 文件。
-当前代码：
-[粘贴代码]
-
-问题：运行时报错 'KeyError: 部门'
-Excel 文件的列名：姓名, 部门名称, 入职日期
-
-请帮我修复这个问题。"
-```
-
-### 2. 项目上下文 (Project Context)
-
-**项目结构、技术栈、已有代码**
+**Information provided directly in the current conversation**
 
 ```
-项目结构示例：
+Good immediate context example:
+
+"I'm developing a Python script to process Excel files.
+Current code:
+[paste code]
+
+Problem: Getting error 'KeyError: Department' when running
+Excel file columns: Name, Department Name, Hire Date
+
+Please help me fix this issue."
+```
+
+### 2. Project Context
+
+**Project structure, tech stack, existing code**
+
+```
+Project structure example:
 my-automation/
 ├── scripts/
 │   ├── excel_processor.py
@@ -68,95 +68,95 @@ my-automation/
 ├── config.yaml
 └── README.md
 
-告诉 AI：
-"这是一个 Python 自动化项目，使用 pandas 处理数据，
-配置在 config.yaml 中，请按照现有代码风格..."
+Tell AI:
+"This is a Python automation project using pandas for data processing,
+configuration is in config.yaml, please follow the existing code style..."
 ```
 
-### 3. 领域上下文 (Domain Context)
+### 3. Domain Context
 
-**业务规则、行业术语、特定约束**
-
-```
-领域上下文示例：
-
-"我们公司的业务规则：
-- 员工分为 A/B/C 三个级别
-- A 级员工年假 15 天，B 级 10 天，C 级 7 天
-- 入职不满一年的按比例计算
-- 每月 25 日前必须提交考勤
-
-请根据这些规则帮我写一个年假计算函数。"
-```
-
-## 提供上下文的技巧
-
-### 技巧 1：给 AI 角色设定
+**Business rules, industry terminology, specific constraints**
 
 ```
-"你是一位经验丰富的 Python 开发者，专注于数据处理和办公自动化。
-你的代码风格注重可读性和简洁性，偏好使用 pandas 和 openpyxl。
-请帮我..."
+Domain context example:
+
+"Our company's business rules:
+- Employees are divided into A/B/C levels
+- Level A employees get 15 days annual leave, B gets 10 days, C gets 7 days
+- Less than one year of employment is calculated proportionally
+- Attendance must be submitted before the 25th of each month
+
+Please help me write an annual leave calculation function based on these rules."
 ```
 
-### 技巧 2：提供示例
+## Tips for Providing Context
+
+### Tip 1: Give AI a Role
 
 ```
-输入示例：
-| 姓名 | 部门 | 销售额 |
-|------|------|--------|
-| 张三 | 华东 | 50000  |
-| 李四 | 华南 | 30000  |
-
-期望输出：
-| 部门 | 总销售额 | 人数 | 平均销售额 |
-|------|----------|------|------------|
-| 华东 | 50000    | 1    | 50000      |
-| 华南 | 30000    | 1    | 30000      |
+"You are an experienced Python developer focused on data processing and office automation.
+Your coding style emphasizes readability and simplicity, preferring pandas and openpyxl.
+Please help me..."
 ```
 
-### 技巧 3：分步骤请求
+### Tip 2: Provide Examples
 
 ```
-不要：
-"帮我写一个完整的报表生成系统"
+Input example:
+| Name | Region | Sales |
+|------|--------|-------|
+| John | East   | 50000 |
+| Jane | South  | 30000 |
 
-要这样：
-"Step 1: 先帮我写一个读取 Excel 的函数
-Step 2: 然后写一个数据清洗函数
-Step 3: 最后写一个汇总统计函数"
+Expected output:
+| Region | Total Sales | Count | Average Sales |
+|--------|-------------|-------|---------------|
+| East   | 50000       | 1     | 50000         |
+| South  | 30000       | 1     | 30000         |
 ```
 
-### 技巧 4：说明约束条件
+### Tip 3: Request in Steps
 
 ```
-约束条件示例：
+Don't:
+"Help me write a complete report generation system"
 
-"请帮我写一个数据导出脚本，要求：
-- Python 3.8 兼容
-- 不能使用第三方库（只能用标准库）
-- 内存占用不超过 100MB
-- 处理时间不超过 5 分钟
-- 支持中断恢复"
+Do this instead:
+"Step 1: First help me write a function to read Excel
+Step 2: Then write a data cleaning function
+Step 3: Finally write a summary statistics function"
 ```
 
-## 项目架构最佳实践
-
-### 清晰的文件结构
+### Tip 4: Specify Constraints
 
 ```
-推荐的项目结构：
+Constraint example:
+
+"Please help me write a data export script with these requirements:
+- Python 3.8 compatible
+- Cannot use third-party libraries (standard library only)
+- Memory usage under 100MB
+- Processing time under 5 minutes
+- Support for interrupt recovery"
+```
+
+## Project Architecture Best Practices
+
+### Clear File Structure
+
+```
+Recommended project structure:
 
 office-automation/
-├── README.md           # 项目说明（AI 首先读取）
-├── requirements.txt    # 依赖列表
+├── README.md           # Project description (AI reads first)
+├── requirements.txt    # Dependency list
 ├── config/
-│   └── settings.yaml   # 配置文件
+│   └── settings.yaml   # Configuration file
 ├── src/
 │   ├── __init__.py
-│   ├── excel_handler.py    # Excel 处理
-│   ├── email_sender.py     # 邮件发送
-│   └── report_generator.py # 报表生成
+│   ├── excel_handler.py    # Excel processing
+│   ├── email_sender.py     # Email sending
+│   └── report_generator.py # Report generation
 ├── templates/
 │   └── email_template.html
 ├── tests/
@@ -165,23 +165,23 @@ office-automation/
     └── .gitkeep
 ```
 
-### 有意义的命名
+### Meaningful Naming
 
 ```python
-# 不好的命名
+# Bad naming
 def process(d):
     return d['a'] + d['b']
 
-# 好的命名
+# Good naming
 def calculate_total_sales(sales_record):
-    """计算销售记录的总销售额"""
+    """Calculate total sales for a sales record"""
     return sales_record['base_sales'] + sales_record['bonus_sales']
 ```
 
-### 自文档化代码
+### Self-Documenting Code
 
 ```python
-# 好的文档字符串帮助 AI 理解代码意图
+# Good docstrings help AI understand code intent
 def generate_monthly_report(
     data_file: str,
     output_path: str,
@@ -189,16 +189,16 @@ def generate_monthly_report(
     include_charts: bool = True
 ) -> str:
     """
-    生成月度销售报告
+    Generate monthly sales report
 
     Args:
-        data_file: 输入的 Excel 文件路径
-        output_path: 输出目录
-        month: 报告月份 (1-12)
-        include_charts: 是否包含图表
+        data_file: Input Excel file path
+        output_path: Output directory
+        month: Report month (1-12)
+        include_charts: Whether to include charts
 
     Returns:
-        生成的报告文件路径
+        Path to generated report file
 
     Example:
         >>> generate_monthly_report('sales.xlsx', './reports', 12)
@@ -207,108 +207,108 @@ def generate_monthly_report(
     pass
 ```
 
-## 推荐资源
+## Recommended Resources
 
-### 提示工程指南
+### Prompt Engineering Guides
 
 1. **[Anthropic's Prompt Engineering Guide](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview)**
-   - *推荐理由:* Claude 创建者的官方有效提示技术综合指南
+   - *Why recommended:* Comprehensive guide on effective prompting techniques from Claude's creators
 
 2. **[LangChain Prompt Engineering](https://python.langchain.com/docs/modules/model_io/prompts/)**
-   - *推荐理由:* 生产应用中结构化提示的实用模式
+   - *Why recommended:* Practical patterns for structured prompting in production applications
 
 3. **[OpenAI Cookbook: Code Generation](https://cookbook.openai.com/)**
-   - *推荐理由:* 代码生成的真实示例和最佳实践
+   - *Why recommended:* Real-world examples and best practices for code generation
 
-### 上下文与架构
+### Context & Architecture
 
 4. **[Anthropic: Long Context Window Best Practices](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/long-context-tips)**
-   - *推荐理由:* 有效使用长上下文窗口处理整个代码库的技术
+   - *Why recommended:* Techniques for effectively using long context windows for entire codebases
 
 5. **[GitHub: Awesome AI Coding](https://github.com/sourcegraph/awesome-ai-coding)**
-   - *推荐理由:* AI 辅助开发的工具、模式和最佳实践精选列表
+   - *Why recommended:* Curated list of tools, patterns, and best practices for AI-assisted development
 
 6. **[Cursor Composer: Multi-File Editing Patterns](https://docs.cursor.com/context/rules-for-ai)**
-   - *推荐理由:* 为多文件 AI 编辑组织项目的官方指南
+   - *Why recommended:* Official guide on organizing projects for multi-file AI editing
 
-### 高级技术
+### Advanced Techniques
 
 7. **[RAG for Code: Retrieval-Augmented Generation](https://blog.langchain.dev/code-understanding-with-langchain/)**
-   - *推荐理由:* 从大型代码库提供相关上下文的技术
+   - *Why recommended:* Techniques for providing relevant context from large codebases
 
-## 实用模板
+## Practical Templates
 
-### 任务请求模板
+### Task Request Template
 
 ```markdown
-## 任务描述
-[清晰描述你想要实现的功能]
+## Task Description
+[Clearly describe what you want to achieve]
 
-## 背景信息
-- 项目类型：[如：Python 办公自动化]
-- 技术栈：[如：pandas, openpyxl]
-- 运行环境：[如：Windows 10, Python 3.9]
+## Background Information
+- Project type: [e.g., Python office automation]
+- Tech stack: [e.g., pandas, openpyxl]
+- Environment: [e.g., Windows 10, Python 3.9]
 
-## 输入数据
-[提供示例数据或数据结构说明]
+## Input Data
+[Provide sample data or data structure description]
 
-## 预期输出
-[描述期望的结果格式]
+## Expected Output
+[Describe the desired result format]
 
-## 约束条件
-[列出任何限制或要求]
+## Constraints
+[List any limitations or requirements]
 
-## 现有代码
-[如有相关代码，粘贴在此]
+## Existing Code
+[Paste relevant code here if any]
 ```
 
-### README 模板
+### README Template
 
 ```markdown
-# 项目名称
+# Project Name
 
-## 概述
-[一句话描述项目用途]
+## Overview
+[One-sentence description of what the project does]
 
-## 功能
-- 功能 1
-- 功能 2
+## Features
+- Feature 1
+- Feature 2
 
-## 技术栈
+## Tech Stack
 - Python 3.9+
 - pandas, openpyxl
 
-## 安装
+## Installation
 \`\`\`bash
 pip install -r requirements.txt
 \`\`\`
 
-## 使用方法
+## Usage
 \`\`\`bash
 python main.py --input data.xlsx --output report.xlsx
 \`\`\`
 
-## 配置
-编辑 config.yaml 设置参数
+## Configuration
+Edit config.yaml to set parameters
 
-## 文件结构
-[简要说明主要文件]
+## File Structure
+[Brief description of main files]
 ```
 
-## 下一步
+## Next Steps
 
-恭喜！你已完成基础学习路线的三个阶段：
+Congratulations! You've completed the three stages of the foundational learning path:
 
-- ✓ **Stage 0**: 掌握 AI 对话与提示基础
-- ✓ **Stage 1**: 理解 AI 的现实与局限
-- ✓ **Stage 2**: 学会提供有效上下文
+- ✓ **Stage 0**: Mastered AI conversation and prompt fundamentals
+- ✓ **Stage 1**: Understood AI's reality and limitations
+- ✓ **Stage 2**: Learned to provide effective context
 
-### 继续学习
+### Continue Learning
 
-- 探索 [工作流教程](/docs/workflows) - 实际办公场景的完整解决方案
-- 查看 [脚本片段库](/docs/snippets) - 可直接复用的代码模板
-- 浏览 [AI 工具指南](/docs/tools/ai-tools-comparison) - 了解更多 AI 工具
+- Explore [AI Coding Tools](/docs/tools) - Discover powerful AI coding assistants
+- Check out [Prompt Engineering](/docs/tools/prompt-engineering) - Master the art of prompting
+- Browse our [Course](/docs/course) - Deep-dive into AI coding fundamentals
 
 ---
 
-**需要帮助？** 查看我们的 [快速入门](/docs/intro) 或 [资源库](/resources)！
+**Need help?** Check out our [Quick Start](/docs/intro) or [Resources](/resources)!

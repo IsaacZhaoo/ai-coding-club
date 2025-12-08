@@ -1,5 +1,7 @@
 ---
+id: stage2
 title: "Stage 2: 上下文与架构"
+slug: /roadmap/stage2
 sidebar_position: 3
 keywords: [AI编程, 上下文, 项目架构, 提示工程, RAG]
 ---
@@ -303,8 +305,8 @@ python main.py --input data.xlsx --output report.xlsx
 
 ### 继续学习
 
-- 探索 [工作流教程](/docs/workflows/) - 实际办公场景的完整解决方案
-- 查看 [脚本片段库](/docs/snippets/) - 可直接复用的代码模板
+- 探索 [工作流教程](/docs/workflows) - 实际办公场景的完整解决方案
+- 查看 [脚本片段库](/docs/snippets) - 可直接复用的代码模板
 - 浏览 [AI 工具指南](/docs/tools/ai-tools-comparison) - 了解更多 AI 工具
 
 ---

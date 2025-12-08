@@ -1,206 +1,206 @@
 ---
 id: stage1
-title: "Stage 1: AI 现实与局限"
+title: "Stage 1: AI Reality & Limitations"
 slug: /roadmap/stage1
 sidebar_position: 2
-keywords: [AI编程, 局限性, 最佳实践, 幻觉, 提示工程]
+keywords: [AI coding, limitations, best practices, hallucination, prompt engineering]
 ---
 
 import VideoEmbed from '@site/src/components/VideoEmbed';
 
-# Stage 1: AI 现实与局限
+# Stage 1: AI Reality & Limitations
 
-**理解 AI 编程的能力边界与最佳实践**
+**Understanding AI coding's capability boundaries and best practices**
 
-## 为什么这个阶段很重要？
+## Why Is This Stage Important?
 
-在体验了 AI 工具的神奇之后，了解它的局限性同样重要。这个阶段帮助你建立合理的预期，避免常见陷阱。
+After experiencing the magic of AI tools, understanding their limitations is equally important. This stage helps you build realistic expectations and avoid common pitfalls.
 
 <VideoEmbed
   videoId="2FJlhoDYNPE"
   title="AI Coding Masterclass: From Beginner to Expert in 90 Minutes"
-  caption="这个来自 Riley Brown 的大师课将带你从初学者到专家。学习如何写有效的提示词、理解 AI 局限、用 AI 辅助构建真实项目。"
-  linkText="在 YouTube 观看"
+  caption="This masterclass from Riley Brown will take you from beginner to expert. Learn how to write effective prompts, understand AI limitations, and build real projects with AI assistance."
+  linkText="Watch on YouTube"
   linkUrl="https://www.youtube.com/watch?v=2FJlhoDYNPE"
   aspectRatio="16/9"
 />
 
-## 学习成果
+## Learning Outcomes
 
-在这个阶段，你将：
-- 理解 AI 编程的局限
-- 学会何时依赖 AI、何时依赖自己
-- 识别 AI 幻觉和错误
-- 掌握更好的提示技巧
-- 知道 AI 何时在帮忙、何时在添乱
+In this stage, you will:
+- Understand AI coding limitations
+- Learn when to rely on AI and when to rely on yourself
+- Identify AI hallucinations and errors
+- Master better prompting techniques
+- Know when AI is helping and when it's causing problems
 
-## AI 的优势与局限
+## AI Strengths and Limitations
 
-### AI 擅长的领域
+### What AI Excels At
 
-| 任务类型 | 示例 | 可靠度 |
-|---------|------|--------|
-| 样板代码 | 生成 CRUD 函数、表单验证 | ⭐⭐⭐⭐⭐ |
-| 常见模式 | SQL 查询、正则表达式、Excel 公式 | ⭐⭐⭐⭐⭐ |
-| 快速原型 | 小工具、脚本、自动化 | ⭐⭐⭐⭐ |
-| 代码解释 | 阅读和解释现有代码 | ⭐⭐⭐⭐ |
-| 格式转换 | JSON 到 CSV、数据清洗 | ⭐⭐⭐⭐ |
+| Task Type | Examples | Reliability |
+|-----------|----------|-------------|
+| Boilerplate code | Generate CRUD functions, form validation | ⭐⭐⭐⭐⭐ |
+| Common patterns | SQL queries, regex, Excel formulas | ⭐⭐⭐⭐⭐ |
+| Quick prototypes | Small tools, scripts, automation | ⭐⭐⭐⭐ |
+| Code explanation | Reading and explaining existing code | ⭐⭐⭐⭐ |
+| Format conversion | JSON to CSV, data cleaning | ⭐⭐⭐⭐ |
 
-### AI 不擅长的领域
+### What AI Struggles With
 
-| 任务类型 | 为什么困难 | 建议做法 |
-|---------|-----------|----------|
-| 复杂架构设计 | 需要全局视角和业务理解 | 先自己规划，再让 AI 实现细节 |
-| 新颖问题解决 | AI 依赖训练数据中的模式 | 分解问题，逐步验证 |
-| 安全关键代码 | 可能有隐藏漏洞 | 人工审查+安全测试 |
-| 性能优化 | 缺乏运行时上下文 | 使用 profiler，针对性优化 |
-| 最新 API | 训练数据可能过时 | 查阅官方文档验证 |
+| Task Type | Why It's Difficult | Recommended Approach |
+|-----------|-------------------|---------------------|
+| Complex architecture | Requires global perspective and business understanding | Plan yourself first, then have AI implement details |
+| Novel problem solving | AI relies on patterns in training data | Break down problems, verify step by step |
+| Security-critical code | May have hidden vulnerabilities | Manual review + security testing |
+| Performance optimization | Lacks runtime context | Use profiler, targeted optimization |
+| Latest APIs | Training data may be outdated | Verify with official documentation |
 
-## 什么是 AI 幻觉？
+## What is AI Hallucination?
 
-**幻觉 (Hallucination)** 是指 AI 自信地给出错误或虚构的信息。
+**Hallucination** refers to AI confidently providing incorrect or fabricated information.
 
-### 常见幻觉类型
+### Common Types of Hallucinations
 
-1. **虚构 API/函数**
+1. **Fabricated APIs/Functions**
    ```python
-   # AI 可能生成不存在的函数
+   # AI might generate non-existent functions
    import pandas as pd
-   df.auto_clean_data()  # 这个函数不存在！
+   df.auto_clean_data()  # This function doesn't exist!
    ```
 
-2. **过时信息**
-   - 推荐已废弃的库版本
-   - 使用已移除的语法
-   - 引用不再存在的文档链接
+2. **Outdated Information**
+   - Recommending deprecated library versions
+   - Using removed syntax
+   - Referencing documentation links that no longer exist
 
-3. **逻辑看似正确但有 bug**
+3. **Logically Seems Correct but Has Bugs**
    ```python
-   # AI 生成的代码可能有边界条件问题
+   # AI-generated code might have boundary condition issues
    def divide(a, b):
-       return a / b  # 没有处理 b=0 的情况
+       return a / b  # Doesn't handle b=0 case
    ```
 
-### 如何识别幻觉
+### How to Identify Hallucinations
 
-- **问 AI 来源**：让它提供参考链接，然后验证
-- **交叉验证**：用搜索引擎或官方文档核实
-- **运行测试**：生成的代码一定要运行测试
-- **保持怀疑**：AI 越自信，越要小心验证
+- **Ask AI for sources**: Have it provide reference links, then verify
+- **Cross-validate**: Check with search engines or official documentation
+- **Run tests**: Always test generated code
+- **Stay skeptical**: The more confident AI is, the more carefully you should verify
 
-## 办公场景的最佳实践
+## Best Practices for Office Scenarios
 
-### Excel/数据处理
+### Excel/Data Processing
 
-**好的做法：**
+**Good practices:**
 ```
-✅ 给 AI 具体的数据样例（前5行）
-✅ 明确说明预期输出格式
-✅ 小批量测试后再处理全部数据
-✅ 保留原始数据备份
-```
-
-**避免的做法：**
-```
-❌ 直接在原文件上运行 AI 生成的脚本
-❌ 假设 AI 理解你的业务逻辑
-❌ 跳过结果验证
+✅ Give AI specific data samples (first 5 rows)
+✅ Clearly specify expected output format
+✅ Test on small batch before processing all data
+✅ Keep backup of original data
 ```
 
-### 报告/邮件生成
-
-**好的做法：**
+**Avoid:**
 ```
-✅ 提供具体的背景信息
-✅ 给出风格样例或模板
-✅ 审查敏感信息后再发送
-✅ 检查数据和事实的准确性
+❌ Running AI-generated scripts directly on original files
+❌ Assuming AI understands your business logic
+❌ Skipping result verification
 ```
 
-**避免的做法：**
+### Report/Email Generation
+
+**Good practices:**
 ```
-❌ 盲目复制粘贴
-❌ 包含机密信息给 AI
-❌ 发送前不检查内容
+✅ Provide specific background information
+✅ Give style samples or templates
+✅ Review sensitive information before sending
+✅ Check data and fact accuracy
 ```
 
-### 代码/脚本生成
-
-**好的做法：**
+**Avoid:**
 ```
-✅ 先在测试环境运行
-✅ 理解代码在做什么（即使只是大概）
-✅ 添加错误处理和日志
-✅ 版本控制（可以回滚）
+❌ Blindly copy-paste
+❌ Including confidential information in AI prompts
+❌ Not checking content before sending
 ```
 
-**避免的做法：**
+### Code/Script Generation
+
+**Good practices:**
 ```
-❌ 在生产环境直接运行
-❌ 运行不理解的代码
-❌ 忽略错误信息
+✅ Run in test environment first
+✅ Understand what the code does (even roughly)
+✅ Add error handling and logging
+✅ Use version control (can rollback)
 ```
 
-## 推荐资源
+**Avoid:**
+```
+❌ Running directly in production
+❌ Running code you don't understand
+❌ Ignoring error messages
+```
 
-### 理解 AI 编程局限
+## Recommended Resources
+
+### Understanding AI Coding Limitations
 
 1. **[Andrej Karpathy on AI Coding](https://twitter.com/karpathy/status/1748863275736449258)**
-   - *推荐理由:* 来自顶级 AI 研究者的直接见解，关于 AI 编程助手的真实能力和局限
+   - *Why recommended:* Direct insights from a top AI researcher about the real capabilities and limitations of AI coding assistants
 
 2. **[Simon Willison: Things I learned about LLMs](https://simonwillison.net/2023/Aug/3/weird-world-of-llms/)**
-   - *推荐理由:* 来自每天使用 LLM 编程的人的实践经验
+   - *Why recommended:* Practical experience from someone who uses LLMs for coding daily
 
 3. **[The False Promise of AI Coding Assistants](https://stackoverflow.blog/2024/06/10/generative-ai-is-not-going-to-build-your-engineering-team-for-you/)**
-   - *推荐理由:* Stack Overflow 关于 AI 能否替代软件开发的现实视角
+   - *Why recommended:* Stack Overflow's realistic perspective on whether AI can replace software development
 
-### 最佳实践
+### Best Practices
 
 4. **[GitHub Copilot Best Practices](https://github.blog/developer-skills/github/how-to-write-better-prompts-for-github-copilot/)**
-   - *推荐理由:* 来自 GitHub 的官方有效 AI 编程实践指南
+   - *Why recommended:* Official guide from GitHub on effective AI coding practices
 
 5. **[OpenAI's Prompt Engineering Guide](https://platform.openai.com/docs/guides/prompt-engineering)**
-   - *推荐理由:* 从 AI 模型获得更好结果的基础技术
+   - *Why recommended:* Foundational techniques for getting better results from AI models
 
-### 批判性思维
+### Critical Thinking
 
 6. **[The Danger of Trusting AI Code Blindly](https://blog.humphd.org/chasing-the-bear/)**
-   - *推荐理由:* 关于盲目接受 AI 生成代码风险的真实案例研究
+   - *Why recommended:* Real case study about the risks of blindly accepting AI-generated code
 
 7. **[Testing AI-Generated Code](https://martinfowler.com/articles/exploring-gen-ai.html)**
-   - *推荐理由:* Martin Fowler 关于验证 AI 生成代码的见解
+   - *Why recommended:* Martin Fowler's insights on validating AI-generated code
 
-## 实用检查清单
+## Practical Checklist
 
-### 使用 AI 生成代码前
+### Before Using AI to Generate Code
 
-- [ ] 我清楚地描述了需求吗？
-- [ ] 我提供了足够的上下文吗？
-- [ ] 我知道预期输出是什么吗？
+- [ ] Have I clearly described my requirements?
+- [ ] Have I provided enough context?
+- [ ] Do I know what output to expect?
 
-### 收到 AI 输出后
+### After Receiving AI Output
 
-- [ ] 代码能运行吗？
-- [ ] 有没有明显的错误或 bug？
-- [ ] 是否处理了边界情况？
-- [ ] 我理解代码在做什么吗？
+- [ ] Does the code run?
+- [ ] Are there obvious errors or bugs?
+- [ ] Are edge cases handled?
+- [ ] Do I understand what the code does?
 
-### 准备使用/部署前
+### Before Using/Deploying
 
-- [ ] 在测试数据上验证了吗？
-- [ ] 有备份/回滚方案吗？
-- [ ] 敏感信息安全吗？
+- [ ] Validated on test data?
+- [ ] Is there a backup/rollback plan?
+- [ ] Is sensitive information secure?
 
-## 下一步
+## Next Steps
 
-完成这个阶段后，你将：
-- ✓ 能识别 AI 的优势和局限
-- ✓ 知道如何验证 AI 输出
-- ✓ 掌握办公场景的最佳实践
-- ✓ 准备好学习 **Stage 2: 上下文与架构**
+After completing this stage, you will:
+- ✓ Be able to identify AI's strengths and limitations
+- ✓ Know how to verify AI output
+- ✓ Master best practices for office scenarios
+- ✓ Be ready to learn **Stage 2: Context & Architecture**
 
-**[开始 Stage 2 →](./stage2)**
+**[Start Stage 2 →](./stage2)**
 
 ---
 
-**需要帮助？** 查看我们的 [快速入门](/docs/intro) 或 [资源库](/resources)！
+**Need help?** Check out our [Quick Start](/docs/intro) or [Resources](/resources)!
