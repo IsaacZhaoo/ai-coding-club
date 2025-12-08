@@ -1,6 +1,7 @@
 ---
 id: stage2
 title: "Stage 2: 上下文与架构"
+sidebar_label: "第2阶段: 上下文与架构"
 slug: /roadmap/stage2
 sidebar_position: 3
 keywords: [AI编程, 上下文, 项目架构, 提示工程, RAG]

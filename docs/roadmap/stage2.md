@@ -1,6 +1,7 @@
 ---
 id: stage2
 title: "Stage 2: Context & Architecture"
+sidebar_label: "Stage 2: Context & Architecture"
 slug: /roadmap/stage2
 sidebar_position: 3
 keywords: [AI coding, context, project architecture, prompt engineering, RAG]

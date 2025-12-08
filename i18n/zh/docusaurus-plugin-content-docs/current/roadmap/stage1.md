@@ -1,6 +1,7 @@
 ---
 id: stage1
 title: "Stage 1: AI 现实与局限"
+sidebar_label: "第1阶段: 现实检验"
 slug: /roadmap/stage1
 sidebar_position: 2
 keywords: [AI编程, 局限性, 最佳实践, 幻觉, 提示工程]

@@ -1,6 +1,7 @@
 ---
 id: stage1
 title: "Stage 1: AI Reality & Limitations"
+sidebar_label: "Stage 1: Reality Check"
 slug: /roadmap/stage1
 sidebar_position: 2
 keywords: [AI coding, limitations, best practices, hallucination, prompt engineering]

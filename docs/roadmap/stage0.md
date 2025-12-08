@@ -1,6 +1,7 @@
 ---
 id: stage0
 title: "Stage 0: AI Conversation & Prompt Fundamentals"
+sidebar_label: "Stage 0: Vibecoding"
 slug: /roadmap/stage0
 sidebar_position: 1
 keywords: [AI coding, office workers, prompt engineering, office automation, ChatGPT, Claude]

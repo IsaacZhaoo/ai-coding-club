@@ -1,6 +1,7 @@
 ---
 id: stage0
 title: "Stage 0: AI 对话与提示基础"
+sidebar_label: "第0阶段: Vibecoding"
 slug: /roadmap/stage0
 sidebar_position: 1
 keywords: [AI编程, 上班族, 提示工程, 办公自动化, ChatGPT, Claude]

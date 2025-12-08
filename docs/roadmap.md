@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Learning Roadmap
+sidebar_label: Learning Roadmap
 description: Your complete journey from beginner to AI-powered developer
 ---
 
