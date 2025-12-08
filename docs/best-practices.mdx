@@ -1,0 +1,1495 @@
+---
+title: "AI Coding Best Practices"
+description: "Comprehensive guide to using AI coding assistants effectively and safely. Learn security practices, prompt engineering, cost optimization, and professional workflows."
+keywords:
+  - AI coding best practices
+  - prompt engineering
+  - AI code security
+  - code review
+  - cost optimization
+  - professional development
+sidebar_position: 10
+tags: [best-practices, security, tips, coding]
+---
+
+# AI Coding Best Practices
+
+**Master the art of using AI coding assistants professionally and safely**
+
+Learn how to maximize productivity while maintaining code quality, security, and professional standards when working with AI coding tools.
+
+:::tip Related Resources
+- New to AI coding? Start with our [Getting Started Tutorial](/docs/tutorials/chatgpt-coding-guide)
+- Common questions? Check the [FAQ](/docs/faq)
+- Compare tools: [AI Coding Tools Guide](/docs/tools/ai-coding-tools-extended)
+:::
+
+---
+
+## 🎯 Quick Best Practices
+
+1. ✅ **Always review AI code** - Never blindly copy-paste
+2. ✅ **Test thoroughly** - AI can miss edge cases
+3. ✅ **Check security** - AI doesn't always catch vulnerabilities
+4. ✅ **Verify licenses** - Especially for generated code
+5. ✅ **Keep context relevant** - Better prompts = better code
+6. ✅ **Learn, don't just copy** - Understand the code
+7. ✅ **Use version control** - Track AI-generated changes
+8. ✅ **Monitor costs** - API usage adds up
+9. ✅ **Respect privacy** - Don't share proprietary code
+10. ✅ **Stay updated** - AI models improve constantly
+
+---
+
+## 🔒 Security Best Practices
+
+### 1. Never Trust AI for Security-Critical Code
+
+**❌ Don't:**
+```python
+# AI might generate:
+password = request.args.get('password')
+if password == 'admin123':  # Hardcoded password!
+    grant_access()
+```
+
+**✅ Do:**
+```python
+# Always review security code
+from werkzeug.security import check_password_hash
+import os
+
+# Review AI output for:
+# - Hardcoded secrets
+# - SQL injection risks
+# - XSS vulnerabilities
+# - Improper authentication
+
+def verify_password(username, password):
+    """
+    Secure password verification
+    AI-generated code reviewed and enhanced
+    """
+    user = User.query.filter_by(username=username).first()
+
+    if not user:
+        # Prevent username enumeration
+        check_password_hash("dummy", password)
+        return False
+
+    # Use constant-time comparison
+    return check_password_hash(user.password_hash, password)
+```
+
+### 2. Run Security Scanners
+
+```bash
+# After AI generates code, scan it
+pip install bandit safety
+
+# Python security scanner
+bandit -r . -ll
+
+# Check dependencies for vulnerabilities
+safety check
+
+# JavaScript/Node.js
+npm audit
+npm audit fix
+
+# For Go
+go install github.com/securego/gosec/v2/cmd/gosec@latest
+gosec ./...
+
+# Docker images
+docker scan my-image:latest
+```
+
+### 3. Security Review Checklist
+
+```markdown
+## AI-Generated Code Security Review
+
+### Authentication & Authorization
+- [ ] No hardcoded credentials
+- [ ] Passwords properly hashed (bcrypt, argon2)
+- [ ] Session tokens generated securely
+- [ ] JWT tokens properly validated
+- [ ] Role-based access control implemented
+- [ ] Rate limiting on auth endpoints
+
+### Input Validation
+- [ ] All user input validated
+- [ ] SQL injection prevented (parameterized queries)
+- [ ] XSS prevention (output encoding)
+- [ ] CSRF tokens implemented
+- [ ] File upload restrictions
+- [ ] Size limits enforced
+
+### Data Protection
+- [ ] Sensitive data encrypted at rest
+- [ ] TLS/HTTPS enforced
+- [ ] No sensitive data in logs
+- [ ] No sensitive data in error messages
+- [ ] Secrets in environment variables
+- [ ] Database credentials secured
+
+### Code Quality
+- [ ] Error handling doesn't leak info
+- [ ] No eval() or exec() on user input
+- [ ] Dependencies are up to date
+- [ ] No known vulnerable packages
+- [ ] Code follows security best practices
+```
+
+### 4. Security Testing Examples
+
+```python
+# test_security.py
+import pytest
+from app import create_app
+
+def test_sql_injection_prevention():
+    """Verify AI-generated code prevents SQL injection"""
+    app = create_app()
+    client = app.test_client()
+
+    # Try SQL injection
+    malicious_input = "admin' OR '1'='1"
+    response = client.post('/login', json={
+        'username': malicious_input,
+        'password': 'test'
+    })
+
+    # Should not bypass authentication
+    assert response.status_code == 401
+    assert 'token' not in response.json
+
+def test_xss_prevention():
+    """Verify output is properly escaped"""
+    response = client.post('/comment', json={
+        'text': '<script>alert("XSS")</script>'
+    })
+
+    # Script should be escaped
+    assert '<script>' not in response.text
+    assert '&lt;script&gt;' in response.text
+```
+
+---
+
+## 💡 Prompt Engineering Best Practices
+
+### 1. Be Specific and Detailed
+
+**❌ Vague:**
+```
+Write a login function
+```
+
+**✅ Specific:**
+```
+Create a login function in Python using Flask and SQLAlchemy.
+
+Requirements:
+- Accept email and password via POST request
+- Hash passwords with bcrypt (cost factor: 12)
+- Return JWT token on success (expires in 1 hour)
+- Return 401 for invalid credentials
+- Rate limit: 5 attempts per minute per IP
+- Input validation for email format
+- Logging for security events (no sensitive data)
+- Handle database errors gracefully
+
+Include:
+- Type hints (Python 3.10+)
+- Docstring with example usage
+- Error handling for all edge cases
+- Unit test example with mocking
+
+Code style: Follow PEP 8, use descriptive variable names
+```
+
+### 2. Provide Context and Environment
+
+**❌ No Context:**
+```
+Fix this bug:
+[code snippet]
+```
+
+**✅ With Context:**
+```
+Bug in React 18 application using TypeScript 5.0
+
+Environment:
+- Node 18.x, npm 9.x
+- React 18.2.0
+- React Router 6.8.0
+- State management: Zustand
+
+Code:
+[code snippet]
+
+Error message:
+TypeError: Cannot read property 'map' of undefined
+at ProductList.tsx:45
+
+What I've tried:
+1. Added console.logs - state updates correctly
+2. Checked React DevTools - props are passed
+3. Similar code works in other components
+4. Cleared cache and reinstalled node_modules
+
+Expected: Component should re-render when state changes
+Actual: Component doesn't update, shows error on render
+
+Stack trace:
+[full stack trace]
+
+Please:
+1. Explain the root cause
+2. Provide a fix with explanation
+3. Suggest how to prevent this in future
+```
+
+### 3. Request Examples and Format
+
+**❌ Just ask for code:**
+```
+Generate tests
+```
+
+**✅ Show example format:**
+```
+Generate Jest tests for this TypeScript function:
+
+[code]
+
+Follow this format:
+
+describe('functionName', () => {
+  it('should handle valid input', () => {
+    expect(functionName('valid')).toBe(expected);
+  });
+
+  it('should throw on invalid input', () => {
+    expect(() => functionName('invalid')).toThrow(ValidationError);
+  });
+});
+
+Include:
+- Happy path tests
+- Edge cases (null, undefined, empty, boundary values)
+- Error conditions with specific error types
+- Boundary values testing
+- Type checking tests
+- Mock external dependencies (API calls, database)
+
+Coverage target: 95%+
+Use test data builders for complex objects
+```
+
+### 4. Iterative Refinement
+
+```
+# Start broad, then refine
+
+Iteration 1:
+"Explain how to implement real-time chat"
+
+Iteration 2:
+"Show me WebSocket implementation in Node.js"
+
+Iteration 3:
+"Add authentication to WebSocket connection using JWT"
+
+Iteration 4:
+"Add message persistence with MongoDB"
+
+Iteration 5:
+"Add typing indicators and read receipts"
+
+Iteration 6:
+"Show me how to scale this with Redis pub/sub"
+```
+
+---
+
+## 🚫 Common Pitfalls and Solutions
+
+### Pitfall 1: Blindly Copying Code
+
+**Problem:**
+```typescript
+// AI generated this React hook
+function useData() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch('/api/data').then(r => r.json()).then(setData);
+  }, []); // Missing error handling, race conditions
+
+  return data;
+}
+```
+
+**What's wrong:**
+- ❌ No error handling
+- ❌ No loading state
+- ❌ Race condition if component unmounts
+- ❌ No type safety
+- ❌ No retry logic
+- ❌ No caching
+
+**Better (reviewed and improved):**
+```typescript
+interface DataType {
+  id: string;
+  name: string;
+  // ... other fields
+}
+
+interface UseDataResult {
+  data: DataType[];
+  loading: boolean;
+  error: Error | null;
+  refetch: () => void;
+}
+
+function useData(): UseDataResult {
+  const [data, setData] = useState<DataType[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<Error | null>(null);
+  const [refetchKey, setRefetchKey] = useState(0);
+
+  useEffect(() => {
+    let cancelled = false;
+    const controller = new AbortController();
+
+    async function fetchData() {
+      try {
+        setLoading(true);
+
+        const response = await fetch('/api/data', {
+          signal: controller.signal,
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+
+        const json = await response.json();
+
+        if (!cancelled) {
+          setData(json);
+          setError(null);
+        }
+      } catch (err) {
+        if (err.name === 'AbortError') return;
+
+        if (!cancelled) {
+          setError(err as Error);
+          console.error('Failed to fetch data:', err);
+        }
+      } finally {
+        if (!cancelled) {
+          setLoading(false);
+        }
+      }
+    }
+
+    fetchData();
+
+    return () => {
+      cancelled = true;
+      controller.abort();
+    };
+  }, [refetchKey]);
+
+  const refetch = () => setRefetchKey(k => k + 1);
+
+  return { data, loading, error, refetch };
+}
+```
+
+### Pitfall 2: Not Understanding the Code
+
+**Problem:** Using code you don't understand leads to:
+- Can't debug when it breaks
+- Can't modify or extend it
+- Can't explain it in code reviews
+- Security vulnerabilities
+
+**Solution - Learn by Asking:**
+
+```
+# Instead of:
+"Write code to do X"
+
+# Ask for explanation:
+"Explain the concept of X, then show me pseudocode"
+
+# Then implementation:
+"Convert to TypeScript with detailed comments"
+
+# Then deep dive:
+"Explain each part and why these design choices were made"
+
+# Then alternatives:
+"What are the trade-offs? Show me 2 alternative approaches"
+```
+
+**Example Conversation:**
+```
+You: "Explain debouncing in React"
+AI: [Explains concept]
+
+You: "Show me pseudocode"
+AI: [Shows logic]
+
+You: "Now implement with useDebounce hook"
+AI: [Shows implementation]
+
+You: "Explain why we need useRef and useEffect here"
+AI: [Explains technical details]
+
+You: "What are edge cases I should handle?"
+AI: [Lists edge cases]
+
+# Now you UNDERSTAND it
+```
+
+### Pitfall 3: Ignoring Performance
+
+**Example:**
+```python
+# ❌ AI's first attempt (works but slow - O(n²))
+def find_duplicates(arr):
+    duplicates = []
+    for i in range(len(arr)):
+        for j in range(i + 1, len(arr)):
+            if arr[i] == arr[j] and arr[i] not in duplicates:
+                duplicates.append(arr[i])
+    return duplicates
+
+# Always ask:
+"What's the time complexity? Can we optimize this?"
+
+# ✅ Optimized version (O(n))
+def find_duplicates(arr):
+    """Find duplicate elements in array - O(n) time, O(n) space"""
+    seen = set()
+    duplicates = set()
+
+    for item in arr:
+        if item in seen:
+            duplicates.add(item)
+        seen.add(item)
+
+    return list(duplicates)
+
+# For large datasets, ask for:
+"Show me the most efficient algorithm for this with 1 million items"
+```
+
+### Pitfall 4: Not Testing Edge Cases
+
+```python
+# AI generates this:
+def divide(a, b):
+    return a / b
+
+# You must test:
+- divide(10, 2)  # Normal case
+- divide(10, 0)  # Zero division ❌
+- divide(10, -2) # Negative numbers
+- divide(0, 10)  # Zero numerator
+- divide(None, 2) # None values ❌
+- divide("10", "2") # Wrong types ❌
+- divide(float('inf'), 2) # Infinity
+- divide(10**100, 10**-100) # Overflow
+
+# Better implementation:
+def divide(a: float, b: float) -> float:
+    """
+    Safely divide two numbers
+
+    Args:
+        a: Numerator
+        b: Denominator
+
+    Returns:
+        Result of division
+
+    Raises:
+        TypeError: If inputs are not numbers
+        ValueError: If denominator is zero
+    """
+    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+        raise TypeError("Both arguments must be numbers")
+
+    if b == 0:
+        raise ValueError("Cannot divide by zero")
+
+    return a / b
+```
+
+---
+
+## 📊 Cost Management
+
+### Track Your Spending
+
+```python
+# cost-tracker.py
+from datetime import datetime
+from typing import Dict, List
+import json
+
+class AIUsageTracker:
+    """Track AI API usage and costs across multiple models"""
+
+    def __init__(self, log_file='ai_usage.json'):
+        self.log_file = log_file
+        self.usage = {
+            'gpt-4': {'tokens': 0, 'cost': 0, 'requests': 0},
+            'gpt-4o': {'tokens': 0, 'cost': 0, 'requests': 0},
+            'gpt-3.5-turbo': {'tokens': 0, 'cost': 0, 'requests': 0},
+            'claude-3-opus': {'tokens': 0, 'cost': 0, 'requests': 0},
+            'claude-3-sonnet': {'tokens': 0, 'cost': 0, 'requests': 0},
+        }
+
+        # Prices per 1M tokens (as of 2025)
+        self.prices = {
+            'gpt-4': {'input': 30, 'output': 60},
+            'gpt-4o': {'input': 5, 'output': 15},
+            'gpt-3.5-turbo': {'input': 0.5, 'output': 1.5},
+            'claude-3-opus': {'input': 15, 'output': 75},
+            'claude-3-sonnet': {'input': 3, 'output': 15},
+        }
+
+    def track_request(self, model: str, input_tokens: int, output_tokens: int):
+        """Track a single API request"""
+        if model not in self.prices:
+            raise ValueError(f"Unknown model: {model}")
+
+        input_cost = input_tokens * self.prices[model]['input'] / 1_000_000
+        output_cost = output_tokens * self.prices[model]['output'] / 1_000_000
+        total_cost = input_cost + output_cost
+
+        self.usage[model]['tokens'] += input_tokens + output_tokens
+        self.usage[model]['cost'] += total_cost
+        self.usage[model]['requests'] += 1
+
+        # Log to file
+        self._log_request(model, input_tokens, output_tokens, total_cost)
+
+        return total_cost
+
+    def _log_request(self, model, input_tokens, output_tokens, cost):
+        """Append request to log file"""
+        entry = {
+            'timestamp': datetime.now().isoformat(),
+            'model': model,
+            'input_tokens': input_tokens,
+            'output_tokens': output_tokens,
+            'cost': cost
+        }
+
+        try:
+            with open(self.log_file, 'a') as f:
+                f.write(json.dumps(entry) + '\n')
+        except Exception as e:
+            print(f"Failed to log request: {e}")
+
+    def report(self, detailed=False):
+        """Generate usage report"""
+        total_cost = sum(m['cost'] for m in self.usage.values())
+        total_tokens = sum(m['tokens'] for m in self.usage.values())
+        total_requests = sum(m['requests'] for m in self.usage.values())
+
+        print(f"\n{'='*50}")
+        print(f"💰 AI Usage Report - {datetime.now().strftime('%Y-%m-%d %H:%M')}")
+        print(f"{'='*50}\n")
+
+        print(f"Total Spent: ${total_cost:.2f}")
+        print(f"Total Tokens: {total_tokens:,}")
+        print(f"Total Requests: {total_requests:,}")
+        print(f"Average per Request: ${total_cost/total_requests:.4f}\n" if total_requests > 0 else "\n")
+
+        for model, data in sorted(self.usage.items(), key=lambda x: x[1]['cost'], reverse=True):
+            if data['requests'] > 0:
+                print(f"{model}:")
+                print(f"  Requests: {data['requests']:,}")
+                print(f"  Tokens: {data['tokens']:,}")
+                print(f"  Cost: ${data['cost']:.2f}")
+                print(f"  Avg/request: ${data['cost']/data['requests']:.4f}\n")
+
+    def set_budget_alert(self, daily_limit: float):
+        """Alert if daily spending exceeds limit"""
+        today_cost = self._get_today_cost()
+        if today_cost >= daily_limit:
+            print(f"⚠️  BUDGET ALERT: Daily spending (${today_cost:.2f}) exceeds limit (${daily_limit:.2f})")
+            return True
+        return False
+
+    def _get_today_cost(self):
+        """Calculate today's spending from log"""
+        today = datetime.now().date()
+        total = 0
+
+        try:
+            with open(self.log_file, 'r') as f:
+                for line in f:
+                    entry = json.loads(line)
+                    entry_date = datetime.fromisoformat(entry['timestamp']).date()
+                    if entry_date == today:
+                        total += entry['cost']
+        except FileNotFoundError:
+            pass
+
+        return total
+
+# Usage example
+tracker = AIUsageTracker()
+
+# After each API call:
+cost = tracker.track_request('gpt-4o', input_tokens=1000, output_tokens=500)
+print(f"This request: ${cost:.4f}")
+
+# Check budget
+tracker.set_budget_alert(daily_limit=10.00)
+
+# Daily/weekly report:
+tracker.report()
+```
+
+### Cost Optimization Strategies
+
+#### 1. Use Appropriate Models
+
+```python
+# Decision tree for model selection
+def select_model(task_type, complexity, budget):
+    """
+    Choose the right model for the task
+
+    Task types:
+    - boilerplate: Simple, repetitive code
+    - logic: Complex algorithms, business logic
+    - debug: Finding and fixing bugs
+    - explain: Code explanation and documentation
+    - review: Code review and suggestions
+    """
+
+    if budget == 'free':
+        return 'gpt-3.5-turbo'  # or DeepSeek
+
+    if task_type == 'boilerplate':
+        return 'gpt-3.5-turbo'  # $0.50/M - Good enough
+
+    if task_type in ['logic', 'debug'] and complexity == 'high':
+        return 'gpt-4o'  # $5/M - Best balance
+
+    if task_type == 'review' and complexity == 'high':
+        return 'claude-3-sonnet'  # $3/M - Excellent for analysis
+
+    return 'gpt-4o'  # Default: Best value
+
+# Examples:
+select_model('boilerplate', 'low', 'paid')  # gpt-3.5-turbo
+select_model('logic', 'high', 'paid')       # gpt-4o
+select_model('review', 'high', 'paid')      # claude-3-sonnet
+```
+
+#### 2. Prompt Caching (Claude)
+
+```python
+# Save 90% on repeated context
+from anthropic import Anthropic
+
+client = Anthropic()
+
+# Large context you'll reuse (e.g., your codebase)
+system_context = """
+[Your 50KB codebase documentation]
+"""
+
+# First request: Full cost
+response = client.messages.create(
+    model="claude-3-sonnet-20240229",
+    max_tokens=1024,
+    system=[
+        {
+            "type": "text",
+            "text": system_context,
+            "cache_control": {"type": "ephemeral"}  # Cache this
+        }
+    ],
+    messages=[{"role": "user", "content": "Explain the auth module"}]
+)
+
+# Subsequent requests within 5 minutes: 90% cheaper
+response = client.messages.create(
+    model="claude-3-sonnet-20240229",
+    max_tokens=1024,
+    system=[
+        {
+            "type": "text",
+            "text": system_context,
+            "cache_control": {"type": "ephemeral"}  # Uses cache
+        }
+    ],
+    messages=[{"role": "user", "content": "Now explain the database module"}]
+)
+
+# See our guide: (Coming in Phase 2: /blog/claude-prompt-caching)
+```
+
+#### 3. Batch Requests
+
+```python
+# ❌ Expensive: 10 separate API calls
+results = []
+for item in items:
+    prompt = f"Process: {item}"
+    result = api_call(prompt)  # $$$
+    results.append(result)
+
+# ✅ Cheaper: 1 batched call
+prompt = """Process these items and return JSON array:
+
+Items:
+""" + "\n".join(f"- {item}" for item in items) + """
+
+Return format:
+[
+  {"input": "item1", "output": "result1"},
+  {"input": "item2", "output": "result2"}
+]
+"""
+
+result = api_call(prompt)  # $
+results = json.loads(result)
+```
+
+#### 4. Stream for Better UX
+
+```javascript
+// Costs same, feels 10x faster
+const openai = new OpenAI();
+
+const stream = await openai.chat.completions.create({
+    model: 'gpt-4o',
+    messages: [{ role: 'user', content: prompt }],
+    stream: true
+});
+
+for await (const chunk of stream) {
+    const content = chunk.choices[0]?.delta?.content || '';
+    process.stdout.write(content);  // Show immediately
+
+    // User can stop if they see it's going wrong
+    // Saves tokens!
+}
+```
+
+---
+
+## 🎓 Learning vs Copying
+
+### Build Understanding, Not Just Code
+
+**❌ Don't just ask:**
+```
+"Generate authentication system"
+```
+
+**✅ Learn the pattern:**
+```
+Step 1: "Explain JWT authentication flow step by step"
+Step 2: "What are the security considerations?"
+Step 3: "Show me token generation in Node.js with comments"
+Step 4: "How do we securely store tokens client-side?"
+Step 5: "Explain refresh token rotation and why it's important"
+Step 6: "Now show me complete implementation with all best practices"
+Step 7: "What could go wrong? What are common vulnerabilities?"
+
+Result: You UNDERSTAND it, can maintain it, can adapt it, can explain it
+```
+
+### Create a Personal Knowledge Base
+
+```markdown
+# my-ai-learnings.md
+
+## 2025-11-10: Custom React Hooks Pattern
+
+### What I Learned
+AI showed me how to create reusable hooks for data fetching.
+
+### Key Concepts
+- Hooks encapsulate stateful logic
+- Return object with state + actions
+- Always handle cleanup in useEffect
+- TypeScript types make hooks safer
+
+### Template
+```tsx
+function useCustomHook<T>(params: Params): Result<T> {
+  const [data, setData] = useState<T | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<Error | null>(null);
+
+  useEffect(() => {
+    // Async logic with cleanup
+    return () => cleanup();
+  }, [dependencies]);
+
+  return { data, loading, error };
+}
+```
+
+### Real Examples I've Built
+1. `useAuth` - Authentication state management
+2. `useApi` - API calls with loading/error states
+3. `useLocalStorage` - Sync state with localStorage
+4. `useDebounce` - Debounced input handling
+
+### When to Use
+- Multiple components need same data
+- Complex state logic
+- Side effects need cleanup
+- Want to test logic separately
+
+### Pitfalls to Avoid
+- Don't put hooks in conditionals
+- Remember dependency arrays
+- Clean up subscriptions
+- Handle race conditions
+```
+
+---
+
+## 🛡️ Privacy & Ethics
+
+### What NOT to Share with AI
+
+```
+❌ NEVER share:
+- API keys, tokens, credentials
+- User personal data (emails, names, addresses)
+- Proprietary algorithms or business logic
+- Confidential code or trade secrets
+- Internal URLs, IPs, or infrastructure details
+- Customer information or analytics
+- Security vulnerabilities before patching
+- Company financial information
+
+✅ SAFE to share:
+- Public API usage patterns
+- General algorithm questions
+- Framework/library usage
+- Anonymized/synthetic examples
+- Open-source code
+- Public documentation questions
+```
+
+### Sanitization Checklist
+
+```python
+# ❌ Don't paste this to AI:
+API_KEY = "sk-abc123xyz789"
+DATABASE_URL = "postgres://admin:P@ssw0rd@internal-db.company.com:5432/prod"
+user_email = "john.doe@bigclient.com"
+SECRET_KEY = "my-secret-key-12345"
+
+# ✅ Sanitize first:
+API_KEY = os.getenv("API_KEY")
+DATABASE_URL = os.getenv("DATABASE_URL")
+user_email = "user@example.com"  # Use example.com
+SECRET_KEY = os.getenv("SECRET_KEY")
+
+# When sharing code:
+def process_payment(user_id, amount):
+    # Don't show: Real payment processor API
+    # Do show: Generic example
+    payment_api.charge(user_id, amount)
+```
+
+---
+
+## 📚 Recommended Workflow
+
+### Daily Development Routine
+
+```markdown
+## Morning (9:00 AM)
+1. Review overnight errors
+   - Copy error logs to ChatGPT (sanitized)
+   - "Analyze these errors and suggest root causes"
+
+2. Plan today's tasks
+   - "I need to implement X. What's the best approach?"
+   - "Break down this task into subtasks"
+
+3. Generate test data
+   - "Generate 20 realistic test users in JSON"
+   - "Create mock API responses for this endpoint"
+
+## Active Coding (9:30 AM - 5:00 PM)
+1. Write function signature yourself
+   ```typescript
+   // You write:
+   function processOrder(order: Order): Promise<ProcessedOrder> {
+     // TODO
+   }
+   ```
+
+2. Ask AI for implementation if stuck
+   - "Implement this function following these requirements..."
+
+3. Review AI code line-by-line
+   - Understand each line
+   - Check for edge cases
+   - Verify security
+
+4. Test thoroughly
+   - Write tests first
+   - Ask AI to generate additional test cases
+
+5. Refactor if needed
+   - "How can I make this more maintainable?"
+   - "What are performance implications?"
+
+## Before Commit (5:00 PM)
+1. AI code review
+   - Paste your changes
+   - "Review this code for bugs, security, and best practices"
+
+2. Generate/update tests
+   - "Generate unit tests for this function"
+
+3. Update documentation
+   - "Generate JSDoc for these functions"
+
+4. Write commit message
+   - "Generate a commit message for these changes"
+
+## Code Review
+1. AI reviews PR first
+2. Fix obvious issues
+3. Human review (mandatory!)
+4. Merge
+
+## Weekly Review (Friday)
+1. Review week's AI usage
+   - Cost report
+   - What worked well?
+   - What didn't work?
+
+2. Update prompt library
+   - Save successful prompts
+   - Refine templates
+
+3. Share learnings with team
+```
+
+---
+
+## 🚀 Advanced Tips
+
+### 1. Create Custom GPTs (ChatGPT Plus)
+
+```
+# Custom GPT Configuration
+
+Name: "MyCompany Backend Developer"
+
+Description:
+Expert Python backend developer following MyCompany coding standards
+
+Instructions:
+You are an expert backend developer for MyCompany. Always follow these rules:
+
+1. Code Style:
+   - Use TypeScript with strict mode
+   - Follow our style guide: [link to guide]
+   - Use functional programming patterns
+   - Prefer immutability
+
+2. Architecture:
+   - Follow clean architecture
+   - Use dependency injection
+   - Separate business logic from infrastructure
+   - Write tests for all business logic
+
+3. Error Handling:
+   - Use our error handling pattern:
+   ```typescript
+   try {
+     // operation
+   } catch (error) {
+     logger.error('Operation failed', { error, context });
+     throw new AppError('User-friendly message', { cause: error });
+   }
+   ```
+
+4. Security:
+   - Validate all inputs
+   - Sanitize outputs
+   - Use parameterized queries
+   - No hardcoded secrets
+
+5. Testing:
+   - Include unit tests with every function
+   - Use Jest + Supertest
+   - Mock external dependencies
+   - Aim for 90%+ coverage
+
+6. Documentation:
+   - TSDoc comments for public APIs
+   - Inline comments for complex logic
+   - README for each module
+
+Knowledge Files:
+- company-style-guide.md
+- api-patterns.md
+- common-utilities.ts
+- test-examples.ts
+
+Conversation Starters:
+- "Create a new API endpoint following our patterns"
+- "Review this code for compliance with our standards"
+- "Generate tests for this function"
+- "Explain this legacy code"
+```
+
+### 2. Build Team Prompt Library
+
+```markdown
+# team-prompts.md
+
+## Code Review Prompt
+```
+Act as a senior software engineer. Review this [language] code for:
+
+1. **Bugs and Logic Errors**
+   - Off-by-one errors
+   - Null pointer exceptions
+   - Race conditions
+   - Edge cases not handled
+
+2. **Security Vulnerabilities**
+   - SQL injection
+   - XSS
+   - CSRF
+   - Authentication/authorization issues
+   - Input validation
+
+3. **Performance Issues**
+   - Inefficient algorithms (O(n²) when O(n) exists)
+   - Unnecessary loops
+   - Memory leaks
+   - N+1 queries
+
+4. **Code Style** (follow [style_guide])
+   - Naming conventions
+   - Code organization
+   - Comments and documentation
+   - DRY violations
+
+5. **Missing Edge Cases**
+   - Null/undefined handling
+   - Empty arrays/strings
+   - Boundary conditions
+   - Error states
+
+Provide specific line-by-line feedback with:
+- What's wrong
+- Why it's a problem
+- How to fix it
+- Example of correct code
+
+Code to review:
+```{language}
+{paste_code_here}
+```
+```
+
+## Test Generation Prompt
+```
+Generate comprehensive [framework] tests for this [language] function:
+
+```[language]
+[paste_code_here]
+```
+
+Requirements:
+1. **Test Coverage**
+   - Happy path (valid inputs)
+   - Edge cases (boundary values)
+   - Error cases (invalid inputs)
+   - Null/undefined handling
+   - Type checking (if applicable)
+
+2. **Structure**
+   - Descriptive test names
+   - Arrange-Act-Assert pattern
+   - One assertion per test (when possible)
+   - Group related tests in describe blocks
+
+3. **Mocking**
+   - Mock external dependencies (API calls, database, etc.)
+   - Mock timers if needed
+   - Provide example mock data
+
+4. **Coverage Goal**: 95%+
+
+5. **Follow this format**:
+```{language}
+describe('functionName', () => {
+  describe('when given valid input', () => {
+    it('should return expected result', () => {
+      // Arrange
+      const input = 'valid';
+      const expected = 'result';
+
+      // Act
+      const actual = functionName(input);
+
+      // Assert
+      expect(actual).toBe(expected);
+    });
+  });
+
+  describe('when given invalid input', () => {
+    it('should throw ValidationError', () => {
+      expect(() => functionName('')).toThrow(ValidationError);
+    });
+  });
+});
+```
+```
+
+## Documentation Generation Prompt
+```
+Generate comprehensive documentation for this code:
+
+```{language}
+{paste_code_here}
+```
+
+Include:
+
+1. **Overview**
+   - Purpose and responsibility
+   - When to use this code
+   - High-level description
+
+2. **Parameters** (for functions)
+   - Name and type
+   - Description
+   - Required vs optional
+   - Default values
+   - Validation rules
+
+3. **Return Values**
+   - Type
+   - Description
+   - Possible values
+
+4. **Exceptions/Errors**
+   - What errors can be thrown
+   - When they occur
+   - How to handle them
+
+5. **Usage Examples**
+   - Basic usage
+   - Advanced usage
+   - Common patterns
+   - Edge cases
+
+6. **Notes**
+   - Performance considerations
+   - Side effects
+   - Dependencies
+   - Related functions
+
+Format: \{JSDoc/TSDoc/Python docstring/etc\}
+```
+
+## Debugging Prompt
+```
+I'm debugging a [language] issue:
+
+**Error Message:**
+```
+[paste_error]
+```
+
+**Code:**
+```[language]
+[paste_code]
+```
+
+**Context:**
+- Framework/Library: [framework] version [version]
+- Environment: [dev/staging/production]
+- When it happens: [trigger_condition]
+
+**What I've tried:**
+1. [action_1]
+2. [action_2]
+3. [action_3]
+
+**Expected behavior:**
+[describe_expected]
+
+**Actual behavior:**
+[describe_actual]
+
+Please:
+1. Explain the root cause
+2. Provide step-by-step fix
+3. Explain why the fix works
+4. Suggest how to prevent this in future
+5. Recommend tests to add
+```
+
+## Refactoring Prompt
+```
+Refactor this [language] code to improve:
+
+1. **Readability**
+   - Better variable names
+   - Clearer logic flow
+   - Appropriate comments
+
+2. **Maintainability**
+   - Smaller functions
+   - Single responsibility
+   - Reduced coupling
+
+3. **Performance**
+   - Optimize algorithms
+   - Remove unnecessary operations
+   - Better data structures
+
+4. **Testability**
+   - Dependency injection
+   - Pure functions when possible
+   - Mockable dependencies
+
+**Current code:**
+```{language}
+{paste_code}
+```
+
+**Requirements:**
+- Maintain exact same behavior
+- Keep all edge cases
+- Add comments explaining changes
+- Show before/after comparison
+- Explain why changes improve code
+```
+```
+
+### 3. Integrate AI into CI/CD
+
+```yaml
+# .github/workflows/ai-assist.yml
+name: AI Code Assistant
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  ai-review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Get Changed Files
+        id: changed-files
+        run: |
+          echo "files=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | tr '\n' ' ')" >> $GITHUB_OUTPUT
+
+      - name: AI Code Review
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          python scripts/ai-review.py --files "${{ steps.changed-files.outputs.files }}"
+
+      - name: AI Security Scan
+        run: |
+          python scripts/ai-security-scan.py
+
+      - name: Generate Test Suggestions
+        run: |
+          python scripts/ai-test-suggestions.py
+
+      - name: Comment PR
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+            const review = fs.readFileSync('ai-review.md', 'utf8');
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `## 🤖 AI Code Review\n\n${review}`
+            });
+```
+
+```python
+# scripts/ai-review.py
+import os
+import sys
+from openai import OpenAI
+
+client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+
+def review_code(file_path):
+    """AI review a single file"""
+    with open(file_path, 'r') as f:
+        code = f.read()
+
+    prompt = f"""
+    Review this code for:
+    1. Bugs and logic errors
+    2. Security vulnerabilities
+    3. Performance issues
+    4. Code style
+    5. Missing edge cases
+
+    File: [file_path]
+
+    ```
+    [code]
+    ```
+
+    Provide specific, actionable feedback.
+    """
+
+    response = client.chat.completions.create(
+        model="gpt-4o",
+        messages=[{"role": "user", "content": prompt}]
+    )
+
+    return response.choices[0].message.content
+
+def main():
+    files = sys.argv[2].split()  # --files file1.py file2.py
+
+    reviews = []
+    for file_path in files:
+        if file_path.endswith(('.py', '.js', '.ts', '.tsx', '.java')):
+            print(f"Reviewing {file_path}...")
+            review = review_code(file_path)
+            reviews.append(f"### {file_path}\n\n{review}\n")
+
+    # Write review to file for PR comment
+    with open('ai-review.md', 'w') as f:
+        f.write('\n'.join(reviews))
+
+if __name__ == '__main__':
+    main()
+```
+
+---
+
+## ✅ Responsible AI Usage Checklist
+
+Before committing AI-generated code, ask yourself:
+
+```markdown
+### Code Quality
+- [ ] I've read and understood every line
+- [ ] I've tested all happy paths
+- [ ] I've tested edge cases
+- [ ] I've tested error conditions
+- [ ] I've checked for performance issues
+- [ ] Code follows project style guide
+- [ ] Documentation is accurate and complete
+
+### Security
+- [ ] No hardcoded credentials or secrets
+- [ ] Input validation is present
+- [ ] Output is properly sanitized
+- [ ] No SQL injection vulnerabilities
+- [ ] No XSS vulnerabilities
+- [ ] Authentication/authorization is correct
+- [ ] Security scanner shows no issues
+
+### Legal & Ethical
+- [ ] I didn't share proprietary code with AI
+- [ ] I didn't share customer data
+- [ ] I verified code licenses
+- [ ] I have rights to use this code
+- [ ] Attribution added if required
+
+### Professional
+- [ ] I can explain this code in code review
+- [ ] I can modify and extend this code
+- [ ] I can debug this code if it breaks
+- [ ] I learned something from this
+- [ ] This follows company AI usage policy
+
+### Cost & Resource
+- [ ] I tracked the API costs
+- [ ] I used appropriate model for the task
+- [ ] I'm within budget
+```
+
+---
+
+## 🔗 Related Resources
+
+### Official Documentation
+- [OpenAI Best Practices](https://platform.openai.com/docs/guides/prompt-engineering)
+- [Anthropic Prompt Engineering](https://docs.anthropic.com/claude/docs/prompt-engineering)
+- [GitHub Copilot Best Practices](https://docs.github.com/copilot)
+
+### Security
+- [OWASP AI Security](https://owasp.org/www-project-machine-learning-security/)
+- [OWASP Top 10](https://owasp.org/www-project-top-ten/)
+
+### Our Guides
+- [FAQ - Common Questions](/docs/faq)
+- [Getting Started Tutorial](/docs/tutorials/chatgpt-coding-guide)
+- [AI Coding Tools Comparison](/docs/tools/ai-coding-tools-extended)
+- [Prompt Engineering Tools](/docs/tools/prompt-engineering-tools)
+- Claude Prompt Caching Guide (Coming in Phase 2)
+
+---
+
+## 📝 Summary
+
+**Key Takeaways:**
+
+1. **Security First**: Always review AI-generated code for security issues
+2. **Understand, Don't Copy**: Learn the patterns, don't just copy-paste
+3. **Test Thoroughly**: AI misses edge cases, you must test
+4. **Manage Costs**: Track spending, use appropriate models
+5. **Respect Privacy**: Never share sensitive data
+6. **Review Everything**: AI is a tool, not a replacement for judgment
+7. **Build Knowledge**: Document what you learn
+8. **Use Responsibly**: Follow professional and ethical standards
+
+**Remember**: AI coding assistants are powerful tools that amplify your abilities. Use them wisely, and they'll make you a more productive, effective developer.
+
+---
+
+**Last Updated:** 2025-11-10 | **Version:** 2.0
+
+*Have questions? Check our [FAQ](/docs/faq) or [join our community](https://discord.gg/aicodingclub)*

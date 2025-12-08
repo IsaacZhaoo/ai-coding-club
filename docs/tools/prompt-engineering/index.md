@@ -230,10 +230,49 @@ Use the "Custom Instructions" feature to set default behavior.
 
 ---
 
+## 🔍 System Prompts Deep Dives
+
+Want to understand how professional AI coding tools work under the hood? Explore our deep-dive analyses of system prompts from popular tools:
+
+### [Cursor System Prompts Analysis](/docs/tools/prompt-engineering/tools/cursor-prompts)
+Deep dive into Cursor's core design philosophy and 5 key patterns:
+- Context-First Strategy
+- Tool Transparency Principle
+- Proactive Execution Mechanism
+- Semantic Search First
+- Simplified Code Editing Format
+
+**Best for**: Developers who want to understand how AI coding assistants work and apply these patterns to their own workflows
+
+### [Claude Code System Prompts Analysis](/docs/tools/prompt-engineering/tools/claude-code-prompts)
+Deep dive into Claude Code CLI tool's extreme minimalism design philosophy and 6 key patterns:
+- Extreme Minimalism Communication Strategy
+- Edit-First, Create-Never Philosophy
+- Professional Objectivity Principle
+- Context-Aware Tool Delegation
+- Parallel Execution Priority
+- Git Safety Protocol
+
+**Best for**: Developers who want to understand CLI-optimized AI tool design and learn minimalist efficient interaction patterns
+
+### [Cline System Prompts Analysis](/docs/tools/prompt-engineering/tools/cline-prompts)
+Deep dive into Cline open-source AI coding assistant's user approval-first design and 6 key patterns:
+- Mandatory Iterative Execution with Approval
+- One Tool Per Message Principle
+- Dual-Mode Architecture (PLAN/ACT)
+- Progressive Context Gathering
+- Approval Stratification Mechanism
+- Search/Replace Block System
+
+**Best for**: Developers who want to understand open-source AI tool design and learn safe approval workflows
+
+---
+
 ## 📖 Learn More
 
 - [Code Snippets](/docs/tools/code-snippets) - Ready-to-use code
 - [Best Practices Guide](/docs/tools/prompt-engineering/best-practices) - Advanced tips
+- [System Prompts Repository](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools) - Source of our analyses
 
 ---
 
