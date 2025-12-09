@@ -7,6 +7,70 @@
     "message": "AI 编程俱乐部标志",
     "description": "The alt text of navbar logo"
   },
+  "item.label.Topics": {
+    "message": "主题",
+    "description": "Navbar item with label Topics"
+  },
+  "item.label.Learn": {
+    "message": "学习",
+    "description": "Navbar item with label Learn"
+  },
+  "item.label.Products": {
+    "message": "产品",
+    "description": "Navbar item with label Products"
+  },
+  "item.label.About": {
+    "message": "关于",
+    "description": "Navbar item with label About"
+  },
+  "item.label.AI Coding Beginner": {
+    "message": "AI 编程入门",
+    "description": "Navbar item with label AI Coding Beginner"
+  },
+  "item.label.AI Writing Guide": {
+    "message": "AI 写作指南",
+    "description": "Navbar item with label AI Writing Guide"
+  },
+  "item.label.AI PPT Generation": {
+    "message": "AI PPT 生成",
+    "description": "Navbar item with label AI PPT Generation"
+  },
+  "item.label.Roadmap": {
+    "message": "AI 编程路线图",
+    "description": "Navbar item with label Roadmap"
+  },
+  "item.label.Courses": {
+    "message": "课程",
+    "description": "Navbar item with label Courses"
+  },
+  "item.label.AI Tools Tutorials": {
+    "message": "AI 工具教程",
+    "description": "Navbar item with label AI Tools Tutorials"
+  },
+  "item.label.Resources": {
+    "message": "资源",
+    "description": "Navbar item with label Resources"
+  },
+  "item.label.Online Tools": {
+    "message": "在线工具",
+    "description": "Navbar item with label Online Tools"
+  },
+  "item.label.Meows": {
+    "message": "Meows",
+    "description": "Navbar item with label Meows"
+  },
+  "item.label.Neural Greenhouse": {
+    "message": "神经温室",
+    "description": "Navbar item with label Neural Greenhouse"
+  },
+  "item.label.Blog": {
+    "message": "博客",
+    "description": "Navbar item with label Blog"
+  },
+  "item.label.Search": {
+    "message": "搜索",
+    "description": "Navbar item with label Search"
+  },
   "item.label.📖 Tutorials": {
     "message": "📖 教程",
     "description": "Navbar item with label 📖 Tutorials"
@@ -24,11 +88,11 @@
     "description": "Navbar item with label ⚡ Interactive Tools"
   },
   "item.label.🤖 AI Tools Directory": {
-    "message": "🤖 AI工具目录",
+    "message": "🤖 AI 工具目录",
     "description": "Navbar item with label 🤖 AI Tools Directory"
   },
   "item.label.📚 AI Tools Docs": {
-    "message": "📚 AI工具文档",
+    "message": "📚 AI 工具文档",
     "description": "Navbar item with label 📚 AI Tools Docs"
   },
   "item.label.📦 Resources": {
@@ -44,15 +108,11 @@
     "description": "Navbar item with label 🌐 More"
   },
   "item.label.🐱 Meows App": {
-    "message": "🐱 Meows应用",
+    "message": "🐱 Meows 应用",
     "description": "Navbar item with label 🐱 Meows App"
   },
   "item.label.📖 AI Novel": {
-    "message": "📖 AI小说",
+    "message": "📖 AI 小说",
     "description": "Navbar item with label 📖 AI Novel"
-  },
-  "item.label.Search": {
-    "message": "搜索",
-    "description": "Navbar item with label Search"
   }
 }
