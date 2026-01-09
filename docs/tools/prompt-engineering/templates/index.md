@@ -14,18 +14,6 @@ Ready-to-use prompt templates that get better results from AI assistants. Organi
 ### 🐛 [Debugging](/docs/tools/prompt-engineering/templates/debugging)
 12 templates for finding and fixing bugs faster.
 
-### 🔄 Refactoring (Coming Soon)
-15 templates for code cleanup and modernization.
-
-### 📝 Documentation (Coming Soon)
-8 templates for writing clear documentation.
-
-### 🧪 Testing (Coming Soon)
-10 templates for test generation and coverage.
-
-### 👀 Code Review (Coming Soon)
-5 templates for security, performance, and best practices.
-
 ---
 
 ## 🚀 Quick Start
