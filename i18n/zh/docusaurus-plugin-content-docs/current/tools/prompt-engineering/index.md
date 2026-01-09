@@ -99,17 +99,7 @@ description: 掌握AI交流的现成提示词模板
 - **[调试模板](/docs/tools/prompt-engineering/templates/debugging)** (12个模板)
   - 错误分析、堆栈跟踪阅读、性能问题
 
-- **[重构模板](/docs/tools/prompt-engineering/templates/refactoring)** (15个模板)
-  - 代码清理、模式实现、现代化
-
-- **[文档模板](/docs/tools/prompt-engineering/templates/documentation)** (8个模板)
-  - API文档、README文件、内联注释
-
-- **[测试模板](/docs/tools/prompt-engineering/templates/testing)** (10个模板)
-  - 单元测试、集成测试、测试数据生成
-
-- **[代码审查模板](/docs/tools/prompt-engineering/templates/code-review)** (5个模板)
-  - 安全审查、性能审查、最佳实践检查
+- **[所有模板](/docs/tools/prompt-engineering/templates)** - 浏览所有可用模板
 
 ---
 
@@ -232,7 +222,6 @@ description: 掌握AI交流的现成提示词模板
 
 ## 📖 了解更多
 
-- [代码片段](/docs/tools/code-snippets) - 现成可用的代码
 - [最佳实践指南](/docs/tools/prompt-engineering/best-practices) - 高级技巧
 
 ---

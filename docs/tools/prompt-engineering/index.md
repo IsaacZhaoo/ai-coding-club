@@ -99,17 +99,7 @@ Start broad, then refine:
 - **[Debugging Templates](/docs/tools/prompt-engineering/templates/debugging)** (12 templates)
   - Error analysis, stack trace reading, performance issues
 
-- **[Refactoring Templates](/docs/tools/prompt-engineering/templates/refactoring)** (15 templates)
-  - Code cleanup, pattern implementation, modernization
-
-- **[Documentation Templates](/docs/tools/prompt-engineering/templates/documentation)** (8 templates)
-  - API docs, README files, inline comments
-
-- **[Testing Templates](/docs/tools/prompt-engineering/templates/testing)** (10 templates)
-  - Unit tests, integration tests, test data generation
-
-- **[Code Review Templates](/docs/tools/prompt-engineering/templates/code-review)** (5 templates)
-  - Security review, performance review, best practices check
+- **[All Templates](/docs/tools/prompt-engineering/templates)** - Browse all available templates
 
 ---
 
@@ -270,7 +260,6 @@ Deep dive into Cline open-source AI coding assistant's user approval-first desig
 
 ## 📖 Learn More
 
-- [Code Snippets](/docs/tools/code-snippets) - Ready-to-use code
 - [Best Practices Guide](/docs/tools/prompt-engineering/best-practices) - Advanced tips
 - [System Prompts Repository](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools) - Source of our analyses
 
