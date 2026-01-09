@@ -17,59 +17,25 @@ Start your journey! Learn what AI coding is, have your first conversations with 
 
 [Begin Phase 1 →](/docs/course/foundations/welcome)
 
-:::tip
-**🔜 Phase 2: Essential Skills (Coming Soon)**
-
+### ⚡ Phase 2: Essential Skills (8 Lessons)
 Master the fundamental tools and techniques every developer needs.
 
-**You'll learn:**
-- 💻 Command line mastery
-- 🔄 Git & GitHub workflows
-- 🧪 Testing strategies
-- 💡 Advanced prompting techniques
+[Begin Phase 2 →](/docs/course/02-essential-skills)
 
-💬 [Follow updates on GitHub Discussions](https://github.com/IsaacZhaoo/ai-coding-club/discussions)
-:::
-
-:::info
-**🔜 Phase 3: Building Projects (Coming Soon)**
-
+### 🏗️ Phase 3: Building Projects (7 Lessons)
 Apply your skills to build real projects from planning to deployment.
 
-**You'll build:**
-- 📋 Project planning & architecture
-- 🏗️ Full-stack applications
-- 📦 Production-ready code
-- 🚀 Deployed projects
+[Begin Phase 3 →](/docs/course/03-building-projects)
 
-💬 [Follow updates on GitHub Discussions](https://github.com/IsaacZhaoo/ai-coding-club/discussions)
-:::
-
-:::note
-**🔜 Phase 4: Specialization (Coming Soon)**
-
+### 🎯 Phase 4: Specialization (6 Lessons)
 Choose your path: frontend, backend, or data/automation specialization.
 
-**Specialization paths:**
-- 🌐 Frontend Development
-- ⚙️ Backend Engineering
-- 📊 Data & Automation
+[Begin Phase 4 →](/docs/course/04-specialization)
 
-💬 [Follow updates on GitHub Discussions](https://github.com/IsaacZhaoo/ai-coding-club/discussions)
-:::
-
-:::caution
-**🔜 Phase 5: Career (Coming Soon)**
-
+### 💼 Phase 5: Career (2 Lessons)
 Prepare for the job market with portfolio building and interview preparation.
 
-**Career preparation:**
-- 💼 Portfolio projects
-- 📝 Resume & GitHub profile
-- 🎯 Interview strategies
-
-💬 [Follow updates on GitHub Discussions](https://github.com/IsaacZhaoo/ai-coding-club/discussions)
-:::
+[Begin Phase 5 →](/docs/course/05-career)
 
 ## Learning Approach
 
