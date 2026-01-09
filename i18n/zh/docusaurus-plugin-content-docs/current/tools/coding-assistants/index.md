@@ -40,7 +40,7 @@ Cursor是VS Code的一个分支，深度集成了AI功能。目前是AI辅助开
 
 **最佳用途**: 从事中等到大型代码库的专业开发者
 
-[阅读完整指南 →](/docs/tools/coding-assistants/cursor)
+[↑ 返回对比表](#-快速对比)
 
 ---
 
@@ -60,7 +60,7 @@ Claude Code将Anthropic最强大的AI模型带到你的终端。在架构决策�
 
 **最佳用途**: 架构规划、复杂调试、大规模重构
 
-[阅读完整指南 →](/docs/tools/coding-assistants/claude-code)
+[↑ 返回对比表](#-快速对比)
 
 ---
 
@@ -80,7 +80,7 @@ Claude Code将Anthropic最强大的AI模型带到你的终端。在架构决策�
 
 **最佳用途**: 使用VS Code和GitHub的开发者
 
-[阅读完整指南 →](/docs/tools/coding-assistants/github-copilot)
+[↑ 返回对比表](#-快速对比)
 
 ---
 
@@ -100,7 +100,7 @@ Claude Code将Anthropic最强大的AI模型带到你的终端。在架构决策�
 
 **最佳用途**: 预算有限的开发者、学生、学习
 
-[阅读完整指南 →](/docs/tools/coding-assistants/codeium)
+[↑ 返回对比表](#-快速对比)
 
 ---
 
@@ -120,7 +120,7 @@ Claude Code将Anthropic最强大的AI模型带到你的终端。在架构决策�
 
 **最佳用途**: 探索Cursor替代品的开发者
 
-[阅读完整指南 →](/docs/tools/coding-assistants/windsurf)
+[↑ 返回对比表](#-快速对比)
 
 ---
 

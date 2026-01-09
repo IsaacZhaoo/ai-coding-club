@@ -40,7 +40,7 @@ Cursor is a fork of VS Code with AI deeply integrated. It's currently the gold s
 
 **Best for**: Professional developers working on medium to large codebases
 
-[Read full guide →](/docs/tools/coding-assistants/cursor)
+[↑ Back to comparison](#-quick-comparison)
 
 ---
 
@@ -60,7 +60,7 @@ Claude Code brings Anthropic's most powerful AI model to your terminal. Exceptio
 
 **Best for**: Architecture planning, complex debugging, large-scale refactoring
 
-[Read full guide →](/docs/tools/coding-assistants/claude-code)
+[↑ Back to comparison](#-quick-comparison)
 
 ---
 
@@ -80,7 +80,7 @@ The original AI coding assistant, now with chat capabilities. Solid choice if yo
 
 **Best for**: Developers using VS Code and GitHub
 
-[Read full guide →](/docs/tools/coding-assistants/github-copilot)
+[↑ Back to comparison](#-quick-comparison)
 
 ---
 
@@ -100,7 +100,7 @@ Remarkably capable free AI coding assistant with unlimited usage. Great for stud
 
 **Best for**: Budget-conscious developers, students, learning
 
-[Read full guide →](/docs/tools/coding-assistants/codeium)
+[↑ Back to comparison](#-quick-comparison)
 
 ---
 
@@ -120,7 +120,7 @@ New entrant from Codeium with Cursor-like features. Currently in free beta.
 
 **Best for**: Developers exploring Cursor alternatives
 
-[Read full guide →](/docs/tools/coding-assistants/windsurf)
+[↑ Back to comparison](#-quick-comparison)
 
 ---
 
