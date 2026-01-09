@@ -1,0 +1,1495 @@
+---
+title: "AI 编程最佳实践"
+description: "全面的 AI 编程助手使用指南。学习安全实践、提示词工程、成本优化和专业工作流程。"
+keywords:
+  - AI 编程最佳实践
+  - 提示词工程
+  - AI 代码安全
+  - 代码审查
+  - 成本优化
+  - 专业开发
+sidebar_position: 10
+tags: [best-practices, security, tips, coding]
+---
+
+# AI 编程最佳实践
+
+**掌握专业、安全地使用 AI 编程助手的艺术**
+
+学习如何在使用 AI 编程工具时最大化生产力，同时保持代码质量、安全性和专业标准。
+
+:::tip 相关资源
+- 刚接触 AI 编程？从我们的[入门教程](/docs/tutorials/chatgpt-coding-guide)开始
+- 常见问题？查看[FAQ](/docs/faq)
+- 比较工具：[AI 编程工具指南](/docs/tools/ai-coding-tools-extended)
+:::
+
+---
+
+## 🎯 快速最佳实践
+
+1. ✅ **始终审查 AI 代码** - 永远不要盲目复制粘贴
+2. ✅ **彻底测试** - AI 可能遗漏边缘情况
+3. ✅ **检查安全性** - AI 并不总能发现漏洞
+4. ✅ **验证许可证** - 特别是对于生成的代码
+5. ✅ **保持上下文相关** - 更好的提示词 = 更好的代码
+6. ✅ **学习，而不仅仅是复制** - 理解代码
+7. ✅ **使用版本控制** - 跟踪 AI 生成的更改
+8. ✅ **监控成本** - API 使用量会累积
+9. ✅ **尊重隐私** - 不要分享专有代码
+10. ✅ **保持更新** - AI 模型在不断改进
+
+---
+
+## 🔒 安全最佳实践
+
+### 1. 永远不要信任 AI 处理安全关键代码
+
+**❌ 不要这样做：**
+```python
+# AI might generate:
+password = request.args.get('password')
+if password == 'admin123':  # Hardcoded password!
+    grant_access()
+```
+
+**✅ 应该这样做：**
+```python
+# Always review security code
+from werkzeug.security import check_password_hash
+import os
+
+# Review AI output for:
+# - Hardcoded secrets
+# - SQL injection risks
+# - XSS vulnerabilities
+# - Improper authentication
+
+def verify_password(username, password):
+    """
+    Secure password verification
+    AI-generated code reviewed and enhanced
+    """
+    user = User.query.filter_by(username=username).first()
+
+    if not user:
+        # Prevent username enumeration
+        check_password_hash("dummy", password)
+        return False
+
+    # Use constant-time comparison
+    return check_password_hash(user.password_hash, password)
+```
+
+### 2. 运行安全扫描器
+
+```bash
+# After AI generates code, scan it
+pip install bandit safety
+
+# Python security scanner
+bandit -r . -ll
+
+# Check dependencies for vulnerabilities
+safety check
+
+# JavaScript/Node.js
+npm audit
+npm audit fix
+
+# For Go
+go install github.com/securego/gosec/v2/cmd/gosec@latest
+gosec ./...
+
+# Docker images
+docker scan my-image:latest
+```
+
+### 3. 安全审查清单
+
+```markdown
+## AI 生成代码安全审查
+
+### 认证与授权
+- [ ] 没有硬编码的凭证
+- [ ] 密码正确哈希（bcrypt、argon2）
+- [ ] 会话令牌安全生成
+- [ ] JWT 令牌正确验证
+- [ ] 实现了基于角色的访问控制
+- [ ] 认证端点有速率限制
+
+### 输入验证
+- [ ] 所有用户输入都经过验证
+- [ ] 防止 SQL 注入（参数化查询）
+- [ ] XSS 防护（输出编码）
+- [ ] 实现了 CSRF 令牌
+- [ ] 文件上传限制
+- [ ] 强制大小限制
+
+### 数据保护
+- [ ] 敏感数据静态加密
+- [ ] 强制 TLS/HTTPS
+- [ ] 日志中没有敏感数据
+- [ ] 错误消息中没有敏感数据
+- [ ] 秘密存储在环境变量中
+- [ ] 数据库凭证已保护
+
+### 代码质量
+- [ ] 错误处理不泄露信息
+- [ ] 用户输入没有使用 eval() 或 exec()
+- [ ] 依赖项是最新的
+- [ ] 没有已知的漏洞包
+- [ ] 代码遵循安全最佳实践
+```
+
+### 4. 安全测试示例
+
+```python
+# test_security.py
+import pytest
+from app import create_app
+
+def test_sql_injection_prevention():
+    """Verify AI-generated code prevents SQL injection"""
+    app = create_app()
+    client = app.test_client()
+
+    # Try SQL injection
+    malicious_input = "admin' OR '1'='1"
+    response = client.post('/login', json={
+        'username': malicious_input,
+        'password': 'test'
+    })
+
+    # Should not bypass authentication
+    assert response.status_code == 401
+    assert 'token' not in response.json
+
+def test_xss_prevention():
+    """Verify output is properly escaped"""
+    response = client.post('/comment', json={
+        'text': '<script>alert("XSS")</script>'
+    })
+
+    # Script should be escaped
+    assert '<script>' not in response.text
+    assert '&lt;script&gt;' in response.text
+```
+
+---
+
+## 💡 提示词工程最佳实践
+
+### 1. 具体且详细
+
+**❌ 模糊的：**
+```
+Write a login function
+```
+
+**✅ 具体的：**
+```
+Create a login function in Python using Flask and SQLAlchemy.
+
+Requirements:
+- Accept email and password via POST request
+- Hash passwords with bcrypt (cost factor: 12)
+- Return JWT token on success (expires in 1 hour)
+- Return 401 for invalid credentials
+- Rate limit: 5 attempts per minute per IP
+- Input validation for email format
+- Logging for security events (no sensitive data)
+- Handle database errors gracefully
+
+Include:
+- Type hints (Python 3.10+)
+- Docstring with example usage
+- Error handling for all edge cases
+- Unit test example with mocking
+
+Code style: Follow PEP 8, use descriptive variable names
+```
+
+### 2. 提供上下文和环境
+
+**❌ 没有上下文：**
+```
+Fix this bug:
+[code snippet]
+```
+
+**✅ 有上下文：**
+```
+Bug in React 18 application using TypeScript 5.0
+
+Environment:
+- Node 18.x, npm 9.x
+- React 18.2.0
+- React Router 6.8.0
+- State management: Zustand
+
+Code:
+[code snippet]
+
+Error message:
+TypeError: Cannot read property 'map' of undefined
+at ProductList.tsx:45
+
+What I've tried:
+1. Added console.logs - state updates correctly
+2. Checked React DevTools - props are passed
+3. Similar code works in other components
+4. Cleared cache and reinstalled node_modules
+
+Expected: Component should re-render when state changes
+Actual: Component doesn't update, shows error on render
+
+Stack trace:
+[full stack trace]
+
+Please:
+1. Explain the root cause
+2. Provide a fix with explanation
+3. Suggest how to prevent this in future
+```
+
+### 3. 请求示例和格式
+
+**❌ 只要求代码：**
+```
+Generate tests
+```
+
+**✅ 展示示例格式：**
+```
+Generate Jest tests for this TypeScript function:
+
+[code]
+
+Follow this format:
+
+describe('functionName', () => {
+  it('should handle valid input', () => {
+    expect(functionName('valid')).toBe(expected);
+  });
+
+  it('should throw on invalid input', () => {
+    expect(() => functionName('invalid')).toThrow(ValidationError);
+  });
+});
+
+Include:
+- Happy path tests
+- Edge cases (null, undefined, empty, boundary values)
+- Error conditions with specific error types
+- Boundary values testing
+- Type checking tests
+- Mock external dependencies (API calls, database)
+
+Coverage target: 95%+
+Use test data builders for complex objects
+```
+
+### 4. 迭代改进
+
+```
+# Start broad, then refine
+
+Iteration 1:
+"Explain how to implement real-time chat"
+
+Iteration 2:
+"Show me WebSocket implementation in Node.js"
+
+Iteration 3:
+"Add authentication to WebSocket connection using JWT"
+
+Iteration 4:
+"Add message persistence with MongoDB"
+
+Iteration 5:
+"Add typing indicators and read receipts"
+
+Iteration 6:
+"Show me how to scale this with Redis pub/sub"
+```
+
+---
+
+## 🚫 常见陷阱和解决方案
+
+### 陷阱 1：盲目复制代码
+
+**问题：**
+```typescript
+// AI generated this React hook
+function useData() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch('/api/data').then(r => r.json()).then(setData);
+  }, []); // Missing error handling, race conditions
+
+  return data;
+}
+```
+
+**问题所在：**
+- ❌ 没有错误处理
+- ❌ 没有加载状态
+- ❌ 组件卸载时有竞态条件
+- ❌ 没有类型安全
+- ❌ 没有重试逻辑
+- ❌ 没有缓存
+
+**更好的做法（审查并改进后）：**
+```typescript
+interface DataType {
+  id: string;
+  name: string;
+  // ... other fields
+}
+
+interface UseDataResult {
+  data: DataType[];
+  loading: boolean;
+  error: Error | null;
+  refetch: () => void;
+}
+
+function useData(): UseDataResult {
+  const [data, setData] = useState<DataType[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<Error | null>(null);
+  const [refetchKey, setRefetchKey] = useState(0);
+
+  useEffect(() => {
+    let cancelled = false;
+    const controller = new AbortController();
+
+    async function fetchData() {
+      try {
+        setLoading(true);
+
+        const response = await fetch('/api/data', {
+          signal: controller.signal,
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+
+        const json = await response.json();
+
+        if (!cancelled) {
+          setData(json);
+          setError(null);
+        }
+      } catch (err) {
+        if (err.name === 'AbortError') return;
+
+        if (!cancelled) {
+          setError(err as Error);
+          console.error('Failed to fetch data:', err);
+        }
+      } finally {
+        if (!cancelled) {
+          setLoading(false);
+        }
+      }
+    }
+
+    fetchData();
+
+    return () => {
+      cancelled = true;
+      controller.abort();
+    };
+  }, [refetchKey]);
+
+  const refetch = () => setRefetchKey(k => k + 1);
+
+  return { data, loading, error, refetch };
+}
+```
+
+### 陷阱 2：不理解代码
+
+**问题：** 使用你不理解的代码会导致：
+- 代码出错时无法调试
+- 无法修改或扩展它
+- 无法在代码审查中解释它
+- 安全漏洞
+
+**解决方案 - 通过提问学习：**
+
+```
+# Instead of:
+"Write code to do X"
+
+# Ask for explanation:
+"Explain the concept of X, then show me pseudocode"
+
+# Then implementation:
+"Convert to TypeScript with detailed comments"
+
+# Then deep dive:
+"Explain each part and why these design choices were made"
+
+# Then alternatives:
+"What are the trade-offs? Show me 2 alternative approaches"
+```
+
+**对话示例：**
+```
+You: "Explain debouncing in React"
+AI: [Explains concept]
+
+You: "Show me pseudocode"
+AI: [Shows logic]
+
+You: "Now implement with useDebounce hook"
+AI: [Shows implementation]
+
+You: "Explain why we need useRef and useEffect here"
+AI: [Explains technical details]
+
+You: "What are edge cases I should handle?"
+AI: [Lists edge cases]
+
+# Now you UNDERSTAND it
+```
+
+### 陷阱 3：忽略性能
+
+**示例：**
+```python
+# ❌ AI's first attempt (works but slow - O(n²))
+def find_duplicates(arr):
+    duplicates = []
+    for i in range(len(arr)):
+        for j in range(i + 1, len(arr)):
+            if arr[i] == arr[j] and arr[i] not in duplicates:
+                duplicates.append(arr[i])
+    return duplicates
+
+# Always ask:
+"What's the time complexity? Can we optimize this?"
+
+# ✅ Optimized version (O(n))
+def find_duplicates(arr):
+    """Find duplicate elements in array - O(n) time, O(n) space"""
+    seen = set()
+    duplicates = set()
+
+    for item in arr:
+        if item in seen:
+            duplicates.add(item)
+        seen.add(item)
+
+    return list(duplicates)
+
+# For large datasets, ask for:
+"Show me the most efficient algorithm for this with 1 million items"
+```
+
+### 陷阱 4：不测试边缘情况
+
+```python
+# AI generates this:
+def divide(a, b):
+    return a / b
+
+# You must test:
+- divide(10, 2)  # Normal case
+- divide(10, 0)  # Zero division ❌
+- divide(10, -2) # Negative numbers
+- divide(0, 10)  # Zero numerator
+- divide(None, 2) # None values ❌
+- divide("10", "2") # Wrong types ❌
+- divide(float('inf'), 2) # Infinity
+- divide(10**100, 10**-100) # Overflow
+
+# Better implementation:
+def divide(a: float, b: float) -> float:
+    """
+    Safely divide two numbers
+
+    Args:
+        a: Numerator
+        b: Denominator
+
+    Returns:
+        Result of division
+
+    Raises:
+        TypeError: If inputs are not numbers
+        ValueError: If denominator is zero
+    """
+    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+        raise TypeError("Both arguments must be numbers")
+
+    if b == 0:
+        raise ValueError("Cannot divide by zero")
+
+    return a / b
+```
+
+---
+
+## 📊 成本管理
+
+### 跟踪你的支出
+
+```python
+# cost-tracker.py
+from datetime import datetime
+from typing import Dict, List
+import json
+
+class AIUsageTracker:
+    """Track AI API usage and costs across multiple models"""
+
+    def __init__(self, log_file='ai_usage.json'):
+        self.log_file = log_file
+        self.usage = {
+            'gpt-4': {'tokens': 0, 'cost': 0, 'requests': 0},
+            'gpt-4o': {'tokens': 0, 'cost': 0, 'requests': 0},
+            'gpt-3.5-turbo': {'tokens': 0, 'cost': 0, 'requests': 0},
+            'claude-3-opus': {'tokens': 0, 'cost': 0, 'requests': 0},
+            'claude-3-sonnet': {'tokens': 0, 'cost': 0, 'requests': 0},
+        }
+
+        # Prices per 1M tokens (as of 2025)
+        self.prices = {
+            'gpt-4': {'input': 30, 'output': 60},
+            'gpt-4o': {'input': 5, 'output': 15},
+            'gpt-3.5-turbo': {'input': 0.5, 'output': 1.5},
+            'claude-3-opus': {'input': 15, 'output': 75},
+            'claude-3-sonnet': {'input': 3, 'output': 15},
+        }
+
+    def track_request(self, model: str, input_tokens: int, output_tokens: int):
+        """Track a single API request"""
+        if model not in self.prices:
+            raise ValueError(f"Unknown model: {model}")
+
+        input_cost = input_tokens * self.prices[model]['input'] / 1_000_000
+        output_cost = output_tokens * self.prices[model]['output'] / 1_000_000
+        total_cost = input_cost + output_cost
+
+        self.usage[model]['tokens'] += input_tokens + output_tokens
+        self.usage[model]['cost'] += total_cost
+        self.usage[model]['requests'] += 1
+
+        # Log to file
+        self._log_request(model, input_tokens, output_tokens, total_cost)
+
+        return total_cost
+
+    def _log_request(self, model, input_tokens, output_tokens, cost):
+        """Append request to log file"""
+        entry = {
+            'timestamp': datetime.now().isoformat(),
+            'model': model,
+            'input_tokens': input_tokens,
+            'output_tokens': output_tokens,
+            'cost': cost
+        }
+
+        try:
+            with open(self.log_file, 'a') as f:
+                f.write(json.dumps(entry) + '\n')
+        except Exception as e:
+            print(f"Failed to log request: {e}")
+
+    def report(self, detailed=False):
+        """Generate usage report"""
+        total_cost = sum(m['cost'] for m in self.usage.values())
+        total_tokens = sum(m['tokens'] for m in self.usage.values())
+        total_requests = sum(m['requests'] for m in self.usage.values())
+
+        print(f"\n{'='*50}")
+        print(f"💰 AI Usage Report - {datetime.now().strftime('%Y-%m-%d %H:%M')}")
+        print(f"{'='*50}\n")
+
+        print(f"Total Spent: ${total_cost:.2f}")
+        print(f"Total Tokens: {total_tokens:,}")
+        print(f"Total Requests: {total_requests:,}")
+        print(f"Average per Request: ${total_cost/total_requests:.4f}\n" if total_requests > 0 else "\n")
+
+        for model, data in sorted(self.usage.items(), key=lambda x: x[1]['cost'], reverse=True):
+            if data['requests'] > 0:
+                print(f"{model}:")
+                print(f"  Requests: {data['requests']:,}")
+                print(f"  Tokens: {data['tokens']:,}")
+                print(f"  Cost: ${data['cost']:.2f}")
+                print(f"  Avg/request: ${data['cost']/data['requests']:.4f}\n")
+
+    def set_budget_alert(self, daily_limit: float):
+        """Alert if daily spending exceeds limit"""
+        today_cost = self._get_today_cost()
+        if today_cost >= daily_limit:
+            print(f"⚠️  BUDGET ALERT: Daily spending (${today_cost:.2f}) exceeds limit (${daily_limit:.2f})")
+            return True
+        return False
+
+    def _get_today_cost(self):
+        """Calculate today's spending from log"""
+        today = datetime.now().date()
+        total = 0
+
+        try:
+            with open(self.log_file, 'r') as f:
+                for line in f:
+                    entry = json.loads(line)
+                    entry_date = datetime.fromisoformat(entry['timestamp']).date()
+                    if entry_date == today:
+                        total += entry['cost']
+        except FileNotFoundError:
+            pass
+
+        return total
+
+# Usage example
+tracker = AIUsageTracker()
+
+# After each API call:
+cost = tracker.track_request('gpt-4o', input_tokens=1000, output_tokens=500)
+print(f"This request: ${cost:.4f}")
+
+# Check budget
+tracker.set_budget_alert(daily_limit=10.00)
+
+# Daily/weekly report:
+tracker.report()
+```
+
+### 成本优化策略
+
+#### 1. 使用适当的模型
+
+```python
+# Decision tree for model selection
+def select_model(task_type, complexity, budget):
+    """
+    Choose the right model for the task
+
+    Task types:
+    - boilerplate: Simple, repetitive code
+    - logic: Complex algorithms, business logic
+    - debug: Finding and fixing bugs
+    - explain: Code explanation and documentation
+    - review: Code review and suggestions
+    """
+
+    if budget == 'free':
+        return 'gpt-3.5-turbo'  # or DeepSeek
+
+    if task_type == 'boilerplate':
+        return 'gpt-3.5-turbo'  # $0.50/M - Good enough
+
+    if task_type in ['logic', 'debug'] and complexity == 'high':
+        return 'gpt-4o'  # $5/M - Best balance
+
+    if task_type == 'review' and complexity == 'high':
+        return 'claude-3-sonnet'  # $3/M - Excellent for analysis
+
+    return 'gpt-4o'  # Default: Best value
+
+# Examples:
+select_model('boilerplate', 'low', 'paid')  # gpt-3.5-turbo
+select_model('logic', 'high', 'paid')       # gpt-4o
+select_model('review', 'high', 'paid')      # claude-3-sonnet
+```
+
+#### 2. 提示词缓存（Claude）
+
+```python
+# Save 90% on repeated context
+from anthropic import Anthropic
+
+client = Anthropic()
+
+# Large context you'll reuse (e.g., your codebase)
+system_context = """
+[Your 50KB codebase documentation]
+"""
+
+# First request: Full cost
+response = client.messages.create(
+    model="claude-3-sonnet-20240229",
+    max_tokens=1024,
+    system=[
+        {
+            "type": "text",
+            "text": system_context,
+            "cache_control": {"type": "ephemeral"}  # Cache this
+        }
+    ],
+    messages=[{"role": "user", "content": "Explain the auth module"}]
+)
+
+# Subsequent requests within 5 minutes: 90% cheaper
+response = client.messages.create(
+    model="claude-3-sonnet-20240229",
+    max_tokens=1024,
+    system=[
+        {
+            "type": "text",
+            "text": system_context,
+            "cache_control": {"type": "ephemeral"}  # Uses cache
+        }
+    ],
+    messages=[{"role": "user", "content": "Now explain the database module"}]
+)
+
+# See our guide: (Coming in Phase 2: /blog/claude-prompt-caching)
+```
+
+#### 3. 批量请求
+
+```python
+# ❌ Expensive: 10 separate API calls
+results = []
+for item in items:
+    prompt = f"Process: {item}"
+    result = api_call(prompt)  # $$$
+    results.append(result)
+
+# ✅ Cheaper: 1 batched call
+prompt = """Process these items and return JSON array:
+
+Items:
+""" + "\n".join(f"- {item}" for item in items) + """
+
+Return format:
+[
+  {"input": "item1", "output": "result1"},
+  {"input": "item2", "output": "result2"}
+]
+"""
+
+result = api_call(prompt)  # $
+results = json.loads(result)
+```
+
+#### 4. 使用流式传输获得更好的用户体验
+
+```javascript
+// Costs same, feels 10x faster
+const openai = new OpenAI();
+
+const stream = await openai.chat.completions.create({
+    model: 'gpt-4o',
+    messages: [{ role: 'user', content: prompt }],
+    stream: true
+});
+
+for await (const chunk of stream) {
+    const content = chunk.choices[0]?.delta?.content || '';
+    process.stdout.write(content);  // Show immediately
+
+    // User can stop if they see it's going wrong
+    // Saves tokens!
+}
+```
+
+---
+
+## 🎓 学习 vs 复制
+
+### 建立理解，而不仅仅是代码
+
+**❌ 不要只是问：**
+```
+"Generate authentication system"
+```
+
+**✅ 学习模式：**
+```
+Step 1: "Explain JWT authentication flow step by step"
+Step 2: "What are the security considerations?"
+Step 3: "Show me token generation in Node.js with comments"
+Step 4: "How do we securely store tokens client-side?"
+Step 5: "Explain refresh token rotation and why it's important"
+Step 6: "Now show me complete implementation with all best practices"
+Step 7: "What could go wrong? What are common vulnerabilities?"
+
+Result: You UNDERSTAND it, can maintain it, can adapt it, can explain it
+```
+
+### 创建个人知识库
+
+```markdown
+# my-ai-learnings.md
+
+## 2025-11-10: Custom React Hooks Pattern
+
+### What I Learned
+AI showed me how to create reusable hooks for data fetching.
+
+### Key Concepts
+- Hooks encapsulate stateful logic
+- Return object with state + actions
+- Always handle cleanup in useEffect
+- TypeScript types make hooks safer
+
+### Template
+```tsx
+function useCustomHook<T>(params: Params): Result<T> {
+  const [data, setData] = useState<T | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<Error | null>(null);
+
+  useEffect(() => {
+    // Async logic with cleanup
+    return () => cleanup();
+  }, [dependencies]);
+
+  return { data, loading, error };
+}
+```
+
+### Real Examples I've Built
+1. `useAuth` - Authentication state management
+2. `useApi` - API calls with loading/error states
+3. `useLocalStorage` - Sync state with localStorage
+4. `useDebounce` - Debounced input handling
+
+### When to Use
+- Multiple components need same data
+- Complex state logic
+- Side effects need cleanup
+- Want to test logic separately
+
+### Pitfalls to Avoid
+- Don't put hooks in conditionals
+- Remember dependency arrays
+- Clean up subscriptions
+- Handle race conditions
+```
+
+---
+
+## 🛡️ 隐私与道德
+
+### 不要与 AI 分享什么
+
+```
+❌ 永远不要分享：
+- API 密钥、令牌、凭证
+- 用户个人数据（电子邮件、姓名、地址）
+- 专有算法或业务逻辑
+- 机密代码或商业秘密
+- 内部 URL、IP 或基础设施详情
+- 客户信息或分析数据
+- 修补前的安全漏洞
+- 公司财务信息
+
+✅ 可以安全分享：
+- 公共 API 使用模式
+- 一般算法问题
+- 框架/库使用
+- 匿名化/合成示例
+- 开源代码
+- 公共文档问题
+```
+
+### 脱敏清单
+
+```python
+# ❌ Don't paste this to AI:
+API_KEY = "sk-abc123xyz789"
+DATABASE_URL = "postgres://admin:P@ssw0rd@internal-db.company.com:5432/prod"
+user_email = "john.doe@bigclient.com"
+SECRET_KEY = "my-secret-key-12345"
+
+# ✅ Sanitize first:
+API_KEY = os.getenv("API_KEY")
+DATABASE_URL = os.getenv("DATABASE_URL")
+user_email = "user@example.com"  # Use example.com
+SECRET_KEY = os.getenv("SECRET_KEY")
+
+# When sharing code:
+def process_payment(user_id, amount):
+    # Don't show: Real payment processor API
+    # Do show: Generic example
+    payment_api.charge(user_id, amount)
+```
+
+---
+
+## 📚 推荐工作流程
+
+### 日常开发流程
+
+```markdown
+## 上午（9:00 AM）
+1. 审查隔夜错误
+   - 将错误日志复制到 ChatGPT（已脱敏）
+   - "分析这些错误并建议根本原因"
+
+2. 规划今天的任务
+   - "我需要实现 X。最佳方法是什么？"
+   - "将此任务分解为子任务"
+
+3. 生成测试数据
+   - "生成 20 个逼真的测试用户 JSON"
+   - "为此端点创建模拟 API 响应"
+
+## 活跃编码（9:30 AM - 5:00 PM）
+1. 自己编写函数签名
+   ```typescript
+   // You write:
+   function processOrder(order: Order): Promise<ProcessedOrder> {
+     // TODO
+   }
+   ```
+
+2. 如果卡住就向 AI 请求实现
+   - "按照这些要求实现此函数..."
+
+3. 逐行审查 AI 代码
+   - 理解每一行
+   - 检查边缘情况
+   - 验证安全性
+
+4. 彻底测试
+   - 先编写测试
+   - 让 AI 生成额外的测试用例
+
+5. 如需要则重构
+   - "如何使其更易维护？"
+   - "性能影响是什么？"
+
+## 提交前（5:00 PM）
+1. AI 代码审查
+   - 粘贴你的更改
+   - "审查此代码的 bug、安全性和最佳实践"
+
+2. 生成/更新测试
+   - "为此函数生成单元测试"
+
+3. 更新文档
+   - "为这些函数生成 JSDoc"
+
+4. 编写提交消息
+   - "为这些更改生成提交消息"
+
+## 代码审查
+1. AI 先审查 PR
+2. 修复明显问题
+3. 人工审查（必须！）
+4. 合并
+
+## 每周回顾（周五）
+1. 回顾本周的 AI 使用
+   - 成本报告
+   - 什么工作得好？
+   - 什么没有效果？
+
+2. 更新提示词库
+   - 保存成功的提示词
+   - 优化模板
+
+3. 与团队分享学习
+```
+
+---
+
+## 🚀 高级技巧
+
+### 1. 创建自定义 GPT（ChatGPT Plus）
+
+```
+# Custom GPT Configuration
+
+Name: "MyCompany Backend Developer"
+
+Description:
+Expert Python backend developer following MyCompany coding standards
+
+Instructions:
+You are an expert backend developer for MyCompany. Always follow these rules:
+
+1. Code Style:
+   - Use TypeScript with strict mode
+   - Follow our style guide: [link to guide]
+   - Use functional programming patterns
+   - Prefer immutability
+
+2. Architecture:
+   - Follow clean architecture
+   - Use dependency injection
+   - Separate business logic from infrastructure
+   - Write tests for all business logic
+
+3. Error Handling:
+   - Use our error handling pattern:
+   ```typescript
+   try {
+     // operation
+   } catch (error) {
+     logger.error('Operation failed', { error, context });
+     throw new AppError('User-friendly message', { cause: error });
+   }
+   ```
+
+4. Security:
+   - Validate all inputs
+   - Sanitize outputs
+   - Use parameterized queries
+   - No hardcoded secrets
+
+5. Testing:
+   - Include unit tests with every function
+   - Use Jest + Supertest
+   - Mock external dependencies
+   - Aim for 90%+ coverage
+
+6. Documentation:
+   - TSDoc comments for public APIs
+   - Inline comments for complex logic
+   - README for each module
+
+Knowledge Files:
+- company-style-guide.md
+- api-patterns.md
+- common-utilities.ts
+- test-examples.ts
+
+Conversation Starters:
+- "Create a new API endpoint following our patterns"
+- "Review this code for compliance with our standards"
+- "Generate tests for this function"
+- "Explain this legacy code"
+```
+
+### 2. 构建团队提示词库
+
+```markdown
+# team-prompts.md
+
+## 代码审查提示词
+```
+Act as a senior software engineer. Review this [language] code for:
+
+1. **Bugs and Logic Errors**
+   - Off-by-one errors
+   - Null pointer exceptions
+   - Race conditions
+   - Edge cases not handled
+
+2. **Security Vulnerabilities**
+   - SQL injection
+   - XSS
+   - CSRF
+   - Authentication/authorization issues
+   - Input validation
+
+3. **Performance Issues**
+   - Inefficient algorithms (O(n²) when O(n) exists)
+   - Unnecessary loops
+   - Memory leaks
+   - N+1 queries
+
+4. **Code Style** (follow [style_guide])
+   - Naming conventions
+   - Code organization
+   - Comments and documentation
+   - DRY violations
+
+5. **Missing Edge Cases**
+   - Null/undefined handling
+   - Empty arrays/strings
+   - Boundary conditions
+   - Error states
+
+Provide specific line-by-line feedback with:
+- What's wrong
+- Why it's a problem
+- How to fix it
+- Example of correct code
+
+Code to review:
+```{language}
+{paste_code_here}
+```
+```
+
+## 测试生成提示词
+```
+Generate comprehensive [framework] tests for this [language] function:
+
+```[language]
+[paste_code_here]
+```
+
+Requirements:
+1. **Test Coverage**
+   - Happy path (valid inputs)
+   - Edge cases (boundary values)
+   - Error cases (invalid inputs)
+   - Null/undefined handling
+   - Type checking (if applicable)
+
+2. **Structure**
+   - Descriptive test names
+   - Arrange-Act-Assert pattern
+   - One assertion per test (when possible)
+   - Group related tests in describe blocks
+
+3. **Mocking**
+   - Mock external dependencies (API calls, database, etc.)
+   - Mock timers if needed
+   - Provide example mock data
+
+4. **Coverage Goal**: 95%+
+
+5. **Follow this format**:
+```{language}
+describe('functionName', () => {
+  describe('when given valid input', () => {
+    it('should return expected result', () => {
+      // Arrange
+      const input = 'valid';
+      const expected = 'result';
+
+      // Act
+      const actual = functionName(input);
+
+      // Assert
+      expect(actual).toBe(expected);
+    });
+  });
+
+  describe('when given invalid input', () => {
+    it('should throw ValidationError', () => {
+      expect(() => functionName('')).toThrow(ValidationError);
+    });
+  });
+});
+```
+```
+
+## 文档生成提示词
+```
+Generate comprehensive documentation for this code:
+
+```{language}
+{paste_code_here}
+```
+
+Include:
+
+1. **Overview**
+   - Purpose and responsibility
+   - When to use this code
+   - High-level description
+
+2. **Parameters** (for functions)
+   - Name and type
+   - Description
+   - Required vs optional
+   - Default values
+   - Validation rules
+
+3. **Return Values**
+   - Type
+   - Description
+   - Possible values
+
+4. **Exceptions/Errors**
+   - What errors can be thrown
+   - When they occur
+   - How to handle them
+
+5. **Usage Examples**
+   - Basic usage
+   - Advanced usage
+   - Common patterns
+   - Edge cases
+
+6. **Notes**
+   - Performance considerations
+   - Side effects
+   - Dependencies
+   - Related functions
+
+Format: \{JSDoc/TSDoc/Python docstring/etc\}
+```
+
+## 调试提示词
+```
+I'm debugging a [language] issue:
+
+**Error Message:**
+```
+[paste_error]
+```
+
+**Code:**
+```[language]
+[paste_code]
+```
+
+**Context:**
+- Framework/Library: [framework] version [version]
+- Environment: [dev/staging/production]
+- When it happens: [trigger_condition]
+
+**What I've tried:**
+1. [action_1]
+2. [action_2]
+3. [action_3]
+
+**Expected behavior:**
+[describe_expected]
+
+**Actual behavior:**
+[describe_actual]
+
+Please:
+1. Explain the root cause
+2. Provide step-by-step fix
+3. Explain why the fix works
+4. Suggest how to prevent this in future
+5. Recommend tests to add
+```
+
+## 重构提示词
+```
+Refactor this [language] code to improve:
+
+1. **Readability**
+   - Better variable names
+   - Clearer logic flow
+   - Appropriate comments
+
+2. **Maintainability**
+   - Smaller functions
+   - Single responsibility
+   - Reduced coupling
+
+3. **Performance**
+   - Optimize algorithms
+   - Remove unnecessary operations
+   - Better data structures
+
+4. **Testability**
+   - Dependency injection
+   - Pure functions when possible
+   - Mockable dependencies
+
+**Current code:**
+```{language}
+{paste_code}
+```
+
+**Requirements:**
+- Maintain exact same behavior
+- Keep all edge cases
+- Add comments explaining changes
+- Show before/after comparison
+- Explain why changes improve code
+```
+```
+
+### 3. 将 AI 集成到 CI/CD
+
+```yaml
+# .github/workflows/ai-assist.yml
+name: AI Code Assistant
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  ai-review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Get Changed Files
+        id: changed-files
+        run: |
+          echo "files=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | tr '\n' ' ')" >> $GITHUB_OUTPUT
+
+      - name: AI Code Review
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          python scripts/ai-review.py --files "${{ steps.changed-files.outputs.files }}"
+
+      - name: AI Security Scan
+        run: |
+          python scripts/ai-security-scan.py
+
+      - name: Generate Test Suggestions
+        run: |
+          python scripts/ai-test-suggestions.py
+
+      - name: Comment PR
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+            const review = fs.readFileSync('ai-review.md', 'utf8');
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `## 🤖 AI Code Review\n\n${review}`
+            });
+```
+
+```python
+# scripts/ai-review.py
+import os
+import sys
+from openai import OpenAI
+
+client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+
+def review_code(file_path):
+    """AI review a single file"""
+    with open(file_path, 'r') as f:
+        code = f.read()
+
+    prompt = f"""
+    Review this code for:
+    1. Bugs and logic errors
+    2. Security vulnerabilities
+    3. Performance issues
+    4. Code style
+    5. Missing edge cases
+
+    File: [file_path]
+
+    ```
+    [code]
+    ```
+
+    Provide specific, actionable feedback.
+    """
+
+    response = client.chat.completions.create(
+        model="gpt-4o",
+        messages=[{"role": "user", "content": prompt}]
+    )
+
+    return response.choices[0].message.content
+
+def main():
+    files = sys.argv[2].split()  # --files file1.py file2.py
+
+    reviews = []
+    for file_path in files:
+        if file_path.endswith(('.py', '.js', '.ts', '.tsx', '.java')):
+            print(f"Reviewing {file_path}...")
+            review = review_code(file_path)
+            reviews.append(f"### {file_path}\n\n{review}\n")
+
+    # Write review to file for PR comment
+    with open('ai-review.md', 'w') as f:
+        f.write('\n'.join(reviews))
+
+if __name__ == '__main__':
+    main()
+```
+
+---
+
+## ✅ 负责任的 AI 使用清单
+
+在提交 AI 生成的代码之前，问问自己：
+
+```markdown
+### 代码质量
+- [ ] 我已阅读并理解每一行
+- [ ] 我已测试所有正常路径
+- [ ] 我已测试边缘情况
+- [ ] 我已测试错误条件
+- [ ] 我已检查性能问题
+- [ ] 代码遵循项目风格指南
+- [ ] 文档准确完整
+
+### 安全性
+- [ ] 没有硬编码的凭证或密钥
+- [ ] 存在输入验证
+- [ ] 输出已正确清理
+- [ ] 没有 SQL 注入漏洞
+- [ ] 没有 XSS 漏洞
+- [ ] 认证/授权正确
+- [ ] 安全扫描器未显示问题
+
+### 法律与道德
+- [ ] 我没有与 AI 分享专有代码
+- [ ] 我没有分享客户数据
+- [ ] 我已验证代码许可证
+- [ ] 我有权使用此代码
+- [ ] 如需要已添加归属
+
+### 专业性
+- [ ] 我可以在代码审查中解释此代码
+- [ ] 我可以修改和扩展此代码
+- [ ] 如果代码出错我可以调试
+- [ ] 我从中学到了东西
+- [ ] 这遵循公司的 AI 使用政策
+
+### 成本与资源
+- [ ] 我已跟踪 API 成本
+- [ ] 我为任务使用了适当的模型
+- [ ] 我在预算范围内
+```
+
+---
+
+## 🔗 相关资源
+
+### 官方文档
+- [OpenAI 最佳实践](https://platform.openai.com/docs/guides/prompt-engineering)
+- [Anthropic 提示词工程](https://docs.anthropic.com/claude/docs/prompt-engineering)
+- [GitHub Copilot 最佳实践](https://docs.github.com/copilot)
+
+### 安全
+- [OWASP AI 安全](https://owasp.org/www-project-machine-learning-security/)
+- [OWASP Top 10](https://owasp.org/www-project-top-ten/)
+
+### 我们的指南
+- [FAQ - 常见问题](/docs/faq)
+- [入门教程](/docs/tutorials/chatgpt-coding-guide)
+- [AI 编程工具比较](/docs/tools/ai-coding-tools-extended)
+- [提示词工程工具](/docs/tools/prompt-engineering-tools)
+- Claude 提示词缓存指南（即将推出）
+
+---
+
+## 📝 总结
+
+**关键要点：**
+
+1. **安全第一**：始终审查 AI 生成代码的安全问题
+2. **理解，而不是复制**：学习模式，而不仅仅是复制粘贴
+3. **彻底测试**：AI 会遗漏边缘情况，你必须测试
+4. **管理成本**：跟踪支出，使用适当的模型
+5. **尊重隐私**：永远不要分享敏感数据
+6. **审查一切**：AI 是工具，不是判断力的替代品
+7. **建立知识**：记录你学到的东西
+8. **负责任地使用**：遵循专业和道德标准
+
+**记住**：AI 编程助手是放大你能力的强大工具。明智地使用它们，它们会让你成为更高效、更有效的开发者。
+
+---
+
+**最后更新：** 2025-11-10 | **版本：** 2.0
+
+*有问题？查看我们的[FAQ](/docs/faq)或[加入我们的社区](https://discord.gg/aicodingclub)*
