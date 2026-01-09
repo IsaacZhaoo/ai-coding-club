@@ -17,59 +17,25 @@ description: 完整的初学者到求职就绪的课程，使用AI助手学习�
 
 [开始第1阶段 →](./foundations/welcome)
 
-:::tip
-**🔜 第2阶段：核心技能（敬请期待）**
-
+### ⚡ 第2阶段：核心技能（8课时）
 掌握每位开发者必备的基础工具和技术。
 
-**你将学习：**
-- 💻 命令行精通
-- 🔄 Git & GitHub 工作流
-- 🧪 测试策略
-- 💡 高级提示技巧
+[开始第2阶段 →](./02-essential-skills)
 
-💬 [在 GitHub Discussions 关注更新](https://github.com/IsaacZhaoo/ai-coding-club/discussions)
-:::
-
-:::info
-**🔜 第3阶段：构建项目（敬请期待）**
-
+### 🏗️ 第3阶段：构建项目（7课时）
 应用所学技能，从规划到部署构建真实项目。
 
-**你将构建：**
-- 📋 项目规划与架构
-- 🏗️ 全栈应用程序
-- 📦 生产就绪代码
-- 🚀 已部署的项目
+[开始第3阶段 →](./03-building-projects)
 
-💬 [在 GitHub Discussions 关注更新](https://github.com/IsaacZhaoo/ai-coding-club/discussions)
-:::
-
-:::note
-**🔜 第4阶段：专业化（敬请期待）**
-
+### 🎯 第4阶段：专业化（6课时）
 选择你的方向：前端、后端或数据/自动化专业化。
 
-**专业化路径：**
-- 🌐 前端开发
-- ⚙️ 后端工程
-- 📊 数据与自动化
+[开始第4阶段 →](./04-specialization)
 
-💬 [在 GitHub Discussions 关注更新](https://github.com/IsaacZhaoo/ai-coding-club/discussions)
-:::
-
-:::caution
-**🔜 第5阶段：职业发展（敬请期待）**
-
+### 💼 第5阶段：职业发展（2课时）
 通过作品集构建和面试准备进入就业市场。
 
-**职业准备：**
-- 💼 作品集项目
-- 📝 简历 & GitHub 个人资料
-- 🎯 面试策略
-
-💬 [在 GitHub Discussions 关注更新](https://github.com/IsaacZhaoo/ai-coding-club/discussions)
-:::
+[开始第5阶段 →](./05-career)
 
 ## 学习方法
 
