@@ -11,11 +11,6 @@ Welcome to the AI Coding Club community! This is a space for learners, developer
 
 ## 💬 Get Help & Ask Questions
 
-### GitHub Discussions
-Our primary community platform for discussions, Q&A, and sharing experiences.
-
-**Coming Soon**: We're setting up GitHub Discussions for structured community conversations.
-
 ### GitHub Issues
 Report bugs, request features, or ask technical questions.
 

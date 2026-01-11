@@ -536,16 +536,11 @@ graph LR
     style Cloud fill:#00BCD4,color:#fff
 ```
 
-:::info 🚀 Coming Soon | 敬请期待
-深度专业化路径正在制作中！订阅以获取更新通知。
-**Specialization paths are in development! Subscribe for updates.**
-:::
-
 **Choose your specialization:**
-- 🌐 **Full-Stack Web Development** 🔜 - Build production-ready web apps
-- 🤖 **AI Application Development** 🔜 - RAG systems, agents, LangChain
-- 📊 **Data Engineering** 🔜 - Data pipelines, analysis, visualization
-- ☁️ **DevOps & Cloud** 🔜 - Docker, Kubernetes, CI/CD, AWS/Azure
+- 🌐 **Full-Stack Web Development** - Build production-ready web apps
+- 🤖 **AI Application Development** - RAG systems, agents, LangChain
+- 📊 **Data Engineering** - Data pipelines, analysis, visualization
+- ☁️ **DevOps & Cloud** - Docker, Kubernetes, CI/CD, AWS/Azure
 
 ---
 
