@@ -22,3 +22,38 @@ perspective:
   label: 观点
   permalink: /perspective
   description: 关于技术和编程的观点
+
+philosophy:
+  label: 哲学
+  permalink: /philosophy
+  description: 关于编程和AI的哲学思考
+
+future-of-coding:
+  label: 编程的未来
+  permalink: /future-of-coding
+  description: 探索AI时代编程的未来
+
+about:
+  label: 关于
+  permalink: /about
+  description: 关于AI编程俱乐部和我们的使命
+
+vision:
+  label: 愿景
+  permalink: /vision
+  description: 我们对AI驱动开发的愿景
+
+beginner-friendly:
+  label: 新手友好
+  permalink: /beginner-friendly
+  description: 专为完全初学者设计的内容
+
+ai-assisted-learning:
+  label: AI辅助学习
+  permalink: /ai-assisted-learning
+  description: 使用ChatGPT和GitHub Copilot等AI工具学习编程
+
+draft-example:
+  label: 草稿示例
+  permalink: /draft-example
+  description: 演示草稿功能的示例内容
