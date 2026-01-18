@@ -172,7 +172,7 @@ AI会生成上面的代码，你只需复制运行。
 准备开始了吗？
 
 1. **[Stage 0: AI对话基础](/docs/roadmap/stage0)** - 选择工具，学会提问
-2. **[最小必要知识](./minimal-knowledge)** - 了解核心概念
+2. **[最小必要知识](../minimal-knowledge/)** - 了解核心概念
 3. **[Excel处理工作流](/docs/workflows/excel)** - 实战第一个任务
 
 ---

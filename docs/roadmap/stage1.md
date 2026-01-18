@@ -200,7 +200,7 @@ After completing this stage, you will:
 - ✓ Master best practices for office scenarios
 - ✓ Be ready to learn **Stage 2: Context & Architecture**
 
-**[Start Stage 2 →](./stage2)**
+**[Start Stage 2 →](../stage2/)**
 
 ---
 

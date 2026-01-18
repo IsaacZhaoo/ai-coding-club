@@ -448,8 +448,8 @@ print(f"\n完成！共备份 {copied_count} 个文件")
 
 ## 下一步
 
-- **数据处理** → [数据处理片段](./data-processing)
-- **API请求** → [API请求片段](./api-request)
+- **数据处理** → [数据处理片段](../data-processing/)
+- **API请求** → [API请求片段](../api-request/)
 - **完整工作流** → [Excel处理工作流](/docs/workflows/excel)
 
 ---

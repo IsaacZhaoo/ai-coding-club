@@ -196,7 +196,7 @@ After completing this stage, you will:
 - ✓ Master basic prompt techniques
 - ✓ Be ready to learn **Stage 1: AI Reality & Limitations**
 
-**[Start Stage 1 →](./stage1)**
+**[Start Stage 1 →](../stage1/)**
 
 ---
 

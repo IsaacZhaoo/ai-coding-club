@@ -549,8 +549,8 @@ response = session.get('https://example.com/profile')
 
 ## 下一步
 
-- **文件操作** → [文件操作片段](./file-operations)
-- **数据处理** → [数据处理片段](./data-processing)
+- **文件操作** → [文件操作片段](../file-operations/)
+- **数据处理** → [数据处理片段](../data-processing/)
 - **邮件发送** → [邮件处理工作流](/docs/workflows/email)
 
 ---

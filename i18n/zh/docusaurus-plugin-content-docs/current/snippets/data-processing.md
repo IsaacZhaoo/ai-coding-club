@@ -460,8 +460,8 @@ print(f"金额不一致: {len(amount_diff)} 条")
 
 ## 下一步
 
-- **文件操作** → [文件操作片段](./file-operations)
-- **API请求** → [API请求片段](./api-request)
+- **文件操作** → [文件操作片段](../file-operations/)
+- **API请求** → [API请求片段](../api-request/)
 - **完整工作流** → [Excel处理工作流](/docs/workflows/excel)
 
 ---

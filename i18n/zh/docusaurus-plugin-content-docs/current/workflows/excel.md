@@ -285,7 +285,7 @@ print(f"删除了 {len(df_original) - len(df)} 行重复数据")
 
 ## 下一步
 
-- **更多工作流** → [报告生成工作流](./reporting)
+- **更多工作流** → [报告生成工作流](../reporting/)
 - **代码片段** → [数据处理片段](/docs/snippets/data-processing)
 - **深入学习** → [Stage 2: 上下文与架构](/docs/roadmap/stage2)
 

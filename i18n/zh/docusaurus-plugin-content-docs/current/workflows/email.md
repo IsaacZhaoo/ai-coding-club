@@ -393,7 +393,7 @@ XX经理，您好！
 ## 下一步
 
 - **基础概念** → [什么是AI编程](/docs/aicoding/what-is-aicoding)
-- **数据处理** → [Excel处理工作流](./excel)
+- **数据处理** → [Excel处理工作流](../excel/)
 - **代码片段** → [API请求片段](/docs/snippets/api-request)（自动化邮件发送）
 
 ---
