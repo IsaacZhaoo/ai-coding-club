@@ -200,7 +200,7 @@ import VideoEmbed from '@site/src/components/VideoEmbed';
 - ✓ 掌握办公场景的最佳实践
 - ✓ 准备好学习 **Stage 2: 上下文与架构**
 
-**[开始 Stage 2 →](./stage2)**
+**[开始 Stage 2 →](../stage2/)**
 
 ---
 
