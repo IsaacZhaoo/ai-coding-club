@@ -452,7 +452,7 @@ Based on Cursor's prompt design, here are techniques you can apply immediately:
 
 - [Cursor Official Documentation](https://docs.cursor.com)
 - [Anthropic Prompt Engineering Guide](https://docs.anthropic.com/claude/docs/prompt-engineering)
-- [AI Coding Club: Vibe Coding](/docs/stages/stage0-vibecoding)
+- [AI Coding Club: Vibe Coding](/docs/roadmap/stage0/)
 
 ---
 

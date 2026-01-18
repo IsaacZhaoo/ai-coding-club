@@ -27,13 +27,13 @@ We believe in quality over quantity. Every resource on this platform is:
 
 ## The Three Stages
 
-### [Stage 0: Vibecoding](/docs/stages/stage0-vibecoding)
+### [Stage 0: Vibecoding](/docs/roadmap/stage0/)
 Start building immediately with AI assistance. Perfect for absolute beginners.
 
-### [Stage 1: Reality Check](/docs/stages/stage1-reality-check)
+### [Stage 1: Reality Check](/docs/roadmap/stage1/)
 Understand AI's limitations and develop best practices. Build sustainable coding habits.
 
-### [Stage 2: Context & Architecture](/docs/stages/stage2-context)
+### [Stage 2: Context & Architecture](/docs/roadmap/stage2/)
 Master advanced techniques for AI collaboration. Structure projects for maximum effectiveness.
 
 ## Get Started
@@ -42,4 +42,4 @@ Master advanced techniques for AI collaboration. Structure projects for maximum 
 2. **Follow curated resources** - we've done the research for you
 3. **Build projects** - apply what you learn immediately
 
-Ready to begin? Start with [Stage 0: Vibecoding](/docs/stages/stage0-vibecoding)!
+Ready to begin? Start with [Stage 0: Vibecoding](/docs/roadmap/stage0/)!

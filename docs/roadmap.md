@@ -569,7 +569,7 @@ The projects are suggestions. If you have an idea you're passionate about, build
 
 ## 🎓 What's Next?
 
-Ready to start? Head to [Stage 0: Vibecoding](/docs/stages/stage0-vibecoding) and build your first project today!
+Ready to start? Head to [Stage 0: Vibecoding](/docs/roadmap/stage0/) and build your first project today!
 
 ---
 

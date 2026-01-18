@@ -569,7 +569,7 @@ graph LR
 
 ## 🎓 下一步
 
-准备好开始了吗？前往 [阶段 0: Vibecoding](/docs/stages/stage0-vibecoding)，今天就构建你的第一个项目！
+准备好开始了吗？前往 [阶段 0: Vibecoding](/docs/roadmap/stage0/)，今天就构建你的第一个项目！
 
 ---
 

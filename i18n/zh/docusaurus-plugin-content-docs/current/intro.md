@@ -27,13 +27,13 @@ AI 编码俱乐部是一个精心策划的平台，旨在帮助你利用 AI 助�
 
 ## 三个阶段
 
-### [第 0 阶段：Vibecoding](/docs/stages/stage0-vibecoding)
+### [第 0 阶段：Vibecoding](/docs/roadmap/stage0/)
 立即开始使用 AI 助手构建。非常适合绝对初学者。
 
-### [第 1 阶段：现实检查](/docs/stages/stage1-reality-check)
+### [第 1 阶段：现实检查](/docs/roadmap/stage1/)
 理解 AI 的限制并制定最佳实践。培养可持续的编码习惯。
 
-### [第 2 阶段：上下文与架构](/docs/stages/stage2-context)
+### [第 2 阶段：上下文与架构](/docs/roadmap/stage2/)
 掌握 AI 协作的高级技术。组织项目以获得最大效果。
 
 ## 开始使用
@@ -42,4 +42,4 @@ AI 编码俱乐部是一个精心策划的平台，旨在帮助你利用 AI 助�
 2. **遵循精心策划的资源** - 我们为你完成了研究
 3. **构建项目** - 立即应用你学到的东西
 
-准备好开始了吗？从 [第 0 阶段：Vibecoding](/docs/stages/stage0-vibecoding) 开始吧！
+准备好开始了吗？从 [第 0 阶段：Vibecoding](/docs/roadmap/stage0/) 开始吧！
