@@ -5,6 +5,15 @@ title: 'Understanding AI Output: What''s Really Happening'
 description: 'Understanding AI Output: What''s Really Happening'
 ---
 
+> TL;DR: Learn how to evaluate AI output for correctness, quality, and safety.
+
+## Key steps
+1. Check behavior: does it meet the requirements?
+2. Check code quality: clarity, structure, and edge cases.
+3. Check safety: secrets, validation, and risky defaults.
+
+## Practice
+- Take one AI snippet and annotate it line-by-line with what it does.
 
 After your first few interactions with an AI coding assistant, you have some code. But what does it actually mean? This post will teach you how to read the code AI generates, a crucial skill for any developer.
 

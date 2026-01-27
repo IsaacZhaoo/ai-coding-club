@@ -4,9 +4,16 @@ title: AI编程课程
 description: 完整的初学者到求职就绪的课程，使用AI助手学习编程
 ---
 
+import CourseSchema from '@site/src/components/CourseSchema';
+
 # AI编程课程
 
 欢迎来到AI编程俱乐部课程！这个综合课程使用AI编程助手将你从绝对初学者带到可求职的开发者。
+
+<CourseSchema
+  name="AI 编程课程"
+  description="完整的初学者到求职就绪课程，使用 AI 助手学习编程。"
+/>
 
 ## 课程结构
 
@@ -56,5 +63,11 @@ description: 完整的初学者到求职就绪的课程，使用AI助手学习�
 - 一台带互联网连接的计算机
 - 好奇心和实验意愿
 - 无需先前编程经验
+
+## 相关资源
+
+- 先看完整学习路径：[AI 编程学习路线图](/docs/ai-coding-roadmap)
+- 选择适合你的助手：[AI 编程工具](/docs/tools)
+- 常见问题解答：[FAQ](/docs/faq)
 
 准备开始了吗？点击上面的"开始第1阶段"！

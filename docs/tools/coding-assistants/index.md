@@ -1,8 +1,10 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 title: AI Coding Assistants
 description: Complete guide to AI-powered coding assistants and IDEs
 ---
+
+import FAQSchema from '@site/src/components/FAQSchema';
 
 # AI Coding Assistants
 
@@ -10,15 +12,33 @@ description: Complete guide to AI-powered coding assistants and IDEs
 
 AI coding assistants have revolutionized how developers write code. This section covers everything you need to know about choosing and using AI-powered development tools.
 
+<FAQSchema
+  items={[
+    {
+      question: 'Which AI coding assistant should I start with?',
+      answer: 'Start with Codeium if you want a free option, or ChatGPT if you want a flexible learning assistant. Upgrade to Cursor or Copilot when you need faster editing.',
+    },
+    {
+      question: 'Is Cursor better than Copilot?',
+      answer: 'Cursor is stronger for multi-file edits and refactors, while Copilot is better at inline completions. Many developers use both.',
+    },
+    {
+      question: 'Do I need to pay to get value from AI coding tools?',
+      answer: 'No. Free tiers can be enough to learn the workflow, and you can upgrade once you see clear time savings.',
+    },
+  ]}
+/>
+
 ## 📋 Quick Comparison
 
 | Tool | Type | Price | Best For |
 |------|------|-------|----------|
-| [Cursor](#cursor) | Full IDE | $20/mo | Professional development |
-| [Claude Code](#claude-code) | CLI Tool | $20/mo | Complex reasoning |
-| [GitHub Copilot](#github-copilot) | Extension | $10/mo | VS Code users |
-| [Codeium](#codeium) | Extension | Free | Budget-conscious |
-| [Windsurf](#windsurf) | Full IDE | Free beta | Cursor alternative |
+| [Cursor](/docs/tools/coding-assistants/cursor) | Full IDE | Paid plans | Multi-file work + refactors |
+| [Claude Code](/docs/tools/coding-assistants/claude-code) | CLI Tool | Paid plans | Planning + complex reasoning |
+| [GitHub Copilot](/docs/tools/coding-assistants/github-copilot) | Extension | Paid plans | Inline autocomplete |
+| [ChatGPT](/docs/tools/coding-assistants/chatgpt) | Chat assistant | Free/paid | Learning + debugging + writing |
+| [Codeium](/docs/tools/coding-assistants/codeium) | Extension | Free/paid | Budget-friendly autocomplete |
+| Windsurf | Full IDE | Varies | Codeium ecosystem IDE |
 
 ---
 
@@ -40,6 +60,8 @@ Cursor is a fork of VS Code with AI deeply integrated. It's currently the gold s
 
 **Best for**: Professional developers working on medium to large codebases
 
+[Read the full Cursor guide →](/docs/tools/coding-assistants/cursor)
+
 [↑ Back to comparison](#-quick-comparison)
 
 ---
@@ -59,6 +81,8 @@ Claude Code brings Anthropic's most powerful AI model to your terminal. Exceptio
 **Pricing**: Included with Claude Pro ($20/month)
 
 **Best for**: Architecture planning, complex debugging, large-scale refactoring
+
+[Read the full Claude Code guide →](/docs/tools/coding-assistants/claude-code)
 
 [↑ Back to comparison](#-quick-comparison)
 
@@ -80,7 +104,19 @@ The original AI coding assistant, now with chat capabilities. Solid choice if yo
 
 **Best for**: Developers using VS Code and GitHub
 
+[Read the full Copilot guide →](/docs/tools/coding-assistants/github-copilot)
+
 [↑ Back to comparison](#-quick-comparison)
+
+---
+
+### ChatGPT
+
+**Best for learning, debugging, and planning**
+
+ChatGPT is flexible and beginner-friendly. It's great for explaining concepts, turning logs into hypotheses, and producing plans and documentation.
+
+[Read the full ChatGPT guide →](/docs/tools/coding-assistants/chatgpt)
 
 ---
 
@@ -99,6 +135,8 @@ Remarkably capable free AI coding assistant with unlimited usage. Great for stud
 **Pricing**: Free (unlimited)
 
 **Best for**: Budget-conscious developers, students, learning
+
+[Read the full Codeium guide →](/docs/tools/coding-assistants/codeium)
 
 [↑ Back to comparison](#-quick-comparison)
 
@@ -119,7 +157,6 @@ New entrant from Codeium with Cursor-like features. Currently in free beta.
 **Pricing**: Free (beta)
 
 **Best for**: Developers exploring Cursor alternatives
-
 [↑ Back to comparison](#-quick-comparison)
 
 ---
@@ -159,3 +196,19 @@ New AI coding tools launch frequently. Check back regularly for updates on:
 - Best practices
 
 Last updated: {new Date().toLocaleDateString()}
+
+---
+
+## FAQ
+
+### Which AI coding assistant should I start with?
+
+Start with Codeium (free) or ChatGPT (flexible learning). Move to Cursor or Copilot when you want faster editing inside your IDE.
+
+### Is Cursor better than Copilot?
+
+Cursor is stronger for multi-file edits and refactors. Copilot is excellent at inline completions. Many developers use both.
+
+### Do I need to pay to get value?
+
+No. Use free tiers to learn. Upgrade only when you see consistent time savings.

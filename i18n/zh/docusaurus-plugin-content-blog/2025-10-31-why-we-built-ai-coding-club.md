@@ -7,6 +7,16 @@ tags: [philosophy, about, vision, beginner-friendly]
 keywords: [AI 学编程, AI 编程入门, ChatGPT 编程教程, 编程训练营替代方案 2025]
 ---
 
+import ArticleSchema from '@site/src/components/ArticleSchema';
+
+<ArticleSchema
+  headline="为什么我们创建了 AI 编程俱乐部（以及你为什么应该关注）"
+  description="92% 的开发者在使用 AI 编程工具，但初学者仍在按 2015 年的方式学习。我们做了一个实验，5 个完全零基础的人改变了一切。"
+  datePublished="2025-10-31"
+  dateModified="2025-10-31"
+  authorName="Isaac Zhao"
+/>
+
 告诉你一个秘密：你不需要花 1 万美元上训练营，也不需要花 6 个月背语法，就能开始构建真正的软件。
 
 上个月我证明了这一点。我给 5 个完全零基础的人（一位教师、一位咖啡师、一位退休会计、一位高中生和一位全职家长）设定了一个挑战：**在两周内使用 AI 编程工具构建有用的东西**。

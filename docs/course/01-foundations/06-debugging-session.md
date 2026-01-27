@@ -5,6 +5,16 @@ title: 'Spotting the Glitch: How to Debug AI-Generated Code'
 description: 'Spotting the Glitch: How to Debug AI-Generated Code'
 ---
 
+> TL;DR: Debug with AI using minimal repro + expected vs actual + verification.
+
+## Key steps
+1. Capture the error message and the smallest reproducible code.
+2. Ask for hypotheses and concrete checks.
+3. Apply one fix at a time and re-test.
+
+## Practice
+- Break a small script on purpose, then ask AI to fix it using a minimal repro.
+
 We've established that AI-generated code can be flawed. So, what do you do when the code your AI assistant provides looks perfect but throws an error, or worse, fails silently? You debug it. 
 
 Here are practical techniques for debugging and verifying code that came from your AI co-pilot.

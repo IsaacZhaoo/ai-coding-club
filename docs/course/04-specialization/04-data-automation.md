@@ -5,6 +5,15 @@ title: 'Data & Automation: Python Scripts and Analysis'
 description: 'Data & Automation: Python Scripts and Analysis'
 ---
 
+> TL;DR: Use coding to automate workflows and work with data.
+
+## Key steps
+1. Parse/transform data safely.
+2. Automate a repeated task with scripts.
+3. Add logs and error handling.
+
+## Practice
+- Automate one manual task you do weekly and document how to run it.
 
 Welcome to the data and automation specialization path! This track is for you if you love the idea of using code to automate repetitive tasks, analyze data, and uncover hidden insights. Python is the language of choice in this domain, and AI can be an incredibly powerful partner.
 

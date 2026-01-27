@@ -4,9 +4,16 @@ title: AI Coding Course
 description: Complete beginner-to-job-ready curriculum for learning to code with AI assistants
 ---
 
+import CourseSchema from '@site/src/components/CourseSchema';
+
 # AI Coding Course
 
 Welcome to the AI Coding Club course! This comprehensive curriculum takes you from absolute beginner to job-ready developer using AI coding assistants.
+
+<CourseSchema
+  name="AI Coding Course"
+  description="Complete beginner-to-job-ready curriculum for learning to code with AI assistants."
+/>
 
 ## Course Structure
 
@@ -56,5 +63,11 @@ This course follows a unique "vibecoding" methodology:
 - A computer with internet connection
 - Curiosity and willingness to experiment
 - No prior programming experience needed
+
+## Related Resources
+
+- Start with the [AI Coding Roadmap](/docs/ai-coding-roadmap) for a full learning path
+- Explore [AI Coding Tools](/docs/tools) to pick the right assistant
+- Get quick answers in the [FAQ](/docs/faq)
 
 Ready to start? Click "Begin Phase 1" above!

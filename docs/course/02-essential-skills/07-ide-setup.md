@@ -5,6 +5,16 @@ title: 'Beyond the Chat Window: Integrating AI into Your IDE'
 description: 'Beyond the Chat Window: Integrating AI into Your IDE'
 ---
 
+> TL;DR: Set up an IDE workflow that makes AI assistance safer and faster.
+
+## Key steps
+1. Configure formatting, linting, and typecheck.
+2. Install essential extensions.
+3. Create a repeatable verify command set.
+
+## Practice
+- Make a one-line change and run lint/typecheck/build to confirm your loop works.
+
 Up to this point, you may have been interacting with AI in a separate browser tab. This is a great way to learn, but the real productivity gains come when you bring your AI assistant directly into your code editor.
 
 Integrating AI into your Integrated Development Environment (IDE) is like moving your co-pilot from the passenger seat right into your cockpit. It’s a game-changer for workflow and efficiency.

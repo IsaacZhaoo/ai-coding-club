@@ -5,6 +5,16 @@ title: 'The Secret to Better AI: Mastering the Art of Context'
 description: 'The Secret to Better AI: Mastering the Art of Context'
 ---
 
+> TL;DR: Learn how context quality determines AI output quality.
+
+## Key steps
+1. Provide the right files/snippets, not the whole world.
+2. State constraints (stack, style, no new deps).
+3. Ask for a verification plan before trusting changes.
+
+## Practice
+- Rewrite a vague prompt into one with goal + constraints + verification.
+
 If you've followed this series, you've learned to vibe with your AI and to treat its output with skepticism. Now, we'll cover the one skill that, more than any other, will elevate the quality of the responses you get: providing excellent context.
 
 If you feel like your AI assistant is giving you generic, unhelpful, or irrelevant answers, the problem probably isn't the AI. It's the context. 

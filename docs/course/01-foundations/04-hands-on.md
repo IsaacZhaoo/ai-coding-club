@@ -5,6 +5,16 @@ title: 'Hands-On: Building Your First Program with AI'
 description: 'Hands-On: Building Your First Program with AI'
 ---
 
+> TL;DR: Turn the conversation into running code and make your first edit.
+
+## Key steps
+1. Copy the smallest working code into a local project.
+2. Run it and confirm the baseline works.
+3. Make one small change and re-run to verify.
+
+## Practice
+- Add one feature (e.g., a button state) and verify it works in the browser.
+
 In our last post, we had a conversation with an AI to design a to-do list app. Now, let's take the next step: writing, running, and understanding a complete program. We will build a classic number guessing game.
 
 

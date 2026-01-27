@@ -1,8 +1,10 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 title: AI 编程助手
 description: 完整的AI驱动编程助手和IDE指南
 ---
+
+import FAQSchema from '@site/src/components/FAQSchema';
 
 # AI 编程助手
 
@@ -10,15 +12,33 @@ description: 完整的AI驱动编程助手和IDE指南
 
 AI编程助手彻底改变了开发者的代码编写方式。本部分涵盖选择和使用AI驱动开发工具所需的一切。
 
+<FAQSchema
+  items={[
+    {
+      question: '我应该从哪个 AI 编程助手开始？',
+      answer: '预算有限可先用 Codeium，想学习与解释可用 ChatGPT。需要更快的 IDE 内编辑时再选 Cursor 或 Copilot。',
+    },
+    {
+      question: 'Cursor 比 Copilot 更好吗？',
+      answer: 'Cursor 更擅长多文件改动与重构；Copilot 更擅长行内补全。很多人两者搭配使用。',
+    },
+    {
+      question: '必须付费才能有价值吗？',
+      answer: '不需要。先用免费档学习工作流，确认能节省时间后再升级。',
+    },
+  ]}
+/>
+
 ## 📋 快速对比
 
 | 工具 | 类型 | 价格 | 最佳用途 |
 |------|------|-------|----------|
-| [Cursor](#cursor) | 完整IDE | $20/月 | 专业开发 |
-| [Claude Code](#claude-code) | CLI工具 | $20/月 | 复杂推理 |
-| [GitHub Copilot](#github-copilot) | 扩展 | $10/月 | VS Code用户 |
-| [Codeium](#codeium) | 扩展 | 免费 | 预算有限 |
-| [Windsurf](#windsurf) | 完整IDE | 免费测试 | Cursor替代品 |
+| [Cursor](./cursor) | 完整 IDE | 付费套餐 | 多文件改动 + 重构 |
+| [Claude Code](./claude-code) | CLI 工具 | 付费套餐 | 规划 + 复杂推理 |
+| [GitHub Copilot](./github-copilot) | 扩展 | 付费套餐 | 行内自动补全 |
+| [ChatGPT](./chatgpt) | 对话助手 | 免费/付费 | 学习 + 调试 + 写作 |
+| [Codeium](./codeium) | 扩展 | 免费/付费 | 性价比自动补全 |
+| Windsurf | 完整 IDE | 不定 | Codeium 生态 IDE |
 
 ---
 
@@ -40,6 +60,8 @@ Cursor是VS Code的一个分支，深度集成了AI功能。目前是AI辅助开
 
 **最佳用途**: 从事中等到大型代码库的专业开发者
 
+[阅读完整 Cursor 指南 →](./cursor)
+
 [↑ 返回对比表](#-快速对比)
 
 ---
@@ -59,6 +81,8 @@ Claude Code将Anthropic最强大的AI模型带到你的终端。在架构决策�
 **定价**: 包含在Claude Pro中（$20/月）
 
 **最佳用途**: 架构规划、复杂调试、大规模重构
+
+[阅读完整 Claude Code 指南 →](./claude-code)
 
 [↑ 返回对比表](#-快速对比)
 
@@ -80,7 +104,19 @@ Claude Code将Anthropic最强大的AI模型带到你的终端。在架构决策�
 
 **最佳用途**: 使用VS Code和GitHub的开发者
 
+[阅读完整 Copilot 指南 →](./github-copilot)
+
 [↑ 返回对比表](#-快速对比)
+
+---
+
+### ChatGPT
+
+**最适合学习、调试与规划**
+
+ChatGPT 非常灵活，适合解释概念、把日志变成“可验证的假设”，并生成计划/文档/测试思路。
+
+[阅读完整 ChatGPT 指南 →](./chatgpt)
 
 ---
 
@@ -99,6 +135,8 @@ Claude Code将Anthropic最强大的AI模型带到你的终端。在架构决策�
 **定价**: 免费（无限）
 
 **最佳用途**: 预算有限的开发者、学生、学习
+
+[阅读完整 Codeium 指南 →](./codeium)
 
 [↑ 返回对比表](#-快速对比)
 
@@ -159,3 +197,19 @@ Claude Code将Anthropic最强大的AI模型带到你的终端。在架构决策�
 - 最佳实践
 
 最后更新：{new Date().toLocaleDateString()}
+
+---
+
+## FAQ
+
+### 我应该从哪个 AI 编程助手开始？
+
+预算有限可先用 Codeium，想学习与解释可用 ChatGPT。需要更快的 IDE 内编辑时再选 Cursor 或 Copilot。
+
+### Cursor 比 Copilot 更好吗？
+
+Cursor 更擅长多文件改动与重构；Copilot 更擅长行内补全。很多人两者搭配使用。
+
+### 必须付费才能有价值吗？
+
+不需要。先用免费档学习工作流，确认能节省时间后再升级。

@@ -5,6 +5,15 @@ title: 'Specialization Paths: Choosing Your Direction'
 description: 'Specialization Paths: Choosing Your Direction'
 ---
 
+> TL;DR: Choose a specialization path based on your goals and strengths.
+
+## Key steps
+1. Compare frontend/backed/data paths.
+2. Pick one path for 4-8 weeks.
+3. Build a portfolio project aligned to that path.
+
+## Practice
+- Pick one specialization and list 3 projects that prove the skill.
 
 You've learned the fundamentals of coding with AI, built a full project, and deployed it. Now it's time to think about what comes next. The world of software development is vast, and it's helpful to start thinking about a specialization.
 

@@ -6,6 +6,7 @@ sidebar_position: 1
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import FAQSchema from '@site/src/components/FAQSchema';
 
 # AI Agents 使用指南
 
@@ -14,6 +15,23 @@ import TabItem from '@theme/TabItem';
 :::info[一句话解释]
 AI Agents 是预配置的专业化 AI 助手,拥有特定领域的深度知识和标准工作流程。
 :::
+
+<FAQSchema
+  items={[
+    {
+      question: 'AI Agents 和 Cursor Rules 有什么区别？',
+      answer: 'Cursor Rules 定义项目级标准，Agents 定义角色级知识与流程。',
+    },
+    {
+      question: '一个项目可以用多个 Agent 吗？',
+      answer: '可以。根据任务切换 Agent，比如前端/后端/测试/运维。',
+    },
+    {
+      question: 'Agents 会自动执行代码吗？',
+      answer: '不会。Agents 只给建议，执行与验证仍由你控制。',
+    },
+  ]}
+/>
 
 AI Agent 是一种**预配置的 AI 助手角色**,拥有特定领域的专业知识和工作流程。
 

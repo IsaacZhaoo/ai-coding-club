@@ -5,6 +5,15 @@ title: 'Multi-Turn Mastery: Having Real Conversations with AI'
 description: 'Multi-Turn Mastery: Having Real Conversations with AI'
 ---
 
+> TL;DR: Learn multi-turn prompting: iterate with constraints and feedback.
+
+## Key steps
+1. Start with a plan and assumptions.
+2. Give feedback based on results, not vibes.
+3. Stop and verify after each step.
+
+## Practice
+- Run a 3-turn conversation: plan → first draft → refine with constraints.
 
 Your first few prompts to an AI are often single questions. But the real power comes from having a conversation. This is called multi-turn prompting, and it's the key to building complex things with AI.
 

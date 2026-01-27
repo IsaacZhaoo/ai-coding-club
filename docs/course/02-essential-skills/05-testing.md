@@ -5,6 +5,15 @@ title: 'Testing Fundamentals: How to Know Your Code Works'
 description: 'Testing Fundamentals: How to Know Your Code Works'
 ---
 
+> TL;DR: Use tests as your safety net when AI accelerates changes.
+
+## Key steps
+1. Identify the right test level (unit/integration).
+2. Write tests for happy path + edge cases.
+3. Run tests on every meaningful change.
+
+## Practice
+- Write 3 test cases for a function you use often (happy path + 2 edge cases).
 
 How do you know your code actually works? You run it and check. That's testing! But what if you could automate that process? That's automated testing, and it's a cornerstone of modern software development.
 

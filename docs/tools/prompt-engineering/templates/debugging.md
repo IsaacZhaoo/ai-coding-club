@@ -3,11 +3,30 @@ title: Debugging Prompts
 description: Ready-to-use prompts for debugging code issues
 ---
 
+import FAQSchema from '@site/src/components/FAQSchema';
+
 # Debugging Prompt Templates
 
 **Fix bugs faster with structured prompts**
 
 These templates help you communicate bugs effectively to AI assistants, resulting in faster and more accurate solutions.
+
+<FAQSchema
+  items={[
+    {
+      question: 'What should I include in a debugging prompt?',
+      answer: 'Include the error message, relevant code, expected behavior, actual behavior, and environment details.',
+    },
+    {
+      question: 'How do I avoid long, noisy prompts?',
+      answer: 'Trim to the smallest reproducible example and provide only the relevant file or function.',
+    },
+    {
+      question: 'How do I verify a fix from AI?',
+      answer: 'Reproduce the bug, apply the fix, and run tests or a minimal script to confirm it is resolved.',
+    },
+  ]}
+/>
 
 ---
 
@@ -328,3 +347,19 @@ What should I try next?
 ## 🤝 Contribute
 
 Have a debugging prompt that works great? [Share it →](https://github.com/IsaacZhaoo/ai-coding-club/discussions)
+
+---
+
+## FAQ
+
+### What should I include in a debugging prompt?
+
+Include the error message, relevant code, expected behavior, actual behavior, and environment details.
+
+### How do I avoid long, noisy prompts?
+
+Trim to the smallest reproducible example and provide only the relevant file or function.
+
+### How do I verify a fix from AI?
+
+Reproduce the bug, apply the fix, and run tests or a minimal script to confirm it is resolved.

@@ -5,6 +5,15 @@ title: 'Code Organization: Making Your Project Maintainable'
 description: 'Code Organization: Making Your Project Maintainable'
 ---
 
+> TL;DR: Organize code so both humans and AI can navigate it.
+
+## Key steps
+1. Choose a simple folder structure.
+2. Separate core logic from UI/IO.
+3. Name things consistently and document entry points.
+
+## Practice
+- Refactor one file into 2-3 modules with clear responsibilities.
 
 Now that you've built a working application, let's talk about how to organize your code. A well-organized project is easier to understand, debug, and expand. This is a crucial skill for working on larger projects or with a team.
 

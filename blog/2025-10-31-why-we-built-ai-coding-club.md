@@ -7,6 +7,16 @@ tags: [philosophy, about, vision, beginner-friendly]
 keywords: [learn coding with AI, AI coding for beginners, ChatGPT programming tutorial, coding bootcamp alternative 2025]
 ---
 
+import ArticleSchema from '@site/src/components/ArticleSchema';
+
+<ArticleSchema
+  headline="Why We Built AI Coding Club (And Why You Should Care)"
+  description="92% of developers use AI coding tools, but beginners are still taught like it's 2015. We ran an experiment with 5 complete beginners that changed everything."
+  datePublished="2025-10-31"
+  dateModified="2025-10-31"
+  authorName="Isaac Zhao"
+/>
+
 Here's a secret: you don't need to spend $10,000 on a bootcamp or 6 months memorizing syntax to start building real software.
 
 Last month, we tested something bold. Five complete beginners (a teacher, a barista, a retired accountant, a high school student, and a stay-at-home parent) joined us for one challenge: **build something useful in 2 weeks using AI coding tools**.

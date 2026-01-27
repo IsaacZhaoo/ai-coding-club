@@ -5,11 +5,30 @@ sidebar_label: Cline Prompt Analysis
 description: In-depth analysis of Cline open-source AI coding assistant's system prompt design, learning its user approval workflow and security-first architecture
 ---
 
+import FAQSchema from '@site/src/components/FAQSchema';
+
 # Deep Analysis of Cline System Prompts
 
 > Understanding how Cline achieves safe and controllable AI collaboration through open-source transparency and mandatory approval mechanisms
 
 Cline is an open-source VSCode-integrated AI coding assistant. Unlike other tools, Cline emphasizes **step-by-step execution** and **mandatory user approval**, requiring user confirmation for every action. This article analyzes its system prompts to reveal how this open-source tool balances automation with user control.
+
+<FAQSchema
+  items={[
+    {
+      question: 'Why analyze Cline system prompts?',
+      answer: 'They show how strict approvals and transparency can reduce risk in AI-assisted workflows.',
+    },
+    {
+      question: 'What is the main difference vs Cursor or Claude Code?',
+      answer: 'Cline emphasizes mandatory user approval and slower, controlled execution.',
+    },
+    {
+      question: 'How can I apply these ideas?',
+      answer: 'Adopt explicit approval gates and step-by-step execution for high-risk changes.',
+    },
+  ]}
+/>
 
 **Learning Objectives**:
 - Understand Cline's user-approval-first design philosophy
@@ -1080,3 +1099,19 @@ Cline: [Step-by-step analysis]
 **Last Updated**: 2025-11-17
 
 **Disclaimer**: This article is for educational purposes only, analyzing publicly available system prompts. Cline is an open-source project welcoming community contributions.
+
+---
+
+## FAQ
+
+### Why analyze Cline system prompts?
+
+They show how strict approvals and transparency can reduce risk in AI-assisted workflows.
+
+### What is the main difference vs Cursor or Claude Code?
+
+Cline emphasizes mandatory user approval and slower, controlled execution.
+
+### How can I apply these ideas?
+
+Adopt explicit approval gates and step-by-step execution for high-risk changes.

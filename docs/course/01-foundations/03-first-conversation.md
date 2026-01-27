@@ -5,6 +5,16 @@ title: 'Your First Conversation with AI: Vibecoding 101'
 description: 'Your First Conversation with AI: Vibecoding 101'
 ---
 
+> TL;DR: Start vibecoding: use AI to explore ideas and draft a first solution.
+
+## Key steps
+1. Pick a tiny project idea you can explain in one sentence.
+2. Write a prompt with goal, stack, and constraints.
+3. Read the output and ask "why" questions until you understand it.
+
+## Practice
+- Use the "Good Prompt" pattern to draft the HTML for a tiny app you care about.
+
 Welcome to the AI Coding Club! Your journey begins not with complex algorithms, but with a simple conversation. This post introduces you to **vibecoding**: the art of using an AI assistant as a brainstorming partner to explore ideas and sketch out solutions without the pressure of writing perfect code.
 
 

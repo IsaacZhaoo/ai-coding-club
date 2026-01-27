@@ -5,6 +5,16 @@ title: 'From Vague Ideas to Working Code: A Prompting Deep Dive'
 description: 'From Vague Ideas to Working Code: A Prompting Deep Dive'
 ---
 
+> TL;DR: Use advanced prompting patterns for better code outcomes.
+
+## Key steps
+1. Ask for structured output (plan, diff, tests).
+2. Provide examples and edge cases.
+3. Request trade-offs and recommendations.
+
+## Practice
+- Take a weak prompt and rewrite it using a structured format (plan/diff/tests).
+
 You've learned that context is king. Now it's time to learn the tactics of a true AI whisperer. A well-crafted prompt can be the difference between a frustrating, generic response and a brilliant, insightful solution.
 
 Let's move beyond just providing context and explore some advanced techniques for guiding your AI assistant to the perfect answer.

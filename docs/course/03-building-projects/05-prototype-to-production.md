@@ -5,6 +5,15 @@ title: 'From Prototype to Production: Refining Your Code'
 description: 'From Prototype to Production: Refining Your Code'
 ---
 
+> TL;DR: Turn a prototype into a production-ready app.
+
+## Key steps
+1. Add error handling and input validation.
+2. Improve configuration and environment setup.
+3. Harden with tests and monitoring basics.
+
+## Practice
+- List 5 production risks in your project and fix the top 1-2.
 
 A working prototype is a great first step, but it's not the same as production-ready code. Production code needs to be robust, efficient, and secure. This post covers how to take your project from a simple prototype to a high-quality application.
 

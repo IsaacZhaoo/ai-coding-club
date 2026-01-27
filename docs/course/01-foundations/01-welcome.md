@@ -5,6 +5,16 @@ title: 'Lesson 1: Welcome & First Steps'
 description: 'Your first day learning to code with AI - what to expect and how to get started'
 ---
 
+> TL;DR: Welcome to the course and set up your learning loop.
+
+## Key steps
+1. Skim the course structure and pick a pace.
+2. Choose one AI assistant to start with.
+3. Commit to a daily plan → practice → verify routine.
+
+## Practice
+- Write your goal for the next 7 days and choose your first tool.
+
 # Lesson 1: Welcome & First Steps
 
 Welcome! You're about to start learning to code, and you've picked a great time to begin. This isn't like learning programming 10 years ago - you have AI tools that can help you every step of the way.

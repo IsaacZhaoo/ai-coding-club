@@ -1,0 +1,486 @@
+---
+sidebar_position: 2
+title: Cursor IDE Guide (Beginner to Pro)
+description: "Learn Cursor IDE from setup to daily workflows: Chat vs Agent/Composer, context management, Cursor Rules, safe refactoring, and verification loops."
+keywords:
+  - cursor ide
+  - cursor ai
+  - ai coding for beginners
+  - cursor rules
+  - ai-assisted development
+---
+
+import FAQSchema from '@site/src/components/FAQSchema';
+
+# Cursor IDE Guide (Beginner to Pro)
+
+> TL;DR: Cursor is a VS Code-style IDE with deep AI features for **multi-file changes** and **project-aware refactors**. The fastest way to get value is to (1) install + index your repo, (2) adopt one repeatable workflow: *plan → change → verify*, and (3) encode your standards in **Cursor Rules** so you stop repeating yourself.
+
+<FAQSchema
+  items={[
+    {
+      question: 'Is Cursor better than GitHub Copilot?',
+      answer: 'Cursor is stronger for multi-file edits and refactors, while Copilot excels at inline completions. Many teams use both.',
+    },
+    {
+      question: 'Do I need Cursor Pro to get value?',
+      answer: 'No. Start on a free or trial plan to learn the workflow, then upgrade when you see consistent time savings.',
+    },
+    {
+      question: 'What is the fastest way to get good at Cursor?',
+      answer: 'Use a repeatable loop: pick a small task, ask for a plan, make one change, and verify with tests.',
+    },
+    {
+      question: 'How do I keep code style consistent?',
+      answer: 'Point Cursor to existing files, run the repo formatter/linter, and encode rules in .cursorrules.',
+    },
+  ]}
+/>
+
+## What you'll get from this guide
+
+In 15-30 minutes, you will know how to set up Cursor, choose the right workflow, and ship safe multi-file changes without breaking your repo.
+
+**Quick start checklist:**
+- Install Cursor and open the repo root
+- Let indexing finish before asking for changes
+- Use a plan → change → verify loop on small tasks
+- Encode standards in `.cursorrules`
+
+## What is Cursor (and who is it for)?
+
+Cursor is an AI-first code editor built on a familiar VS Code workflow. You still have tabs, terminals, git integrations, extensions, and normal editing. The difference is that Cursor is designed for AI to participate in **real work**, not just autocomplete.
+
+Cursor is especially good at:
+
+- **Multi-file edits**: implementing features that touch UI + API + tests.
+- **Refactoring**: consistent renames, file moves, API migrations.
+- **Codebase onboarding**: “Explain this architecture and where to change X.”
+
+Cursor is a strong fit if you:
+
+- Maintain a repo larger than “a few files”.
+- Care about keeping changes reviewable and safe.
+- Want an assistant that can reason across the project, not just one function.
+
+Cursor is a weaker fit if you:
+
+- Only want inline completions (Copilot may be enough).
+- Need heavy pair-programming on a locked-down corporate machine where new IDEs are blocked.
+
+## How do I install Cursor and set it up correctly?
+
+### Step 1: Install Cursor
+
+- Download Cursor for macOS/Windows/Linux.
+- Sign in (so your plan, settings, and model access apply).
+
+### What does Cursor cost (and which plan should I choose)?
+
+Cursor’s plans change over time, but the practical decision stays stable:
+
+- **Start on free/trial** to learn the workflow and validate that AI assistance fits your day-to-day coding.
+- **Upgrade when you can measure savings** (e.g., less time debugging, faster refactors, fewer context switches).
+
+A simple decision rule:
+
+1) If you code occasionally: stay on free/trial.
+2) If you code daily and do multi-file work: upgrade.
+3) If you need team controls or centralized billing: consider a business plan.
+
+Tip: don’t buy a plan to “get better answers”. Buy a plan when your workflow is already working and you want more throughput.
+
+### Step 2: Open the repo root (not a subfolder)
+
+Many “Cursor doesn’t get it” problems are simply context problems.
+
+Do:
+
+- Open the repository root directory.
+- Let Cursor finish indexing/searching.
+
+Avoid:
+
+- Opening `apps/web/` when the real repo root is above it.
+- Opening `dist/` or `build/` outputs.
+
+### Step 3: Configure your baseline quality loop
+
+Before you use AI for any meaningful change, decide which checks define “done”. In most JS/TS monorepos, the baseline is:
+
+- `pnpm lint`
+- `pnpm typecheck`
+- `pnpm build`
+
+If you don’t have those, use:
+
+- `pnpm test` (unit tests)
+- `npm run build` / `npm run test` (whatever the repo uses)
+
+### Step 4: Teach Cursor your repo rules (Cursor Rules)
+
+Cursor Rules (often `.cursorrules`) act like a “project manual” for the AI. If you skip this, you will repeat the same preferences in every chat.
+
+Minimum rules that pay off quickly:
+
+- Preferred language (TypeScript over JS, etc.).
+- Where code lives (e.g., `apps/`, `packages/`).
+- How to name files and exports.
+- Testing expectations.
+- What not to do (no new deps, no breaking APIs, no secrets).
+
+Example starter `.cursorrules`:
+
+```text
+- Prefer TypeScript.
+- Keep diffs small and reviewable.
+- Follow existing folder structure (apps/*, packages/*).
+- Add/adjust tests for behavior changes.
+- Do not add new dependencies unless explicitly requested.
+- Never output or commit secrets.
+```
+
+### Step 5: Choose a “safe default” prompting style
+
+Cursor’s AI will happily produce confident nonsense if you ask vague questions.
+
+Use a safe default prompt whenever you’re not sure:
+
+```text
+You are editing a production repo.
+1) Propose a short plan.
+2) List the exact files you will read/change.
+3) Make the smallest change that works.
+4) Tell me exactly how to verify (commands + what success looks like).
+```
+
+## Chat vs Composer/Agent: which mode should I use?
+
+Cursor gives you multiple ways to work with the AI. Picking the right one is half the battle.
+
+### When should I use Chat?
+
+Use Chat when you need understanding, diagnosis, or options:
+
+- “Explain what this module does and where its boundaries are.”
+- “Given this error, list likely causes and how to confirm each.”
+- “What are the trade-offs between approach A and B in this repo?”
+
+Chat is ideal for:
+
+- Reading code you don’t understand.
+- Debugging (stack traces, logs, reproduction steps).
+- Getting a plan before making changes.
+
+### When should I use Composer/Agent for edits?
+
+Use Composer/Agent-style flows when the task is about changing code:
+
+- “Add a new CLI flag and thread it through config.”
+- “Refactor X into Y without changing behavior.”
+- “Migrate the API from v1 to v2 in this package.”
+
+To keep it safe, always provide:
+
+- Acceptance criteria.
+- Constraints (no deps, keep API stable, etc.).
+- How to verify.
+
+Example request:
+
+```text
+Goal: Add a new /healthz route returning {status:"ok"}.
+Constraints: Keep existing routing style; no new dependencies.
+Verify: pnpm lint, pnpm typecheck, pnpm test.
+```
+
+## How do I make Cursor understand my repo (context management)?
+
+Cursor works best when it has the right context. “Right context” is not “more context”. It’s *the specific files and facts needed to solve the task*.
+
+### Context checklist (paste into your prompts)
+
+- Files to read (paths or module names)
+- Current behavior (what happens)
+- Expected behavior (what should happen)
+- Errors/logs (copy verbatim)
+- Environment (Node version, OS, framework)
+- Constraints (performance, security, compatibility)
+
+### A high-signal debugging prompt
+
+```text
+Bug: Clicking "Save" does nothing.
+Expected: It should call POST /api/save and show a toast.
+Actual: No network request.
+Logs: (paste console + server logs)
+Files involved: src/components/SaveButton.tsx, src/api/save.ts
+Goal: Identify root cause and propose the minimal fix + a regression test.
+```
+
+### If the AI starts guessing
+
+Stop it. Ask for evidence-first behavior:
+
+```text
+Before proposing a fix, list:
+- what you know for sure
+- what you need to check
+- which files/commands will confirm it
+```
+
+## Cursor Rules: how to use them effectively
+
+Cursor Rules are only useful if they are specific and measurable.
+
+### What should go into Cursor Rules?
+
+1) **Style rules**
+- Indentation, semicolons, quote style (or “use the formatter”).
+
+2) **Architecture rules**
+- “Do not add new packages in `packages/` without updating X.”
+- “All API routes live in `apps/api/src/routes/`.”
+
+3) **Testing rules**
+- “New behavior requires tests.”
+- “Test files live under `__tests__/` and use `*.test.ts`.”
+
+4) **Safety rules**
+- “Do not commit secrets.”
+- “Avoid broad refactors unless requested.”
+
+### How do I debug rules not being followed?
+
+- Put the top 5 rules first.
+- Avoid ambiguous rules (“write clean code”).
+- Add examples (“naming: use `kebab-case` for files, `camelCase` for vars”).
+- In your prompt, explicitly say: “Follow Cursor Rules.”
+
+## What is a good daily workflow in Cursor?
+
+A professional loop:
+
+1) **Clarify**: acceptance criteria + constraints.
+2) **Plan**: ask for a 5–10 step plan.
+3) **Execute**: do one step at a time.
+4) **Verify**: run checks.
+5) **Review**: inspect diff; look for security/edge cases.
+
+### Workflow A: Fix a bug with a stack trace
+
+1) Paste the stack trace + reproduction.
+2) Ask Cursor for 3 hypotheses + how to confirm each.
+3) Run the confirmation steps.
+4) Apply the smallest fix.
+5) Add a regression test.
+
+### Workflow B: Implement a small feature
+
+1) Ask for a plan and impacted files.
+2) Implement the API contract first (types, request/response).
+3) Implement UI behavior.
+4) Add tests.
+5) Verify end-to-end (manual + automated).
+
+### Workflow C: Safe multi-file refactor
+
+Refactors fail when you do everything at once. Split:
+
+1) Mechanical rename (no behavior change)
+2) Update imports and types
+3) Run typecheck/tests
+4) Remove dead code
+5) Run typecheck/tests again
+
+## Prompt templates that work well in Cursor
+
+### Template: “make a change, but keep it reviewable”
+
+```text
+Task: <describe>
+Constraints:
+- no new deps
+- keep changes small
+- do not change public API
+Verification:
+- pnpm lint
+- pnpm typecheck
+- pnpm test
+Output:
+- show a step-by-step plan
+- implement step 1 only, then stop
+```
+
+### Template: “refactor without behavior changes”
+
+```text
+Refactor request:
+- Goal: improve readability/perf without changing behavior
+- Non-goals: do not change API shape
+- Must keep: existing tests passing
+- Provide: a diff-style explanation of each change
+```
+
+### Template: “write tests first”
+
+```text
+Write a failing test for this bug first.
+Then implement the fix.
+Explain why the test would have caught the regression.
+```
+
+## How do I avoid AI-generated bugs?
+
+Use guardrails:
+
+- Ask for assumptions.
+- Require verification steps.
+- Prefer small diffs.
+- Add tests for behavior.
+
+A good “anti-hallucination” prompt:
+
+```text
+Before coding:
+- list assumptions
+- list files you will read
+- list files you will change
+- list verification steps
+If something is unknown, ask me instead of guessing.
+```
+
+## Common problems (and how to fix them)
+
+### “Cursor wrote code that doesn’t compile”
+
+- Force a typecheck loop: “Run/describe `pnpm typecheck` and fix until clean.”
+- Ask it to align with existing patterns: “Follow nearby files.”
+
+### “Cursor changed too much at once”
+
+- Tell it to stop after each step.
+- Ask for the smallest diff.
+
+### “Cursor missed an edge case”
+
+- Ask it to list edge cases explicitly.
+- Add a test list: “Add tests for: empty input, null, large payload, error response.”
+
+### “Cursor keeps adding new dependencies”
+
+- Put “no new deps” in Cursor Rules.
+- Repeat it in the prompt.
+
+## Advanced workflows (when you’re ready)
+
+### How do I onboard to a new codebase quickly?
+
+Use Cursor to build a mental model, but keep it grounded in the repo:
+
+1) Ask it to identify the entry points (routes, app bootstrap, config).
+2) Ask for a dependency map (“what calls what”).
+3) Ask where the boundaries are (API layer, UI layer, shared libs).
+4) Ask for “the one file I should start with” for your task.
+
+Prompt:
+
+```text
+I’m new to this repo.
+Goal: I need to change <feature>.
+Please:
+1) Identify the entry points and key directories.
+2) Explain the request flow end-to-end.
+3) List the 3 most likely files I’ll edit for <feature>.
+```
+
+### How do I do a large refactor without breaking everything?
+
+For big refactors, your job is to prevent “AI enthusiasm” from turning into a risky mega-diff.
+
+Use a two-phase approach:
+
+- **Phase 1: Mechanical changes** (renames, moves, type changes) with no behavior edits.
+- **Phase 2: Behavioral improvements** after everything compiles and tests pass.
+
+Prompt:
+
+```text
+We will do this refactor in phases.
+Phase 1: mechanical only (no behavior changes).
+Stop after Phase 1 and I will review.
+Verification after each step: pnpm typecheck + pnpm test.
+```
+
+### How do I use Cursor for PR-ready output (not just code)?
+
+Ask Cursor to help with:
+
+- Writing a PR description with “What/Why/How/How tested”.
+- A risk section (breaking changes, migrations).
+- A rollout plan (feature flags, backwards compat).
+
+Template:
+
+```text
+Write a PR description with:
+- What changed (bullet list)
+- Why
+- How tested (commands)
+- Risk/mitigation
+Use the diff context and keep it concise.
+```
+
+## FAQ
+
+### Is Cursor better than GitHub Copilot?
+
+Cursor is typically better for **project-level work** (multi-file edits, refactors). Copilot is excellent for **inline completions** and quick suggestions while you type. Many developers use both: Copilot for speed, Cursor for bigger changes.
+
+### Do I need Cursor Pro to get value?
+
+No. Start on a free/trial plan to learn workflows. Upgrade when you can measure real time savings.
+
+### What’s the fastest way to get good at Cursor?
+
+Do the same loop repeatedly:
+
+1) pick a small task
+2) ask for a plan
+3) apply one step
+4) verify
+
+After ~10 repetitions, you’ll know what prompts work and what contexts you must provide.
+
+### What should I do if Cursor “can’t find” a symbol?
+
+Give it the path and the import chain. Ask it to run a search (`rg`) or point to the entry file.
+
+### How do I keep security tight?
+
+Never paste secrets. Prefer sanitized examples. Use tests and code review. Keep big changes behind a branch.
+
+### Can Cursor help with documentation?
+
+Yes. Ask it to generate a README section, usage examples, and a troubleshooting section based on the code.
+
+### How do I keep code style consistent?
+
+Use the repo’s formatter/linter, and encode rules in `.cursorrules`. Ask Cursor to match existing files.
+
+### What should I do when Cursor is “confident but wrong”?
+
+Demand evidence: file references, reproduction steps, and verification commands. If it can’t verify, treat it as a hypothesis.
+
+
+## Related learning paths
+
+- Follow the [AI Coding Roadmap](/docs/ai-coding-roadmap)
+- Work through the [AI Coding Course](/docs/course)
+- Get quick answers in the [FAQ](/docs/faq)
+
+## Next steps
+
+- Learn project standards with [Cursor Rules Configuration Guide](/docs/tools/cursor-rules).
+- Improve prompts with [Prompt Engineering Guide](/docs/tools/prompt-engineering).
+- Compare tools in [AI Tools Comparison Table](/docs/tools/ai-tools-comparison).

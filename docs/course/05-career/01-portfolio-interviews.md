@@ -5,6 +5,15 @@ title: 'Building Your Portfolio & Preparing for Interviews'
 description: 'Building Your Portfolio & Preparing for Interviews'
 ---
 
+> TL;DR: Package your work into a portfolio and prepare for interviews.
+
+## Key steps
+1. Select projects that demonstrate real skills.
+2. Write clear READMEs and demos.
+3. Practice explaining trade-offs and debugging.
+
+## Practice
+- Pick one project and write a 10-line README pitch + 3 interview questions about it.
 
 You have the skills. You have the projects. Now it's time to put it all together and get ready to land your first job as a developer. This post covers the final steps: building a compelling portfolio and preparing for interviews.
 

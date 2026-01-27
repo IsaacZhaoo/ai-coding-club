@@ -5,6 +5,15 @@ title: 'Deploying Your Project: Going Live'
 description: 'Deploying Your Project: Going Live'
 ---
 
+> TL;DR: Deploy your project and validate it in the real world.
+
+## Key steps
+1. Pick a deployment target and prepare env vars.
+2. Run build checks before deploy.
+3. Validate after deploy and monitor basic signals.
+
+## Practice
+- Deploy a simple site/app and write a post-deploy checklist you follow.
 
 What good is a project if no one can see it? Deployment is the process of taking your application from your local machine and making it accessible to the world on the internet. It can seem daunting, but modern platforms have made it easier than ever.
 

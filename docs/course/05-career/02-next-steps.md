@@ -5,6 +5,16 @@ title: 'The Road Ahead: Continuous Learning in the Age of AI'
 description: 'The Road Ahead: Continuous Learning in the Age of AI'
 ---
 
+> TL;DR: Plan your next 30 days: keep building, shipping, and learning.
+
+## Key steps
+1. Choose a path (specialize or broaden).
+2. Set weekly shipping goals.
+3. Track metrics and iterate.
+
+## Practice
+- Write a 30-day plan: 4 weekly goals + what you will ship each week.
+
 Congratulations! You’ve journeyed from initial curiosity to practical application, learning to brainstorm, debug, and build with an AI partner. You have a solid foundation for this new era of software development.
 
 But this is just the beginning. The tools and techniques in AI are evolving at an incredible pace. So, what’s the long-term strategy for success? It’s all about continuous learning and adapting your mindset.

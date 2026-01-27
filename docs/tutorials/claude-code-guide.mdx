@@ -13,9 +13,35 @@ sidebar_position: 3
 tags: [claude, tutorial, ide, coding-assistant]
 ---
 
+import HowToSchema from '@site/src/components/HowToSchema';
+
 # Claude Code Complete Guide: AI Coding Assistant by Anthropic
 
 **Master Claude Code in one comprehensive guide** - From installation to advanced features with real-world examples.
+
+<HowToSchema
+  name="Get started with Claude Code"
+  description="A quick setup workflow to install and use Claude Code for a coding task."
+  totalTime="PT15M"
+  steps={[
+    {
+      name: 'Install Claude Code',
+      text: 'Install the CLI with the official instructions and make sure the command is available in your shell.',
+    },
+    {
+      name: 'Open your repo',
+      text: 'Run the CLI from the repository root so it can index files correctly.',
+    },
+    {
+      name: 'Describe the task',
+      text: 'Provide a concise goal, constraints, and what verification looks like.',
+    },
+    {
+      name: 'Review and verify',
+      text: 'Check the proposed changes and run tests or linting commands to validate.',
+    },
+  ]}
+/>
 
 ## 🎯 What You'll Learn
 

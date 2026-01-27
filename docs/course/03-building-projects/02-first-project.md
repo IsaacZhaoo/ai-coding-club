@@ -5,6 +5,15 @@ title: 'Building Your First Real Project: A Task Manager App'
 description: 'Building Your First Real Project: A Task Manager App'
 ---
 
+> TL;DR: Build your first project end-to-end with AI as a copilot.
+
+## Key steps
+1. Pick a small project with clear inputs/outputs.
+2. Build in small steps and verify each step.
+3. Ship a working version before polishing.
+
+## Practice
+- Ship a tiny project (even ugly) that runs locally and has one core feature.
 
 It's time to combine everything we've learned and build a complete project from scratch. In this tutorial, we will build a simple but functional Task Manager application. This is a classic "CRUD" (Create, Read, Update, Delete) app, a cornerstone of web development.
 

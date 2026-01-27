@@ -1,0 +1,517 @@
+---
+sidebar_position: 3
+title: Claude Code Guide (CLI Pair Programmer)
+description: "A practical guide to Claude Code: install, permissions, safe workflows, prompts, debugging/refactoring patterns, and privacy settings."
+keywords:
+  - claude code
+  - ai coding cli
+  - terminal coding assistant
+  - ai refactoring
+  - prompt engineering
+---
+
+import FAQSchema from '@site/src/components/FAQSchema';
+
+# Claude Code Guide (CLI Pair Programmer)
+
+> TL;DR: Claude Code is a terminal-first AI coding assistant that can **read your repo, edit files, and run commands** (with permissions). It’s best for “hard thinking” tasks: architecture decisions, complex refactors, debugging, and automation. Start with the quickstart install, then master one workflow: *describe → plan → act → verify*.
+
+<FAQSchema
+  items={[
+    {
+      question: 'When should I pick Claude Code vs Cursor vs Copilot?',
+      answer: 'Use Claude Code for terminal-first workflows and deep reasoning, Cursor for IDE refactors, and Copilot for inline autocomplete.',
+    },
+    {
+      question: 'Do I need Claude Pro to use Claude Code?',
+      answer: 'It depends on your billing model; individuals often use a Claude subscription while teams may use API providers with org controls.',
+    },
+    {
+      question: 'Is Claude Code good for beginners?',
+      answer: 'Yes, if you treat it as a tutor and verify everything yourself with tests or commands.',
+    },
+    {
+      question: 'Can it run dangerous commands?',
+      answer: 'It can suggest commands, but you control permissions. Keep access conservative and review before executing.',
+    },
+    {
+      question: 'What is the biggest advantage vs an IDE assistant?',
+      answer: 'Structured problem-solving for complex tasks, with the ability to work directly in terminal workflows.',
+    },
+  ]}
+/>
+
+## What you'll get from this guide
+
+In 15-30 minutes, you will know how to install Claude Code, choose safe permissions, and run a repeatable terminal workflow for debugging and refactoring.
+
+**Quick start checklist:**
+- Install the CLI and confirm it runs
+- Start in the repo root so context is correct
+- Use *describe → plan → act → verify* for every task
+- Keep permissions conservative and expand only when needed
+- Verify with `pnpm lint` / `pnpm typecheck` / `pnpm build` (or your repo equivalents)
+
+## What is Claude Code (and when is it better than an IDE assistant)?
+
+Claude Code is Anthropic’s coding assistant designed to live in your terminal. Instead of being “another chat window”, it’s built for developer workflows where you:
+
+- already have a shell,
+- already run tests and scripts,
+- want a tool that can take action (edit files, run commands) while you stay in control.
+
+Claude Code tends to outperform IDE assistants when you need:
+
+- **Deep reasoning** about system design and trade-offs.
+- **Large refactors** with many moving parts.
+- **Debugging** where you must correlate logs, config, and runtime behavior.
+- **Automation** (scripts, release notes, repetitive cleanup).
+
+If your main need is inline autocomplete, GitHub Copilot or a lighter tool may be a better default.
+
+## How do I install Claude Code?
+
+### Prerequisites
+
+- Node.js 18+ (recommended by Anthropic).
+- An account (Claude.ai or Anthropic Console, depending on your setup).
+
+### Quickstart install
+
+```bash
+npm install -g @anthropic-ai/claude-code
+cd your-project
+claude
+```
+
+If you’re in a monorepo, start from the repo root so Claude Code can see the full structure.
+
+## How does Claude Code stay safe (permissions and approvals)?
+
+Claude Code is designed around a permission-based architecture:
+
+- It starts in a conservative mode (read-only by default in many setups).
+- When it needs to edit files or run commands, it requests permission.
+- You can approve per action, or adjust configuration for your environment.
+
+Practical implication: treat Claude Code like a capable junior engineer who can type quickly, but still needs review and verification.
+
+## What can Claude Code actually do in a repo?
+
+Think of Claude Code as a loop:
+
+1) read files
+2) propose a plan
+3) edit files (if allowed)
+4) run commands (if allowed)
+5) summarize changes + verification
+
+In practice, it can help with:
+
+- Searching the codebase for entry points and call chains.
+- Drafting implementation plans that match repo conventions.
+- Making coordinated edits across many files.
+- Running checks (`lint`, `typecheck`, tests) and iterating on failures.
+- Writing documentation, changelogs, and migration notes based on diffs.
+
+What it cannot do reliably without you:
+
+- Decide product requirements.
+- Guarantee correctness without tests.
+- Replace code review.
+
+Your job is to provide constraints and require verification.
+
+## What are the best workflows in Claude Code?
+
+Claude Code is strongest when you structure tasks the way humans actually ship changes.
+
+### Workflow A: Debug a production issue
+
+1) Provide a precise symptom, reproduction, and logs.
+2) Ask for hypotheses + how to confirm each.
+3) Run the confirmation steps.
+4) Apply the smallest fix.
+5) Add a regression test.
+
+Prompt template:
+
+```text
+Bug: <symptom>
+Expected: <expected>
+Actual: <actual>
+Repro steps: <steps>
+Logs/trace: <paste>
+Constraints: minimal diff, no new deps
+Output:
+1) 3 hypotheses + how to confirm
+2) minimal fix
+3) regression test plan
+```
+
+### Workflow B: Plan architecture (before coding)
+
+Use Claude Code to reduce risk early:
+
+- Identify constraints.
+- Compare approaches.
+- List failure modes.
+- Define interfaces.
+
+Prompt:
+
+```text
+We need to implement <feature>.
+Please:
+1) propose 2 architectures
+2) list trade-offs (perf, complexity, security)
+3) recommend one and explain why
+4) list the exact files/modules likely impacted
+```
+
+### Workflow C: Large refactor without breaking everything
+
+Split into phases:
+
+- Phase 1: mechanical changes only (renames, moves, types)
+- Phase 2: behavioral improvements
+
+Prompt:
+
+```text
+Refactor goal: <goal>
+Rules:
+- Phase 1 mechanical only; stop after Phase 1
+- Run typecheck/tests after each step
+- Keep diffs small and reviewable
+Output:
+- step-by-step plan
+- implement step 1 only
+```
+
+### Workflow D: Automation and “boring” tasks
+
+Claude Code is great at:
+
+- fixing repetitive lint issues,
+- writing release notes from commits,
+- resolving merge conflicts (with review),
+- generating migration checklists.
+
+### Workflow E: “Explain + patch + verify” for a focused change
+
+This is the most repeatable pattern when you want a change that’s bigger than a one-liner but smaller than a rewrite:
+
+1) Explain the current behavior (with file paths)
+2) Propose a minimal patch
+3) Run verification
+4) Summarize what changed and why
+
+Prompt:
+
+```text
+Do this in order:
+1) Explain current behavior with file paths.
+2) Propose a minimal patch (avoid unrelated refactors).
+3) Verify with: pnpm lint, pnpm typecheck, pnpm test.
+4) Summarize changes and any remaining risks.
+```
+
+## How do I use Claude Code safely in a real repository?
+
+### Use git as your safety net
+
+Before large changes:
+
+```bash
+git status
+git checkout -b feat/claude-code-change
+```
+
+Ask Claude Code to stop and summarize after each step so you can review a clean diff:
+
+```text
+Stop after each step. I will review the diff before continuing.
+```
+
+### Prefer “read-only first” for unfamiliar code
+
+If you’re new to a codebase, start by asking for analysis only:
+
+```text
+Do not edit files yet.
+Just:
+- explain the current behavior
+- identify the best change points
+- propose a minimal plan
+```
+
+Then you (or the tool with explicit permission) can implement.
+
+### Make verification non-optional
+
+For most repos, define a minimum verification set:
+
+- typecheck
+- unit tests
+- build
+
+Prompt:
+
+```text
+After changes, run (or instruct me to run): pnpm typecheck && pnpm test && pnpm build.
+If any fail, iterate until clean.
+```
+
+## How do I make Claude Code reliable (context and constraints)?
+
+Claude Code can read your repo, but you still need to steer it.
+
+### Context checklist
+
+- What you’re trying to accomplish (goal)
+- What must not change (non-goals)
+- Where the code likely lives (paths)
+- How to verify (commands)
+- Any constraints (no deps, compatibility)
+
+### Narrow the scope in monorepos
+
+In large repos, “the whole repo” is too broad. Give a scope:
+
+- package/app name (`apps/docs`, `packages/utils`)
+- directories to avoid (`build/`, `dist/`, generated files)
+- what “done” means (which commands must pass)
+
+Example:
+
+```text
+Scope: only apps/docs and scripts/.
+Avoid: build/ dist/ node_modules/.
+Done when: pnpm lint + pnpm typecheck pass.
+```
+
+### “Evidence-first” prompt
+
+When accuracy matters, use this:
+
+```text
+Before proposing changes:
+- list what you know for sure
+- list what you need to inspect
+- list the commands/files to confirm
+If information is missing, ask me.
+```
+
+## How do privacy and data usage work?
+
+Claude Code is built on Anthropic APIs and includes operational telemetry options. Your exact policy depends on your org setup, but you should treat it like any external service:
+
+- Do not paste secrets.
+- Redact customer data.
+- Prefer minimal reproductions.
+
+If your org needs tighter controls, check Claude Code’s data usage and security docs and set environment flags (for example telemetry opt-out) according to policy.
+
+## What is the best way to prompt Claude Code?
+
+Claude Code is at its best when you treat it like an engineer on a ticket. Use this structure:
+
+1) Context: what is the system?
+2) Goal: what must change?
+3) Non-goals: what must not change?
+4) Constraints: dependencies, performance, compatibility
+5) Verification: commands and expected outcomes
+
+Example “ticket-style” prompt:
+
+```text
+Context: This repo is a pnpm monorepo using Turbo.
+Goal: Add a new validation script for tools metadata.
+Non-goals: do not change the tools build pipeline.
+Constraints: TypeScript, no new deps.
+Verify: pnpm lint, pnpm typecheck, pnpm validate:metadata.
+```
+
+## How do I use Claude Code from my IDE?
+
+Even though Claude Code is terminal-first, it can integrate with IDEs:
+
+- Quick launch shortcuts (platform dependent).
+- Diff viewing inside the IDE.
+- Sharing the current file/selection as context.
+
+This is useful if you like Cursor/VS Code for editing, but want Claude Code for “do the thinking and plan the refactor”.
+
+## Practical prompt library (copy/paste)
+
+### Generate a safe implementation plan
+
+```text
+I want to implement: <feature>
+Constraints:
+- keep existing patterns
+- no new deps
+- add tests
+Please:
+1) produce a 5-10 step plan
+2) list the files you will touch
+3) list verification commands
+Stop after the plan.
+```
+
+### Review code like a senior engineer
+
+```text
+Review this diff for:
+- correctness
+- edge cases
+- security
+- performance
+- naming/structure
+Provide actionable issues first, then suggestions.
+```
+
+### Write tests that actually catch regressions
+
+```text
+Given this feature/bug, propose tests that would fail before the fix.
+Prefer small unit tests.
+List exact test file paths and naming.
+```
+
+### Make a careful multi-step change
+
+```text
+Make this change in 3 steps.
+After each step:
+- show a diff summary
+- list verification commands
+- stop for my approval
+```
+
+### Explain a code path end-to-end
+
+```text
+Trace this behavior end-to-end:
+- entry point
+- main functions/modules involved
+- where validation happens
+- where errors are handled
+Use file paths.
+```
+
+## Common mistakes (and how to avoid them)
+
+### Mistake: Letting it run wild
+
+Fix: always gate with permissions, ask for step-by-step changes, and verify frequently.
+
+### Mistake: Asking for “best practice” without constraints
+
+Fix: provide the repo context and the actual constraints (framework, deps, performance requirements).
+
+### Mistake: Shipping without verification
+
+Fix: make `typecheck/tests/build` mandatory. Claude Code is strong at proposing changes; you are responsible for validating.
+
+## Troubleshooting
+
+### “Claude command not found”
+
+- Confirm global install: `npm ls -g --depth=0 | rg claude`
+- Restart your shell so PATH updates apply.
+
+### “It can’t access files / permission denied”
+
+- Check your current directory (`pwd`).
+- Make sure you’re in the repo root.
+- Reduce permissions (read-only) and ask for analysis first.
+
+### “Edits are correct but style is wrong”
+
+- Point it at the style guide file(s).
+- Tell it to follow existing patterns in nearby files.
+- Require lint/format as part of verification.
+
+## FAQ
+
+### When should I pick Claude Code vs Cursor vs Copilot?
+
+- Pick **Claude Code** when you want planning, reasoning, and repo-wide changes with a terminal workflow.
+- Pick **Cursor** when you want an IDE-centric experience with multi-file editing and fast navigation.
+- Pick **Copilot** when you mainly want inline autocomplete and quick chat in your existing editor.
+
+In practice, a good stack is Copilot for typing speed + Cursor for IDE refactors + Claude Code for the hardest reasoning tasks.
+
+### Do I need Claude Pro to use Claude Code?
+
+Many setups use Claude.ai subscriptions, while organizations may also run Claude Code via API providers. Choose based on how you pay (individual vs org) and whether you need enterprise controls.
+
+### Is Claude Code good for beginners?
+
+Yes, if you treat it as a tutor + assistant:
+
+- ask it to explain concepts,
+- ask it to propose a plan,
+- run the commands yourself.
+
+But don’t delegate judgment. Learn the “verify everything” habit early.
+
+### Can it run dangerous commands?
+
+It can propose commands, but permission prompts and your review are the safety net. Keep permissions conservative, especially in production repos.
+
+### What’s the biggest advantage vs an IDE assistant?
+
+Claude Code is excellent at structured problem solving (planning, trade-offs, multi-step tasks), and it fits naturally into terminal-heavy workflows.
+
+### How do I use it with Cursor?
+
+Use Cursor for editing and navigation, and Claude Code for:
+
+- architecture planning,
+- deep debugging,
+- large refactors,
+- release notes and automation.
+
+### Can Claude Code help with documentation and tutorials?
+
+Yes. It’s strong at turning code into explanations:
+
+- “Write a docs page explaining how X works.”
+- “Add examples and troubleshooting.”
+- “Make it beginner-friendly.”
+
+Require it to reference file paths and keep claims grounded in the repo.
+
+### How do I prevent huge diffs?
+
+Ask for stepwise implementation and stop points:
+
+```text
+Implement step 1 only and stop.
+Do not touch unrelated files.
+```
+
+### What should I do when it seems stuck?
+
+Ask it to re-scope:
+
+- “What’s the smallest next step?”
+- “Which file should we inspect next?”
+- “List 3 options and their risk.”
+
+This forces progress without guessing.
+
+
+## Related learning paths
+
+- Follow the [AI Coding Roadmap](/docs/ai-coding-roadmap)
+- Work through the [AI Coding Course](/docs/course)
+- Get quick answers in the [FAQ](/docs/faq)
+
+## Next steps
+
+- Compare tools: [AI Tools Comparison Table](/docs/tools/ai-tools-comparison)
+- Improve prompts: [Prompt Engineering Guide](/docs/tools/prompt-engineering)

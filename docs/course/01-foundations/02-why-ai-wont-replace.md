@@ -5,6 +5,16 @@ title: 'Lesson 2: Don''t Fear AI - Your Learning Partner'
 description: 'Understanding how AI helps you learn to code (without doing the work for you)'
 ---
 
+> TL;DR: Learn why AI changes how we work, and what skills still matter.
+
+## Key steps
+1. Identify what AI is good at vs what you must own.
+2. Set guardrails: review, tests, and security hygiene.
+3. Adopt the mindset: AI is leverage, not a substitute for judgment.
+
+## Practice
+- List 3 tasks you will use AI for and 3 tasks you will always verify manually.
+
 # Lesson 2: Don't Fear AI - Your Learning Partner
 
 Let's address the elephant in the room: "If AI can write code, why should I learn to code?"

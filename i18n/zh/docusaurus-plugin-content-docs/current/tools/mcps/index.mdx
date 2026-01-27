@@ -6,6 +6,7 @@ sidebar_position: 1
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import FAQSchema from '@site/src/components/FAQSchema';
 
 # MCP 服务器指南
 
@@ -14,6 +15,23 @@ import TabItem from '@theme/TabItem';
 :::info[一句话解释]
 MCP (Model Context Protocol) 是让 AI 助手访问外部工具、数据库和 API 的开放协议。
 :::
+
+<FAQSchema
+  items={[
+    {
+      question: 'MCP 会拖慢响应速度吗？',
+      answer: '影响较小，主要取决于外部 API 的响应速度，本地文件系统 MCP 几乎不影响。',
+    },
+    {
+      question: 'MCP 数据会发送到 AI 服务器吗？',
+      answer: 'MCP 在本地执行，只把结果发给 AI，可在本地做敏感信息过滤。',
+    },
+    {
+      question: '一个助手要接多少 MCP 服务器？',
+      answer: '建议先用核心的 2-5 个，过多会增加配置复杂度。',
+    },
+  ]}
+/>
 
 **Model Context Protocol (MCP)** 是一个开放协议，让 AI 助手能够连接外部工具、数据库和 API。
 

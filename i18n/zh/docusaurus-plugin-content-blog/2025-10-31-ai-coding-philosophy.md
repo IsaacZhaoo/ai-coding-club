@@ -7,6 +7,16 @@ tags: [philosophy, ai, future-of-coding, career]
 keywords: [AI 取代程序员, 2025 软件工程未来, AI 编程工具影响, AI 时代开发者工作]
 ---
 
+import ArticleSchema from '@site/src/components/ArticleSchema';
+
+<ArticleSchema
+  headline="为什么 AI 不会取代程序员（但会取代不使用 AI 的程序员）"
+  description="开发者岗位降至 1980 年代水平，但入门级招聘却增长了 47%。以下是真实数据——以及如何准备。"
+  datePublished="2025-10-31"
+  dateModified="2025-10-31"
+  authorName="Isaac Zhao"
+/>
+
 上个月，我认识的一家初创公司解雇了一名初级开发者。不是因为 AI 取代了他——而是因为他拒绝使用 AI，而他的同事都在用。
 
 他的代码花费两倍时间。他的 bug 修复需要三倍时间。当团队转向 AI 辅助开发时，他成了瓶颈。

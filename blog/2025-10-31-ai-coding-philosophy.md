@@ -7,6 +7,16 @@ tags: [philosophy, ai, future-of-coding, career]
 keywords: [AI replace programmers, future of software engineering 2025, AI coding tools impact, developer jobs AI era]
 ---
 
+import ArticleSchema from '@site/src/components/ArticleSchema';
+
+<ArticleSchema
+  headline="Why AI Won't Replace Programmers (But Will Replace Those Who Don't Use It)"
+  description="Developer jobs dropped to 1980s levels, yet entry-level hiring is up 47%. Here's the data on what's really happening—and how to prepare."
+  datePublished="2025-10-31"
+  dateModified="2025-10-31"
+  authorName="Isaac Zhao"
+/>
+
 Last month, a junior developer got fired from a startup. Not because AI replaced him—because he refused to use AI while his peers did.
 
 His code took twice as long. His bugs took three times longer to fix. And when the team moved to AI-assisted development, he became a bottleneck.

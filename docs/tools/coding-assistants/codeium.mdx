@@ -1,0 +1,497 @@
+---
+sidebar_position: 6
+title: Codeium Guide (Free Autocomplete) + Windsurf Notes
+description: "Learn Codeium for code completion and chat: setup, best workflows, quality guardrails, and how it compares to Copilot and Cursor."
+keywords:
+  - codeium
+  - windsurf
+  - free ai autocomplete
+  - ai coding assistant
+  - code completion
+---
+
+import FAQSchema from '@site/src/components/FAQSchema';
+
+# Codeium Guide (Free Autocomplete) + Windsurf Notes
+
+> TL;DR: Codeium is popular as a **budget-friendly / free** coding assistant for autocomplete and lightweight chat in your IDE. If you primarily want inline suggestions, Codeium can be a strong starting point. If you want a full AI-first IDE experience, Codeium’s team also offers **Windsurf** (an IDE product).
+
+<FAQSchema
+  items={[
+    {
+      question: 'Is Codeium really free?',
+      answer: 'It offers a generous free tier. Check the current plan details to confirm limits for your workflow.',
+    },
+    {
+      question: 'Codeium vs Copilot: which should I pick?',
+      answer: 'Codeium is a strong free option for autocomplete. Copilot may be better if you want deep GitHub integration.',
+    },
+    {
+      question: 'What is Windsurf?',
+      answer: 'Windsurf is Codeium’s AI-first IDE offering a deeper editing experience beyond inline completion.',
+    },
+    {
+      question: 'Can Codeium handle large refactors?',
+      answer: 'It can help, but for multi-file refactors you may prefer Cursor or Claude Code.',
+    },
+  ]}
+/>
+
+## What you'll get from this guide
+
+In 10-20 minutes, you will set up Codeium, validate autocomplete works, and learn a safe workflow to use it for daily edits without creating noisy diffs.
+
+**Quick start checklist:**
+- Install the extension and sign in
+- Confirm inline completions appear on a small function
+- Use Codeium for boilerplate and routine edits
+- For multi-file refactors, switch to Cursor or Claude Code
+- Always verify changes with lint/tests before shipping
+
+## What is Codeium best for?
+
+Codeium is most valuable when you want:
+
+- fast inline completions
+- boilerplate generation
+- routine code transformations
+- “good enough” assistance without committing to a paid plan
+
+It’s less ideal for:
+
+- deep repo-wide refactors
+- large multi-file changes
+- tasks where you need structured planning and verification
+
+If your work is mostly “type faster in the editor”, Codeium can be enough. If your work is “change many files safely”, pair it with Cursor or Claude Code.
+
+## How do I install Codeium?
+
+Installation depends on your IDE. The common flow is:
+
+1) Install the Codeium plugin/extension for your IDE.
+2) Sign in / create an account.
+3) Confirm inline suggestions appear.
+
+### Quick smoke test
+
+Create a file and type a clear function signature + comment:
+
+```ts
+// Return the first non-empty string; otherwise null.
+export function firstNonEmpty(values: string[]): string | null {
+  
+}
+```
+
+Pause; you should see a suggestion.
+
+## How do I set up Codeium so it actually helps (not distracts)?
+
+Autocomplete tools can either save time or create noise. Use these defaults:
+
+1) **Turn on suggestions only where you write code.** If your editor supports per-language enable/disable, disable it for generated files and large JSON blobs.
+2) **Rely on your formatter/linter** to keep output consistent.
+3) **Use types and docstrings** to constrain suggestions.
+4) **Adopt a verification loop** (typecheck/tests) so you don’t ship “looks right” code.
+
+If you work in TypeScript, the single biggest improvement is to add types before you accept suggestions. If you work in Python, add docstrings and small examples.
+
+## What should I use Codeium for (and what should I avoid)?
+
+### Great use cases
+
+- Implementing small helper functions
+- Adding boilerplate (types, interfaces, props)
+- Converting code patterns (callbacks → async/await)
+- Filling in repetitive glue code
+- Writing docstrings and comments
+
+### Avoid (or use a different tool)
+
+- Designing a complex API contract without a plan
+- Refactoring across many packages in a monorepo
+- Security-critical code (auth, crypto) without review
+- “Rewrite the whole module” prompts that produce huge diffs
+
+Rule: if you can’t review the diff in a few minutes, you’re using the wrong workflow.
+
+## Codeium vs GitHub Copilot vs Cursor: how do I choose?
+
+### If you want the best free option
+
+- Codeium is often chosen because it provides useful autocomplete without a paid subscription.
+
+### If you want the best “inside VS Code” experience
+
+- GitHub Copilot is deeply integrated and tends to be strong for inline completions.
+
+### If you want project-aware multi-file edits
+
+- Cursor is typically better for refactors and coordinated changes across many files.
+
+### If you want terminal-first deep reasoning
+
+- Claude Code is often best for architecture, complex debugging, and stepwise refactors.
+
+## Practical workflows (how to get value fast)
+
+### Workflow A: Implement a function from a spec comment
+
+1) Write a clear function signature.
+2) Add a short spec comment.
+3) Accept only the first draft.
+4) Add edge cases.
+5) Add tests.
+
+Example:
+
+```ts
+// Requirements:
+// - Normalize a URL
+// - Force https
+// - Remove trailing slash
+// - Return null if invalid
+export function normalizeUrl(input: string): string | null {
+  // start typing and let Codeium propose
+}
+```
+
+### Workflow B: Convert repeated patterns into a helper
+
+1) Select the repeated block.
+2) Ask the assistant to extract a helper with a clear name.
+3) Run tests/typecheck.
+4) Repeat for the next block.
+
+This keeps changes incremental and reviewable.
+
+### Workflow C: Write tests faster (without “cheater tests”)
+
+Ask for behavior-based tests:
+
+```text
+Write tests that would fail before the fix.
+Cover edge cases.
+Avoid asserting implementation details.
+```
+
+Then sanity check:
+
+- Does the test fail on the buggy version?
+- Does it pass after the fix?
+- Does it cover error paths?
+
+### Workflow D: Debug with hypotheses
+
+Autocomplete tools are not only for writing code. Use them to accelerate reasoning:
+
+```text
+Given this stack trace, list 3 likely causes and how to confirm each.
+Then propose the minimal fix.
+```
+
+## Advanced tips (quality and safety)
+
+### Use “minimal diff” language
+
+When you ask for a change, constrain it:
+
+```text
+Make a minimal diff.
+Do not change public APIs.
+Do not touch unrelated files.
+```
+
+### Add a checklist to every change
+
+Before you accept a suggestion, ask yourself:
+
+- Does it match repo style?
+- Does it handle invalid input?
+- Does it introduce a new dependency?
+- Can I prove it works (tests/typecheck)?
+
+### Treat suggestions as drafts
+
+Even good autocomplete will sometimes:
+
+- ignore edge cases
+- skip error handling
+- choose the wrong abstraction
+
+Your review and verification loop are what turns drafts into production code.
+
+## Privacy and security notes
+
+As with any cloud-backed assistant:
+
+- Do not paste secrets (API keys, tokens, customer data).
+- Prefer minimal reproductions.
+- Follow your organization’s policy for third-party services.
+
+If you’re building auth, payments, or security-sensitive code, use the assistant to draft, then do a real review and add tests.
+
+## Prompt library (copy/paste)
+
+### Ask for a plan instead of a rewrite
+
+```text
+I want to change <thing>.
+Do not rewrite everything.
+First produce:
+- a 5-step plan
+- the smallest set of files to touch
+- verification commands
+Stop after the plan.
+```
+
+### Request a safe refactor
+
+```text
+Refactor this with a minimal diff.
+Keep behavior identical.
+Then list the risk points and propose tests to protect them.
+```
+
+### Generate examples and docs
+
+```text
+Write a short README section for this module:
+- purpose
+- how to use
+- examples
+- common errors
+Do not invent features that aren’t in the code.
+```
+
+## Language-specific tips
+
+### TypeScript / JavaScript
+
+- Add types early.
+- Use named functions and explicit return types.
+- Prefer small pure functions; they’re easier for assistants to complete correctly.
+
+### Python
+
+- Use docstrings with Args/Returns.
+- Provide example inputs/outputs.
+- Add type hints if your project supports them.
+
+## What workflows work best with Codeium?
+
+### Workflow A: Comment-driven scaffolding
+
+Codeium responds well to a short spec comment.
+
+```ts
+// Create an express middleware that:
+// - validates an API key header
+// - returns 401 on missing/invalid key
+// - does not log the key
+```
+
+Then let it scaffold and you refine.
+
+### Workflow B: Small transformations
+
+Great use cases:
+
+- convert callbacks to async/await
+- extract a helper function
+- replace repetitive boilerplate
+
+Tip: keep changes local and verify quickly.
+
+### Workflow C: Test scaffolding (with guardrails)
+
+Ask for tests that fail before the fix:
+
+```text
+Generate tests for this function.
+Must include edge cases.
+Avoid implementation-detail assertions.
+```
+
+Then review.
+
+## How do I keep Codeium output reliable?
+
+### Use types and examples
+
+Types + examples reduce bad suggestions:
+
+- add TypeScript types
+- add example input/output in comments
+- keep function names precise
+
+### Use a verification loop
+
+Don’t accept code “because it looks right”. Run checks:
+
+- `pnpm lint`
+- `pnpm typecheck`
+- unit tests
+
+### Force minimal diffs
+
+If suggestions become invasive, constrain the request:
+
+```text
+Make a minimal diff.
+Do not change public APIs.
+Do not touch unrelated files.
+```
+
+## Troubleshooting
+
+### “No suggestions appear”
+
+- Confirm the extension is enabled.
+- Confirm you’re signed in.
+- Restart the IDE window.
+- Try a plain text file with a clear function signature and comment.
+
+### “Suggestions are low quality”
+
+- Add types or docstrings.
+- Provide an example input/output.
+- Reduce the scope (smaller function).
+- Ask for a plan in chat mode instead of relying on inline suggestions.
+
+### “It keeps rewriting everything”
+
+- Demand minimal diffs.
+- Work in smaller steps.
+- If the task is truly multi-file, switch to Cursor/Windsurf or Claude Code planning.
+
+## Windsurf: what is it and when should I care?
+
+Windsurf is an AI-first IDE product from the same ecosystem. If you like the idea of Codeium but want:
+
+- more integrated multi-file workflows
+- AI-first navigation and flows
+- a more “agentic” experience
+
+…then Windsurf is worth evaluating.
+
+You can treat it similarly to Cursor: adopt a workflow (plan → change → verify), keep diffs reviewable, and use repo rules to reduce style drift.
+
+## When should I upgrade from Codeium to Windsurf/Cursor?
+
+Upgrade when the bottleneck is no longer typing speed, but coordination:
+
+- your changes consistently touch 3+ files
+- you do frequent refactors
+- you need repo-wide context
+
+At that point, IDE-native agent workflows usually pay for themselves.
+
+## How do I evaluate Codeium in 30 minutes?
+
+Use real tasks from your repo (not toy examples):
+
+1) Implement a small pure function from a comment spec.
+2) Refactor a repeated pattern into a helper.
+3) Generate tests for an existing bug fix.
+4) Run your repo checks (lint/typecheck/tests).
+
+If these go well and you feel less friction, Codeium is a good fit. If you spend time fighting context and multi-file changes, you likely want Cursor/Windsurf or Claude Code.
+
+## Prompt library (copy/paste)
+
+### Prompt: inline completion steering
+
+```text
+Write this function.
+Constraints:
+- pure function
+- no new deps
+- handle invalid input
+Add tests after implementation.
+```
+
+### Prompt: edge cases
+
+```text
+List edge cases.
+Then update the code to handle them.
+Then propose tests for each edge case.
+```
+
+### Prompt: code review
+
+```text
+Review this snippet for correctness, edge cases, security, and maintainability.
+Give issues first, then suggestions.
+```
+
+## Common mistakes (and how to avoid them)
+
+### Mistake: Using autocomplete for tasks that need planning
+
+Fix: when the task spans multiple files or involves API design, switch to a planning tool (ChatGPT/Claude Code) or an IDE agent workflow (Cursor/Windsurf).
+
+### Mistake: No tests
+
+Fix: let the AI help you write tests, but you must run them.
+
+### Mistake: Hidden security problems
+
+Fix: ask for a security review (auth, injection, secrets) and keep changes small.
+
+## FAQ
+
+### Is Codeium good enough for professional work?
+
+It can be, especially for autocomplete and routine tasks. But for large refactors, you’ll likely want a tool with stronger project-wide context features.
+
+### Is Codeium better than Copilot?
+
+It depends on your stack and preferences. Copilot is widely used and deeply integrated with GitHub workflows. Codeium is often chosen for cost/value, especially for learning.
+
+### Is Windsurf replacing Codeium?
+
+Think of them as different product surfaces. Codeium is commonly used as an IDE plugin for autocomplete, while Windsurf is positioned as a more integrated AI-first IDE workflow. You can start with Codeium and later move to Windsurf/Cursor if you need multi-file coordination.
+
+### Should I use Codeium and Cursor together?
+
+Yes, if you want a cost-effective stack:
+
+- Codeium for inline autocomplete
+- Cursor for multi-file edits and refactors
+
+### How do I avoid “AI style drift”?
+
+Use your formatter/linter, follow existing patterns, and keep changes local. If your repo supports it, codify standards in a rules file and reference it in prompts.
+
+### Can Codeium help beginners?
+
+Yes. It can reduce frustration by filling in syntax and boilerplate. But beginners should still:
+
+- ask “why”
+- read every suggestion
+- run tests/typecheck
+
+Otherwise you’ll learn slower and debug harder later.
+
+### What is the #1 rule for using autocomplete tools?
+
+Never ship unverified code. Autocomplete is a drafting tool; your build/test pipeline is the judge.
+
+### Can I use Codeium offline?
+
+Most AI assistants depend on network calls for suggestions. If you need offline-only development, you’ll rely on local tooling (linters, typecheckers, tests) and treat AI help as optional.
+
+
+## Related learning paths
+
+- Follow the [AI Coding Roadmap](/docs/ai-coding-roadmap)
+- Work through the [AI Coding Course](/docs/course)
+- Get quick answers in the [FAQ](/docs/faq)
+
+## Next steps
+
+- Compare tools: [AI Tools Comparison Table](/docs/tools/ai-tools-comparison)
+- Improve prompts: [Prompt Engineering Guide](/docs/tools/prompt-engineering)

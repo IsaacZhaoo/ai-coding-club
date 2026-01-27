@@ -5,6 +5,15 @@ title: 'Common Pitfalls & How to Avoid Them'
 description: 'Common Pitfalls & How to Avoid Them'
 ---
 
+> TL;DR: Avoid common traps when building with AI.
+
+## Key steps
+1. Watch for hallucinations and hidden assumptions.
+2. Avoid huge diffs without tests.
+3. Protect secrets and user data.
+
+## Practice
+- Pick one pitfall you hit before and write a rule to prevent it next time.
 
 As you progress on your coding journey, you'll inevitably make mistakes. That's a normal part of learning. This post highlights some of the most common pitfalls for both beginners and intermediate learners, so you can recognize and avoid them.
 

@@ -6,6 +6,7 @@ sidebar_position: 1
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import FAQSchema from '@site/src/components/FAQSchema';
 
 # AI Agents Usage Guide
 
@@ -14,6 +15,23 @@ import TabItem from '@theme/TabItem';
 :::info[One-sentence explanation]
 AI Agents are pre-configured specialized AI assistants with deep domain knowledge and standard workflows.
 :::
+
+<FAQSchema
+  items={[
+    {
+      question: 'What is the difference between AI Agents and Cursor Rules?',
+      answer: 'Cursor Rules define project-wide standards, while Agents define role-specific knowledge and workflows.',
+    },
+    {
+      question: 'Can one project use multiple Agents?',
+      answer: 'Yes. You can switch Agents based on task type, such as backend, frontend, or QA.',
+    },
+    {
+      question: 'Will Agents run code automatically?',
+      answer: 'No. Agents provide suggestions and guidance, but you control execution and verification.',
+    },
+  ]}
+/>
 
 An AI Agent is a **pre-configured AI assistant role** with specialized domain knowledge and workflows.
 

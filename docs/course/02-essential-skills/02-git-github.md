@@ -5,6 +5,15 @@ title: 'Git & GitHub 101: Saving Your Work Like a Pro'
 description: 'Git & GitHub 101: Saving Your Work Like a Pro'
 ---
 
+> TL;DR: Use Git safely: small commits, clear diffs, and reversible changes.
+
+## Key steps
+1. Create a branch and make a small change.
+2. Review diffs before committing.
+3. Push and open a PR with clear notes.
+
+## Practice
+- Make a tiny docs change on a branch and write a good commit message.
 
 Have you ever been afraid to change your code because you might break it? Version control is the answer. Think of it like a "save game" system for your code. Git is the most popular version control system, and GitHub is a website to store your Git projects online.
 

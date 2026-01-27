@@ -5,6 +5,15 @@ title: 'Project Planning with AI: From Idea to Blueprint'
 description: 'Project Planning with AI: From Idea to Blueprint'
 ---
 
+> TL;DR: Plan a project with AI: scope, milestones, and risks.
+
+## Key steps
+1. Define the smallest valuable version (MVP).
+2. Break work into milestones and tasks.
+3. Write acceptance criteria and a test plan.
+
+## Practice
+- Write an MVP spec for a tiny app in 10 bullets + 3 acceptance tests.
 
 Every great project starts with a plan. Before you write a single line of code, you need to know what you're building and how you're going to build it. This is where AI can be an incredible partner, helping you turn a vague idea into a concrete blueprint.
 

@@ -5,6 +5,16 @@ title: 'Automate the Annoying Stuff: Writing Tests & Docs with AI'
 description: 'Automate the Annoying Stuff: Writing Tests & Docs with AI'
 ---
 
+> TL;DR: Add tests and docs so your project is maintainable.
+
+## Key steps
+1. Add minimal tests for core behavior.
+2. Write a README with setup and usage.
+3. Document edge cases and constraints.
+
+## Practice
+- Add a README section + 3 tests for your first project.
+
 So far, we've focused on using AI to write application code. But some of the biggest productivity wins come from using AI to automate the tasks around coding—the things you *know* you should do, but that often feel like a chore.
 
 Let's explore how your AI assistant can become an expert at writing tests and documentation, saving you time and mental energy.

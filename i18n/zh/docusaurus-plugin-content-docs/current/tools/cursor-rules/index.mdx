@@ -6,6 +6,7 @@ sidebar_position: 1
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import FAQSchema from '@site/src/components/FAQSchema';
 
 # Cursor Rules 配置指南
 
@@ -14,6 +15,23 @@ import TabItem from '@theme/TabItem';
 :::info[一句话解释]
 Cursor Rules 是一个配置文件（`.cursorrules`），用于告诉 AI 编程助手（如 Cursor、Windsurf）你的编码偏好和项目规范。
 :::
+
+<FAQSchema
+  items={[
+    {
+      question: 'Cursor Rules 文件应该放在哪里？',
+      answer: '放在仓库根目录表示全局规则，放在子目录则只作用于该目录及子目录。',
+    },
+    {
+      question: 'Rules 需要多长？',
+      answer: '尽量精简。多数项目 300-500 行以内即可。',
+    },
+    {
+      question: '如何让 AI 严格遵守 Rules？',
+      answer: '在提示词中引用 Rules，并用 lint/test 作为强制验证。',
+    },
+  ]}
+/>
 
 :::tip[为什么重要]
 有了 Cursor Rules，AI 生成的代码会自动遵循你的项目规范，无需反复提醒。就像给 AI 助手一本"项目手册"，让它从第一行代码就懂你的风格。

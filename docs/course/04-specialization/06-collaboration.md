@@ -5,6 +5,15 @@ title: 'Collaboration & Code Review: Working with Others'
 description: 'Collaboration & Code Review: Working with Others'
 ---
 
+> TL;DR: Collaborate effectively: PRs, reviews, and communication with AI.
+
+## Key steps
+1. Write clear PR descriptions (what/why/how tested).
+2. Respond to review feedback with evidence.
+3. Use AI to draft docs and review notes.
+
+## Practice
+- Open a PR (or draft) and write a high-quality description with test commands.
 
 Software development is rarely a solo activity. Most projects are built by teams. Learning how to collaborate effectively with other developers is a critical skill for any professional. This post covers the key practices and tools for working in a team.
 

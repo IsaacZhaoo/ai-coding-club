@@ -6,6 +6,7 @@ sidebar_position: 1
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import FAQSchema from '@site/src/components/FAQSchema';
 
 # Cursor Rules Configuration Guide
 
@@ -14,6 +15,23 @@ import TabItem from '@theme/TabItem';
 :::info[One-sentence explanation]
 Cursor Rules is a configuration file (`.cursorrules`) that tells AI coding assistants (like Cursor, Windsurf) your coding preferences and project conventions.
 :::
+
+<FAQSchema
+  items={[
+    {
+      question: 'Where should I place the Cursor Rules file?',
+      answer: 'Place it at the repo root for global rules, or in subfolders for scoped rules.',
+    },
+    {
+      question: 'How long should Rules be?',
+      answer: 'Keep them concise. 300-500 lines is a reasonable upper bound for most projects.',
+    },
+    {
+      question: 'How do I make AI follow the Rules strictly?',
+      answer: 'Reference the Rules in prompts and enforce verification with lint/test commands.',
+    },
+  ]}
+/>
 
 :::tip[Why it matters]
 With Cursor Rules, AI-generated code automatically follows your project standards without repeated reminders. It's like giving the AI assistant a "project manual" so it understands your style from the first line of code.

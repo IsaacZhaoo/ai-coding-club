@@ -5,6 +5,16 @@ title: 'AI Isn''t Magic: A Reality Check for Developers'
 description: 'AI Isn''t Magic: A Reality Check for Developers'
 ---
 
+> TL;DR: Set realistic expectations and build a sustainable learning plan.
+
+## Key steps
+1. Pick a weekly schedule you can keep.
+2. Define what "done" means for each lesson (run/test).
+3. Track progress with tiny weekly deliverables.
+
+## Practice
+- Create a weekly checklist for lessons + one small project deliverable.
+
 You've brainstormed with your AI, generated some code, and started to feel the power of this new workflow. It can feel magical. But now it's time for the most important lesson in this journey: AI is a powerful tool, but it is not magic, and it is not infallible.
 
 Treating AI-generated code with the same skepticism you'd apply to a Stack Overflow answer you just copied is a critical skill. Here’s your reality check.

@@ -5,6 +5,15 @@ title: 'Command Line Basics: Talking to Your Computer'
 description: 'Command Line Basics: Talking to Your Computer'
 ---
 
+> TL;DR: Learn the minimal command line skills you need for real dev work.
+
+## Key steps
+1. Navigate folders and inspect files.
+2. Run scripts and understand exit codes.
+3. Use search tools to find symbols quickly.
+
+## Practice
+- Practice: navigate to a repo and run one command that prints a file list.
 
 In an age of graphical interfaces and AI assistants, the command-line terminal can seem intimidating. But learning a few basic commands is a superpower for any developer. It gives you direct control over your computer and is essential for many development tasks.
 

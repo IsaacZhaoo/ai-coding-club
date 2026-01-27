@@ -5,11 +5,30 @@ sidebar_label: Claude Code 提示词分析
 description: 深入剖析 Claude Code CLI 工具的系统提示词设计,学习其极简主义哲学和安全优先的架构模式
 ---
 
+import FAQSchema from '@site/src/components/FAQSchema';
+
 # Claude Code 系统提示词深度解析
 
 > 理解 Claude Code 如何通过极简设计实现高效的 CLI 代码协作
 
 Claude Code 是 Anthropic 官方推出的 AI 编程 CLI 工具。与传统 AI 编程助手不同,Claude Code 采用**极简主义**设计哲学,专为命令行环境优化。本文通过分析其系统提示词,揭示这一独特工具的设计理念。
+
+<FAQSchema
+  items={[
+    {
+      question: '为什么要分析 Claude Code 的系统提示词？',
+      answer: '可以理解 CLI 工具如何在极简设计下兼顾安全与效率。',
+    },
+    {
+      question: '最重要的模式是什么？',
+      answer: '读前修改与保守默认，有助于减少终端环境中的风险。',
+    },
+    {
+      question: '如何应用到自己的提示词？',
+      answer: '先收集上下文，再给清晰计划，并要求验证步骤。',
+    },
+  ]}
+/>
 
 **学习目标**:
 - 理解 Claude Code 的极简主义设计哲学
@@ -869,3 +888,19 @@ Claude Code:
 **最后更新**: 2025-11-17
 
 **免责声明**: 本文仅用于教育目的,分析公开可获取的系统提示词。所有权利归 Anthropic 所有。
+
+---
+
+## FAQ
+
+### 为什么要分析 Claude Code 的系统提示词？
+
+可以理解 CLI 工具如何在极简设计下兼顾安全与效率。
+
+### 最重要的模式是什么？
+
+读前修改与保守默认，有助于减少终端环境中的风险。
+
+### 如何应用到自己的提示词？
+
+先收集上下文，再给清晰计划，并要求验证步骤。

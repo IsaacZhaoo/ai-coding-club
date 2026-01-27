@@ -4,11 +4,30 @@ title: Prompt Engineering
 description: Master AI communication with ready-to-use prompt templates
 ---
 
+import FAQSchema from '@site/src/components/FAQSchema';
+
 # Prompt Engineering for Coding
 
 **The difference between mediocre and exceptional AI assistance**
 
 Good prompts are the key to getting great results from AI coding tools. This section provides battle-tested templates and best practices.
+
+<FAQSchema
+  items={[
+    {
+      question: 'What is prompt engineering for coding?',
+      answer: 'It is the practice of writing clear, structured prompts so AI tools produce correct, testable code and explanations.',
+    },
+    {
+      question: 'Which prompt template should I start with?',
+      answer: 'Start with debugging or refactoring templates because they teach you to provide context, constraints, and expected output.',
+    },
+    {
+      question: 'How do I avoid vague prompts?',
+      answer: 'Include the goal, constraints, input/output examples, and how you will verify the result.',
+    },
+  ]}
+/>
 
 ## 🚀 Quick Start Templates
 
@@ -268,3 +287,19 @@ Deep dive into Cline open-source AI coding assistant's user approval-first desig
 ## 🤝 Contribute Your Prompts
 
 Found a prompt that works great? [Share it with the community →](https://github.com/IsaacZhaoo/ai-coding-club/discussions)
+
+---
+
+## FAQ
+
+### What is prompt engineering for coding?
+
+It is the practice of writing clear, structured prompts so AI tools produce correct, testable code and explanations.
+
+### Which prompt template should I start with?
+
+Start with debugging or refactoring templates because they teach you to provide context, constraints, and expected output.
+
+### How do I avoid vague prompts?
+
+Include the goal, constraints, input/output examples, and how you will verify the result.

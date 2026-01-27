@@ -5,6 +5,15 @@ title: 'Frontend Specialization: Building Modern UIs with AI'
 description: 'Frontend Specialization: Building Modern UIs with AI'
 ---
 
+> TL;DR: Learn the core frontend skills to build real UIs.
+
+## Key steps
+1. Build pages/components with a UI framework.
+2. Handle state and data fetching.
+3. Test and ship UI changes safely.
+
+## Practice
+- Build a small UI feature (form + validation) and write 3 tests or checks.
 
 Welcome to the frontend specialization path! If you enjoy creating beautiful and interactive user interfaces, you're in the right place. In this post, we'll explore how to use modern tools like React and AI to build a sophisticated frontend for our task manager application.
 

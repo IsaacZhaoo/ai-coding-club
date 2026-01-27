@@ -5,6 +5,16 @@ title: 'Your AI Toolbox: A Comparison of Top Coding Assistants'
 description: 'Your AI Toolbox: A Comparison of Top Coding Assistants'
 ---
 
+> TL;DR: Choose tools based on workflow: chat, IDE, CLI, and agents.
+
+## Key steps
+1. Match tools to tasks (learning vs refactor vs typing speed).
+2. Start with one tool and add another when needed.
+3. Define guardrails: privacy and verification.
+
+## Practice
+- Pick your default stack (1 chat + 1 IDE/CLI) and write why.
+
 You've installed an AI extension in your IDE, and you're ready to work. But which tool is the right one for you? The market is full of excellent options, each with its own strengths and weaknesses.
 
 This post will compare some of the most popular AI coding assistants to help you build your perfect AI-powered toolbox. While this isn't an exhaustive list, it covers the major players you're likely to encounter.

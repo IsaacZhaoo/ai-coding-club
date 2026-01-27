@@ -6,6 +6,7 @@ sidebar_position: 1
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import FAQSchema from '@site/src/components/FAQSchema';
 
 # MCP Server Guide
 
@@ -14,6 +15,23 @@ import TabItem from '@theme/TabItem';
 :::info[One-sentence explanation]
 MCP (Model Context Protocol) is an open protocol that lets AI assistants access external tools, databases, and APIs.
 :::
+
+<FAQSchema
+  items={[
+    {
+      question: 'Does MCP slow down AI responses?',
+      answer: 'Only slightly. Most latency comes from external APIs, while local filesystem MCP is fast.',
+    },
+    {
+      question: 'Is MCP data sent to AI servers?',
+      answer: 'MCP runs locally; only the results are sent to the AI. You can filter sensitive data before sending.',
+    },
+    {
+      question: 'How many MCP servers should I use?',
+      answer: 'Use a small core set (e.g., filesystem and GitHub). Too many servers increase complexity.',
+    },
+  ]}
+/>
 
 **Model Context Protocol (MCP)** is an open protocol that enables AI assistants to connect to external tools, databases, and APIs.
 

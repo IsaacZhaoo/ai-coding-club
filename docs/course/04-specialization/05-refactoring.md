@@ -5,6 +5,15 @@ title: 'The Art of Refactoring: Improving Existing Code'
 description: 'The Art of Refactoring: Improving Existing Code'
 ---
 
+> TL;DR: Refactor like a pro: small steps, safety nets, and clear intent.
+
+## Key steps
+1. Add tests before changing behavior.
+2. Refactor in small reversible steps.
+3. Measure impact and keep code readable.
+
+## Practice
+- Pick a messy function and refactor it in 3 small commits with tests.
 
 As a developer, you will spend more time reading and modifying existing code than writing new code. Refactoring is the art of improving the design of existing code without changing its functionality. It's like cleaning and organizing your house; it doesn't change what the house *is*, but it makes it a much nicer place to live.
 

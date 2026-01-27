@@ -1,0 +1,494 @@
+---
+sidebar_position: 4
+title: GitHub Copilot Guide (Autocomplete + Chat)
+description: "Learn GitHub Copilot end-to-end: setup, Copilot Chat vs inline completions, prompt patterns, safe testing workflows, privacy settings, and common pitfalls."
+keywords:
+  - github copilot
+  - copilot chat
+  - ai autocomplete
+  - ai coding assistant
+  - vscode copilot
+---
+
+import FAQSchema from '@site/src/components/FAQSchema';
+
+# GitHub Copilot Guide (Autocomplete + Chat)
+
+> TL;DR: GitHub Copilot is best at **inline code suggestions** and fast “while-you-type” help inside your editor. Use it for scaffolding, routine code, and accelerating edits. Use tests and typechecking as guardrails, because the fastest tools can also produce the fastest bugs.
+
+<FAQSchema
+  items={[
+    {
+      question: 'Is Copilot good for beginners?',
+      answer: 'Yes, but treat suggestions as drafts. You still need to understand, test, and review the code.',
+    },
+    {
+      question: 'Copilot Chat vs inline completions: which should I use?',
+      answer: 'Use inline completions for speed while coding and Chat for explanations, debugging, and higher-level guidance.',
+    },
+    {
+      question: 'How do I keep Copilot from drifting off style?',
+      answer: 'Keep nearby examples open, run formatters and linters, and give short, specific prompts.',
+    },
+    {
+      question: 'Is Copilot enough for large refactors?',
+      answer: 'It can help, but tools like Cursor or Claude Code handle coordinated multi-file changes better.',
+    },
+  ]}
+/>
+
+## What you'll get from this guide
+
+In 10-20 minutes, you will know how to set up Copilot, when to use inline completions vs Copilot Chat, and how to keep suggestions safe with a verification loop.
+
+**Quick start checklist:**
+- Enable Copilot in your editor and sign in
+- Use inline completions for speed; use Chat for reasoning/debugging
+- Keep prompts short and specify constraints (style, APIs, no new deps)
+- Review diffs like you would a junior teammate's code
+- Always verify with tests/typecheck before merging
+
+## What is GitHub Copilot (and what is it best for)?
+
+GitHub Copilot is an AI coding assistant that integrates into popular editors (VS Code, JetBrains IDEs, Visual Studio, and others). It provides:
+
+- **Inline completions**: suggestions as you type.
+- **Chat**: ask questions about code, errors, and approaches.
+- **Editor actions**: explain code, generate tests, suggest refactors (depending on editor).
+
+Copilot is strongest when:
+
+- you already know what you want to build,
+- you can describe it with types, comments, or examples,
+- you want to reduce typing and boilerplate.
+
+Copilot is weaker when:
+
+- the task requires deep repo-wide understanding,
+- you need multi-file coordinated changes (Cursor/Claude Code may be better),
+- you don’t have a verification loop (tests/typecheck).
+
+## How do I install Copilot?
+
+### Step 1: Get access
+
+Copilot requires a GitHub account and an enabled plan (individual, business/enterprise, or eligible free programs).
+
+### Step 2: Install the editor extension
+
+Pick your editor and install “GitHub Copilot”:
+
+- VS Code: install the Copilot extension, then sign in.
+- JetBrains: install the Copilot plugin, then sign in.
+- Visual Studio: install the Copilot extension.
+
+### Step 3: Confirm Copilot is working
+
+Quick smoke test:
+
+1) Create a new file.
+2) Type a function signature + a short comment.
+3) Pause and see if a suggestion appears.
+
+Example:
+
+```ts
+// Return true if the string is a valid ISO date (YYYY-MM-DD)
+export function isIsoDate(s: string): boolean {
+  
+}
+```
+
+## How much does Copilot cost (and who can get it for free)?
+
+Copilot is offered in multiple plan types (individual and organization plans). Pricing and eligibility can change, but the practical guidance is stable:
+
+- If you’re a student/teacher or in an eligible program, check whether you qualify for free access.
+- If you’re an individual coder, start with a personal plan and upgrade only if Copilot becomes part of your daily workflow.
+- If you’re in a company, use Business/Enterprise so policy, billing, and controls are centrally managed.
+
+Decision rule:
+
+1) If you mostly want autocomplete: Copilot is a cost-effective baseline.
+2) If you need multi-file refactors: consider pairing with Cursor.
+3) If you do deep architecture/debugging: add Claude Code.
+
+## Copilot inline suggestions vs Copilot Chat: when to use which?
+
+### When should I use inline suggestions?
+
+Use inline suggestions for:
+
+- boilerplate
+- small helper functions
+- repetitive code patterns
+- transforming code (map/filter/reduce patterns)
+
+How to get better inline completions:
+
+- Write a clear function name.
+- Add a one-line comment describing behavior.
+- Add types (especially in TypeScript).
+- Provide a small example input/output as a comment.
+
+### When should I use Copilot Chat?
+
+Use Chat for:
+
+- “Explain this code / error.”
+- “Propose a safe refactor plan.”
+- “Generate a set of tests that cover edge cases.”
+- “Compare two approaches.”
+
+A good Chat request is structured like a ticket:
+
+```text
+Context: <framework, repo info>
+Goal: <what to build>
+Constraints: <no deps, keep API stable>
+Verification: <commands>
+```
+
+## How do I use Copilot effectively (practical workflows)?
+
+### Workflow A: Scaffold a feature safely
+
+1) Describe the feature with a comment and types.
+2) Let Copilot scaffold.
+3) Immediately add constraints and edge cases.
+4) Write tests.
+5) Verify.
+
+Example:
+
+```ts
+// Create a rate limiter middleware.
+// Requirements:
+// - per-IP
+// - sliding window
+// - return 429 with Retry-After
+// - no new deps
+```
+
+### Workflow B: Write tests faster (without “cheater tests”)
+
+Copilot can generate tests quickly, but you must ensure they reflect real behavior.
+
+Prompt:
+
+```text
+Generate tests that would fail before the fix.
+Include edge cases.
+Avoid asserting implementation details.
+```
+
+Checklist:
+
+- Does the test fail on the buggy version?
+- Does it pass after the fix?
+- Does it cover errors/timeouts/empty inputs?
+
+### Workflow C: Debug faster with hypotheses
+
+Instead of asking “what’s wrong?”, ask for hypotheses and confirmations:
+
+```text
+Given this stack trace, list 3 likely causes.
+For each, tell me exactly how to confirm it.
+Then propose the minimal fix.
+```
+
+### Workflow D: Refactor in small steps
+
+Copilot can help with refactors, but you should keep diffs reviewable:
+
+1) Mechanical changes (rename, move)
+2) Typecheck/tests
+3) Behavioral improvements
+4) Typecheck/tests
+
+### Workflow E: Use Copilot as a code reviewer (not just a writer)
+
+Copilot Chat is useful after you’ve written code. Ask it to review diffs with a strict checklist:
+
+```text
+Review this diff for:
+- correctness
+- edge cases
+- error handling
+- security issues (auth, injection, secrets)
+- performance pitfalls
+Provide actionable issues first (ordered by severity), then suggestions.
+```
+
+This tends to surface missing null checks, incorrect dependency arrays, unhandled errors, and performance regressions.
+
+## How do I keep Copilot output high-quality?
+
+### Use types and examples as constraints
+
+Types are “executable specs” for Copilot.
+
+- Prefer TypeScript types.
+- Add runtime validations when needed.
+- Show examples as comments.
+
+Example:
+
+```ts
+// parseDuration("1h 30m") -> 5400
+// parseDuration("45s") -> 45
+// parseDuration("bad") -> null
+```
+
+### Use “review prompts” after generation
+
+After Copilot generates code, ask it to review its own output:
+
+```text
+Review this code for:
+- edge cases
+- performance pitfalls
+- security issues
+- consistency with repo style
+Then propose improvements as a minimal diff.
+```
+
+### Require verification
+
+Make `lint/typecheck/tests` mandatory.
+
+If your repo uses pnpm:
+
+```bash
+pnpm lint
+pnpm typecheck
+pnpm test
+```
+
+## Prompt library (copy/paste)
+
+### Generate a minimal implementation plan
+
+```text
+Goal: <feature>
+Constraints: minimal diff, no new deps
+Verification: pnpm lint, pnpm typecheck, pnpm test
+Output: a 5-10 step plan + impacted files. Stop after the plan.
+```
+
+### Ask for edge cases explicitly
+
+```text
+List edge cases for this change.
+Then propose tests that cover them.
+Avoid asserting implementation details.
+```
+
+### Convert “requirements” into code shape
+
+```text
+Given these requirements, propose:
+- TypeScript types
+- function signatures
+- file layout
+Then implement step 1 only.
+```
+
+## Privacy and data considerations
+
+Treat Copilot like any external service:
+
+- Do not paste secrets.
+- Redact customer data.
+- Follow your organization’s policy (especially in enterprise environments).
+
+If you work in a regulated environment, coordinate with your security team and configure Copilot according to the official enterprise guidance.
+
+## How do I configure Copilot for fewer distractions?
+
+If Copilot feels noisy:
+
+- Accept suggestions only when you have a clear function name + signature.
+- Turn off suggestions in files where you don’t want them (config, docs) if your editor supports it.
+- Use Chat for complex tasks and keep inline suggestions for routine edits.
+
+If Copilot feels “too confident”:
+
+- Require it to explain assumptions.
+- Ask for verification commands.
+- Ask it to cite file paths and patterns in the repo.
+
+## Advanced tips (how pros get the most value)
+
+### Use comment-driven development to steer completions
+
+Copilot responds strongly to well-written comments. A short spec right above the function often produces better code than a long chat.
+
+Example:
+
+```ts
+// Requirements:
+// - Accepts a string like "1h 30m" or "45s"
+// - Returns seconds as number
+// - Returns null on invalid input
+// - Must be pure (no Date.now, no globals)
+export function parseDuration(input: string): number | null {
+  // Implementation:
+}
+```
+
+### Use types as a hard boundary
+
+In TypeScript, strong types reduce bad suggestions. When possible:
+
+- Model your domain in types first.
+- Make illegal states unrepresentable.
+- Add runtime validation where necessary.
+
+Then let Copilot fill in the obvious implementation.
+
+### Ask for minimal-diff refactors
+
+Instead of “refactor this”, say:
+
+```text
+Refactor with a minimal diff.
+Do not change public APIs.
+Prefer extracting one helper function.
+```
+
+### Turn Copilot into a test-writing assistant
+
+Copilot is great at generating test scaffolds, but you must define behavior precisely:
+
+```text
+Write tests for these cases:
+- empty input
+- invalid input
+- typical values
+- boundary values
+Ensure tests fail before the fix.
+```
+
+## Common pitfalls (and how to avoid them)
+
+### Pitfall: Accepting suggestions without reading
+
+Fix: read every suggestion like a PR review. Inline suggestions are fast; mistakes are fast too.
+
+### Pitfall: Over-trusting generated tests
+
+Fix: ensure tests fail before the fix and cover real behavior.
+
+### Pitfall: Style drift
+
+Fix: rely on formatter/linter, and point Copilot at “nearby similar code” when asking for changes.
+
+### Pitfall: Hidden complexity
+
+Fix: ask for a complexity check:
+
+```text
+What is the time/space complexity?
+Any surprising edge cases?
+Any security risks?
+```
+
+## Troubleshooting
+
+### “Copilot suggestions are not showing”
+
+- Confirm you’re signed in to the correct GitHub account.
+- Check that the Copilot extension/plugin is enabled.
+- Ensure your plan is active.
+- Reload the editor window.
+
+### “Copilot suggests nonsense for this file”
+
+- Add more context (types, comments, example inputs/outputs).
+- Provide a nearby reference file.
+- Use Chat with a ticket-style prompt instead of relying on inline completions.
+
+### “Generated code doesn’t match repo conventions”
+
+- Point Copilot at a canonical example.
+- Ask it to follow existing patterns.
+- Let formatter/linter enforce the final shape.
+
+## FAQ
+
+### Is Copilot enough for professional work?
+
+Yes, if you use it correctly: as an accelerator, not a replacement for engineering judgment. The verification loop (tests/typecheck/build) is what makes it safe.
+
+### Should beginners use Copilot?
+
+Beginners can learn faster with Copilot, but only if they keep asking “why” and verify outputs. Use it as a tutor:
+
+- “Explain this line.”
+- “Show an example.”
+- “What could go wrong?”
+
+### Copilot vs Cursor: which should I start with?
+
+Start with Copilot if you want minimal workflow change (stays inside your editor). Move to Cursor when you want multi-file editing and repo-aware refactors.
+
+### How do I stop Copilot from suggesting the wrong style?
+
+Provide a nearby example file, mention the repo conventions, and rely on lint/format enforcement.
+
+### Can Copilot write docs and comments?
+
+Yes. Ask it to write docstrings, usage examples, and a troubleshooting section. Then review for accuracy.
+
+### Is Copilot safe for private repositories?
+
+It can be, but it depends on your organization’s policy and configuration. Treat it like any third-party service: don’t paste secrets, and follow your company’s security rules (especially for enterprise usage).
+
+### What is the best “Copilot habit” to learn?
+
+Always verify:
+
+- typecheck
+- tests
+- build
+
+Copilot accelerates coding; verification preserves correctness.
+
+### How do I use Copilot with Claude Code?
+
+Use Copilot for speed while coding; use Claude Code for planning, deep refactors, and terminal-driven investigation.
+
+### Can Copilot help me learn a new codebase?
+
+Yes, but use it like a guide, not a narrator. Ask for:
+
+- the likely entry points
+- a short “request flow” explanation
+- the smallest set of files to read next
+
+Then open those files and confirm.
+
+### How do I avoid license/copyright surprises?
+
+Don’t paste large third-party code into prompts. Prefer generating original code from requirements, and keep outputs reviewable. When in doubt, replace generated code with your own implementation and add tests.
+
+### Can Copilot run commands or edit multiple files automatically?
+
+In most editors, Copilot focuses on suggestions and chat, not autonomous command execution. It can propose commands and multi-file plans, but you should run commands yourself and keep edits stepwise so the diff stays reviewable. If you want a more “agentic” multi-file workflow, pair Copilot with Cursor or Claude Code.
+
+Rule of thumb: let Copilot accelerate typing, but use your build/test pipeline to decide whether changes ship.
+Treat suggestions as drafts, not truth—always. No exceptions.
+
+
+## Related learning paths
+
+- Follow the [AI Coding Roadmap](/docs/ai-coding-roadmap)
+- Work through the [AI Coding Course](/docs/course)
+- Get quick answers in the [FAQ](/docs/faq)
+
+## Next steps
+
+- Learn prompt patterns: [Prompt Engineering Guide](/docs/tools/prompt-engineering)
+- Compare tools: [AI Tools Comparison Table](/docs/tools/ai-tools-comparison)

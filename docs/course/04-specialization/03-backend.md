@@ -5,6 +5,15 @@ title: 'Backend Specialization: APIs and Databases with AI'
 description: 'Backend Specialization: APIs and Databases with AI'
 ---
 
+> TL;DR: Learn backend fundamentals: APIs, data, auth, and reliability.
+
+## Key steps
+1. Design an API with clear contracts.
+2. Add persistence and validation.
+3. Add auth and basic observability.
+
+## Practice
+- Design one endpoint with request/response examples and implement it with tests.
 
 Welcome to the backend specialization path! If you're fascinated by logic, data, and how applications work behind the scenes, the backend is for you. In this post, we'll build a robust backend for our task manager, complete with a real database and an API.
 

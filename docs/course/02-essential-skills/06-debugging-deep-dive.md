@@ -5,6 +5,15 @@ title: 'Debugging Deep Dive: From Error to Solution'
 description: 'Debugging Deep Dive: From Error to Solution'
 ---
 
+> TL;DR: Go deeper on debugging: hypotheses, instrumentation, and iteration.
+
+## Key steps
+1. Form hypotheses and rank by likelihood.
+2. Add logs or breakpoints to gather evidence.
+3. Fix and add a regression test.
+
+## Practice
+- Pick a recent bug and write a regression test that would have caught it.
 
 This post expands on the basics of debugging, providing a systematic approach to finding and fixing errors in your code. We'll cover using AI as a debugging partner, reading documentation effectively, and using common debugging tools.
 
