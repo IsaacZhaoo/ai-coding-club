@@ -28,7 +28,7 @@ import FAQSchema from '@site/src/components/FAQSchema';
   ]}
 />
 
-## 📚 模板类别
+## 模板类别
 
 ### 🐛 [调试](/docs/tools/prompt-engineering/templates/debugging)
 12个模板用于更快地找到和修复bugs。
@@ -50,7 +50,7 @@ import FAQSchema from '@site/src/components/FAQSchema';
 
 ---
 
-## 🚀 快速开始
+## 快速开始
 
 1. 选择上面的一个模板类别
 2. 复制你需要的模板
@@ -60,7 +60,7 @@ import FAQSchema from '@site/src/components/FAQSchema';
 
 ---
 
-## 💡 专业提示
+## 专业提示
 
 - **具体明确**：添加上下文和约束条件
 - **提供示例**：展示你想要的内容

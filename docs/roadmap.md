@@ -5,7 +5,7 @@ sidebar_label: Learning Roadmap
 description: Your complete journey from beginner to AI-powered developer
 ---
 
-# 🗺️ Learning Roadmap
+# Learning Roadmap
 
 **Your journey from zero to AI-powered developer in 5-9 weeks**
 
@@ -20,7 +20,7 @@ This roadmap breaks down your learning into **12 levels** across **3 stages**, w
 
 ---
 
-## 📍 Where Are You?
+## Where Are You?
 
 Not sure where to start? Use this quick guide:
 
@@ -32,7 +32,7 @@ Not sure where to start? Use this quick guide:
 
 ---
 
-## 🎮 Complete Learning Path
+## Complete Learning Path
 
 ```mermaid
 graph TB
@@ -72,7 +72,7 @@ graph TB
 
 ---
 
-## 🎮 Stage 0: Vibecoding
+## Stage 0: Vibecoding
 
 **Goal:** Eliminate fear, start coding TODAY
 **Duration:** 2-4 weeks (1-2 hours/day)
@@ -190,7 +190,7 @@ graph TB
 
 ---
 
-### 🎯 Stage 0 Graduation Project
+### Stage 0 Graduation Project
 
 **Requirements:** Choose your direction, complete a mini project (2-3 days)
 
@@ -216,7 +216,7 @@ graph TB
 
 ---
 
-## 🧠 Stage 1: Reality Check
+## Stage 1: Reality Check
 
 **Goal:** Understand AI limitations, develop critical thinking
 **Duration:** 1-2 weeks (1-2 hours/day)
@@ -348,7 +348,7 @@ graph TB
 
 ---
 
-## 🏗️ Stage 2: Context & Architecture
+## Stage 2: Context & Architecture
 
 **Goal:** Master providing context to AI, design AI-friendly architectures
 **Duration:** 2-3 weeks (2-3 hours/day)
@@ -472,7 +472,7 @@ graph TB
 
 ---
 
-### 🎯 Stage 2 Graduation Project
+### Stage 2 Graduation Project
 
 **Requirements:** Complete medium-sized project (1-2 weeks)
 
@@ -504,7 +504,7 @@ graph TB
 
 ---
 
-## 📊 Time Estimates
+## Time Estimates
 
 | Stage | Levels | Duration | Daily Commitment |
 |-------|--------|----------|------------------|
@@ -544,7 +544,7 @@ graph LR
 
 ---
 
-## 💡 Learning Tips
+## Learning Tips
 
 ### 1. Project-Driven Learning
 Don't just read tutorials—build real projects. Each level has a hands-on project to solidify your learning.
@@ -567,7 +567,7 @@ The projects are suggestions. If you have an idea you're passionate about, build
 
 ---
 
-## 🎓 What's Next?
+## What's Next?
 
 Ready to start? Head to [Stage 0: Vibecoding](/docs/roadmap/stage0/) and build your first project today!
 

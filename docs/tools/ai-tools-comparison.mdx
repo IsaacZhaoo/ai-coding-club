@@ -1,11 +1,39 @@
 import VideoEmbed from '@site/src/components/VideoEmbed';
 import FAQSchema from '@site/src/components/FAQSchema';
+import SoftwareApplicationSchema from '@site/src/components/SoftwareApplicationSchema';
 
 # AI Coding Tools Comparison
 
 **Find the perfect AI coding assistant for your needs**
 
 This comparison table helps you choose the right AI coding tool based on your specific use case, budget, and preferences. All information is current as of October 2025.
+
+<SoftwareApplicationSchema
+  name="Cursor"
+  description="AI-powered code editor built on VS Code with full project context awareness, multi-file editing, and inline AI chat."
+  applicationCategory="DeveloperApplication"
+  operatingSystem="Windows, macOS, Linux"
+  offers={{ price: "0", priceCurrency: "USD" }}
+  url="https://cursor.sh/"
+/>
+
+<SoftwareApplicationSchema
+  name="GitHub Copilot"
+  description="AI pair programmer that integrates with VS Code, JetBrains, and Neovim. Provides real-time code suggestions and chat-based assistance."
+  applicationCategory="DeveloperApplication"
+  operatingSystem="Windows, macOS, Linux"
+  offers={{ price: "10", priceCurrency: "USD" }}
+  url="https://github.com/features/copilot"
+/>
+
+<SoftwareApplicationSchema
+  name="Claude Code"
+  description="Terminal-based AI coding assistant with deep codebase understanding, multi-file refactoring, and careful change management."
+  applicationCategory="DeveloperApplication"
+  operatingSystem="Windows, macOS, Linux"
+  offers={{ price: "0", priceCurrency: "USD" }}
+  url="https://claude.com/claude-code"
+/>
 
 <FAQSchema
   items={[

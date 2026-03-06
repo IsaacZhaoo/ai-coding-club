@@ -30,7 +30,7 @@ These templates help you communicate bugs effectively to AI assistants, resultin
 
 ---
 
-## 🎯 Basic Debugging Template
+## Basic Debugging Template
 
 ```markdown
 **Problem**: [Brief description of the issue]
@@ -68,7 +68,7 @@ Help me identify the root cause and suggest a solution.
 
 ---
 
-## 🔥 Quick Debug Prompts
+## Quick Debug Prompts
 
 ### Syntax Error
 ```
@@ -181,7 +181,7 @@ Help me diagnose the API issue.
 
 ---
 
-## 💡 Debugging Strategies Prompts
+## Debugging Strategies Prompts
 
 ### Root Cause Analysis
 ```
@@ -284,7 +284,7 @@ Help me fix the query.
 
 ---
 
-## 📊 When to Use Each Template
+## When to Use Each Template
 
 | Situation | Template | Best For |
 |-----------|----------|----------|
@@ -308,7 +308,7 @@ Before using any template, gather:
 
 ---
 
-## 💡 Pro Tips
+## Pro Tips
 
 1. **Minimal Reproducible Example**: Reduce code to the smallest example that shows the bug
 2. **One Bug at a Time**: Don't combine multiple issues in one prompt
@@ -337,7 +337,7 @@ What should I try next?
 
 ---
 
-## 📚 Related Resources
+## Related Resources
 
 - [Refactoring Templates](/docs/tools/prompt-engineering/templates/refactoring)
 - [Testing Templates](/docs/tools/prompt-engineering/templates/testing)

@@ -17,7 +17,7 @@ import ArticleSchema from '@site/src/components/ArticleSchema';
   authorName="Isaac Zhao"
 />
 
-Last month, a junior developer got fired from a startup. Not because AI replaced him—because he refused to use AI while his peers did.
+Last month, a junior developer got fired from a startup. Not because AI replaced him, because he refused to use AI while his peers did.
 
 His code took twice as long. His bugs took three times longer to fix. And when the team moved to AI-assisted development, he became a bottleneck.
 
@@ -63,7 +63,7 @@ After 2 years of testing AI coding tools across our community, here's what we've
 - Translating business needs to code (communication)
 - Reviewing AI output for security holes (judgment)
 
-Stack Overflow's 2024 survey confirms this: **Only 43% of developers fully trust AI output**. Meaning code review—once a senior skill—is now essential from Day 1.
+Stack Overflow's 2024 survey confirms this: **Only 43% of developers fully trust AI output**. Meaning code review, once a senior skill, is now essential from Day 1.
 
 ## The Calculator Paradox (Why This Has Happened Before)
 
@@ -131,7 +131,7 @@ You're entering programming at the best possible time. Here's why:
 - Learn syntax in context as needed
 - Focus on problem-solving from the start
 
-**Example:** Marcus tried Codecademy for 6 months and quit. With AI, he built a working Discord bot in 10 days. Why? He didn't waste time memorizing syntax—he learned by building.
+**Example:** Marcus tried Codecademy for 6 months and quit. With AI, he built a working Discord bot in 10 days. Why? He didn't waste time memorizing syntax, he learned by building.
 
 ### 2. Learn at Your Level
 
@@ -231,7 +231,7 @@ Our [Prompt Engineering 101](/docs/prompt-engineering-101) has 50+ templates lik
 - Use AI to build it
 - Learn by solving real problems
 
-Example: Elena (marketing manager) automated her weekly reports. Learned Python, pandas, and automation—all while solving a real problem.
+Example: Elena (marketing manager) automated her weekly reports. Learned Python, pandas, and automation, all while solving a real problem.
 
 Check our [31-lesson course](/docs/course/) for structured project-based learning.
 
@@ -252,7 +252,7 @@ Despite the doom headlines, here's why you should still learn to code:
 - **327,900 new developer jobs** projected by 2033 (17% growth)
 - **AI-assisted developers complete tasks 55% faster** (GitHub 2024)
 - **Entry-level hiring up 47%** year-over-year (U.S. data)
-- **76% of developers using AI** means 24% aren't—massive competitive advantage
+- **76% of developers using AI** means 24% aren't, a massive competitive advantage
 
 Translation: **Demand is growing. You just need to learn differently.**
 

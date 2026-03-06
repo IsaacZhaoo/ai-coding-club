@@ -29,7 +29,7 @@ AI coding assistants have revolutionized how developers write code. This section
   ]}
 />
 
-## 📋 Quick Comparison
+## Quick Comparison
 
 | Tool | Type | Price | Best For |
 |------|------|-------|----------|
@@ -42,7 +42,7 @@ AI coding assistants have revolutionized how developers write code. This section
 
 ---
 
-## 🎯 Featured Tools
+## Featured Tools
 
 ### Cursor
 
@@ -161,7 +161,7 @@ New entrant from Codeium with Cursor-like features. Currently in free beta.
 
 ---
 
-## 🤔 How to Choose
+## How to Choose
 
 ### For Beginners
 Start with **Codeium** (free) to learn without financial commitment. Upgrade to **Cursor** once you understand the value.
@@ -180,14 +180,14 @@ Start with **Codeium** (free) to learn without financial commitment. Upgrade to 
 
 ---
 
-## 📚 Learn More
+## Learn More
 
 - [AI Tools Comparison Table](/docs/tools/ai-tools-comparison) - Detailed comparison
 - [Prompt Engineering Guide](/docs/tools/prompt-engineering) - Get better results
 
 ---
 
-## 🆕 Stay Updated
+## Stay Updated
 
 New AI coding tools launch frequently. Check back regularly for updates on:
 - New tool releases

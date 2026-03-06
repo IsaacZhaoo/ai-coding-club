@@ -50,7 +50,7 @@ Report bugs, request features, or ask technical questions.
 - Acknowledge helpful community members
 - Share what worked for you
 
-## 🌟 Success Stories
+## Success Stories
 
 Share your success story with the community! We'd love to hear about:
 - Projects you've built with AI assistance

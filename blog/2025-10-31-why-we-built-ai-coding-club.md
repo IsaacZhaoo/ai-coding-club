@@ -29,7 +29,7 @@ None of them could write a for-loop on Day 1.
 
 ## The Problem Nobody's Talking About
 
-Here's the situation: **92% of professional developers are using AI coding tools** (GitHub Octoverse 2024). GitHub Copilot hit **20 million users** in 2024—5 million joined in just 3 months.
+Here's the situation: **92% of professional developers are using AI coding tools** (GitHub Octoverse 2024). GitHub Copilot hit **20 million users** in 2024, with 5 million joining in just 3 months.
 
 Yet when you search "learn to code 2025," what do you find?
 
@@ -42,7 +42,7 @@ It's like teaching someone to be a professional writer in 2025 without mentionin
 
 ## The Experiment That Changed Everything
 
-Many of us were skeptical. You've probably heard claims that "AI makes coding easier for beginners"—but does it really work for *complete* beginners? People with zero programming background. People who'd never seen a terminal before.
+Many of us were skeptical. You've probably heard claims that "AI makes coding easier for beginners", but does it really work for *complete* beginners? People with zero programming background. People who'd never seen a terminal before.
 
 We decided to find out.
 
@@ -89,13 +89,13 @@ They weren't just following AI instructions blindly. By Week 2, they were:
 
 ## What We Learned
 
-### 1. The Barrier Isn't Syntax—It's Knowing What to Ask
+### 1. The Barrier Isn't Syntax, It's Knowing What to Ask
 
 Marcus spent 6 months on Codecademy learning Python syntax but couldn't build anything. With AI, he built a working Discord bot in 10 days.
 
 The difference? Instead of memorizing syntax, he learned to ask:
 - "How do I make my bot respond to messages?"
-- "This error says 'NoneType object has no attribute'—what does that mean?"
+- "This error says 'NoneType object has no attribute', what does that mean?"
 - "Can you show me how to add a timer feature?"
 
 Traditional learning taught him *how* to write a for-loop. AI taught him *when* and *why* to use one.
@@ -135,7 +135,7 @@ By the end of 2 weeks, here's what they'd learned:
 - When to trust AI vs. when to question it
 - How to break big features into small, testable pieces
 
-Stack Overflow's 2024 survey backs this up: **Only 43% of developers fully trust AI output**. Meaning code review—once a senior skill—is now a Day 1 essential.
+Stack Overflow's 2024 survey backs this up: **Only 43% of developers fully trust AI output**. Meaning code review, once a senior skill, is now a Day 1 essential.
 
 ## Why We Built AI Coding Club
 
@@ -150,7 +150,7 @@ We needed something different.
 
 ## What You'll Find Here
 
-### 📍 1. Project-Based Learning (Not Syntax Memorization)
+### 1. Project-Based Learning (Not Syntax Memorization)
 
 Every lesson builds toward a real project. No "learn 100 Python commands first." You'll build:
 - A working app (not a toy example)
@@ -160,9 +160,9 @@ Every lesson builds toward a real project. No "learn 100 Python commands first."
 **Start here:** [30-Second Demo: CSV to Markdown Converter](/docs/csv-to-markdown-demo)
 No signup. No installation. Build something in 5 minutes.
 
-### 🧠 2. Prompt Engineering (The Real Superpower)
+### 2. Prompt Engineering (The Real Superpower)
 
-The #1 skill for AI-assisted coding isn't Python or JavaScript—it's **asking the right questions**.
+The #1 skill for AI-assisted coding isn't Python or JavaScript, it's **asking the right questions**.
 
 Example: Instead of asking "How do I make a website?", you'll learn:
 
@@ -170,7 +170,7 @@ Example: Instead of asking "How do I make a website?", you'll learn:
 
 Our [Prompt Engineering 101](/docs/prompt-engineering-101) has 50+ tested templates.
 
-### 🗺️ 3. Realistic Roadmap (Not Fantasy)
+### 3. Realistic Roadmap (Not Fantasy)
 
 **Most roadmaps:** "Learn 15 languages, 8 frameworks, algorithms, system design, then apply."
 
@@ -178,7 +178,7 @@ Our [Prompt Engineering 101](/docs/prompt-engineering-101) has 50+ tested templa
 
 [See the Full Roadmap →](/docs/ai-coding-roadmap)
 
-### 📚 4. Curated Resources (No Link Dumps)
+### 4. Curated Resources (No Link Dumps)
 
 We hand-pick 3-5 best tutorials per topic. Free tools only. Beginner-tested.
 
@@ -253,7 +253,7 @@ build a tip calculator. Start with the simplest version in JavaScript.
 
 AI Coding Club exists because many of us wasted months learning the wrong way. We memorized syntax we immediately forgot. We followed tutorials without understanding. We felt like impostors asking for help.
 
-If that sounds familiar—**you're not alone**. Let's fix this together.
+If that sounds familiar, **you're not alone**. Let's fix this together.
 
 The 5 beginners from the experiment? They're all still coding. Sarah's flashcard app is used by 3 other teachers now. Marcus got his first freelance gig. Elena automated 4 reports at her company.
 

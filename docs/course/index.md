@@ -29,12 +29,12 @@ Master the fundamental tools and techniques every developer needs.
 
 [Begin Phase 2 →](/docs/course/02-essential-skills)
 
-### 🏗️ Phase 3: Building Projects (7 Lessons)
+### Phase 3: Building Projects (7 Lessons)
 Apply your skills to build real projects from planning to deployment.
 
 [Begin Phase 3 →](/docs/course/03-building-projects)
 
-### 🎯 Phase 4: Specialization (6 Lessons)
+### Phase 4: Specialization (6 Lessons)
 Choose your path: frontend, backend, or data/automation specialization.
 
 [Begin Phase 4 →](/docs/course/04-specialization)

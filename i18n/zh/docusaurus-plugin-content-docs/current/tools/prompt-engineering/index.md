@@ -29,7 +29,7 @@ import FAQSchema from '@site/src/components/FAQSchema';
   ]}
 />
 
-## 🚀 快速开始模板
+## 快速开始模板
 
 ### 🐛 调试
 ```
@@ -88,7 +88,7 @@ import FAQSchema from '@site/src/components/FAQSchema';
 
 ---
 
-## 🎯 提示词工程原则
+## 提示词工程原则
 
 ### 1. 具体明确
 **不好**: "修复这个代码"
@@ -111,7 +111,7 @@ import FAQSchema from '@site/src/components/FAQSchema';
 
 ---
 
-## 📚 模板类别
+## 模板类别
 
 ### 按任务类型
 
@@ -140,7 +140,7 @@ import FAQSchema from '@site/src/components/FAQSchema';
 
 ---
 
-## 🔥 高级技巧
+## 高级技巧
 
 ### 思维链提示
 ```
@@ -179,7 +179,7 @@ import FAQSchema from '@site/src/components/FAQSchema';
 
 ---
 
-## 💡 真实示例
+## 真实示例
 
 ### 示例1：React组件重构
 **之前**（含糊）：

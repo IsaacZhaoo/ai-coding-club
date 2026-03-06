@@ -54,6 +54,27 @@ You **only need**:
 - Basic computer operation skills
 - 30 minutes to 2 hours of learning time
 
+## 📈 Track Your Progress
+
+**Recommended:** Use GitHub Projects to visualize your learning journey
+
+**Quick Setup (5 minutes):**
+1. Create a new [GitHub Project](https://github.com/features/issues) in your account
+2. Add cards: "Level 0.1", "Level 0.2", "Level 0.3", "Level 0.4", "Stage 0 Project"
+3. Create columns: "Not Started" | "In Progress" | "Done"
+4. Move cards as you complete each level
+
+**Why this works:**
+- ✅ Visual progress = motivation boost
+- ✅ Easy to share with friends or recruiters
+- ✅ Syncs naturally with your GitHub commits
+
+**Alternative:** Notion template (coming soon)
+
+:::tip Optional
+Progress tracking is a tool, not a requirement. Use what works for you, or skip it entirely. The goal is learning, not checking boxes.
+:::
+
 ## Get Started Now
 
 ### Step 1: Choose an AI Tool
@@ -188,15 +209,36 @@ A: 2-3 hours to complete basic tasks. 1-2 weeks to master most common scenarios.
 **Q: Will I be replaced by AI?**
 A: No. AI is a tool, not a replacement. What's truly valuable is people who know how to **use** AI.
 
-## Next Steps
+## 🎉 Congratulations! Stage 0 Complete
 
-After completing this stage, you will:
-- ✓ Be able to use AI for everyday office tasks
-- ✓ Understand AI's capabilities and limitations
-- ✓ Master basic prompt techniques
-- ✓ Be ready to learn **Stage 1: AI Reality & Limitations**
+You just learned to code with AI in 2-4 weeks. What's next? **The choice is yours.**
 
-**[Start Stage 1 →](../stage1/)**
+### Choose Your Path
+
+**Option A: Continue Web Development**
+You enjoyed building web projects. Let's go deeper.
+→ Continue to [Stage 1](/docs/roadmap/stage1) (React, APIs, Databases)
+
+**Option B: Explore Computer Science Theory**
+You want to understand how things work under the hood.
+→ [CS50 (Harvard)](https://cs50.harvard.edu) | [MIT OpenCourseWare](https://ocw.mit.edu) | [freeCodeCamp](https://freecodecamp.org)
+
+**Option C: Apply Coding to Your Field**
+You want to use coding in your existing domain:
+- **Data Science:** [Python for Data Analysis](https://www.oreilly.com/library/view/python-for-data/9781491957653/) | [Kaggle Learn](https://www.kaggle.com/learn)
+- **Design:** [Frontend Masters](https://frontendmasters.com) | [CSS-Tricks](https://css-tricks.com)
+- **Marketing:** [Zapier Automation](https://zapier.com/learn) | [Google Analytics API](https://developers.google.com/analytics)
+- **Research:** [Jupyter Notebooks](https://jupyter.org/try) | [matplotlib tutorials](https://matplotlib.org/stable/tutorials/index.html)
+
+**Option D: Use AI Tools Like a Pro**
+You just want to use AI tools effectively:
+→ [Cursor Tips & Tricks](https://cursor.sh/docs) | [GitHub Copilot Guide](https://docs.github.com/copilot) | [Prompt Engineering 101](/docs/prompt-engineering-101)
+
+**No wrong choice!** The roadmap sparked your interest. Now explore what excites you.
+
+:::tip Optional Feedback
+[Tell us which path you chose](https://forms.gle/placeholder) (1 minute, helps us improve)
+:::
 
 ---
 

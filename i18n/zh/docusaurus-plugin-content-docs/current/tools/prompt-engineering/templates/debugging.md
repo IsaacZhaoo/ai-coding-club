@@ -30,7 +30,7 @@ import FAQSchema from '@site/src/components/FAQSchema';
 
 ---
 
-## 🎯 基础调试模板
+## 基础调试模板
 
 ```markdown
 **问题**: [简要描述问题]
@@ -68,7 +68,7 @@ import FAQSchema from '@site/src/components/FAQSchema';
 
 ---
 
-## 🔥 快速调试提示词
+## 快速调试提示词
 
 ### 语法错误
 ```
@@ -181,7 +181,7 @@ import FAQSchema from '@site/src/components/FAQSchema';
 
 ---
 
-## 💡 调试策略提示词
+## 调试策略提示词
 
 ### 根本原因分析
 ```
@@ -284,7 +284,7 @@ React DevTools显示: [状态/属性信息]
 
 ---
 
-## 📊 何时使用各模板
+## 何时使用各模板
 
 | 情况 | 模板 | 最适用于 |
 |-----------|----------|----------|
@@ -308,7 +308,7 @@ React DevTools显示: [状态/属性信息]
 
 ---
 
-## 💡 专业提示
+## 专业提示
 
 1. **最小可复现示例**: 将代码精简到能展示bug的最小示例
 2. **一次一个bug**: 不要在一个提示词中混合多个问题
@@ -337,7 +337,7 @@ React DevTools显示: [状态/属性信息]
 
 ---
 
-## 📚 相关资源
+## 相关资源
 
 - [重构模板](/docs/tools/prompt-engineering/templates/refactoring)
 - [测试模板](/docs/tools/prompt-engineering/templates/testing)

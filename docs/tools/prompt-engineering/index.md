@@ -29,9 +29,9 @@ Good prompts are the key to getting great results from AI coding tools. This sec
   ]}
 />
 
-## 🚀 Quick Start Templates
+## Quick Start Templates
 
-### 🐛 Debugging
+### Debugging
 ```
 I'm getting this error: [ERROR MESSAGE]
 
@@ -45,7 +45,7 @@ Context: [WHAT YOU WERE TRYING TO DO]
 Help me understand what's wrong and how to fix it.
 ```
 
-### 🔄 Refactoring
+### Refactoring
 ```
 Refactor this code to be more [maintainable/performant/readable]:
 
@@ -57,7 +57,7 @@ Requirements:
 - Add comments explaining changes
 ```
 
-### 📝 Documentation
+### Documentation
 ```
 Write comprehensive documentation for this code:
 
@@ -71,7 +71,7 @@ Include:
 - Edge cases
 ```
 
-### 🧪 Testing
+### Testing
 ```
 Write unit tests for this function using [TESTING FRAMEWORK]:
 
@@ -88,7 +88,7 @@ Cover:
 
 ---
 
-## 🎯 Prompt Engineering Principles
+## Prompt Engineering Principles
 
 ### 1. Be Specific
 **Bad**: "Fix this code"
@@ -111,7 +111,7 @@ Start broad, then refine:
 
 ---
 
-## 📚 Template Categories
+## Template Categories
 
 ### By Task Type
 
@@ -122,7 +122,7 @@ Start broad, then refine:
 
 ---
 
-## 🎓 Best Practices
+## Best Practices
 
 ### ✅ Do's
 - Provide full context and relevant code
@@ -140,7 +140,7 @@ Start broad, then refine:
 
 ---
 
-## 🔥 Advanced Techniques
+## Advanced Techniques
 
 ### Chain of Thought Prompting
 ```
@@ -179,7 +179,7 @@ Write a [COMPONENT] with these constraints:
 
 ---
 
-## 💡 Real Examples
+## Real Examples
 
 ### Example 1: React Component Refactoring
 **Before** (vague):
@@ -226,7 +226,7 @@ Environment: React 19, Next.js 15, Node 20
 
 ---
 
-## 🛠️ Tools Integration
+## Tools Integration
 
 ### For Cursor
 Save frequently used prompts as `.cursorrules` files in your project root.
@@ -239,7 +239,7 @@ Use the "Custom Instructions" feature to set default behavior.
 
 ---
 
-## 🔍 System Prompts Deep Dives
+## System Prompts Deep Dives
 
 Want to understand how professional AI coding tools work under the hood? Explore our deep-dive analyses of system prompts from popular tools:
 
@@ -277,14 +277,14 @@ Deep dive into Cline open-source AI coding assistant's user approval-first desig
 
 ---
 
-## 📖 Learn More
+## Learn More
 
 - [Best Practices Guide](/docs/tools/prompt-engineering/best-practices) - Advanced tips
 - [System Prompts Repository](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools) - Source of our analyses
 
 ---
 
-## 🤝 Contribute Your Prompts
+## Contribute Your Prompts
 
 Found a prompt that works great? [Share it with the community →](https://github.com/IsaacZhaoo/ai-coding-club/discussions)
 

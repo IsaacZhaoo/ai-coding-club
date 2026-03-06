@@ -29,12 +29,12 @@ import CourseSchema from '@site/src/components/CourseSchema';
 
 [开始第2阶段 →](./02-essential-skills)
 
-### 🏗️ 第3阶段：构建项目（7课时）
+### 第3阶段：构建项目（7课时）
 应用所学技能，从规划到部署构建真实项目。
 
 [开始第3阶段 →](./03-building-projects)
 
-### 🎯 第4阶段：专业化（6课时）
+### 第4阶段：专业化（6课时）
 选择你的方向：前端、后端或数据/自动化专业化。
 
 [开始第4阶段 →](./04-specialization)

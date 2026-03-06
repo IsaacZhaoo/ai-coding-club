@@ -28,7 +28,7 @@ Ready-to-use prompt templates that get better results from AI assistants. Organi
   ]}
 />
 
-## 📚 Template Categories
+## Template Categories
 
 ### 🐛 [Debugging](/docs/tools/prompt-engineering/templates/debugging)
 12 templates for finding and fixing bugs faster.
@@ -50,7 +50,7 @@ Templates for plans, risk checks, and step-by-step execution.
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 1. Choose a template category above
 2. Copy the template you need
@@ -60,7 +60,7 @@ Templates for plans, risk checks, and step-by-step execution.
 
 ---
 
-## 💡 Pro Tips
+## Pro Tips
 
 - **Be Specific**: Add context and constraints
 - **Provide Examples**: Show what you want

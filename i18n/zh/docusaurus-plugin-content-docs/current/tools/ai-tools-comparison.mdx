@@ -1,11 +1,39 @@
 import VideoEmbed from '@site/src/components/VideoEmbed';
 import FAQSchema from '@site/src/components/FAQSchema';
+import SoftwareApplicationSchema from '@site/src/components/SoftwareApplicationSchema';
 
 # AI 编程工具对比
 
 **找到最适合你的 AI 编程助手**
 
 本对比表帮助你根据具体使用场景、预算和偏好选择合适的 AI 编程工具。所有信息截至 2025 年 10 月。
+
+<SoftwareApplicationSchema
+  name="Cursor"
+  description="基于VS Code的AI驱动代码编辑器，支持全项目上下文感知、多文件编辑和内联AI对话。"
+  applicationCategory="DeveloperApplication"
+  operatingSystem="Windows, macOS, Linux"
+  offers={{ price: "0", priceCurrency: "USD" }}
+  url="https://cursor.sh/"
+/>
+
+<SoftwareApplicationSchema
+  name="GitHub Copilot"
+  description="AI结对编程工具，集成VS Code、JetBrains和Neovim，提供实时代码建议和基于对话的辅助。"
+  applicationCategory="DeveloperApplication"
+  operatingSystem="Windows, macOS, Linux"
+  offers={{ price: "10", priceCurrency: "USD" }}
+  url="https://github.com/features/copilot"
+/>
+
+<SoftwareApplicationSchema
+  name="Claude Code"
+  description="基于终端的AI编程助手，具备深度代码库理解、多文件重构和安全的变更管理能力。"
+  applicationCategory="DeveloperApplication"
+  operatingSystem="Windows, macOS, Linux"
+  offers={{ price: "0", priceCurrency: "USD" }}
+  url="https://claude.com/claude-code"
+/>
 
 <FAQSchema
   items={[
