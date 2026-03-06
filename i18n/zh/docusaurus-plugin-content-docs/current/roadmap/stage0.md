@@ -54,6 +54,22 @@ AI 工具已经改变了办公方式。无需学习复杂编程，仅需几句�
 - 基本的计算机操作能力
 - 30 分钟到 2 小时的学习时间
 
+## 追踪你的学习进度
+
+想保持学习动力的话，可以试试用 [GitHub Projects](https://github.com/features/issues) 做一个简单的看板来管理进度。
+
+设置方法（大概 5 分钟）：
+1. 在你的 GitHub 账户中创建一个新项目
+2. 添加卡片："Level 0.1"、"Level 0.2"、"Level 0.3"、"Level 0.4"、"Stage 0 Project"
+3. 创建三列："未开始"、"进行中"、"已完成"
+4. 完成一个部分就把对应的卡片拖过去
+
+好处是你的进度看板就在代码旁边，想给别人看也方便。如果你更喜欢 Notion，模板也在准备中。
+
+:::tip
+这完全是可选的。有些人觉得追踪有帮助，有些人觉得烦。怎么舒服怎么来。
+:::
+
 ## 立即开始
 
 ### 第一步：选择 AI 工具
@@ -188,16 +204,35 @@ A: 2-3 小时就能完成基本任务。1-2 周能掌握大部分常见场景。
 **Q: 会不会被 AI 替代？**
 A: 不会。AI 是工具，不是替代品。真正值钱的是会**用** AI 的人。
 
-## 下一步
+## Stage 0 结束了，接下来呢？
 
-完成这个阶段后，你将：
-- ✓ 能用 AI 处理日常办公任务
-- ✓ 理解 AI 的能力和局限
-- ✓ 掌握基本的提示词技巧
-- ✓ 准备好学习 **Stage 1: AI 现实与局限**
+你花了 2-4 周学会了和 AI 协作编程。接下来可以根据自己的兴趣选择方向。
 
-**[开始 Stage 1 →](../stage1/)**
+### 继续学 Web 开发
+如果你喜欢做网页项目，Stage 1 会教 React、API 和数据库。
+[继续 Stage 1](/docs/roadmap/stage1)
+
+### 深入学计算机科学
+如果你想搞清楚底层原理，这几个资源不错：
+- [CS50（哈佛）](https://cs50.harvard.edu) — 可能是最好的免费计算机入门课
+- [MIT OpenCourseWare](https://ocw.mit.edu) — 大学水平，自主安排进度
+- [freeCodeCamp](https://freecodecamp.org) — 动手做项目为主
+
+### 把编程用在你自己的领域
+不一定要当程序员。编程在很多领域都有用：
+- 数据科学：[Python for Data Analysis](https://www.oreilly.com/library/view/python-for-data/9781491957653/) | [Kaggle Learn](https://www.kaggle.com/learn)
+- 设计：[Frontend Masters](https://frontendmasters.com) | [CSS-Tricks](https://css-tricks.com)
+- 营销：[Zapier Automation](https://zapier.com/learn) | [Google Analytics API](https://developers.google.com/analytics)
+- 研究：[Jupyter Notebooks](https://jupyter.org/try) | [matplotlib 教程](https://matplotlib.org/stable/tutorials/index.html)
+
+### 只想把 AI 工具用好
+也许你不想当程序员，只想把 AI 工具用得更顺手。完全没问题。
+- [Cursor 使用文档](https://cursor.sh/docs)
+- [GitHub Copilot 指南](https://docs.github.com/copilot)
+- [Prompt Engineering 101](/docs/prompt-engineering-101)
+
+挑一个感兴趣的方向就行。以后想换随时可以回来。
 
 ---
 
-**需要帮助？** 查看我们的 [快速入门](/docs/intro) 或 [资源库](/resources)！
+**卡住了？** 看看 [快速入门](/docs/intro) 或者翻翻 [资源库](/resources)。
