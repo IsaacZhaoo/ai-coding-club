@@ -7,7 +7,7 @@ keywords: [LLM, 大语言模型, 温度, API, 微调, RAG, Agent, 多模态]
 
 # 常用术语
 
-在[最小必要知识](./minimal-knowledge.md)中，我们已经了解了提示词、上下文、Token 和幻觉这四个最基础的概念。这篇文章会介绍更多你可能会遇到的术语——**不需要全部记住**，遇到了回来查就行。
+在[最小必要知识](/docs/aicoding/minimal-knowledge/)中，我们已经了解了提示词、上下文、Token 和幻觉这四个最基础的概念。这篇文章会介绍更多你可能会遇到的术语——**不需要全部记住**，遇到了回来查就行。
 
 ## 模型相关
 
@@ -227,9 +227,9 @@ keywords: [LLM, 大语言模型, 温度, API, 微调, RAG, Agent, 多模态]
 
 了解了这些术语后：
 
-1. **开始实践** → [Stage 0: AI对话基础](/docs/roadmap/stage0)
-2. **查看工作流** → [工作流教程](/docs/workflows)
-3. **复制代码** → [脚本片段库](/docs/snippets)
+1. **开始实践** → [Stage 0: AI对话基础](/docs/roadmap/stage0/)
+2. **查看工作流** → [工作流教程](/docs/workflows/)
+3. **复制代码** → [脚本片段库](/docs/snippets/)
 
 ---
 
