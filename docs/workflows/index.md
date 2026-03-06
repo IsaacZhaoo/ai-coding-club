@@ -1,6 +1,5 @@
 ---
 sidebar_position: 1
-draft: true
 ---
 
 # 工作流教程

@@ -1,6 +1,6 @@
 # Content Status
 
-**Last Updated**: 2026-01-09
+**Last Updated**: 2026-03-06
 
 ## Current State
 
@@ -31,7 +31,9 @@ docs/course/
 - ✅ Best Practices - Active
 - ✅ Roadmap - Active
 - 🚧 LLM Inference (zh) - Under development
-- 📝 Workflows/AIcoding/Snippets - Draft (hidden in production)
+- ✅ Workflows - Active
+- ✅ AIcoding - Active
+- ✅ Snippets - Active
 
 ---
 
@@ -55,15 +57,12 @@ docs/course/
 
 ---
 
-## Draft Content
+## Recently Published
 
-Pages with `draft: true` in frontmatter are hidden in production:
-- `docs/workflows/index.md`
-- `docs/aicoding/index.md`
-- `docs/snippets/index.md`
-- Corresponding Chinese translations
-
-These pages contain planned content and will be published when ready.
+The following sections were published on 2026-03-06:
+- `docs/workflows/` — 工作流教程
+- `docs/aicoding/` — AI编程概念 (including new 常用术语 article)
+- `docs/snippets/` — 脚本片段库
 
 ---
 

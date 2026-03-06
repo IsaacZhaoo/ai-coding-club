@@ -1,6 +1,5 @@
 ---
 sidebar_position: 1
-draft: true
 ---
 
 # 脚本片段库
