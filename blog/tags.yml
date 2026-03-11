@@ -57,3 +57,28 @@ draft-example:
   label: Draft Example
   permalink: /draft-example
   description: Example content demonstrating draft functionality
+
+tools:
+  label: Tools
+  permalink: /tools
+  description: AI coding tools, extensions, and utilities
+
+guide:
+  label: Guide
+  permalink: /guide
+  description: Step-by-step guides and tutorials
+
+comparison:
+  label: Comparison
+  permalink: /comparison
+  description: Tool and approach comparisons
+
+productivity:
+  label: Productivity
+  permalink: /productivity
+  description: Tips and tools for developer productivity
+
+no-code:
+  label: No-Code
+  permalink: /no-code
+  description: No-code and low-code approaches to building with AI

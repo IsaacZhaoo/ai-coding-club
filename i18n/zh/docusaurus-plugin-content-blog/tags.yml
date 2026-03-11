@@ -57,3 +57,28 @@ draft-example:
   label: 草稿示例
   permalink: /draft-example
   description: 演示草稿功能的示例内容
+
+tools:
+  label: 工具
+  permalink: /tools
+  description: AI编程工具、扩展和实用程序
+
+guide:
+  label: 指南
+  permalink: /guide
+  description: 分步指南和教程
+
+comparison:
+  label: 对比
+  permalink: /comparison
+  description: 工具和方法对比
+
+productivity:
+  label: 生产力
+  permalink: /productivity
+  description: 开发者生产力工具和技巧
+
+no-code:
+  label: 零代码
+  permalink: /no-code
+  description: 使用AI的零代码和低代码方法
