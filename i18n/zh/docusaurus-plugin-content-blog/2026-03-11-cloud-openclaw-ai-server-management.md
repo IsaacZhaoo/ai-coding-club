@@ -3,7 +3,7 @@ slug: cloud-openclaw-ai-server-management
 title: "Cloud OpenClaw：用AI管理你的云服务器"
 description: 一个Claude Code Skill，让你通过跟AI对话来管理OpenClaw云服务器。安装、监控、排障、运维，不需要记任何命令。
 authors: [isaac]
-tags: [工具, AI, 指南, 新手友好]
+tags: [tools, ai, guide, beginner-friendly]
 keywords: [Claude Code技能, AI服务器管理, OpenClaw云管理, AI运维自动化, AI管理服务器, Claude Code插件, 服务器维护AI]
 ---
 
