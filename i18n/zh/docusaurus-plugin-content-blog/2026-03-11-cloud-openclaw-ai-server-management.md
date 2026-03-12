@@ -64,8 +64,6 @@ Cloud OpenClaw就是解决这个问题的。它是一个[Claude Code](https://do
 
 不需要高配电脑，任何能跑浏览器的电脑都OK。不需要运维知识。
 
-![Cloud OpenClaw工作流](./img/workflow.png)
-
 ## 安装
 
 三种方式，看你喜好：

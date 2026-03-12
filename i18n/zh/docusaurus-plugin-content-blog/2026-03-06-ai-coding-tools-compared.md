@@ -3,7 +3,7 @@ slug: ai-coding-tools-compared-2026
 title: "Cursor vs GitHub Copilot vs Claude Code：2026年该选哪个AI编程工具？"
 description: 我们用真实项目测试了3款主流AI编程工具。每款的优缺点、适用场景和选择建议。
 authors: [isaac]
-tags: [工具, AI, 对比, 生产力]
+tags: [tools, ai, comparison, productivity]
 keywords: [Cursor对比Copilot, AI编程工具2026, Claude Code评测, 最佳AI编程助手, GitHub Copilot替代品]
 ---
 

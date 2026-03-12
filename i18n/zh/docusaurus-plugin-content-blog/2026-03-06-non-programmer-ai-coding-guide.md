@@ -3,7 +3,7 @@ slug: non-programmer-ai-coding-guide
 title: "我不是程序员，真的能用AI做软件吗？"
 description: 非程序员用AI构建实用工具的实操指南。不需要培训班，不需要计算机学位，只需要一台电脑和好奇心。
 authors: [isaac]
-tags: [零基础, AI, 指南, 无代码]
+tags: [beginner-friendly, ai, guide, no-code]
 keywords: [AI编程入门, 非程序员做应用, ChatGPT编程教程, 零基础做软件, AI编程指南2026]
 ---
 

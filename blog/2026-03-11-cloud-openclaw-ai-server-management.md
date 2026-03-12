@@ -58,8 +58,6 @@ Two things:
 
 That's it. No server administration knowledge required.
 
-![How Cloud OpenClaw works](./img/workflow.png)
-
 ## Installation
 
 Three options, pick whichever you like:
