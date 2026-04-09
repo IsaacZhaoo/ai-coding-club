@@ -1,6 +1,6 @@
 ---
 sidebar_position: 7
-title: "Best AI Coding Resources (2026) — Curated by AI Coding Club"
+title: "Best AI Coding Resources (2026)"
 description: "Curated list of the best AI coding tutorials, tools, courses, and communities. Updated for 2026 with difficulty ratings and expert reviews."
 keywords: [ai coding resources, best ai learning resources, ai programming tutorials, learn to code with ai, ai coding tools 2026]
 ---
