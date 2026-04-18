@@ -17,6 +17,30 @@ import ArticleSchema from '@site/src/components/ArticleSchema';
   authorName="Isaac Zhao"
 />
 
+## TL;DR
+
+- Yes, non-programmers can build useful software with AI, but only if they stay involved in planning, testing, and iteration.
+- The best first projects are small, personal, and tied to repetitive real-life problems.
+- Success depends more on problem framing, feedback loops, and persistence than on traditional computer science credentials.
+
+## Who This Is For
+
+- Office workers trying to automate recurring tasks
+- Students and researchers building small internal tools
+- Career switchers who want proof that they can build before they learn everything
+- Skeptical beginners who need an honest, non-hype explanation
+
+## What You Actually Need
+
+- A concrete problem worth solving
+- A free AI tool you can iterate with immediately
+- The ability to describe your workflow and constraints clearly
+- Willingness to test outputs and ask follow-up questions when things break
+
+## Freshness Note
+
+> Structure reviewed on April 18, 2026. Tool pricing, free-tier access, and product capabilities can change quickly, so confirm time-sensitive details on the official vendor sites.
+
 You've heard the hype. "AI can write code for you." "Anyone can build an app now." "Programming is dead."
 
 You've also heard the skeptics. "You still need to understand code." "AI makes mistakes." "It's not that simple."
