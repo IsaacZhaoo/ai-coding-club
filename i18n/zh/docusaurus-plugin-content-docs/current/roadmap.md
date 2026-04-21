@@ -211,7 +211,7 @@ graph TB
 恭喜完成 Vibecoding 阶段！接下来你将学习 AI 的真实能力边界。
 **Congratulations on completing Stage 0! Next, you'll learn the true capabilities and limitations of AI.**
 
-👉 准备好升级了吗？[继续阶段 1: Reality Check](#-阶段-1-reality-check)
+👉 准备好升级了吗？[继续阶段 1: Reality Check](#阶段-1-reality-check)
 :::
 
 ---
@@ -343,10 +343,12 @@ graph TB
 你已经理解了 AI 的能力边界！现在让我们学习如何给 AI 提供最佳上下文。
 **You now understand AI's boundaries! Let's learn how to provide optimal context to AI.**
 
-👉 继续你的学习旅程：[阶段 2: 上下文与架构](#️-阶段-2-上下文与架构)
+👉 继续你的学习旅程：[阶段 2: 上下文与架构](#阶段-2-上下文与架构)
 :::
 
 ---
+
+<a id="阶段-2-上下文与架构"></a>
 
 ## 阶段 2: 上下文与架构
 
@@ -496,7 +498,7 @@ graph TB
 **Congratulations on completing all stages! You now have the core skills to develop efficiently with AI.**
 
 **接下来做什么？**
-- 🌟 选择一个[专精路径](#-可选技能树)来深化专业技能
+- 🌟 选择一个[专精路径](#可选技能树)来深化专业技能
 - 💼 构建一个作品集项目来展示你的能力
 - 🤝 加入我们的[社区讨论](https://github.com/IsaacZhaoo/aiCodingClub/discussions)与其他学习者交流
 - 📚 探索我们的[完整课程](/docs/course/)获取结构化课程内容
@@ -515,7 +517,7 @@ graph TB
 
 ---
 
-## 🌳 可选：技能树
+## 🌳 可选：技能树 {#可选技能树}
 
 完成基础（阶段 0-2）后，你可以专精：
 

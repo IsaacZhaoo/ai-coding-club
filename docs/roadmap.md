@@ -211,7 +211,7 @@ graph TB
 恭喜完成 Vibecoding 阶段！接下来你将学习 AI 的真实能力边界。
 **Congratulations on completing Stage 0! Next, you'll learn the true capabilities and limitations of AI.**
 
-👉 Ready to level up? [Continue to Stage 1: Reality Check](#-stage-1-reality-check)
+👉 Ready to level up? [Continue to Stage 1: Reality Check](#stage-1-reality-check)
 :::
 
 ---
@@ -343,10 +343,12 @@ graph TB
 你已经理解了 AI 的能力边界！现在让我们学习如何给 AI 提供最佳上下文。
 **You now understand AI's boundaries! Let's learn how to provide optimal context to AI.**
 
-👉 Continue your journey: [Stage 2: Context & Architecture](#️-stage-2-context--architecture)
+👉 Continue your journey: [Stage 2: Context & Architecture](#stage-2-context--architecture)
 :::
 
 ---
+
+<a id="stage-2-context--architecture"></a>
 
 ## Stage 2: Context & Architecture
 
@@ -496,7 +498,7 @@ graph TB
 **Congratulations on completing all stages! You now have the core skills to develop efficiently with AI.**
 
 **What's next?**
-- 🌟 Choose a [specialization path](#-optional-skill-tree) to deepen your expertise
+- 🌟 Choose a [specialization path](#optional-skill-tree) to deepen your expertise
 - 💼 Build a portfolio project to showcase your skills
 - 🤝 Join our [community discussions](https://github.com/IsaacZhaoo/aiCodingClub/discussions) to connect with other learners
 - 📚 Explore our [comprehensive course](/docs/course) for structured lessons
@@ -515,7 +517,7 @@ graph TB
 
 ---
 
-## 🌳 Optional: Skill Tree
+## 🌳 Optional: Skill Tree {#optional-skill-tree}
 
 After completing the basics (Stage 0-2), you can specialize:
 
