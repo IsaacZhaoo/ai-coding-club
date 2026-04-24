@@ -41,7 +41,7 @@
   },
   "link.item.label.AI Coding Roadmap": {
     "message": "AI 编程路线图",
-    "description": "The label of footer link with label=AI Coding Roadmap linking to /docs/ai-coding-roadmap"
+    "description": "The label of footer link with label=AI Coding Roadmap linking to /docs/ai-coding-roadmap/"
   },
   "link.item.label.Courses": {
     "message": "课程",

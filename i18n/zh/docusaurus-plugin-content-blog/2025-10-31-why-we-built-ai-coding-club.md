@@ -176,7 +176,7 @@ AI 辅助编程的第一技能不是 Python 或 JavaScript——是**问正确�
 
 **我们的：** "12 周内构建 5 个项目。熟悉 AI + 调试。开始申请。"
 
-[查看完整路线图 →](/docs/ai-coding-roadmap)
+[查看完整路线图 →](/docs/ai-coding-roadmap/)
 
 ### 4. 精选资源（无链接堆）
 

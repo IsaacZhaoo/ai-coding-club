@@ -66,7 +66,7 @@ This course follows a unique "vibecoding" methodology:
 
 ## Related Resources
 
-- Start with the [AI Coding Roadmap](/docs/ai-coding-roadmap) for a full learning path
+- Start with the [AI Coding Roadmap](/docs/ai-coding-roadmap/) for a full learning path
 - Explore [AI Coding Tools](/docs/tools) to pick the right assistant
 - Get quick answers in the [FAQ](/docs/faq)
 

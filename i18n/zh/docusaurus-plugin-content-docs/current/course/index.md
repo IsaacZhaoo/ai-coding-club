@@ -66,7 +66,7 @@ import CourseSchema from '@site/src/components/CourseSchema';
 
 ## 相关资源
 
-- 先看完整学习路径：[AI 编程学习路线图](/docs/ai-coding-roadmap)
+- 先看完整学习路径：[AI 编程学习路线图](/docs/ai-coding-roadmap/)
 - 选择适合你的助手：[AI 编程工具](/docs/tools)
 - 常见问题解答：[FAQ](/docs/faq)
 

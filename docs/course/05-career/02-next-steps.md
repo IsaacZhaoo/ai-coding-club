@@ -53,4 +53,4 @@ Use AI to automate the "how" so you can focus on the "why."
 
 Welcome to the club. You are now an AI-assisted developer. The road ahead is exciting and full of opportunity. Stay curious, keep building, and never stop learning.
 
-**Thank you for following this introductory series. We invite you to explore the rest of our [AI Coding Roadmap](/docs/ai-coding-roadmap) and join the conversation in our community.**
+**Thank you for following this introductory series. We invite you to explore the rest of our [AI Coding Roadmap](/docs/ai-coding-roadmap/) and join the conversation in our community.**

@@ -176,7 +176,7 @@ Our [Prompt Engineering 101](/docs/prompt-engineering-101) has 50+ tested templa
 
 **Ours:** "Build 5 projects in 12 weeks. Get comfortable with AI + debugging. Start applying."
 
-[See the Full Roadmap →](/docs/ai-coding-roadmap)
+[See the Full Roadmap →](/docs/ai-coding-roadmap/)
 
 ### 4. Curated Resources (No Link Dumps)
 
