@@ -1,0 +1,372 @@
+---
+title: "Generate an OpenAPI Client Without Login"
+description: "A practical tutorial for generating TypeScript, JavaScript, or Python API client code from an OpenAPI JSON spec in your browser, without creating an account."
+keywords:
+  - openapi client generator
+  - openapi generator no login
+  - openapi code generator
+  - generate openapi client
+  - browser openapi generator
+sidebar_position: 5
+tags: [openapi, tutorial, developer-tools, no-login-tools]
+---
+
+import HowToSchema from '@site/src/components/HowToSchema';
+
+# Generate an OpenAPI Client Without Login
+
+You have an OpenAPI spec.
+
+You do not want to create another account, set up a workspace, or install a local generator just to see what the client code looks like.
+
+That is the small job this tool is meant to handle:
+
+```text
+https://tools.aicoding.club/openapi-client/
+```
+
+It is not trying to be a full SDK factory. It is closer to a quick workbench. Paste a JSON spec, check the endpoints, generate a starter client, then decide what to do next.
+
+I tested it with a small OpenAPI 3.0.3 JSON spec. The spec had 3 endpoints:
+
+- `GET /pets`
+- `POST /pets`
+- `GET /pets/{petId}`
+
+The tool parsed the spec, showed the API title and endpoint count, and generated TypeScript, JavaScript, and Python clients. A local `.json` file worked too.
+
+One caveat up front: use JSON for now. The file picker accepts `.yaml` and `.yml`, but a small YAML paste test failed. If your spec is YAML, convert it to JSON first.
+
+<HowToSchema
+  name="Generate an OpenAPI client without login"
+  description="Generate starter API client code from an OpenAPI JSON spec in the browser."
+  totalTime="PT10M"
+  steps={[
+    {
+      name: 'Prepare a JSON OpenAPI spec',
+      text: 'Use a valid OpenAPI or Swagger JSON spec. Convert YAML to JSON first for the most reliable path.',
+    },
+    {
+      name: 'Paste or choose a local file',
+      text: 'Paste the JSON spec or choose a local JSON file in the browser-based generator.',
+    },
+    {
+      name: 'Parse and review endpoints',
+      text: 'Check the API title, version, base URL, endpoint count, and endpoint table before trusting generated code.',
+    },
+    {
+      name: 'Generate and review client code',
+      text: 'Generate TypeScript, JavaScript, or Python code, then review auth, error handling, runtime fit, and tests.',
+    },
+  ]}
+/>
+
+## Quick Answer
+
+Use the [OpenAPI Client Generator](https://tools.aicoding.club/openapi-client/) when you need a quick API client from an OpenAPI or Swagger JSON spec, and you do not want to log in first.
+
+The current generator supports:
+
+- TypeScript
+- JavaScript
+- Python
+
+The practical workflow is:
+
+```text
+OpenAPI JSON spec
+-> parse endpoints in the browser
+-> generate starter client code
+-> review and adapt it inside your project
+```
+
+In the tested flow, the OpenAPI spec was not uploaded to AI Coding Club servers. I also put a unique marker string inside the spec and checked the observed network requests. The marker did not appear in any request URL or request body.
+
+## Who This Is For
+
+This is for the moment when you need code, not another dashboard.
+
+For example:
+
+- A partner sends you a Swagger JSON file.
+- You want to inspect a new backend before wiring a frontend.
+- You need a small Python client for a script.
+- You are building a demo and want fetch code quickly.
+- You want to give an AI coding assistant a real client file instead of a vague API description.
+
+That last use case is the interesting one for AI coding.
+
+You can ask an assistant to write API code from scratch. Sometimes it works. But if the OpenAPI spec already exists, it is usually cleaner to generate a first client, then ask the assistant to adapt that code to your project.
+
+The AI gets a better starting point. You get fewer invented endpoints.
+
+## When Generating a Client Actually Helps
+
+Generating a client is worth it when the API has enough structure that hand-writing every wrapper feels boring or error-prone.
+
+OpenAPI gives the generator the parts it needs:
+
+- paths
+- HTTP methods
+- parameters
+- request bodies
+- response metadata
+- base server URLs
+
+The generated client will not be perfect. That is fine.
+
+Its job is to save you from the first repetitive pass. You still need to add the parts that belong to your project:
+
+- auth headers
+- environment-specific base URLs
+- retries
+- timeouts
+- error handling
+- tests
+- naming cleanup
+
+I would use it as a first draft, not as the final SDK.
+
+## A Simple Browser Workflow
+
+Open:
+
+```text
+https://tools.aicoding.club/openapi-client/
+```
+
+Then work through it in this order.
+
+### 1. Start with JSON
+
+Use a valid OpenAPI or Swagger JSON spec.
+
+If you only have YAML, convert it first. The tool may accept YAML-shaped files in the picker, but JSON is the safer path based on the current test.
+
+This matters because a generator failure is annoying when you are already in the middle of another task. Start with the format that works.
+
+### 2. Paste the Spec or Choose a Local File
+
+You can paste JSON into the text area.
+
+You can also choose a local `.json` file. The browser reads the file text and uses it for parsing. In the tested flow, this did not upload the spec to AI Coding Club servers.
+
+Small wording detail, but it matters: the UI has a file picker. So I would not say "there is no file upload control." The accurate claim is that the tested parsing flow reads and processes the selected spec in the browser.
+
+### 3. Parse Before You Trust Anything
+
+After parsing, check the API info block.
+
+Look for:
+
+- the API title
+- the version
+- the base URL
+- the endpoint count
+
+This catches the boring mistakes early. Wrong file. Empty paths. Broken JSON. A spec that is technically valid but not the API you meant to use.
+
+If the page says `Endpoints: 3`, and you expected 30, stop there. Fix the spec before copying generated code.
+
+### 4. Scan the Endpoint Table
+
+Do not jump straight to the generated client.
+
+First, scan the endpoint list. Make sure the paths you care about are actually there.
+
+In my test, the table showed:
+
+- `GET /pets`
+- `POST /pets`
+- `GET /pets/{petId}`
+
+That was enough to confirm the parser was reading real path structure, not just accepting any JSON blob.
+
+### 5. Pick the Language
+
+Use TypeScript if you want a typed starting point for a frontend or Node project.
+
+Use JavaScript if you want a simple fetch-based client.
+
+Use Python if you want a quick `requests` client for scripts or backend automation.
+
+In the test, TypeScript and JavaScript generated methods named `listPets`, `createPet`, and `getPet`. Python generated lowercase method names such as `listpets`, `createpet`, and `getpet`.
+
+That naming detail is a good reminder: generated code is not polished code. It is starter code.
+
+### 6. Copy the Code, Then Review It
+
+Once the client is generated, copy it into your project or download it.
+
+Then do the real engineering pass:
+
+- add authentication
+- check the base URL
+- add request timeouts
+- handle non-2xx responses
+- write a small test for one happy path and one failure path
+- rename methods if they do not match your project style
+
+This is where an AI coding assistant can help.
+
+Give it the generated file and a focused request:
+
+```text
+Here is a generated API client.
+Refactor it to match our fetch wrapper.
+Add bearer-token auth from our config.
+Write tests for listPets and getPet.
+Keep the public method names stable.
+```
+
+That prompt is much better than "write an API client for my app."
+
+## What Runs Locally
+
+The tested OpenAPI flow runs in the browser.
+
+Here is what was checked:
+
+- JSON paste flow worked.
+- Local `.json` file flow worked.
+- TypeScript, JavaScript, and Python generation worked.
+- No AI Coding Club spec upload endpoint was observed.
+- A unique marker inside the spec did not appear in observed request URLs or request bodies.
+
+So the clean wording is:
+
+```text
+All tool processing runs in your browser. Your OpenAPI spec is not uploaded to AI Coding Club servers.
+```
+
+Cloudflare, analytics, and page infrastructure requests are a different thing. They are not the same as uploading your OpenAPI spec. In the marker test, those requests did not include the spec marker.
+
+Still, use basic judgment. Do not put secrets in an OpenAPI spec. Remove tokens, internal credentials, and anything you would not want sitting in a browser tab.
+
+## Where This Tool Stops
+
+This tool is useful because it is small.
+
+It is not a replacement for:
+
+- an official SDK release process
+- package publishing
+- custom SDK templates
+- generated test suites
+- CI checks
+- a full API testing platform
+
+If your team ships SDKs to customers, you still need the boring production machinery.
+
+But if your job is "turn this spec into a first client so I can keep moving," this is enough.
+
+## How I Would Use It With AI Coding Tools
+
+My preferred flow would be:
+
+```text
+1. Generate the client from the OpenAPI JSON spec.
+2. Paste the generated file into the project.
+3. Ask the AI assistant to adapt it to the local codebase.
+4. Review the diff.
+5. Run tests.
+```
+
+The important part is step 3.
+
+Do not ask the assistant to guess everything. Give it the generated client and the local patterns.
+
+A better prompt:
+
+```text
+This generated client is close, but it does not match our project style.
+Use src/lib/http.ts for requests.
+Read API_BASE_URL from env.
+Keep listPets, createPet, and getPet as exported methods.
+Add tests for success and 404 responses.
+```
+
+That kind of instruction gives the AI something concrete to do.
+
+## Common Mistakes
+
+### Treating Generated Code as Finished Code
+
+Do not do this.
+
+Generated clients are first drafts. They save time, but they do not know your auth model, test setup, runtime, or error conventions.
+
+### Forgetting Auth
+
+Most real APIs need authentication.
+
+Add the header logic yourself, or ask your AI assistant to wire it into your existing auth helper. Do not scatter tokens directly into generated files.
+
+### Ignoring the Runtime
+
+A fetch client may need small changes depending on where it runs:
+
+- browser
+- Node.js
+- Cloudflare Workers
+- serverless functions
+- edge runtime
+
+Check this before you ship.
+
+### Trusting a Broken Spec
+
+If the spec is wrong, the client will be wrong.
+
+This sounds obvious, but it is the easiest mistake to miss. Always scan the parsed endpoints before copying code.
+
+### Building Around YAML Too Early
+
+For now, use JSON.
+
+If YAML support improves later, great. But today, JSON is the path I would trust.
+
+## Related AI Coding Club Resources
+
+- [Try the OpenAPI Client Generator](https://tools.aicoding.club/openapi-client/)
+- [AI Coding Roadmap](/docs/ai-coding-roadmap/)
+- [AI Coding Tools Comparison](/docs/tools/ai-tools-comparison/)
+- [Claude Code Guide](/docs/tutorials/claude-code-guide/)
+
+## FAQ
+
+### Do I Need to Create an Account?
+
+No. You can paste an OpenAPI or Swagger JSON spec and generate client code without creating an account.
+
+### Is the OpenAPI Spec Uploaded to AI Coding Club Servers?
+
+No. In the reviewed flow, the spec was processed in the browser and was not uploaded to AI Coding Club servers. A marker-based network test also did not find the spec marker in observed request URLs or request bodies.
+
+### Can I Choose a Local OpenAPI File?
+
+Yes. Use a local JSON spec file. The browser reads the file text and uses it for parsing and generation.
+
+### Does YAML Work?
+
+Do not rely on YAML yet. A small YAML test failed during review. Convert YAML specs to JSON first.
+
+### Which Languages Can It Generate?
+
+The current generator supports TypeScript, JavaScript, and Python.
+
+### Is This a Full SDK Generator?
+
+No. It is a lightweight browser generator for starter client code. Official SDKs still need tests, templates, versioning, package publishing, and release checks.
+
+### How Should I Use This With an AI Coding Assistant?
+
+Generate a starter client first. Then ask the assistant to adapt it to your project conventions, add authentication, and write tests.
+
+## Final Take
+
+I would not use this as the last step before shipping an official SDK.
+
+I would use it when I have a JSON OpenAPI spec and want a usable first client in a few minutes.
+
+That is the right boundary for this tool: quick enough to be useful, small enough that it does not become another system to maintain.

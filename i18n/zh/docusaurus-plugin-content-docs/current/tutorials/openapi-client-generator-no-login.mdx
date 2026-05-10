@@ -1,0 +1,254 @@
+---
+title: "OpenAPI Client Generator：不用注册，在浏览器里生成 API Client"
+description: "免登录、浏览器本地处理的 OpenAPI Client Generator 实测教程。支持 TypeScript、JavaScript、Python，粘贴 spec 即可生成代码，spec 不上传到 AI Coding Club 服务器。"
+keywords:
+  - OpenAPI Client Generator
+  - OpenAPI 生成 API 客户端
+  - Swagger 生成代码
+  - 不用登录
+  - 浏览器本地处理
+  - TypeScript API client
+  - JavaScript fetch client
+  - Python requests client
+sidebar_position: 5
+tags: [openapi, tutorial, developer-tools, no-login-tools]
+---
+
+import HowToSchema from '@site/src/components/HowToSchema';
+
+# OpenAPI Client Generator：不用注册，在浏览器里生成 API Client
+
+## 先说结论
+
+你手上有一个 OpenAPI / Swagger spec，想快速生成一个能用的 API client，但不想注册账号、不想把 spec 上传到陌生服务器。
+
+[AI Coding Club 的 OpenAPI Client Generator](https://tools.aicoding.club/openapi-client/) 可以做到这件事。
+
+实测结论：
+
+- JSON spec 粘贴或本地文件选择，都能正常解析
+- 支持生成 TypeScript、JavaScript、Python client
+- 解析和代码生成在浏览器里完成，spec 不上传到 AI Coding Club 服务器
+- YAML 目前不稳定，建议先转 JSON
+
+适合场景：临时任务、side project、demo、AI coding workflow 前置准备。
+不适合场景：企业级 SDK 生成流水线、需要稳定 YAML 支持的场景。
+
+<HowToSchema
+  name="不用登录生成 OpenAPI API Client"
+  description="在浏览器里从 OpenAPI JSON spec 生成 TypeScript、JavaScript 或 Python starter client。"
+  totalTime="PT10M"
+  steps={[
+    {
+      name: '准备 JSON spec',
+      text: '使用 OpenAPI 或 Swagger JSON spec。当前建议先把 YAML 转成 JSON。',
+    },
+    {
+      name: '粘贴 spec 或选择本地文件',
+      text: '把 JSON spec 粘贴进输入框，或者选择本地 .json 文件。',
+    },
+    {
+      name: '解析并检查 endpoint',
+      text: '先检查 API 标题、版本、base URL 和 endpoint 列表，不要急着复制代码。',
+    },
+    {
+      name: '生成并审查代码',
+      text: '选择 TypeScript、JavaScript 或 Python，生成 starter client 后再补鉴权、错误处理和测试。',
+    },
+  ]}
+/>
+
+---
+
+## 为什么会有人找"OpenAPI Generator No Login"
+
+大多数 OpenAPI 工具的第一步是：注册账号、建 workspace、上传 spec。
+
+这对临时任务来说成本太高。你只是想先看看能不能生成代码，或者快速搭一个 starter client，不需要一个完整的 SaaS 账号体系。
+
+我会测这个工具，也是因为这个场景太常见了：手上已经有 spec，只想先把 client 层搭起来，没必要为了这一步再接一个复杂工具链。
+
+另一个顾虑是隐私。如果 spec 里包含内部 API 结构，你不一定想把它上传到第三方服务器。
+
+这个工具的定位就是解决这两个问题：不注册也能用，spec 在浏览器本地处理。
+
+---
+
+## 这个工具能做什么
+
+工具地址：[https://tools.aicoding.club/openapi-client/](https://tools.aicoding.club/openapi-client/)
+
+核心能力：
+
+- 粘贴 OpenAPI / Swagger JSON spec，或选择本地 `.json` 文件
+- 解析 spec，列出所有 endpoint
+- 生成 TypeScript、JavaScript、Python client 代码
+- 支持复制或下载生成的代码
+
+当前限制：
+
+- YAML 解析不稳定，正文主路径建议用 JSON
+- 不是完整的 API testing 平台，没有发请求、管理 token 等功能
+- 不适合复杂企业级 SDK 生成需求
+
+---
+
+## 不用注册能完成哪些步骤
+
+整个流程不需要账号：
+
+1. 打开工具页
+2. 粘贴 OpenAPI JSON spec，或点击"Upload OpenAPI Spec"选择本地 `.json` 文件
+3. 点击解析，查看 endpoint 列表
+4. 选择目标语言（TypeScript / JavaScript / Python）
+5. 复制或下载生成的代码
+
+从打开页面到拿到代码，全程不需要登录、不需要注册。
+
+---
+
+## Spec 会不会上传到服务器
+
+这是最常见的顾虑，需要说清楚。
+
+工具页面有一个"Upload OpenAPI Spec"按钮，但这个按钮的实际行为是**浏览器读取本地文件文本**，不是把文件上传到 AI Coding Club 服务器。
+
+源码里的处理逻辑是：
+
+```js
+const text = await file.text()
+setSpecText(text)
+await handleParseSpec(text)
+```
+
+`file.text()` 是浏览器原生 API，读取的是本地文件内容，不发网络请求。
+
+工具页面也有明确说明：
+
+> The parser runs locally in your browser, so your API schema is not uploaded to a server.
+
+实测验证：用带唯一 marker 字符串的 spec 测试，在所有网络请求的 URL 和请求体里，均未观察到 spec 内容被发送到 AI Coding Club 的服务器。
+
+**准确的表述是**：spec 解析和代码生成在浏览器里完成，spec 不上传到 AI Coding Club 服务器。
+
+**不要理解成**：所有数据绝对不会离开浏览器。生成 client 之后，你用它发真实 API 请求、携带 token，那是你自己的网络行为，和这个工具无关。
+
+---
+
+## 实测：从 spec 到生成代码
+
+测试用的是一个最小 OpenAPI 3.0.3 JSON spec，包含 3 个 endpoint：
+
+- `GET /pets`
+- `POST /pets`
+- `GET /pets/{petId}`
+
+### JSON 粘贴流程
+
+把 spec 粘贴进输入框，点击解析，工具正确识别了 3 个 endpoint。
+
+选择 TypeScript，生成了包含 `listPets`、`createPet`、`getPet` 的 client 代码。
+
+选择 JavaScript，生成结果类似，方法名一致。
+
+选择 Python，生成了 `listpets`、`createpet`、`getpet`（Python 风格的小写方法名）。
+
+### 本地文件选择流程
+
+把同一份 spec 保存为 `.json` 文件，通过"Upload OpenAPI Spec"按钮选择，解析结果和粘贴流程一致。
+
+### YAML 测试
+
+把同一份 spec 转成 YAML 格式测试，解析失败。
+
+**结论：主路径用 JSON，不要依赖 YAML。**
+
+---
+
+## 支持哪些语言
+
+当前支持三种语言：
+
+| 语言 | 生成内容 | 方法名风格 |
+|------|----------|-----------|
+| TypeScript | 带类型注解的 fetch client | camelCase |
+| JavaScript | fetch client | camelCase |
+| Python | requests client | lowercase |
+
+生成的是 starter client，不是生产级 SDK。适合快速验证接口结构，或者作为 AI coding 工具的起点。
+
+---
+
+## 我会怎么把它放进 AI coding workflow
+
+我的用法会很直接：先用这个工具从 JSON spec 生成一个 starter client，再交给 Claude Code、Cursor 或 Codex CLI 去改成项目里的写法。
+
+不要让 AI 从零猜 API。先给它一个已经根据 spec 生成出来的文件，效果通常更稳。
+
+可以这样问：
+
+```text
+这是从 OpenAPI spec 生成的 API client。
+请把它改成我们项目里的请求封装方式。
+base URL 从环境变量读取。
+补上鉴权 header。
+给 listPets 和 getPet 写两个基础测试。
+```
+
+这样 AI 做的是改造和接入，不是凭空编接口。
+
+---
+
+## 适合哪些场景
+
+**适合：**
+
+- 临时任务：拿到一个 spec，先快速生成代码看看结构
+- Side project / demo：不想为了一个小项目注册 SaaS 工具
+- AI coding workflow 前置：用 Claude Code、Cursor、Codex CLI 做项目时，先把 API client 层搭起来
+- 快速检查 endpoints：不想手动读 spec，直接看解析结果
+- 对上传 spec 有顾虑的场景：spec 包含内部 API 结构，不想上传到第三方
+
+**不适合：**
+
+- 企业级 SDK 生成流水线：需要更完整的工具链
+- 需要稳定 YAML 支持：当前 YAML 解析不可靠
+- API testing：这个工具不支持发请求、管理环境变量、保存测试用例
+- 需要多语言支持：目前只有 TypeScript、JavaScript、Python
+
+---
+
+## 常见问题
+
+**需要注册账号吗？**
+
+不需要。打开工具页，粘贴 spec，直接生成代码，全程不需要账号。
+
+**OpenAPI spec 会被上传到服务器吗？**
+
+不会上传到 AI Coding Club 服务器。你可以粘贴 spec 或选择本地文件，解析和代码生成在浏览器里完成。工具页面有明确说明：parser runs locally in your browser。
+
+**支持哪些语言？**
+
+目前支持 TypeScript、JavaScript、Python。
+
+**支持 YAML 格式的 spec 吗？**
+
+UI 接受 `.yaml` / `.yml` 文件，但当前实测 YAML 解析不稳定。建议先把 spec 转成 JSON 再使用。
+
+**这是完整的 API testing 平台吗？**
+
+不是。这个工具的定位是轻量级 client generator，不支持发请求、管理 token、保存测试用例。如果需要完整的 API testing，可以用 Postman 或 Insomnia。
+
+**适合处理敏感的生产 API spec 吗？**
+
+spec 解析在浏览器本地完成，不上传到 AI Coding Club 服务器。但如果你用生成的 client 发真实 API 请求、携带生产 token，那是你自己的网络环境问题，和这个工具无关。对于高度敏感的生产 API，建议自行评估风险。
+
+---
+
+## 相关资源
+
+- [OpenAPI Client Generator 工具页](https://tools.aicoding.club/openapi-client/)
+- [AI 编程路线图](/zh/docs/ai-coding-roadmap/)
+- [AI 编程工具对比 2026](/zh/blog/ai-coding-tools-compared-2026/)
+- [Claude Code + Codex CLI + Cursor 工作流搭配](/zh/blog/claude-code-codex-cli-cursor-workflow/)
