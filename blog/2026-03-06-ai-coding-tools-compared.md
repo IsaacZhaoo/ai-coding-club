@@ -13,7 +13,7 @@ import ArticleSchema from '@site/src/components/ArticleSchema';
   headline="Cursor vs GitHub Copilot vs Claude Code: Which AI Coding Tool Should You Use in 2026?"
   description="We tested 3 major AI coding tools on real projects. Here's what each does best, what it gets wrong, and which one fits your workflow."
   datePublished="2026-03-06"
-  dateModified="2026-03-06"
+  dateModified="2026-05-10"
   authorName="Isaac Zhao"
 />
 
@@ -139,6 +139,12 @@ Powerful but intimidating. A beginner comfortable in the terminal would love it.
 | Debug production issues | **Claude Code** |
 | Need team collaboration features | **GitHub Copilot** |
 | Love the terminal | **Claude Code** |
+
+Want to go deeper into terminal agents and Codex CLI?
+
+- [Claude Code vs Codex CLI: Which Terminal Agent Should You Choose?](/blog/claude-code-vs-codex-cli/)
+- [What Is Codex CLI? Who Should Use OpenAI's Terminal Coding Agent?](/blog/what-is-codex-cli/)
+- [How to Combine Claude Code, Codex CLI, and Cursor in a Practical AI Coding Workflow](/blog/claude-code-codex-cli-cursor-workflow/)
 
 ### The Real Answer
 
