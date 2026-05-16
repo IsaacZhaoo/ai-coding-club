@@ -151,6 +151,13 @@ Claude Code 跨 6 个文件追踪了完整的调用链，精确定位到导致�
 - [Codex CLI 是什么？OpenAI 的终端编程 Agent 适合谁用？](/zh/blog/what-is-codex-cli/)
 - [Claude Code、Codex CLI、Cursor 怎么搭配？一个实用 AI 编程工作流](/zh/blog/claude-code-codex-cli-cursor-workflow/)
 
+## 下一步实践
+
+- 如果你正在比较终端 Agent，可以看 [Claude Code vs Codex CLI](/zh/blog/claude-code-vs-codex-cli/)。
+- 如果你已经在用 Cursor，可以看 [Claude Code、Codex CLI、Cursor 怎么搭配](/zh/blog/claude-code-codex-cli-cursor-workflow/)。
+- 如果你正在做 API 集成，可以看 [OpenAPI Client Generator 中文教程](/zh/docs/tutorials/openapi-client-generator-no-login/)。
+- 如果你想系统学习，可以从 [AI 编程路线图](/zh/docs/ai-coding-roadmap/) 开始。
+
 ### 真正的答案
 
 大多数有经验的开发者**同时用不止一款**。常见搭配：

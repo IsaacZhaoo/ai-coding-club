@@ -146,6 +146,13 @@ Want to go deeper into terminal agents and Codex CLI?
 - [What Is Codex CLI? Who Should Use OpenAI's Terminal Coding Agent?](/blog/what-is-codex-cli/)
 - [How to Combine Claude Code, Codex CLI, and Cursor in a Practical AI Coding Workflow](/blog/claude-code-codex-cli-cursor-workflow/)
 
+## Practical Next Steps
+
+- If you are choosing between terminal agents, read [Claude Code vs Codex CLI](/blog/claude-code-vs-codex-cli/).
+- If you already use Cursor and want a practical workflow, read [How to Combine Claude Code, Codex CLI, and Cursor](/blog/claude-code-codex-cli-cursor-workflow/).
+- If you are building API integrations, try the [OpenAPI Client Generator tutorial](/docs/tutorials/openapi-client-generator-no-login/).
+- If you want a broader learning path, start with the [AI Coding Roadmap](/docs/ai-coding-roadmap/).
+
 ### The Real Answer
 
 Most experienced developers use **more than one**. A common setup:

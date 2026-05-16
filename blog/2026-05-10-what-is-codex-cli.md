@@ -151,5 +151,8 @@ No, and that is the wrong expectation. Codex CLI can automate repetitive tasks a
 ## Further Reading
 
 - [Claude Code vs Codex CLI: Which Terminal Agent Should You Choose?](/blog/claude-code-vs-codex-cli/)
+- [How to Combine Claude Code, Codex CLI, and Cursor in a Practical AI Coding Workflow](/blog/claude-code-codex-cli-cursor-workflow/)
 - [Full comparison of AI coding tools](/blog/ai-coding-tools-compared-2026/)
+- [Claude Code guide](/docs/tutorials/claude-code-guide/)
+- [AI Coding Roadmap](/docs/ai-coding-roadmap/)
 - [AI tools directory](/docs/tools/)

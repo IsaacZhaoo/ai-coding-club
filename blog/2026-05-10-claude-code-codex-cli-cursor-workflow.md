@@ -151,5 +151,8 @@ Terminal agents and cloud collaboration tools, such as Codex GitHub integration,
 
 - [Cursor vs Claude Code: Editor AI or Terminal Agent?](/blog/cursor-vs-claude-code/)
 - [Claude Code vs Codex CLI: Which Terminal Agent Should You Choose?](/blog/claude-code-vs-codex-cli/)
+- [What Is Codex CLI? Who Should Use OpenAI's Terminal Coding Agent?](/blog/what-is-codex-cli/)
 - [Claude Code vs GitHub Copilot](/blog/claude-code-vs-github-copilot/)
 - [Full comparison of AI coding tools](/blog/ai-coding-tools-compared-2026/)
+- [Claude Code guide](/docs/tutorials/claude-code-guide/)
+- [AI Coding Roadmap](/docs/ai-coding-roadmap/)

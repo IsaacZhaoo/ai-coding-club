@@ -149,6 +149,9 @@ For teams, Codex has Business and Enterprise plans plus platform features such a
 ## Further Reading
 
 - [Full comparison of AI coding tools](/blog/ai-coding-tools-compared-2026/)
+- [What Is Codex CLI? Who Should Use OpenAI's Terminal Coding Agent?](/blog/what-is-codex-cli/)
+- [How to Combine Claude Code, Codex CLI, and Cursor in a Practical AI Coding Workflow](/blog/claude-code-codex-cli-cursor-workflow/)
 - [Cursor vs Claude Code: Editor AI or Terminal Agent?](/blog/cursor-vs-claude-code/)
 - [Claude Code vs GitHub Copilot](/blog/claude-code-vs-github-copilot/)
 - [Claude Code guide](/docs/tutorials/claude-code-guide/)
+- [AI Coding Roadmap](/docs/ai-coding-roadmap/)

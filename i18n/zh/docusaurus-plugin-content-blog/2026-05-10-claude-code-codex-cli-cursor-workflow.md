@@ -151,5 +151,8 @@ Cursor 这类编辑器工具通常是个人选择，强制统一意义不大。
 
 - [Cursor vs Claude Code：编辑器 AI 和终端 Agent 怎么选](/zh/blog/cursor-vs-claude-code/)
 - [Claude Code vs Codex CLI：两个终端 Agent 怎么选](/zh/blog/claude-code-vs-codex-cli/)
+- [Codex CLI 是什么？OpenAI 的终端编程 Agent 适合谁用？](/zh/blog/what-is-codex-cli/)
 - [Claude Code vs GitHub Copilot](/zh/blog/claude-code-vs-github-copilot/)
 - [三款 AI 编程工具总对比](/zh/blog/ai-coding-tools-compared-2026/)
+- [Claude Code 使用指南](/zh/docs/tutorials/claude-code-guide/)
+- [AI 编程路线图](/zh/docs/ai-coding-roadmap/)

@@ -151,5 +151,8 @@ brew install --cask codex
 ## 相关阅读
 
 - [Claude Code vs Codex CLI：两个终端 Agent 怎么选](/zh/blog/claude-code-vs-codex-cli/)
+- [Claude Code、Codex CLI、Cursor 怎么搭配？一个实用 AI 编程工作流](/zh/blog/claude-code-codex-cli-cursor-workflow/)
 - [三款 AI 编程工具总对比](/zh/blog/ai-coding-tools-compared-2026/)
+- [Claude Code 使用指南](/zh/docs/tutorials/claude-code-guide/)
+- [AI 编程路线图](/zh/docs/ai-coding-roadmap/)
 - [AI 编程工具列表](/zh/docs/tools/)

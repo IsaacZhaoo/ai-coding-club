@@ -149,6 +149,9 @@ Cursor 的主场是编辑器内协作——补全、解释、小范围修改。�
 ## 相关阅读
 
 - [三款 AI 编程工具总对比](/zh/blog/ai-coding-tools-compared-2026/)
+- [Codex CLI 是什么？OpenAI 的终端编程 Agent 适合谁用？](/zh/blog/what-is-codex-cli/)
+- [Claude Code、Codex CLI、Cursor 怎么搭配？一个实用 AI 编程工作流](/zh/blog/claude-code-codex-cli-cursor-workflow/)
 - [Cursor vs Claude Code：编辑器 AI 和终端 Agent 怎么选](/zh/blog/cursor-vs-claude-code/)
 - [Claude Code vs GitHub Copilot](/zh/blog/claude-code-vs-github-copilot/)
 - [Claude Code 使用指南](/zh/docs/tutorials/claude-code-guide/)
+- [AI 编程路线图](/zh/docs/ai-coding-roadmap/)
