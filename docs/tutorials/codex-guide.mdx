@@ -1,0 +1,119 @@
+---
+title: "Codex Beginner Guide: Complete Your First Task with OpenAI's Coding Agent"
+description: "A beginner guide to OpenAI Codex across the app, IDE extension, CLI, and cloud workflows, with safe prompting, AGENTS.md, planning, tests, and review habits."
+keywords:
+  - Codex guide
+  - OpenAI Codex tutorial
+  - Codex CLI tutorial
+  - AI coding agent
+  - AGENTS.md
+sidebar_position: 4
+tags: [openai, tutorial, coding-assistant]
+---
+
+# Codex Beginner Guide: Complete Your First Task with OpenAI's Coding Agent
+
+## Quick Answer
+
+Codex is OpenAI's coding agent for working inside real projects. Beginners can start from the Codex app, IDE extension, CLI, or cloud workflow. If you already use ChatGPT or the OpenAI ecosystem, Codex is a natural next step for agentic coding tasks.
+
+## Choose The Right Codex Entry Point
+
+| Entry point | Best for | Beginner note |
+|-------------|----------|---------------|
+| Codex App | Local projects, graphical workflow, choosing a folder directly | Try first if you prefer a UI |
+| IDE extension | VS Code, Cursor, Windsurf, and editor-native work | Best for editor users |
+| CLI | Terminal workflows, Linux, scripts, repo tasks | Best for terminal users |
+| Cloud | GitHub repos, remote environments, background tasks, PR review | Requires GitHub/environment setup and human PR review |
+
+## Install Codex CLI
+
+If you choose npm, make sure Node.js and npm are available. If you choose Homebrew, make sure `brew` is available. Run install commands in a normal terminal, not an unfamiliar high-permission shell.
+
+```bash
+npm install -g @openai/codex
+```
+
+Or:
+
+```bash
+brew install codex
+```
+
+You can check the installation with:
+
+```bash
+codex --version
+```
+
+If that command is not available in your current version, run `codex` directly and confirm it starts. For real work, open your project root first:
+
+```bash
+codex
+```
+
+Before authorizing Codex to modify files, confirm the project is in Git. Run `git status` from the project root so every change can be diffed and rolled back.
+
+The first run prompts you to sign in with a ChatGPT account or an OpenAI API key. Cloud and web workflows usually also require connecting a GitHub repository.
+
+## First Safe Editing Workflow
+
+1. Run `git status` from the project root and inspect uncommitted changes.
+2. If important work already exists, commit it, stash it, or create a branch/checkpoint.
+3. Ask Codex to read relevant files and propose a plan before editing.
+4. Give Codex one small change, such as a clear bug fix, copy update, or test.
+5. After the change, run `git diff` and check for unrelated rewrites, config changes, deleted logic, or secrets.
+6. Run relevant checks such as `lint`, `typecheck`, `test`, or `build`.
+7. Accept and commit only after human review and verification.
+
+## Your First Prompt
+
+```text
+Please read this project and answer:
+Goal: I want to understand how this project runs.
+Context: You can inspect README, package.json, docs, and the main source folders.
+Constraints: Do not modify files and do not run destructive commands.
+Done when: Give me a project structure summary, common commands, and a suggested first small task.
+```
+
+## Beginner Prompt Template
+
+```text
+Goal: [what I want to accomplish]
+Context: [relevant files, errors, pages, command output]
+Constraints: [what not to do, permission boundaries, code style]
+Done when: [what completion means, such as build passing or a bug no longer reproducing]
+```
+
+## Plan Before Complex Tasks
+
+Do not ask Codex to jump straight into implementation for complex work. Ask it to plan, ask questions, clarify scope, and then implement. A good plan tells you which files will change, how to verify the result, and where the risk is.
+
+## Use AGENTS.md For Reusable Guidance
+
+When you repeatedly remind Codex about the same thing, such as using `pnpm`, avoiding unrelated files, or running typecheck before completion, move that guidance into `AGENTS.md`.
+
+## Safety Boundaries
+
+Start with default permissions. Only consider relaxing permissions in a trusted repository, when you understand the impact, and after you have a Git checkpoint. Do not treat high-permission modes as a default productivity trick.
+
+## FAQ
+
+### How is Codex different from ChatGPT?
+
+ChatGPT is closer to a conversation window. Codex is a coding agent that can work inside a project: reading files, editing files, running commands, and pushing a task forward.
+
+### How should I choose between Codex and Claude Code?
+
+If you already work in the ChatGPT or OpenAI ecosystem, try Codex first. If you already work in the Claude or Anthropic ecosystem, try Claude Code first. The important beginner skill is the safe workflow, not buying every tool at once.
+
+### Can Codex automatically finish an entire project?
+
+Do not expect that. Codex is useful for clear tasks, but product judgment, architecture choices, security review, and final acceptance still need a human.
+
+## Related Reading
+
+- [Claude Code beginner guide](/docs/tutorials/claude-code-guide/)
+- [AI coding agent beginner route](/docs/tutorials/ai-coding-agent-beginner-guide/)
+- [What is Codex CLI?](/blog/what-is-codex-cli/)
+- [Claude Code vs Codex CLI](/blog/claude-code-vs-codex-cli/)

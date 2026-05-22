@@ -1,0 +1,112 @@
+---
+title: "AI 编程 Agent 新手路线：Claude Code、Codex、Cursor 应该怎么开始"
+description: "一条面向中文新手的 AI 编程 Agent 入门路线：先选入口，再学安全 Prompt、Git 检查点、diff review、验证命令和工具分工。"
+keywords:
+  - AI 编程 Agent
+  - Claude Code Codex Cursor 怎么选
+  - AI 写代码新手
+  - 终端 Agent 教程
+sidebar_position: 5
+tags: [tutorial, coding-assistant, beginner]
+---
+
+# AI 编程 Agent 新手路线：Claude Code、Codex、Cursor 应该怎么开始
+
+## 先说结论
+
+新手不要先问哪个工具更好。先学会一个可复用流程：选一个入口，给清楚任务，让工具先理解项目，保留 Git 检查点，检查 diff，运行验证命令，再决定是否接受改动。
+
+## 第一步：选一个入口
+
+| 你现在的情况 | 推荐入口 |
+|--------------|----------|
+| 已经每天用 ChatGPT | Codex |
+| 已经每天用 Claude | Claude Code |
+| 主要想在编辑器里补全、问答和轻量多文件协作 | Cursor |
+| 只是问概念、学语法、解释代码 | ChatGPT 或 Claude 聊天窗口 |
+
+## 第二步：只做一个小任务
+
+推荐第一个任务：
+
+- 解释项目结构。
+- 修一个可复现的小 bug。
+- 给一个函数补测试。
+- 更新 README 的运行说明。
+
+不推荐第一个任务：
+
+- 重写整个项目。
+- 加完整登录系统。
+- 改数据库和部署配置。
+- 在生产环境直接运行命令。
+
+## 第三步：使用四段式 Prompt
+
+```text
+Goal: 我要完成什么。
+Context: 相关文件、错误、页面或背景。
+Constraints: 不要做什么、代码风格、安全边界。
+Done when: 什么结果算完成。
+```
+
+## 第四步：建立安全习惯
+
+- 修改前先运行 `git status`。
+- 开始前先确认项目已经在 Git 仓库里；如果不是，先初始化 Git，或者复制一份备份。
+- 如果已有未提交改动，先 commit 或 stash。新建分支可以隔离后续工作，但它本身不等于保存当前改动。
+- 复杂任务先让 Agent 写计划。
+- 每轮改动后运行 `git diff`，检查有没有无关重写、配置变化、密钥泄露或删除关键逻辑。
+- 能跑测试就跑测试，不能跑测试就写人工验证步骤。
+- 不让 Agent 处理你还没备份的重要数据。
+
+## 第五步：把工具分工想清楚
+
+Cursor 是编辑器内协作。Claude Code 和 Codex 是更典型的任务型 Agent。ChatGPT 和 Claude 聊天窗口适合解释、学习、头脑风暴和轻量代码片段。
+
+## 一周练习路线
+
+### Day 1：让 Agent 解释项目
+
+目标是理解目录、运行命令和第一个可做的小任务。
+
+### Day 2：让 Agent 修一个小 bug
+
+目标是学会最小改动、diff review 和验证命令。
+
+### Day 3：让 Agent 补测试
+
+目标是让它先找现有测试风格，再新增一条小测试。
+
+### Day 4：让 Agent 更新文档
+
+目标是把运行说明、常见问题或开发命令写清楚。
+
+### Day 5：把重复规则写进项目说明
+
+目标是把 `pnpm` / `npm` / `yarn`、验证命令、不要改无关文件等规则沉淀下来。
+
+### 周末：复盘你的安全流程
+
+回看这一周的 diff、验证命令和反复提醒过 Agent 的规则，把真正有用的部分沉淀到项目说明里。
+
+## 常见问题
+
+### 新手要同时买 Claude Code、Codex、Cursor 吗？
+
+不用。先选你已有账号生态里的一个工具，学会工作流后再决定是否补第二个。
+
+### 为什么要 review diff？
+
+因为 Agent 可以执行得很快，但快不等于正确。diff review 是你发现误改、过度重构和安全风险的最后一道日常防线。
+
+### 学会 Prompt 就够了吗？
+
+不够。AI 编程的关键不是一句神奇 Prompt，而是一套循环：给目标、给上下文、限制范围、验证结果、沉淀规则。
+
+## 下一步阅读
+
+- [Claude Code 新手指南](/zh/docs/tutorials/claude-code-guide/)
+- [Codex 新手指南](/zh/docs/tutorials/codex-guide/)
+- [Claude Code vs Codex CLI](/zh/blog/claude-code-vs-codex-cli/)
+- [Claude Code、Codex CLI、Cursor 怎么搭配](/zh/blog/claude-code-codex-cli-cursor-workflow/)

@@ -1,1241 +1,136 @@
 ---
-title: "Claude Code Complete Guide: AI Coding Assistant by Anthropic"
-description: "Master Claude Code with this comprehensive tutorial. Learn installation, key features (long context, tool use, prompt caching), practical examples, and best practices for AI-powered development."
+title: "Claude Code Beginner Guide: Let AI Work Safely Inside Your Project"
+description: "A beginner guide to Claude Code: when to use it, how to install it, how to write your first task, review diffs, run checks, and keep Git checkpoints."
 keywords:
-  - Claude Code
-  - Anthropic Claude
-  - AI coding assistant
+  - Claude Code guide
   - Claude Code tutorial
-  - prompt caching
-  - long context coding
-  - AI IDE integration
+  - Claude Code beginner guide
+  - AI coding agent
 sidebar_position: 3
-tags: [claude, tutorial, ide, coding-assistant]
+tags: [claude, tutorial, coding-assistant]
 ---
 
 import HowToSchema from '@site/src/components/HowToSchema';
 
-# Claude Code Complete Guide: AI Coding Assistant by Anthropic
-
-**Master Claude Code in one comprehensive guide** - From installation to advanced features with real-world examples.
+# Claude Code Beginner Guide: Let AI Work Safely Inside Your Project
 
 ## TL;DR
 
-- Claude Code is strongest when you need deep reasoning, long-context repo understanding, and careful multi-file changes.
-- It is a better fit for architecture questions, refactors, and complex debugging than for pure inline autocomplete.
-- Start with a small real task, work from the repo root, and verify every change with tests or checks.
-
-## Who This Is For
-
-- Developers working in real repositories rather than isolated snippets
-- People comparing Claude Code with Cursor, Copilot, or ChatGPT for daily work
-- Learners who want both setup guidance and workflow examples
-
-## Quick Decision Guide
-
-- Choose Claude Code if your bottleneck is reasoning through codebases, refactors, and architecture tradeoffs.
-- Choose Cursor or Copilot first if your main need is editor-native autocomplete and faster inline suggestions.
-- Use this guide if you want to understand both setup and the practical workflow before committing.
-
-## Freshness Note
-
-> Structure reviewed on April 18, 2026. Model names, benchmarks, pricing, and product packaging can change, so verify final purchase or adoption decisions against Anthropic's official documentation.
+Claude Code is a good fit when the task requires understanding a real project: explaining structure, fixing a bug, refactoring, adding tests, or updating docs. If you are new to agentic coding, start with one small task, keep a Git checkpoint, review the diff, and run verification before accepting changes.
 
 <HowToSchema
-  name="Get started with Claude Code"
-  description="A quick setup workflow to install and use Claude Code for a coding task."
-  totalTime="PT15M"
+  name="Complete a safe first task with Claude Code"
+  description="Use Claude Code from a project root, ask it to understand the repo first, make a small change, then review and verify the result."
+  totalTime="PT20M"
   steps={[
     {
-      name: 'Install Claude Code',
-      text: 'Install the CLI with the official instructions and make sure the command is available in your shell.',
+      name: 'Check Git status',
+      text: 'Run git status from the project root and save or isolate any existing work before starting.',
     },
     {
-      name: 'Open your repo',
-      text: 'Run the CLI from the repository root so it can index files correctly.',
+      name: 'Ask Claude Code to understand the project',
+      text: 'Start with a read-only prompt that asks for the project structure, commands, and a suggested first task.',
     },
     {
-      name: 'Describe the task',
-      text: 'Provide a concise goal, constraints, and what verification looks like.',
+      name: 'Make one small change',
+      text: 'Choose a narrow bug, test, or docs task and ask Claude Code to explain its plan before editing.',
     },
     {
       name: 'Review and verify',
-      text: 'Check the proposed changes and run tests or linting commands to validate.',
+      text: 'Review git diff and run the relevant lint, typecheck, test, or build command before accepting the work.',
     },
   ]}
 />
 
-## What You'll Learn
+## Who This Is For
 
-By the end of this guide, you'll be able to:
-- ✅ Set up and configure Claude Code for your development environment
-- ✅ Leverage 200K+ token context for entire codebase analysis
-- ✅ Use prompt caching to reduce costs by 90%
-- ✅ Integrate Claude Code with VS Code and other IDEs
-- ✅ Apply advanced features like tool use and artifacts
-- ✅ Follow best practices for AI-assisted development
-- ✅ Choose between Claude Code, Cursor, and GitHub Copilot
+- You already have a local project and want an AI agent to read code, edit files, and run commands.
+- You can read basic diffs and are willing to review changes before accepting them.
+- You want to learn a terminal-first AI coding workflow instead of copying snippets from a chat window.
 
-**Time investment:** 2-3 hours to master
-**Skill level:** Beginner to Advanced
-**Cost:** API-based (pay per use) or Claude Pro ($20/month)
+## Quick Decision Guide
 
----
+- Use Claude Code when your task needs project context, multi-file reasoning, or command-line verification.
+- Do not start with Claude Code if you only have a vague idea and no project yet.
+- Do not let an agent work on sensitive secrets, production databases, or private customer data until you understand the permission boundary.
+- Do not accept changes without reviewing the diff and running a relevant check.
 
-## What is Claude Code?
+## Freshness Note
 
-**Claude Code** is Anthropic's official coding assistant powered by Claude 3.5 Sonnet - the model that ranks #1 on coding benchmarks (surpassing GPT-4 and Gemini).
+This page was calibrated against the official Claude Code quickstart and best practices on May 22, 2026. Install commands, login options, supported platforms, and product capabilities can change, so verify copy-paste commands against the official quickstart.
 
-### Key Differentiators
+## Installation And Login
 
-**🧠 Long Context (200K tokens)**
-- Analyze entire codebases in one go (50K+ lines)
-- No file chunking needed
-- See all dependencies and relationships
-
-**💾 Prompt Caching**
-- Cache common context (codebase, docs)
-- 90% cost reduction for repetitive tasks
-- 5-10x faster responses on cached prompts
-
-**🛠️ Advanced Tool Use**
-- Execute code, run tests, search files
-- Read/write files automatically
-- Integrated bash commands
-
-**📊 Superior Code Quality**
-- Best-in-class code generation (SWE-bench: 49.2%)
-- Fewer hallucinations than GPT-4
-- Better at following coding standards
-
----
-
-## Installation and Setup
-
-### Method 1: Claude Code CLI (Official)
+Common installation paths are listed in the official quickstart. For macOS, Linux, and WSL, the quickstart currently shows:
 
 ```bash
-# Install via npm
-npm install -g @anthropic-ai/claude-code
-
-# Or via pip
-pip install claude-code
-
-# Set up API key
-export ANTHROPIC_API_KEY="your-api-key-here"
-
-# Verify installation
-claude-code --version
+curl -fsSL https://claude.ai/install.sh | bash
 ```
 
-**Get API Key:**
-1. Go to https://console.anthropic.com
-2. Create account (free $5 credit)
-3. Navigate to API Keys → Create Key
-4. Copy key and set environment variable
+Windows users should follow the official PowerShell, CMD, or WinGet instructions. macOS users can also use the official Homebrew cask path.
 
-### Method 2: VS Code Extension
+After installation, open your project directory, run `claude`, and follow the login prompts. You can also use `/login` inside Claude Code.
 
-```bash
-# Install from VS Code Marketplace
-# Search: "Claude Code" by Anthropic
+## First Safe Workflow
 
-# Or via command line
-code --install-extension anthropic.claude-code
+1. Start from the project root and run `git status`.
+2. If you already have uncommitted work, commit it, stash it, or create an isolated branch/checkpoint.
+3. Ask Claude Code to explain the project before it edits files.
+4. Give it one small task, such as fixing a form validation bug.
+5. Ask it to explain the plan before making changes.
+6. Run `git diff` after the change.
+7. Check for unrelated rewrites, secrets, config changes, or deleted logic.
+8. Run the project's existing lint, typecheck, test, or build command.
+9. Accept and commit only after review and verification.
 
-# Configure API key in settings
-# Cmd/Ctrl + Shift + P → "Claude Code: Set API Key"
+## Your First Prompt
+
+```text
+Please read this project and tell me:
+1. what the main directories do;
+2. how to run and build the project;
+3. which files I should inspect first for a small bug fix;
+4. do not modify any files yet.
 ```
 
-### Method 3: API Integration (Python)
+## First Editing Prompt
 
-```python
-# Install Anthropic SDK
-pip install anthropic
-
-# Basic setup
-import anthropic
-import os
-
-client = anthropic.Anthropic(
-    api_key=os.environ.get("ANTHROPIC_API_KEY")
-)
-
-# Test connection
-response = client.messages.create(
-    model="claude-3-5-sonnet-20241022",
-    max_tokens=1024,
-    messages=[
-        {"role": "user", "content": "Write a Python function to reverse a string"}
-    ]
-)
-
-print(response.content[0].text)
-```
-
-**Expected Output:**
-```python
-def reverse_string(s: str) -> str:
-    """
-    Reverse a string using slicing.
-
-    Args:
-        s: Input string to reverse
-
-    Returns:
-        Reversed string
-
-    Examples:
-        >>> reverse_string("hello")
-        'olleh'
-        >>> reverse_string("Python")
-        'nohtyP'
-    """
-    return s[::-1]
-
-
-# Alternative methods:
-def reverse_string_loop(s: str) -> str:
-    """Reverse using a loop"""
-    result = ""
-    for char in s:
-        result = char + result
-    return result
-
-
-def reverse_string_builtin(s: str) -> str:
-    """Reverse using reversed() and join()"""
-    return ''.join(reversed(s))
-```
-
----
-
-## Core Feature #1: Long Context Analysis
-
-### Example 1: Entire Codebase Review
-
-```python
-# analyze_codebase.py
-import anthropic
-import os
-from pathlib import Path
-
-def load_codebase(directory: str, extensions: list) -> dict:
-    """
-    Load all code files from directory
-
-    Args:
-        directory: Root directory path
-        extensions: File extensions to include (e.g., ['.py', '.js'])
-
-    Returns:
-        Dictionary of {filepath: content}
-    """
-    codebase = {}
-
-    for ext in extensions:
-        for file_path in Path(directory).rglob(f'*{ext}'):
-            try:
-                with open(file_path, 'r', encoding='utf-8') as f:
-                    relative_path = file_path.relative_to(directory)
-                    codebase[str(relative_path)] = f.read()
-            except Exception as e:
-                print(f"Error reading {file_path}: {e}")
-
-    return codebase
-
-
-def analyze_with_claude(codebase: dict, question: str) -> str:
-    """
-    Analyze codebase using Claude's long context
-
-    Args:
-        codebase: Dictionary of file paths and contents
-        question: Analysis question
-
-    Returns:
-        Claude's analysis
-    """
-    client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
-
-    # Format codebase for Claude
-    formatted_codebase = "\n\n".join([
-        f"=== File: {filepath} ===\n{content}"
-        for filepath, content in codebase.items()
-    ])
-
-    # Create message with system context
-    response = client.messages.create(
-        model="claude-3-5-sonnet-20241022",
-        max_tokens=4096,
-        system="You are an expert software architect analyzing codebases.",
-        messages=[{
-            "role": "user",
-            "content": f"""Here's the entire codebase:
-
-{formatted_codebase}
-
-Question: {question}
-
-Please analyze thoroughly and provide specific file names and line references."""
-        }]
-    )
-
-    return response.content[0].text
-
-
-# Example usage
-if __name__ == "__main__":
-    # Load entire React project
-    codebase = load_codebase(
-        directory="./my-react-app/src",
-        extensions=['.js', '.jsx', '.ts', '.tsx']
-    )
-
-    print(f"Loaded {len(codebase)} files")
-
-    # Ask architectural questions
-    analysis = analyze_with_claude(
-        codebase,
-        """Analyze this React application and provide:
-        1. Overall architecture pattern (MVC, MVVM, etc.)
-        2. State management approach
-        3. Potential performance issues
-        4. Unused components or dead code
-        5. Security vulnerabilities
-        6. Code quality issues (prop-types, error handling)
-        """
-    )
-
-    print("\n=== ANALYSIS ===\n")
-    print(analysis)
-```
-
-**Real Results:**
-- ✅ Analyzed 80-file React app (45K lines) in single request
-- ✅ Identified 12 unused components
-- ✅ Found 3 prop-drilling issues
-- ✅ Suggested context API migration
-- ✅ Flagged 2 XSS vulnerabilities
-
----
-
-## Core Feature #2: Prompt Caching
-
-### Example 2: Cached Codebase Questions
-
-```python
-# cached_analysis.py
-import anthropic
-import os
-
-def analyze_with_caching(codebase_text: str, questions: list) -> list:
-    """
-    Ask multiple questions about codebase using prompt caching
-
-    First request caches the codebase, subsequent requests are 10x faster
-
-    Args:
-        codebase_text: Full codebase as text
-        questions: List of questions to ask
-
-    Returns:
-        List of answers
-    """
-    client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
-
-    answers = []
-
-    for i, question in enumerate(questions):
-        print(f"\n--- Question {i+1}/{len(questions)} ---")
-
-        response = client.messages.create(
-            model="claude-3-5-sonnet-20241022",
-            max_tokens=2048,
-            system=[
-                {
-                    "type": "text",
-                    "text": "You are an expert code reviewer.",
-                },
-                {
-                    "type": "text",
-                    "text": f"Here is the codebase to analyze:\n\n{codebase_text}",
-                    "cache_control": {"type": "ephemeral"}  # Cache this!
-                }
-            ],
-            messages=[{
-                "role": "user",
-                "content": question
-            }]
-        )
-
-        # Show cache performance
-        usage = response.usage
-        print(f"Input tokens: {usage.input_tokens}")
-        print(f"Cache read tokens: {getattr(usage, 'cache_read_input_tokens', 0)}")
-        print(f"Cache creation tokens: {getattr(usage, 'cache_creation_input_tokens', 0)}")
-
-        answers.append(response.content[0].text)
-
-    return answers
-
-
-# Example usage
-if __name__ == "__main__":
-    # Load large codebase (example: 50K lines)
-    with open("combined_codebase.txt", "r") as f:
-        codebase = f.read()
-
-    # Ask multiple questions - all using cached codebase!
-    questions = [
-        "List all API endpoints and their HTTP methods",
-        "Find all database queries that might have N+1 problems",
-        "Identify components without proper error boundaries",
-        "List all TODO comments with their locations",
-        "Find unused imports across all files"
-    ]
-
-    answers = analyze_with_caching(codebase, questions)
-
-    # First request: ~15 seconds (cache creation)
-    # Subsequent requests: ~2 seconds (90% cached)
-
-    for q, a in zip(questions, answers):
-        print(f"\n=== {q} ===")
-        print(a)
-```
-
-**Cost Savings:**
-- Without caching: $0.50 per request × 5 = $2.50
-- With caching: $0.50 (first) + $0.05 × 4 = $0.70
-- **Savings: 72% cost reduction**
-
----
-
-## Core Feature #3: Tool Use (Function Calling)
-
-### Example 3: Automated Code Refactoring with Tools
-
-```python
-# tool_use_refactor.py
-import anthropic
-import os
-import subprocess
-
-def execute_bash(command: str) -> dict:
-    """Execute bash command and return output"""
-    try:
-        result = subprocess.run(
-            command,
-            shell=True,
-            capture_output=True,
-            text=True,
-            timeout=30
-        )
-        return {
-            "stdout": result.stdout,
-            "stderr": result.stderr,
-            "returncode": result.returncode
-        }
-    except Exception as e:
-        return {"error": str(e)}
-
-
-def read_file(filepath: str) -> str:
-    """Read file contents"""
-    try:
-        with open(filepath, 'r') as f:
-            return f.read()
-    except Exception as e:
-        return f"Error: {e}"
-
-
-def write_file(filepath: str, content: str) -> str:
-    """Write content to file"""
-    try:
-        with open(filepath, 'w') as f:
-            f.write(content)
-        return f"Successfully wrote to {filepath}"
-    except Exception as e:
-        return f"Error: {e}"
-
-
-# Define tools for Claude
-tools = [
-    {
-        "name": "execute_bash",
-        "description": "Execute a bash command and return the output. Use for running tests, linting, git commands, etc.",
-        "input_schema": {
-            "type": "object",
-            "properties": {
-                "command": {
-                    "type": "string",
-                    "description": "The bash command to execute"
-                }
-            },
-            "required": ["command"]
-        }
-    },
-    {
-        "name": "read_file",
-        "description": "Read the contents of a file",
-        "input_schema": {
-            "type": "object",
-            "properties": {
-                "filepath": {
-                    "type": "string",
-                    "description": "Path to the file to read"
-                }
-            },
-            "required": ["filepath"]
-        }
-    },
-    {
-        "name": "write_file",
-        "description": "Write content to a file",
-        "input_schema": {
-            "type": "object",
-            "properties": {
-                "filepath": {"type": "string"},
-                "content": {"type": "string"}
-            },
-            "required": ["filepath", "content"]
-        }
-    }
-]
-
-
-def refactor_with_tools(task: str):
-    """
-    Use Claude with tool access to refactor code automatically
-    """
-    client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
-
-    messages = [{"role": "user", "content": task}]
-
-    # Agentic loop - let Claude use tools
-    while True:
-        response = client.messages.create(
-            model="claude-3-5-sonnet-20241022",
-            max_tokens=4096,
-            tools=tools,
-            messages=messages
-        )
-
-        # Check if Claude wants to use a tool
-        if response.stop_reason == "tool_use":
-            # Execute tool calls
-            tool_results = []
-
-            for content_block in response.content:
-                if content_block.type == "tool_use":
-                    tool_name = content_block.name
-                    tool_input = content_block.input
-
-                    print(f"\n🔧 Claude using tool: {tool_name}")
-                    print(f"   Input: {tool_input}")
-
-                    # Execute the tool
-                    if tool_name == "execute_bash":
-                        result = execute_bash(tool_input["command"])
-                    elif tool_name == "read_file":
-                        result = read_file(tool_input["filepath"])
-                    elif tool_name == "write_file":
-                        result = write_file(tool_input["filepath"], tool_input["content"])
-
-                    print(f"   Result: {str(result)[:100]}...")
-
-                    tool_results.append({
-                        "type": "tool_result",
-                        "tool_use_id": content_block.id,
-                        "content": str(result)
-                    })
-
-            # Send tool results back to Claude
-            messages.append({"role": "assistant", "content": response.content})
-            messages.append({"role": "user", "content": tool_results})
-
-        else:
-            # Claude is done
-            final_response = response.content[0].text
-            print("\n✅ Task complete!")
-            print(final_response)
-            break
-
-
-# Example usage
-if __name__ == "__main__":
-    refactor_with_tools("""
-    Refactor the file src/components/UserList.jsx to:
-    1. Read the current file
-    2. Extract the data fetching logic into a custom hook
-    3. Add proper TypeScript types
-    4. Add error boundary
-    5. Write the refactored version to src/components/UserList.tsx
-    6. Run prettier to format it
-    7. Run the tests to make sure nothing broke
-
-    Show me each step you take.
-    """)
-```
-
-**What Claude Does Automatically:**
-1. Reads `UserList.jsx` using `read_file`
-2. Analyzes the code structure
-3. Generates refactored TypeScript version
-4. Writes to `UserList.tsx` using `write_file`
-5. Runs `prettier --write src/components/UserList.tsx`
-6. Executes `npm test UserList` to verify
-7. Reports results
-
----
-
-## Example 4: Building a Feature End-to-End
-
-### Task: Create a REST API with Tests
-
-```python
-# build_api_feature.py
-import anthropic
-import os
-
-def build_feature_with_claude(feature_description: str):
-    """
-    Build complete feature using Claude Code
-    """
-    client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
-
-    response = client.messages.create(
-        model="claude-3-5-sonnet-20241022",
-        max_tokens=8000,
-        messages=[{
-            "role": "user",
-            "content": f"""Build this feature completely:
-
-{feature_description}
-
-Provide:
-1. Database schema (SQL)
-2. API routes (Express.js)
-3. Request validation (Zod)
-4. Business logic with error handling
-5. Comprehensive tests (Jest)
-6. API documentation
-
-Make all code production-ready with:
-- TypeScript types
-- Error handling
-- Input validation
-- Security best practices
-- Detailed comments"""
-        }]
-    )
-
-    return response.content[0].text
-
-
-# Example usage
-feature = """
-Create a blog post commenting system with:
+```text
+Please fix this small issue: [describe the issue].
 
 Requirements:
-- Users can comment on blog posts
-- Comments can be nested (replies)
-- Support upvotes/downvotes
-- Pagination (20 per page)
-- Rate limiting (5 comments per hour per user)
-- Profanity filter
-- Email notification for post authors
-
-Tech stack:
-- Node.js + Express + TypeScript
-- PostgreSQL with Prisma ORM
-- Zod for validation
-- Jest for testing
-"""
-
-result = build_feature_with_claude(feature)
-print(result)
+- first locate the relevant files and explain your plan;
+- make the smallest safe change;
+- do not refactor unrelated code;
+- tell me which verification commands I should run afterward;
+- if you cannot confirm something, say what needs manual review.
 ```
 
-**Claude's Output (Abbreviated):**
+## Common Beginner Mistakes
 
-```typescript
-// ===== 1. DATABASE SCHEMA (Prisma) =====
-// prisma/schema.prisma
+- Asking for a full system rewrite as the first task.
+- Accepting changes without reviewing the diff.
+- Skipping verification commands.
+- Repeating durable repo rules in every prompt instead of documenting them.
+- Granting broad permissions before understanding the risks.
 
-model Comment {
-  id            String    @id @default(uuid())
-  content       String
-  authorId      String
-  postId        String
-  parentId      String?   // For nested comments
-  upvotes       Int       @default(0)
-  downvotes     Int       @default(0)
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
+## FAQ
 
-  author        User      @relation(fields: [authorId], references: [id])
-  post          Post      @relation(fields: [postId], references: [id])
-  parent        Comment?  @relation("CommentReplies", fields: [parentId], references: [id])
-  replies       Comment[] @relation("CommentReplies")
-  votes         Vote[]
+### Is Claude Code beginner-friendly?
 
-  @@index([postId])
-  @@index([authorId])
-}
+Yes, if you start with small tasks and treat diff review and verification as part of the workflow.
 
-model Vote {
-  id          String   @id @default(uuid())
-  userId      String
-  commentId   String
-  value       Int      // +1 or -1
-  createdAt   DateTime @default(now())
+### Do I need advanced configuration on day one?
 
-  user        User     @relation(fields: [userId], references: [id])
-  comment     Comment  @relation(fields: [commentId], references: [id])
+No. First learn the core loop: describe the goal, let Claude Code understand the project, make a small change, and verify the result.
 
-  @@unique([userId, commentId])
-}
+### Can Claude Code fully replace my coding judgment?
 
-// ===== 2. API ROUTES =====
-// src/routes/comments.ts
+No. It can generate and edit a lot of code, but requirements, architecture, review, verification, and safety remain human responsibilities.
 
-import { Router } from 'express';
-import { z } from 'zod';
-import { PrismaClient } from '@prisma/client';
-import { rateLimit } from 'express-rate-limit';
-import Filter from 'bad-words';
+## Related Reading
 
-const router = Router();
-const prisma = new PrismaClient();
-const profanityFilter = new Filter();
-
-// Validation schemas
-const CreateCommentSchema = z.object({
-  content: z.string().min(1).max(1000),
-  postId: z.string().uuid(),
-  parentId: z.string().uuid().optional(),
-});
-
-const VoteSchema = z.object({
-  value: z.enum(['1', '-1']).transform(Number),
-});
-
-// Rate limiting: 5 comments per hour
-const commentLimiter = rateLimit({
-  windowMs: 60 * 60 * 1000,
-  max: 5,
-  message: 'Too many comments, please try again later',
-});
-
-// ===== CREATE COMMENT =====
-router.post('/', commentLimiter, async (req, res) => {
-  try {
-    // Validate input
-    const data = CreateCommentSchema.parse(req.body);
-    const userId = req.user?.id; // From auth middleware
-
-    if (!userId) {
-      return res.status(401).json({ error: 'Unauthorized' });
-    }
-
-    // Filter profanity
-    if (profanityFilter.isProfane(data.content)) {
-      return res.status(400).json({
-        error: 'Comment contains inappropriate language'
-      });
-    }
-
-    // Verify post exists
-    const post = await prisma.post.findUnique({
-      where: { id: data.postId },
-      include: { author: true },
-    });
-
-    if (!post) {
-      return res.status(404).json({ error: 'Post not found' });
-    }
-
-    // Create comment
-    const comment = await prisma.comment.create({
-      data: {
-        content: data.content,
-        authorId: userId,
-        postId: data.postId,
-        parentId: data.parentId,
-      },
-      include: {
-        author: {
-          select: { id: true, name: true, avatar: true },
-        },
-      },
-    });
-
-    // Send email notification to post author
-    // (implementation depends on your email service)
-    if (post.author.email) {
-      await sendEmail({
-        to: post.author.email,
-        subject: 'New comment on your post',
-        body: `${comment.author.name} commented: "${data.content}"`,
-      });
-    }
-
-    res.status(201).json(comment);
-
-  } catch (error) {
-    if (error instanceof z.ZodError) {
-      return res.status(400).json({ errors: error.errors });
-    }
-    console.error('Error creating comment:', error);
-    res.status(500).json({ error: 'Internal server error' });
-  }
-});
-
-// ===== GET COMMENTS (Paginated) =====
-router.get('/post/:postId', async (req, res) => {
-  try {
-    const postId = req.params.postId;
-    const page = parseInt(req.query.page as string) || 1;
-    const limit = 20;
-    const skip = (page - 1) * limit;
-
-    // Get top-level comments only (no parent)
-    const comments = await prisma.comment.findMany({
-      where: {
-        postId,
-        parentId: null,
-      },
-      include: {
-        author: {
-          select: { id: true, name: true, avatar: true },
-        },
-        replies: {
-          include: {
-            author: {
-              select: { id: true, name: true, avatar: true },
-            },
-          },
-          orderBy: { createdAt: 'asc' },
-        },
-      },
-      orderBy: { createdAt: 'desc' },
-      skip,
-      take: limit,
-    });
-
-    const total = await prisma.comment.count({
-      where: { postId, parentId: null },
-    });
-
-    res.json({
-      comments,
-      pagination: {
-        page,
-        limit,
-        total,
-        pages: Math.ceil(total / limit),
-      },
-    });
-
-  } catch (error) {
-    console.error('Error fetching comments:', error);
-    res.status(500).json({ error: 'Internal server error' });
-  }
-});
-
-// ===== VOTE ON COMMENT =====
-router.post('/:commentId/vote', async (req, res) => {
-  try {
-    const commentId = req.params.commentId;
-    const userId = req.user?.id;
-    const { value } = VoteSchema.parse(req.body);
-
-    if (!userId) {
-      return res.status(401).json({ error: 'Unauthorized' });
-    }
-
-    // Upsert vote
-    await prisma.vote.upsert({
-      where: {
-        userId_commentId: { userId, commentId },
-      },
-      update: { value },
-      create: { userId, commentId, value },
-    });
-
-    // Update comment vote counts
-    const votes = await prisma.vote.groupBy({
-      by: ['commentId'],
-      where: { commentId },
-      _sum: { value: true },
-    });
-
-    const upvotes = votes[0]?._sum.value || 0;
-
-    await prisma.comment.update({
-      where: { id: commentId },
-      data: {
-        upvotes: upvotes > 0 ? upvotes : 0,
-        downvotes: upvotes < 0 ? Math.abs(upvotes) : 0,
-      },
-    });
-
-    res.json({ success: true });
-
-  } catch (error) {
-    console.error('Error voting:', error);
-    res.status(500).json({ error: 'Internal server error' });
-  }
-});
-
-export default router;
-
-// ===== 3. TESTS =====
-// src/routes/comments.test.ts
-
-import request from 'supertest';
-import app from '../app';
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
-
-describe('Comments API', () => {
-  let authToken: string;
-  let postId: string;
-
-  beforeAll(async () => {
-    // Set up test user and post
-    const user = await prisma.user.create({
-      data: { email: 'test@example.com', name: 'Test User' },
-    });
-
-    const post = await prisma.post.create({
-      data: { title: 'Test Post', authorId: user.id },
-    });
-
-    postId = post.id;
-    authToken = generateToken(user.id); // Your auth logic
-  });
-
-  afterAll(async () => {
-    await prisma.comment.deleteMany();
-    await prisma.post.deleteMany();
-    await prisma.user.deleteMany();
-    await prisma.$disconnect();
-  });
-
-  describe('POST /comments', () => {
-    it('should create a comment successfully', async () => {
-      const response = await request(app)
-        .post('/comments')
-        .set('Authorization', `Bearer ${authToken}`)
-        .send({
-          content: 'Great article!',
-          postId,
-        });
-
-      expect(response.status).toBe(201);
-      expect(response.body).toHaveProperty('id');
-      expect(response.body.content).toBe('Great article!');
-    });
-
-    it('should reject profanity', async () => {
-      const response = await request(app)
-        .post('/comments')
-        .set('Authorization', `Bearer ${authToken}`)
-        .send({
-          content: 'This is sh*t', // Profanity
-          postId,
-        });
-
-      expect(response.status).toBe(400);
-      expect(response.body.error).toContain('inappropriate');
-    });
-
-    it('should enforce rate limiting', async () => {
-      // Create 5 comments (limit)
-      for (let i = 0; i < 5; i++) {
-        await request(app)
-          .post('/comments')
-          .set('Authorization', `Bearer ${authToken}`)
-          .send({ content: `Comment ${i}`, postId });
-      }
-
-      // 6th should fail
-      const response = await request(app)
-        .post('/comments')
-        .set('Authorization', `Bearer ${authToken}`)
-        .send({ content: 'One too many', postId });
-
-      expect(response.status).toBe(429);
-    });
-  });
-
-  describe('GET /comments/post/:postId', () => {
-    it('should return paginated comments', async () => {
-      const response = await request(app)
-        .get(`/comments/post/${postId}`)
-        .query({ page: 1 });
-
-      expect(response.status).toBe(200);
-      expect(response.body).toHaveProperty('comments');
-      expect(response.body).toHaveProperty('pagination');
-      expect(response.body.pagination.limit).toBe(20);
-    });
-  });
-});
-```
-
----
-
-## Example 5: Integration with VS Code
-
-### Setup Claude Code in VS Code
-
-```json
-// .vscode/settings.json
-{
-  "claude-code.apiKey": "${env:ANTHROPIC_API_KEY}",
-  "claude-code.model": "claude-3-5-sonnet-20241022",
-  "claude-code.enablePromptCaching": true,
-  "claude-code.maxTokens": 4096,
-
-  // Customize context
-  "claude-code.includeFiles": [
-    "**/*.{ts,tsx,js,jsx}",
-    "**/*.{py,go,rs,java}",
-    "README.md",
-    "package.json"
-  ],
-  "claude-code.excludeFiles": [
-    "**/node_modules/**",
-    "**/dist/**",
-    "**/*.test.{ts,js}"
-  ],
-
-  // Keybindings
-  "claude-code.shortcuts": {
-    "explainCode": "Cmd+Shift+E",
-    "refactor": "Cmd+Shift+R",
-    "generateTests": "Cmd+Shift+T",
-    "fixBug": "Cmd+Shift+F"
-  }
-}
-```
-
-### Usage Examples
-
-**1. Explain Selected Code**
-- Select code block
-- Press `Cmd+Shift+E`
-- Claude explains in sidebar
-
-**2. Refactor Function**
-- Select function
-- Press `Cmd+Shift+R`
-- Claude suggests improvements
-
-**3. Generate Tests**
-- Open file to test
-- Press `Cmd+Shift+T`
-- Claude creates test file
-
----
-
-## Best Practices
-
-### 1. Optimize for Long Context
-
-```python
-# ❌ Bad: Splitting files unnecessarily
-for file in files:
-    analyze(file)  # Multiple API calls
-
-# ✅ Good: Use long context
-all_files = "\n\n".join([f"=== {name} ===\n{content}" for name, content in files.items()])
-analyze(all_files)  # Single API call, better understanding
-```
-
-### 2. Leverage Prompt Caching
-
-```python
-# ❌ Bad: Sending same context repeatedly
-for question in questions:
-    send_to_claude(full_codebase + question)  # Re-sends codebase every time
-
-# ✅ Good: Cache the codebase
-system_context = {"text": full_codebase, "cache_control": {"type": "ephemeral"}}
-for question in questions:
-    send_with_cache(system_context, question)  # 90% cost reduction
-```
-
-### 3. Use Tools for Automation
-
-```python
-# ❌ Bad: Manual copy-paste
-claude_response = get_suggestion()
-# Copy response, paste into file, run tests manually
-
-# ✅ Good: Let Claude use tools
-give_claude_tools(['write_file', 'execute_bash', 'read_file'])
-# Claude writes file and runs tests automatically
-```
-
-### 4. Provide Clear Context
-
-```python
-# ❌ Bad prompt
-"Fix this bug"
-
-# ✅ Good prompt
-"""
-Bug: User login fails with 500 error
-Error message: "Cannot read property 'id' of undefined"
-Stack trace: [paste stack trace]
-
-Context:
-- Using Express.js + Passport.js
-- PostgreSQL database
-- Happens only for OAuth users, not email/password
-- Started after deploying v2.3.1
-
-Files involved:
-[paste relevant code]
-
-Please explain the root cause and provide a fix.
-"""
-```
-
-### 5. Verify AI Output
-
-```python
-# Always verify before running in production
-def verify_ai_code(code: str) -> bool:
-    """
-    Checklist before using AI-generated code:
-    """
-    checks = {
-        "has_error_handling": "try/except" in code or "throw" in code,
-        "has_type_annotations": ":" in code,  # For Python/TS
-        "has_tests": "test_" in code or "describe(" in code,
-        "no_hardcoded_secrets": "password" not in code.lower(),
-        "has_documentation": '"""' in code or "/**" in code,
-    }
-
-    return all(checks.values())
-```
-
----
-
-## Claude Code vs Cursor vs GitHub Copilot
-
-| Feature | Claude Code | Cursor | GitHub Copilot |
-|---------|-------------|--------|----------------|
-| **Context Length** | 200K tokens | 32K tokens | 8K tokens |
-| **Prompt Caching** | ✅ Yes | ❌ No | ❌ No |
-| **Tool Use** | ✅ Yes | ✅ Yes | ❌ No |
-| **Code Quality** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐ |
-| **Speed** | Medium | Fast | Very Fast |
-| **Cost** | API-based | $20/month | $10/month |
-| **Best For** | Architecture, refactoring | General coding | Autocomplete |
-| **Offline** | ❌ No | ❌ No | ❌ No |
-
-**When to Use Each:**
-
-**Claude Code:**
-- ✅ Large codebase analysis
-- ✅ Architectural questions
-- ✅ Complex refactoring
-- ✅ Security audits
-- ✅ Migration planning
-
-**Cursor:**
-- ✅ Daily coding workflow
-- ✅ Fast iteration
-- ✅ Multiple file edits
-- ✅ Integrated debugging
-
-**GitHub Copilot:**
-- ✅ Real-time autocomplete
-- ✅ Small functions/snippets
-- ✅ Learning new syntax
-- ✅ Boilerplate generation
-
-**Pro Tip:** Use all three!
-- Copilot for autocomplete
-- Cursor for daily coding
-- Claude Code for deep analysis
-
----
-
-## Real-World Use Cases
-
-### Use Case 1: Migrating to TypeScript
-
-```bash
-# 1. Analyze entire JavaScript codebase
-claude-code analyze "List all files that need TypeScript migration and suggest order"
-
-# 2. Migrate files one by one
-claude-code refactor "Convert src/components/UserList.jsx to TypeScript with proper types"
-
-# 3. Fix type errors
-claude-code fix "Fix all TypeScript errors in src/"
-
-# 4. Generate types for APIs
-claude-code generate "Create TypeScript interfaces for all API responses in src/api/"
-```
-
-### Use Case 2: Security Audit
-
-```python
-audit_prompt = """
-Perform comprehensive security audit:
-
-1. SQL Injection vulnerabilities
-2. XSS attack vectors
-3. CSRF protection gaps
-4. Authentication bypass possibilities
-5. Authorization flaws
-6. Secrets in code
-7. Dependency vulnerabilities
-
-Provide specific file:line references and fixes.
-"""
-```
-
-### Use Case 3: Performance Optimization
-
-```python
-optimize_prompt = """
-Analyze performance bottlenecks:
-
-1. N+1 query patterns
-2. Unnecessary re-renders (React)
-3. Memory leaks
-4. Large bundle sizes
-5. Unoptimized images
-6. Slow database queries
-
-Provide benchmarks and optimized versions.
-"""
-```
-
----
-
-## 🔗 Resources
-
-- [Claude API Documentation](https://docs.anthropic.com) - Official API docs
-- [Claude Code GitHub](https://github.com/anthropics/claude-code) - Open source CLI
-- [Anthropic Console](https://console.anthropic.com) - Get API keys
-- [AI Coding Tools Comparison](/docs/tools/ai-coding-tools-extended) - Compare all tools
-- [Prompt Engineering Guide](/docs/tools/prompt-engineering-tools) - Write better prompts
-- Claude Prompt Caching Guide (Coming in Phase 2) - Deep dive into caching
-
----
-
-**Last Updated:** 2025-11-10 | **Difficulty:** Beginner to Advanced | **Time:** 2-3 hours
-
-*Want to explore other AI coding tools? Check our [Complete AI Tools Comparison](/docs/tools/ai-coding-tools-extended) and [Kimi K2 Guide](/docs/tutorials/kimi-k2-guide).*
+- [Codex beginner guide](/docs/tutorials/codex-guide/)
+- [AI coding agent beginner route](/docs/tutorials/ai-coding-agent-beginner-guide/)
+- [Claude Code vs Codex CLI](/blog/claude-code-vs-codex-cli/)
+- [Cursor vs Claude Code](/blog/cursor-vs-claude-code/)

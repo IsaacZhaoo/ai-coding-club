@@ -1,0 +1,112 @@
+---
+title: "AI Coding Agent Beginner Route: How to Start with Claude Code, Codex, and Cursor"
+description: "A practical beginner route for choosing an AI coding agent, writing safe prompts, using Git checkpoints, reviewing diffs, running checks, and understanding tool roles."
+keywords:
+  - AI coding agent
+  - Claude Code Codex Cursor
+  - AI coding beginner
+  - terminal agent tutorial
+sidebar_position: 5
+tags: [tutorial, coding-assistant, beginner]
+---
+
+# AI Coding Agent Beginner Route: How to Start with Claude Code, Codex, and Cursor
+
+## Quick Answer
+
+Do not start by asking which tool is best. Start by learning a reusable workflow: choose one entry point, give a clear task, let the tool understand the project, keep a Git checkpoint, review the diff, run checks, and then decide whether to accept the change.
+
+## Step 1: Choose One Entry Point
+
+| Your current situation | Suggested entry point |
+|------------------------|-----------------------|
+| You already use ChatGPT every day | Codex |
+| You already use Claude every day | Claude Code |
+| You mainly want editor autocomplete, Q&A, and lightweight multi-file help | Cursor |
+| You are learning concepts, syntax, or reading code | ChatGPT or Claude chat |
+
+## Step 2: Start With One Small Task
+
+Good first tasks:
+
+- Explain the project structure.
+- Fix one reproducible small bug.
+- Add a test for one function.
+- Update README run instructions.
+
+Avoid these as first tasks:
+
+- Rewrite the whole project.
+- Add a full login system.
+- Change database and deployment configuration.
+- Run commands directly in production.
+
+## Step 3: Use A Four-Part Prompt
+
+```text
+Goal: What I want to accomplish.
+Context: Relevant files, errors, pages, or background.
+Constraints: What not to do, code style, safety boundaries.
+Done when: What completion means.
+```
+
+## Step 4: Build Safety Habits
+
+- Run `git status` before changes.
+- Confirm the project is in Git first; if not, initialize Git or make a backup copy.
+- If there are existing uncommitted changes, commit or stash them. A new branch isolates future work, but it does not save current changes by itself.
+- Ask the agent to plan before complex tasks.
+- After each change, run `git diff` and check for unrelated rewrites, config changes, leaked secrets, or deleted logic.
+- Run tests when possible; otherwise write manual verification steps.
+- Do not let an agent handle important data you have not backed up.
+
+## Step 5: Understand Tool Roles
+
+Cursor is editor-native collaboration. Claude Code and Codex are more typical task-oriented agents. ChatGPT and Claude chat are best for explanation, learning, brainstorming, and lightweight code snippets.
+
+## One-Week Practice Route
+
+### Day 1: Ask The Agent To Explain The Project
+
+Goal: understand directories, run commands, and one small task to try first.
+
+### Day 2: Ask The Agent To Fix A Small Bug
+
+Goal: learn minimal changes, diff review, and verification commands.
+
+### Day 3: Ask The Agent To Add A Test
+
+Goal: have it inspect existing test style before adding one small test.
+
+### Day 4: Ask The Agent To Update Docs
+
+Goal: clarify run instructions, FAQs, or development commands.
+
+### Day 5: Write Repeat Rules Into Project Guidance
+
+Goal: capture package-manager choice, verification commands, and do-not-touch rules.
+
+### Weekend: Review Your Safety Loop
+
+Review the diffs, commands, and repeated corrections from the week. Keep only the guidance that would prevent real mistakes next time.
+
+## FAQ
+
+### Do beginners need Claude Code, Codex, and Cursor at the same time?
+
+No. Start with one tool from the ecosystem you already use, learn the workflow, and then decide whether a second tool is worth adding.
+
+### Why review diffs?
+
+Agents can move quickly, but fast is not the same as correct. Diff review is the daily habit that helps you catch accidental rewrites, over-refactors, and safety risks.
+
+### Is prompting enough?
+
+No. AI coding is not about one magic prompt. It is a loop: give a goal, provide context, constrain scope, verify the result, and capture reusable guidance.
+
+## Related Reading
+
+- [Claude Code beginner guide](/docs/tutorials/claude-code-guide/)
+- [Codex beginner guide](/docs/tutorials/codex-guide/)
+- [Claude Code vs Codex CLI](/blog/claude-code-vs-codex-cli/)
+- [Claude Code, Codex CLI, and Cursor workflow](/blog/claude-code-codex-cli-cursor-workflow/)
