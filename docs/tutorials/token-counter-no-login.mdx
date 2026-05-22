@@ -1,0 +1,165 @@
+---
+title: "Count Tokens Before Sending Long AI Prompts"
+description: "Estimate prompt tokens and context-window fit before sending long AI coding prompts. Browser-local token counter with no login required."
+keywords:
+  - token counter
+  - prompt token estimator
+  - llm token counter
+  - token counter no login
+  - count tokens before sending prompt
+sidebar_position: 6
+tags: [token-counter, prompt-engineering, developer-tools, no-login-tools]
+---
+
+import HowToSchema from '@site/src/components/HowToSchema';
+
+# Count Tokens Before Sending Long AI Prompts
+
+You are about to paste a 400-line error log into Claude Code.
+
+Before you hit enter, one question matters: does it fit?
+
+If it does not, you will get a truncated response, or the tool will reject the input entirely. Either way, you wasted a round trip.
+
+A token counter answers that question before you send. This one runs in the browser and does not require login.
+
+<HowToSchema
+  name="Count tokens before sending long AI prompts"
+  description="Estimate prompt tokens and context-window fit before sending long AI coding prompts."
+  totalTime="PT5M"
+  steps={[
+    {
+      name: 'Open the Token Counter',
+      text: 'Open the AI Coding Club Token Counter in your browser.',
+    },
+    {
+      name: 'Paste the prompt text',
+      text: 'Paste the logs, diff, spec, or prompt text you plan to send to an AI coding assistant.',
+    },
+    {
+      name: 'Check token and context estimates',
+      text: 'Read the token estimate and compare it against generic context-window presets.',
+    },
+    {
+      name: 'Decide whether to send, trim, or split',
+      text: 'Use the estimate to decide whether to send the prompt as-is, remove noise, summarize, or split the task.',
+    },
+  ]}
+/>
+
+## Quick Answer
+
+Open the [AI Coding Club Token Counter](https://tools.aicoding.club/tokenizer/), paste your text, and get a token estimate with context-window fit percentages - no account needed.
+
+Use it as a planning check before sending long prompts, logs, diffs, or specs to an AI coding assistant. It is not a billing calculator and does not reflect live model pricing.
+
+## Why Token Count Matters in AI Coding
+
+Every model has a context window - a hard limit on how much text it can process in one request. Go over it, and the model either truncates your input silently or returns an error.
+
+A few situations where this bites developers:
+
+**Pasting a full `git diff` for a code review.** A mid-sized PR can run several thousand lines. The model may only see the first half and give feedback that misses the rest of the changes.
+
+**Including a large OpenAPI spec before asking an AI assistant to generate a client.** Specs with hundreds of endpoints add up fast. The model may not process the full spec, and the generated client will be incomplete.
+
+**Dumping a long error log to debug a problem.** Logs often contain repetitive stack traces and noise. The useful signal gets buried, and the token count climbs.
+
+Checking before you send takes ten seconds. Debugging a half-baked AI response takes longer.
+
+## When to Count Tokens Before Asking an AI Assistant
+
+Not every prompt needs a token check. These are the cases where it pays off:
+
+- Long logs, diffs, or API specs where the size is not obvious
+- Multi-file context in Cursor or Claude Code, where several files stack up quickly
+- Repeated workflows where context grows over time - like asking for a review after every commit
+- Before deciding whether to split a task or summarize a file first
+
+## How to Use the Token Counter Without Login
+
+1. Go to `https://tools.aicoding.club/tokenizer/`
+2. Paste the text you plan to send
+3. Read the token count and context-window percentage
+4. Compare against the context-window presets in the tool
+5. Decide: send as-is, trim it down, or split into smaller prompts
+
+No model selection required. No API key. No account.
+
+## What Runs Locally
+
+Token counting uses `js-tiktoken`, a tokenizer library that loads and runs inside your browser tab. The context-fit math is calculated from generic context-window presets stored in the page.
+
+Your pasted text is not sent to an AI Coding Club API.
+
+One thing worth knowing: the page still makes normal infrastructure requests when it loads - analytics, Cloudflare, that kind of thing. That is not the same as uploading your text. The token counting itself stays local.
+
+## Why Token and Context-Fit Numbers Are Estimates
+
+Different providers use different tokenizers. OpenAI, Anthropic, and Google each have their own tokenization logic, and the same text can produce different token counts depending on the model.
+
+This tool uses a browser-local tokenizer as an approximation. The context-window presets are generic reference values, not live model specs.
+
+What this means in practice:
+
+- Good for: getting a rough sense of prompt size before sending
+- Good for: deciding whether to split or trim a prompt
+- Not for: calculating exact API costs for production workloads
+- Not for: comparing precise token counts across different providers
+
+Treat the numbers as planning estimates, not guarantees.
+
+## How to Reduce a Prompt That Is Too Long
+
+If the estimate comes back higher than you expected, a few approaches that work:
+
+**Strip the noise from logs.** Most error logs contain repetitive stack frames and INFO-level output that adds nothing. Keep the error message, the relevant lines around it, and the stack trace. Cut the rest.
+
+**Summarize before you paste.** For large files or long documents, ask the AI to generate a summary first, then work from the summary. You get the same context with a fraction of the tokens.
+
+**Split the task.** Instead of one large prompt, break it into steps. Review the first half of a diff, then the second. Ask about one module at a time.
+
+**Filter your code context.** In Cursor and Claude Code, you can control which files are included in the context. Exclude build artifacts, `node_modules`, and generated files. They add tokens without adding useful signal.
+
+**Let the tool fetch what it needs.** Many AI coding tools can read files on demand rather than requiring you to paste everything upfront. Use that when you can.
+
+## How This Fits Into Prompt Engineering Workflows
+
+Checking token count before sending is a small habit that pays off more than you'd expect.
+
+When you work with Claude Code or Codex CLI on a non-trivial task, the prompt often includes a task description, relevant code, background context, and previous conversation. That adds up. A quick check before you send helps you decide whether to trim the task description, break the work into smaller steps, or drop context that is not relevant to this specific request.
+
+It also explains something that trips up a lot of developers: AI responses that seem incomplete or off-topic. One common cause is context overflow - the model only saw part of the input and responded to that. If you have ever gotten a response that felt like the model missed the point, check whether your prompt was close to or over the context limit.
+
+The habit is simple: estimate first, send second.
+
+## Related AI Coding Club Resources
+
+- [Token Counter tool](https://tools.aicoding.club/tokenizer/)
+- [OpenAPI Client Generator tutorial](/docs/tutorials/openapi-client-generator-no-login/): if you are pasting a long API spec before asking an AI assistant to generate a client, the same token-check habit applies
+
+## FAQ
+
+**Do I need to create an account?**
+
+No. Open the page, paste your text, and read the estimate. No signup required.
+
+**Is my pasted prompt uploaded to AI Coding Club servers?**
+
+No. Token counting runs in your browser using a local tokenizer library. Your text is not sent to an AI Coding Club API. The page does make normal infrastructure requests when it loads - analytics, Cloudflare - but those do not include your pasted content.
+
+**Is the token count exact for every model?**
+
+No. Different providers use different tokenizers, and this tool uses a browser-local approximation. Use the result as a planning estimate, not as a precise count for a specific model.
+
+**Can I use this to calculate my production API bill?**
+
+No. The context-window presets are generic reference values, not live pricing data. For production cost estimates, check the official pricing pages for each provider.
+
+**What should I do if my prompt is too long?**
+
+Strip noise from logs, summarize large files before pasting, split the task into smaller steps, or filter your code context to exclude irrelevant files. See the section above for specifics.
+
+**Should I paste API keys, secrets, or customer data into any AI tool?**
+
+No. Even though this tool processes text locally, you should never paste credentials, tokens, or customer PII into any browser-based tool. That is a general security principle, not specific to this one.

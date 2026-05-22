@@ -1,0 +1,169 @@
+---
+title: "发送长 Prompt 前先算 Token：不用登录的 Token Counter 怎么用？"
+description: "在浏览器里估算 Prompt 的 token 数和上下文占用，判断是否需要拆分或精简，不用注册账号。"
+keywords:
+  - Token Counter
+  - Token 计算
+  - Prompt 长度估算
+  - 不用登录
+  - 上下文窗口
+  - AI 编程 token
+  - Prompt 太长怎么办
+sidebar_position: 6
+tags: [token-counter, prompt-engineering, developer-tools, no-login-tools]
+---
+
+import HowToSchema from '@site/src/components/HowToSchema';
+
+# 发送长 Prompt 前先算 Token
+
+你正准备把一整段报错日志粘进 Claude Code。
+
+在按回车之前，有一个问题值得先想：这段内容有多长？
+
+如果超出模型的上下文窗口，要么回复会被截断，要么直接被拒绝。不管哪种，这一轮都白费了。
+
+Token Counter 就是帮你在发送前回答这个问题的。不用注册，在浏览器里粘贴文本就能估算。
+
+<HowToSchema
+  name="发送长 Prompt 前估算 token"
+  description="在浏览器里估算 Prompt 的 token 数和上下文窗口占用。"
+  totalTime="PT5M"
+  steps={[
+    {
+      name: '打开 Token Counter',
+      text: '在浏览器里打开 AI Coding Club Token Counter。',
+    },
+    {
+      name: '粘贴 Prompt 文本',
+      text: '粘贴准备发送给 AI 编程助手的日志、diff、spec 或 Prompt 文本。',
+    },
+    {
+      name: '查看 token 和上下文估算',
+      text: '查看 token 估算，并对照通用上下文窗口预设。',
+    },
+    {
+      name: '决定直接发送、精简或拆分',
+      text: '根据估算结果决定直接发送、去掉噪音、先摘要，还是拆成多个任务。',
+    },
+  ]}
+/>
+
+## 先说结论
+
+打开 [AI Coding Club Token Counter](https://tools.aicoding.club/tokenizer/)，粘贴你要发送的内容，工具会在浏览器里估算 token 数，并对照通用上下文窗口预设显示占用比例。不需要账号，不需要安装任何东西。
+
+适合用来做发送前的快速判断，不适合用来精确计算 API 账单。
+
+## 为什么 AI 编程时 token 数量会影响结果
+
+Token 是模型处理文本的基本单位。每个模型都有上下文窗口上限，超出这个上限，模型要么截断输入，要么直接报错。
+
+几个常见的踩坑场景：
+
+**粘贴完整 git diff 让 Claude Code 做 code review。** 一个中等规模的 PR，diff 可能有几千行。直接粘进去，模型可能只看到前半段，给出的建议也只覆盖了部分改动。
+
+**把一份长 OpenAPI spec 粘进去，让 AI 帮忙生成 API client。** spec 文件动辄几百个 endpoint，全量粘贴很容易超限。
+
+**把大段运行日志粘进去排查问题。** 日志里有大量重复行，真正有用的错误信息可能被淹没，而且 token 数会很高。
+
+这些情况下，发送前先估算一下，能省掉很多无效的来回。
+
+## 哪些内容发送前应该先估算 token
+
+不是所有内容都需要估算，但这几类值得养成习惯：
+
+- **长日志、diff、spec**：内容量不确定，容易超限
+- **Cursor 或 Claude Code 里的多文件上下文**：多个文件叠加后 token 数会快速增长
+- **重复执行的工作流**：比如每次 commit 后都要让 AI 做 review，上下文越堆越长
+- **决定是否拆分或精简之前**：先量一下，再决定怎么处理
+
+## 不登录使用 Token Counter 的流程
+
+步骤很短：
+
+1. 打开工具页面：`https://tools.aicoding.club/tokenizer/`
+2. 把要发送的文本粘贴进去
+3. 看 token 数和上下文占用比例
+4. 对照工具里的上下文窗口预设，判断占用了多少
+5. 决定：直接发、拆分、还是先精简
+
+不需要选模型，不需要填 API key，也不需要注册账号。
+
+## 哪些处理发生在浏览器本地
+
+这个工具的 token 计算在你的浏览器里完成，用的是页面加载的 `js-tiktoken` 库。上下文占用的计算也是基于浏览器里的通用上下文窗口预设。
+
+你粘贴的文本不会发送到 AI Coding Club 的 API。
+
+有一点要说清楚：页面加载时还是会有正常的基础设施请求，比如 analytics 或 Cloudflare 相关的请求。这和上传你的文本是两回事。
+
+## 为什么 token 和上下文占用都只能当作估算
+
+不同的 AI 提供商用的是不同的 tokenizer。OpenAI、Anthropic、Google 各自有自己的分词逻辑，同一段文本在不同模型里的 token 数可能不一样。
+
+这个工具用的是浏览器本地的 tokenizer 做近似计算。上下文窗口预设也是通用参考值，不是某个具体模型的官方规格。
+
+所以，把这里的数字当作**规划参考**，不要当作 provider 的原生保证。
+
+具体来说：
+
+- 用它判断"这段内容大概有多长"——可以
+- 用它决定"要不要拆分这个 prompt"——可以
+- 用它精确计算生产环境的 API 账单——不合适
+- 用它对比不同模型的精确 token 数——不合适
+
+## Prompt 太长时如何压缩或拆分
+
+估算完发现超限了，几个实用的处理方式：
+
+**从日志里去掉无关行。** 大多数报错日志里有大量重复的 stack trace 或者无关的 INFO 级别输出。只保留关键的错误信息和上下文。
+
+**大文件先摘要再粘贴。** 不要把整个文件粘进去，先让 AI 帮你生成一个摘要，再基于摘要继续对话。
+
+**拆成多个 prompt。** 一次只处理一部分，比如先让 AI 看前半段 diff，再看后半段。
+
+**用 `.gitignore` 式过滤控制代码上下文。** 在 Cursor 或 Claude Code 里，可以配置哪些文件不纳入上下文，避免把 `node_modules` 或者 build 产物也算进去。
+
+**让 AI 工具按需获取，不要全量粘贴。** 很多 AI coding 工具支持让模型自己决定要读哪些文件，而不是你手动把所有内容都粘进去。
+
+## 和 Prompt Engineering / AI 编程工作流的关系
+
+发送前估算 token，是一个很小但很有用的习惯。
+
+用 Claude Code 或 Codex CLI 做任务时，任务描述、相关代码、背景文档加在一起，很容易就到了几千甚至几万 token。提前估算一下，能帮你决定要不要精简任务描述，或者把大任务拆成几个小步骤。
+
+有时候 AI 的回复看起来不完整，或者明显没有理解你的问题，原因之一就是上下文超限了，模型只看到了部分输入。养成"发送前先查"的习惯，能减少这类无效来回。
+
+这不是什么复杂的技巧，就是在按回车之前多花 10 秒钟。
+
+## 相关 AI Coding Club 资源
+
+- [Token Counter 工具](https://tools.aicoding.club/tokenizer/)
+- [OpenAPI Client Generator 教程](/zh/docs/tutorials/openapi-client-generator-no-login/)：如果你在用 AI 工具集成 API，长 spec 的 token 估算同样适用
+
+## 常见问题
+
+**需要注册账号吗？**
+
+不需要。打开页面直接粘贴文本就能用，不需要创建账号或登录。
+
+**粘贴的 prompt 会上传到 AI Coding Club 服务器吗？**
+
+不会。token 计算在你的浏览器里完成，粘贴的文本不会发送到 AI Coding Club 的 API。页面加载时有正常的基础设施请求（比如 analytics），但这和上传你的文本是两回事。
+
+**token 数量对所有模型都精确吗？**
+
+不是。不同提供商用不同的 tokenizer，这个工具用的是浏览器本地的近似计算。把结果当作规划参考，不要当作某个模型的精确 token 数。
+
+**能不能用它精确计算生产环境 API 账单？**
+
+不合适。工具里的上下文窗口预设是通用参考值，不是实时的模型规格或定价数据。生产环境的计费请以各提供商的官方文档为准。
+
+**prompt 太长应该怎么处理？**
+
+几个方向：去掉日志里的无关行、大文件先摘要、拆成多个 prompt、配置 AI 工具只读取必要的文件。具体看上面"Prompt 太长时如何压缩或拆分"那一节。
+
+**是否可以粘贴密钥、生产日志或客户数据？**
+
+不建议。虽然文本不会发送到 AI Coding Club 的 API，但任何工具都不应该用来处理密钥、token 或包含客户隐私的数据。这是通用的安全原则，不只针对这个工具。
