@@ -27,6 +27,8 @@ https://tools.aicoding.club/openapi-client/
 
 It is not trying to be a full SDK factory. It is closer to a quick workbench. Paste a JSON spec, check the endpoints, generate a starter client, then decide what to do next.
 
+One wording note: people use "OpenAPI generator" to mean several things. Here, I mean an OpenAPI client generator: a browser tool that reads an OpenAPI or Swagger JSON document and produces starter client code. It is not generating the OpenAPI spec, validating your whole API design, or replacing an official SDK release pipeline.
+
 I tested it with a small OpenAPI 3.0.3 JSON spec. The spec had 3 endpoints:
 
 - `GET /pets`
@@ -64,6 +66,8 @@ One caveat up front: use JSON for now. The file picker accepts `.yaml` and `.yml
 ## Quick Answer
 
 Use the [OpenAPI Client Generator](https://tools.aicoding.club/openapi-client/) when you need a quick API client from an OpenAPI or Swagger JSON spec, and you do not want to log in first.
+
+In this tutorial, "OpenAPI generator" means the client-code path: turn a JSON spec into starter TypeScript, JavaScript, or Python code.
 
 The current generator supports:
 
@@ -141,7 +145,7 @@ Then work through it in this order.
 
 Use a valid OpenAPI or Swagger JSON spec.
 
-If you only have YAML, convert it first. The tool may accept YAML-shaped files in the picker, but JSON is the safer path based on the current test.
+If your team calls the file a Swagger spec, first check whether it is a JSON OpenAPI or Swagger document. If you only have YAML, convert it first. The tool may accept YAML-shaped files in the picker, but JSON is the safer path based on the current test.
 
 This matters because a generator failure is annoying when you are already in the middle of another task. Start with the format that works.
 
@@ -192,7 +196,7 @@ Use Python if you want a quick `requests` client for scripts or backend automati
 
 In the test, TypeScript and JavaScript generated methods named `listPets`, `createPet`, and `getPet`. Python generated lowercase method names such as `listpets`, `createpet`, and `getpet`.
 
-That naming detail is a good reminder: generated code is not polished code. It is starter code.
+That naming detail is a good reminder: generated code is not polished code. It is starter code. For Python, treat the generated `requests` client as a first pass for endpoint shapes and request helpers, then add authentication, base URL configuration, error handling, retries, and tests in your own project.
 
 ### 6. Copy the Code, Then Review It
 

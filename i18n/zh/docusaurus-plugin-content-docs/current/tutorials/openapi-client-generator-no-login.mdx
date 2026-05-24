@@ -24,6 +24,8 @@ import HowToSchema from '@site/src/components/HowToSchema';
 
 [AI Coding Club 的 OpenAPI Client Generator](https://tools.aicoding.club/openapi-client/) 可以做到这件事。
 
+这里说的 OpenAPI Generator，是更窄的 client generator：从 OpenAPI / Swagger JSON 文档生成 starter client code。它不是用来生成 spec、完整校验 API 设计，也不是企业级 SDK 发布流水线的替代品。
+
 实测结论：
 
 - JSON spec 粘贴或本地文件选择，都能正常解析
@@ -87,7 +89,8 @@ import HowToSchema from '@site/src/components/HowToSchema';
 
 当前限制：
 
-- YAML 解析不稳定，正文主路径建议用 JSON
+- 如果团队把文件叫 Swagger spec，先确认它是 JSON 格式的 OpenAPI / Swagger 文档
+- YAML 解析不稳定，正文主路径建议先转 JSON
 - 不是完整的 API testing 平台，没有发请求、管理 token 等功能
 - 不适合复杂企业级 SDK 生成需求
 
@@ -176,6 +179,8 @@ await handleParseSpec(text)
 | Python | requests client | lowercase |
 
 生成的是 starter client，不是生产级 SDK。适合快速验证接口结构，或者作为 AI coding 工具的起点。
+
+Python 输出尤其适合作为脚本或后端自动化的第一版 `requests` client。真正放进项目之前，还需要补鉴权、base URL 配置、错误处理、重试和测试。
 
 ---
 
