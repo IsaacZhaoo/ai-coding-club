@@ -148,6 +148,16 @@ brew install --cask codex
 
 ---
 
+## 下一步学习建议
+
+如果你刚开始接触终端 Agent，不要一上来做大重构。建议按这个顺序：
+
+1. 先看 [Codex 新手指南](/zh/docs/tutorials/codex-guide/)，理解安全的第一次工作流。
+2. 如果还在比较工具，再对照 [Claude Code 新手指南](/zh/docs/tutorials/claude-code-guide/)。
+3. 如果想系统学习，从 [AI 编程课程](/zh/docs/course/) 开始，按课程推进到真实项目。
+
+---
+
 ## 相关阅读
 
 - [Claude Code vs Codex CLI：两个终端 Agent 怎么选](/zh/blog/claude-code-vs-codex-cli/)

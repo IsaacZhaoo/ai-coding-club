@@ -15,6 +15,24 @@ import CourseSchema from '@site/src/components/CourseSchema';
   description="完整的初学者到求职就绪课程，使用 AI 助手学习编程。"
 />
 
+## 一页纸课程导航
+
+如果你是从 AI 工具对比、Codex 或 Claude Code 文章进来的，可以先用这张表选择下一步，不必一次读完整个课程。
+
+| 阶段 | 时间 | 优先级 | 学完的标志 | 下一步 |
+| --- | --- | --- | --- | --- |
+| 第 1 阶段：基础 | 4-8 小时 | 新手必学 | 能解释一个小程序，让 AI 帮忙但不盲目复制 | [开始第 1 阶段 →](./foundations/welcome) |
+| 第 2 阶段：核心技能 | 6-8 小时 | 做真实项目前必学 | 能组合使用命令行、Git、提示词、测试和 AI 编程助手 | [开始第 2 阶段 →](./02-essential-skills) |
+| 第 3 阶段：构建项目 | 5-7 小时 | 做作品集必学 | 能规划、构建、测试、写文档并部署一个小应用 | [开始第 3 阶段 →](./03-building-projects) |
+| 第 4 阶段：专业化 | 4-6 小时 | 先选一条路径 | 能说明下一步更适合前端、后端、数据还是自动化 | [开始第 4 阶段 →](./04-specialization) |
+| 第 5 阶段：职业发展 | 2-3 小时 | 投递前必学 | 有作品集故事，能解释自己的 AI 辅助开发流程 | [开始第 5 阶段 →](./05-career) |
+
+### 快速路径
+
+- **30 分钟了解全局**：阅读本页，再快速浏览 [AI 编程学习路线图](/zh/docs/ai-coding-roadmap/)。
+- **3 小时完成第一次工作流**：完成[第 1 课](./foundations/welcome)，再做一遍 [Claude Code 新手指南](/zh/docs/tutorials/claude-code-guide/)。
+- **1 周做出完整项目**：完成第 2 阶段，做一个第 3 阶段项目；如果项目涉及长提示词或 API，再用 [Token Counter](/zh/docs/tutorials/token-counter-no-login/) 或 [OpenAPI Client Generator](/zh/docs/tutorials/openapi-client-generator-no-login/) 练手。
+
 ## 课程结构
 
 课程分为5个递进阶段：

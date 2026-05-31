@@ -147,6 +147,16 @@ Cursor 这类编辑器工具通常是个人选择，强制统一意义不大。
 
 ---
 
+## 下一步学习建议
+
+想把这套工具组合用起来，先从小闭环开始：
+
+- 如果你还在学编程：把 [AI 编程课程](/zh/docs/course/) 当主线。
+- 如果你已经有本地项目：选 [Claude Code 新手指南](/zh/docs/tutorials/claude-code-guide/) 或 [Codex 新手指南](/zh/docs/tutorials/codex-guide/)，完成一个小 repo 任务。
+- 如果你想搭团队工作流：看 [AI 编程 Agent 新手路线](/zh/docs/tutorials/ai-coding-agent-beginner-guide/)，先定义任务范围、review 和验证检查点。
+
+---
+
 ## 相关阅读
 
 - [Cursor vs Claude Code：编辑器 AI 和终端 Agent 怎么选](/zh/blog/cursor-vs-claude-code/)

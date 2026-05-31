@@ -146,6 +146,16 @@ Cursor 的主场是编辑器内协作——补全、解释、小范围修改。�
 
 ---
 
+## 下一步学习建议
+
+如果这篇对比帮你确定了方向，下一步不要继续只看工具评测，而是完成一个小工作流：
+
+- 选择 Claude Code：先做一遍 [Claude Code 新手指南](/zh/docs/tutorials/claude-code-guide/)，在真实项目里完成一个安全小任务。
+- 选择 Codex：先看 [Codex 新手指南](/zh/docs/tutorials/codex-guide/)，搞清楚本地执行、审批流程和沙盒边界。
+- 还没决定：回到 [AI 编程学习路线图](/zh/docs/ai-coding-roadmap/)，先选学习路径，再决定要不要加付费工具。
+
+---
+
 ## 相关阅读
 
 - [三款 AI 编程工具总对比](/zh/blog/ai-coding-tools-compared-2026/)

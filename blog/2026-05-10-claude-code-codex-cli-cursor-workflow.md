@@ -147,6 +147,16 @@ Terminal agents and cloud collaboration tools, such as Codex GitHub integration,
 
 ---
 
+## Next Learning Step
+
+To make this tool combination work for you, start small:
+
+- New to coding? Use the [AI Coding Course](/docs/course/) as the main path.
+- Already coding locally? Complete the [Claude Code beginner guide](/docs/tutorials/claude-code-guide/) or [Codex beginner guide](/docs/tutorials/codex-guide/) with one small repo task.
+- Building a team workflow? Use the [AI coding agent beginner route](/docs/tutorials/ai-coding-agent-beginner-guide/) to define task scope, review, and verification checkpoints.
+
+---
+
 ## Further Reading
 
 - [Cursor vs Claude Code: Editor AI or Terminal Agent?](/blog/cursor-vs-claude-code/)

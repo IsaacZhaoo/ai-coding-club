@@ -148,6 +148,16 @@ No, and that is the wrong expectation. Codex CLI can automate repetitive tasks a
 
 ---
 
+## Next Learning Step
+
+If you are new to terminal agents, do not start with a big rewrite. Use this path:
+
+1. Read the [Codex beginner guide](/docs/tutorials/codex-guide/) to understand the safe first workflow.
+2. Compare it with the [Claude Code beginner guide](/docs/tutorials/claude-code-guide/) if you're still comparing tools.
+3. Follow the [AI Coding Course](/docs/course/) if you want a structured beginner-to-project curriculum.
+
+---
+
 ## Further Reading
 
 - [Claude Code vs Codex CLI: Which Terminal Agent Should You Choose?](/blog/claude-code-vs-codex-cli/)

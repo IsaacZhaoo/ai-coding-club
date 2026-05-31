@@ -146,6 +146,16 @@ For teams, Codex has Business and Enterprise plans plus platform features such a
 
 ---
 
+## Next Learning Step
+
+If this comparison helped you choose a direction, turn the decision into a small workflow:
+
+- Choose Claude Code? Complete the [Claude Code beginner guide](/docs/tutorials/claude-code-guide/) and finish one safe repo task.
+- Choose Codex? Start with the [Codex beginner guide](/docs/tutorials/codex-guide/) to understand local execution, approval flow, and sandbox boundaries.
+- Still choosing? Use the [AI Coding Roadmap](/docs/ai-coding-roadmap/) to pick a learning path before adding a paid tool.
+
+---
+
 ## Further Reading
 
 - [Full comparison of AI coding tools](/blog/ai-coding-tools-compared-2026/)
