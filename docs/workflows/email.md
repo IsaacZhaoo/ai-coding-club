@@ -1,401 +1,61 @@
 ---
 sidebar_position: 4
-title: "邮件处理工作流"
-description: "使用AI高效处理工作邮件，包括撰写、回复、模板生成"
-keywords: [邮件, 工作邮件, AI编程, 邮件模板, 商务邮件]
+title: "Email Workflow"
+description: "Use AI to draft, reply to, translate, and personalize work emails safely."
+keywords: [email workflow, work email, AI writing, business email, email templates]
 ---
 
-# 邮件处理工作流
+# Email Workflow
 
-这是一个使用AI高效处理工作邮件的教程。你将学会如何让AI帮你撰写专业邮件、快速回复、批量处理邮件。
+AI can make email faster, especially when you provide the purpose, recipient, facts, and tone. The goal is to draft faster while keeping the final message accurate and human.
 
-## 场景设定
+## Scenario 1: Draft A Formal Email
 
-**常见邮件痛点**：
-- 写正式邮件花太多时间
-- 英文邮件写得不地道
-- 回复催促邮件不知道怎么措辞
-- 批量发送个性化邮件很繁琐
+~~~text
+Help me draft a work email.
+Recipient: project manager
+Purpose: request a one-week extension
+Key facts:
+- Original delivery date: January 20
+- Requested date: January 27
+- Reason: third-party API documentation was inaccurate
+Tone: formal, honest, and solution-oriented
+~~~
 
-## 场景一：撰写正式邮件
+Before sending, check that the dates, names, and commitments are correct.
 
-### 基础模板
+## Scenario 2: Reply To A Follow-Up
 
-**提示词**：
+~~~text
+I received a follow-up email asking for project status.
+Actual status: about 80% complete, expected to finish in 3 days.
+Write a calm, professional reply that reassures the client without overpromising.
+~~~
 
-```
-请帮我写一封工作邮件。
+## Scenario 3: Translate And Localize
 
-收件人：[职位/关系]
-目的：[邮件目的]
-关键信息：[需要传达的内容]
-语气：[正式/友好/紧急]
+Do not only ask for translation. Ask for the email to sound natural for the recipient.
 
-背景：[简要说明]
-```
+~~~text
+Translate this email into natural business English.
+Audience: US customer
+Tone: polite and concise
+Please preserve the factual meaning and avoid adding new promises.
+~~~
 
-### 示例：请求延期邮件
+## Scenario 4: Personalize A Batch
 
-**输入**：
-```
-请帮我写一封工作邮件。
+For repeated messages, ask the AI to create a template with variables.
 
-收件人：项目经理李总
-目的：申请项目交付延期一周
-关键信息：
-- 原定交付日期：1月20日
-- 申请延期到：1月27日
-- 原因：第三方接口对接出现问题
-语气：正式但诚恳
+~~~text
+Create a reusable customer update email template.
+Variables: customer_name, project_name, current_status, next_step, owner_name.
+Tone: friendly and professional.
+~~~
 
-背景：我是开发负责人，因为第三方API文档有误，导致对接时间超出预期
-```
+## Safety Checklist
 
-**AI生成**：
-
-```
-主题：关于XX项目交付时间调整的申请
-
-李总，您好！
-
-就XX项目的交付时间，特此向您申请调整。
-
-原定交付日期为1月20日，现申请延期至1月27日。主要原因如下：
-
-在与第三方系统对接过程中，发现其提供的API文档与实际接口存在较大差异，导致对接工作需要重新调整。目前已与第三方技术团队确认，预计需要额外5个工作日完成调试和联调。
-
-为确保项目质量，同时不影响后续工作安排，特申请延期一周。我们将：
-1. 每日同步对接进度
-2. 优先完成核心功能，确保主流程可用
-3. 协调资源加快进度
-
-如有任何疑问，请随时与我沟通。给您带来的不便，深表歉意。
-
-此致
-敬礼
-
-张三
-技术部
-2024年1月15日
-```
-
-## 场景二：回复邮件
-
-### 回复催促邮件
-
-**场景**：客户催问进度，你需要回复但还没有最终结果
-
-**提示词**：
-
-```
-我收到一封催促邮件，需要回复。
-
-原邮件摘要：客户询问项目进度，语气有些着急
-实际情况：项目进度80%，预计还需3天完成
-我想传达：正在推进中，会按时完成，请放心
-
-请帮我写一封专业且让对方安心的回复邮件。
-```
-
-**AI生成**：
-
-```
-主题：Re: 项目进度咨询
-
-XX经理，您好！
-
-感谢您的关注和来信。
-
-项目目前进展顺利，已完成80%的工作量。按照当前进度，预计可在约定时间内交付。
-
-剩余工作主要包括：
-- 功能测试与优化（进行中）
-- 文档整理
-- 部署上线准备
-
-我们会确保按时按质完成交付。如有任何阶段性成果需要提前查看，请随时告知。
-
-祝工作顺利！
-
-张三
-```
-
-### 回复拒绝/婉拒
-
-**场景**：需要拒绝一个请求，但要保持关系
-
-**提示词**：
-
-```
-我需要婉拒一个请求。
-
-请求内容：同事想借调我到他的项目帮忙2周
-拒绝原因：我手上项目也很紧张，走不开
-关系：同事关系不错，不想伤和气
-语气：友好但坚定
-
-请帮我写一封婉拒邮件。
-```
-
-## 场景三：英文邮件
-
-### 中译英邮件
-
-**提示词**：
-
-```
-请将以下邮件翻译成英文，并优化为地道的商务英语。
-
-中文内容：
-[你的中文邮件内容]
-
-收件人背景：[美国客户/英国同事等]
-语气要求：[正式/半正式/友好]
-```
-
-### 常用英文邮件模板
-
-**请求信息**：
-```
-请帮我写一封英文邮件，询问对方产品的报价信息。
-
-我是：采购部门员工
-对方：供应商销售代表
-需要了解：产品价格、起订量、交货周期
-
-语气：专业友好
-```
-
-**确认会议**：
-```
-请帮我写一封英文邮件，确认下周的视频会议安排。
-
-会议时间：北京时间周二下午3点
-参会人：我方3人，对方2人
-会议主题：季度业务回顾
-需要对方确认：时间是否合适，是否有议题补充
-```
-
-**跟进邮件**：
-```
-请帮我写一封英文跟进邮件。
-
-背景：上周发了一封询价邮件，对方还没回复
-目的：礼貌地催促回复
-语气：友好不催促感太强
-```
-
-## 场景四：批量邮件处理
-
-### 个性化群发
-
-**场景**：需要给20个客户发送类似但个性化的邮件
-
-**方法1：生成模板变量**
-
-```
-我需要给多个客户发送新年问候邮件。
-
-客户类型有：
-- A类：年度合作额超过100万的大客户
-- B类：新签约客户
-- C类：合作1年以上的老客户
-
-请帮我写3个版本的邮件模板，分别针对这三类客户，体现不同的重视程度和关系深度。
-```
-
-**方法2：使用Python批量生成**
-
-```
-我有一个Excel文件包含客户信息：
-- 姓名
-- 公司
-- 合作项目名称
-
-请帮我写一个Python脚本，读取Excel后，用以下模板生成个性化邮件内容：
-
-模板：
-"尊敬的{姓名}：
-您在{公司}负责的{项目名称}项目运行情况..."
-
-输出为一个新的Excel文件，包含：收件人、邮件主题、邮件正文
-```
-
-### 邮件分类和优先级
-
-**提示词**：
-
-```
-我有以下10封邮件的主题和摘要，请帮我分类和排序处理优先级：
-
-1. [主题1] - [摘要1]
-2. [主题2] - [摘要2]
-...
-
-分类标准：
-- 紧急：需要今天处理
-- 重要：本周内需要处理
-- 普通：可以稍后处理
-- 可忽略：广告/通知类
-
-请按优先级排序并说明处理建议。
-```
-
-## 邮件模板库
-
-### 日常沟通
-
-**感谢邮件**：
-```
-请帮我写一封感谢邮件，感谢[对象]在[事情]上的帮助。
-语气要真诚但不夸张。
-```
-
-**道歉邮件**：
-```
-请帮我写一封道歉邮件。
-事由：[具体失误]
-原因：[简要解释，不找借口]
-补救措施：[你会怎么做]
-```
-
-**通知邮件**：
-```
-请帮我写一封通知邮件。
-通知对象：[团队/部门/公司]
-通知内容：[具体事项]
-需要接收方做的事：[行动要求]
-截止时间：[如有]
-```
-
-### 职场进阶
-
-**汇报邮件**：
-```
-请帮我写一封向领导汇报工作的邮件。
-汇报内容：[工作进展]
-成果亮点：[突出什么]
-问题和建议：[如有]
-下一步计划：[安排]
-```
-
-**跨部门协作**：
-```
-请帮我写一封请求其他部门协助的邮件。
-请求部门：[部门名]
-协助事项：[具体内容]
-原因：[为什么需要协助]
-期望时间：[什么时候需要]
-我能提供的支持：[你能做什么]
-```
-
-### 客户沟通
-
-**报价邮件**：
-```
-请帮我写一封报价邮件。
-产品/服务：[名称]
-价格：[金额]
-有效期：[日期]
-付款方式：[条款]
-附加说明：[优惠/条件等]
-```
-
-**项目启动邮件**：
-```
-请帮我写一封项目启动通知邮件给客户。
-项目名称：[名称]
-项目周期：[时间]
-我方对接人：[联系方式]
-需要客户配合的事项：[列表]
-下一步安排：[具体安排]
-```
-
-## 进阶技巧
-
-### 建立个人邮件风格
-
-```
-我想建立自己的邮件写作风格。以下是我之前写的几封比较满意的邮件：
-
-[粘贴2-3封你的邮件]
-
-请分析我的写作风格特点，并在后续帮我写邮件时保持这个风格。
-```
-
-### 邮件语气调整
-
-**同一内容，不同语气**：
-
-```
-以下是我要发送的邮件内容：
-[邮件内容]
-
-请分别用以下语气重写：
-1. 更正式的版本（给领导/客户高层）
-2. 更友好的版本（给平级同事）
-3. 更简洁的版本（给熟悉的合作方）
-```
-
-### 处理敏感邮件
-
-**棘手情况处理**：
-
-```
-我遇到一个棘手的邮件场景：
-[描述具体情况]
-
-我的顾虑：
-- [顾虑1]
-- [顾虑2]
-
-请帮我分析应该如何措辞，既能达到目的，又能避免引起误会或冲突。
-```
-
-## 常见问题
-
-### Q1: 邮件太长没人看怎么办？
-
-**解决**：
-```
-请帮我把这封邮件压缩到3段以内：
-[邮件内容]
-
-要求：
-- 保留关键信息
-- 重要内容放在最前面
-- 详细信息可以用附件或"详见下文"处理
-```
-
-### Q2: 不知道用什么主题？
-
-**技巧**：
-```
-我要发一封邮件：
-[邮件内容摘要]
-
-请帮我想5个邮件主题，从正式到轻松排列。
-```
-
-### Q3: 邮件被误解怎么办？
-
-**处理**：
-```
-我发的邮件被对方误解了。
-
-原邮件：[内容]
-对方理解：[误解的点]
-我的本意：[真正想表达的]
-
-请帮我写一封澄清邮件，语气要平和不指责。
-```
-
-## 下一步
-
-- **基础概念** → [什么是AI编程](/docs/aicoding/what-is-aicoding)
-- **数据处理** → [Excel处理工作流](../excel/)
-- **代码片段** → [API请求片段](/docs/snippets/api-request)（自动化邮件发送）
-
----
-
-**提示**：好的工作邮件 = 清晰的目的 + 恰当的语气 + 适当的长度。让AI帮你打磨措辞，你把控内容方向。
+- Remove confidential details if your AI tool is not approved for them.
+- Verify all names, dates, prices, and attachments.
+- Make sure the tone matches your relationship with the recipient.
+- Avoid sending AI-generated apologies or commitments without reviewing them carefully.

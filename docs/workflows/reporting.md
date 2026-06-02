@@ -1,362 +1,72 @@
 ---
 sidebar_position: 3
-title: "报告生成工作流"
-description: "使用AI自动生成周报、月报和数据汇总报告的完整工作流"
-keywords: [报告生成, 周报, 月报, AI编程, 自动化]
+title: "Report Generation Workflow"
+description: "Use AI to turn notes, metrics, and updates into a structured work report."
+keywords: [report generation, weekly report, monthly report, AI writing, automation]
 ---
 
-# 报告生成工作流
+# Report Generation Workflow
 
-这是一个使用AI自动生成各类工作报告的教程。你将学会如何让AI帮你快速生成结构化、专业的报告。
+AI is useful for reports when you provide facts first and ask it to structure the message. The best workflow is not "write my report"; it is "organize these facts for this audience."
 
-## 场景设定
+## Scenario
 
-**常见报告需求**：
-- 每周五要交周报
-- 每月初要写月度总结
-- 项目进度报告
-- 数据分析报告
+You need to write a weekly update for a manager. You have tasks completed, blockers, metrics, and next steps.
 
-**传统痛点**：
-- 花大量时间在格式排版上
-- 每次都要从头写
-- 内容组织混乱
-- 数据和文字脱节
+## Step 1: Collect Raw Notes
 
-## 周报生成工作流
+Write short bullet points before asking the AI to draft.
 
-### Step 1: 准备原始素材
+~~~text
+Completed:
+- Finished dashboard export
+- Fixed login timeout bug
 
-在一周结束时，记录以下信息：
+Metrics:
+- Support tickets down from 42 to 31
+- Average response time improved by 18%
 
-```
-本周完成：
-- 完成了客户A的需求分析
-- 修复了系统3个bug
-- 参加了2次项目会议
-- 培训了新同事使用系统
+Blockers:
+- Waiting for finance data
 
-下周计划：
-- 开始客户B项目
-- 完成系统升级测试
+Next week:
+- Add monthly report view
+- Prepare release checklist
+~~~
 
-遇到的问题：
-- 客户C的数据迁移延期了
-```
+## Step 2: Specify Audience And Tone
 
-### Step 2: 使用AI生成周报
+~~~text
+Turn these notes into a concise weekly report for my manager.
+Use a professional tone.
+Keep it under 250 words.
+Use sections: Summary, Completed, Metrics, Blockers, Next Steps.
+~~~
 
-**提示词模板**：
+## Step 3: Verify The Facts
 
-```
-请帮我把以下工作记录整理成一份正式的周报。
+AI may make the writing smoother, but you own the facts. Check names, dates, numbers, and commitments before sending.
 
-要求：
-1. 使用专业的商务语言
-2. 按"本周工作总结"、"下周工作计划"、"问题与建议"三个部分组织
-3. 每个完成项说明成果和价值
-4. 控制在500字以内
+## Step 4: Create A Reusable Template
 
-原始记录：
-[粘贴你的工作记录]
+Save a template for repeated reports:
 
-报告日期：[填写日期]
-报告人：[你的名字]
-```
+~~~text
+Report type:
+Audience:
+Time period:
+Key outcomes:
+Metrics:
+Risks or blockers:
+Decisions needed:
+Next steps:
+Tone:
+Length:
+~~~
 
-### Step 3: AI生成的周报示例
+## Tips
 
-```markdown
-# 工作周报
-
-**报告周期**：2024年1月15日 - 2024年1月19日
-**报告人**：张三
-**部门**：技术部
-
-## 一、本周工作总结
-
-1. **需求分析工作**
-   - 完成客户A项目的需求分析文档，明确了15个功能点和3个性能指标
-   - 与客户确认需求，获得书面认可
-
-2. **系统维护**
-   - 修复系统缺陷3个，涉及用户登录、数据导出和报表显示模块
-   - 缺陷修复后经测试验证，已发布到生产环境
-
-3. **团队协作**
-   - 参加项目周会2次，同步项目进度和风险
-   - 完成新员工系统操作培训，培训时长4小时
-
-## 二、下周工作计划
-
-1. 启动客户B项目，完成项目启动会议和初步需求调研
-2. 配合运维团队完成系统升级测试，预计测试周期3天
-
-## 三、问题与建议
-
-**问题**：客户C的数据迁移因对方数据质量问题延期一周
-
-**建议**：建议在项目启动阶段增加数据质量评估环节，提前识别风险
-```
-
-## 月报生成工作流
-
-### Step 1: 收集月度数据
-
-**需要准备的信息**：
-
-```
-部门：销售部
-月份：2024年1月
-
-业绩数据：
-- 总销售额：150万
-- 新客户：12个
-- 续约客户：8个
-- 丢失客户：2个
-
-主要工作：
-- 完成了华东区域的市场调研
-- 举办了2场客户交流会
-- 上线了新的CRM系统
-
-下月计划：
-- 开拓华南市场
-- 目标销售额180万
-```
-
-### Step 2: 生成月报
-
-**提示词模板**：
-
-```
-请帮我生成一份月度工作报告。
-
-报告要求：
-1. 包含数据分析和趋势说明
-2. 使用数据对比（环比、同比如有）
-3. 结论要有数据支撑
-4. 包含可视化建议（告诉我用什么图表展示）
-5. 字数800-1000字
-
-部门信息：[部门名称]
-报告月份：[月份]
-
-数据和工作记录：
-[粘贴你的数据]
-```
-
-## 数据分析报告工作流
-
-### 场景：从Excel数据生成分析报告
-
-**Step 1: 准备数据摘要**
-
-```
-我有一份销售数据，包含以下信息：
-- 数据范围：2024年Q1（1-3月）
-- 数据量：500条销售记录
-- 字段：日期、产品名称、销售区域、销售额、客户类型
-
-初步统计：
-- 总销售额：450万
-- 产品A：180万（40%）
-- 产品B：150万（33%）
-- 产品C：120万（27%）
-
-区域分布：
-- 华东：200万
-- 华南：150万
-- 华北：100万
-```
-
-**Step 2: 生成分析报告**
-
-**提示词**：
-
-```
-请根据以下销售数据，生成一份数据分析报告。
-
-要求：
-1. 分析销售趋势和规律
-2. 找出表现好和差的方面
-3. 提供可行的改进建议
-4. 使用专业但易懂的语言
-5. 建议适合的可视化方式
-
-数据摘要：
-[粘贴数据摘要]
-
-目标读者：销售部门经理
-```
-
-## 提示词模板库
-
-### 周报模板
-
-```
-角色：你是一个专业的职场文档撰写助手
-
-任务：将工作记录转换为正式周报
-
-输入格式：
-- 本周完成的工作（要点形式）
-- 下周计划
-- 遇到的问题（可选）
-
-输出要求：
-- 语言：正式商务风格
-- 结构：总结→计划→问题建议
-- 篇幅：300-500字
-- 突出成果和价值
-
-工作记录：
-[你的内容]
-```
-
-### 会议纪要模板
-
-```
-请将以下会议记录整理成正式的会议纪要。
-
-会议信息：
-- 会议主题：[主题]
-- 时间：[时间]
-- 参会人：[人员]
-
-会议内容：
-[粘贴会议记录或笔记]
-
-要求：
-1. 提取关键决议和待办事项
-2. 明确责任人和截止时间
-3. 格式清晰，便于追踪
-```
-
-### 项目进度报告模板
-
-```
-请帮我生成项目进度报告。
-
-项目信息：
-- 项目名称：[名称]
-- 报告周期：[时间]
-- 项目阶段：[当前阶段]
-
-进度数据：
-- 计划完成：[X]%
-- 实际完成：[Y]%
-- 主要里程碑：[列表]
-
-问题和风险：
-[描述]
-
-输出要求：
-- 使用红黄绿状态标识
-- 包含甘特图建议（文字描述）
-- 提供风险应对建议
-```
-
-## 进阶技巧
-
-### 建立个人模板库
-
-1. **保存成功的报告结构**
-   - 将AI生成的好报告保存为模板
-   - 下次只需替换数据部分
-
-2. **定制化提示词**
-   - 根据你公司的报告风格调整提示词
-   - 加入公司特定的术语和格式要求
-
-### 批量生成报告
-
-**场景**：需要为多个项目生成类似报告
-
-**方法**：
-
-```
-我需要为3个项目生成进度报告，格式相同。
-
-项目1：[项目A数据]
-项目2：[项目B数据]
-项目3：[项目C数据]
-
-请按统一格式生成3份报告。
-```
-
-### 报告的版本迭代
-
-**第一轮**：生成初稿
-```
-请根据以下信息生成报告初稿：[内容]
-```
-
-**第二轮**：优化调整
-```
-报告写得不错，请做以下调整：
-1. 第二段太长，压缩到100字
-2. 增加一个"主要成就"的亮点section
-3. 结论部分加入下一步行动建议
-```
-
-**第三轮**：最终润色
-```
-请帮我润色这份报告：
-1. 检查语言是否流畅
-2. 确保数据前后一致
-3. 添加适当的过渡句
-```
-
-## 常见问题
-
-### Q1: AI生成的报告太空泛怎么办？
-
-**原因**：提供的原始信息不够具体
-
-**解决**：
-- 提供具体数字而非模糊描述
-- 说明具体成果而非只说"完成了XX"
-- 举例说明而非泛泛而谈
-
-### Q2: 报告风格不符合公司要求？
-
-**解决**：
-```
-请按以下风格重写报告：
-- 语气：[正式/轻松/数据驱动]
-- 篇幅：[字数要求]
-- 重点：[强调什么]
-
-参考格式：
-[粘贴一份公司现有报告作为样例]
-```
-
-### Q3: 数据太多，不知道写什么？
-
-**解决**：
-```
-我有以下数据，请帮我识别最值得在报告中突出的3-5个关键发现：
-
-[粘贴数据]
-
-目标：让领导快速了解最重要的信息
-```
-
-### Q4: 如何让报告更有说服力？
-
-**技巧**：
-1. 用数据说话：不说"显著提升"，说"提升35%"
-2. 对比展示：环比、同比、目标对比
-3. 因果关联：说明为什么有这个结果
-4. 行动建议：不只是描述，还要有建议
-
-## 下一步
-
-- **更多工作流** → [邮件处理工作流](../email/)
-- **数据处理基础** → [Excel处理工作流](../excel/)
-- **代码片段** → [数据处理片段](/docs/snippets/data-processing)
-
----
-
-**提示**：好的报告 = 清晰的结构 + 具体的数据 + 可行的建议。让AI帮你处理格式和语言，你专注于提供准确的信息。
+- Give real facts before asking for style.
+- Ask for a shorter version after the first draft.
+- Keep sensitive customer details out unless your tool and policy allow them.
+- Ask the AI to highlight missing information instead of inventing it.

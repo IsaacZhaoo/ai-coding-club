@@ -1,249 +1,60 @@
 ---
 sidebar_position: 3
-title: "最小必要知识"
-description: "上班族使用AI编程的最小必要知识清单，无需编程基础"
-keywords: [AI编程, 提示词, 上下文, token, ChatGPT, Claude]
+title: "Minimum Knowledge for AI Coding"
+description: "The smallest set of concepts you need to use AI coding tools safely and productively."
+keywords: [AI coding basics, prompts, context, tokens, debugging, beginner programming]
 ---
 
-# 最小必要知识
+# Minimum Knowledge for AI Coding
 
-这是上班族使用AI编程需要了解的**最少知识**。不需要背诵，遇到问题时回来查阅即可。
+You do not need a computer science degree to start using AI for coding. You do need a few basic ideas so you can ask better questions and check the answers.
 
-## 核心概念（5分钟）
+## Files And Folders
 
-### 提示词 (Prompt)
+Most coding tasks read data from files, write new files, or change files in a project. Be explicit about file names, formats, and where outputs should go.
 
-**定义**：你给AI的指令或问题。
+Useful prompt:
 
-**好的提示词三要素**：
-1. **背景**：你是谁，在做什么
-2. **需求**：具体要完成什么任务
-3. **格式**：期望的输出格式
+~~~text
+I have a CSV file named sales.csv with columns date, region, amount.
+Write a Python script that creates summary_by_region.csv.
+~~~
 
-**示例对比**：
+## Inputs And Outputs
 
-❌ 差的提示词：
-> "帮我处理Excel"
+Good prompts define the input and expected output. If you only say "clean this data", the assistant has to guess. If you provide an example row and the desired result, the answer gets much better.
 
-✅ 好的提示词：
-> "我是人事专员，有一个包含500名员工信息的Excel文件。
-> 列包括：姓名、部门、入职日期、薪资。
-> 我需要按部门统计人数和平均薪资，输出为新的Excel文件。"
+## Prompts
 
-### 上下文 (Context)
+A prompt is the instruction you give the AI. A strong prompt includes the goal, context, constraints, examples, and how you want the answer formatted.
 
-**定义**：帮助AI理解你需求的背景信息。
+## Context
 
-**上下文越充分，结果越准确**：
+Context is everything the AI needs to know: your project structure, the error message, the data shape, the tool you use, and any rules it must follow. Missing context is the most common reason AI-generated code fails.
 
-| 上下文级别 | 示例 | AI理解程度 |
-|-----------|------|-----------|
-| 无上下文 | "写个脚本" | 完全猜测 |
-| 少量上下文 | "写个处理Excel的脚本" | 大致方向 |
-| 充分上下文 | "写个Python脚本，读取sales.xlsx，按月份汇总销售额" | 精确理解 |
+## Tokens
 
-**提供上下文的方式**：
-- 粘贴数据样例（前5行）
-- 说明文件格式和列名
-- 描述期望的输出
-- 说明特殊要求或限制
+Tokens are pieces of text the AI model reads and writes. Long conversations and large files use more tokens. When a task gets complicated, summarize the current state before continuing.
 
-### Token（令牌）
+## Errors Are Data
 
-**定义**：AI处理文本的基本单位，大约等于0.75个英文单词或0.5个中文字。
+Do not just say "it failed." Paste the exact error message, the command you ran, and what you expected. Error text is often the fastest path to a fix.
 
-**为什么要了解**：
-- 大部分AI工具有token限制
-- token用完会被截断或报错
-- 付费版本通常有更高限额
+## Safety Basics
 
-**实用建议**：
-- 不需要精确计算token
-- 遇到"内容太长"错误时，分段发送
-- 代码和数据也会消耗token
+- Do not paste passwords, API keys, private customer data, or confidential files into public AI tools.
+- Run generated code on a copy of important data first.
+- Avoid commands that delete or overwrite files unless you understand them.
+- Ask the assistant to explain risky lines before running them.
 
-### 幻觉 (Hallucination)
+## What To Learn First
 
-**定义**：AI自信地给出错误或虚构的信息。
+Start with these skills:
 
-**常见表现**：
-- 推荐不存在的函数或库
-- 编造看起来合理但错误的代码
-- 给出过时的API用法
-- 自信地解释错误的概念
+- Reading file paths and extensions.
+- Running one command in a terminal.
+- Understanding variables, loops, and functions at a high level.
+- Recognizing common data formats: CSV, JSON, Markdown, and Excel.
+- Testing with a small sample before using a full dataset.
 
-**应对方法**：
-- 始终验证AI的输出
-- 对"太完美"的答案保持怀疑
-- 实际运行代码检查结果
-- 用搜索引擎交叉验证
-
-## 工具选择（3分钟）
-
-### 推荐的三个AI工具
-
-| 工具 | 特点 | 最适合 | 价格 |
-|------|------|--------|------|
-| **ChatGPT** | 易上手，中文好 | 日常办公，文本处理 | 免费/付费 |
-| **Claude** | 逻辑强，代码好 | 编程任务，长文档 | 免费/付费 |
-| **Copilot** | 微软生态，可联网 | Office用户 | 免费 |
-
-### 选择建议
-
-**新手推荐**：ChatGPT
-- 界面友好
-- 中文支持好
-- 免费版够用
-
-**代码任务推荐**：Claude
-- 编程能力更强
-- 能处理更长的代码
-- 解释更详细
-
-**Office深度用户**：Microsoft Copilot
-- 直接集成Office
-- 可以搜索网络
-- 完全免费
-
-## 安全意识（2分钟）
-
-### 不要给AI的信息
-
-🚫 **绝对禁止**：
-- 密码、API密钥、token
-- 银行账户、信用卡信息
-- 身份证号、社保号
-- 公司机密数据
-
-⚠️ **谨慎处理**：
-- 客户个人信息（脱敏后再用）
-- 内部业务数据（确认可以外传）
-- 未公开的项目信息
-
-✅ **可以放心使用**：
-- 公开的数据格式说明
-- 脱敏后的样例数据
-- 通用的业务逻辑描述
-
-### 数据脱敏技巧
-
-**示例：原始数据**
-```
-姓名: 张三
-电话: 13812345678
-薪资: 15000
-```
-
-**脱敏后给AI**
-```
-姓名: 员工A
-电话: 138****5678
-薪资: 薪资列（数值）
-```
-
-## 验证技巧（3分钟）
-
-### 运行前检查
-
-**代码检查清单**：
-- [ ] 看懂大致在做什么（不需要每行都懂）
-- [ ] 文件路径是否正确
-- [ ] 输入输出格式是否符合预期
-- [ ] 有没有可能破坏原始数据
-
-### 运行后验证
-
-**结果验证方法**：
-
-1. **抽样检查**
-   - 随机选几条数据手动验证
-   - 检查边界情况（第一行、最后一行）
-
-2. **数量核对**
-   - 输出行数是否合理
-   - 总数是否匹配
-
-3. **逻辑检验**
-   - 汇总数据是否合理
-   - 有没有明显异常值
-
-### 出错怎么办
-
-**常见错误处理**：
-
-| 错误类型 | 可能原因 | 解决方法 |
-|---------|---------|---------|
-| 文件找不到 | 路径错误 | 检查文件名和位置 |
-| 列名错误 | 列名不匹配 | 告诉AI正确的列名 |
-| 格式错误 | 数据格式不对 | 提供样例数据 |
-| 代码报错 | 语法或逻辑错误 | 把错误信息发给AI |
-
-**万能解决方案**：
-> "运行你的代码时报错：[粘贴错误信息]
-> 请帮我修复这个问题。"
-
-## 快速参考卡
-
-### 提示词模板
-
-**数据处理任务**：
-```
-我有一个[文件类型]文件，包含以下列：[列名列表]
-数据量约[X]行
-
-我需要：
-1. [具体操作1]
-2. [具体操作2]
-
-输出要求：[格式要求]
-
-这是前几行数据样例：
-[粘贴2-3行数据]
-```
-
-**代码修复任务**：
-```
-我运行以下代码时遇到错误：
-
-代码：
-[粘贴代码]
-
-错误信息：
-[粘贴错误]
-
-请帮我找出问题并修复。
-```
-
-**解释代码任务**：
-```
-请用简单的语言解释这段代码在做什么：
-[粘贴代码]
-
-我想了解：
-1. 整体功能是什么
-2. 每一步在做什么
-3. 我需要修改哪些参数
-```
-
-### 常用操作速查
-
-| 我想要... | 提示词关键词 |
-|---------|------------|
-| 读取Excel | "读取Excel文件" |
-| 数据筛选 | "筛选出...的行" |
-| 数据汇总 | "按...分组统计" |
-| 合并文件 | "合并多个文件" |
-| 格式转换 | "转换为...格式" |
-| 批量处理 | "批量处理所有..." |
-
-## 下一步
-
-掌握了这些基础知识后：
-
-1. **开始实践** → [Stage 0: AI对话基础](/docs/roadmap/stage0)
-2. **尝试第一个任务** → [Excel处理工作流](/docs/workflows/excel)
-3. **了解AI局限** → [Stage 1: AI现实与局限](/docs/roadmap/stage1)
-
----
-
-**提示**：这个页面可以收藏，遇到问题时回来查阅。
+You can learn these while doing real tasks. The fastest path is to build small scripts that save you time this week.

@@ -2,14 +2,12 @@
 sidebar_position: 1
 ---
 
-# AI编程概念
+# AI Coding Concepts
 
-了解 AI 辅助编程的核心概念，从零基础到高效使用。
+Learn the core ideas behind AI-assisted programming, from the first useful mental models to practical daily habits.
 
-- **[什么是 AI 编程？](./what-is-aicoding.md)** — AI 编程的概念介绍和应用场景
-- **[最小必要知识](./minimal-knowledge.md)** — 上班族使用 AI 工具的最少知识清单
-- **[常用术语](./common-terminology.md)** — LLM、温度、API、Agent 等核心概念解释
+- **[What Is AI Coding?](./what-is-aicoding.md)** - What AI coding means and where it helps.
+- **[Minimum Knowledge](./minimal-knowledge.md)** - The smallest set of concepts busy professionals need before using AI tools.
+- **[Common Terms](./common-terminology.md)** - Plain-English explanations of LLMs, tokens, APIs, agents, and more.
 
----
-
-请先查看 [学习路线图](/docs/roadmap) 开始你的 AI 编程之旅！
+Start with the [AI Coding Roadmap](/docs/roadmap) if you want a guided learning path.

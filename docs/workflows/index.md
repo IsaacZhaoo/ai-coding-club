@@ -2,14 +2,12 @@
 sidebar_position: 1
 ---
 
-# 工作流教程
+# Workflow Tutorials
 
-实际办公场景的 AI 自动化完整解决方案。
+These tutorials show how to use AI and small scripts to automate common office work.
 
-- **[Excel数据处理工作流](./excel.md)** — 数据清洗、汇总、转换的完整流程
-- **[报告生成工作流](./reporting.md)** — 从数据到专业报告的自动化流程
-- **[邮件处理工作流](./email.md)** — 撰写、回复、模板生成的高效方案
+- **[Excel Data Workflow](./excel.md)** - Clean, summarize, and transform spreadsheet data.
+- **[Report Generation Workflow](./reporting.md)** - Turn notes and data into structured reports.
+- **[Email Workflow](./email.md)** - Draft, reply to, and personalize work emails faster.
 
----
-
-请先完成 [学习路线图](/docs/roadmap) 的基础阶段！
+If you are new to AI coding, start with the [AI Coding Roadmap](/docs/roadmap).
