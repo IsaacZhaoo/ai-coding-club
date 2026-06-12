@@ -87,6 +87,8 @@ Constraints: [不要做什么、权限边界、代码风格]
 Done when: [什么结果算完成，例如 build 通过、bug 不再复现、测试通过]
 ```
 
+如果 `Context` 里包含很长的日志、diff 或需求文档，发送前先用 [Token Counter](/zh/docs/tutorials/token-counter-no-login/) 估算上下文占用。估算结果可以帮你判断是删掉噪音、先摘要证据，还是把任务拆成多个小任务。
+
 ## 复杂任务先 Plan
 
 复杂任务不要直接让 Codex 写代码。先让它计划、提问、澄清范围，再进入实现。一个好计划得告诉你改哪些文件、怎么验证、哪里有风险。
@@ -117,5 +119,6 @@ ChatGPT 更像对话窗口，Codex 更像能在项目里执行任务的编程 Ag
 
 - [Claude Code 新手指南](/zh/docs/tutorials/claude-code-guide/)
 - [AI 编程 Agent 新手路线](/zh/docs/tutorials/ai-coding-agent-beginner-guide/)
+- [AI 编程课程](/zh/docs/course/)
 - [Codex CLI 是什么](/zh/blog/what-is-codex-cli/)
 - [Claude Code vs Codex CLI](/zh/blog/claude-code-vs-codex-cli/)

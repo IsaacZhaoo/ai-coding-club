@@ -13,7 +13,7 @@ import ArticleSchema from '@site/src/components/ArticleSchema';
   headline="Claude Code vs Codex CLI：两个终端 Agent 怎么选？"
   description="Claude Code 和 Codex CLI 都是终端 Agent，都能读写文件、执行命令、自主推进任务。但背后的生态、运行哲学和适合场景不一样。这篇帮你搞清楚该选哪个。"
   datePublished="2026-05-10"
-  dateModified="2026-05-10"
+  dateModified="2026-06-12"
   authorName="Isaac Zhao"
 />
 
@@ -152,6 +152,7 @@ Cursor 的主场是编辑器内协作——补全、解释、小范围修改。�
 
 - 选择 Claude Code：先做一遍 [Claude Code 新手指南](/zh/docs/tutorials/claude-code-guide/)，在真实项目里完成一个安全小任务。
 - 选择 Codex：先看 [Codex 新手指南](/zh/docs/tutorials/codex-guide/)，搞清楚本地执行、审批流程和沙盒边界。
+- 任务说明很长：先用 [Token Counter](/zh/docs/tutorials/token-counter-no-login/) 估算上下文，再决定是否拆成多个小任务。
 - 还没决定：回到 [AI 编程学习路线图](/zh/docs/ai-coding-roadmap/)，先选学习路径，再决定要不要加付费工具。
 
 ---

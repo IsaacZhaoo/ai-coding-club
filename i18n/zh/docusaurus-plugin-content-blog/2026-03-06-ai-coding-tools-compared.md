@@ -13,7 +13,7 @@ import ArticleSchema from '@site/src/components/ArticleSchema';
   headline="Cursor vs GitHub Copilot vs Claude Code：2026年该选哪个AI编程工具？"
   description="我们用真实项目测试了3款主流AI编程工具。每款的优缺点、适用场景和选择建议。"
   datePublished="2026-03-06"
-  dateModified="2026-05-10"
+  dateModified="2026-06-12"
   authorName="Isaac Zhao"
 />
 
@@ -155,8 +155,9 @@ Claude Code 跨 6 个文件追踪了完整的调用链，精确定位到导致�
 
 - 如果你正在比较终端 Agent，可以看 [Claude Code vs Codex CLI](/zh/blog/claude-code-vs-codex-cli/)。
 - 如果你已经在用 Cursor，可以看 [Claude Code、Codex CLI、Cursor 怎么搭配](/zh/blog/claude-code-codex-cli-cursor-workflow/)。
+- 如果你准备把长任务说明、日志或 diff 发给 AI，先用 [Token Counter](/zh/docs/tutorials/token-counter-no-login/) 估算上下文占用。
 - 如果你正在做 API 集成，可以看 [OpenAPI Client Generator 中文教程](/zh/docs/tutorials/openapi-client-generator-no-login/)。
-- 如果你想系统学习，可以从 [AI 编程路线图](/zh/docs/ai-coding-roadmap/) 开始。
+- 如果你想系统学习，可以从 [AI 编程路线图](/zh/docs/ai-coding-roadmap/) 或 [AI 编程课程](/zh/docs/course/) 开始。
 
 ### 真正的答案
 

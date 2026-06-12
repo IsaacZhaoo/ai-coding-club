@@ -13,7 +13,7 @@ import ArticleSchema from '@site/src/components/ArticleSchema';
   headline="Claude Code、Codex CLI、Cursor 怎么搭配？一个实用 AI 编程工作流"
   description="三个工具可以一起用，但不代表你应该全买。这篇按场景说清楚编辑器 AI 和终端 Agent 的分工，以及预算有限时怎么选。"
   datePublished="2026-05-10"
-  dateModified="2026-05-10"
+  dateModified="2026-06-05"
   authorName="Isaac Zhao"
 />
 
@@ -116,6 +116,8 @@ Cursor + 一个终端 Agent，是最合理的两工具组合。
 **日常写代码**：Cursor。补全、解释、文件内修改。
 
 **需要 AI 自主推进任务时**：切到终端，用 Claude Code 或 Codex CLI。描述任务目标，让它去读文件、改代码、跑测试，看结果再决定下一步。
+
+在把很长的任务说明、日志或 diff 发给终端 Agent 前，可以先用 [Token Counter](/zh/docs/tutorials/token-counter-no-login/) 估算上下文占用，再决定是精简信息还是拆成多个任务。
 
 **涉及 OpenAI Codex 平台功能（如云端 code review、GitHub 集成）**：走 Codex CLI / Codex Web 入口。
 

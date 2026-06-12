@@ -13,7 +13,7 @@ import ArticleSchema from '@site/src/components/ArticleSchema';
   headline="How to Combine Claude Code, Codex CLI, and Cursor in a Practical AI Coding Workflow"
   description="Cursor, Claude Code, and Codex CLI can work together, but you do not need all three. This guide explains how AI editors and terminal agents fit into a practical workflow."
   datePublished="2026-05-10"
-  dateModified="2026-05-10"
+  dateModified="2026-06-05"
   authorName="Isaac Zhao"
 />
 
@@ -116,6 +116,8 @@ Here is a practical starting point, not the only correct answer:
 **Everyday coding**: Cursor for completion, explanation, and file-level edits.
 
 **When you need AI to push a task forward**: switch to the terminal and use Claude Code or Codex CLI. Describe the task goal, let it read files, edit code, run tests, and report back.
+
+Before sending a long task brief, log, or diff to a terminal agent, paste it into the [Token Counter](/docs/tutorials/token-counter-no-login/) to estimate prompt size and decide whether to trim context or split the task.
 
 **When the task touches OpenAI Codex platform features such as cloud code review or GitHub integration**: use Codex CLI or Codex web.
 
