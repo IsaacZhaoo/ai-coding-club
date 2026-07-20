@@ -162,6 +162,8 @@ Before you close this article, identify three things in your current Claude Code
 
 If each of those three things has a clear owner—the Skill, the Hook, or the MCP connection—your extension architecture is in reasonable shape. If any of them are in the wrong layer, you now have a cleaner model for where to move them.
 
+When that procedure is specifically a pre-merge review, use the [AI Code Review Workflow](/docs/tutorials/ai-code-review-workflow/) to turn the requirement, diff, checks, and residual risk into one evidence-backed verdict.
+
 For a wider progression from first agent task to durable repository workflow, continue with the [AI Coding Agent Beginner Route](/docs/tutorials/ai-coding-agent-beginner-guide/).
 
 ---

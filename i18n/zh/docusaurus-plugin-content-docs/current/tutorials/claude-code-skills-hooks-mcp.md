@@ -183,6 +183,8 @@ Hooks 和 MCP 都有值得单独说清楚的安全边界，不能含糊地写进
 
 如果这三件事都放在了正确的机制里，你的工作流是清晰的。如果有一件事放错了，你现在知道为什么它会在某次对话里失效。
 
+当这套流程具体用于合并前 review 时，可以继续使用 [AI Code Review 工作流](/zh/docs/tutorials/ai-code-review-workflow/)，把需求、diff、检查结果和残余风险整理成一个有证据的合并结论。
+
 如果你还想把这套选择放回完整的 Agent 学习路径，可以继续看 [AI 编程 Agent 新手路线](/zh/docs/tutorials/ai-coding-agent-beginner-guide/)。
 
 ---
