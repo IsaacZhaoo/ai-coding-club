@@ -146,6 +146,8 @@ GitHub Copilot 的 code review 工作方式是提交 `Comment`，而不是 `Appr
 
 如果你想把这套 review 顺序封装成可复用流程，或者在明确事件上增加自动检查，可以继续看 [Claude Code 的 Skills、Hooks 和 MCP](/zh/docs/tutorials/claude-code-skills-hooks-mcp/)。
 
+如果你需要更广的安全、隐私和专业使用边界，可以参考 [AI 编程最佳实践](/zh/docs/best-practices/)。
+
 ---
 
 ## 可复用的 Review 输出格式
@@ -209,6 +211,10 @@ Unverified assumptions or residual risk:
 ```
 
 这不是信心分数，是可追溯的证据集合。
+
+---
+
+如果你还在建立从给出任务、检查 diff 到运行验证的基础流程，可以先看 [AI 编程 Agent 新手路线](/zh/docs/tutorials/ai-coding-agent-beginner-guide/)。
 
 ---
 
