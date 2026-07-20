@@ -176,6 +176,14 @@ This audit does not require any new tooling. It is a judgment exercise: look at 
 
 ---
 
+## Related Reading
+
+- [Claude Code Skills, Hooks, and MCP: when should you use each?](/docs/tutorials/claude-code-skills-hooks-mcp/)
+- [Claude Code beginner guide](/docs/tutorials/claude-code-guide/)
+- [AI coding agent beginner route](/docs/tutorials/ai-coding-agent-beginner-guide/)
+
+---
+
 ## References
 
 - Anthropic. *Claude Code: Memory*. Claude Code documentation. [https://code.claude.com/docs/en/memory](https://code.claude.com/docs/en/memory)
