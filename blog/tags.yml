@@ -63,6 +63,11 @@ tools:
   permalink: /tools
   description: AI coding tools, extensions, and utilities
 
+open-source:
+  label: Open Source
+  permalink: /open-source
+  description: Open-source AI coding tools, runtimes, and developer ecosystems
+
 guide:
   label: Guide
   permalink: /guide
