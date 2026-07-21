@@ -216,14 +216,14 @@ Agent 需要知道哪些文件是生成的，哪些是手写的，以及如何�
 
 ### 错误一：模糊规则
 
-❌ `尽量保持代码简洁`  
+❌ `尽量保持代码简洁`<br />
 ✅ `函数体不超过 50 行；超过时拆分为独立函数并编写对应测试`
 
 Agent 需要可判断、可验证的规则。"尽量"、"适当"、"合理"这类词对它没有意义。
 
 ### 错误二：过期命令
 
-❌ `运行 yarn install`（但项目已迁移到 pnpm）  
+❌ `运行 yarn install`（但项目已迁移到 pnpm）<br />
 ✅ 定期审计 AGENTS.md，每次更换工具链时同步更新
 
 过期命令比没有命令更糟糕——它会让 Agent 产生错误的置信度。
@@ -248,7 +248,7 @@ AGENTS.md 通常会随版本库维护，并被装载进 Agent 上下文。任何
 
 ### 错误六：不可验证的指令
 
-❌ `确保所有改动都经过充分测试`  
+❌ `确保所有改动都经过充分测试`<br />
 ✅ `运行 pnpm test，确认所有测试通过，覆盖率不低于 80%`
 
 指令应该是 Agent 能够执行并自行验证结果的操作，而不是需要主观判断的要求。
@@ -303,7 +303,7 @@ docs/         面向人类的文档，不是指令
 
 ## 提交规范
 
-遵循 Conventional Commits：`type(scope): description`  
+遵循 Conventional Commits：`type(scope): description`<br />
 示例：`fix(auth): 修正 token 过期时间计算错误`
 ```
 
@@ -313,13 +313,13 @@ docs/         面向人类的文档，不是指令
 
 当你发现 Agent 没有遵循 AGENTS.md 中的规则时，按以下顺序排查：
 
-**步骤 1：确认文件位置**  
+**步骤 1：确认文件位置**<br />
 Agent 的工作目录在哪里？从那个目录向上到 repository root，沿途是否都有正确的文件？
 
-**步骤 2：检查文件名大小写**  
+**步骤 2：检查文件名大小写**<br />
 文件名必须是 `AGENTS.md`（全大写），而不是 `agents.md` 或 `Agents.md`。Codex 对文件名大小写敏感。
 
-**步骤 3：检查是否超出大小限制**  
+**步骤 3：检查是否超出大小限制**<br />
 如果组合后的指令链超过 32 KiB，部分内容可能被截断。用以下命令粗略估算：
 
 ```bash
@@ -327,7 +327,7 @@ Agent 的工作目录在哪里？从那个目录向上到 repository root，沿�
 find . -name "AGENTS.md" | xargs wc -c
 ```
 
-**步骤 4：检查矛盾规则**  
+**步骤 4：检查矛盾规则**<br />
 搜索所有 AGENTS.md 文件，找出同一主题的重复描述：
 
 ```bash
@@ -335,10 +335,10 @@ find . -name "AGENTS.md" | xargs wc -c
 grep -r "build\|构建\|install\|安装" --include="AGENTS.md" .
 ```
 
-**步骤 5：简化规则表述**  
+**步骤 5：简化规则表述**<br />
 如果规则中包含条件句、例外情况或模糊词，尝试重写为无歧义的命令式表述。
 
-**步骤 6：验证任务 Prompt 没有覆盖**  
+**步骤 6：验证任务 Prompt 没有覆盖**<br />
 任务 Prompt 的优先级高于 AGENTS.md。如果你在 Prompt 中给出了与 AGENTS.md 矛盾的指令，Prompt 会胜出。
 
 ---
@@ -391,8 +391,8 @@ AGENTS.md 没有魔法。它就是一个 Markdown 文件，放在 Agent 能发�
 
 ---
 
-*参考资料：*  
-- *[OpenAI Codex AGENTS.md 指南](https://developers.openai.com/codex/guides/agents-md)*  
+*参考资料：*
+- *[OpenAI Codex AGENTS.md 指南](https://developers.openai.com/codex/guides/agents-md)*
 - *[agents.md — 开源项目使用统计](https://agents.md)*
 
 ## 相关指南
