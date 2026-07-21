@@ -70,7 +70,7 @@ For the pull-request workflow: a Hook runs the local formatter after a file-writ
 
 ### Security boundary for Hooks
 
-Hook commands run with your environment and your permissions. A Hook that silently deletes a file, modifies a file outside the intended scope, or calls a network endpoint with elevated credentials does those things with the same authority as you. A deterministic trigger does not make an unsafe command safe. Every Hook command deserves explicit review before it runs in a real workflow—not because Claude Code cannot manage Hooks, but because the consequences of a bad command at a lifecycle event can be significant.
+Hook commands run with your environment and your permissions. A Hook that silently deletes a file, modifies a file outside the intended scope, or calls a network endpoint with elevated credentials does those things with the same authority as you. A deterministic trigger does not make an unsafe command safe. Every Hook command deserves explicit review before it runs in a real workflow—not because Claude Code cannot manage Hooks, but because the consequences of a bad command at a lifecycle event can be significant. The [coding agent sandbox security guide](/docs/tutorials/coding-agent-sandbox-security/) explains why workspace writes and host-side trust can extend beyond the agent process itself.
 
 Do not treat a Hook as a substitute for proper permissions design, code review, or safe command construction. The Hook guarantees execution; it does not guarantee that the command does the right thing.
 
