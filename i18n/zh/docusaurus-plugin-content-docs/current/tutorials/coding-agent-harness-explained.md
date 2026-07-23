@@ -124,6 +124,7 @@ SWE-bench 这类 Benchmark 的意义是提供了一个标准化、可复现的�
 
 ## 继续阅读
 
+- [Coding Agent 工程：从 Prompt 到 Graph](/zh/docs/agent-engineering/)
 - [Coding Agent 的记忆应该保存什么？](/zh/docs/tutorials/coding-agent-memory/)
 - [Coding Agent 沙箱安全指南](/zh/docs/tutorials/coding-agent-sandbox-security/)
 - [Claude Code 的 Skills、Hooks 和 MCP](/zh/docs/tutorials/claude-code-skills-hooks-mcp/)

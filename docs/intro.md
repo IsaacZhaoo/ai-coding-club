@@ -36,6 +36,8 @@ Understand AI's limitations and develop best practices. Build sustainable coding
 ### [Stage 2: Context & Architecture](/docs/roadmap/stage2/)
 Master advanced techniques for AI collaboration. Structure projects for maximum effectiveness.
 
+Already building with Coding Agents? Use [Coding Agent Engineering: From Prompt to Graph](/docs/agent-engineering/) to connect prompts, context, memory, skills, harnesses, loops, and graphs.
+
 ## Get Started
 
 1. **Choose your stage** based on your experience

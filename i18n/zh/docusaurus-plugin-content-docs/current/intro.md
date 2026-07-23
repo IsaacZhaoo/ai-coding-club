@@ -36,6 +36,8 @@ AI 编码俱乐部是一个精心策划的平台，帮你利用 AI 助手学编�
 ### [第 2 阶段：上下文与架构](/docs/roadmap/stage2/)
 掌握 AI 协作的高级技术。组织项目以获得最大效果。
 
+已经在使用 Coding Agent？可以从 [Coding Agent 工程：从 Prompt 到 Graph](/zh/docs/agent-engineering/) 串起 Prompt、Context、Memory、Skills、Harness、Loop 和 Graph。
+
 ## 开始使用
 
 1. **根据你的经验选择你的阶段**
