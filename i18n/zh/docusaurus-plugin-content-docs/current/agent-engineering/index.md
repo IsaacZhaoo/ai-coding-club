@@ -28,8 +28,8 @@ keywords:
 | Instructions | 这个仓库始终应该遵守哪些规则？ | [AGENTS.md 完整指南](/zh/docs/tutorials/agents-md-guide/) |
 | Skills 与工具 | 系统有哪些可复用流程、事件控制和外部连接？ | [Claude Code 的 Skills、Hooks 和 MCP](/zh/docs/tutorials/claude-code-skills-hooks-mcp/) |
 | Harness | Context、工具、权限、记忆、执行和验证怎样围绕模型组装？ | [Coding Agent Harness 完整指南](/zh/docs/tutorials/coding-agent-harness-explained/) |
-| Loop | 一个有边界的工作单元怎样通过反馈改进，并知道何时停止或升级？ | 即将发布：Loop Engineering Guide |
-| Graph | 工作单元怎样交换状态、串行或并行运行、否决行动并治理目标修改？ | 即将发布：Graph Engineering Guide |
+| Loop | 一个有边界的工作单元怎样通过反馈改进，并知道何时停止或升级？ | [Loop Engineering 实战](/zh/docs/tutorials/loop-engineering-guide/) |
+| Graph | 工作单元怎样交换状态、串行或并行运行、否决行动并治理目标修改？ | [Graph Engineering 实战](/zh/docs/tutorials/graph-engineering-guide/) |
 
 这些层级彼此相关，但不会互相取代。Context 变好以后仍然需要 Harness；Graph 也不会替代其中运行的 Loop；增加更多 Agent 更不会自动得到 Graph。
 
@@ -46,6 +46,6 @@ Observability 和 Eval-Driven Development 会在后续教程中加入这一保�
 
 - 刚开始使用 AI 编程：先看 Prompt 和 Context。
 - 已经在使用终端 Agent：继续看 Memory、Instructions、Skills 和 Harness。
-- 正在设计无人值守或多步骤系统：等待后续的 Loop 与 Graph 实践教程。
+- 正在设计无人值守或多步骤系统：先看 [Loop Engineering](/zh/docs/tutorials/loop-engineering-guide/)，再进入 [Graph Engineering](/zh/docs/tutorials/graph-engineering-guide/)。
 
 真正长期有效的问题，不是哪个新名词赢了，而是系统已经把哪些责任显式设计出来，还有哪些责任仍然藏在 Agent 的行为里。

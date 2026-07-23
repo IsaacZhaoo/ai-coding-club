@@ -97,7 +97,7 @@ Prompt 进来，经过 Context 和 Memory/Skills 的处理，进入 Harness（�
 
 ## 进入系列
 
-如果你正在构建一个需要跨越多个工作单元的 Agent 系统，或者你的系统已经开始出现隐含的依赖和冲突，可以直接进入 [Coding Agent 工程：从 Prompt 到 Graph](/zh/docs/agent-engineering/) 系列。
+如果你正在构建一个需要跨越多个工作单元的 Agent 系统，或者系统已经开始出现隐含依赖和冲突，可以先进入 [Loop Engineering 实战](/zh/docs/tutorials/loop-engineering-guide/)，再连续阅读 [Graph Engineering 实战](/zh/docs/tutorials/graph-engineering-guide/)。[Coding Agent 工程：从 Prompt 到 Graph](/zh/docs/agent-engineering/) 提供整个系列地图。
 
 ## 参考来源
 

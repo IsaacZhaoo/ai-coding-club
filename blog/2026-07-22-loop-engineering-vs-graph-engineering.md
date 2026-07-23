@@ -100,7 +100,7 @@ If you are building with Coding Agents, the layers look roughly like this:
 
 Each layer has its own engineering concerns. Collapsing them—treating a prompt as a loop, or treating a sequence of loops as a graph—makes it harder to reason about failures when they occur.
 
-This article is an introduction. The full treatment of how to design Loops and Graphs, what governance structures look like in practice, and how to move from a prompt to a governed multi-loop system is in the [**Coding Agent Engineering Hub**](/docs/agent-engineering/).
+This article is an introduction. Continue with the practical [**Loop Engineering Guide**](/docs/tutorials/loop-engineering-guide/), then the [**Graph Engineering Guide**](/docs/tutorials/graph-engineering-guide/). The [**Coding Agent Engineering Hub**](/docs/agent-engineering/) connects both tutorials to the wider Prompt → Context → Memory → Skills → Harness progression.
 
 ## Sources
 

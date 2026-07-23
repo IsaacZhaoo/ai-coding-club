@@ -28,8 +28,8 @@ If the Loop and Graph terminology brought you here, start with [Loop Engineering
 | Instructions | Which repository rules should always apply here? | [AGENTS.md Guide](/docs/tutorials/agents-md-guide/) |
 | Skills and tools | Which reusable procedures, event controls, and external connections are available? | [Claude Code Skills, Hooks, and MCP](/docs/tutorials/claude-code-skills-hooks-mcp/) |
 | Harness | How are context, tools, permissions, memory, execution, and verification assembled around the model? | [Coding Agent Harness Explained](/docs/tutorials/coding-agent-harness-explained/) |
-| Loop | How does one bounded unit of work improve through feedback and know when to stop or escalate? | Coming next: Loop Engineering Guide |
-| Graph | How do work units exchange state, run serially or concurrently, veto actions, and govern goal changes? | Coming next: Graph Engineering Guide |
+| Loop | How does one bounded unit of work improve through feedback and know when to stop or escalate? | [Loop Engineering Guide](/docs/tutorials/loop-engineering-guide/) |
+| Graph | How do work units exchange state, run serially or concurrently, veto actions, and govern goal changes? | [Graph Engineering Guide](/docs/tutorials/graph-engineering-guide/) |
 
 The layers are related, but they do not replace one another. Better context does not remove the need for a Harness. A Graph does not replace the Loops inside it. Adding more Agents does not automatically create a Graph.
 
@@ -46,6 +46,6 @@ Observability and Eval-Driven Development will join this assurance layer in late
 
 - New to AI-assisted coding: begin with Prompt and Context.
 - Already using terminal Agents: continue through Memory, Instructions, Skills, and Harness.
-- Designing unattended or multi-step systems: continue with Loop and Graph as those practical guides become available.
+- Designing unattended or multi-step systems: continue with [Loop Engineering](/docs/tutorials/loop-engineering-guide/), then [Graph Engineering](/docs/tutorials/graph-engineering-guide/).
 
 The durable question is not which new label wins. It is which responsibility your system has made explicit—and which one is still hidden inside the Agent's behavior.
