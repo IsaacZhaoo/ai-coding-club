@@ -26,7 +26,7 @@ keywords:
 | Context | 当前任务应该获得哪些信息？ | [掌握上下文的艺术](/zh/docs/course/foundations/power-of-context/)——基础课程 |
 | Memory | 什么应该长期保存，什么应该过期？ | [Coding Agent 的记忆应该保存什么？](/zh/docs/tutorials/coding-agent-memory/) |
 | Instructions | 这个仓库始终应该遵守哪些规则？ | [AGENTS.md 完整指南](/zh/docs/tutorials/agents-md-guide/) |
-| Skills 与工具 | 系统有哪些可复用流程、事件控制和外部连接？ | [Claude Code 的 Skills、Hooks 和 MCP](/zh/docs/tutorials/claude-code-skills-hooks-mcp/) |
+| Skills 与工具 | 系统有哪些可复用流程、事件控制和外部连接？ | [Claude Code 的 Skills、Hooks 和 MCP](/zh/docs/tutorials/claude-code-skills-hooks-mcp/)，再做 [Agent Skills 负载测试](/zh/docs/tutorials/agent-skills-testing-guide/) |
 | Harness | Context、工具、权限、记忆、执行和验证怎样围绕模型组装？ | [Coding Agent Harness 完整指南](/zh/docs/tutorials/coding-agent-harness-explained/) |
 | Loop | 一个有边界的工作单元怎样通过反馈改进，并知道何时停止或升级？ | [Loop Engineering 实战](/zh/docs/tutorials/loop-engineering-guide/) |
 | Graph | 工作单元怎样交换状态、串行或并行运行、否决行动并治理目标修改？ | [Graph Engineering 实战](/zh/docs/tutorials/graph-engineering-guide/) |

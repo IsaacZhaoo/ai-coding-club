@@ -185,6 +185,8 @@ Hooks 和 MCP 都有值得单独说清楚的安全边界，不能含糊地写进
 
 当这套流程具体用于合并前 review 时，可以继续使用 [AI Code Review 工作流](/zh/docs/tutorials/ai-code-review-workflow/)，把需求、diff、检查结果和残余风险整理成一个有证据的合并结论。
 
+当多个 Skills 开始竞争相似请求时，继续看 [Agent Skills 测试指南](/zh/docs/tutorials/agent-skills-testing-guide/)，从整套负载检查规范、description 重叠、近似负例和真实激活记录。
+
 如果你还想把这套选择放回完整的 Agent 学习路径，可以继续看 [AI 编程 Agent 新手路线](/zh/docs/tutorials/ai-coding-agent-beginner-guide/)。
 
 ---

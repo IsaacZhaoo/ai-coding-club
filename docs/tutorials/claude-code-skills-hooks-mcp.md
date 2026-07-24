@@ -164,6 +164,8 @@ If each of those three things has a clear owner—the Skill, the Hook, or the MC
 
 When that procedure is specifically a pre-merge review, use the [AI Code Review Workflow](/docs/tutorials/ai-code-review-workflow/) to turn the requirement, diff, checks, and residual risk into one evidence-backed verdict.
 
+When several Skills compete for similar prompts, continue with the [Agent Skills Testing Guide](/docs/tutorials/agent-skills-testing-guide/) to measure specification health, description overlap, near-miss routing, and real activation records across the whole loadout.
+
 For a wider progression from first agent task to durable repository workflow, continue with the [AI Coding Agent Beginner Route](/docs/tutorials/ai-coding-agent-beginner-guide/).
 
 ---

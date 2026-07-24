@@ -1,0 +1,12 @@
+{"case_id":"python-pytest-failure","run":1,"selected_skill":"python-test-fixer","agent":"example-agent"}
+{"case_id":"python-pytest-failure","run":2,"selected_skill":"python-test-fixer","agent":"example-agent"}
+{"case_id":"python-pytest-failure","run":3,"selected_skill":null,"agent":"example-agent"}
+{"case_id":"api-openapi-reference","run":1,"selected_skill":"api-documentation","agent":"example-agent"}
+{"case_id":"api-openapi-reference","run":2,"selected_skill":"api-documentation","agent":"example-agent"}
+{"case_id":"api-openapi-reference","run":3,"selected_skill":"api-documentation","agent":"example-agent"}
+{"case_id":"near-api-implementation","run":1,"selected_skill":"api-documentation","agent":"example-agent"}
+{"case_id":"near-api-implementation","run":2,"selected_skill":null,"agent":"example-agent"}
+{"case_id":"near-api-implementation","run":3,"selected_skill":"api-documentation","agent":"example-agent"}
+{"case_id":"near-python-debug","run":1,"selected_skill":null,"agent":"example-agent"}
+{"case_id":"near-python-debug","run":2,"selected_skill":null,"agent":"example-agent"}
+{"case_id":"near-python-debug","run":3,"selected_skill":null,"agent":"example-agent"}

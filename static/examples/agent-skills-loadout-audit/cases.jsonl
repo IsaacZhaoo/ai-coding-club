@@ -1,0 +1,20 @@
+{"id":"python-pytest-failure","prompt":"Fix the failing pytest assertions in tests/test_api.py and verify the focused test.","expected_skill":"python-test-fixer","split":"train"}
+{"id":"python-unittest-flake","prompt":"This Python unittest fails intermittently in CI. Reproduce the flaky test and find the cause.","expected_skill":"python-test-fixer","split":"validation"}
+{"id":"api-openapi-reference","prompt":"Update our OpenAPI reference with the new endpoint, request fields, and response schema.","expected_skill":"api-documentation","split":"train"}
+{"id":"api-auth-example","prompt":"Document the API authentication flow and add a complete request and response example.","expected_skill":"api-documentation","split":"validation"}
+{"id":"db-postgres-plan","prompt":"Review this slow PostgreSQL query plan and recommend the smallest useful index.","expected_skill":"database-query-review","split":"train"}
+{"id":"db-join-performance","prompt":"Inspect these SQL joins and explain why the query performance regressed.","expected_skill":"database-query-review","split":"validation"}
+{"id":"a11y-keyboard-aria","prompt":"Audit the modal keyboard navigation, focus order, labels, and ARIA semantics.","expected_skill":"frontend-accessibility","split":"train"}
+{"id":"a11y-contrast-screen-reader","prompt":"Check this frontend for color contrast and screen-reader behavior without redesigning it.","expected_skill":"frontend-accessibility","split":"validation"}
+{"id":"release-changelog","prompt":"Draft release notes and a changelog entry from these merged pull requests and commits.","expected_skill":"release-notes","split":"train"}
+{"id":"release-upgrade-summary","prompt":"Write an upgrade summary from the verified shipped changes and breaking changes.","expected_skill":"release-notes","split":"validation"}
+{"id":"near-api-implementation","prompt":"Implement a new API endpoint for creating invoices and add authentication.","expected_skill":null,"split":"train"}
+{"id":"near-db-migration","prompt":"Create a PostgreSQL schema migration for the new customer table.","expected_skill":null,"split":"validation"}
+{"id":"near-visual-redesign","prompt":"Redesign the landing page so it looks more modern and branded.","expected_skill":null,"split":"train"}
+{"id":"near-jest-tests","prompt":"Write new Jest tests for this JavaScript component.","expected_skill":null,"split":"validation"}
+{"id":"near-customer-announcement","prompt":"Write a customer announcement about yesterday's service outage.","expected_skill":null,"split":"train"}
+{"id":"near-python-debug","prompt":"Debug this Python cache bug; there is no failing test yet.","expected_skill":null,"split":"validation"}
+{"id":"near-react-state","prompt":"Fix the React state update that causes the component to render twice.","expected_skill":null,"split":"train"}
+{"id":"near-api-design","prompt":"Design the internal architecture for a new payments API.","expected_skill":null,"split":"validation"}
+{"id":"near-readme-translation","prompt":"Translate this README from English to Chinese.","expected_skill":null,"split":"train"}
+{"id":"near-meeting-summary","prompt":"Summarize these engineering meeting notes and list the decisions.","expected_skill":null,"split":"validation"}
