@@ -39,8 +39,8 @@ keywords:
 
 - [Coding Agent 的沙箱到底保护了什么？](/zh/docs/tutorials/coding-agent-sandbox-security/)解释执行边界保护了什么，以及 Host trust 仍可能从哪里越界。
 - [AI Code Review 工作流](/zh/docs/tutorials/ai-code-review-workflow/)解释如何把需求、Diff、测试和残余风险变成有证据的合并判断。
-
-Observability 和 Eval-Driven Development 会在后续教程中加入这一保障层。
+- [Coding Agent Observability](/zh/docs/tutorials/coding-agent-observability-guide/)解释如何保存工具失败、重试、Token、Handoff 和明确的遥测缺口。
+- [Coding Agent Evals](/zh/docs/tutorials/coding-agent-evals-guide/)把保存的 Trace 变成本地 case、确定性检查和可执行的 CI 门禁。
 
 ## 从哪里开始
 

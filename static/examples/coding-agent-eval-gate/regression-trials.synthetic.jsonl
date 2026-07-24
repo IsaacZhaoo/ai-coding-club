@@ -1,0 +1,1 @@
+{"case_id":"average-empty-diagnosis","trial_id":"synthetic-wrong-fix","answer":"Return 0 when the list is empty.","turn_status":"completed","tool_calls":3,"failed_tool_calls":0,"modified_files":[],"synthetic":true,"source":"synthetic regression used to exercise the failing gate"}

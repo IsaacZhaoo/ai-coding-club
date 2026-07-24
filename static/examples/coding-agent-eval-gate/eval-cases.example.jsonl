@@ -1,0 +1,1 @@
+{"case_id":"average-empty-diagnosis","task":"Diagnose why average([]) violates the focused test without modifying files.","expect":{"turn_status":"completed","answer_contains_all":["ZeroDivisionError","ValueError(\"at least one value\")"],"max_tool_calls":5,"max_failed_tool_calls":2,"modified_files":[]}}

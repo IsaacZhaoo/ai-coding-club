@@ -39,8 +39,8 @@ Some responsibilities cut across the whole stack:
 
 - [Coding Agent Sandbox Security](/docs/tutorials/coding-agent-sandbox-security/) explains what execution boundaries protect and where host trust can still escape them.
 - [AI Code Review Workflow](/docs/tutorials/ai-code-review-workflow/) explains how to turn requirements, diffs, tests, and residual risks into an evidence-backed merge decision.
-
-Observability and Eval-Driven Development will join this assurance layer in later tutorials.
+- [Coding Agent Observability](/docs/tutorials/coding-agent-observability-guide/) explains how to preserve tool failures, retries, Token usage, handoffs, and explicit telemetry gaps.
+- [Coding Agent Evals](/docs/tutorials/coding-agent-evals-guide/) turns preserved traces into local cases, deterministic checks, and executable CI gates.
 
 ## Where to begin
 
