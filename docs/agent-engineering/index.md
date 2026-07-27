@@ -30,6 +30,7 @@ If the Loop and Graph terminology brought you here, start with [Loop Engineering
 | Harness | How are context, tools, permissions, memory, execution, and verification assembled around the model? | [Coding Agent Harness Explained](/docs/tutorials/coding-agent-harness-explained/) |
 | Loop | How does one bounded unit of work improve through feedback and know when to stop or escalate? | [Loop Engineering Guide](/docs/tutorials/loop-engineering-guide/) |
 | Graph | How do work units exchange state, run serially or concurrently, veto actions, and govern goal changes? | [Graph Engineering Guide](/docs/tutorials/graph-engineering-guide/) |
+| Parallel execution | How do independent Agent tasks isolate checkout state, runtime resources, evidence, and merge authority? | [Parallel Coding Agents with Worktrees](/docs/tutorials/parallel-coding-agents-worktrees/) |
 
 The layers are related, but they do not replace one another. Better context does not remove the need for a Harness. A Graph does not replace the Loops inside it. Adding more Agents does not automatically create a Graph.
 
