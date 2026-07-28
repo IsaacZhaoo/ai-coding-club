@@ -63,6 +63,11 @@ tools:
   permalink: /tools
   description: AI编程工具、扩展和实用程序
 
+open-source:
+  label: 开源
+  permalink: /open-source
+  description: 开源 AI 编程工具、运行时和开发者生态
+
 guide:
   label: 指南
   permalink: /guide
