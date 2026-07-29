@@ -215,7 +215,7 @@ server 监听在 `http://127.0.0.1:32123/mcp`。官方 client 依次以 `legacy`
 - [ ] 确认所有 client 实例都已更新，不只是新写的那个
 
 **HTTP Server 端**
-- [ ] 新路径已使用 `createMcpHandler(factory)` 
+- [ ] 新路径已使用 `createMcpHandler(factory)`
 - [ ] 已实现 `server/discover` 端点
 - [ ] 旧 session 路径已通过 `isLegacyRequest` 判断单独处理（如适用）
 - [ ] 新 Streamable HTTP 请求已携带 `Mcp-Method` 和 `Mcp-Name` header
