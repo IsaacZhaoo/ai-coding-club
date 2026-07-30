@@ -3,7 +3,7 @@ title: "Codex Security Plugin 0.1.14：scan history、稳定 identity 与 review
 slug: codex-security-evidence-workflow
 description: "Codex Security Plugin 0.1.14 增加 scan history 与 scoped SECURITY.md policy。本文讨论为什么 finding 消失仍不能证明修复。"
 authors: [isaac]
-tags: [perspective, tools]
+tags: [tools]
 keywords:
   - Codex Security
   - Codex Security Plugin 0.1.14

@@ -3,7 +3,7 @@ title: "Codex Security Connects Policy, History, and Findings Into a Case File"
 slug: codex-security-evidence-workflow
 description: "Codex Security now connects repository policy, scan history, coverage, and validation evidence. Here is why a missing finding is not proof of a fix."
 authors: [isaac]
-tags: [perspective, tools]
+tags: [tools]
 keywords:
   - Codex Security
   - Codex Security Plugin
