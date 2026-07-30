@@ -208,7 +208,13 @@ The distinction matters because protocol errors are not returned as Tool results
 In the synthetic server, if `issues.close` is called with an ID that does not exist, the handler returns:
 
 ```ts
-{ isError: true, content: [{ type: 'text', text: 'Unknown issue ISSUE-999. Call issues.search to find a valid issue ID, then retry.' }] }
+{
+  isError: true,
+  content: [{
+    type: 'text',
+    text: 'Unknown issue ISSUE-999. Call issues.search to find a valid issue ID, then retry.',
+  }],
+}
 ```
 
 That error message contains everything the Agent needs to recover: the unknown ID (so the Agent knows which call failed), and the recovery path (use `issues.search` first). A generic "not found" with no further instruction is technically correct and practically useless. Anthropic's guidance on error design captures this precisely: make errors specific and actionable.
