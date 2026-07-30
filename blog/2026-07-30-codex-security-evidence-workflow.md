@@ -74,11 +74,11 @@ That is what the July 28 release is building toward. Saved history, stable ident
 
 **Sources used:**
 
-- OpenAI. *Codex Security*. <https://learn.chatgpt.com/docs/security>
-- OpenAI. *Codex Security plugin changelog*. <https://learn.chatgpt.com/docs/security/plugin/changelog>
-- OpenAI. *Codex Security plugin quickstart*. <https://learn.chatgpt.com/docs/security/plugin>
-- OpenAI. *Codex Security CLI FAQ*. <https://learn.chatgpt.com/docs/security/cli/faq>
-- OpenAI. *Codex Security cloud FAQ*. <https://learn.chatgpt.com/docs/security/faq>
+- OpenAI. *Codex Security*. [https://learn.chatgpt.com/docs/security](https://learn.chatgpt.com/docs/security)
+- OpenAI. *Codex Security plugin changelog*. [https://learn.chatgpt.com/docs/security/plugin/changelog](https://learn.chatgpt.com/docs/security/plugin/changelog)
+- OpenAI. *Codex Security plugin quickstart*. [https://learn.chatgpt.com/docs/security/plugin](https://learn.chatgpt.com/docs/security/plugin)
+- OpenAI. *Codex Security CLI FAQ*. [https://learn.chatgpt.com/docs/security/cli/faq](https://learn.chatgpt.com/docs/security/cli/faq)
+- OpenAI. *Codex Security cloud FAQ*. [https://learn.chatgpt.com/docs/security/faq](https://learn.chatgpt.com/docs/security/faq)
 ---
 
 ## Related Reading
