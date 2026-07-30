@@ -250,5 +250,6 @@ server 监听在 `http://127.0.0.1:32123/mcp`。官方 client 依次以 `legacy`
 ## 相关指南
 
 - [MCP Server 指南](/zh/docs/tools/mcps/)
+- [MCP Tool 设计指南](/zh/docs/tutorials/mcp-tool-design-guide/)
 - [MCP Server 安全检查清单](/zh/docs/tutorials/mcp-server-security-checklist/)
 - [Claude Code 的 Skills、Hooks 和 MCP](/zh/docs/tutorials/claude-code-skills-hooks-mcp/)

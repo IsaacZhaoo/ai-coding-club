@@ -205,5 +205,6 @@ Use this checklist as a gate, not a formality. Each item should be verifiable, n
 ## Related Guides
 
 - [MCP Server Guide](/docs/tools/mcps/)
+- [MCP Tool Design Guide](/docs/tutorials/mcp-tool-design-guide/)
 - [MCP Server Security Checklist](/docs/tutorials/mcp-server-security-checklist/)
 - [Claude Code Skills, Hooks, and MCP](/docs/tutorials/claude-code-skills-hooks-mcp/)
