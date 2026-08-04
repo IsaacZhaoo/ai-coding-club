@@ -17,6 +17,8 @@ description: 'Building Your Portfolio & Preparing for Interviews'
 
 You have the skills. You have the projects. Now it's time to put it all together and get ready to land your first job as a developer. This post covers the final steps: building a compelling portfolio and preparing for interviews.
 
+If you are preparing specifically for AI Agent engineering roles, continue with the [AI Agent Portfolio Guide](/docs/tutorials/ai-agent-portfolio-guide/) to turn one project into a verifiable evidence chain covering architecture, tasks, traces, evals, security boundaries, and delivery.
+
 ### Curating Your Portfolio
 
 Your portfolio is a collection of your best work. The key word here is *best*. It's much better to have 2-3 high-quality, polished projects than 10 small, unfinished ones.

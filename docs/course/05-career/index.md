@@ -21,6 +21,10 @@ Prepare to launch your career as an AI-powered developer.
 1. **Building Your Portfolio** - Showcase your work
 2. **Your AI-Powered Coding Future** - Next steps and resources
 
+## Advanced AI Agent Career Path
+
+After the general career lessons, continue with the [AI Agent Engineer Interview Guide](/docs/tutorials/ai-agent-interview-guide/) for a role-specific capability map, portfolio evidence, system-design practice, and failure-analysis preparation.
+
 ## Time Commitment
 
 **2 lessons × 45-60 minutes = ~2 hours total**

@@ -48,5 +48,6 @@ Some responsibilities cut across the whole stack:
 - New to AI-assisted coding: begin with Prompt and Context.
 - Already using terminal Agents: continue through Memory, Instructions, Skills, and Harness.
 - Designing unattended or multi-step systems: continue with [Loop Engineering](/docs/tutorials/loop-engineering-guide/), then [Graph Engineering](/docs/tutorials/graph-engineering-guide/).
+- Preparing for AI Agent roles: use the [AI Agent Engineer Interview Guide](/docs/tutorials/ai-agent-interview-guide/) to turn these layers into an interview capability map and a project-evidence plan.
 
 The durable question is not which new label wins. It is which responsibility your system has made explicit—and which one is still hidden inside the Agent's behavior.

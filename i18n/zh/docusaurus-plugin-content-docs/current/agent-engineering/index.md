@@ -47,5 +47,6 @@ keywords:
 - 刚开始使用 AI 编程：先看 Prompt 和 Context。
 - 已经在使用终端 Agent：继续看 Memory、Instructions、Skills 和 Harness。
 - 正在设计无人值守或多步骤系统：先看 [Loop Engineering](/zh/docs/tutorials/loop-engineering-guide/)，再进入 [Graph Engineering](/zh/docs/tutorials/graph-engineering-guide/)。
+- 正在准备 AI Agent 工程岗位：进入 [AI Agent 工程师面试与求职指南](/zh/docs/tutorials/ai-agent-interview-guide/)，把这些技术层级整理成面试能力地图和项目证据计划。
 
 真正长期有效的问题，不是哪个新名词赢了，而是系统已经把哪些责任显式设计出来，还有哪些责任仍然藏在 Agent 的行为里。
