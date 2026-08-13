@@ -26,6 +26,8 @@ And here is the thing that made me stop before merging: passing nine focused che
 
 That tension is what this article is about.
 
+For a concrete implementation of this evidence model, continue with [How to Verify AI-Generated Go Code](/docs/tutorials/verify-ai-generated-go-code/), which turns the contract, executable checks, and residual-risk layers into a reproducible Go toolchain workflow.
+
 ---
 
 ## What an Agent Should Actually Do Before It Recommends Merging

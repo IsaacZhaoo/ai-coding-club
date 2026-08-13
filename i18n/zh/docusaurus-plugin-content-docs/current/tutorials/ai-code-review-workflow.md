@@ -18,6 +18,8 @@ tags: [tutorial, coding-assistant, agent-engineering, code-review]
 
 然后我停了下来，因为我知道"测试绿了"和"改动可以合并"之间有一段距离，而填满这段距离的工作，才是 AI code review 真正该做的事。
 
+如果你想把这套证据模型落到具体语言和工具链，可以继续看[如何验证 Coding Agent 生成的 Go 代码](/zh/docs/tutorials/verify-ai-generated-go-code/)：它会把应用契约、可执行检查和残余风险组织成一套可复现的 Go 验证流程。
+
 ---
 
 ## 先给一个直接答案
