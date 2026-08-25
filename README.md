@@ -7,6 +7,7 @@ This repository contains all the content (documentation, blog posts, tutorials) 
 ```
 ├── docs/           # Documentation and tutorials
 ├── blog/           # Blog posts
+├── examples/       # Reproducible source fixtures linked from tutorials
 ├── static/img/     # Images and media files
 └── i18n/           # Translations (Chinese, etc.)
 ```

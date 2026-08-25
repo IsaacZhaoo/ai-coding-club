@@ -1,0 +1,9 @@
+[
+  {
+    "version": "v0.9.1",
+    "executeScript": {
+      "surfaceId": "release-approval",
+      "code": "publish()"
+    }
+  }
+]

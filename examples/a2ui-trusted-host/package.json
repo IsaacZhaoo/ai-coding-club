@@ -1,0 +1,13 @@
+{
+  "name": "a2ui-trusted-host-fixture",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "demo": "node demo.mjs",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@a2ui/web_core": "0.10.6"
+  }
+}

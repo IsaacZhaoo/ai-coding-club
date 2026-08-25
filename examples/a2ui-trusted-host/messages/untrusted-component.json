@@ -1,0 +1,15 @@
+[
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "release-approval",
+      "components": [
+        {
+          "id": "run-command",
+          "component": "ShellCommand",
+          "command": "publish --force"
+        }
+      ]
+    }
+  }
+]

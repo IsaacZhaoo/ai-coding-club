@@ -1,0 +1,60 @@
+[
+  {
+    "version": "v0.9.1",
+    "createSurface": {
+      "surfaceId": "release-approval",
+      "catalogId": "https://a2ui.org/specification/v0_9/catalogs/basic/catalog.json"
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateDataModel": {
+      "surfaceId": "release-approval",
+      "path": "/",
+      "value": {
+        "title": "Publish bilingual tutorial?",
+        "status": "pending"
+      }
+    }
+  },
+  {
+    "version": "v0.9.1",
+    "updateComponents": {
+      "surfaceId": "release-approval",
+      "components": [
+        {
+          "id": "root",
+          "component": "Column",
+          "children": ["title", "approve", "approve-label"]
+        },
+        {
+          "id": "title",
+          "component": "Text",
+          "text": {
+            "path": "/title"
+          }
+        },
+        {
+          "id": "approve",
+          "component": "Button",
+          "child": "approve-label",
+          "action": {
+            "event": {
+              "name": "approve_release",
+              "context": {
+                "status": {
+                  "path": "/status"
+                }
+              }
+            }
+          }
+        },
+        {
+          "id": "approve-label",
+          "component": "Text",
+          "text": "Approve"
+        }
+      ]
+    }
+  }
+]

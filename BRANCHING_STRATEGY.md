@@ -2,154 +2,103 @@
 
 ## Overview
 
-This repository uses a simple, manual-control branching model optimized for content management and gradual releases.
+This repository uses `main` as its only long-lived branch. `main` contains the
+current production-ready content referenced by the AI Coding Club website.
+
+Use a short-lived topic branch when a change needs isolated development or
+review. Merge it into `main` after verification, then remove the topic branch.
+Do not maintain `dev` or `develop` as parallel long-lived branches.
 
 ## Branch Structure
 
-```
-main (production)
-  ↑ Production content deployed to aicoding.club
-  ↑ Only updated through manual merge from develop
-  │
-develop (staging)
-  ↑ Daily development and testing
-  ↑ Safe place to experiment with content
-  │
-feature/* (work branches)
-  ↑ Individual features or content updates
-  ↑ Merged into develop when ready
+```text
+main (production-ready content)
+  ↑ verified integration
+topic/*, fix/*, codex/*, or wip/* (short-lived when needed)
 ```
 
-## Branch Purposes
+### `main`
 
-### `main` (Production)
-- **Purpose**: Production-ready content
-- **Deployed to**: https://aicoding.club
-- **Update frequency**: Only when intentionally releasing content
-- **Protection**: Should have branch protection enabled (manual merges only)
-- **Triggers**: Updating this branch triggers Cloudflare Pages deployment
+- Holds the current content source.
+- Is the only long-lived branch.
+- Must remain synchronized with `origin/main` before new integration work.
+- May receive a focused direct commit when isolation adds no value.
 
-### `develop` (Staging)
-- **Purpose**: Daily development work and content testing
-- **Deployed to**: Not deployed (local testing only)
-- **Update frequency**: As often as needed
-- **Protection**: None (free to push)
-- **Use for**: Testing, drafting, experimentation
+### Topic branches
 
-### `feature/*` (Feature branches)
-- **Purpose**: Individual features, lessons, or content updates
-- **Naming examples**:
-  - `feature/coming-soon-phase-2`
-  - `feature/lesson-git-basics`
-  - `feature/tools-documentation`
-- **Lifecycle**: Created → Merged to develop → Deleted
-- **Protection**: None
+- Start from the latest `main`.
+- Contain one focused content or workflow change.
+- Must be verified before integration.
+- Are deleted after `main` contains all their commits.
 
-## Workflows
+## Normal Workflow
 
-### Daily Development
+For an isolated change:
+
 ```bash
-# Work on develop branch
-git checkout develop
-git pull origin develop
+git switch main
+git pull --ff-only origin main
+git switch -c topic/short-description
 
-# Make changes, commit, push
-git add .
-git commit -m "Update: ..."
-git push origin develop
+# Edit and verify the content.
+git add <paths>
+git commit -m "Update: Short description"
 
-# Test locally before releasing
-```
-
-### Feature Development
-```bash
-# Create feature branch from develop
-git checkout develop
-git checkout -b feature/my-feature
-
-# Work on feature
-git add .
-git commit -m "Add: ..."
-git push origin feature/my-feature
-
-# Merge to develop when ready
-git checkout develop
-git merge feature/my-feature
-git push origin develop
-
-# Delete feature branch
-git branch -d feature/my-feature
-git push origin --delete feature/my-feature
-```
-
-### Release to Production
-```bash
-# Review changes
-git checkout develop
-git log main..develop --oneline
-
-# Merge to main (manually)
-git checkout main
-git pull origin main
-git merge develop --no-ff -m "Release: Description"
-
-# Push to trigger deployment
+git switch main
+git pull --ff-only origin main
+git merge --no-ff topic/short-description
 git push origin main
 
-# ⚠️ This triggers Cloudflare Pages deployment
-# Main repo submodule must be updated separately
+git branch -d topic/short-description
+git push origin --delete topic/short-description
 ```
 
-## Best Practices
+For a small focused change made directly on `main`, confirm the worktree is
+clean and `main` is synchronized with `origin/main` before editing. Run the
+same content checks before committing and pushing.
 
-### DO:
-- ✅ Always work on `develop` or `feature/*` branches
-- ✅ Test locally before merging to main
-- ✅ Write descriptive commit messages
-- ✅ Use `--no-ff` when merging to main (preserves history)
-- ✅ Review changes with `git diff` before committing
+## Verification
 
-### DON'T:
-- ❌ Never push directly to `main` (always merge from develop)
-- ❌ Don't merge unfinished work to `main`
-- ❌ Don't force push to `main` or `develop`
-- ❌ Don't delete `main` or `develop` branches
+Before integrating or pushing content:
 
-## Integration with Main Repository
+- review the changed English and Chinese source files;
+- confirm frontmatter, routes, links, and static references;
+- run the relevant checks from the parent website repository;
+- verify that no draft-only or internal editorial material is entering a
+  public page;
+- confirm the final topic-branch tip is an ancestor of `main` before cleanup.
 
-This repository is a **Git submodule** of the main `aiCodingClub` repository.
+Never force-push `main`, hard-reset shared history, or delete a branch that has
+commits not contained in `main`.
 
-### Deployment Process:
-1. Content updated in this repo's `main` branch
-2. Main repository manually updates submodule pointer
-3. Main repository pushes to its `main` branch
-4. Cloudflare Pages builds and deploys
+## Integration With the Website Repository
 
-**Note**: Changes to this repo do NOT automatically deploy. The main repository must explicitly update the submodule reference.
+This repository is the `content/` submodule of the main `aiCodingClub`
+repository. Updating this repository does not update the website repository's
+submodule pointer automatically.
 
-## Emergency Procedures
+The release order is:
 
-### Rollback Production
+1. commit and push the content change to this repository's `main`;
+2. verify the pushed content commit on `origin/main`;
+3. update the `content/` submodule pointer in the parent website repository;
+4. run the parent repository's required checks;
+5. commit and push the parent repository change.
+
+Cloudflare Pages deploys the website from the parent repository's `main`
+branch. A content commit is not part of the deployed website until the parent
+repository points to it.
+
+## Branch Cleanup
+
+Before deleting a local topic branch:
+
 ```bash
-# Option 1: Revert last merge
-git checkout main
-git revert -m 1 HEAD
-git push origin main
-
-# Option 2: Reset to previous commit (⚠️ use with caution)
-git checkout main
-git reset --hard <commit-hash>
-git push origin main --force
+git merge-base --is-ancestor topic/short-description main
+git branch -d topic/short-description
 ```
 
-### Fix Broken Develop
-```bash
-# Reset develop to main
-git checkout develop
-git reset --hard main
-git push origin develop --force
-```
-
-## Questions?
-
-See the main repository's deployment documentation for the complete workflow.
+Before deleting its remote branch, fetch the latest refs and confirm both the
+local and remote topic tips are ancestors of `origin/main`. Use normal deletion,
+never a force delete, unless the user has explicitly authorized recovery from a
+known exceptional state.
