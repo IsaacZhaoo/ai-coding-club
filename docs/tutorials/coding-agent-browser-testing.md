@@ -13,8 +13,6 @@ tags: [tutorial, coding-assistant, agent-engineering, browser-testing]
 
 # Coding Agent Browser Testing: What to Check Before You Trust a UI Patch
 
-*By Youguang*
-
 > I made the complete anonymous fixture available so you can reproduce both browser states: <a href="/examples/ui-verification-lab.zip">download `ui-verification-lab.zip`</a>.
 
 I built the `ui-verification-lab` repository as a bounded synthetic experiment. It contains no production code, no real user data, and no real orders. Every identifier — `demo-001`, the editor and viewer roles, the localhost routes — is fake and disposable. The only reason it exists is to make one uncomfortable sequence of results reproducible in writing.
