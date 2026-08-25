@@ -37,7 +37,7 @@ tags: [tutorial, coding-assistant, agent-engineering, loop-engineering]
 
 示例场景：在不改变现有兼容性要求的前提下，为一个模块增加一个有上限的重试设置。
 
-[下载经过验证的 Loop / Graph 示例](/examples/loop-graph-engineering-example.zip)。示例只使用 Python 标准库。
+<a href="/examples/loop-graph-engineering-example.zip">下载经过验证的 Loop / Graph 示例</a>。示例只使用 Python 标准库。
 
 运行入口：
 

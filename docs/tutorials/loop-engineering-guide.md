@@ -87,7 +87,7 @@ The example models a small feature change: add a bounded retry setting without c
 
 ## Running the Example
 
-[Download the verified Loop and Graph example](/examples/loop-graph-engineering-example.zip). It uses only the Python standard library. To run the Loop demo:
+<a href="/examples/loop-graph-engineering-example.zip">Download the verified Loop and Graph example</a>. It uses only the Python standard library. To run the Loop demo:
 
 ```bash
 python3 demo.py

@@ -56,7 +56,7 @@ context
        -> review -----> merge -> approval governor
 ```
 
-[Download the verified Loop and Graph example](/examples/loop-graph-engineering-example.zip). It includes the runner, topology, demos, and all 12 behavior tests.
+<a href="/examples/loop-graph-engineering-example.zip">Download the verified Loop and Graph example</a>. It includes the runner, topology, demos, and all 12 behavior tests.
 
 Six nodes. Some run in sequence. `tests` and `review` are independent of each other once implementation finishes — they can run in parallel. Both must complete before `merge`. `merge` feeds into an `approval` governor node that holds final authority.
 

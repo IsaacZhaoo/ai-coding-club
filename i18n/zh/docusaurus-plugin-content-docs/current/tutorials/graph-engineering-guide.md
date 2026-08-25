@@ -40,7 +40,7 @@ context
        -> review -----> merge -> approval governor
 ```
 
-[下载经过验证的 Loop / Graph 示例](/examples/loop-graph-engineering-example.zip)。压缩包包含 runner、拓扑、演示入口和全部 12 项行为测试。
+<a href="/examples/loop-graph-engineering-example.zip">下载经过验证的 Loop / Graph 示例</a>。压缩包包含 runner、拓扑、演示入口和全部 12 项行为测试。
 
 这张图里，`context` 是准备节点；`implementation` 是核心实现 Loop；`tests` 和 `review` 是相互独立的验证节点，可以并行运行；`merge` 等待两者完成后合并状态；`approval` 是治理节点，拥有最终决策权，包括修改整个 Graph 的目标。
 
