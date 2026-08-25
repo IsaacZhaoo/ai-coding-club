@@ -27,6 +27,7 @@ If the Loop and Graph terminology brought you here, start with [Loop Engineering
 | Memory | What should persist, and what should expire? | [Coding Agent Memory](/docs/tutorials/coding-agent-memory/) |
 | Instructions | Which repository rules should always apply here? | [AGENTS.md Guide](/docs/tutorials/agents-md-guide/) |
 | Skills and tools | Which reusable procedures, event controls, and external connections are available? | [Claude Code Skills, Hooks, and MCP](/docs/tutorials/claude-code-skills-hooks-mcp/), then [Agent Skills Testing](/docs/tutorials/agent-skills-testing-guide/) |
+| Interface | Which Agent-requested components and actions may enter live application state? | [A2UI Trusted Host](/docs/tutorials/a2ui-trusted-host/) |
 | Harness | How are context, tools, permissions, memory, execution, and verification assembled around the model? | [Coding Agent Harness Explained](/docs/tutorials/coding-agent-harness-explained/) |
 | Loop | How does one bounded unit of work improve through feedback and know when to stop or escalate? | [Loop Engineering Guide](/docs/tutorials/loop-engineering-guide/) |
 | Graph | How do work units exchange state, run serially or concurrently, veto actions, and govern goal changes? | [Graph Engineering Guide](/docs/tutorials/graph-engineering-guide/) |
