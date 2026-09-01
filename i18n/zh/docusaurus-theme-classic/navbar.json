@@ -47,6 +47,10 @@
     "message": "AI 工具教程",
     "description": "Navbar item with label AI Tools Tutorials"
   },
+  "item.label.Site Growth": {
+    "message": "小站增长",
+    "description": "Navbar item with label Site Growth"
+  },
   "item.label.Resources": {
     "message": "资源",
     "description": "Navbar item with label Resources"

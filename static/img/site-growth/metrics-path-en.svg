@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">Four website measurement points</title>
+  <desc id="desc">Search appearance leads to search click, visit source, and task completion. Search Console and Bing Webmaster Tools measure the search side; GA4 measures the site side.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#172554"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#020617" flood-opacity="0.35"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto">
+      <path d="M0 0L12 6L0 12Z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="360" rx="28" fill="url(#background)"/>
+  <text x="50" y="50" fill="#94a3b8" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="700" letter-spacing="2">SEARCH SIDE</text>
+  <text x="630" y="50" fill="#94a3b8" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="700" letter-spacing="2">SITE SIDE</text>
+  <path d="M280 168H325" stroke="#94a3b8" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M570 168H615" stroke="#94a3b8" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M860 168H905" stroke="#94a3b8" stroke-width="4" marker-end="url(#arrow)"/>
+  <g filter="url(#shadow)" font-family="Inter, system-ui, sans-serif">
+    <rect x="50" y="90" width="230" height="165" rx="20" fill="#172033" stroke="#38bdf8" stroke-width="2"/>
+    <circle cx="86" cy="126" r="17" fill="#0ea5e9"/>
+    <text x="86" y="132" fill="#fff" font-size="16" font-weight="800" text-anchor="middle">1</text>
+    <text x="78" y="176" fill="#f8fafc" font-size="24" font-weight="750">Search appearance</text>
+    <text x="78" y="211" fill="#bae6fd" font-size="17">Impressions · Position</text>
+    <rect x="340" y="90" width="230" height="165" rx="20" fill="#172033" stroke="#38bdf8" stroke-width="2"/>
+    <circle cx="376" cy="126" r="17" fill="#0ea5e9"/>
+    <text x="376" y="132" fill="#fff" font-size="16" font-weight="800" text-anchor="middle">2</text>
+    <text x="368" y="176" fill="#f8fafc" font-size="24" font-weight="750">Search click</text>
+    <text x="368" y="211" fill="#bae6fd" font-size="17">Clicks · CTR</text>
+    <rect x="630" y="90" width="230" height="165" rx="20" fill="#172033" stroke="#a78bfa" stroke-width="2"/>
+    <circle cx="666" cy="126" r="17" fill="#8b5cf6"/>
+    <text x="666" y="132" fill="#fff" font-size="16" font-weight="800" text-anchor="middle">3</text>
+    <text x="658" y="176" fill="#f8fafc" font-size="24" font-weight="750">Visit source</text>
+    <text x="658" y="211" fill="#ddd6fe" font-size="17">Users · Sessions</text>
+    <rect x="920" y="90" width="230" height="165" rx="20" fill="#172033" stroke="#a78bfa" stroke-width="2"/>
+    <circle cx="956" cy="126" r="17" fill="#8b5cf6"/>
+    <text x="956" y="132" fill="#fff" font-size="16" font-weight="800" text-anchor="middle">4</text>
+    <text x="948" y="176" fill="#f8fafc" font-size="24" font-weight="750">Task completion</text>
+    <text x="948" y="211" fill="#ddd6fe" font-size="17">Business events</text>
+  </g>
+  <text x="50" y="309" fill="#7dd3fc" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="650">Search Console · Bing Webmaster Tools</text>
+  <text x="630" y="309" fill="#c4b5fd" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="650">Google Analytics 4 · Configured events</text>
+</svg>
