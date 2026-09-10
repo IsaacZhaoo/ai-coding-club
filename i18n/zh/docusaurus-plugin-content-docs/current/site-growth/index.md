@@ -33,8 +33,10 @@ keywords:
 
 当 Search Console、Bing Webmaster Tools 和 GA4 给出不同数字时，可以先用这张地图判断应该打开哪个后台。
 
-## 后续路径
+## 把报表整理成一张诊断表
 
-下一篇会统一日期范围、时区、搜索类型和筛选条件，再比较不同工具的数据。后面的内容会根据这些已经对齐的观察，选择一个小而可逆的改进动作。
+[GSC 和 GA4 数据怎么对齐？填写四层网站诊断表](./align-search-console-ga4-data.md)帮助你记录日期范围、时区、页面和来源筛选，以及任务事件的定义。跟随空模板和虚构示例，确定下一项需要补充的证据。
+
+后面的内容会根据这些观察，选择一个小而可逆的改进动作。
 
 如果项目还没有进入生产环境，可以先阅读[从原型到生产](/zh/docs/course/building-projects/prototype-to-production/)和[部署你的项目](/zh/docs/course/building-projects/deployment/)。网站开始接待真实访问后，再回到这里。

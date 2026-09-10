@@ -33,8 +33,10 @@ Site Growth is a short learning path for independent site operators and small te
 
 Use it when Search Console, Bing Webmaster Tools, and GA4 show different numbers and you need to decide which dashboard answers your question.
 
-## What comes next
+## Put your reports into a worksheet
 
-The next guide will align date ranges, time zones, search types, and filters before comparing data across tools. Later material will use those aligned observations to choose one small, reversible improvement.
+[Align Search Console and GA4 Data with a Four-Layer Worksheet](./align-search-console-ga4-data.md) helps you record date ranges, time zones, page and source filters, and task-event definitions. Use the blank worksheet and fictional example to identify the next evidence you need.
+
+Later material will use those observations to choose one small, reversible improvement.
 
 If your project has not reached production yet, begin with [From Prototype to Production](/docs/course/building-projects/prototype-to-production/) and [Deploying Your Project](/docs/course/building-projects/deployment/). Return here once the site is available to real visitors.
