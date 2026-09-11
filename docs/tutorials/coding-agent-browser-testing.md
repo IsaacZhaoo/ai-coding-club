@@ -32,7 +32,7 @@ When a Coding Agent modifies frontend code, it typically produces some combinati
 - Does the browser console show an error the tests never touched?
 - Is session state from a prior run leaking into the next one?
 
-These questions live in different evidence layers. A logic-only Node test runs JavaScript logic in isolation; it does not open a real browser, paint a layout, or fire a real network request to a real handler. A static build verifies that the bundler finishes; it does not verify that the finished output renders correctly at any given screen width. An HTTP handler test verifies that a route returns the right status code when called directly; it does not verify that a button on screen calls that route rather than a different one.
+These questions live in different evidence layers. This fixture's Node tests exercise local HTTP routes; they do not open a real browser or paint a layout. This fixture's static build copies source files to `dist`; it does not verify that the finished output renders correctly at any given screen width. An HTTP handler test verifies that a route returns the right status code when called directly; it does not verify that a button on screen calls that route rather than a different one.
 
 The synthetic experiment made all four of those evidence gaps concrete at once, deliberately, so they could be resolved one by one with recorded evidence.
 
@@ -46,7 +46,7 @@ The broken fixture served at this local pattern:
 http://127.0.0.1:4173/?mode=broken&role=editor
 ```
 
-I opened it in a disposable browser session named `ui-lab-broken`, set the viewport to 390 × 844, and took an accessible page snapshot to confirm the intended control was present before touching anything:
+I opened it in a disposable browser session named `ui-lab-broken` (use previously unused names for every session when rerunning), set the viewport to 390 × 844, and took an accessible page snapshot to confirm the intended control was present before touching anything:
 
 ```bash
 agent-browser --session ui-lab-broken open \
@@ -67,13 +67,11 @@ Result:
 ```json
 {
   "innerWidth": 390,
-  "scrollWidth": 632,
-  "role": "Editor",
-  "result": "Retry has not run."
+  "scrollWidth": 632
 }
 ```
 
-[`Window.innerWidth`](https://developer.mozilla.org/en-US/docs/Web/API/Window/innerWidth) is the layout viewport's interior width in pixels. [`Element.scrollWidth`](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollWidth) measures content width including content not visible because of overflow. When the root document's `scrollWidth` is 632 and `innerWidth` is 390, the page has 242 pixels of invisible horizontal overflow. In this fixture, that mismatch directly confirmed that the long identifier the Coding Agent introduced was not wrapping.
+[`Window.innerWidth`](https://developer.mozilla.org/en-US/docs/Web/API/Window/innerWidth) is the layout viewport's interior width in pixels. [`Element.scrollWidth`](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollWidth) measures content width including content not visible because of overflow. When the root document's `scrollWidth` is 632 and `innerWidth` is 390, the page has 242 pixels of invisible horizontal overflow. In this fixture, that mismatch directly confirmed that the long identifier in the deliberately broken fixture was not wrapping.
 
 The two Node tests said nothing about this. They cannot; they have no viewport.
 
@@ -88,6 +86,7 @@ agent-browser --session ui-lab-broken network requests --clear
 agent-browser --session ui-lab-broken console --clear
 agent-browser --session ui-lab-broken click '#retry-button'
 agent-browser --session ui-lab-broken wait 300
+# 300 ms is an observation delay; wait for a final visible Retry result before reading back.
 agent-browser --session ui-lab-broken network requests --filter '/api/orders/' --json
 agent-browser --session ui-lab-broken console --json
 agent-browser --session ui-lab-broken errors --json
@@ -101,7 +100,7 @@ The result was unambiguous. The visible status on the page remained at `Needs at
 POST /api/orders/demo-001/retry-status   →   HTTP 404
 ```
 
-The valid Retry endpoint is `POST /api/orders/demo-001/retry`. The Coding Agent had wired the button to the wrong path. The console showed one controlled synthetic retry error. The page error list was empty. None of this appeared in the test run because the test called the handler directly; it never asked a browser button which URL it intended to use.
+The valid Retry endpoint is `POST /api/orders/demo-001/retry`. The deliberately broken fixture wires the button to the wrong path. The console showed one controlled synthetic retry error. The page error list was empty. None of this appeared in the test run because the test requested the correct route over HTTP; it never asked a browser button which URL it intended to use.
 
 This is the exact failure mode that the existing HTTP tests did not catch: the correct handler exists and passes its test, while the button on screen quietly points somewhere else.
 
@@ -158,7 +157,7 @@ Here is the before/after comparison:
 | Viewport | 390 × 844 | 390 × 844 |
 | Session precondition | Disposable, fresh | Disposable, fresh |
 | Action | Click `#retry-button` | Click `#retry-button` |
-| `scrollWidth` before Retry | 632 | 390 |
+| `scrollWidth` | 632 (before Retry) | 390 (after Retry) |
 | Visible status after Retry | `Needs attention` | `Ready` |
 | Network: route called | `/api/orders/demo-001/retry-status` | `/api/orders/demo-001/retry` |
 | Network: HTTP status | 404 | 200 |
