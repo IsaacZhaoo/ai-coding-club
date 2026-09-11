@@ -14,8 +14,6 @@ tags: [tutorial, coding-assistant, agent-engineering, deepseek, codex]
 
 # DeepSeek V4-Flash 接入 Codex CLI 教程：配置方法、兼容性与开源架构
 
-*作者：有光*
-
 本教程帮你完成一件具体的事：在不覆盖现有 Codex 默认配置的情况下，建立一套可验证、可切换、可回退的 DeepSeek V4-Flash × Codex CLI 配置。完成后，你会新增两个文件——一个 model catalog JSON 和一个 named profile TOML——同时学会如何在任何时候通过普通的 `codex` 命令回到原来的 provider。
 
 配置路径跑通以后，教程会解释 DeepSeek Responses API 兼容性的实际边界，再用五层架构说清开放权重、托管推理、协议、Agent harness 和本地执行各自的替换权与控制边界。

@@ -13,8 +13,6 @@ tags: [tutorial, mcp, agent-engineering, typescript]
 
 # MCP Tool 设计实践：拆边界、写 Schema、处理错误，让 Agent 少猜一步
 
-*作者：有光*
-
 ## 当后端接口碰上 Agent：MCP Tool 的设计视角
 
 有一段时间，我每次打开工程里的 Tool 定义，都会看到这个：

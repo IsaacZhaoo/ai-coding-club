@@ -13,8 +13,6 @@ tags: [tutorial, mcp, agent-engineering, typescript]
 
 # MCP Tool Design Guide: Boundaries, Schemas, and Errors for Agents
 
-*By Youguang*
-
 ## When the Review Layer Is Missing
 
 The pull request looked fine. A single handler, a clean dispatch pattern, two parameters:

@@ -13,8 +13,6 @@ tags: [tutorial, mcp, typescript, agent-engineering]
 
 # TypeScript SDK v2 and MCP 2026-07-28: Two Upgrades, One Often Missed
 
-*By Youguang*
-
 ---
 
 The dependency audit passes. The lockfile is clean. You run `npm outdated`, see nothing alarming, and feel the quiet satisfaction of a codebase that looks current. Then a colleague asks whether your MCP server is on the 2026-07-28 protocol, and you realize you don't actually know. You know the *package* is v2. You don't know what the *wire* says.

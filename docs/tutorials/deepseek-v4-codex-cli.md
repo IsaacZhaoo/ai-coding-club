@@ -14,8 +14,6 @@ tags: [tutorial, coding-assistant, agent-engineering, deepseek, codex]
 
 # DeepSeek V4-Flash with Codex CLI: Setup, Compatibility, and Open Architecture
 
-*By Youguang*
-
 This tutorial has one concrete goal: build a verifiable, switchable, and reversible DeepSeek V4-Flash profile in Codex CLI without touching your existing default configuration. When you finish, you will have added exactly two new files—a model catalog JSON and a named profile TOML—and you will know how to switch back to your original provider at any point by running the ordinary `codex` command.
 
 Once the configuration path is working, the tutorial covers the actual compatibility boundaries of the DeepSeek Responses API, then uses a five-layer architecture breakdown to clarify what you control, what DeepSeek controls, and where the lines are drawn across model weights, hosted inference, protocol, the Agent harness, and local execution.

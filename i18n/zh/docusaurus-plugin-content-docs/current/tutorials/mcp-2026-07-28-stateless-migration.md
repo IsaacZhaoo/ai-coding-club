@@ -13,8 +13,6 @@ tags: [tutorial, mcp, typescript, agent-engineering]
 
 # MCP 2026-07-28 无状态迁移：handler 替换、session 搬迁与新旧路径并存
 
-*作者：有光*
-
 ---
 
 ## 从一个让人短暂放松的假象说起
