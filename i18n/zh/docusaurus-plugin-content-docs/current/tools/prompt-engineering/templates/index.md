@@ -69,10 +69,6 @@ import FAQSchema from '@site/src/components/FAQSchema';
 
 ---
 
-## 🤝 贡献
-
----
-
 ## FAQ
 
 ### 我应该先用哪个模板？

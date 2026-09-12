@@ -69,12 +69,6 @@ Templates for plans, risk checks, and step-by-step execution.
 
 ---
 
-## 🤝 Contribute
-
-Have a great template? [Share it →](https://github.com/IsaacZhaoo/aiCodingClub/discussions)
-
----
-
 ## FAQ
 
 ### Which prompt template should I use first?
