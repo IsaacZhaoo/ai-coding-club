@@ -50,6 +50,17 @@ Templates for plans, risk checks, and step-by-step execution.
 
 ---
 
+## Select a Prompt Template
+
+Pick the entry that best matches the problem you’re solving right now:
+
+- [Acceptance criteria](/docs/tutorials/acceptance-criteria-for-coding-agents/) – Turn a feature request into precise rules, boundary cases, expected results, and a copyable task brief.
+- [Spec-driven development](/docs/tutorials/spec-driven-development-guide/) – Organize a change whose goal is already clear using short specifications, plans, task lists, and checks that follow your project’s conventions.
+- [Testing prompts](/docs/tools/prompt-engineering/templates/testing/) – Choose a template to generate test cases or a test plan; provide code, expected behavior, and the repository’s test tooling to your AI assistant.
+- [Code Review prompts](/docs/tools/prompt-engineering/templates/code-review/) – Provide the goal, latest diff, and completed checks so your AI assistant can review the code and flag issues.
+
+---
+
 ## Read an unfamiliar codebase: trace one command {#read-codebase}
 
 Pick one command in an unfamiliar repository. Before running it, read the source to locate its entry point, trace each call with file and line evidence, and predict its output. Then run it and compare. This exercise uses a small fixed fixture so every step can be checked against the source.

@@ -50,6 +50,24 @@ import FAQSchema from '@site/src/components/FAQSchema';
 
 ---
 
+## 提示词入口选择指南
+
+找到最贴近您当前任务的角色，点击对应链接直达模板：
+
+- [需求与验收条件](/zh/docs/tutorials/acceptance-criteria-for-coding-agents/)  
+  将功能需求拆解为可验证的规则、边界情况、预期结果和可复现的任务说明。
+
+- [SDD（规格驱动开发）](/zh/docs/tutorials/spec-driven-development-guide/)  
+  已有目标但需规划改动：参考短规格、实现计划、任务清单与核验示例，保持项目约定一致。
+
+- [Testing（测试用例与计划）](/zh/docs/tools/prompt-engineering/templates/testing/)  
+  需要测试用例或测试计划：向 AI 助手提供代码片段、预期行为和仓库测试工具，套用对应模板。
+
+- [Code Review（代码审查）](/zh/docs/tools/prompt-engineering/templates/code-review/)  
+  需审查改动：提供目标范围、最新 diff 和已有检查结果，使用审查模板并对照反馈逐项核对。
+
+---
+
 ## 读懂陌生代码库：沿一个命令找到调用链 {#read-codebase}
 
 打开一个陌生的小型代码库时，一个可行的切入点是选定一条命令，从入口函数出发，逐步跟踪它调用了哪些函数、每步做了什么，最后预测输出，再运行验证。
