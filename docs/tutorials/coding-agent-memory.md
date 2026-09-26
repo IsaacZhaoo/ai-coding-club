@@ -40,21 +40,51 @@ I will make these concrete with a continuing example: your team is investigating
 
 ### Layer 1: Durable Project Rules
 
-**What belongs here:** package manager choice, build commands, code style conventions, architectural constraints, "always/never" instructions that apply regardless of what task is running.
+Some instructions are too fundamental to disappear when a specific task closes. These are the durable project rules—the policies that define how your codebase is built, tested, and organized over time. They live separate from task state or temporary context, meant to persist across sessions and even team members.
 
-In the authentication example: the rule that all authentication changes must include integration tests. The rule that you use `pnpm` and never `npm`. The rule that JWT validation lives in `src/auth/` and not in middleware. The requirement to run `pnpm typecheck` before committing.
+**What belongs here:**
 
-These rules do not change with the task. They are true before the authentication regression and they will be true after it. They have no expiry tied to any ticket or sprint.
+Think of this layer as your project’s immutable policy manual for coding agents. It captures decisions that should outlive any single request:
 
-**Who writes it:** the developer or team lead, not the agent. This is deliberate policy.
+- Authentication changes require integration tests.
+- We use `pnpm` rather than `npm`.
+- JWT validation lives in `src/auth/`, not as middleware.
+- We run `pnpm typecheck` before committing.
 
-**Always loaded or on demand:** always loaded. This is what `CLAUDE.md` at the repository root and `AGENTS.md` files are designed for. Anthropic describes `CLAUDE.md` as persistent guidance for project conventions, workflows, architecture, and repeated instructions. Codex reads its layered `AGENTS.md` chain before every task.
+These rules define boundaries and expectations that remain valid regardless of who’s using the agent or what minor task they’re tackling.
 
-**What updates it:** a project decision. A team agrees to change the linter, the test framework, or the module structure. Someone updates the file as a deliberate act.
+**Who writes it:**
 
-**Main failure mode:** staleness combined with authority. If an architectural decision from eighteen months ago is still in `CLAUDE.md` but no longer reflects reality, the agent will treat it as a constraint. I have seen this cause more confusion than a missing rule would. Review durable rules periodically, the same way you review a `Makefile` or a `CI` configuration—not daily, but not never.
+Durable rules are owned by developers and the team, not by any single prompt. They should be:
 
-A short `CLAUDE.md` that is always accurate is worth more than a comprehensive one that cannot be trusted.
+- Proposed by anyone noticing a gap or inconsistency.
+- Approved through the same channel you use for architectural decisions (pull requests, design docs, etc.).
+- Version controlled alongside your code so they evolve with the project.
+
+Treat this layer like living documentation: someone is responsible for updating it whenever policy shifts.
+
+**Always loaded or on demand:**
+
+How these rules surface depends on your tooling:
+
+- **Claude Code:** At launch, it automatically loads human-maintained `CLAUDE.md` guidance from the current working directory and its ancestor directories, while subdirectory-specific files load only when Claude reads relevant content there; these project guidelines serve as static reference material distinct from auto memory, which Claude writes itself to preserve learning across sessions.
+- Codex builds its instruction chain once per run. At the global level, it reads AGENTS.override.md in your Codex home directory if it exists; otherwise it reads AGENTS.md. For each project, it walks from the project root down to your current working directory, letting files closer to your active directory override earlier guidance because they appear later in the combined prompt.
+
+**What updates it:**
+
+Only purposeful changes make it into this layer. Trigger an update when:
+
+- You adopt a new linter, test framework, or module layout.
+- A deliberate architectural shift occurs (e.g., moving from JWT in middleware to `src/auth/`).
+- You discover a pattern causing repeated friction across tasks.
+
+Closing a task does not expire these rules; they persist until intentionally revised.
+
+**Main failure mode:**
+
+Stale rules lingering after the project changes. A common example: an instruction enforcing a legacy architecture that no longer matches the codebase, silently guiding agents into outdated patterns and confusing new contributors.
+
+Keep your durable rules tight and current. When a rule no longer describes how your team actually builds or tests the project, update it—don’t let it drift into shadow. Treat this layer as part of your ongoing maintenance, not a one-time setup.
 
 ---
 
