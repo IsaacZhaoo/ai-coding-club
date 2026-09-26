@@ -166,6 +166,8 @@ When that procedure is specifically a pre-merge review, use the [AI Code Review 
 
 When several Skills compete for similar prompts, continue with the [Agent Skills Testing Guide](/docs/tutorials/agent-skills-testing-guide/) to measure specification health, description overlap, near-miss routing, and real activation records across the whole loadout.
 
+To install and manage a plugin that packages these capabilities, follow [Claude Code Plugins: Install, Verify, Update, and Troubleshoot](/docs/tutorials/claude-code-plugin-lifecycle/).
+
 For a wider progression from first agent task to durable repository workflow, continue with the [AI Coding Agent Beginner Route](/docs/tutorials/ai-coding-agent-beginner-guide/).
 
 ---
