@@ -315,3 +315,4 @@ Claims I am not making: that this toolchain has been validated in production at 
 
 - [AI Code Review Workflow](/docs/tutorials/ai-code-review-workflow/)
 - [AGENTS.md Guide](/docs/tutorials/agents-md-guide/)
+- [How to Turn “Add a Filter” into Clear Acceptance Criteria for a Coding Agent](/docs/tutorials/acceptance-criteria-for-coding-agents/)

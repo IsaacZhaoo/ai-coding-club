@@ -345,3 +345,4 @@ GitHub Spec Kit 给这条链提供了一组具体的工具：五种 Artifact 类
 
 - [AI Code Review 工作流](/zh/docs/tutorials/ai-code-review-workflow/)
 - [AGENTS.md 完整指南](/zh/docs/tutorials/agents-md-guide/)
+- [把“加个筛选”写进验收表，交给 Coding Agent 去跑](/zh/docs/tutorials/acceptance-criteria-for-coding-agents/)

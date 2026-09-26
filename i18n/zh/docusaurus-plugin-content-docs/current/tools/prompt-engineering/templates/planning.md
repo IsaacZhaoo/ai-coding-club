@@ -128,3 +128,6 @@ Bug：
 
 先提澄清问题，并要求先读文件再改动。
 
+## 相关教程
+
+- [把“加个筛选”写进验收表，交给 Coding Agent 去跑](/zh/docs/tutorials/acceptance-criteria-for-coding-agents/)

@@ -128,3 +128,6 @@ Use incremental steps, keep diffs small, and include rollback options.
 
 Ask clarifying questions and request the exact files before changing anything.
 
+## Related Guides
+
+- [How to Turn “Add a Filter” into Clear Acceptance Criteria for a Coding Agent](/docs/tutorials/acceptance-criteria-for-coding-agents/)
