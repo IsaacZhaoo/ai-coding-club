@@ -255,23 +255,119 @@ Optional Spec Kit skills can support clarification and cross-artifact analysis b
 
 ## When This Is Too Heavy
 
-Spec-driven development at the full five-layer depth is not appropriate for every change. Applying it universally will produce bureaucratic friction without proportional benefit.
+You’re already in an existing project, using Spec Kit as your “living spec” and toolset. Now you need to add an `order_status` column to the orders CSV export. The right move isn’t to refactor the whole export pipeline or start a new feature branch. It’s to treat this as a small, bounded change that reuses what already works.
 
-**Use the full sequence when:**
-- The feature has an external API contract or a documented schema.
-- Multiple roles or permission levels are involved.
-- Audit or compliance requirements apply.
-- The feature is large enough that it will be reviewed in parts.
-- The product behavior is genuinely uncertain and product review is needed before engineering begins.
+Below is a proportionate way to describe the change, plan it, create tasks, and verify the result using your project’s existing conventions.
 
-**Use a lighter subset when:**
-- The fix is internally contained with no user-visible behavior change — a spec and tasks may be sufficient, skipping the plan.
-- The feature is a pure visual change with no logic — a spec with acceptance criteria is probably enough.
-- The change is a one-line bug fix with a clear reproduction case — a task and test are appropriate.
+### 1. Describe the Change (spec.md)
 
-You can use `$speckit-specify` to create a specification without immediately completing the rest of the sequence. The value is in the disciplines the artifacts enforce — explicit acceptance criteria, out-of-scope declarations, and reviewable decisions — not in the number of documents you produce.
+Keep the spec tight and versioned. Update `spec.md` with just enough context that a reviewer can understand:
 
-A practical middle path for small features: write a spec with acceptance criteria, get a single product review, skip the plan and go straight to tasks. You still catch the "which users, which fields, which permissions" questions before the agent starts writing.
+- **Intent**: Add `order_status` to the CSV export.
+- **Source**: Derive from the existing source status field on the Order model/entity.
+- **Rules**:
+  - Copy the source status into `order_status`.
+  - Render `N/A` for null or empty status values.
+  - Preserve all existing columns, filters, authorization rules, and scope (e.g., only orders visible to the user).
+- **Impact**:
+  - Changes CSV schema: one additional column.
+  - May affect downstream consumers that validate column count/headers.
+
+Example snippet (add or update):
+
+```markdown
+# Feature: Add order_status column to orders CSV export
+
+**Goal**  
+Expose the current order status directly in CSV exports for reporting and audit use.
+
+**Behavior**  
+- Export includes a new `order_status` column.
+- Value is taken from the source `status` field on Order.
+- Null or empty → "N/A".
+- All existing columns, filters, auth checks, and visibility rules remain unchanged.
+
+**Side Effects**  
+- CSV schema changes: one new header.
+- Consumers expecting a fixed column count may need updates.
+```
+
+If your project keeps immutable feature histories, instead of mutating `spec.md`, create a follow-up directory (e.g., `specs/add-order-status-export/`) and link it in the main spec. The important point: keep the living record consistent with how your team already documents.
+
+### 2. Plan It (plan.md)
+
+In existing projects, plan is short: what we’re changing, why, and how we’ll verify it.
+
+```markdown
+# Plan: Add order_status to orders CSV export
+
+**Problem**:  
+Customers need the current status directly in CSV exports without joining or parsing other fields.
+
+**Approach**:  
+- Extend the existing CSV exporter pipeline with a single transformation step.
+- Reuse the same auth, filtering, and column ordering as before.
+
+**Success Criteria**:  
+- `order_status` appears in every export row.
+- Null/empty statuses show as "N/A".
+- No regression in existing columns, filters, or access control.
+- Downstream CSV consumers that depend on header order/columns are identified and updated.
+
+**Risks**:  
+- Breaking strict header-count expectations in consumers.
+  Mitigation: Update consumer code/docs; run compatibility checks on known integrations.
+```
+
+This is enough detail to guide implementation without over-engineering.
+
+### 3. Create Tasks (tasks.md)
+After the initial Spec Kit run, Spec Kit’s default `tasks` command reads your spec.md and plan.md files to generate a project-specific task list. Populate this generated tasks file with your team’s workflow details: map source status values to your order_status field, define how to display N/A when a status is missing or empty, and note CSV consumer requirements.
+
+### 4. Implement Using Existing Conventions
+
+Because this is a small addition:
+
+- Reuse your current CSV exporter service/module. No need for new dependencies or architecture changes.
+- Apply the transformation step right before serialization:
+  - Map `order.status` → `order_status`.
+  - Normalize null/empty → `"N/A"`.
+- Keep naming and structure consistent with how other columns are handled (same prefixes, same comments, same error handling).
+
+### 5. Verify the Result
+
+Run checks that match your project’s normal verification:
+
+- **Local**:
+  - Trigger an export for test orders with different statuses.
+  - Validate:
+    - `order_status` present in header and every row.
+    - Null/empty values rendered as `N/A`.
+    - No extra columns; no missing ones.
+
+- **Integration**:
+  - If you have snapshot tests or schema validators, update them to include the new column.
+  - If consumers enforce a fixed header order, ensure this change doesn’t break their logic (or update them).
+
+- **Regression**:
+  - Run existing test suite for CSV exports.
+  - Spot-check authorization: ensure users can’t export statuses they shouldn’t see.
+
+### 6. When to Keep It Light vs Formal
+
+Use the amount of documentation based on impact and review needs:
+
+- **Keep this as-is** if:
+  - This is an ordinary local fix/behavioral tweak.
+  - Only CSV schema changes; no new data flows or permissions.
+  - Your team already uses Spec Kit for small, incremental updates.
+
+- **Expand documentation only if**:
+  - Multiple teams consume the export and need change notes.
+  - The addition affects analytics, billing, or legal audit trails.
+  - You want a formal review beyond the usual peer check.
+
+In all cases, align with your project’s established conventions: update spec first, plan briefly, generate tasks, implement minimally, and verify against existing tests and consumers.
 
 ---
 
