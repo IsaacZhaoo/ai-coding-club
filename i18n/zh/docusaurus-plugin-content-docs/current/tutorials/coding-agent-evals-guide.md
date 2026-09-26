@@ -474,3 +474,7 @@ Agent 有随机性。一次 trial 通过不代表每次都通过。Anthropic 的
 *夹具下载：<a href="/examples/coding-agent-eval-gate.zip">/examples/coding-agent-eval-gate.zip</a>*
 *夹具依赖：Python 标准库，无第三方依赖*
 *验证环境：Python 3.12；baseline 来源为 Codex CLI 0.145.0 的保存事件流*
+
+## 延伸阅读
+
+- [为 Agent 工具调用设阈值：用 jevals + 人工标注把“看得到”变成“看得准”](/zh/docs/tutorials/jevals-semantic-calibration/)

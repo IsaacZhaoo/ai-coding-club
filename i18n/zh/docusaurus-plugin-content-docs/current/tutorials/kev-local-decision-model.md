@@ -277,3 +277,5 @@ else:
 
 - [Jev 能帮 Coding Agent 做什么？](/zh/blog/jev-coding-agent-workflow/)
 - [Coding Agent Evals Guide](/zh/docs/tutorials/coding-agent-evals-guide/)
+
+- [为 Agent 工具调用设阈值：用 jevals + 人工标注把“看得到”变成“看得准”](/zh/docs/tutorials/jevals-semantic-calibration/)

@@ -253,3 +253,5 @@ You now have a working local Choice classifier for support tickets on an Apple S
 
 - [Where Jev Fits in a Coding Agent Workflow](/blog/jev-coding-agent-workflow/)
 - [Coding Agent Evals Guide](/docs/tutorials/coding-agent-evals-guide/)
+
+- [Choosing a Semantic Threshold: Using Jevals and Human Labels for Tool Results](/docs/tutorials/jevals-semantic-calibration/)

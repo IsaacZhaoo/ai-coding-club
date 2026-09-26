@@ -409,3 +409,7 @@ The expansion path—more cases, more trials per case, model-based graders with 
 ---
 
 *Download the complete fixture: <a href="/examples/coding-agent-eval-gate.zip">/examples/coding-agent-eval-gate.zip</a>*
+
+## Related Guides
+
+- [Choosing a Semantic Threshold: Using Jevals and Human Labels for Tool Results](/docs/tutorials/jevals-semantic-calibration/)
