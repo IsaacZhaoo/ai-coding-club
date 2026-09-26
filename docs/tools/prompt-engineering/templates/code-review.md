@@ -46,6 +46,8 @@ Output:
 - Suggested follow-ups
 ```
 
+When reviewing pull requests, check that cited file paths and line references match the actual code and the latest diff. Identify the conditions under which the issue appears and what it does when triggered. Clearly separate checks that actually run (with their results) from suggested tests or unverified claims. Mark any missing context as unknown rather than guessing. For readers who need more detail, see [the full AI code review workflow](/docs/tutorials/ai-code-review-workflow/). Remember: a single review finding alone is not proof of correct implementation.
+
 ## 2) Security-focused review
 
 ```text
