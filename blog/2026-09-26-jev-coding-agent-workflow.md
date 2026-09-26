@@ -297,3 +297,7 @@ Jev’s practical value lies in what it enables: a coding agent workflow that is
 It doesn’t replace your generative model; it partners with it. The generative model continues to write code and prose; Jev handles the structured routing, scoring, and evaluation that make those outputs reliable in production.
 
 If your team is already experimenting with agent harnesses or eval pipelines, Jev offers a concrete building block that turns frequent workflow judgments into something you can call, replace, and evaluate separately.
+
+## Related Guides
+
+- [Run Kev Locally: A Choice Classification for Support Tickets (Apple Silicon Tutorial)](/docs/tutorials/kev-local-decision-model/)

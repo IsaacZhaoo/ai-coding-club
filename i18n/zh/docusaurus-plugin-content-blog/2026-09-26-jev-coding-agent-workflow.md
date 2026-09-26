@@ -261,6 +261,7 @@ Jev 在这里非常自然：
 - 本站相关（方便对照已有实践）：  
   - [Coding Agent Harness Explained](https://aicoding.club/zh/docs/tutorials/coding-agent-harness-explained/)  
   - [Coding Agent Evals Guide](https://aicoding.club/zh/docs/tutorials/coding-agent-evals-guide/)
+  - [在本地运行 Kev：用一个 Choice 请求给客服工单分类](/zh/docs/tutorials/kev-local-decision-model/)
 
 ---
 
