@@ -234,6 +234,7 @@ The evidence they produced was more specific than the test run, more specific th
 
 ## Related Guides
 
+- [Call Page Actions with WebMCP and Playwright MCP](/docs/tutorials/webmcp-playwright-tools/)
 - [AI Code Review Workflow](/docs/tutorials/ai-code-review-workflow/)
 - [Coding Agent Evals Guide](/docs/tutorials/coding-agent-evals-guide/)
 - [Coding Agent Observability Guide](/docs/tutorials/coding-agent-observability-guide/)

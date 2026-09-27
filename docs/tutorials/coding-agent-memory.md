@@ -208,6 +208,7 @@ This audit does not require any new tooling. It is a judgment exercise: look at 
 
 ## Related Reading
 
+- [Audit Claude Code Project Instructions with prompt-audit](/docs/tutorials/claude-code-prompt-audit/)
 - [Claude Code Skills, Hooks, and MCP: when should you use each?](/docs/tutorials/claude-code-skills-hooks-mcp/)
 - [Claude Code beginner guide](/docs/tutorials/claude-code-guide/)
 - [AI coding agent beginner route](/docs/tutorials/ai-coding-agent-beginner-guide/)

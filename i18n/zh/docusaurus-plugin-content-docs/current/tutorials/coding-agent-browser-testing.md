@@ -217,3 +217,7 @@ agent-browser --session ui-lab-fixed-editor-01 eval '({ role: document.querySele
 - [Chrome DevTools Network](https://developer.chrome.com/docs/devtools/network)
 - [Chrome DevTools Console](https://developer.chrome.com/docs/devtools/console)
 - [agent-browser — GitHub](https://github.com/vercel-labs/agent-browser)
+
+## 相关阅读
+
+- [通过 WebMCP 与 Playwright MCP 调用页面动作](/zh/docs/tutorials/webmcp-playwright-tools/)

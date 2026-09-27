@@ -212,6 +212,7 @@ deja-vu 这个项目将自己描述为对历史 Agent 会话建立本地索引�
 
 ## 相关阅读
 
+- [用 prompt-audit 检查 Claude Code 项目规则](/zh/docs/tutorials/claude-code-prompt-audit/)
 - [Claude Code 的 Skills、Hooks 和 MCP，到底该怎么选？](/zh/docs/tutorials/claude-code-skills-hooks-mcp/)
 - [Claude Code 新手指南](/zh/docs/tutorials/claude-code-guide/)
 - [AI 编程 Agent 新手路线](/zh/docs/tutorials/ai-coding-agent-beginner-guide/)

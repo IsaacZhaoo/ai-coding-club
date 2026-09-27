@@ -130,3 +130,7 @@ Public leaderboards are a reasonable first filter — they can rule out systems 
 - JetBrains, [announcement of JetBrains Context](https://blog.jetbrains.com/ai/2026/07/introducing-jetbrains-context-repository-intelligence-for-coding-agents/) (2026-07-21) — repository-intelligence layer positioned for coding agents; treat specific performance claims as vendor-reported pending independent verification.
 
 For the full progression around this layer, start with [Coding Agent Engineering: From Prompt to Graph](/docs/agent-engineering/). For the layers this piece deliberately didn't re-teach — [durable memory design](/docs/tutorials/coding-agent-memory/), [sandbox security postures](/docs/tutorials/coding-agent-sandbox-security/), [Skills/Hooks/MCP mechanics](/docs/tutorials/claude-code-skills-hooks-mcp/), [AGENTS.md conventions](/docs/tutorials/agents-md-guide/), and [AI-assisted code review](/docs/tutorials/ai-code-review-workflow/) — see the corresponding AI Coding Club guides. The natural next step from here is hands-on: building a small, repository-specific benchmark so you can evaluate these six layers against your own code instead of a public leaderboard. That's the subject of the next guide.
+
+## Related Guides
+
+- [Build a Persistent Coding Task with the OpenAI Agents API](/docs/tutorials/openai-agents-api-first-task/)
