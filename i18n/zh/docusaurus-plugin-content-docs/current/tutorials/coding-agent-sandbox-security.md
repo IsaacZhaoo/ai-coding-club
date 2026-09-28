@@ -215,3 +215,8 @@ Coding Agent 是强大的工具，Pillar Research 这次研究提醒的不是"�
 - Google Gemini CLI GitHub 仓库：[https://github.com/google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli)
 
 *修复状态说明：本文中涉及的具体修复版本和 CVE 信息，来自 Pillar Research 研究报告和 BleepingComputer 独立报道，非官方 GitHub Security Advisory（GHSA）直接引用。发布前如取得可访问的官方 advisory，建议核对并更新相关条目。*
+
+
+## 相关教程
+
+- [Cloudflare 安全审计 Skill](/zh/docs/tutorials/cloudflare-security-audit-skill/)

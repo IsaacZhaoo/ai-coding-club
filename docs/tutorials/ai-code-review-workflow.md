@@ -234,3 +234,8 @@ An agent should not recommend a merge because the diff looks plausible or the te
 - GitHub Protected Branches: [https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches)
 - Google Engineering Practices — What to Look For in a Code Review: [https://google.github.io/eng-practices/review/reviewer/looking-for.html](https://google.github.io/eng-practices/review/reviewer/looking-for.html)
 - OWASP Code Review Guide: [https://owasp.org/www-project-code-review-guide/](https://owasp.org/www-project-code-review-guide/)
+
+
+## Related Tutorial
+
+- [Cloudflare Security Audit Skill](/docs/tutorials/cloudflare-security-audit-skill/)

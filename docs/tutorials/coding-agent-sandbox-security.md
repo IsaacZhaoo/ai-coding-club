@@ -213,3 +213,8 @@ The boundary the sandbox enforces is meaningful. Know exactly where it ends.
 **Docker security hardening** — Docker's documentation on socket access and daemon privilege: [docs.docker.com/engine/security/](https://docs.docker.com/engine/security/). Relevant for the Docker-socket pattern regardless of specific product findings.
 
 *Patch statements in this article reflect the Pillar Research and BleepingComputer sources. Readers should verify current advisory status through official vendor security channels before drawing conclusions about specific deployments.*
+
+
+## Related Tutorial
+
+- [Cloudflare Security Audit Skill](/docs/tutorials/cloudflare-security-audit-skill/)

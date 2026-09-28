@@ -241,3 +241,8 @@ Unverified assumptions or residual risk:
 - [GitHub — About Protected Branches](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches)
 - [Google Engineering Practices — What to Look For in a Code Review](https://google.github.io/eng-practices/review/reviewer/looking-for.html)
 - [OWASP Code Review Guide](https://owasp.org/www-project-code-review-guide/)
+
+
+## 相关教程
+
+- [Cloudflare 安全审计 Skill](/zh/docs/tutorials/cloudflare-security-audit-skill/)
