@@ -123,3 +123,8 @@ Bug：
 
 主流程 + 多个边界 + 针对 bug 的回归用例。
 
+
+## 延伸阅读
+
+- [审阅 AI 生成的测试](/zh/docs/tutorials/ai-generated-test-review/)
+- [调试深潜](/zh/docs/course/essential-skills/debugging-deep-dive/)

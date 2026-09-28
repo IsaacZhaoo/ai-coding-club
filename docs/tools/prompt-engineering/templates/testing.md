@@ -123,3 +123,8 @@ Ask for deterministic tests, stable fixtures, and no real network/time dependenc
 
 Happy path + multiple edge cases + a regression case for the bug you saw.
 
+
+## Related Guides
+
+- [Review AI-Generated Tests](/docs/tutorials/ai-generated-test-review/)
+- [Debugging Deep Dive](/docs/course/essential-skills/debugging-deep-dive/)
