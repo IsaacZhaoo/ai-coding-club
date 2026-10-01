@@ -268,3 +268,9 @@ Jevgrep 将“行为搜索”这一概念落地为可执行的 CLI 流程。它�
 5.  **赋能**：将整理好的证据直接喂给你的编程 Agent，让它专注于实现修改与测试。
 
 现在，打开你的终端，去扫描那个让你头疼的仓库吧。Jevgrep 会帮你把迷雾拨开一角，剩下的交给代码和 AI 来完成。
+
+## 延伸阅读
+
+- [用 Hermes Agent 阅读仓库](/zh/docs/tutorials/hermes-agent-first-task/)
+- [本地通过、CI 失败排查](/zh/docs/tutorials/ci-local-test-differences/)
+- [AI Code Review 工作流程](/zh/docs/tutorials/ai-code-review-workflow/)

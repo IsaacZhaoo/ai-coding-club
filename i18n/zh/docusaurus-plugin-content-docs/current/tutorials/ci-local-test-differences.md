@@ -173,3 +173,8 @@ AI 的任务是：从候选中选出最可能的，并给出“最小修复”�
 
 > 下一步建议：  
 > 将本文流程固化为你团队的“CI 失败排查模板”，每次遇到 flaky 测试时，先填表、再交 Agent，而不是直接改代码。
+
+## 延伸阅读
+
+- [审阅 AI 生成的测试](/zh/docs/tutorials/ai-generated-test-review/)
+- [调试深潜](/zh/docs/course/essential-skills/debugging-deep-dive/)

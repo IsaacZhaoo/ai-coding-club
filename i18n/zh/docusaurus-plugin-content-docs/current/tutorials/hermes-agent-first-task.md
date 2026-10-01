@@ -350,3 +350,4 @@ hermes tools      # 配置启用的工具（包括 read_file、terminal 等）
 
 - [AI 编程 Agent 新手路线](/zh/docs/tutorials/ai-coding-agent-beginner-guide/)
 - [读懂陌生代码库：沿一个命令找到调用链](/zh/docs/tools/prompt-engineering/templates/#read-codebase)
+- [用 Jevgrep 按行为定位代码](/zh/docs/tutorials/jevgrep-code-discovery/)

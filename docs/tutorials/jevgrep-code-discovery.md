@@ -396,3 +396,9 @@ You now have a repeatable method for turning “I need to find where X happens�
 - Example stdout output: https://github.com/dzhng/jevgrep/blob/c9c70c448842297093e9f1187c493cdf9fa69d7b/specs/done/jevgrep/assets/stdout-example.txt
 
 Keep this page handy. The next time you face an unfamiliar codebase and a well-defined behavior you need, run Jevgrep first—then let your agent do the rest.
+
+## Related Guides
+
+- [Read a Repository with Hermes Agent](/docs/tutorials/hermes-agent-first-task/)
+- [Local Tests Pass, CI Fails](/docs/tutorials/ci-local-test-differences/)
+- [AI Code Review Workflow](/docs/tutorials/ai-code-review-workflow/)

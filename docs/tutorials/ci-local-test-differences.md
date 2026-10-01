@@ -296,3 +296,9 @@ When you treat your local machine and CI as two experiments with different setti
 - [npm ci Documentation](https://docs.npmjs.com/cli/v11/commands/npm-ci)  
 - [Jest Asynchronous Testing](https://jestjs.io/docs/asynchronous)  
 - [Node.js CLI Timezone](https://nodejs.org/api/cli.html#tz)
+
+
+## Related Guides
+
+- [Review AI-Generated Tests](/docs/tutorials/ai-generated-test-review/)
+- [Debugging Deep Dive](/docs/course/essential-skills/debugging-deep-dive/)

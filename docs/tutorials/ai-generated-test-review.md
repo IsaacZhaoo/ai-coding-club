@@ -395,3 +395,4 @@ Happy coding—and testing.
 - [Testing Prompt Templates](/docs/tools/prompt-engineering/templates/testing/)
 - [AI Code Review Workflow](/docs/tutorials/ai-code-review-workflow/)
 - [Debugging Deep Dive](/docs/course/essential-skills/debugging-deep-dive/)
+- [Local Tests Pass, CI Fails](/docs/tutorials/ci-local-test-differences/)

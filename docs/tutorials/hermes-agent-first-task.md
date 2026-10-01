@@ -333,3 +333,4 @@ The next step: try a slightly more advanced task—ask Hermes to propose a small
 
 - [AI Coding Agent Beginner Route](/docs/tutorials/ai-coding-agent-beginner-guide/)
 - [Read an Unfamiliar Codebase with a Concrete Exercise](/docs/tools/prompt-engineering/templates/#read-codebase)
+- [Find Code by Behavior with Jevgrep](/docs/tutorials/jevgrep-code-discovery/)
