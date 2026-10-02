@@ -396,3 +396,4 @@ Happy coding—and testing.
 - [AI Code Review Workflow](/docs/tutorials/ai-code-review-workflow/)
 - [Debugging Deep Dive](/docs/course/essential-skills/debugging-deep-dive/)
 - [Local Tests Pass, CI Fails](/docs/tutorials/ci-local-test-differences/)
+- [Migrate Jest 29 to 30 Without Losing Test Intent](/docs/tutorials/jest-major-version-migration/)

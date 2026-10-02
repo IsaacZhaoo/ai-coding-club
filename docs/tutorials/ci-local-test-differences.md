@@ -302,3 +302,4 @@ When you treat your local machine and CI as two experiments with different setti
 
 - [Review AI-Generated Tests](/docs/tutorials/ai-generated-test-review/)
 - [Debugging Deep Dive](/docs/course/essential-skills/debugging-deep-dive/)
+- [Migrate Jest 29 to 30 Without Losing Test Intent](/docs/tutorials/jest-major-version-migration/)

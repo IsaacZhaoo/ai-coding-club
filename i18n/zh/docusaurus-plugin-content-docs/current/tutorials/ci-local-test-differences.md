@@ -178,3 +178,4 @@ AI 的任务是：从候选中选出最可能的，并给出“最小修复”�
 
 - [审阅 AI 生成的测试](/zh/docs/tutorials/ai-generated-test-review/)
 - [调试深潜](/zh/docs/course/essential-skills/debugging-deep-dive/)
+- [用 AI 升级 Jest 29 到 30，保留测试意图](/zh/docs/tutorials/jest-major-version-migration/)

@@ -369,3 +369,4 @@ AI 通常会回你几组像下面的数据：
 - [AI Code Review 工作流程](/zh/docs/tutorials/ai-code-review-workflow/)
 - [调试深潜](/zh/docs/course/essential-skills/debugging-deep-dive/)
 - [本地通过、CI 失败排查](/zh/docs/tutorials/ci-local-test-differences/)
+- [用 AI 升级 Jest 29 到 30，保留测试意图](/zh/docs/tutorials/jest-major-version-migration/)
