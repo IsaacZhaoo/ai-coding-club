@@ -225,8 +225,8 @@ Give your code-generation agent this short, reusable task description:
   - Use a mock handler that delays by slightly more than that (`1200ms`).
   - Assert that `DOMException` with name `TimeoutError` is thrown and only one request was sent.
 
-> Note: A published example using Ky demonstrates this pattern:  
-> https://github.com/sindresorhus/ky/blob/0d59458a0a58e1c3d7c6db0ab17ed5c7cd671e47/test/main.ts#L977  
+> Note: A published example using Ky demonstrates this pattern:\
+> https://github.com/sindresorhus/ky/blob/0d59458a0a58e1c3d7c6db0ab17ed5c7cd671e47/test/main.ts#L977\
 > It delays a response 2000ms, sets a 1000ms timeout, and asserts `TimeoutError` with `requestCount === 1`. Use it as a reference for structure; your tutorial uses the native Fetch API.
 
 ## Next Steps

@@ -27,9 +27,9 @@ tags: ["tutorial", "agent-engineering"]
 ## 二、用站内工具生成初始客户端
 
 1. 打开 [OpenAPI Client Generator](https://tools.aicoding.club/openapi-client/)
-2. 选择示例：  
-   - Title: `Task API example`  
-   - Operation: `GET /tasks`（operationId: `listTasks`）  
+2. 选择示例：\
+   - Title: `Task API example`\
+   - Operation: `GET /tasks`（operationId: `listTasks`）\
    - Server: `https://api.example.com`（占位）
 3. 导出 TypeScript。
 
