@@ -263,3 +263,4 @@ Use the template above, adapt it to your domain, and you’ll spend significantl
 - [Spec-Driven Development with GitHub Spec Kit](/docs/tutorials/spec-driven-development-guide/)
 - [Testing Prompts](/docs/tools/prompt-engineering/templates/testing/)
 - [AI Code Review Workflow](/docs/tutorials/ai-code-review-workflow/)
+- [Add a Required PostgreSQL Field in Phases](/docs/tutorials/database-required-field-migration/)

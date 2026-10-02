@@ -207,3 +207,4 @@ tags: [tutorial, agent-engineering, workflow]
 - [Spec-Driven Development 与 GitHub Spec Kit](/zh/docs/tutorials/spec-driven-development-guide/)
 - [测试提示词模板](/zh/docs/tools/prompt-engineering/templates/testing/)
 - [AI Code Review 工作流](/zh/docs/tutorials/ai-code-review-workflow/)
+- [用 AI 分阶段迁移 PostgreSQL 必填字段](/zh/docs/tutorials/database-required-field-migration/)

@@ -246,3 +246,4 @@ Unverified assumptions or residual risk:
 ## 相关教程
 
 - [Cloudflare 安全审计 Skill](/zh/docs/tutorials/cloudflare-security-audit-skill/)
+- [用 AI 分阶段迁移 PostgreSQL 必填字段](/zh/docs/tutorials/database-required-field-migration/)

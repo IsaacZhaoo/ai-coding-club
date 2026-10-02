@@ -239,3 +239,4 @@ An agent should not recommend a merge because the diff looks plausible or the te
 ## Related Tutorial
 
 - [Cloudflare Security Audit Skill](/docs/tutorials/cloudflare-security-audit-skill/)
+- [Add a Required PostgreSQL Field in Phases](/docs/tutorials/database-required-field-migration/)
