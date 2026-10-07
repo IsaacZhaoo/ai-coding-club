@@ -1,1167 +1,285 @@
 ---
-title: "Kimi K2 Comprehensive Guide: 2M Context AI for Developers"
-description: "Master Kimi K2 with this complete tutorial. Learn to leverage 2 million token context, API integration, codebase analysis, and cost optimization for Chinese developers."
+title: "Migrating Your Old Kimi K2 or Moonshot V1 Text Script to Kimi K3 (API Only)"
+description: "You want to move it forward: pick the right regional endpoint, swap out retired model IDs, and run one clean, bounded text request with Kimi K3."
 keywords:
-  - Kimi K2
-  - Moonshot AI
-  - long context AI
-  - 2M token context
-  - China AI development
-  - codebase analysis
-  - Kimi API tutorial
+  - "Kimi K2"
+  - "Kimi K3"
+  - "Moonshot V1"
+  - "Kimi API migration"
+  - "regional API endpoints"
+  - "Kimi API tutorial"
 sidebar_position: 4
 tags: [kimi, tutorial, china, long-context]
+last_update:
+  date: 2026-10-07
 ---
 
 import HowToSchema from '@site/src/components/HowToSchema';
 
-# Kimi K2 Comprehensive Guide: 2M Context AI for Developers
-
-**Master Moonshot AI's Kimi K2 - the world's longest context window AI** - From setup to advanced codebase analysis.
+# Migrating Your Old Kimi K2 or Moonshot V1 Text Script to Kimi K3 (API Only)
 
 <HowToSchema
-  name="Get started with Kimi K2"
-  description="A quick workflow to set up and run a first Kimi K2 coding task."
-  totalTime="PT10M"
+  name={"Migrating Your Old Kimi K2 or Moonshot V1 Text Script to Kimi K3 (API Only)"}
+  description={"You want to move it forward: pick the right regional endpoint, swap out retired model IDs, and run one clean, bounded text request with Kimi K3."}
   steps={[
     {
-      name: 'Create a Kimi account',
-      text: 'Register for Kimi and confirm access to K2.',
+        "name": "API key and endpoint",
+        "text": "Create an API key on the correct regional platform (global or China) with billing enabled."
     },
     {
-      name: 'Prepare context',
-      text: 'Collect the files or documents you want to analyze.',
+        "name": "Python environment",
+        "text": "Install the pinned SDK: \"openai==3.26.0\" with Python 3.10+."
     },
     {
-      name: 'Ask a focused prompt',
-      text: 'Describe the goal and provide expected output format.',
+        "name": "Save this script",
+        "text": "Save and run the example script; verify it prints a complete answer without raising errors."
     },
     {
-      name: 'Validate results',
-      text: 'Review changes and test or lint when code is generated.',
-    },
-  ]}
+        "name": "How to understand and verify the result",
+        "text": "Swap in your real prompt and confirm finish_reason == \"stop\" for normal cases."
+    }
+]}
 />
 
-## What You'll Learn
+You have a working Python script that calls the Kimi/Moonshot text-generation API. It uses an old model name like `kimi-k2-0711-preview`, `moonshot-v1-auto`, or even `kimi-k2.5`. You want to move it forward: pick the right regional endpoint, swap out retired model IDs, and run one clean, bounded text request with Kimi K3.
 
-By the end of this guide, you'll be able to:
-- ✅ Set up Kimi K2 API for development in China (no VPN needed)
-- ✅ Leverage 2 million token context for entire project analysis
-- ✅ Analyze 100K+ line codebases in a single request
-- ✅ Process technical documentation and research papers
-- ✅ Implement multimodal analysis (code + images + PDFs)
-- ✅ Optimize costs with efficient context management
-- ✅ Build production-ready applications with Kimi K2
+This tutorial does exactly that. By the end, you will:
 
-**Time investment:** 2-3 hours to master
-**Skill level:** Beginner to Advanced
-**Cost:** ¥168/month (~$24 USD) for unlimited usage
-**Best For:** China-based developers, long-context analysis
+- Understand which models are retired and why your old config won’t work.
+- Configure your regional API key and base URL correctly.
+- Run a complete example that requests a full text answer from Kimi K3.
+- Inspect the response to confirm success and avoid common traps.
+- Spot the one or two changes you need in your own integration to migrate.
 
----
+This covers only a single text request (no images, no tools, no self-hosted deployment). Those have their own guides.
 
-## What is Kimi K2?
+## 1. Background: what’s retired and what’s current
 
-Kimi K2 is the model and API layer. If you want Moonshot AI's current terminal coding agent—or need to migrate from the legacy Kimi CLI—use the [Kimi Code CLI guide](/docs/tutorials/kimi-code-cli-guide/).
+Official documentation lists clear retirement dates:
 
-**Kimi K2** is Moonshot AI's flagship model with the world's longest context window - **2 million tokens** (10x more than GPT-4 Turbo, Claude Opus).
+- The original K2 family was discontinued on **May 25, 2026**. This includes:
+  - `kimi-k2-0711-preview`
+  - `kimi-k2-0905-preview`
+  - `kimi-k2-turbo-preview`
+  - `kimi-k2-thinking`
+  - `kimi-k2-thinking-turbo`
 
-Released November 11, 2024, Kimi K2 is specifically optimized for:
-- 🇨🇳 **Chinese developers** (no VPN, local servers)
-- 📚 **Long-form analysis** (entire codebases, books, documentation)
-- 🖼️ **Multimodal input** (images, PDFs, audio)
-- 💰 **Cost efficiency** (¥168/month unlimited vs $140/month limited)
+- The `moonshot-v1` family (including auto and vision-preview variants) and `kimi-k2.5` were discontinued on **August 31, 2026**. Replacing a retired V1 with a retired K2 ID will not “restore” the old hosted API; it will simply fail.
 
-### Context Window Comparison
+Important nuances:
 
-| Model | Max Context | Equivalent |
-|-------|-------------|------------|
-| **Kimi K2** | 2M tokens | ~1.5M words, 3,000 pages, 200K lines of code |
-| Claude Opus | 200K tokens | ~150K words, 300 pages, 20K lines |
-| GPT-4 Turbo | 128K tokens | ~96K words, 192 pages, 13K lines |
-| Gemini 1.5 | 1M tokens | ~750K words, 1,500 pages, 100K lines |
+- This lifecycle applies to the **official hosted API**. Downloadable weights and third-party deployments have their own availability and policies.
+- K3’s context window is **1,048,576 tokens**, which is larger than K2’s 128K (and K2 Instruct 0905/K2 Thinking at 256K). These are different models. A bigger context is not a promise that you must upload your entire codebase to test it.
+- The retirement of the original K2 family does not mean every later `kimi-k2.x` model is retired. For example, **K2.6** and **K2.7 Code** are separately named current models with their own status.
 
-**Real Example:**
-```bash
-# What fits in Kimi K2's context:
-✅ Entire React/Node.js e-commerce project (80K lines)
-✅ Complete API documentation (500+ endpoints)
-✅ All of "Clean Code" book + your codebase
-✅ 100 LeetCode solutions + explanations
-✅ Your entire master's thesis + related papers
-```
+Migration target: use **`kimi-k3`** for your standard text-generation needs on the official platform.
 
----
+## 2. Prerequisites and regional choice
 
-## Installation and Setup
+You will run this on macOS, Linux, or WSL (Windows Subsystem for Linux). The shell commands below assume a Unix-like environment; adjust path syntax if necessary.
 
-### Step 1: Create Kimi Account (China)
+### Python environment
+
+For this tutorial we pin the OpenAI Python SDK to 3.26.0 as a safe, stable baseline; remember that this package itself requires Python 3.10 or newer, so ensure your base environment meets that threshold before proceeding.
 
 ```bash
-# No VPN required for China users!
-
-# 1. Visit Kimi website
-https://kimi.moonshot.cn
-
-# 2. Sign up with:
-- WeChat (recommended)
-- Phone number (China +86)
-- Email
-
-# 3. Upgrade to K2 subscription
-¥168/month (~$24 USD)
-- Unlimited API calls
-- 2M context window
-- Multimodal support
-- Priority support
+python3 -m venv .venv
+source .venv/bin/activate          # On Windows: .venv\Scripts\activate
+python -m pip install "openai==3.26.0"
 ```
 
-### Step 2: Get API Key
+### API key and endpoint
 
-```python
-# Navigate to API settings
-https://platform.moonshot.cn/console/api-keys
+You must have an API key on the platform you intend to use, with billing available there. A consumer Kimi membership price does not define the cost of this API call.
 
-# Generate new API key
-# Copy and save securely
+- **Global platform**  
+  - Console: https://platform.kimi.ai/console/api-keys  
+  - Endpoint: `https://api.moonshot.ai/v1`  
+  - Published prices in USD
 
-# Set environment variable (Linux/Mac)
-export KIMI_API_KEY="your-api-key-here"
+- **China platform**  
+  - Console: https://platform.kimi.com/console/api-keys  
+  - Endpoint: `https://api.moonshot.cn/v1`  
+  - Published prices in CNY
 
-# Or on Windows
-set KIMI_API_KEY=your-api-key-here
-```
-
-### Step 3: Install SDK
+Your key and endpoint must belong to the same regional platform. Set `MOONSHOT_BASE_URL` to one endpoint only, not both.
 
 ```bash
-# Python SDK (recommended)
-pip install moonshot-sdk
+export MOONSHOT_API_KEY="your-api-key"
+# Global platform
+export MOONSHOT_BASE_URL="https://api.moonshot.ai/v1"
 
-# Or use requests library
-pip install requests
-
-# Node.js SDK
-npm install @moonshot-ai/api
-
-# Test installation
-python -c "import moonshot; print('Kimi SDK installed!')"
+# China platform: replace the endpoint assignment above with this alternative.
+# export MOONSHOT_BASE_URL="https://api.moonshot.cn/v1"
 ```
 
----
+### Save this script
 
-## Example 1: Basic API Integration
+[`kimi_text.py` · `verify_offline.py`](https://github.com/IsaacZhaoo/ai-coding-club/tree/d7fb2c92d1155e73e8fe63a700a114518217ce49/examples/kimi-k3-text)
 
-### Simple Conversation
+Save the following Python code as `kimi_text.py` in your working directory.
 
 ```python
-# kimi_basic.py
 import os
-from moonshot import Moonshot
 
-# Initialize client
-client = Moonshot(api_key=os.environ["KIMI_API_KEY"])
+from openai import OpenAI
 
-def chat_with_kimi(message: str, model: str = "moonshot-v1-128k") -> str:
-    """
-    Send message to Kimi and get response
-
-    Args:
-        message: User message
-        model: Model to use (moonshot-v1-8k, moonshot-v1-32k, moonshot-v1-128k)
-
-    Returns:
-        Kimi's response
-    """
-    response = client.chat.completions.create(
-        model=model,
+with OpenAI(
+    api_key=os.environ["MOONSHOT_API_KEY"],
+    base_url=os.environ["MOONSHOT_BASE_URL"],
+) as client:
+    completion = client.chat.completions.create(
+        model="kimi-k3",
+        reasoning_effort="low",
+        max_completion_tokens=4096,
         messages=[
-            {
-                "role": "system",
-                "content": "你是一位专业的软件工程师，擅长代码分析和架构设计。"
-            },
-            {
-                "role": "user",
-                "content": message
-            }
+            {"role": "user", "content": "Describe a code review in one sentence."}
         ],
-        temperature=0.3,
     )
 
-    return response.choices[0].message.content
+choice = completion.choices[0]
+if choice.finish_reason != "stop" or not choice.message.content:
+    raise RuntimeError(f"No complete text answer: finish_reason={choice.finish_reason}")
 
-
-# Example usage
-if __name__ == "__main__":
-    # Test basic conversation
-    response = chat_with_kimi("""
-    Explain the differences between REST API and GraphQL.
-    Provide code examples in both Python (Flask) and Node.js (Express).
-    Include pros/cons of each approach.
-    """)
-
-    print(response)
-
-    # Output will include:
-    # - Detailed comparison
-    # - Working code examples
-    # - Architecture diagrams (text-based)
-    # - Use case recommendations
+print(choice.message.content)
 ```
 
-**Expected Response:**
-```
-REST API vs GraphQL: Comprehensive Comparison
+Run it with:
 
-1. REST API (Representational State Transfer)
-   Pros: ✅ Simple, cacheable, stateless
-   Cons: ❌ Over-fetching, multiple endpoints
-
-2. GraphQL
-   Pros: ✅ Single endpoint, precise data fetching
-   Cons: ❌ Complex caching, learning curve
-
-[Code examples for both approaches...]
+```bash
+python kimi_text.py
 ```
 
----
+## 3. How to understand and verify the result
 
-## Example 2: Codebase Analysis (2M Context)
+When you run this script correctly:
 
-### Analyze Entire Project
+- You will see a single line of text: Kimi K3’s final answer. Wording varies; this is an actual API call and incurs usage charges.
+- The script checks two conditions:
+  - `finish_reason == "stop"`: ensures the model chose to end naturally instead of truncation, timeout, or policy cutoff.
+  - Nonempty `choice.message.content`: confirms you actually received a response string.
+
+If either check fails, the script raises `RuntimeError` instead of silently printing a partial result.
+
+### Common finish reasons and what they mean
+
+- `stop`: Normal termination by the model. Ideal outcome for a bounded text request.
+- `length`: The completion hit its token budget (`max_completion_tokens`). This does **not** mean “successful” if you expected a full answer. Our script raises to flag this case.
+- `content_filter` or similar: Indicates policy-level behavior (e.g., safety filters). Check the platform’s error docs for specifics.
+
+### Tuning the completion budget
+
+The example uses:
 
 ```python
-# analyze_codebase.py
-import os
-from pathlib import Path
-from moonshot import Moonshot
-
-def load_entire_codebase(directory: str, extensions: list = None) -> dict:
-    """
-    Load all code files from directory tree
-
-    Args:
-        directory: Root directory
-        extensions: File extensions to include (default: common code files)
-
-    Returns:
-        Dictionary of {filepath: content}
-    """
-    if extensions is None:
-        extensions = [
-            '.py', '.js', '.jsx', '.ts', '.tsx',
-            '.java', '.go', '.rs', '.rb', '.php',
-            '.html', '.css', '.scss', '.sql',
-            '.json', '.yaml', '.yml', '.md'
-        ]
-
-    codebase = {}
-    total_size = 0
-
-    for ext in extensions:
-        for file_path in Path(directory).rglob(f'*{ext}'):
-            # Skip common ignored directories
-            if any(ignore in str(file_path) for ignore in
-                   ['node_modules', 'venv', '__pycache__', 'dist', 'build', '.git']):
-                continue
-
-            try:
-                with open(file_path, 'r', encoding='utf-8') as f:
-                    content = f.read()
-                    relative_path = file_path.relative_to(directory)
-                    codebase[str(relative_path)] = content
-                    total_size += len(content)
-            except Exception as e:
-                print(f"Skipping {file_path}: {e}")
-
-    print(f"\n📊 Loaded Codebase Statistics:")
-    print(f"   Files: {len(codebase)}")
-    print(f"   Total characters: {total_size:,}")
-    print(f"   Estimated tokens: {total_size // 4:,}")  # Rough estimate
-
-    return codebase
-
-
-def analyze_with_kimi(codebase: dict, analysis_tasks: list) -> dict:
-    """
-    Analyze entire codebase with Kimi K2's 2M context
-
-    Args:
-        codebase: Dictionary of file contents
-        analysis_tasks: List of analysis questions
-
-    Returns:
-        Dictionary of {task: result}
-    """
-    client = Moonshot(api_key=os.environ["KIMI_API_KEY"])
-
-    # Format codebase for Kimi
-    formatted_codebase = "\n\n".join([
-        f"{'='*60}\n文件: {filepath}\n{'='*60}\n{content}"
-        for filepath, content in codebase.items()
-    ])
-
-    print(f"\n🚀 Sending to Kimi K2...")
-    print(f"   Context size: {len(formatted_codebase):,} characters")
-
-    results = {}
-
-    for task in analysis_tasks:
-        print(f"\n📝 Analyzing: {task}")
-
-        response = client.chat.completions.create(
-            model="moonshot-v1-128k",  # Use 128k for most codebases
-            messages=[
-                {
-                    "role": "system",
-                    "content": f"""你是一位资深软件架构师。以下是完整的代码库内容：
-
-{formatted_codebase}
-
-请基于整个代码库的上下文进行分析。"""
-                },
-                {
-                    "role": "user",
-                    "content": task
-                }
-            ],
-            temperature=0.3,
-        )
-
-        results[task] = response.choices[0].message.content
-        print(f"   ✅ Complete")
-
-    return results
-
-
-# Example usage
-if __name__ == "__main__":
-    # Load your entire project
-    project_path = "./my-react-app"  # Change to your project
-    codebase = load_entire_codebase(project_path)
-
-    # Define analysis tasks
-    tasks = [
-        """
-        1. 分析整体架构模式（MVC、MVVM等）
-        2. 列出所有 API 端点及其用途
-        3. 识别状态管理方案（Redux、Context、Zustand等）
-        4. 找出所有未使用的组件和函数
-        5. 检测潜在的性能瓶颈
-        """,
-
-        """
-        安全审计：
-        1. SQL 注入风险点
-        2. XSS 漏洞
-        3. 未验证的用户输入
-        4. 硬编码的密钥或密码
-        5. 缺少身份验证的路由
-        """,
-
-        """
-        代码质量评估：
-        1. 代码重复度（DRY 原则）
-        2. 函数复杂度（圈复杂度）
-        3. 命名规范一致性
-        4. 错误处理完整性
-        5. 测试覆盖率缺口
-        """,
-    ]
-
-    # Analyze with Kimi K2
-    results = analyze_with_kimi(codebase, tasks)
-
-    # Save results
-    with open("kimi_analysis_report.md", "w", encoding="utf-8") as f:
-        for task, result in results.items():
-            f.write(f"## 分析任务\n\n{task}\n\n")
-            f.write(f"## 分析结果\n\n{result}\n\n")
-            f.write(f"{'='*80}\n\n")
-
-    print("\n✅ Analysis complete! Report saved to kimi_analysis_report.md")
+max_completion_tokens=4096
 ```
 
-**Real Results on 80K-line Project:**
-```markdown
-## Architecture Analysis
-
-Overall Pattern: **Feature-based Modular Architecture**
-
-Found patterns:
-- 📁 15 feature modules (auth, products, cart, checkout, etc.)
-- 🔄 Redux Toolkit for global state
-- 🎣 React Query for server state
-- 🧩 Component composition with HOCs
+This is a starting allowance, not a guarantee of 4096 visible tokens. K3 always engages reasoning, and that reasoning consumes from the completion allowance as well. If you see truncated or oddly cut-off output:
 
-API Endpoints (23 total):
-1. POST /api/auth/login - User authentication
-2. GET /api/products - Fetch product catalog
-3. POST /api/cart/add - Add item to cart
-[... 20 more endpoints with descriptions]
+- Increase `max_completion_tokens`.
+- Simplify the prompt to reduce necessary reasoning steps.
+- Inspect whether the response includes long internal monologue you don’t need in your final output.
 
-## Unused Components (12 found)
-1. src/components/OldUserModal.jsx - Replaced by UserDrawer
-2. src/utils/deprecatedHelpers.js - No imports found
-[... 10 more unused files]
+### Reasoning effort parameter
 
-## Performance Issues (5 critical)
-1. ⚠️ src/pages/Dashboard.jsx:45
-   - Fetching data on every render (missing dependency array)
-   - Solution: Add [userId] to useEffect dependency
+Top-level `reasoning_effort` accepts:
 
-2. ⚠️ src/components/ProductList.jsx:120
-   - Map without keys
-   - Solution: Add key={product.id}
-[... 3 more issues with solutions]
-```
+- `"low"`
+- `"high"`
+- `"max"` (default)
 
----
+This small example explicitly sets `reasoning_effort="low"` because we only ask for a single clear sentence. It is **not** an off switch for reasoning; it adjusts the intensity of internal thought before generating the final text.
 
-## Example 3: Document Q&A System
+For simple queries, low effort can reduce token usage and latency while preserving clarity. For complex tasks (multi-step logic, code generation, research summarization), you may want `"high"` or `"max"`.
 
-### Technical Documentation Analysis
+### Removing legacy parameters
 
-```python
-# document_qa.py
-import os
-from moonshot import Moonshot
+When moving from older clients or homegrown wrappers, you will likely see:
 
-def analyze_documentation(doc_path: str, questions: list) -> dict:
-    """
-    Load large PDF/text documentation and answer questions
+- `temperature=0.2` or `0.3`
+- Custom `top_p`, `n`, presence/frequency penalties
 
-    Perfect for:
-    - API documentation
-    - Technical specifications
-    - Research papers
-    - Manuals and guides
-
-    Args:
-        doc_path: Path to document file
-        questions: List of questions about the document
-
-    Returns:
-        Dictionary of {question: answer}
-    """
-    client = Moonshot(api_key=os.environ["KIMI_API_KEY"])
-
-    # Load document
-    with open(doc_path, 'r', encoding='utf-8') as f:
-        document_content = f.read()
-
-    print(f"📄 Document loaded: {len(document_content):,} characters")
-    print(f"   Estimated pages: {len(document_content) // 2000}")
-
-    answers = {}
-
-    for i, question in enumerate(questions, 1):
-        print(f"\n❓ Question {i}/{len(questions)}: {question[:60]}...")
-
-        response = client.chat.completions.create(
-            model="moonshot-v1-128k",
-            messages=[
-                {
-                    "role": "system",
-                    "content": f"""你是一位技术文档专家。以下是完整文档内容：
-
-{document_content}
-
-请基于文档内容准确回答问题，并引用具体章节。"""
-                },
-                {
-                    "role": "user",
-                    "content": question
-                }
-            ],
-            temperature=0.2,  # Lower temperature for factual answers
-        )
-
-        answers[question] = response.choices[0].message.content
-        print(f"   ✅ Answered")
-
-    return answers
-
-
-# Example usage: AWS SDK Documentation
-if __name__ == "__main__":
-    # Example: Analyze AWS SDK documentation
-    doc_path = "aws_sdk_documentation.txt"  # Your documentation file
-
-    questions = [
-        "如何使用 AWS SDK 创建 S3 bucket 并设置生命周期策略？提供完整的 Python 代码示例。",
-
-        "S3 presigned URL 的工作原理是什么？如何生成一个 7 天有效期的上传 URL？",
-
-        "如何配置 CloudFront CDN 分发来加速 S3 内容？需要哪些步骤？",
-
-        "在浏览器中直接上传文件到 S3 需要如何配置 CORS？提供配置示例。",
-
-        "列出所有 S3 存储类别（Standard, IA, Glacier等）的定价和使用场景。",
-    ]
-
-    # Get answers from Kimi
-    answers = analyze_documentation(doc_path, questions)
-
-    # Display results
-    for question, answer in answers.items():
-        print(f"\n{'='*80}")
-        print(f"Q: {question}")
-        print(f"\nA: {answer}")
-```
-
-**Example Output:**
-```python
-Q: 如何使用 AWS SDK 创建 S3 bucket 并设置生命周期策略？
-
-A: 基于文档第 234-267 页，以下是完整实现：
-
-import boto3
-from botocore.exceptions import ClientError
-
-def create_bucket_with_lifecycle(bucket_name: str, region: str = 'us-east-1'):
-    """
-    创建 S3 bucket 并配置生命周期策略
-
-    生命周期策略：
-    - 30 天后转移到 Standard-IA
-    - 90 天后转移到 Glacier
-    - 365 天后删除
-    """
-    s3_client = boto3.client('s3', region_name=region)
-
-    try:
-        # 1. 创建 bucket
-        if region == 'us-east-1':
-            s3_client.create_bucket(Bucket=bucket_name)
-        else:
-            s3_client.create_bucket(
-                Bucket=bucket_name,
-                CreateBucketConfiguration={'LocationConstraint': region}
-            )
-
-        print(f"✅ Bucket '{bucket_name}' created")
-
-        # 2. 设置生命周期策略
-        lifecycle_policy = {
-            'Rules': [
-                {
-                    'Id': 'Move to IA after 30 days',
-                    'Status': 'Enabled',
-                    'Transitions': [
-                        {
-                            'Days': 30,
-                            'StorageClass': 'STANDARD_IA'
-                        },
-                        {
-                            'Days': 90,
-                            'StorageClass': 'GLACIER'
-                        }
-                    ],
-                    'Expiration': {'Days': 365},
-                    'Filter': {'Prefix': ''}  # Apply to all objects
-                }
-            ]
-        }
-
-        s3_client.put_bucket_lifecycle_configuration(
-            Bucket=bucket_name,
-            LifecycleConfiguration=lifecycle_policy
-        )
-
-        print(f"✅ Lifecycle policy configured")
-
-        return True
-
-    except ClientError as e:
-        print(f"❌ Error: {e}")
-        return False
-
-# 使用示例
-create_bucket_with_lifecycle('my-data-bucket', 'us-west-2')
-
-参考：AWS SDK 文档第 234 页（创建 bucket），第 256 页（生命周期配置）
-```
-
----
-
-## Example 4: Multimodal Code Generation
-
-### UI Mockup to Code
-
-```python
-# multimodal_codegen.py
-import os
-import base64
-from moonshot import Moonshot
-
-def image_to_code(image_path: str, requirements: str) -> str:
-    """
-    Convert UI mockup image to production code
-
-    Args:
-        image_path: Path to UI design (PNG, JPG)
-        requirements: Specific implementation requirements
-
-    Returns:
-        Generated code
-    """
-    client = Moonshot(api_key=os.environ["KIMI_API_KEY"])
-
-    # Read and encode image
-    with open(image_path, 'rb') as f:
-        image_data = base64.b64encode(f.read()).decode('utf-8')
-
-    print(f"🖼️ Processing image: {image_path}")
-
-    response = client.chat.completions.create(
-        model="moonshot-v1-128k",
-        messages=[
-            {
-                "role": "user",
-                "content": [
-                    {
-                        "type": "image",
-                        "image": image_data
-                    },
-                    {
-                        "type": "text",
-                        "text": f"""
-基于这个 UI 设计图生成代码。
-
-要求：
-{requirements}
-
-请提供：
-1. 完整的组件代码
-2. 样式（Tailwind CSS）
-3. 状态管理逻辑
-4. API 集成示例
-5. 响应式设计支持
-"""
-                    }
-                ]
-            }
-        ],
-        temperature=0.3,
-    )
-
-    return response.choices[0].message.content
-
-
-# Example usage
-if __name__ == "__main__":
-    code = image_to_code(
-        image_path="ui_mockup_dashboard.png",
-        requirements="""
-        - React + TypeScript
-        - Tailwind CSS for styling
-        - Chart.js for graphs
-        - React Query for data fetching
-        - Mobile responsive
-        - Dark mode support
-        """
-    )
-
-    print("\n" + "="*80)
-    print("Generated Code:")
-    print("="*80)
-    print(code)
-
-    # Save to file
-    with open("generated_dashboard.tsx", "w") as f:
-        f.write(code)
-
-    print("\n✅ Code saved to generated_dashboard.tsx")
-```
-
----
-
-## Example 5: Migration Assistant
-
-### Legacy Code Migration with Context
-
-```python
-# migration_assistant.py
-import os
-from pathlib import Path
-from moonshot import Moonshot
-
-def create_migration_plan(
-    legacy_path: str,
-    target_stack: str,
-    business_priorities: list
-) -> dict:
-    """
-    Analyze legacy codebase and create migration plan
-
-    Perfect for:
-    - PHP to Node.js
-    - JavaScript to TypeScript
-    - Monolith to Microservices
-    - Class components to Hooks
-
-    Args:
-        legacy_path: Path to legacy codebase
-        target_stack: Target technology stack
-        business_priorities: Ordered list of features by priority
-
-    Returns:
-        Comprehensive migration plan
-    """
-    client = Moonshot(api_key=os.environ["KIMI_API_KEY"])
-
-    # Load entire legacy codebase
-    legacy_code = {}
-    for file_path in Path(legacy_path).rglob('*'):
-        if file_path.is_file():
-            try:
-                with open(file_path, 'r', encoding='utf-8') as f:
-                    relative_path = file_path.relative_to(legacy_path)
-                    legacy_code[str(relative_path)] = f.read()
-            except:
-                pass
-
-    print(f"📦 Loaded {len(legacy_code)} legacy files")
-
-    # Format for analysis
-    formatted_code = "\n\n".join([
-        f"=== {path} ===\n{content}"
-        for path, content in legacy_code.items()
-    ])
-
-    priorities_text = "\n".join([f"{i+1}. {p}" for i, p in enumerate(business_priorities)])
-
-    prompt = f"""
-分析这个遗留代码库并创建详细的迁移计划。
-
-目标技术栈：{target_stack}
-
-业务优先级：
-{priorities_text}
-
-遗留代码库：
-{formatted_code}
-
-请提供：
-
-1. **模块识别**
-   - 列出所有独立的功能模块
-   - 每个模块的代码行数
-   - 模块间的依赖关系
-
-2. **迁移策略**
-   - 建议的迁移顺序（基于业务优先级和技术依赖）
-   - 每个阶段的范围和目标
-   - 风险评估（高/中/低）
-
-3. **技术方案**
-   - 对应的新技术栈实现方式
-   - 数据库迁移策略
-   - API 兼容性方案
-
-4. **工作量估算**
-   - 每个模块的开发时间
-   - 测试时间
-   - 部署和回滚计划
-
-5. **示例代码**
-   - 关键模块的迁移前后对比
-   - 新技术栈的实现示例
-"""
-
-    response = client.chat.completions.create(
-        model="moonshot-v1-128k",
-        messages=[
-            {"role": "user", "content": prompt}
-        ],
-        temperature=0.3,
-    )
-
-    return {
-        "analysis": response.choices[0].message.content,
-        "legacy_files": len(legacy_code),
-        "target_stack": target_stack
-    }
-
-
-# Example usage
-if __name__ == "__main__":
-    plan = create_migration_plan(
-        legacy_path="./legacy_php_app",
-        target_stack="Node.js + Express + TypeScript + PostgreSQL + React",
-        business_priorities=[
-            "用户认证系统（最关键，10万日活用户）",
-            "产品目录和搜索（核心业务）",
-            "购物车和结账流程（直接影响收入）",
-            "订单管理系统",
-            "用户个人资料和设置",
-            "管理后台（内部使用，优先级较低）",
-        ]
-    )
-
-    print(plan["analysis"])
-
-    # Save to file
-    with open("migration_plan.md", "w", encoding="utf-8") as f:
-        f.write(f"# Migration Plan\n\n")
-        f.write(f"**Legacy Files Analyzed:** {plan['legacy_files']}\n")
-        f.write(f"**Target Stack:** {plan['target_stack']}\n\n")
-        f.write(plan["analysis"])
-
-    print("\n✅ Migration plan saved to migration_plan.md")
-```
-
-**Example Output:**
-```markdown
-# Migration Plan: PHP to Node.js
-
-## 1. Module Identification (15 modules found)
-
-### High Priority Modules
-1. **User Authentication** (3,245 lines)
-   - Files: auth.php, login.php, session.php
-   - Dependencies: Database (users table), Redis (sessions)
-   - Migration Priority: **CRITICAL**
-   - Risk: MEDIUM (shared session state)
-
-2. **Product Catalog** (8,521 lines)
-   - Files: products/, catalog/, search.php
-   - Dependencies: MySQL (products, categories), Elasticsearch
-   - Migration Priority: **HIGH**
-   - Risk: LOW (isolated functionality)
-
-[... 13 more modules]
-
-## 2. Recommended Migration Sequence
-
-### Phase 1: Foundation (Weeks 1-4)
-**Scope:** User Authentication System
-
-Strategy: Strangler Fig Pattern
-1. Deploy new Node.js auth service alongside PHP
-2. Implement dual-write for new users
-3. Gradually migrate existing users
-4. Switch traffic using feature flag
-5. Deprecate PHP auth module
-
-Estimated Effort: 3 weeks
-Risk Mitigation: Keep PHP auth as fallback for 2 weeks
-
-### Phase 2: Core Business (Weeks 5-10)
-**Scope:** Product Catalog + Search
-
-[... detailed plan for 6 months]
-
-## 3. Code Examples
-
-### Before (PHP):
-\`\`\`php
-// auth.php - Legacy authentication
-function authenticate($email, $password) {
-    global $db;
-    $stmt = $db->prepare("SELECT * FROM users WHERE email = ?");
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $user = $stmt->get_result()->fetch_assoc();
-
-    if ($user && md5($password) === $user['password']) {
-        $_SESSION['user_id'] = $user['id'];
-        return true;
-    }
-    return false;
-}
-\`\`\`
-
-### After (Node.js + TypeScript):
-\`\`\`typescript
-// auth.service.ts - Modern implementation
-import bcrypt from 'bcrypt';
-import jwt from 'jsonwebtoken';
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
-
-export async function authenticate(
-  email: string,
-  password: string
-): Promise<{ token: string; user: User } | null> {
-  // Find user
-  const user = await prisma.user.findUnique({
-    where: { email }
-  });
-
-  if (!user) return null;
-
-  // Verify password (bcrypt instead of md5!)
-  const isValid = await bcrypt.compare(password, user.passwordHash);
-
-  if (!isValid) return null;
-
-  // Generate JWT token
-  const token = jwt.sign(
-    { userId: user.id, email: user.email },
-    process.env.JWT_SECRET!,
-    { expiresIn: '24h' }
-  );
-
-  return { token, user };
-}
-\`\`\`
-
-**Improvements:**
-- ✅ Secure password hashing (bcrypt vs md5)
-- ✅ JWT tokens (stateless vs sessions)
-- ✅ TypeScript type safety
-- ✅ Modern async/await
-- ✅ ORM (Prisma) instead of raw SQL
-```
-
----
-
-## Best Practices for 2M Context
-
-### 1. Context Organization
-
-```python
-# ❌ Bad: Unstructured context
-all_files = "".join(codebase.values())  # Hard to navigate
-
-# ✅ Good: Structured context
-structured_context = """
-项目结构：
-{tree_structure}
-
-核心模块：
-=== 认证模块 ===
-{auth_files}
-
-=== API 层 ===
-{api_files}
-
-=== 数据模型 ===
-{model_files}
-"""
-```
-
-### 2. Cost Optimization
-
-```python
-# Kimi K2 pricing strategy
-
-# For one-time analysis: Use web interface (¥168/month unlimited)
-# For frequent API calls: Use API (pay per token)
-
-# Token estimation
-def estimate_cost(text: str) -> float:
-    """
-    Estimate Kimi K2 API cost
-
-    Pricing (as of Nov 2024):
-    - Input: ¥0.012 per 1K tokens
-    - Output: ¥0.012 per 1K tokens
-    """
-    tokens = len(text) / 4  # Rough estimate (1 token ≈ 4 chars)
-    input_cost = (tokens / 1000) * 0.012
-    output_cost = (2000 / 1000) * 0.012  # Assume 2K output
-
-    return input_cost + output_cost
-
-
-# Example
-codebase_size = 200_000  # 200K characters
-cost = estimate_cost("x" * codebase_size)
-print(f"Estimated cost: ¥{cost:.2f} (~${cost/7:.2f} USD)")
-# Output: ¥0.60 (~$0.09 USD) per analysis
-```
-
-### 3. Caching Strategy
-
-```python
-# Cache frequently used context locally
-
-import json
-import hashlib
-
-def cache_analysis(context: str, question: str, result: str):
-    """Cache Kimi analysis results locally"""
-    cache_key = hashlib.md5(f"{context}{question}".encode()).hexdigest()
-
-    cache = {}
-    try:
-        with open('.kimi_cache.json', 'r') as f:
-            cache = json.load(f)
-    except:
-        pass
-
-    cache[cache_key] = {
-        'question': question,
-        'result': result,
-        'timestamp': time.time()
-    }
-
-    with open('.kimi_cache.json', 'w') as f:
-        json.dump(cache, f)
-
-
-def get_cached_analysis(context: str, question: str):
-    """Get cached result if available"""
-    cache_key = hashlib.md5(f"{context}{question}".encode()).hexdigest()
-
-    try:
-        with open('.kimi_cache.json', 'r') as f:
-            cache = json.load(f)
-            if cache_key in cache:
-                # Cache valid for 7 days
-                if time.time() - cache[cache_key]['timestamp'] < 604800:
-                    return cache[cache_key]['result']
-    except:
-        pass
-
-    return None
-```
-
----
-
-## China-Specific Advantages
-
-### 1. No VPN Required
-
-```python
-# ✅ Works directly in China
-import requests
-
-response = requests.post(
-    "https://api.moonshot.cn/v1/chat/completions",  # China servers!
-    headers={"Authorization": f"Bearer {kimi_api_key}"},
-    json={"model": "moonshot-v1-128k", "messages": [...]}
-)
-
-# vs
-
-# ❌ Requires VPN in China
-response = requests.post(
-    "https://api.openai.com/v1/chat/completions",  # Blocked
-    ...
-)
-```
-
-### 2. Chinese Language Optimization
-
-```python
-# Kimi K2 excels at Chinese + English mixed content
-
-analysis = chat_with_kimi("""
-请分析这段代码的性能问题：
-
-function processUserData(users) {
-    return users.map(user => {
-        const profile = fetchProfile(user.id);  // N+1 query!
-        const posts = fetchPosts(user.id);      // N+1 query!
-        return { ...user, profile, posts };
-    });
-}
-
-用中文解释问题，并提供优化后的英文代码。
-""")
-
-# Kimi K2 understands context perfectly:
-# - Identifies N+1 query pattern
-# - Explains in Chinese
-# - Provides optimized English code
-```
-
-### 3. Cost Efficiency for China Developers
-
-| Feature | Kimi K2 (¥168/月) | GPT-4 Turbo ($140/月) | Claude Pro ($140/月) |
-|---------|-------------------|----------------------|---------------------|
-| Monthly cost | ~$24 USD | $140 USD | $140 USD |
-| Context window | 2M tokens | 128K tokens | 200K tokens |
-| Unlimited usage | ✅ Yes | ❌ Limited | ❌ Limited |
-| China access | ✅ No VPN | ❌ VPN required | ❌ VPN required |
-| Chinese support | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐ |
-
-**Best Value:** Kimi K2 is 6x cheaper with 10x more context!
-
----
-
-## Real-World Use Cases
-
-### Use Case 1: Interview Preparation
-
-```python
-# Upload all LeetCode solutions + study notes
-prepare_interview = """
-我上传了：
-1. 200 道已解决的 LeetCode 题目及笔记
-2. 算法备忘单
-3. 薄弱领域文档
-
-请分析我的解题模式并：
-1. 识别知识盲区
-2. 推荐 20 道练习题
-3. 创建逐周学习计划
-4. 生成我可能会困难的面试样题
-"""
-```
-
-### Use Case 2: Research Paper Analysis
-
-```python
-# Analyze multiple research papers simultaneously
-research_analysis = """
-我上传了 5 篇关于 Transformer 架构的研究论文（共 150 页）：
-1. "Attention Is All You Need" (original paper)
-2. BERT
-3. GPT-3
-4. LLaMA
-5. Mistral 7B
-
-请：
-1. 总结每篇论文的核心创新
-2. 比较架构差异
-3. 绘制演进时间线
-4. 解释关键数学公式
-5. 提供 PyTorch 实现示例
-"""
-```
-
-### Use Case 3: Code Review at Scale
-
-```python
-# Review massive pull requests
-large_pr_review = """
-PR #456: 重构支付处理模块
-
-更改：
-- 100 个文件修改
-- +5,234 行，-3,891 行
-
-请审查：
-1. 破坏性变更（API 兼容性）
-2. 性能回归（对比新旧代码）
-3. 安全问题（PCI 合规）
-4. 测试覆盖率缺口
-5. 需要更新的文档
-
-标记任何会导致 CI 检查失败的问题。
-"""
-```
-
----
-
-## 🔗 Resources
-
-- [Kimi Official Website](https://kimi.moonshot.cn) - Sign up and access web interface
-- [Kimi API Documentation](https://platform.moonshot.cn/docs) - Complete API reference
-- [Kimi Community Forum](https://community.moonshot.cn) - Get help from other developers
-- Kimi K2 Release Announcement (Coming in Phase 2) - Full feature details
-- [AI Coding Tools Comparison](/docs/tools/ai-coding-tools-extended) - Compare with other tools
-- [Claude Code Guide](/docs/tutorials/claude-code-guide) - Alternative for global developers
-
----
-
-**Last Updated:** 2025-11-10 | **Difficulty:** Beginner to Advanced | **Time:** 2-3 hours
-
-*Developing from China? Kimi K2 is the best choice for long-context analysis without VPN. Compare with [Claude Code](/docs/tutorials/claude-code-guide) and other [AI coding tools](/docs/tools/ai-coding-tools-extended).*
+Kimi K3 standardizes its chat behavior around fixed generation parameters rather than letting you freely override them. The official defaults are:
+
+- temperature=1.0
+- top_p=0.95, n=1, presence_penalty=0, frequency_penalty=0
+
+Drop these legacy overrides and let the API use the model’s tuned settings instead.
+
+### SDK vs old client libraries
+
+This integration uses:
+
+- The official OpenAI Python SDK
+- Your chosen `base_url` and `api_key` environment variables
+
+Do **not** use the legacy `from moonshot import Moonshot` pattern for this configuration; that is an older, separate path. If you see authentication or routing errors:
+
+- Confirm your `MOONSHOT_BASE_URL` matches your selected platform (global or China).
+- Verify your key was generated on the same platform.
+- Check environment variables with `python -c "import os; print(bool(os.environ.get('MOONSHOT_API_KEY')))"` and `echo "$MOONSHOT_BASE_URL"`.
+
+## 4. Billing and token accounting
+
+All prices below are per **1,000,000 tokens**. Remember: billing units (tokens) and K3’s context window (1,048,576 tokens) are different numbers.
+
+| K3 API edition | Uncached input | Cached input | Output | Cache write, 5min / 1h |
+| --- | --- | --- | --- | --- |
+| Global, USD | $3 | $0.30 | $15 | $3 / $6 |
+| China, CNY | ¥20 | ¥2 | ¥100 | ¥20 / ¥40 |
+
+Key points:
+
+- Input, output, and cache writes are billed separately.
+- A cache hit renews its TTL without incurring another cache-write charge.
+- Global prices exclude applicable taxes; check the official pricing page for your region.
+- Old claims like “¥168/month unlimited K2 API” do not describe this metered K3 service. Consumer membership quotas and pricing are separate from the API table.
+
+Link to official pricing:
+- Global: https://platform.kimi.ai/docs/pricing/chat
+- China: https://platform.kimi.com/docs/pricing/chat
+
+## 5. Optional support and sensible next steps
+
+Once this single request works with your own prompt, you can extend it safely:
+
+1. Replace the example prompt with your real use case text. Keep the same parameters until you understand K3’s behavior under load.
+2. Audit your existing integration:
+   - Remove retired model IDs (any `kimi-k2-*` or `moonshot-v1` unless explicitly current).
+   - Check for unsupported parameter overrides that may conflict with K3’s defaults.
+3. For multi-turn conversations or tool loops:
+   - Use the complete assistant message returned by the API, including reasoning-related fields where applicable.
+   - Follow the official multi-turn and agent guides instead of reinventing structures.
+4. If you need image inputs with K3:
+   - Image input in K3 can be a base64 string or `ms://<file-id>`, where the latter refers to a file already uploaded to Kimi's service, not your local filesystem.
+   - Public image URLs are generally unsupported in this context. See the quickstart for image integration details rather than expanding inline.
+
+## 6. Official sources for deeper dives
+
+- **Current models and retirement dates:**  
+  https://platform.kimi.ai/docs/models  
+  https://platform.kimi.com/docs/models
+- **K3 request/parameter reference:**  
+  https://platform.kimi.ai/docs/guide/kimi-k3-quickstart  
+  https://platform.kimi.com/docs/guide/kimi-k3-quickstart
+- **Regional pricing:**  
+  https://platform.kimi.ai/docs/pricing/chat  
+  https://platform.kimi.com/docs/pricing/chat
+- **Original model cards (for historical reference):**  
+  https://github.com/MoonshotAI/Kimi-K2  
+  https://huggingface.co/moonshotai/Kimi-K2-Instruct-0905  
+  https://huggingface.co/moonshotai/Kimi-K2-Thinking
+
+## 7. Wrap-up: your migration checklist
+
+Before you integrate this into production, run through this short list:
+
+- [ ] Create an API key on the correct regional platform (global or China) with billing enabled.
+- [ ] Set `MOONSHOT_API_KEY` and a single `MOONSHOT_BASE_URL` that matches your chosen platform.
+- [ ] Install the pinned SDK: `"openai==3.26.0"` with Python 3.10+.
+- [ ] Save and run the example script; verify it prints a complete answer without raising errors.
+- [ ] Swap in your real prompt and confirm `finish_reason == "stop"` for normal cases.
+- [ ] Audit your codebase for retired model IDs and legacy parameters, then replace them with `kimi-k3` and K3-appropriate defaults.
+
+That’s it. You now have a clean, bounded text request running on Kimi K3, and you know exactly what to change in your own integration when retiring old model references.

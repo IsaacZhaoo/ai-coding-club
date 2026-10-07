@@ -13,7 +13,7 @@ import ArticleSchema from '@site/src/components/ArticleSchema';
   headline="Cursor vs Claude Code: Editor AI or Terminal Agent?"
   description="Cursor and Claude Code are not the same kind of tool. This comparison uses real development scenarios to help you choose between an AI editor and a terminal agent."
   datePublished="2026-05-09"
-  dateModified="2026-05-09"
+  dateModified="2026-10-07"
   authorName="Isaac Zhao"
 />
 
@@ -59,9 +59,9 @@ Your auth logic is scattered across six files, and you want to unify it.
 
 **Use Claude Code.**
 
-Cursor can help with multi-file edits, but you usually stay involved in each change. Claude Code works differently: you can ask it to inspect the relevant files, propose a plan, make the edits, run the tests, and report what passed or failed.
+In this multi-file refactoring task, Cursor Agent can inspect relevant code across six files, edit them, and execute local tests as part of its agent loop. While approval behavior depends on mode and configuration—and users do not universally have to approve every change individually—its capability is fully aligned with the scattered auth logic challenge. As documented in its mobile environment support, the tool performs local file reading, editing, test execution, and even git operations within its autonomous workflow.
 
-That is agent work, not autocomplete work. Cursor is not primarily built around that loop.
+Claude Code works differently: you can ask it to inspect the relevant files, propose a plan, make the edits, run the tests, and report what passed or failed.
 
 ### Scenario C: Letting AI Run a Task
 

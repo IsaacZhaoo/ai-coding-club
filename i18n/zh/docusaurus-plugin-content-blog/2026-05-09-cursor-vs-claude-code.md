@@ -13,7 +13,7 @@ import ArticleSchema from '@site/src/components/ArticleSchema';
   headline="Cursor vs Claude Code：编辑器 AI 和终端 Agent 怎么选？"
   description="Cursor 和 Claude Code 不是同类工具，没有谁更好，只有谁更适合你的场景。本文从真实开发场景出发，帮你判断该用编辑器 AI 还是终端 Agent。"
   datePublished="2026-05-09"
-  dateModified="2026-05-09"
+  dateModified="2026-10-07"
   authorName="Isaac Zhao"
 />
 
@@ -59,9 +59,9 @@ Claude Code 在这个场景下是绕路。你要切到终端，打开 Claude Cod
 
 **这种情况用 Claude Code。**
 
-在 Cursor 里，跨文件修改可以做，但你需要逐个确认、逐个应用。Claude Code 的工作方式是：你说"帮我把这些文件的认证逻辑统一"，它去读相关文件，制定方案，逐文件修改，改完跑一遍测试，告诉你哪里通过了、哪里还有问题。
+认证逻辑散在 6 个文件里时，Claude Code 同样是合适起点：它能读取相关文件、评估改动影响、提出方案并实施修改与测试，适合以“人主导的跨文件重构”模式推进。若你更习惯终端操作，在此场景偏好 Claude Code 也完全合理——它依然是那个能看懂上下文、给出清晰步骤的搭档。
 
-这是 Agent 能力，不是补全能力。Cursor 没有这一层。
+不过，Claude Code 并非唯一选择：Cursor Agent 同样可在 agent 循环中读文件、改文件、执行本地命令和测试，只是批准方式依模式、设置、具体操作而变，不是跨文件修改都必须逐个确认、逐个应用。关于这些 agent 循环中的读写与测试能力，可参考 [Cursor Cloud Agent 文档](https://cursor.com/docs/cloud-agent/mobile)；若需要直接跑迁移或调试任务，[Cursor changelog](https://cursor.com/changelog/projects) 列出了它们对实现和测试任务的 agent 支持。
 
 ### 场景 C：需要 AI 自己跑任务
 

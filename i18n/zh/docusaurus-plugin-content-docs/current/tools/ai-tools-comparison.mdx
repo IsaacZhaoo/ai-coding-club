@@ -90,11 +90,11 @@ import SoftwareApplicationSchema from '@site/src/components/SoftwareApplicationS
 | [GitHub Copilot](https://github.com/features/copilot) | 与现有编辑器集成，GitHub 工作流 | $10/月 个人版 | 如果你已经在 GitHub 生态系统中，这是不错的选择。良好的自动补全。 |
 | [Claude Code](https://claude.com/claude-code) | 深度推理，复杂重构 | 包含在 Claude Pro ($20/月) | 架构决策和复杂代码推理的卓越选择。 |
 | [ChatGPT Plus](https://openai.com/chatgpt) | 通用编程帮助，代码解释 | $20/月 | 适合学习和快速提问的多功能工具，编程专业性略逊色。 |
-| [Codeium](https://codeium.com/) | 预算有限的开发者 | 免费（无限制） | 令人印象深刻的免费版本，自动补全效果好。适合学生和爱好者。 |
+| [Windsurf Plugin (formerly Codeium)](https://docs.windsurf.com/plugins/getting-started) | 预算有限的开发者 | 旧插件进入维护模式，免费额度需视当前入口而定。 | 令人印象深刻的免费版本，自动补全效果好。适合学生和爱好者。 |
 | [Replit AI](https://replit.com/ai) | 快速原型，学习 | 免费版 + $20/月 专业版 | 完美适合初学者和快速原型设计。集成环境。 |
 | [Tabnine](https://www.tabnine.com/) | 注重隐私的团队，本地模型 | 免费 + $12/月 专业版 | 强大的隐私功能和本地模型选项。适合企业。 |
-| [Amazon CodeWhisperer](https://aws.amazon.com/codewhisperer/) | AWS 开发，安全扫描 | 免费（需要 AWS 账户） | 最适合 AWS 开发。包含安全漏洞扫描。 |
-| [Windsurf](https://codeium.com/windsurf) | Cursor 替代方案，功能齐全 | 测试期免费 | 功能强大的新工具。值得关注。 |
+| [Amazon Q Developer](https://aws.amazon.com/q/developer/) | AWS 开发，安全扫描 | Free / Pro（依入口认证） | 最适合 AWS 开发。包含安全漏洞扫描。 |
+| [Windsurf](https://windsurf.com/pricing) | Cursor 替代方案，功能齐全 | Devin 计划（含免费轻量档） | 功能强大的新工具。值得关注。 |
 | [Continue](https://continue.dev/) | 开源，可定制 | 免费（开源） | 适合需要完全控制和定制的开发者。支持自托管。 |
 
 ## 详细介绍
@@ -192,14 +192,13 @@ import SoftwareApplicationSchema from '@site/src/components/SoftwareApplicationS
   caption="了解如何使用 ChatGPT 的代码解释器进行数据分析，从上传数据集到生成可视化和洞察。"
 />
 
-### Codeium
-- **网站：** https://codeium.com/
-- **价格：** 免费（无限制），提供企业定价
+### Windsurf Plugin（原 Codeium）{#codeium}
+- **网站：** https://docs.windsurf.com/plugins/getting-started
+- **价格：** 旧插件进入维护模式，免费额度需视当前入口而定。
 - **主要功能：**
-  - 免费无限自动补全
+  - 自动补全
   - 多 IDE 支持
   - 聊天界面
-  - 慷慨的免费版
 - **最适合：** 预算有限的开发者、学生、爱好者
 - **我们的看法：** 对于免费工具来说非常出色。如果你刚开始使用 AI 编程或预算紧张，Codeium 是绝佳选择。
 
@@ -225,11 +224,10 @@ import SoftwareApplicationSchema from '@site/src/components/SoftwareApplicationS
 - **最适合：** 注重隐私的团队、企业环境
 - **我们的看法：** 在隐私功能和本地运行模型方面表现突出。适合有严格数据政策的公司。
 
-### Amazon CodeWhisperer
-- **网站：** https://aws.amazon.com/codewhisperer/
-- **价格：** AWS 账户免费
+### Amazon Q Developer {#amazon-codewhisperer}
+- **网站：** https://aws.amazon.com/q/developer/
+- **价格：** 官方提供 Free/Pro 版本，认证及限制依具体入口而异。
 - **主要功能：**
-  - 个人使用免费
   - 安全漏洞扫描
   - AWS API 推荐
   - 引用跟踪
@@ -237,15 +235,15 @@ import SoftwareApplicationSchema from '@site/src/components/SoftwareApplicationS
 - **我们的看法：** 价格无可匹敌（免费）。安全扫描是不错的附加功能。如果你已经在 AWS 生态系统中最为合适。
 
 ### Windsurf
-- **网站：** https://codeium.com/windsurf
-- **价格：** 测试期免费
+- **网站：** https://windsurf.com/pricing
+- **价格：** 当前价格入口显示 Devin 计划，包含$0免费轻量 Agent 额度及付费档位。
 - **主要功能：**
   - 类似 Cursor 的功能
   - 多文件编辑
   - AI 驱动的工作流
   - 现代化界面
 - **最适合：** 寻找 Cursor 替代方案的开发者
-- **我们的看法：** 新工具但令人印象深刻。值得一试，特别是在免费测试期。可能成为强有力的竞争者。
+- **我们的看法：** 新工具但令人印象深刻。值得一试。可能成为强有力的竞争者。
 
 ### Continue
 - **网站：** https://continue.dev/
@@ -267,16 +265,16 @@ import SoftwareApplicationSchema from '@site/src/components/SoftwareApplicationS
 **Cursor** 为认真的开发工作提供最佳整体体验。
 
 ### 预算有限
-**Codeium**（免费无限制）或 **GitHub Copilot**（$10/月）提供最佳性价比。
+**Codeium**（自动补全）或 **GitHub Copilot**（$10/月）提供最佳性价比。
 
 ### 复杂问题
 **Claude Code** 在深度推理和架构决策方面表现卓越。
 
 ### 注重隐私/安全
-**Tabnine** 本地模型或 **Amazon CodeWhisperer** 安全扫描。
+**Tabnine** 本地模型或 **Amazon Q Developer** 安全扫描。
 
 ### AWS 开发
-**Amazon CodeWhisperer** 免费且针对 AWS 优化。
+**Amazon Q Developer** — 提供 Free/Pro 等层级，功能与使用限制以对应计划说明为准。
 
 ## 开始使用
 

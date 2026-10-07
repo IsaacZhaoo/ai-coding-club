@@ -67,10 +67,10 @@ Answers to common questions about using AI tools for programming.
 |----------------|------------------|-----|
 | **Just learning** | DeepSeek (free) or ChatGPT | Free, easy to use, good for basics |
 | **Professional developer** | GPT-4o or Cursor | Best balance of quality and speed |
-| **Large codebases** | Kimi K2 or Claude | Can handle 1M+ tokens of context |
+| **Large codebases** | Kimi K3 (1,048,576 tokens) or Claude | Handles very large context windows for architecture and refactoring |
 | **Algorithms & math** | DeepSeek or GPT-4o | Strong reasoning capabilities |
 | **Production code** | Claude (quality) or GPT-4o (speed) | Highest code quality |
-| **Budget-conscious** | DeepSeek | Completely free, surprisingly good |
+| **Budget-conscious** | DeepSeek | free consumer chat, surprisingly good |
 | **China-based** | DeepSeek or Kimi | Better connectivity, Chinese support |
 | **IDE integration** | Cursor or GitHub Copilot | Seamless coding experience |
 
@@ -78,10 +78,10 @@ Answers to common questions about using AI tools for programming.
 ```
 Best Free: DeepSeek
 Best Overall: GPT-4o
-Best Quality: Claude 3 Opus
-Best Value: Claude 3 Sonnet
+Best Quality: Claude
+Best Value: Claude
 Best for Beginners: ChatGPT
-Best for Large Projects: Kimi K2
+Best for Large Projects: Kimi K3
 ```
 
 See our [detailed tool comparison](/docs/tools/ai-coding-tools-extended).
@@ -182,9 +182,9 @@ See our [detailed tool comparison](/docs/tools/ai-coding-tools-extended).
 ### How much does AI coding cost per month?
 
 **Free Options:**
-- **DeepSeek**: Completely free, unlimited
-- **ChatGPT Free**: Limited messages per day
-- **Cursor Free**: 50 requests per month
+- **DeepSeek**: free for consumer chat and basic code assistance; API is separate
+- **ChatGPT Free**: Unlimited everyday text chats subject to abuse safeguards; uploads/images/voice/data analysis have separate limits; GPT access can pause
+- **Cursor Free**: desktop IDE with model access subject to the official plan
 - **GitHub Copilot**: Free for students/educators
 
 **Paid Subscriptions:**
@@ -194,7 +194,7 @@ See our [detailed tool comparison](/docs/tools/ai-coding-tools-extended).
 | Claude Pro | $20/month | High-quality code |
 | Cursor Pro | $20/month | IDE integration |
 | GitHub Copilot | $10/month | IDE autocomplete |
-| Kimi K2 | ¥168/month (~$24) | Large context |
+| Kimi Membership | [official membership page](https://www.kimi.com/membership/pricing); The API is billed separately from any membership tier. | Large context |
 
 **API (Pay-as-you-go):**
 - Light usage: $5-20/month
@@ -210,11 +210,9 @@ At $50/month for API usage, you need to save a few hours a week for it to be wor
 **8 proven strategies:**
 
 #### 1. Use Appropriate Models
-```
-Simple tasks → GPT-3.5 Turbo ($0.50/M tokens)
-Complex logic → GPT-4o ($5/M tokens)
-Code review → Claude Sonnet ($3/M tokens)
-```
+When choosing models, follow task difficulty, the model’s strengths in reasoning vs. speed, and verify current pricing on official pages.
+
+For APIs, costs vary by model, input/output token volumes, caching rules, and retry behavior; consumer-facing names do not guarantee API specs or rates.
 
 #### 2. Enable Prompt Caching (Claude)
 - Saves 90% on repeated context
@@ -267,14 +265,9 @@ if tracker.today_total > 10.00:
 
 ### What's the difference between free and paid AI tools?
 
-| Feature | Free (e.g., DeepSeek) | Paid ($20/month) | API (Usage-based) |
+| Feature | Free tiers | Paid subscriptions | API access |
 |---------|----------------------|------------------|-------------------|
-| **Access** | Limited/unlimited | Unlimited | Pay per use |
-| **Speed** | Slower | Faster | Fast |
-| **Priority** | Low | High | Highest |
-| **Model** | Older/smaller | Latest | Choose any |
-| **Usage Limits** | Daily cap | No cap | Your budget |
-| **Features** | Basic | Advanced (plugins, etc.) | Full control |
+| **Usage Limits** | Soft caps on features/uploads; fair-use enforcement | quotas in plan docs | Rate limits, burst limits, and capacity controls per account |
 | **Best For** | Learning | Professional use | Automation |
 
 **Recommendation:**

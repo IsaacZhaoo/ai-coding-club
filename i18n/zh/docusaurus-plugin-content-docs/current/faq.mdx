@@ -69,10 +69,10 @@ import FAQSchema from '@site/src/components/FAQSchema';
 |----------------|------------------|-----|
 | **刚学习** | DeepSeek（免费）或 ChatGPT | 免费，易于使用，适合基础 |
 | **专业开发人员** | GPT-4o 或 Cursor | 质量和速度的最佳平衡 |
-| **大型代码库** | Kimi K2 或 Claude | 可处理 100 万+ token 的上下文 |
+| **大型代码库** | Kimi K3（1,048,576 token）或 Claude | 上下文容量更大，模型随任务选型 |
 | **算法和数学** | DeepSeek 或 GPT-4o | 强大的推理能力 |
 | **生产代码** | Claude（质量）或 GPT-4o（速度） | 最高代码质量 |
-| **预算有限** | DeepSeek | 完全免费，出奇地好 |
+| **预算有限** | DeepSeek | 消费聊天免费；API 计费，出奇地好 |
 | **中国用户** | DeepSeek 或 Kimi | 更好的连接性，中文支持 |
 | **IDE 集成** | Cursor 或 GitHub Copilot | 无缝编码体验 |
 
@@ -80,10 +80,10 @@ import FAQSchema from '@site/src/components/FAQSchema';
 ```
 最佳免费：DeepSeek
 最佳整体：GPT-4o
-最佳质量：Claude 3 Opus
-最佳性价比：Claude 3 Sonnet
+最佳质量：Claude
+最佳性价比：Claude
 最适合初学者：ChatGPT
-最适合大项目：Kimi K2
+最适合大项目：Kimi K3
 ```
 
 查看我们的[详细工具比较](/docs/tools/ai-coding-tools-extended)。
@@ -184,9 +184,9 @@ import FAQSchema from '@site/src/components/FAQSchema';
 ### AI 编程每月费用是多少？
 
 **免费选项：**
-- **DeepSeek**：完全免费，无限制
-- **ChatGPT 免费版**：每天消息有限
-- **Cursor 免费版**：每月 50 次请求
+- **DeepSeek**：消费聊天入口免费；API 按使用量计费
+- **ChatGPT 免费版**：每日文本输入无限，但受防滥用机制限制；图像上传、语音交互与分析功能按套餐分别计额。
+- **Cursor 免费版**：桌面端编辑器；Free 套餐额度以官方定价为准，Tab 与 Agent 功能需查阅具体计划。
 - **GitHub Copilot**：对学生/教育工作者免费
 
 **付费订阅：**
@@ -196,7 +196,7 @@ import FAQSchema from '@site/src/components/FAQSchema';
 | Claude Pro | $20/月 | 高质量代码 |
 | Cursor Pro | $20/月 | IDE 集成 |
 | GitHub Copilot | $10/月 | IDE 自动完成 |
-| Kimi K2 | ¥168/月（~$24） | 大上下文 |
+| Kimi 会员 | [官方计划](https://www.kimi.com/membership/pricing)；API 请求按量计费，与会员权益分开结算。 | 大上下文 |
 
 **API（按使用付费）：**
 - 轻度使用：$5-20/月
@@ -212,10 +212,12 @@ import FAQSchema from '@site/src/components/FAQSchema';
 **8 种经过验证的策略：**
 
 #### 1. 使用适当的模型
-```
-简单任务 → GPT-3.5 Turbo ($0.50/M token)
-复杂逻辑 → GPT-4o ($5/M token)
-代码审查 → Claude Sonnet ($3/M token)
+```text
+任务难度 | 推荐策略
+---|---
+简单脚本、工具函数 | 选择基础或中级型号，配合轻量模型即可
+复杂逻辑、多文件协作 | 使用支持长上下文的旗舰型
+代码审查与架构分析 | 优先调用推理能力强的型号，并核对官方最新定价
 ```
 
 #### 2. 启用提示缓存（Claude）
@@ -269,14 +271,9 @@ if tracker.today_total > 10.00:
 
 ### 免费和付费 AI 工具有什么区别？
 
-| 功能 | 免费（例如 DeepSeek） | 付费（$20/月） | API（按使用付费） |
+| 功能 | 免费 | 付费 | API（按使用付费） |
 |---------|----------------------|------------------|-------------------|
-| **访问** | 有限/无限 | 无限 | 按使用付费 |
-| **速度** | 较慢 | 更快 | 快速 |
-| **优先级** | 低 | 高 | 最高 |
-| **模型** | 旧/小 | 最新 | 任选 |
-| **使用限制** | 每日上限 | 无上限 | 你的预算 |
-| **功能** | 基本 | 高级（插件等） | 完全控制 |
+| **使用限制** | 功能与使用限制以对应计划说明为准 | 功能与使用限制以对应计划说明为准 | 受速率上限、容量配额约束 |
 | **最适合** | 学习 | 专业使用 | 自动化 |
 
 **建议：**

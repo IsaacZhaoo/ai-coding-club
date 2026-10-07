@@ -26,7 +26,7 @@ import SoftwareApplicationSchema from '@site/src/components/SoftwareApplicationS
 
 <SoftwareApplicationSchema
   name="DeepSeek"
-  description="Open-source AI coding assistant with GPT-4 level quality and unlimited free usage."
+  description="AI coding assistant for code suggestions, completion, and explanation; consumer chat is free, API billing is separate."
   applicationCategory="DeveloperApplication"
   operatingSystem="Web"
   offers={{ price: "0", priceCurrency: "USD" }}
@@ -45,10 +45,10 @@ Welcome to the most comprehensive comparison of AI coding tools available in 202
 
 | Your Situation | Top Recommendation | Why |
 |----------------|-------------------|-----|
-| **Just started learning to code** | ChatGPT Free / DeepSeek | Best explanations, unlimited free usage |
+| **Just started learning to code** | ChatGPT Free / DeepSeek | Best explanations, good for daily practice |
 | **Professional developer** | Cursor / Claude Code | Best code quality, IDE integration |
-| **Working with large codebase** | Kimi K2 / Claude | 2M+ token context window |
-| **Budget: Free only** | DeepSeek / Codeium | Unlimited GPT-4 level quality |
+| **Working with large codebase** | Kimi K3 (1,048,576 tokens) / Claude | Handles very large context windows for architecture and refactoring |
+| **Budget: Free only** | DeepSeek / Codeium | Strong autocomplete and chat assistance |
 | **Based in China** | DeepSeek / Kimi / 智谱清言 | No VPN needed, optimized servers |
 | **Need autocomplete** | GitHub Copilot / Cursor | Real-time suggestions as you type |
 | **Team collaboration** | Claude for Work / ChatGPT Team | Shared workspaces, admin controls |
@@ -73,7 +73,7 @@ Welcome to the most comprehensive comparison of AI coding tools available in 202
 | Tool | Type | Pricing (CNY) | Best For | Coding Strength |
 |------|------|---------------|----------|-----------------|
 | **DeepSeek** | General | FREE | Text processing, technical scenarios | ⭐⭐⭐⭐ |
-| **Kimi** | General | Free / ¥168/mo | Long-context processing, K2 programming | ⭐⭐⭐⭐⭐ |
+| **Kimi** | General | [official membership page](https://www.kimi.com/membership/pricing); API billed separately | Long-context processing, K3 programming | ⭐⭐⭐⭐⭐ |
 | **智谱清言 (ChatGLM)** | General | Free / ¥66/mo | Workflow automation, coding | ⭐⭐⭐⭐ |
 | **通义千问 (Qwen)** | General | FREE | E-commerce, product design, coding | ⭐⭐⭐ |
 | **豆包** | General | FREE | Content creation, scripting | ⭐⭐ |
@@ -93,10 +93,10 @@ Tools marked with ⭐⭐⭐⭐ or higher are specifically strong for programming
 
 - **Website:** https://chat.openai.com
 - **Pricing:**
-  - Free tier: GPT-3.5
-  - Plus ($20/month): GPT-4, DALL-E 3, browsing, analysis
+  - Free tier: Unlimited everyday text chats subject to abuse safeguards; uploads/images/voice/data analysis have separate limits; GPT access can pause
+  - Plus ($20/month): extended capabilities
   - Team ($25/user/month): Shared workspace, admin controls
-  - Enterprise (custom): SSO, unlimited high-speed GPT-4
+  - Enterprise (custom): SSO
 - **Key Features:**
   - Conversational interface for code explanations
   - Code generation and debugging
@@ -172,8 +172,8 @@ function UserProfile({ userId }) {
 
 - **Website:** https://claude.ai
 - **Pricing:**
-  - Free tier: Limited Claude 3.5 Sonnet usage
-  - Pro ($20/month): Unlimited Claude 3.5 Sonnet, extended context
+  - Free tier: Limited Claude usage
+  - Pro ($20/month): higher usage limits
   - Team ($25/user/month): Shared projects, citations
 - **Key Features:**
   - **200K token context** (entire small codebases)
@@ -280,10 +280,10 @@ export function Dashboard({ userId }: DashboardProps) {
 
 - **Website:** https://chat.deepseek.com
 - **Pricing:**
-  - Completely FREE (unlimited GPT-4 level)
-  - API: Pay-per-token (very cheap: ~$1 per 1M tokens)
+  - Consumer chat: free for consumer chat and basic code assistance; API is separate
+  - API: Pay-per-token (varies by model; includes input/output/cache/peak factors)
 - **Key Features:**
-  - **100% free** GPT-4 level performance
+  - High-performance coding assistance
   - Strong in technical/academic scenarios
   - Excellent at math and algorithms
   - Chinese-first (but good English)
@@ -387,18 +387,20 @@ def test_merge_k_lists():
 
 ---
 
-### Kimi K2 {#kimi-detailed}
+### Kimi K3 {#kimi-detailed}
 
-- **Website:** https://kimi.moonshot.cn
+- **Website:** https://platform.kimi.ai/docs/models
 - **Pricing:**
-  - Free tier: Kimi K1
-  - K2 (¥168/month): 2M context, multimodal, unlimited usage
+  - [Kimi Membership](https://www.kimi.com/membership/pricing)
+  - The API is billed separately from any membership tier.
 - **Key Features:**
-  - **2 million token context** (can fit entire large codebases)
-  - Multimodal input (images, PDFs, audio)
-  - Real-time web search
+  - **1,048,576 tokens** (K3)
+  - Multimodal input (images, video)
+  - Web search available but recommended against relying on it in production
   - Chinese-first design
   - Excellent at processing documentation
+
+The original K2 official hosted API was retired on **2026-05-25**. This does **not** mean open-weight models or third-party deployments have vanished—those can still exist independently under their own versions and infrastructure.
 - **Best For:**
   - Large codebase analysis
   - Processing long documentation
@@ -411,9 +413,9 @@ def test_merge_k_lists():
   ⭐⭐⭐ Code Generation
   ⭐⭐⭐ Debugging
 - **Our Take:**
-  Kimi's superpower is context. Upload your entire codebase (yes, even 100k+ lines) and ask architectural questions. It's like having a senior dev who actually read all your code.
+  Kimi's superpower is context. Whether a specific repository fits into Kimi depends on its total token size; success isn’t guaranteed for very large codebases. It's like having a senior dev who actually read all your code.
 
-**Real-World Test:**
+**Historical K2 Example Context:**
 We uploaded a 50k line React codebase and asked "Find all unused components":
 - ✅ Analyzed entire codebase in 2 minutes
 - ✅ Found 23 unused components
@@ -522,7 +524,7 @@ module.exports = {
 |----------|----------------------|
 | **Learning to code** | ChatGPT → Cursor Free → DeepSeek |
 | **Professional development** | Cursor → Claude Code → GitHub Copilot |
-| **Large codebase refactoring** | Kimi K2 → Claude → Cursor |
+| **Large codebase refactoring** | Kimi K3 → Claude → Cursor |
 | **Budget-conscious (free)** | DeepSeek → Codeium → ChatGPT Free |
 | **China-based developers** | DeepSeek → Kimi → 智谱清言 |
 | **Quick autocomplete** | GitHub Copilot → Cursor → Tabnine |
@@ -530,9 +532,9 @@ module.exports = {
 ### By Budget
 
 **Free Tier:**
-1. **DeepSeek** (unlimited GPT-4 level) - BEST VALUE
-2. **Codeium** (unlimited autocomplete)
-3. **ChatGPT Free** (GPT-3.5)
+1. **DeepSeek** (free consumer chat) - BEST VALUE
+2. **Codeium** (strong autocomplete)
+3. **ChatGPT Free** (unlimited text, limited tooling)
 4. 通义千问, 豆包, 腾讯混元
 
 **$10-20/month:**
@@ -541,8 +543,8 @@ module.exports = {
 3. **Claude Pro** ($20) - Best code quality
 4. **GitHub Copilot** ($10) - Best autocomplete
 
-**China ¥66-168/month:**
-1. **Kimi K2** (¥168) - Best for large codebases
+**China:**
+1. **Kimi** ([official membership page](https://www.kimi.com/membership/pricing); API billed separately) - Best for large codebases
 2. **智谱清言** (¥66) - Best for workflows
 3. **可灵AI** (¥66) - Video generation
 
@@ -586,7 +588,7 @@ module.exports = {
 3. Learn to accept/reject suggestions
 
 **When to Upgrade:**
-After 3 months → Cursor Pro ($20) for unlimited AI
+After 3 months → Cursor Pro ($20) if you need deeper IDE integration and agent usage
 
 ### For Professional Developers
 
@@ -604,10 +606,10 @@ After 3 months → Cursor Pro ($20) for unlimited AI
 
 **Recommended Stack:**
 - **Primary**: DeepSeek (free) - Daily coding, no VPN
-- **Secondary**: Kimi K2 (¥168/mo) - Large codebase analysis
+- **Secondary**: Kimi ([official membership page](https://www.kimi.com/membership/pricing); API billed separately) - Large codebase analysis
 - **Optional**: 智谱清言 (¥66/mo) - Workflow automation
 
-**Total cost**: ¥168-234/month (~$24-33 USD)
+**Total cost**: final costs depend on your chosen membership tier and actual API usage.
 
 ---
 
@@ -669,7 +671,7 @@ Paste relevant code for better suggestions:
 
 **ChatGPT:**
 - ⚠️ Slower at generating large code blocks
-- ⚠️ Free tier uses older model (GPT-3.5)
+- ⚠️ uploads/images/voice/data analysis have separate limits; GPT access can pause
 
 **Claude:**
 - ⚠️ Can be overly cautious (too many safety checks)
@@ -680,7 +682,7 @@ Paste relevant code for better suggestions:
 - ⚠️ Less polished UI/UX
 
 **Kimi:**
-- ⚠️ Expensive (¥168/mo for K2)
+- ⚠️ The API is billed separately from any membership tier.
 - ⚠️ Primarily Chinese interface
 
 ---
@@ -750,12 +752,12 @@ AI tools that can autonomously fix bugs, write tests
 
 ## Summary
 
-**Best Free Tool**: DeepSeek (GPT-4 level, unlimited)
+**Best Free Tool**: DeepSeek (strong for daily coding)
 **Best Paid Tool**: Cursor ($20/mo) for professionals
-**Best for China**: DeepSeek (free) + Kimi K2 (¥168/mo)
+**Best for China**: DeepSeek (free) + Kimi ([official membership page](https://www.kimi.com/membership/pricing); API billed separately)
 **Best for Learning**: ChatGPT (clear explanations)
 **Best Code Quality**: Claude (production-ready code)
-**Best for Large Projects**: Kimi K2 (2M context)
+**Best for Large Projects**: Kimi K3 (1,048,576 tokens)
 
 **Our Top Pick for Most Developers:**
 Start with **DeepSeek (free)** to learn, upgrade to **Cursor ($20)** when you're productive.

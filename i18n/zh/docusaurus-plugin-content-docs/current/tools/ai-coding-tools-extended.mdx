@@ -26,7 +26,7 @@ import SoftwareApplicationSchema from '@site/src/components/SoftwareApplicationS
 
 <SoftwareApplicationSchema
   name="DeepSeek"
-  description="开源AI编程助手，具备GPT-4级别质量，支持无限免费使用。"
+  description="开源 AI 编程助手，具备 GPT-4 级别质量，支持深度代码分析（消费聊天免费，API 按模型计费）。"
   applicationCategory="DeveloperApplication"
   operatingSystem="Web"
   offers={{ price: "0", priceCurrency: "USD" }}
@@ -45,10 +45,10 @@ import SoftwareApplicationSchema from '@site/src/components/SoftwareApplicationS
 
 | 你的情况 | 推荐工具 | 原因 |
 |---------|---------|------|
-| **刚开始学编程** | ChatGPT免费版 / DeepSeek | 解释最清楚，免费无限使用 |
+| **刚开始学编程** | ChatGPT免费版 / DeepSeek | 解释最清楚，适合入门 |
 | **专业开发者** | Cursor / Claude Code | 代码质量最好，IDE集成 |
-| **大型代码库项目** | Kimi K2 / Claude | 200万+ token上下文 |
-| **预算：只用免费** | DeepSeek / Codeium | 无限的GPT-4级别质量 |
+| **大型代码库项目** | Kimi K3（1,048,576 token）/ Claude | 上下文容量更大，模型随任务选型 |
+| **预算：只用免费** | DeepSeek / Codeium | GPT-4 级别质量需结合具体型号与场景 |
 | **国内开发者** | DeepSeek / Kimi / 智谱清言 | 不需要VPN，服务器优化 |
 | **需要自动补全** | GitHub Copilot / Cursor | 实时代码建议 |
 | **团队协作** | Claude for Work / ChatGPT Team | 共享工作区，管理控制 |
@@ -73,7 +73,7 @@ import SoftwareApplicationSchema from '@site/src/components/SoftwareApplicationS
 | 工具 | 类型 | 价格(人民币) | 最适合 | 编程能力 |
 |-----|------|-------------|--------|---------|
 | **DeepSeek** | 通用 | 免费 | 文本处理、技术场景 | ⭐⭐⭐⭐ |
-| **Kimi** | 通用 | 免费 / ¥168/月 | 长文本处理、K2编程 | ⭐⭐⭐⭐⭐ |
+| **Kimi** | 通用 | [官方计划](https://www.kimi.com/membership/pricing)；API 另计 | 长文本处理、K3编程 | ⭐⭐⭐⭐⭐ |
 | **智谱清言** | 通用 | 免费 / ¥66/月 | 工作流自动化、编程 | ⭐⭐⭐⭐ |
 | **通义千问** | 通用 | 免费 | 电商、产品设计、编程 | ⭐⭐⭐ |
 | **豆包** | 通用 | 免费 | 内容创作、脚本 | ⭐⭐ |
@@ -93,10 +93,10 @@ import SoftwareApplicationSchema from '@site/src/components/SoftwareApplicationS
 
 - **网站：** https://chat.openai.com
 - **价格：**
-  - 免费版：GPT-3.5
-  - Plus（$20/月）：GPT-4、DALL-E 3、联网、数据分析
+  - 免费版：每日文本输入无限，但受防滥用机制限制；图像上传、语音交互与分析功能按套餐分别计额。
+  - Plus（$20/月）：高级工具与上下文
   - Team（$25/用户/月）：共享工作区、管理控制
-  - Enterprise（定制）：SSO、无限高速GPT-4
+  - Enterprise（定制）：SSO
 - **主要功能：**
   - 对话式代码解释
   - 代码生成和调试
@@ -172,10 +172,10 @@ function UserProfile({ userId }) {
 
 - **网站：** https://chat.deepseek.com
 - **价格：**
-  - 完全免费（无限GPT-4级别）
-  - API：按token付费（超便宜：~$1每百万token）
+  - 消费聊天入口免费
+  - API：按 token 计费（输入/输出/缓存及峰谷时段不同），具体以官方价表为准
 - **主要功能：**
-  - **100%免费** GPT-4级别性能
+  - 支持 GPT-4 级别性能的模型选择
   - 技术/学术场景表现强劲
   - 数学和算法能力优秀
   - 中文优先（但英文也很好）
@@ -262,18 +262,20 @@ def mergeKLists(lists: List[Optional[ListNode]]) -> Optional[ListNode]:
 
 ---
 
-### Kimi K2 {#kimi-详解}
+### Kimi K3 {#kimi-详解}
 
-- **网站：** https://kimi.moonshot.cn
+- **网站：** https://platform.kimi.ai/docs/models
 - **价格：**
-  - 免费版：Kimi K1
-  - K2（¥168/月）：200万token上下文、多模态、无限使用
+  - [官方计划](https://www.kimi.com/membership/pricing)
+  - API 请求按量计费，与会员权益分开结算。
 - **主要功能：**
-  - **200万token上下文**（可容纳整个大型代码库）
-  - 多模态输入（图片、PDF、音频）
-  - 实时联网搜索
+  - **1,048,576 token 上下文**（K3）
+  - 多模态输入（图片、视频）
+  - 联网搜索（不建议近期生产依赖）
   - 中文优先设计
   - 文档处理能力优秀
+
+原 K2 官方托管 API 于 2026-05-25 退役，此决定针对官方统一接口，**不意味着**开源权重或第三方自行部署的 K2 环境消失。
 - **最适合：**
   - 大型代码库分析
   - 处理长文档
@@ -286,9 +288,9 @@ def mergeKLists(lists: List[Optional[ListNode]]) -> Optional[ListNode]:
   ⭐⭐⭐ 代码生成
   ⭐⭐⭐ 调试
 - **我们的评价：**
-  Kimi的超能力是上下文。上传整个代码库（是的，即使是10万+行）并提出架构问题。就像有一个真正读过所有代码的高级开发者。
+  Kimi的超能力是上下文。大仓库是否顺利载入，取决于具体 token 占用与型号上限，无法保证所有大项目都能完整装入。就像有一个真正读过所有代码的高级开发者。
 
-**实战测试：**
+**以下示例沿用 K2 历史语境，非K3 新实测：**
 我们上传了一个5万行React代码库，询问"找出所有未使用的组件"：
 - ✅ 2分钟内分析完整个代码库
 - ✅ 找到23个未使用的组件
@@ -313,7 +315,7 @@ def mergeKLists(lists: List[Optional[ListNode]]) -> Optional[ListNode]:
 |---------|--------|
 | **学习编程** | ChatGPT → Cursor免费版 → DeepSeek |
 | **专业开发** | Cursor → Claude Code → GitHub Copilot |
-| **大型代码库重构** | Kimi K2 → Claude → Cursor |
+| **大型代码库重构** | Kimi K3 → Claude → Cursor |
 | **预算有限（免费）** | DeepSeek → Codeium → ChatGPT免费版 |
 | **国内开发者** | DeepSeek → Kimi → 智谱清言 |
 | **快速自动补全** | GitHub Copilot → Cursor → Tabnine |
@@ -321,19 +323,19 @@ def mergeKLists(lists: List[Optional[ListNode]]) -> Optional[ListNode]:
 ### 按预算
 
 **免费档：**
-1. **DeepSeek**（无限GPT-4级别）- 最佳性价比
-2. **Codeium**（无限自动补全）
-3. **ChatGPT免费版**（GPT-3.5）
+1. **DeepSeek**（消费聊天免费；API 计费）- 最佳性价比
+2. **Codeium**（自动补全）
+3. **ChatGPT免费版**（每日文本输入无限，但受防滥用机制限制）
 4. 通义千问、豆包、腾讯混元
 
-**¥70-150/月：**
-1. **Cursor**（¥140）- 专业开发者最佳
-2. **ChatGPT Plus**（¥140）- 学习者最佳
-3. **Claude Pro**（¥140）- 代码质量最佳
+**付费订阅：**
+1. **Cursor Pro**（$20）- 专业开发者最佳
+2. **ChatGPT Plus**（$20）- 学习者最佳
+3. **Claude Pro**（$20）- 代码质量最佳
 4. **GitHub Copilot**（¥70）- 自动补全最佳
 
-**国内¥66-168/月：**
-1. **Kimi K2**（¥168）- 大型代码库最佳
+**国内会员档：**
+1. **Kimi**（[官方计划](https://www.kimi.com/membership/pricing)；API 另计）- 大型代码库最佳
 2. **智谱清言**（¥66）- 工作流最佳
 3. **可灵AI**（¥66）- 视频生成
 
@@ -357,28 +359,28 @@ def mergeKLists(lists: List[Optional[ListNode]]) -> Optional[ListNode]:
 3. 学习接受/拒绝建议
 
 **何时升级：**
-3个月后 → Cursor Pro（¥140）获得无限AI
+3个月后 → Cursor Pro（$20/月），无限 Tab 补全 ≠ 无限 Agent 用量；实际用量按官方额度与计费页计算。
 
 ### 专业开发者
 
 **推荐组合：**
-- **主力**：Cursor（¥140/月）- 日常编码
-- **辅助**：Claude Pro（¥140/月）- 重构、架构
+- **主力**：Cursor Pro（$20/月）- 日常编码
+- **辅助**：Claude Pro（$20/月）- 重构、架构
 - **备用**：DeepSeek（免费）- 其他工具被限流时
 
 **ROI计算：**
-- 成本：¥280/月
+- 成本：$40/月
 - 节省时间：~10小时/月（保守估计）
-- 如果时薪 > ¥28 → 正ROI ✅
+- 如果时薪 > $4 → 正ROI ✅
 
 ### 国内开发者
 
 **推荐组合：**
 - **主力**：DeepSeek（免费）- 日常编码，无需VPN
-- **辅助**：Kimi K2（¥168/月）- 大型代码库分析
+- **辅助**：Kimi（[官方计划](https://www.kimi.com/membership/pricing)；API 另计）- 大型代码库分析
 - **可选**：智谱清言（¥66/月）- 工作流自动化
 
-**总成本**：¥168-234/月
+**总成本**：总费用由您实际选择的会员档位与 API 调用量决定。
 
 ---
 
@@ -422,12 +424,12 @@ def mergeKLists(lists: List[Optional[ListNode]]) -> Optional[ListNode]:
 
 ## ✅ 总结
 
-**最佳免费工具**：DeepSeek（GPT-4级别，无限）
-**最佳付费工具**：Cursor（¥140/月）专业开发者
-**国内最佳**：DeepSeek（免费）+ Kimi K2（¥168/月）
+**最佳免费工具**：DeepSeek（消费入口免费；API 计费）
+**最佳付费工具**：Cursor Pro（$20/月）专业开发者
+**国内最佳**：DeepSeek（免费）+ Kimi（[官方计划](https://www.kimi.com/membership/pricing)；API 另计）
 **学习最佳**：ChatGPT（解释清楚）
 **代码质量最佳**：Claude（生产级代码）
-**大项目最佳**：Kimi K2（200万token上下文）
+**大项目最佳**：Kimi K3（1,048,576 token）
 
 **大多数开发者的首选：**
 从**DeepSeek（免费）**开始学习，当你高效工作时升级到**Cursor（¥140）**。
