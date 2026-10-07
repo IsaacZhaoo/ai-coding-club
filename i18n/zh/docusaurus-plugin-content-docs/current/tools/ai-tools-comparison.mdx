@@ -69,7 +69,7 @@ import SoftwareApplicationSchema from '@site/src/components/SoftwareApplicationS
   items={[
     {
       question: '新手最适合的 AI 编程工具是什么？',
-      answer: '预算有限可先用 Codeium 或 Replit AI；需要解释与学习支持时，ChatGPT 是不错的起点。',
+      answer: "预算有限可先用 Codeium 或 Replit AI：Replit Starter 提供每日 Agent 额度与月度上限，且可发布一个应用，其链接在 30 天后到期。需要解释与学习支持时，ChatGPT 是不错的起点。",
     },
     {
       question: '最全能的 AI 编程工具是哪一个？',
@@ -87,12 +87,12 @@ import SoftwareApplicationSchema from '@site/src/components/SoftwareApplicationS
 | 工具 | 最适合 | 价格 | 我们的看法 |
 |------|----------|-------|----------|
 | [Cursor](https://cursor.sh/) | 完整 IDE 替代方案，全项目上下文 | $20/月 专业版 | 最佳全能选择，适合认真的 AI 辅助开发。出色的上下文感知。 |
-| [GitHub Copilot](https://github.com/features/copilot) | 与现有编辑器集成，GitHub 工作流 | $10/月 个人版 | 如果你已经在 GitHub 生态系统中，这是不错的选择。良好的自动补全。 |
+| [GitHub Copilot](https://github.com/features/copilot) | 与现有编辑器集成，GitHub 工作流 | $10/月 Pro版 | 如果你已经在 GitHub 生态系统中，这是不错的选择。良好的自动补全。 |
 | [Claude Code](https://claude.com/claude-code) | 深度推理，复杂重构 | 包含在 Claude Pro ($20/月) | 架构决策和复杂代码推理的卓越选择。 |
 | [ChatGPT Plus](https://openai.com/chatgpt) | 通用编程帮助，代码解释 | $20/月 | 适合学习和快速提问的多功能工具，编程专业性略逊色。 |
 | [Windsurf Plugin (formerly Codeium)](https://docs.windsurf.com/plugins/getting-started) | 预算有限的开发者 | 旧插件进入维护模式，免费额度需视当前入口而定。 | 令人印象深刻的免费版本，自动补全效果好。适合学生和爱好者。 |
-| [Replit AI](https://replit.com/ai) | 快速原型，学习 | 免费版 + $20/月 专业版 | 完美适合初学者和快速原型设计。集成环境。 |
-| [Tabnine](https://www.tabnine.com/) | 注重隐私的团队，本地模型 | 免费 + $12/月 专业版 | 强大的隐私功能和本地模型选项。适合企业。 |
+| [Replit AI](https://replit.com/ai) | 快速原型，学习 | 价格详情与额度说明请访问 [Replit 定价页](https://replit.com/pricing)。 | 完美适合初学者和快速原型设计。集成环境。 |
+| [Tabnine](https://www.tabnine.com/) | 注重隐私的团队，使用 Enterprise 私有部署方案。 | 官方联系报价请通过 [Tabnine 联系我们](https://www.tricentis.com/contact-us)。 | 强大的隐私功能和 Enterprise 私有部署选项。适合企业。 |
 | [Amazon Q Developer](https://aws.amazon.com/q/developer/) | AWS 开发，安全扫描 | Free / Pro（依入口认证） | 最适合 AWS 开发。包含安全漏洞扫描。 |
 | [Windsurf](https://windsurf.com/pricing) | Cursor 替代方案，功能齐全 | Devin 计划（含免费轻量档） | 功能强大的新工具。值得关注。 |
 | [Continue](https://continue.dev/) | 开源，可定制 | 免费（开源） | 适合需要完全控制和定制的开发者。支持自托管。 |
@@ -148,7 +148,7 @@ import SoftwareApplicationSchema from '@site/src/components/SoftwareApplicationS
 
 ### GitHub Copilot
 - **网站：** https://github.com/features/copilot
-- **价格：** $10/月 个人版，$19/用户/月 商业版，学生/教育工作者免费
+- **价格：** $10/月 Pro版，$19/用户/月 商业版，普通 Free 版有限额，经认证的学生用 Student，经认证的教师和热门开源维护者可能获得免费 Pro
 - **主要功能：**
   - 适用于 VS Code、JetBrains、Neovim
   - 内联建议
@@ -204,25 +204,25 @@ import SoftwareApplicationSchema from '@site/src/components/SoftwareApplicationS
 
 ### Replit AI
 - **网站：** https://replit.com/ai
-- **价格：** 免费版，$20/月 专业版
+- **价格：** Starter 免费版（每日 Agent 额度与月度上限）；Core/Pro 付费；官方报价：https://replit.com/pricing。Core 含每月 $20 使用额度，并非订阅价格；付费 Agent 与云服务会产生额外用量计费。可免费发布一个应用，其发布链接 30 天后下线。
 - **主要功能：**
   - 集成开发环境
   - 即时部署
-  - 协作编程
+  - 协作编程（Starter/Core/Pro 对应 0/5/15 个席位）
   - AI 聊天和代码生成
 - **最适合：** 初学者、快速原型、学习、协作项目
 - **我们的看法：** 非常适合想要无需设置即可直接开始编程的初学者。集成环境使其非常易于上手。
 
 ### Tabnine
 - **网站：** https://www.tabnine.com/
-- **价格：** 免费，$12/月 专业版，企业定价
+- **价格：** 官方联系报价：https://www.tricentis.com/contact-us
 - **主要功能：**
   - 注重隐私
-  - 本地模型选项
+  - 本地模型选项（Enterprise 私有部署支持 VPC、on-premises 与 air-gapped）
   - 多 IDE 支持
-  - 基于代码库的团队训练
+  - Enterprise私有部署中，私有微调模型使用私有代码微调，仅团队成员访问，存储于私有环境。
 - **最适合：** 注重隐私的团队、企业环境
-- **我们的看法：** 在隐私功能和本地运行模型方面表现突出。适合有严格数据政策的公司。
+- **我们的看法：** 在隐私功能和 Enterprise 私有部署方面表现突出。适合有严格数据政策的公司。
 
 ### Amazon Q Developer {#amazon-codewhisperer}
 - **网站：** https://aws.amazon.com/q/developer/
@@ -259,7 +259,7 @@ import SoftwareApplicationSchema from '@site/src/components/SoftwareApplicationS
 ## 如何选择
 
 ### 初学者
-从 **Codeium**（免费）或 **Replit AI**（免费版）开始学习，无需财务承诺。
+从 **Codeium**（免费）或 **Replit AI**（Starter 免费版，每日 Agent 额度限制与月度上限，并含一个免费发布应用的链接，有效期 30 天）开始学习，无需财务承诺。
 
 ### 专业开发者
 **Cursor** 为认真的开发工作提供最佳整体体验。
@@ -271,7 +271,7 @@ import SoftwareApplicationSchema from '@site/src/components/SoftwareApplicationS
 **Claude Code** 在深度推理和架构决策方面表现卓越。
 
 ### 注重隐私/安全
-**Tabnine** 本地模型或 **Amazon Q Developer** 安全扫描。
+**Tabnine** Enterprise 私有部署或 **Amazon Q Developer** 安全扫描。
 
 ### AWS 开发
 **Amazon Q Developer** — 提供 Free/Pro 等层级，功能与使用限制以对应计划说明为准。
@@ -293,7 +293,7 @@ AI 编程工具发展迅速。定期查看更新，了解 AI 辅助编程的最�
 
 ### 新手最适合的 AI 编程工具是什么？
 
-预算有限可先用 Codeium 或 Replit AI；需要解释与学习支持时，ChatGPT 是不错的起点。
+预算有限可先用 Codeium 或 Replit AI：Replit Starter 提供每日 Agent 额度与月度上限，且可发布一个应用，其链接在 30 天后到期。需要解释与学习支持时，ChatGPT 是不错的起点。
 
 ### 最全能的 AI 编程工具是哪一个？
 

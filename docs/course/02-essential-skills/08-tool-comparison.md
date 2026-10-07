@@ -30,7 +30,7 @@ Let's look at a few popular choices and what makes them unique.
 
 *   **The Pitch:** "Your AI pair programmer."
 *   **Key Features:** Excellent inline code completion, tight integration with the GitHub ecosystem, and a powerful in-editor chat.
-*   **Cost:** Paid subscription (often free for students and open-source maintainers).
+*   **Cost:** Limited Free plan available, paid Pro at $10/month; verified students use Student, eligible teachers/maintainers may receive free Pro
 *   **Best For:** Developers who are already heavily invested in the GitHub ecosystem. Its code completion is widely considered best-in-class.
 
 #### 2. Codeium
@@ -43,8 +43,8 @@ Let's look at a few popular choices and what makes them unique.
 #### 3. Tabnine
 
 *   **The Pitch:** "The AI that knows your code."
-*   **Key Features:** Focuses heavily on personalization. It can be trained on your specific repositories to provide more context-aware and style-consistent suggestions.
-*   **Cost:** Has both free and paid tiers.
+*   **Key Features:** Focuses heavily on personalization; can be trained on specific repositories using private fine-tuned models in private setups for context-aware, style-consistent suggestions (team-accessible only)
+*   **Cost:** Contact [Tricentis](https://www.tricentis.com/contact-us) to view current offers; free tier availability is not guaranteed.
 *   **Best For:** Teams and enterprises who want to ensure the AI assistant adheres to their internal coding standards and APIs.
 
 ### How to Choose?

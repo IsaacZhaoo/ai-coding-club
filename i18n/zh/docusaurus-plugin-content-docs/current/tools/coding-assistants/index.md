@@ -35,7 +35,7 @@ AI编程助手彻底改变了开发者的代码编写方式。本部分涵盖选
 |------|------|-------|----------|
 | [Cursor](./cursor) | 完整 IDE | 付费套餐 | 多文件改动 + 重构 |
 | [Claude Code](./claude-code) | CLI 工具 | 付费套餐 | 规划 + 复杂推理 |
-| [GitHub Copilot](./github-copilot) | 扩展 | 付费套餐 | 行内自动补全 |
+| [GitHub Copilot](./github-copilot) | 扩展 | **定价**: 含有限额 Free 及付费套餐 | 行内自动补全 |
 | [ChatGPT](./chatgpt) | 对话助手 | 免费/付费 | 学习 + 调试 + 写作 |
 | [Codeium](./codeium) | 扩展 | 免费/付费 | 性价比自动补全 |
 | Windsurf | 完整 IDE | 不定 | Codeium 生态 IDE |
@@ -100,7 +100,7 @@ Claude Code将Anthropic最强大的AI模型带到你的终端。在架构决策�
 - ✅ 聊天界面
 - ✅ GitHub集成
 
-**定价**: $10/月个人版（学生免费）
+**定价**: $10/月 Pro版（普通 Free 版有限额，经认证的学生用 Student，经认证的教师和热门开源维护者可能获得免费 Pro）
 
 **最佳用途**: 使用VS Code和GitHub的开发者
 

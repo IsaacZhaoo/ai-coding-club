@@ -35,7 +35,7 @@ AI coding assistants have revolutionized how developers write code. This section
 |------|------|-------|----------|
 | [Cursor](/docs/tools/coding-assistants/cursor) | Full IDE | Paid plans | Multi-file work + refactors |
 | [Claude Code](/docs/tools/coding-assistants/claude-code) | CLI Tool | Paid plans | Planning + complex reasoning |
-| [GitHub Copilot](/docs/tools/coding-assistants/github-copilot) | Extension | Paid plans | Inline autocomplete |
+| [GitHub Copilot](/docs/tools/coding-assistants/github-copilot) | Extension | Limited Free + $10/month Pro + $19/user/month Business | Inline autocomplete |
 | [ChatGPT](/docs/tools/coding-assistants/chatgpt) | Chat assistant | Free/paid | Learning + debugging + writing |
 | [Codeium](/docs/tools/coding-assistants/codeium) | Extension | Free/paid | Budget-friendly autocomplete |
 | Windsurf | Full IDE | Varies | Codeium ecosystem IDE |
@@ -100,7 +100,7 @@ The original AI coding assistant, now with chat capabilities. Solid choice if yo
 - ✅ Chat interface
 - ✅ GitHub integration
 
-**Pricing**: $10/month Individual (Free for students)
+**Pricing**: $10/month Pro (limited Free available; verified students use Student; eligible verified teachers/maintainers may receive free Pro)
 
 **Best for**: Developers using VS Code and GitHub
 

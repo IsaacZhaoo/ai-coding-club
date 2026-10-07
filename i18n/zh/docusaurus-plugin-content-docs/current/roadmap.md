@@ -87,7 +87,7 @@ graph TB
 **项目：** 构建一个简单的个人介绍网页（HTML + CSS）
 
 **工具：**
-- [Replit AI](https://replit.com)（免费）- 在线 IDE，内置 AI 助手
+- [Replit AI](https://replit.com)（Starter 免费版，每日 Agent 额度限制与月度上限；可发布一个应用，其链接在 30 天后到期）- 在线 IDE，内置 AI 助手
 - [ChatGPT](https://chatgpt.com)（免费层）- 解释代码并回答问题
 - 备选：[v0.dev](https://v0.dev)（生成 UI 组件）
 

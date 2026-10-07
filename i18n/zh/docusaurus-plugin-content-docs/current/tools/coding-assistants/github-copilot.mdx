@@ -272,7 +272,7 @@ GitHub Copilot 是集成到主流编辑器（VS Code、JetBrains、Visual Studio
 它相对弱的场景：
 
 - 需要深度理解整个仓库并跨很多文件协调
-- 需要“代理式”执行（跑命令、批量多文件改动）
+- 需要“代理式”执行（跑命令、批量多文件改动），且想保持在 inline 补全或 Ask 模式时，可考虑 Agent 模式；它支持多文件编辑与默认批准后的命令执行
 - 你没有验证闭环（不跑测试、不跑类型检查）
 
 ## 如何安装 Copilot？
@@ -639,7 +639,7 @@ export function parseDuration(input: string): number | null {
 
 ### Copilot 能跑命令或自动改很多文件吗？
 
-多数编辑器里 Copilot 以建议和对话为主，不是终端执行型工具。它可以提出命令与计划，但你应当自己运行命令、分步改动，保持 diff 可审查。如果需要更“代理式”的多文件工作流，考虑 Cursor 或 Claude Code。
+Copilot的Agent模式可修改多个文件、执行命令并进行任务迭代。默认批准针对命令操作，配置后部分命令可自动执行。Ask对话与行内补全分属不同模式。复核diff并分步改动是安全实践。
 
 ### Copilot 能帮我快速熟悉新仓库吗？
 

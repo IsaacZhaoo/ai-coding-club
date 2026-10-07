@@ -87,7 +87,7 @@ graph TB
 **Project:** Build a simple personal introduction webpage (HTML + CSS)
 
 **Tools:**
-- [Replit AI](https://replit.com) (free) - Online IDE with AI assistant
+- [Replit AI](https://replit.com) (Free Starter tier with daily/monthly Agent credits; one published app link lasts 30 days) - Online IDE with AI assistant
 - [ChatGPT](https://chatgpt.com) (free tier) - Explain code & answer questions
 - Alternative: [v0.dev](https://v0.dev) (generate UI components)
 

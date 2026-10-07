@@ -476,7 +476,7 @@ Don’t paste large third-party code into prompts. Prefer generating original co
 
 ### Can Copilot run commands or edit multiple files automatically?
 
-In most editors, Copilot focuses on suggestions and chat, not autonomous command execution. It can propose commands and multi-file plans, but you should run commands yourself and keep edits stepwise so the diff stays reviewable. If you want a more “agentic” multi-file workflow, pair Copilot with Cursor or Claude Code.
+In most editors, Copilot focuses on suggestions and chat. Agent mode can edit multiple files and execute commands with default approval required for each command (editor/admin settings may enable some automatic execution). Ask and inline completion are separate modes. Keep diffs reviewable and edit incrementally; Copilot supports fully agentic multi-file workflows independently.
 
 Rule of thumb: let Copilot accelerate typing, but use your build/test pipeline to decide whether changes ship.
 Treat suggestions as drafts, not truth—always. No exceptions.

@@ -69,7 +69,7 @@ If you are choosing between task-oriented coding agents, use these guides to pra
   items={[
     {
       question: 'Which AI coding tool is best for beginners?',
-      answer: 'If you want a free option, start with Codeium or Replit AI. If you want strong explanations, ChatGPT is a good starting point.',
+      answer: "Start with Codeium or Replit AI if you want free options, or ChatGPT if you want explanations and guidance. Note that Replit Starter includes daily Agent credits, a monthly cap, and one free published app link lasting 30 days.",
     },
     {
       question: 'What is the best all-around AI coding tool?',
@@ -87,12 +87,12 @@ If you are choosing between task-oriented coding agents, use these guides to pra
 | Tool | Best For | Price | Our Take |
 |------|----------|-------|----------|
 | [Cursor](https://cursor.sh/) | Complete IDE replacement, full project context | $20/month Pro | Best all-around choice for serious AI-assisted development. Excellent context awareness. |
-| [GitHub Copilot](https://github.com/features/copilot) | Integration with existing editors, GitHub workflow | $10/month Individual | Solid choice if you're already in the GitHub ecosystem. Good autocomplete. |
+| [GitHub Copilot](https://github.com/features/copilot) | Integration with existing editors, GitHub workflow | $10/month Pro | Solid choice if you're already in the GitHub ecosystem. Good autocomplete. |
 | [Claude Code](https://claude.com/claude-code) | Deep reasoning, complex refactoring | Included with Claude Pro ($20/month) | Exceptional for architecture decisions and complex code reasoning. |
 | [ChatGPT Plus](https://openai.com/chatgpt) | General coding help, explanations | $20/month | Versatile for learning and quick questions, less specialized for coding. |
 | [Windsurf Plugin (formerly Codeium)](https://docs.windsurf.com/plugins/getting-started) | Budget-conscious developers | check the [Windsurf docs](https://docs.windsurf.com/plugins/getting-started) | Impressive free tier with good autocomplete. Great for students and hobbyists. |
-| [Replit AI](https://replit.com/ai) | Quick prototypes, learning | Free tier + $20/month Pro | Perfect for beginners and rapid prototyping. Integrated environment. |
-| [Tabnine](https://www.tabnine.com/) | Privacy-focused teams, local models | Free + $12/month Pro | Strong privacy features with local model options. Good for enterprise. |
+| [Replit AI](https://replit.com/ai) | Quick prototypes, learning | Free Starter tier + Core/Pro paid (official pricing at https://replit.com/pricing) | Perfect for beginners and rapid prototyping. Integrated environment. |
+| [Tabnine](https://www.tabnine.com/) | Privacy-focused teams, local models via Enterprise private deployment (VPC/on-premises/air-gapped) | [Contact Tricentis for Pricing](https://www.tricentis.com/contact-us) | Strong privacy features with Enterprise private deployment local models. Good for enterprise. |
 | [Amazon Q Developer](https://aws.amazon.com/q/developer/) | AWS development, security scanning | Free tier + Pro tiers; limits depend on authentication and surface | Best for AWS-focused development. Includes security vulnerability scanning. |
 | [Windsurf](https://windsurf.com/pricing) | Cursor alternative, competitive features | [Devin Plans and Pricing](https://windsurf.com/pricing): Free light agent quota/limited models; paid plans have quotas | New entrant with impressive features. Worth watching. |
 | [Continue](https://continue.dev/) | Open source, customizable | Free (open source) | For developers who want full control and customization. Self-hosted option. |
@@ -148,7 +148,7 @@ If you are choosing between task-oriented coding agents, use these guides to pra
 
 ### GitHub Copilot
 - **Website:** https://github.com/features/copilot
-- **Pricing:** $10/month Individual, $19/user/month Business, Free for students/educators
+- **Pricing:** $10/month Pro, $19/user/month Business; a limited Free tier exists alongside Student for verified students and free Pro for verified teachers and eligible popular open-source maintainers
 - **Key Features:**
   - Works in VS Code, JetBrains, Neovim
   - Inline suggestions
@@ -206,25 +206,25 @@ Official plugin is in maintenance mode.
 
 ### Replit AI
 - **Website:** https://replit.com/ai
-- **Pricing:** Free tier, $20/month Pro
+- **Pricing:** Free Starter includes daily/monthly Agent credits plus one published app link expiring in 30 days; Core is a paid plan that includes USD20 of monthly usage credits for cloud resources (additional usage may cost more); Pro is also paid at USD100/month ([current pricing](https://replit.com/pricing)).
 - **Key Features:**
   - Integrated development environment
   - Instant deployment
-  - Collaborative coding
+  - Collaborative coding (Starter: 0 seats, Core: 5 seats, Pro: 15 seats)
   - AI chat and code generation
 - **Best For:** Beginners, quick prototypes, learning, collaborative projects
 - **Our Take:** Perfect for beginners who want to jump straight into coding without setup. The integrated environment makes it very accessible.
 
 ### Tabnine
 - **Website:** https://www.tabnine.com/
-- **Pricing:** Free, $12/month Pro, Enterprise pricing
+- **Pricing:** Contact [Tricentis](https://www.tricentis.com/contact-us) for current plans; legacy details may have changed.
 - **Key Features:**
   - Privacy-focused
-  - Local model options
+  - Local model options via Enterprise private deployment (VPC, on-premises, air-gapped); availability depends on configuration, not all hosted models run offline
   - Multi-IDE support
-  - Team training on codebase
+  - Team training on codebase via private fine-tuned models trained on private code for team members, stored in private setups
 - **Best For:** Privacy-conscious teams, enterprise environments
-- **Our Take:** Stand out for privacy features and ability to run models locally. Good choice for companies with strict data policies.
+- **Our Take:** Stand out for privacy features and Enterprise private deployment local models. Good choice for companies with strict data policies.
 
 ### Amazon Q Developer {#amazon-codewhisperer}
 - **Website:** https://aws.amazon.com/q/developer/
@@ -261,7 +261,7 @@ Official plugin is in maintenance mode.
 ## How to Choose
 
 ### For Beginners
-Start with **Codeium** (free) or **Replit AI** (free tier) to learn without financial commitment.
+Start with **Codeium** (free) or **Replit AI** (Free Starter tier with daily Agent credits/monthly cap and one published app link lasting 30 days) to learn without financial commitment.
 
 ### For Professional Developers
 **Cursor** offers the best overall experience for serious development work.
@@ -273,7 +273,7 @@ Start with **Codeium** (free) or **Replit AI** (free tier) to learn without fina
 **Claude Code** excels at deep reasoning and architectural decisions.
 
 ### For Privacy/Security
-**Tabnine** with local models or **Amazon Q Developer** with security scanning.
+**Tabnine** with Enterprise private deployment local models or **Amazon Q Developer** with security scanning.
 
 ### For AWS Development
 **Amazon Q Developer** — Free tier + Pro tiers; limits depend on authentication and surface.
@@ -295,7 +295,7 @@ AI coding tools evolve rapidly. Check back regularly for updates to stay current
 
 ### Which AI coding tool is best for beginners?
 
-Start with Codeium or Replit AI if you want free options, or ChatGPT if you want explanations and guidance.
+Start with Codeium or Replit AI if you want free options, or ChatGPT if you want explanations and guidance. Note that Replit Starter includes daily Agent credits, a monthly cap, and one free published app link lasting 30 days.
 
 ### What is the best all-around AI coding tool?
 
