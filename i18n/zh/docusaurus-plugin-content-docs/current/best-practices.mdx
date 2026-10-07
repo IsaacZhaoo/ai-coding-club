@@ -556,20 +556,20 @@ class AIUsageTracker:
     def __init__(self, log_file='ai_usage.json'):
         self.log_file = log_file
         self.usage = {
-            'gpt-4': {'tokens': 0, 'cost': 0, 'requests': 0},
             'gpt-4o': {'tokens': 0, 'cost': 0, 'requests': 0},
-            'gpt-3.5-turbo': {'tokens': 0, 'cost': 0, 'requests': 0},
-            'claude-3-opus': {'tokens': 0, 'cost': 0, 'requests': 0},
-            'claude-3-sonnet': {'tokens': 0, 'cost': 0, 'requests': 0},
+            'gpt-4o-mini': {'tokens': 0, 'cost': 0, 'requests': 0},
+            'claude-opus-4-6': {'tokens': 0, 'cost': 0, 'requests': 0},
+            'claude-sonnet-4-6': {'tokens': 0, 'cost': 0, 'requests': 0},
         }
 
-        # Prices per 1M tokens (as of 2025)
+        # Standard uncached prices per 1M tokens; verify current rates before use.
+        # Claude rates checked 2026-10-07: https://platform.claude.com/docs/en/about-claude/pricing
+        # GPT-4o/GPT-4o mini rates checked 2026-10-07: https://developers.openai.com/api/docs/pricing
         self.prices = {
-            'gpt-4': {'input': 30, 'output': 60},
-            'gpt-4o': {'input': 5, 'output': 15},
-            'gpt-3.5-turbo': {'input': 0.5, 'output': 1.5},
-            'claude-3-opus': {'input': 15, 'output': 75},
-            'claude-3-sonnet': {'input': 3, 'output': 15},
+            'gpt-4o': {'input': 2.5, 'output': 10},
+            'gpt-4o-mini': {'input': 0.15, 'output': 0.6},
+            'claude-opus-4-6': {'input': 5, 'output': 25},
+            'claude-sonnet-4-6': {'input': 3, 'output': 15},
         }
 
     def track_request(self, model: str, input_tokens: int, output_tokens: int):
@@ -687,41 +687,45 @@ def select_model(task_type, complexity, budget):
     """
 
     if budget == 'free':
-        return 'gpt-3.5-turbo'  # or DeepSeek
+        raise ValueError("This example supports paid APIs only; choose a free tool separately.")
 
     if task_type == 'boilerplate':
-        return 'gpt-3.5-turbo'  # $0.50/M - Good enough
+        return 'gpt-4o-mini'  # $0.15/M input tokens
 
     if task_type in ['logic', 'debug'] and complexity == 'high':
-        return 'gpt-4o'  # $5/M - Best balance
+        return 'gpt-4o'  # $2.50/M input tokens - Best balance
 
     if task_type == 'review' and complexity == 'high':
-        return 'claude-3-sonnet'  # $3/M - Excellent for analysis
+        return 'claude-sonnet-4-6'  # $3/M input tokens - Excellent for analysis
 
     return 'gpt-4o'  # Default: Best value
 
 # Examples:
-select_model('boilerplate', 'low', 'paid')  # gpt-3.5-turbo
+select_model('boilerplate', 'low', 'paid')  # gpt-4o-mini
 select_model('logic', 'high', 'paid')       # gpt-4o
-select_model('review', 'high', 'paid')      # claude-3-sonnet
+select_model('review', 'high', 'paid')      # claude-sonnet-4-6
 ```
 
 #### 2. 提示词缓存（Claude）
 
 ```python
-# Save 90% on repeated context
+# Cache hits save 90% on cached input tokens only.
+# Uncached input and output tokens are billed at their standard rates.
 from anthropic import Anthropic
 
 client = Anthropic()
 
-# Large context you'll reuse (e.g., your codebase)
+# Replace this placeholder with the real context you will reuse.
+# Sonnet 4.6 needs at least 1,024 tokens in the cached prefix;
+# this placeholder alone is too short to be cached.
 system_context = """
 [Your 50KB codebase documentation]
 """
 
-# First request: Full cost
+# First request: 5-minute cache writes cost 1.25x the base input rate
+# ($3.75 per 1M cache-write tokens on Sonnet 4.6).
 response = client.messages.create(
-    model="claude-3-sonnet-20240229",
+    model="claude-sonnet-4-6",
     max_tokens=1024,
     system=[
         {
@@ -733,9 +737,10 @@ response = client.messages.create(
     messages=[{"role": "user", "content": "Explain the auth module"}]
 )
 
-# Subsequent requests within 5 minutes: 90% cheaper
+# Subsequent requests within 5 minutes: matching cached input costs 0.1x
+# the base input rate ($0.30 per 1M tokens); other input/output cost extra.
 response = client.messages.create(
-    model="claude-3-sonnet-20240229",
+    model="claude-sonnet-4-6",
     max_tokens=1024,
     system=[
         {
@@ -747,7 +752,6 @@ response = client.messages.create(
     messages=[{"role": "user", "content": "Now explain the database module"}]
 )
 
-# See our guide: (Coming in Phase 2: /blog/claude-prompt-caching)
 ```
 
 #### 3. 批量请求
