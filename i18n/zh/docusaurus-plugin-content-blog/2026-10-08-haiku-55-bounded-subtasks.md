@@ -1,5 +1,5 @@
 ---
-title: "哈伊库的便宜是“重新定义分工”，不是“把整场演出交给它”"
+title: "Haiku 的便宜是“重新定义分工”，不是“把整场演出交给它”"
 slug: haiku-55-bounded-subtasks
 description: "结合 Haiku 5.5 的短长提示价档，判断哪些 Coding Agent 子任务适合交给小模型，以及怎样核对交付物和整项任务成本。"
 authors: [isaac]
@@ -9,7 +9,7 @@ tags: [ai, tools, perspective]
 import ArticleSchema from '@site/src/components/ArticleSchema';
 
 <ArticleSchema
-  headline={"哈伊库的便宜是“重新定义分工”，不是“把整场演出交给它”"}
+  headline={"Haiku 的便宜是“重新定义分工”，不是“把整场演出交给它”"}
   description={"结合 Haiku 5.5 的短长提示价档，判断哪些 Coding Agent 子任务适合交给小模型，以及怎样核对交付物和整项任务成本。"}
   datePublished="2026-10-08"
   dateModified="2026-10-08"
@@ -19,7 +19,7 @@ import ArticleSchema from '@site/src/components/ArticleSchema';
 如果你最近才看到 Haiku 5.5，可能已经被两个数字晃了神：输入 $0.10/百万 token、输出 $0.50/百万 token（仅限 prompt ≤ 100,000 token 时；超过该阈值会切换为更高价档）。  
 再对比一下 Haiku 4.5——输入 $1、输出 $5——直觉上，把一切交给它，成本当然会“暴跌”。
 
-但现实是：当你用 Coding Agent 真正干活时，最贵的往往不是某一段哈伊库生成的代码，而是“主模型反复跑同一件事”的时间损耗。  
+但现实是：当你用 Coding Agent 真正干活时，最贵的往往不是某一段 Haiku 生成的代码，而是“主模型反复跑同一件事”的时间损耗。  
 Anthropic 2026 年 10 月 7 日的发布稿已经说得清楚：复杂 agentic coding 任务仍然更适合 Opus 5.5、Sonnet 5.5；Haiku 的定位是更窄的压缩、摘要、子 Agent 工作，以及高频、成本敏感的场景。  
 这不是我跑出来的跑分，这是官方给出的“使用边界”。  
 把这句话当成前提，你会发现：Haiku 5.5 真正带来的不是“更便宜的模型”，而是“重新分配任务的机会”。

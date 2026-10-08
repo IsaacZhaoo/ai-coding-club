@@ -1,6 +1,6 @@
 {
-  "version": "1.0.0",
-  "lastUpdated": "2025-11-03",
+  "version": "1.1.0",
+  "lastUpdated": "2026-10-08",
   "description": "Translation glossary for AI Coding Club - English to Chinese technical terminology",
   "terms": [
     {
@@ -14,6 +14,28 @@
       "en": "Claude",
       "zh": "Claude",
       "notes": "Keep in English - brand name"
+    },
+    {
+      "category": "tool-names",
+      "en": "Haiku",
+      "zh": "Haiku",
+      "notes": "Claude model family name; preserve English spelling in titles, prose and metadata.",
+      "forbiddenZh": [
+        "哈伊库",
+        "哈库伊"
+      ]
+    },
+    {
+      "category": "tool-names",
+      "en": "Sonnet",
+      "zh": "Sonnet",
+      "notes": "Claude model family name; preserve English spelling in titles, prose and metadata."
+    },
+    {
+      "category": "tool-names",
+      "en": "Opus",
+      "zh": "Opus",
+      "notes": "Claude model family name; preserve English spelling in titles, prose and metadata."
     },
     {
       "category": "tool-names",
@@ -528,7 +550,7 @@
   ],
   "categories": {
     "tool-names": {
-      "description": "Brand names of AI tools, IDEs, and platforms - keep in English",
+      "description": "Brand names of AI tools, model families, IDEs, and platforms - keep in English",
       "translationGuideline": "Do not translate. Maintain original English spelling and capitalization."
     },
     "programming-concepts": {
@@ -565,6 +587,7 @@
     "URLs and file paths should remain in English",
     "Use the category guidelines to understand translation approach for different term types",
     "For terms not in this glossary, consult with team or reference existing translations in i18n/zh/code.json",
-    "Update this glossary when new important terms are encountered during translation"
+    "Update this glossary when new important terms are encountered during translation",
+    "Use the same naming rules for independently authored Chinese articles and translations; only entries with forbiddenZh define automated rejection rules."
   ]
 }
