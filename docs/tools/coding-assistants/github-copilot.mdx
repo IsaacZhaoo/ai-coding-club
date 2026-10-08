@@ -478,6 +478,11 @@ Don’t paste large third-party code into prompts. Prefer generating original co
 
 In most editors, Copilot focuses on suggestions and chat. Agent mode can edit multiple files and execute commands with default approval required for each command (editor/admin settings may enable some automatic execution). Ask and inline completion are separate modes. Keep diffs reviewable and edit incrementally; Copilot supports fully agentic multi-file workflows independently.
 
+### FAQ
+- **Local sandbox GA:** October 7 general availability applies to Copilot CLI, app, and VS Code sessions using Agent Host; it is not automatically enabled everywhere. The sandbox restricts tool and command access to the filesystem, network, and credentials by policy. Tool isolation also enforces secure execution but does not determine where the model itself runs. See https://github.blog/changelog/2026-10-07-local-sandboxing-for-github-copilot-now-generally-available/
+- **CLI local model discovery:** From CLI 1.0.94-0, the model picker can discover models from a running local Ollama instance; discovery does not install or auto-add models and requires tool calling plus streaming support. Local selection does not enable offline mode or disable telemetry. See https://github.blog/changelog/2026-10-07-discover-local-models-in-github-copilot-cli/
+- **Haiku 5.5 availability:** GA in Copilot for Pro, Pro+, Max, Business, and Enterprise with gradual rollout and organizational model policy; supported across IDEs, CLI, app, cloud agent, web, and mobile. See https://github.blog/changelog/2026-10-07-claude-haiku-5-5-in-github-copilot/
+
 Rule of thumb: let Copilot accelerate typing, but use your build/test pipeline to decide whether changes ship.
 Treat suggestions as drafts, not truth—always. No exceptions.
 

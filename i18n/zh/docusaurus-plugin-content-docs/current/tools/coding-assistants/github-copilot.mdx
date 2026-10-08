@@ -641,6 +641,11 @@ export function parseDuration(input: string): number | null {
 
 Copilot的Agent模式可修改多个文件、执行命令并进行任务迭代。默认批准针对命令操作，配置后部分命令可自动执行。Ask对话与行内补全分属不同模式。复核diff并分步改动是安全实践。
 
+### 近期发布动态（以官方公告为准）
+- **本地沙箱 GA**：10 月 7 日 Copilot CLI、Copilot app 与使用 Agent Host 的 VS Code 会话已支持沙箱，工具/命令的文件、网络与凭据权限受策略限制；沙箱无额外收费且不等于所有入口默认启用。[公告](https://github.blog/changelog/2026-10-07-local-sandboxing-for-github-copilot-now-generally-available/)
+- **CLI 本地模型发现**：从 1.0.94-0 起 CLI 可发现已运行 Ollama 的受支持模型（需预先安装 runtime/模型并确认 tool calling + streaming）；发现不等于自动下载，选择本地模型不自动开启离线模式或关闭 telemetry。[公告](https://github.blog/changelog/2026-10-07-discover-local-models-in-github-copilot-cli/)
+- **Haiku 5.5 可用范围**：Pro/Pro+/Max/Business/Enterprise 分批开放（受组织模型策略影响），支持 IDE、CLI、app、cloud agent、网页与手机等入口。[公告](https://github.blog/changelog/2026-10-07-claude-haiku-5-5-in-github-copilot/)
+
 ### Copilot 能帮我快速熟悉新仓库吗？
 
 可以：让它指出入口、给一条请求流解释、告诉你下一步该读哪些文件。然后你再亲自打开确认。

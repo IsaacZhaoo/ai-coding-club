@@ -911,12 +911,30 @@ Explain each major change.
 - Keyboard shortcut: `Ctrl+Shift+G`
 
 **Command Line:**
+
+Before using the Bash helper script below, ensure that Bash, curl, jq, and an `OPENAI_API_KEY` environment variable are set and available. Paste or source the function into your shell session before invoking `askgpt`. Note that each API call is billed separately from your ChatGPT subscription. This sample uses gpt-5.6-sol because GPT-4 has an announced shutdown date of October 23, 2026; check the official deprecation notice for current status and details: https://developers.openai.com/api/docs/deprecations
 ```bash
-# Create alias
-alias askgpt='function _ask(){ curl -X POST https://api.openai.com/v1/chat/completions -H "Content-Type: application/json" -H "Authorization: Bearer $OPENAI_API_KEY" -d "{\"model\":\"gpt-4\",\"messages\":[{\"role\":\"user\",\"content\":\"$1\"}]}" | jq -r ".choices[0].message.content"; }; _ask'
+# Requires Bash, curl, jq, and OPENAI_API_KEY in your environment.
+unalias askgpt 2>/dev/null || true
+askgpt() (
+  set -o pipefail
+  : "${OPENAI_API_KEY:?Set OPENAI_API_KEY before calling askgpt}"
+  if [ "$#" -ne 1 ]; then
+    printf '%s\n' 'Usage: askgpt "your prompt"' >&2
+    return 2
+  fi
+
+  jq -n --arg prompt "$1" \
+    '{model: "gpt-5.6-sol", messages: [{role: "user", content: $prompt}]}' |
+    curl --fail --silent --show-error https://api.openai.com/v1/chat/completions \
+      -H "Content-Type: application/json" \
+      -H "Authorization: Bearer $OPENAI_API_KEY" \
+      --data-binary @- |
+    jq -er '.choices[0].message.content // error(.error.message // .choices[0].message.refusal // "No text response")'
+)
 
 # Usage
-askgpt "Explain this regex: ^[\w\.-]+@[\w\.-]+\.\w+$"
+askgpt 'Explain this regex: ^[\w\.-]+@[\w\.-]+\.\w+$'
 ```
 
 ### Daily Workflow Integration
@@ -983,21 +1001,33 @@ check_security(ai_generated_code)
 Total: 50 min to learn new concept
 ```
 
-### 4. Track Cost (GPT-4)
+### 4. Track Cost (API Usage)
+
+The following example demonstrates standard text-token arithmetic to estimate API costs. It replaces character-count assumptions with response usage figures and supports up to 272,000 input tokens while excluding cache-write charges, tool usage, and special processing fees. Importantly, no actual API request is made. Since model prices are promotional, verify current rates before applying these numbers by referring to the official model and pricing documentation: https://developers.openai.com/api/docs/models/gpt-5.6-sol ; https://developers.openai.com/api/docs/pricing
 
 ```python
-# If using API
-import openai
+# Illustrative Chat Completions usage; this code makes no API request.
+# Replace with the usage object from your response for a real estimate.
+# GPT-5.6 Sol, standard text-token rates checked on 2026-10-08.
+usage = {
+    "prompt_tokens": 1600,
+    "prompt_tokens_details": {"cached_tokens": 1024, "cache_write_tokens": 0},
+    "completion_tokens": 300,
+}
 
-def count_tokens(text):
-    # Approximate: 1 token ≈ 4 characters
-    return len(text) // 4
+details = usage.get("prompt_tokens_details") or {}
+input_tokens = usage["prompt_tokens"]
+cached_tokens = details.get("cached_tokens", 0)
+if input_tokens > 272_000 or details.get("cache_write_tokens", 0):
+    raise ValueError("Use the pricing table for long context or cache writes")
 
-prompt = "Your prompt here"
-tokens = count_tokens(prompt)
-cost = tokens * $0.03 / 1000  # GPT-4 pricing
+cost = (
+    (input_tokens - cached_tokens) * 4.00
+    + cached_tokens * 0.40
+    + usage["completion_tokens"] * 20.00
+) / 1_000_000
 
-print(f"Estimated cost: ${cost:.4f}")
+print(f"Estimated text-token cost: ${cost:.6f}")
 ```
 
 ---

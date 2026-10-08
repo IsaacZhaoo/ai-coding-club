@@ -67,7 +67,7 @@ You need to run tests, modify config, and inspect failures.
 
 **This is a better fit for Claude Code.**
 
-Copilot's core strength is editor assistance and GitHub-native workflow. It now has agent mode and cloud agent features, but its main entry points still lean toward the editor and GitHub ecosystem.
+Copilot’s core strength remains editor assistance and GitHub-native workflows. It now includes agent mode and cloud agent features, and its CLI introduces terminal agent capabilities alongside IDE and GitHub integration. For automation scenarios requiring robust language understanding, Claude Code is still the preferred tool—though Copilot CLI can similarly execute multi-step terminal workflows when configured appropriately.
 
 Claude Code can work in the terminal: read code, change config, run `npm test`, inspect the error, fix the issue, and run the checks again. That repo-wide loop is its core advantage.
 

@@ -67,7 +67,7 @@ Claude Code 的工作方式更接近项目级调查。你说"帮我解释这段�
 
 **这种情况更适合 Claude Code。**
 
-Copilot 的核心定位是编辑器内的补全和 GitHub 原生工作流。它现在也有 agent mode 和 cloud agent，但主要入口仍然偏编辑器和 GitHub 生态——它能帮你写 shell 脚本，能在编辑器里做 code review，但它不是为"在终端里跑一套多步执行流程"这个场景设计的。
+Copilot 的核心定位仍是编辑器内的补全和 GitHub 原生工作流，但 CLI 现在已可在终端执行代理工作流，IDE Agent/cloud agent 也已落地；主要入口依然偏编辑器和 GitHub 生态——它能帮你写 shell 脚本、做 code review，而上下文深度与智能自动化更适合交给 Claude Code。
 
 Claude Code 可以：读当前代码，改配置，跑 `npm test`，看报错，修 bug，再跑一遍，确认通过，然后 commit。整个流程在终端里自主完成，你只需要在开头说清楚要干什么。这种 repo-wide 的多步执行是 Claude Code 的核心优势，也是它和 Copilot 定位最根本的区别。
 
