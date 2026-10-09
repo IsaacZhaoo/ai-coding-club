@@ -1,0 +1,39 @@
+tools/openapi-client/src/App.tsx
+
+65:   const handleParseSpec = async (input: string | File, action: 'paste' | 'upload' | 'sample' = 'paste') => {
+66:     if (processing || (typeof input === 'string' && !input.trim())) return
+67:
+68:     const inputSource = action === 'sample' ? 'example' : action === 'upload' ? 'user_input' : draftInputSource
+69:     setGeneratedInputSource(inputSource)
+70:     setProcessing(true)
+71:     setError(null)
+72:     setGeneratedCode('')
+73:     setSelectedEndpoint(null)
+74:     setSpec(null)
+75:     setEndpoints([])
+76:
+77:     let stage: ErrorStage = typeof input === 'string' ? 'parse' : 'file_read'
+78:     try {
+79:       const text = typeof input === 'string' ? input : await input.text()
+80:       if (action !== 'paste') {
+81:         setSpecText(text)
+82:         setDraftInputSource(inputSource)
+83:       }
+84:       stage = 'parse'
+85:       const parsedSpec = await parseOpenAPISpec(text)
+86:       const extractedEndpoints = extractEndpoints(parsedSpec)
+87:
+88:       // Auto-generate code
+89:       stage = 'generate'
+90:       handleGenerate(parsedSpec, extractedEndpoints, selectedLanguage, action, inputSource)
+91:       setSpec(parsedSpec)
+92:       setEndpoints(extractedEndpoints)
+93:     } catch (err) {
+94:       setError((err as Error).message)
+95:       setSpec(null)
+96:       setEndpoints([])
+97:       trackToolEvent('tool_error', selectedLanguage, action, inputSource, stage)
+98:     } finally {
+99:       setProcessing(false)
+100:     }
+101:   }

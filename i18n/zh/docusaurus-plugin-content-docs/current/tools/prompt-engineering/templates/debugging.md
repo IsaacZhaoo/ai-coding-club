@@ -32,7 +32,7 @@ import FAQSchema from '@site/src/components/FAQSchema';
 
 ## 基础调试模板
 
-```markdown
+````markdown
 **问题**: [简要描述问题]
 
 **错误信息**:
@@ -64,7 +64,31 @@ import FAQSchema from '@site/src/components/FAQSchema';
 - [尝试2]
 
 帮我识别根本原因并提供解决方案。
-```
+````
+
+## 选代码：定位那行“万金油”通用错误
+
+面对 `Failed to parse OpenAPI spec. Provide a valid OpenAPI or Swagger JSON document. Convert YAML to JSON before importing.` 这条通用报错时，你的第一反应不该是“改提示词”，而是问自己：**我交给 AI 的原始输入是什么？我选进了哪些代码片段？这两者是否足以锁定真实原因？**
+
+当你的诊断卡在同一条错误消息上打转时，关键不是堆砌更多错误日志，而是回到「提示词」与「调试」循环的起点：用真实、可复现的输入去碰触源码。针对本例——`{"info":{"title":"Fixture","version":"1.0.0"},"paths":{}}`——我们聚焦于三个最小片段：解析入口、校验逻辑、错误展示，以及触发故障的具体输入。
+
+首先，打开 <a href="/examples/debugging-evidence/openapi-parser.txt">parseOpenAPISpec 的实现</a>。注意第 84-92 行的两层 catch：第一层捕获 `JSON.parse` 或下游校验失败；无论何种错误，统一进入一个占位式的 YAML 解析钩子（实际未实现），随即在第二层被兜底为同一条通用消息。这就是你看到的“万金油”——它不告诉你**何时**失败，只告诉你**失败了**。
+
+接着看 <a href="/examples/debugging-evidence/openapi-parser.txt">validateOpenAPISpec</a>（第 107-120 行）。它检查 `openapi`/`swagger`、`info.title`、`paths` 等字段。对本例输入：
+- JSON 解析成功；
+- `info.title` 与 `info.version` 存在且非空；
+- `paths` 是空对象（truthy）且 `typeof`为 object；
+- 但顶层缺少 `openapi` 或 `swagger`，校验抛出异常。
+
+再看 <a href="/examples/debugging-evidence/openapi-caller.txt">handleParseSpec</a> 如何喂养解析器。第 65-94 行显示它接收字符串或 `File.text()` 内容，直接传入 `parseOpenAPISpec`——没有预清理、没有 schema 提示，完全依赖输入原样。
+
+因此，诊断链条清晰：
+1. **相关代码**：`openapi.ts#L78-L121`（解析与校验）、`App.tsx#L65-L94`（输入接收）；
+2. **原始输入**：`{"info":{"title":"Fixture","version":"1.0.0"},"paths":{}}`（最小可复现样例）；
+3. **失败条件**：顶层缺失 `openapi`/`swagger`，触发校验异常 → 落入第一层 catch → 被统一包装为通用错误。
+
+注意：通用错误消息无法区分 YAML 输入、损坏 JSON 或字段缺失——源码的“万金油”处理往往掩盖了根源。真正的突破口是：将你能复现的实际代码片段与失败输入放进提示词，明确指出它们对应哪条校验规则；当前问题只需定位条件，无需调用代码生成器、添加样式或改动整个仓库。
+
 
 ---
 

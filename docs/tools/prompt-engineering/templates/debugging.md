@@ -32,7 +32,7 @@ These templates help you communicate bugs effectively to AI assistants, resultin
 
 ## Basic Debugging Template
 
-```markdown
+````markdown
 **Problem**: [Brief description of the issue]
 
 **Error Message**:
@@ -64,7 +64,31 @@ These templates help you communicate bugs effectively to AI assistants, resultin
 - [Attempt 2]
 
 Help me identify the root cause and suggest a solution.
+````
+
+## Distinguishing Causes for an Identical Error Message
+
+When a parser’s catch block always throws the same generic message—like `Failed to parse OpenAPI spec. Provide a valid OpenAPI or Swagger JSON document. Convert YAML to JSON before importing.`—the error itself tells you nothing about *why* it failed. You must reconstruct the missing pieces from your own diagnostic package.
+
+Below is a compact, repeatable exercise to do exactly that. Copy it into your notes; replace the sample input with the text that actually triggered the error in your environment.
+
+### Dissecting the Parser Exception with Minimal Evidence
+
+Consider this exact input:
+
+```json
+{"info":{"title":"Fixture","version":"1.0.0"},"paths":{}}
 ```
+
+In <a href="/examples/debugging-evidence/openapi-caller.txt"><code>App.tsx</code></a> (lines 65–94), `handleParseSpec` receives either a string or a File object; if it’s a file, `.text()` extracts its contents. The handler passes that text directly to <a href="/examples/debugging-evidence/openapi-parser.txt"><code>parseOpenAPISpec</code></a>. That function tries `JSON.parse()`, then runs `validateOpenAPISpec`. Your sample parses without throwing, but `validateOpenAPISpec` throws because both the top-level `openapi` and `swagger` keys are missing. The outer catch in `parseOpenAPISpec` then calls `parseSimpleYAML`, which always throws for every input—whether valid YAML, invalid content, or empty strings—funneling you into the nested catch that emits the generic ‘failed to parse’ message.
+
+To complete your diagnostic exercise:
+
+1. **Relevant Code:** Attach the parser flow from `parseOpenAPISpec` through the two catches and `validateOpenAPISpec`, plus the entry point in `handleParseSpec`. These fragments show where the expected fields are checked and why the generic error is emitted.
+2. **Original Input:** Attach the exact JSON payload above, including the fact that it lacks an `openapi` or `swagger` root property. This shows which validation rule was violated.
+
+Together, these selections prove the parser’s logic: valid JSON is not enough; without a recognized version field at the root, the spec fails immediately and falls back to a YAML fallback path, triggering the same error message.
+
 
 ---
 

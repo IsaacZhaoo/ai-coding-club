@@ -1,0 +1,45 @@
+tools/openapi-client/src/utils/openapi.ts
+
+78: export async function parseOpenAPISpec(text: string): Promise<OpenAPISpec> {
+79:   try {
+80:     // Try JSON first
+81:     const spec = JSON.parse(text)
+82:     validateOpenAPISpec(spec)
+83:     return spec
+84:   } catch (error) {
+85:     // The YAML placeholder rejects input until a parser is implemented.
+86:     try {
+87:       const yamlParsed = parseSimpleYAML(text)
+88:       validateOpenAPISpec(yamlParsed)
+89:       return yamlParsed
+90:     } catch (yamlError) {
+91:       throw new Error('Failed to parse OpenAPI spec. Provide a valid OpenAPI or Swagger JSON document. Convert YAML to JSON before importing.')
+92:     }
+93:   }
+94: }
+95:
+96: /**
+97:  * Placeholder for unsupported YAML input.
+98:  */
+99: function parseSimpleYAML(_yaml: string): any {
+100:   // Callers must convert YAML to JSON before importing.
+101:   throw new Error('YAML parsing not fully supported. Please convert your spec to JSON format.')
+102: }
+103:
+104: /**
+105:  * Validate OpenAPI spec structure
+106:  */
+107: function validateOpenAPISpec(spec: any): void {
+108:   if (!spec.info || !spec.info.title || !spec.info.version) {
+109:     throw new Error('Invalid OpenAPI spec: missing required info fields')
+110:   }
+111:
+112:   if (!spec.paths || typeof spec.paths !== 'object') {
+113:     throw new Error('Invalid OpenAPI spec: missing or invalid paths')
+114:   }
+115:
+116:   // Check for OpenAPI version
+117:   if (!spec.openapi && !spec.swagger) {
+118:     throw new Error('Invalid spec: missing openapi or swagger version field')
+119:   }
+120: }
