@@ -58,7 +58,7 @@ By the end of this guide, you'll know how to write better prompts for code gener
 - ✅ Code translation between languages
 
 **What ChatGPT Struggles With:**
-- ❌ Very new libraries (post-2023)
+- ❌ Very new libraries (post-cutoff dates), particularly those with updated APIs since the model’s training ended; exact scope varies by model and depends on whether current documentation was supplied or retrieved via search
 - ❌ Company-specific code
 - ❌ Complex system design
 - ❌ Security-critical code (review needed)
@@ -1047,13 +1047,13 @@ result = pandas.magic_function(df)  # ❌ Doesn't exist!
 
 ### 2. Outdated Information
 
-Training data cutoff (Jan 2024 for GPT-4):
+Training data cutoff varies by model, and library, API, and security specifics require freshness checks rather than universal coverage. While newer releases, changed APIs, or recent vulnerabilities may not be known without external access, the most accurate information is achieved by supplying official documentation in the prompt or enabling web search if permitted by your account/workspace. See: https://learn.chatgpt.com/docs/web-search
 
 ```
-# ❌ ChatGPT doesn't know about:
-- Libraries released after 2024
-- Latest API changes
-- Recent security vulnerabilities
+# ❌ Neither search nor supplied docs are universally exhaustive for:
+- Libraries released after the model's own training period
+- Latest API changes without provided documentation
+- Recent security advisories unless explicitly retrieved or shared
 
 # ✅ Solution: Provide documentation in prompt
 ```

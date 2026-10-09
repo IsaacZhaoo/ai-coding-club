@@ -57,7 +57,7 @@ You inherit authentication logic spread across five files and need the full call
 
 **Use Claude Code.**
 
-Copilot's core experience is still editor-centered. It can help if you provide enough context, but you often need to keep feeding it files and clues.
+Copilot’s core experience is still editor-centered, where inline suggestions help when you provide enough context but often require feeding it files and clues. In contrast, Copilot Chat and agent workflows can inspect a broader project landscape using available wider context, reducing the need to manually supply every relevant file; giving clear task context improves outcomes significantly for all modes. Keep using Claude Code when deep architectural reasoning is required.
 
 Claude Code works more like a project-level investigation. You can ask it to trace the flow from request entry to database query, and it can inspect the relevant files to produce a connected explanation.
 
@@ -77,7 +77,7 @@ Claude Code can work in the terminal: read code, change config, run `npm test`, 
 
 By "reasoning", I do not mean abstract model intelligence. I mean how much working context the tool can use in a real task.
 
-**Copilot** is strongest at local prediction: based on the current file and nearby code, it quickly suggests the next piece. Its advantage is speed and low friction. Its tradeoff is that multi-file reasoning often needs more manual steering.
+**Copilot** inline suggestions are strongest at local prediction: based on cursor-adjacent code and other available context, they quickly suggest the next piece with speed and low friction. Chat/agent workflows can instead inspect a project and work across files. Their tradeoff is that multi-file reasoning often benefits from explicit user steering—when you need that directed approach, you may prefer Claude Code’s structural reasoning.
 
 **Claude Code** works through multi-step tasks: receive a goal, inspect files, build context, propose or make changes, execute commands, and verify. Its tradeoff is that you need to describe the task clearly, and the workflow is slower than inline autocomplete.
 
