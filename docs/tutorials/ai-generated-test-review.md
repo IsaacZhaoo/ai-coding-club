@@ -171,6 +171,75 @@ This mutant reverses the direction of the comparison. Running the existing tests
 
 ---
 
+### Hands-on Exercise: See the Wrong Boundary Die
+
+So far you’ve read about strict requirements (age >= 18), an English baseline for ages 10, 19 and 25, and manual mutations. Now, see how a single character slip in the implementation survives a weak suite and is caught by a stronger one.
+
+This folder runs the age example using Node’s built-in test runner with strict assertions—no npm and no extra dependencies are required. The surrounding article keeps its Chai snippets for illustration, but this self-contained pack requires Node.js 24; run `node --version` to verify it’s available as `node` before proceeding.
+
+**Download the exercise files first:**  
+<a href="/examples/test-quality-lab.zip">Download test-quality-lab</a>
+
+After extracting `test-quality-lab.zip`, open your terminal inside `test-quality-lab` (the directory that contains `age.mjs`).
+
+First, confirm everything is present:
+- `ls` should show: `age.mjs`, `baseline-en.test.mjs`, `baseline-zh.test.mjs`, `boundary.test.mjs`, and these Readmes.
+
+**Step 1 — Verify the baseline works.**  
+Before editing any source files, run both test suites locally to verify the baseline state: execute `node --test --test-reporter=tap baseline-en.test.mjs` followed by `node --test --test-reporter=tap boundary.test.mjs`; each command should output exactly three passing tests and zero failures, confirming the age checks at 10, 19, and 25 (baseline) alongside the boundary suite checks at 17, 18, and 19 are functioning correctly.
+
+**Step 2 — Introduce the mutation.**  
+Open `age.mjs` in a text editor. Change the only line so it now reads:
+
+```javascript
+export function isUserOldEnough(user) {
+  return user.age > 18;           // note the ">" instead of ">="
+}
+```
+
+Save the file.
+
+**Step 3 — Re-run and observe.**  
+Run each suite again, one at a time:
+
+```bash
+node --test --test-reporter=tap baseline-en.test.mjs
+node --test --test-reporter=tap boundary.test.mjs
+```
+
+Running baseline-en.test.mjs shows all three tests still pass after changing >=18 to >18.
+
+The boundary suite now reports exactly one failure:
+
+- Test name: `age 18 returns true`
+- Error code: `ERR_ASSERTION`
+- Expected: `true`, Actual: `false`
+
+This mismatch proves the rule changed; it also shows how a targeted test set exposes edge-case logic errors that standard suites miss.
+
+**Step 4 — Restore correctness.**  
+Edit `age.mjs` back to the original:
+
+```javascript
+export function isUserOldEnough(user) {
+  return user.age >= 18;
+}
+```
+
+Save and run all three suites together:
+
+```bash
+node --test --test-reporter=tap baseline-en.test.mjs baseline-zh.test.mjs boundary.test.mjs
+```
+
+Expected result: 9 passing tests, 0 failures.
+
+You’ve now practiced the exact workflow you’ll apply to your own test sets: confirm a baseline, mutate, watch what breaks, and restore with confidence.
+
+If any command returns a syntax error, missing module, or anything other than an `ERR_ASSERTION` failure, stop and fix those first. That kind of error indicates a setup problem, not the boundary logic you are testing.
+
+---
+
 ## 5. Designing a Better Test Set
 
 The core rule is: a user is considered old enough if their age is greater than or equal to 18. To verify this cleanly with Chai, use the following minimal test block that covers the key boundary and surrounding values:

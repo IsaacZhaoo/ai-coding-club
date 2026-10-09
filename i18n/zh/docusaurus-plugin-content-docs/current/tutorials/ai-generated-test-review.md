@@ -84,6 +84,99 @@ it("returns true for an older adult (age 30)", () => {
 
 ---
 
+## 立即验证：一行修改，三面结果（可下载）
+
+本节让你用“同一行改动”观察三组测试如何反应：一组旧用例放跑错误、一组边界用例当场发现它。
+
+<a href="/examples/test-quality-lab.zip">立即下载 test-quality-lab</a> — 解压后内含三份`.test.mjs`测试文件与一个被测模块`age.mjs`。
+- 解压后在包含 `age.mjs` 的 `test-quality-lab` 文件夹内打开终端。
+- 确认 Node.js 24 已安装：输入 `node --version` 查看版本（包不依赖额外 npm 包）。
+
+### 原始三组测试（基准）
+
+用 Node 自带测试器一次性运行全部三套测试，预期 9 个测试全部通过：
+
+```bash
+node --test --test-reporter=tap baseline-en.test.mjs baseline-zh.test.mjs boundary.test.mjs
+```
+
+- `baseline-en.test.mjs`：英文教程原始用例（10/19/25）
+- `baseline-zh.test.mjs`：中文教程原始用例（17/19/30）
+- `boundary.test.mjs`：专门覆盖年龄边界的用例（17/18/19）
+
+### 实验：仅改一行实现
+
+在文本编辑器中，**仅修改** `age.mjs` 中的返回语句：  
+将 `return user.age >= 18;` 改为 `return user.age > 18;`，保存后分别重跑命令，观察差别。你会看到：“旧用例不够用、边界用例直接命中错误”。这正是“如何挑选真正有区分度的测试”的核心。
+
+### 运行预期（可对照）
+
+1. **中文原始用例（旧用例）**  
+   ```bash
+   node --test --test-reporter=tap baseline-zh.test.mjs
+   ```
+   - 测试通过的真实含义：年龄 17 岁返回`false`，年龄 19 岁与 30 岁均返回`true`。
+   - 含义：旧用例对“等于 18”的边界没有覆盖，因此改 `>=` 为 `>` 后仍显示“没问题”。
+
+2. **边界用例（关键对比）**  
+   ```bash
+   node --test --test-reporter=tap boundary.test.mjs
+   ```
+   - 预期：
+     - 2 个测试通过（17、19）
+     - 1 个测试失败（`age 18 returns true`），显示 `ERR_ASSERTION`
+     - 实际返回：`false`，期望：`true`
+     - 进程退出码：1
+   - 含义：边界用例专门针对“刚好成年”设计，能立刻发现“大于而非大于等于”的错误。
+
+3. **英文原始用例（对照）**  
+   ```bash
+   node --test --test-reporter=tap baseline-en.test.mjs
+   ```
+   - 预期：3 个测试全部通过（10/19/25）。
+   - 含义：同类型的旧式用例对相似的边界错误同样“看不见”。
+
+### 重要提示
+
+- **导入、语法或其他运行错误 ≠ 预期的断言失败。**  
+  如果遇到 `ERR_ASSERTION` 之外的问题（例如未定义导入、SyntaxError、module not found 等），先解决这些基础错误，再观察边界用例是否抛出“期望的”断言失败。
+- **不要串联命令**：每个测试文件单独执行，以便清晰对比结果与退出码。
+三份`.test.mjs`测试文件调用 Node 内置的测试断言模块进行严格验证，被测逻辑集中在独立的`age.mjs`文件中。配套压缩包运行的是与教程正文相同的年龄示例，但无需额外依赖；`age.mjs`仅作为纯函数模块被调用，保持环境干净、可复现。
+
+---
+
+## 恢复正确实现
+
+将 `age.mjs` 中的返回行改回：
+
+```javascript
+export function isUserOldEnough(user) {
+  return user.age >= 18;
+}
+```
+
+保存后，再次一次性验证三组测试，预期 9 个测试全部通过、0 失败：
+
+```bash
+node --test --test-reporter=tap baseline-en.test.mjs baseline-zh.test.mjs boundary.test.mjs
+```
+
+---
+
+## 回到你自己项目的一条需求与错误
+
+在真实项目中，当你只改了一行逻辑（比如把 `>=` 改成 `>`），却看到“所有测试仍全绿”时，往往意味着：
+
+- 你的测试集缺少**边界用例**；或
+- 你的测试用例没有覆盖“刚好满足条件”的状态。
+
+**简洁行动提示：**  
+1）列出你当前改动涉及的条件边界（如 0、1、阈值±1、最大/最小允许值）。  
+2）为每个边界补充一个断言，确保实际返回与期望一致。  
+3）像本练习一样：先跑旧用例，再专门跑边界用例，用失败来证明测试是有区分度的。
+
+---
+
 ## 实战：审阅一组 AI 生成的测试，找出具体遗漏
 
 下面给你一个常见场景：一个订单校验函数 `validateOrder`。
