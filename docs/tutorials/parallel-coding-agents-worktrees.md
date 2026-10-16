@@ -247,3 +247,4 @@ The operating system that makes parallelism useful is not the worktrees. The wor
 - [Graph Engineering Guide](/docs/tutorials/graph-engineering-guide/)
 - [AI Code Review Workflow](/docs/tutorials/ai-code-review-workflow/)
 - [Coding Agent Sandbox Security](/docs/tutorials/coding-agent-sandbox-security/)
+- [Review Dependent Agent Changes with Stacked PRs](/docs/tutorials/stacked-pr-dependent-agent-changes/)

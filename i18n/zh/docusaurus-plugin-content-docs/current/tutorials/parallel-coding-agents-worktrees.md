@@ -173,3 +173,4 @@ git worktree prune
 - [Graph Engineering 指南](/zh/docs/tutorials/graph-engineering-guide/)
 - [AI Code Review 工作流](/zh/docs/tutorials/ai-code-review-workflow/)
 - [Coding Agent 沙箱安全](/zh/docs/tutorials/coding-agent-sandbox-security/)
+- [相互依赖的 Agent 改动与 stacked PR 审查](/zh/docs/tutorials/stacked-pr-dependent-agent-changes/)

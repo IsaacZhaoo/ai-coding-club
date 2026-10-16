@@ -247,3 +247,4 @@ Unverified assumptions or residual risk:
 
 - [Cloudflare 安全审计 Skill](/zh/docs/tutorials/cloudflare-security-audit-skill/)
 - [用 AI 分阶段迁移 PostgreSQL 必填字段](/zh/docs/tutorials/database-required-field-migration/)
+- [相互依赖的 Agent 改动与 stacked PR 审查](/zh/docs/tutorials/stacked-pr-dependent-agent-changes/)

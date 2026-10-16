@@ -240,3 +240,4 @@ An agent should not recommend a merge because the diff looks plausible or the te
 
 - [Cloudflare Security Audit Skill](/docs/tutorials/cloudflare-security-audit-skill/)
 - [Add a Required PostgreSQL Field in Phases](/docs/tutorials/database-required-field-migration/)
+- [Review Dependent Agent Changes with Stacked PRs](/docs/tutorials/stacked-pr-dependent-agent-changes/)
