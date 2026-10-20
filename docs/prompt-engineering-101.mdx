@@ -235,13 +235,17 @@ def calc(nums):
 >
 > **Edge cases to handle:**
 > - Empty list → Currently returns 0 (good!)
-> - List with non-integer values → Would crash. Add type checking:
+> - The `calc` function successfully processes lists containing both integers (e.g., `[1, 2, 3]`) and floating-point numbers (e.g., `[1.5, 2.0, 4.0]` returning `6.0`), but raises a `TypeError` if it encounters an actual string like `"2"` instead of its numeric value, demonstrating that the function relies on valid numeric types rather than enforcing a strict integer-only rule.
+>
+> If you want an integer-only input contract, add type checking before the loop:
 > ```python
 > if not all(isinstance(num, int) for num in numbers):
 >     raise TypeError("All elements must be integers")
 > ```
 
 **Pro tip**: Ask AI to review your review - "Is there anything else I should consider?"
+
+When creating a real PR, state the goal (e.g., “Ensure `calc` only accepts integer inputs”), paste the latest diff showing the new guard, and document what checks you ran: unit tests, linting, and type validation. Explicitly note which checks remain unrun and why, then link to [Code Review prompt templates](/docs/tools/prompt-engineering/templates/code-review/) for a reusable review prompt and to [AI code review workflow](/docs/tutorials/ai-code-review-workflow/) to verify findings before merging.
 
 ---
 

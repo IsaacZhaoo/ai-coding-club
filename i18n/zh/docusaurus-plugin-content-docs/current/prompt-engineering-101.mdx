@@ -234,13 +234,15 @@ def calc(nums):
 >
 > **要处理的边缘情况：**
 > - 空列表 → 目前返回 0（很好！）
-> - 包含非整数值的列表 → 会崩溃。添加类型检查：
+> - 非整数值列表并不总是会导致崩溃，例如 calc([1.5, 2.0, 4.0]) 能顺利返回 6.0，而 calc([1, "2"]) 仅因为在求模运算处遇到字符串才抛出 TypeError；如果输入约定只接收整数，则应在循环前主动校验元素类型。
 > ```python
 > if not all(isinstance(num, int) for num in numbers):
 >     raise TypeError("所有元素必须是整数")
 > ```
 
 **专业提示**：让 AI 审查你的审查 - "还有什么我应该考虑的吗？"
+
+当你把审查目标从“看懂这段代码”升级为“准备合入主分支”时，真正有用的 PR Review 会包含：明确本次修改要解决什么问题、贴出最新 diff、给出你实际执行过的检查命令与输出，并对尚未运行的检查单独标注。想继续构建可复用的审查习惯？你可以直接套用现成的 [代码审查提示词模板](/zh/docs/tools/prompt-engineering/templates/code-review/)，或者参考 [AI 代码审查工作流](/zh/docs/tutorials/ai-code-review-workflow/)，在合并前多一步快速核验。
 
 ---
 
