@@ -13,7 +13,6 @@ tags: [tutorial, coding-assistant, agent-engineering, security]
 
 # Coding Agent 的沙箱到底保护了什么？又有哪些东西仍然能越界？
 
-*有光 / 2026-07-21*
 
 ---
 

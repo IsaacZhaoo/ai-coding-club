@@ -13,7 +13,6 @@ tags: [tutorial, mcp, agent-engineering, security]
 
 # MCP Server Security Checklist: What to Verify Before You Connect
 
-*By Youguang — product developer, supply-chain skeptic*
 
 ---
 

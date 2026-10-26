@@ -13,7 +13,6 @@ tags: [tutorial, coding-assistant, agent-engineering, loop-engineering]
 
 # Loop Engineering Guide: Build a Bounded Coding Agent Loop
 
-*By Youguang*
 
 ---
 

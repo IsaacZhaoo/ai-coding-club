@@ -13,7 +13,6 @@ tags: [tutorial, coding-assistant, agent-engineering, benchmarks]
 
 # Coding Agent Benchmark Guide: How to Compare Agents on Your Own Repository
 
-*by Youguang*
 
 ---
 

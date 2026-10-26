@@ -13,7 +13,6 @@ tags: [tutorial, coding-assistant, agent-engineering, git]
 
 # Coding Agent 并行指南：任务契约、证据回传与合并权限
 
-*作者：有光*
 
 并行跑两个 Coding Agent 很容易。真正难的是让这两个 Agent 最后还能合到一起。
 

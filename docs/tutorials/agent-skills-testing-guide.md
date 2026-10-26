@@ -13,7 +13,6 @@ tags: [tutorial, coding-assistant, agent-engineering, agent-skills]
 
 # Agent Skills Testing Guide: Measure Trigger Precision, False Positives, and Context Cost
 
-*by Youguang*
 
 ---
 

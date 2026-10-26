@@ -13,7 +13,6 @@ tags: [tutorial, agent-engineering, workflow, spec-kit]
 
 # 用 GitHub Spec Kit 做规格驱动开发：从需求到 Spec、Plan 和 Tasks
 
-**作者：有光 | 2026-07-21**
 
 ---
 

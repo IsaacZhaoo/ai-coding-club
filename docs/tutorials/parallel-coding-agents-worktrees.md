@@ -13,7 +13,6 @@ tags: [tutorial, coding-assistant, agent-engineering, git]
 
 # How to Run Parallel Coding Agents Without Merge Chaos
 
-*By Youguang*
 
 Parallel Coding Agents have saved me real hours. They have also handed me integration work that erased those savings so completely that I stopped thinking of the conflicts as bad luck. When the same pattern repeats—apparent progress in two windows, then a merge session that neither Agent can finish—it starts looking less like coincidence and more like a missing operating system.
 

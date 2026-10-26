@@ -13,7 +13,6 @@ tags: [tutorial, coding-assistant, kimi, agent-engineering]
 
 # Kimi Code CLI 上手指南：安装、迁移，以及第一次安全运行
 
-**以有光** · 2026-07-21
 
 ---
 

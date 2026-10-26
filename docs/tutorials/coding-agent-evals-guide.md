@@ -13,7 +13,6 @@ tags: [tutorial, coding-assistant, agent-engineering, evals]
 
 # Coding Agent Evals Guide: Turn Traces into Datasets and Quality Gates
 
-*by Youguang*
 
 ---
 

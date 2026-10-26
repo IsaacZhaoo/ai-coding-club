@@ -13,7 +13,6 @@ tags: [tutorial, agent-engineering, workflow, spec-kit]
 
 # Spec-Driven Development with GitHub Spec Kit: From Requirement to Implementation
 
-*By Youguang · July 21, 2026*
 
 ---
 

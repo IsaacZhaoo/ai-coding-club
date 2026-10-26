@@ -13,7 +13,6 @@ tags: [tutorial, coding-assistant, agent-engineering, observability]
 
 # Coding Agent Observability Guide: Trace Tools, Retries, Tokens, Handoffs, and Failures
 
-*By Youguang*
 
 ---
 
