@@ -124,9 +124,9 @@ You don't need to fix it yourself. Copy the error, paste it to the AI, and ask: 
 
 That's debugging. You just learned it.
 
-<a id="expense-tracker-practice"></a>
+<a id="your-first-project-a-step-by-step-plan"></a>
 
-## Your First Project: A Step-by-Step Plan
+## Your First Project: A Step-by-Step Plan {#expense-tracker-practice}
 
 Let's build something real in under 2 hours. We'll make a **personal expense tracker** that runs in your browser.
 

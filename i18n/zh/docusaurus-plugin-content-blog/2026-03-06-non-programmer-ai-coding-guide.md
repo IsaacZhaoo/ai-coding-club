@@ -124,9 +124,9 @@ Error: Cannot read property 'name' of undefined
 
 这就是调试。你刚刚学会了。
 
-<a id="expense-tracker-practice"></a>
+<a id="你的第一个项目分步计划"></a>
 
-## 你的第一个项目：分步计划
+## 你的第一个项目：分步计划 {#expense-tracker-practice}
 
 2小时内做一个真实可用的东西。我们来做一个**个人记账工具**，在浏览器里直接运行。
 
