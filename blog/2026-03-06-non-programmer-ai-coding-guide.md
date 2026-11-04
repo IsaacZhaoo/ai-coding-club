@@ -23,7 +23,7 @@ import ArticleSchema from '@site/src/components/ArticleSchema';
 - The best first projects are small, personal, and tied to repetitive real-life problems.
 - Success depends more on problem framing, feedback loops, and persistence than on traditional computer science credentials.
 
-[Let's turn this plan into working code in real time](#expense-tracker-practice): a single-file expense tracker with exact checks so you can verify every step without guessing.
+[Let's turn this plan into working code in real time](/blog/non-programmer-ai-coding-guide/#expense-tracker-practice): a single-file expense tracker with exact checks so you can verify every step without guessing.
 
 ## Who This Is For
 

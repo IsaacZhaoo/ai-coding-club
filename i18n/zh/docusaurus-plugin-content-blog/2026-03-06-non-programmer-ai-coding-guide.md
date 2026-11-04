@@ -23,7 +23,7 @@ import ArticleSchema from '@site/src/components/ArticleSchema';
 - 最好的第一个项目通常很小、很个人、而且直接对应现实中的重复问题。
 - 成功的关键不在于是否有计算机科班背景，而在于你是否能清楚描述问题、持续试错并完成闭环。
 
-想立刻动笔练手？→ [记账练习起点](#expense-tracker-practice)，直接跳到记账练习。
+想立刻动笔练手？→ [记账练习起点](/zh/blog/non-programmer-ai-coding-guide/#expense-tracker-practice)，直接跳到记账练习。
 
 ## 适合谁
 
