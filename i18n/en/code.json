@@ -1,12 +1,12 @@
 {
   "homepage.hero.title": {
-    "message": "AI Coding Club: Build Your First Script in 30 Seconds"
+    "message": "AI Coding Club: Turn CSV into Markdown in 30 Seconds"
   },
   "homepage.hero.subtitle": {
-    "message": "Learn to code from zero with AI as your guide. No signup, no fees, just start coding."
+    "message": "Start with a simple AI task. No signup or fees on this site; use your ChatGPT or Claude account for the demo."
   },
   "homepage.cta.demo": {
-    "message": "See 30-Second Demo →"
+    "message": "Try the CSV-to-Markdown Demo →"
   },
   "homepage.cta.roadmap": {
     "message": "AI-Enhanced Learning Path"
@@ -33,7 +33,7 @@
     "message": "Start in 30 Seconds"
   },
   "homepage.feature1.description": {
-    "message": "No account signup required. Copy a prompt, try it in ChatGPT, and see results instantly."
+    "message": "No signup on this site. Copy the prompt into your ChatGPT or Claude account and turn CSV into a Markdown table."
   },
   "homepage.feature2.title": {
     "message": "Curated Resources"

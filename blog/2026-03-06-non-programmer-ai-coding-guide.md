@@ -23,6 +23,8 @@ import ArticleSchema from '@site/src/components/ArticleSchema';
 - The best first projects are small, personal, and tied to repetitive real-life problems.
 - Success depends more on problem framing, feedback loops, and persistence than on traditional computer science credentials.
 
+[Let's turn this plan into working code in real time](#expense-tracker-practice): a single-file expense tracker with exact checks so you can verify every step without guessing.
+
 ## Who This Is For
 
 - Office workers trying to automate recurring tasks
@@ -122,11 +124,15 @@ You don't need to fix it yourself. Copy the error, paste it to the AI, and ask: 
 
 That's debugging. You just learned it.
 
+<a id="expense-tracker-practice"></a>
+
 ## Your First Project: A Step-by-Step Plan
 
 Let's build something real in under 2 hours. We'll make a **personal expense tracker** that runs in your browser.
 
 ### Step 1: Ask AI to Plan (10 minutes)
+
+Prerequisites you need before opening your chat: an AI assistant account (ChatGPT or Claude), a standard desktop browser, a plain-text editor (VS Code, Notepad++, or TextEdit in plain-text mode), and about 2 hours to follow. No prior coding experience required.
 
 Open ChatGPT or Claude and type:
 
@@ -136,11 +142,22 @@ Read the plan. Does it make sense? Ask questions if not.
 
 ### Step 2: Generate the Code (15 minutes)
 
-> "Now write the complete code. Make it look clean with simple CSS. Add some sample data so I can see how it looks."
+> Now write the complete code as one HTML file containing vanilla JavaScript and simple CSS. Start with an empty list and no sample records. Each expense has an amount, category and date; provide Food and Transport as categories. Show the expense list, the overall total and subtotals by category. Implement these features first; we will add deletion and persistence after refresh later. Return the complete HTML so I can save it as expenses.html and open it directly in my browser.
 
 Copy the code into a text file. Save it as `expenses.html`. Open it in your browser.
 
+After copying the code your AI gives you: paste it into a text file (no Markdown fences), save as `expenses.html` (not expenses.html.txt), ensure UTF-8 encoding, then open the file directly in your browser. Later, when we update the HTML, replace the entire contents of that same file and refresh.
+
 ### Step 3: Test and Fix (30 minutes)
+
+Before you ask for fixes, we test with fictional practice entries only (no real finances). Use the exact same date: 2026-01-15. Enter three items in this order: Food: 12, Transport: 8, Food: 5.
+Expected results after adding these three:
+- Total records: exactly 3
+- Overall total: 25
+- Food subtotal: 17
+- Transport subtotal: 8
+
+If the AI returns seed/sample data instead of an empty start, tell it to remove all pre-filled entries and regenerate from scratch.
 
 Try using it. Things that might not work:
 - Adding an expense might not update the totals
@@ -148,13 +165,23 @@ Try using it. Things that might not work:
 - Categories might not sort properly
 
 For each issue:
-> "When I add an expense, the category total doesn't update. Here's the current code: [paste code]. Fix the updateTotals function."
+> I am on [step] of the expense-tracker exercise. My inputs are [list the amounts, dates and categories]. What actually happens is [describe what you see and paste any error verbatim]. I expected [the records and totals required for this step]. Here is the complete current HTML with private data removed: [paste code]. I am using [browser] and opening expenses.html via [how you open the file]. Use this information to identify the issue and return the complete repaired HTML without assuming a particular function exists.
+
+For more troubleshooting tips on data handling in interactive components, see [the debugging guide](/docs/tools/prompt-engineering/templates/debugging/) for practical patterns you can apply right away.
 
 ### Step 4: Make It Yours (30 minutes)
 
+Every time you replace the complete HTML to add a feature, check the list first. If you need to enter the same three practice records again, first remove any existing records with the delete buttons, then start from an empty list. Don't stack a fresh three on top of old ones. Runtime data may disappear when replacing the file before persistence exists; that is not the persistence check.
+
 Now customize:
-> "Add a delete button next to each expense"
-> "Save expenses to localStorage so they persist when I close the browser"
+> Add a delete button next to each expense, and update the list, overall total and category subtotals after deletion. Return the complete updated HTML so I can replace expenses.html and reopen it.
+
+From an empty start, enter Food12, Transport8, Food5 all dated 2026-01-15. Delete the first Food12. Expected: exactly Transport8 and Food5 remain, with totals of 13, Food5, and Transport8.
+
+> Use localStorage to save the expenses so they remain when I refresh this expenses.html file in the same browser. Update the saved data after both additions and deletions. Do not seed example records again on refresh. Return the complete updated HTML so I can replace the file and reopen it.
+
+Save/reopen the updated complete HTML. Remove any existing records first, then enter the same three and delete the first Food12. Refresh the same file in the same browser; the same two rows and 13/5/8 must remain for this check. Only test refresh persistence after adding saving. No cross-browser/device sync implied. If it fails, give the AI the actual behavior/error, current HTML, browser, and how the file was opened. Existing chart/sharing steps remain optional and outside these four checks.
+
 > "Add a chart showing spending by category"
 
 ### Step 5: Share It (15 minutes)

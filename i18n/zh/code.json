@@ -1,12 +1,12 @@
 {
   "homepage.hero.title": {
-    "message": "AI Coding Club: 30秒用AI创建你的第一个脚本"
+    "message": "AI Coding Club：30 秒将 CSV 转成 Markdown 表格"
   },
   "homepage.hero.subtitle": {
-    "message": "从零开始,让AI成为你的编程向导。无需注册,无需付费,立即开始编程。"
+    "message": "从一个简单的 AI 任务开始。本站免费、无需注册；演示需要使用你自己的 ChatGPT 或 Claude 账号。"
   },
   "homepage.cta.demo": {
-    "message": "查看30秒演示 →"
+    "message": "试试 CSV 转 Markdown 演示 →"
   },
   "homepage.cta.roadmap": {
     "message": "AI增强学习路径"
@@ -51,7 +51,7 @@
     "message": "30秒快速开始"
   },
   "homepage.feature1.description": {
-    "message": "无需注册账号。复制提示词，在ChatGPT中尝试，立即看到结果。"
+    "message": "无需注册本站账号。把提示词复制到你自己的 ChatGPT 或 Claude 账号中，将 CSV 变成 Markdown 表格。"
   },
   "homepage.feature2.title": {
     "message": "精选资源"
