@@ -60,3 +60,7 @@ Writing good commit messages is important. If you're stuck, your AI can help!
 7.  Create a new repository on GitHub and push your first commit!
 
 This is a fundamental workflow for all modern developers.
+
+### Related Reading
+
+- [Undo an Unwanted AI Change Without Losing Your Own Edits](/docs/tutorials/undo-ai-changes-preserve-work/)

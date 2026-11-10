@@ -60,3 +60,7 @@ GitHub是在云中托管你的Git仓库的平台。这允许你备份你的代�
 7. 在GitHub上创建一个新的仓库并推送你的第一次提交！
 
 这是所有现代开发者的基本工作流程。
+
+### 延伸阅读
+
+- [在 Git 中精准“撤回”：保留你的手改，筛掉 AI 的错误](/zh/docs/tutorials/undo-ai-changes-preserve-work/)
