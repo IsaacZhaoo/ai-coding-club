@@ -1,0 +1,25 @@
+{
+  "app": "aicodingclub-expenses",
+  "version": 1,
+  "currency": "CNY",
+  "records": [
+    {
+      "id": "sample-1",
+      "date": "2026-11-01",
+      "label": "Lunch",
+      "amountCents": 1250
+    },
+    {
+      "id": "sample-2",
+      "date": "2026-11-02",
+      "label": "Bus",
+      "amountCents": 800
+    },
+    {
+      "id": "sample-3",
+      "date": "2026-11-03",
+      "label": "Notebook",
+      "amountCents": 500
+    }
+  ]
+}

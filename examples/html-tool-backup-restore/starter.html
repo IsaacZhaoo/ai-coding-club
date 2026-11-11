@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Expense notebook · AI Coding Club</title>
+<style>
+*{box-sizing:border-box}body{font:17px/1.6 system-ui,sans-serif;color:#182b35;background:#f5f2e9;margin:0;padding:24px}main{max-width:760px;margin:auto}header{display:flex;justify-content:space-between;align-items:center;gap:16px}h1{font-size:2rem;line-height:1.2}section{background:white;padding:24px;border:1px solid #d6dcd8;border-radius:12px;margin:20px 0}label{display:block}input,select,button{font:inherit;padding:9px;border:1px solid #82928b;border-radius:5px;max-width:100%}input{width:100%}button{cursor:pointer;background:#155d50;color:white}button:disabled{opacity:.5;cursor:default}.fields{display:grid;grid-template-columns:1fr 2fr 1fr;gap:12px}form button{margin-top:16px}table{border-collapse:collapse;width:100%;font-size:.95rem}td,th{text-align:left;border-bottom:1px solid #ddd;padding:8px;overflow-wrap:anywhere}td:last-child,th:last-child{text-align:right}td button{font-size:.85rem;padding:5px}#status{min-height:2em}#summary{font-weight:700;font-size:1.2rem}.hint{font-size:.9rem;color:#4b5e64}.backup{display:grid;gap:16px}output{display:block}@media(max-width:550px){body{padding:12px}section{padding:16px}.fields{grid-template-columns:1fr}header{align-items:flex-start}h1{font-size:1.55rem}td,th{padding:5px}table{font-size:.85rem}}
+</style>
+<main>
+<header><h1 data-i18n="title">Expense notebook</h1><label><span data-i18n="language">Language</span><select id="language"><option value="en">English</option><option value="zh">中文</option></select></label></header>
+<p class="hint" data-i18n="intro">Practice with fictional expenses. Keep one editing tab open.</p>
+<section><h2 data-i18n="add">Add an expense</h2><form id="expense-form"><div class="fields">
+<label><span data-i18n="date">Date</span><input id="date" type="date" required></label>
+<label><span data-i18n="label">Description</span><input id="label" maxlength="80" required></label>
+<label><span data-i18n="amount">Amount (CNY)</span><input id="amount" type="number" min="0.01" max="1000000" step="0.01" required></label>
+</div><button type="submit" data-i18n="addButton">Add</button></form></section>
+<section><h2 data-i18n="records">Records</h2><output id="summary"></output><table><thead><tr><th data-i18n="date">Date</th><th data-i18n="label">Description</th><th data-i18n="amount">Amount (CNY)</th><th data-i18n="action">Action</th></tr></thead><tbody id="rows"></tbody></table></section>
+
+<p id="status" role="status" aria-live="polite"></p>
+<p class="hint" data-i18n="boundary">Data stays in this browser storage. The HTML file contains the program, not your saved records. Direct file opening has browser-dependent storage behavior.</p>
+</main>
+<script>
+'use strict';
+const KEY = 'aicodingclub-expenses-v1';
+const APP = 'aicodingclub-expenses';
+const MAX_RECORDS = 1000;
+const MAX_BYTES = 1024 * 1024;
+const messages = {
+ en:{title:'Expense notebook',language:'Language',intro:'Practice with fictional expenses. Keep one editing tab open.',add:'Add an expense',date:'Date',label:'Description',amount:'Amount (CNY)',addButton:'Add',records:'Records',action:'Action',delete:'Delete',backup:'Backup and restore',export:'Export backup',restore:'Choose a JSON backup to restore',replace:'Restoring replaces every current record; it does not merge. Export the current data first if you want to keep it.',boundary:'Data stays in this browser storage. The HTML file contains the program, not your saved records. Direct file opening has browser-dependent storage behavior.',saved:'Saved in this browser.',exported:'Download requested. Keep the JSON file and test restoring it.',restored:'Backup restored.',cancelled:'Restore cancelled. Current records kept.',invalid:'Backup rejected. Current records kept.',saveFailed:'Could not save. Current records kept.',loadFailed:'Could not load existing browser data. Editing is disabled to protect it. Use a separate browser profile for practice.',count:'records',total:'Total',confirm:'Replace {old} current records (CNY {oldTotal}) with {next} backup records (CNY {nextTotal})? This replaces all records; it does not merge.',entryInvalid:'Check the date, description, amount and record limit.'},
+ zh:{title:'支出记事本',language:'语言',intro:'使用虚构支出练习。编辑时只开一个标签页。',add:'新增支出',date:'日期',label:'说明',amount:'金额（元）',addButton:'添加',records:'记录',action:'操作',delete:'删除',backup:'备份与恢复',export:'导出备份',restore:'选择要恢复的 JSON 备份',replace:'恢复会替换全部现有记录，不会合并。若要保留当前数据，请先另存备份。',boundary:'记录保存在当前浏览器存储中。HTML 文件包含程序，不包含你保存的记录。直接打开文件时，存储行为取决于浏览器。',saved:'已保存到当前浏览器。',exported:'已请求下载。请保留 JSON 文件并练习恢复。',restored:'已恢复备份。',cancelled:'已取消恢复，现有记录已保留。',invalid:'备份未通过检查，现有记录已保留。',saveFailed:'保存失败，现有记录已保留。',loadFailed:'无法读取现有浏览器数据。为保护数据，已停用编辑。请用独立浏览器配置练习。',count:'笔记录',total:'合计',confirm:'用备份中的 {next} 笔记录（{nextTotal} 元）替换当前 {old} 笔记录（{oldTotal} 元）？这会替换全部记录，不会合并。',entryInvalid:'请检查日期、说明、金额和记录数量上限。'}
+};
+let lang = new URLSearchParams(location.search).get('lang') === 'zh' ? 'zh' : 'en';
+let records = [];
+let editable = true;
+const $ = id => document.getElementById(id);
+const text = name => messages[lang][name];
+const total = list => (list.reduce((sum, r) => sum + r.amountCents, 0) / 100).toFixed(2);
+function status(name) { $('status').textContent = text(name); }
+function validDate(value) {
+ return typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value) &&
+  Number.isFinite(Date.parse(value + 'T00:00:00Z')) && new Date(value + 'T00:00:00Z').toISOString().slice(0,10) === value;
+}
+function validate(data) {
+ if (!data || data.app !== APP || data.version !== 1 || data.currency !== 'CNY' || !Array.isArray(data.records) || data.records.length > MAX_RECORDS) throw new Error('format');
+ const ids = new Set();
+ const validated = data.records.map(r => {
+  if (!r || typeof r.id !== 'string' || !r.id.trim() || r.id.length > 128 || ids.has(r.id) ||
+   !validDate(r.date) || typeof r.label !== 'string' || !r.label.trim() || r.label.length > 80 ||
+   !Number.isSafeInteger(r.amountCents) || r.amountCents <= 0 || r.amountCents > 100000000) throw new Error('record');
+  ids.add(r.id);
+  return {id:r.id,date:r.date,label:r.label,amountCents:r.amountCents};
+ });
+ if (new Blob([JSON.stringify(envelope(validated),null,2)+'\n']).size > MAX_BYTES) throw new Error('backup size');
+ return validated;
+}
+function envelope(list) { return {app:APP,version:1,currency:'CNY',records:list}; }
+function controls(disabled) {
+ document.querySelectorAll('form input, form button, #rows button, #export, #restore').forEach(el => el.disabled = disabled);
+}
+function render() {
+ $('summary').textContent = records.length + ' ' + text('count') + ' · ' + text('total') + ': CNY ' + total(records);
+ $('rows').replaceChildren();
+ for (const r of records) {
+  const tr = document.createElement('tr');
+  for (const value of [r.date,r.label,(r.amountCents/100).toFixed(2)]) { const td=document.createElement('td');td.textContent=value;tr.append(td); }
+  const td=document.createElement('td');const button=document.createElement('button');button.type='button';button.textContent=text('delete');button.disabled=!editable;
+  button.addEventListener('click',()=>save(records.filter(item=>item.id!==r.id),'saved'));
+  td.append(button);tr.append(td);$('rows').append(tr);
+ }
+}
+function save(next, message) {
+ try { localStorage.setItem(KEY, JSON.stringify(envelope(next))); }
+ catch { status('saveFailed');return false; }
+ records=next;render();status(message);return true;
+}
+function applyLanguage() {
+ document.documentElement.lang=lang;$('language').value=lang;
+ document.querySelectorAll('[data-i18n]').forEach(el=>el.textContent=text(el.dataset.i18n));render();$('status').textContent='';
+ if (!editable) status('loadFailed');
+}
+$('language').addEventListener('change',e=>{lang=e.target.value;applyLanguage();});
+$('expense-form').addEventListener('submit',event=>{
+ event.preventDefault();if(!editable)return;
+ const [whole,fraction=''] = $('amount').value.split('.');
+ const cents = Number(whole)*100 + Number(fraction.padEnd(2,'0'));
+ try {
+  if (!/^\d+(\.\d{1,2})?$/.test($('amount').value)) throw new Error('amount');
+  const next=validate(envelope([...records,{id:crypto.randomUUID(),date:$('date').value,label:$('label').value.trim(),amountCents:cents}]));
+  if(save(next,'saved')) { $('label').value='';$('amount').value=''; }
+ } catch { status('entryInvalid'); }
+});
+
+try {
+ const saved=localStorage.getItem(KEY);
+ if(saved!==null) records=validate(JSON.parse(saved));
+} catch { editable=false; }
+applyLanguage();controls(!editable);
+</script>
+</html>
