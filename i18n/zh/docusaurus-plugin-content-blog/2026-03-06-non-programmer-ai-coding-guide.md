@@ -247,6 +247,7 @@ AI会推荐 GitHub Pages、Netlify 或 Vercel。都免费，都只需要几分�
 **如果你想继续做个人工具：**
 - 学基础的 HTML/CSS/JavaScript（我们的[课程](/docs/course/)有涵盖）
 - 掌握提示词工程（[Prompt Engineering 101](/docs/prompt-engineering-101)）
+- 为 HTML 工具加上[可验证的 JSON 备份与恢复](/zh/docs/tutorials/html-tool-backup-restore/)，再依赖浏览器里的记录
 - 做难度递增的项目
 
 **如果你想深入学习：**

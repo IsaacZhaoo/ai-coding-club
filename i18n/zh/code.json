@@ -1110,5 +1110,23 @@
   },
   "tools.interactive.sqlSanitizer.description": {
     "message": "格式化和验证 SQL 查询，支持语法高亮和错误检测"
+  },
+  "homepage.practice.title": {
+    "message": "AI 落地回应"
+  },
+  "homepage.practice.description": {
+    "message": "从 AI 新消息出发，为你的下一项编程任务做一个具体判断。"
+  },
+  "homepage.practice.date": {
+    "message": "2026 年 11 月 11 日 · Fable 5.2"
+  },
+  "homepage.practice.article": {
+    "message": "让小修复保持在范围内：检查继承的归属授权"
+  },
+  "homepage.practice.summary": {
+    "message": "修复价格过滤器的边界之前，移除冲突的设计授权，再对照验收条件检查实际 diff。"
+  },
+  "homepage.practice.link": {
+    "message": "浏览 AI 落地回应 →"
   }
 }

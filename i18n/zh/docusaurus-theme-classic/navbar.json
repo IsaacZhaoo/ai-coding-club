@@ -118,5 +118,9 @@
   "item.label.📖 AI Novel": {
     "message": "📖 AI 小说",
     "description": "Navbar item with label 📖 AI Novel"
+  },
+  "item.label.AI in Practice": {
+    "message": "AI 落地回应",
+    "description": "Navbar item with label AI in Practice"
   }
 }

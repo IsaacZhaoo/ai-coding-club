@@ -233,6 +233,7 @@ Once you've built your first project, the path branches:
 **If you want to keep building personal tools:**
 - Learn basic HTML/CSS/JavaScript (our [course](/docs/course/) covers this)
 - Master prompt engineering ([Prompt Engineering 101](/docs/prompt-engineering-101))
+- Add [verifiable JSON backup and restore to your HTML tool](/docs/tutorials/html-tool-backup-restore/) before relying on browser records
 - Build progressively harder projects
 
 **If you want to go deeper:**
