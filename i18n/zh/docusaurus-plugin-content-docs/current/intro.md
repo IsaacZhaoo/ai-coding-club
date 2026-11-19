@@ -52,3 +52,4 @@ AI 编码俱乐部是一个精心策划的平台，帮你利用 AI 助手学编�
 - [零门槛 AI 小应用制作：六图卡离线测验](/zh/docs/tutorials/offline-picture-quiz/)
 - [用 tmux 为 AI 编写长任务设立“人工监督站”](/zh/docs/tutorials/resume-claude-code-tmux/)
 - [揭秘 AI 计时器页面：为何退出后“幽灵回调”仍在运行？](/zh/docs/tutorials/diagnose-page-timers/)
+- [AI Coding Club：PR 构建与审阅实战复盘](/zh/docs/tutorials/read-pr-checks-and-reviews/)

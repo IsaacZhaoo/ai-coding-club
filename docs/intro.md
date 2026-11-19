@@ -52,3 +52,4 @@ Ready to begin? Start with [Stage 0: Vibecoding](/docs/roadmap/stage0/)!
 - [Build Your Own Six-Card AI Picture Quiz (Offline)](/docs/tutorials/offline-picture-quiz/)
 - [Supervising Long Claude Code Tasks in tmux](/docs/tutorials/resume-claude-code-tmux/)
 - [Diagnosing a Timer Left Running When Exiting a Page](/docs/tutorials/diagnose-page-timers/)
+- [Quick Guide: Checking cli/cli PR #14057 with gh](/docs/tutorials/read-pr-checks-and-reviews/)
