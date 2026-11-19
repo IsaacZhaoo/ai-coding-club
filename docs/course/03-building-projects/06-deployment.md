@@ -124,6 +124,8 @@ Important notes on updates:
 - If you change storage keys or formats in the tool, existing localStorage may become invalid.
 - Compatibility and graceful behavior are your responsibility when evolving the app.
 
+Before deploying a change to the saved fields, [test the new format with records from the old version](/docs/tutorials/html-tool-upgrade-compatibility/).
+
 ### Troubleshooting checklist
 Use this when something doesn’t behave as expected:
 

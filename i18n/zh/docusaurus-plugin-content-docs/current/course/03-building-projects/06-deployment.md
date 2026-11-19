@@ -136,6 +136,8 @@ https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
 更新程序并没有为浏览器记录做备份；记录仍要显式导出与恢复。
 https://docs.netlify.com/manage/projects/add-new-project/
 
+如果这次更新会给已保存的记录加字段，先[用旧账本验证升级和回退](/zh/docs/tutorials/html-tool-upgrade-compatibility/)。
+
 ## 8. 排错速查（按症状定位）
 - **404 / 空白页**：检查上传根目录的 `index.html` 是否存在；确认没有 `index.html.txt` 或大小写拼写错误。
 - **样式/图片缺失**：确认所有资源与 HTML 一起上传，路径正确，且大小写一致。
