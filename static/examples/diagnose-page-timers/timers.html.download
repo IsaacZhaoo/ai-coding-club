@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><title>Timer lifecycle lab</title>
+<style>body{font:1.15rem system-ui;margin:2rem}button,select{font:inherit}</style>
+<h1>Timer lifecycle lab</h1><label>Mode <select id="mode"><option>Leaky</option><option>Fixed</option></select></label>
+<button id="enter">Enter</button><button id="leave" disabled>Leave</button>
+<p>Active timers: <output id="active">0</output></p><p>Ticks: <output id="ticks">0</output></p>
+<script>
+const handles = new Set();
+let current;
+let count = 0;
+enter.onclick = () => {
+  mode.disabled = true;
+  enter.disabled = true;
+  leave.disabled = false;
+  current = setInterval(function tick() { ticks.textContent = ++count; }, 250);
+  handles.add(current);
+  active.textContent = handles.size;
+};
+leave.onclick = () => {
+  if (mode.value === 'Fixed') { clearInterval(current); handles.delete(current); }
+  active.textContent = handles.size;
+  enter.disabled = false;
+  leave.disabled = true;
+};
+</script></html>

@@ -50,3 +50,5 @@ Ready to begin? Start with [Stage 0: Vibecoding](/docs/roadmap/stage0/)!
 
 - [Test Your Coding Assistant: Rounding the Right Way](/docs/tutorials/test-coding-model-rounding/)
 - [Build Your Own Six-Card AI Picture Quiz (Offline)](/docs/tutorials/offline-picture-quiz/)
+- [Supervising Long Claude Code Tasks in tmux](/docs/tutorials/resume-claude-code-tmux/)
+- [Diagnosing a Timer Left Running When Exiting a Page](/docs/tutorials/diagnose-page-timers/)
