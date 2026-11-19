@@ -13,7 +13,7 @@ Bring a tiny AI-style picture quiz straight to your phone without Wi‑Fi, serve
 - First picture is 🐈; clicking Dog keeps score at 0 with “Try again”; clicking Cat advances and awards a point.
 
 ## 2. Download the Ready-to-Run File
-- <a href="/examples/offline-picture-quiz/cards.html" download="cards.html">Download cards.html</a>
+- <a href="/examples/offline-picture-quiz/cards.html.download" download="cards.html">Download cards.html</a>
 
 Save it locally using your browser’s download dialog. Do not rely on an attachment preview—preview windows often restrict JavaScript. On mobile, tap the file and choose “Open in Chrome/Safari” or equivalent; behavior varies by device, so treat this as a test you’ll run yourself.
 

@@ -6,7 +6,7 @@ tags: ["tutorial", "coding-assistant"]
 
 # 零门槛 AI 小应用制作：六图卡离线测验
 
-如果你从未写过一行代码，这个 <a href="/examples/offline-picture-quiz/cards.html" download="cards.html">六张图卡小游戏</a>就是你的第一个“AI 作品”。下载后，在 Android 的“文件”应用中找到 Download/cards.html，点击并选择 Chrome 打开（或任何能运行 HTML 的浏览器）。网络关闭也能正常答题，真正完全离线。
+如果你从未写过一行代码，这个 <a href="/examples/offline-picture-quiz/cards.html.download" download="cards.html">六张图卡小游戏</a>就是你的第一个“AI 作品”。下载后，在 Android 的“文件”应用中找到 Download/cards.html，点击并选择 Chrome 打开（或任何能运行 HTML 的浏览器）。网络关闭也能正常答题，真正完全离线。
 
 ## 玩一玩，先体验再动手
 
