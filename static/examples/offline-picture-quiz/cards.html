@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Six picture cards</title>
+<style>body{font:1.15rem system-ui;max-width:30rem;margin:2rem auto;padding:1rem}#picture{font-size:5rem}button{font:inherit;margin:.3rem;padding:.6rem}</style>
+<h1>Six picture cards</h1><p id="score"></p><div id="picture"></div><p id="choices"></p><p id="feedback" role="status"></p><button id="restart" hidden>Restart</button>
+<script>
+const cards = [['🐈','Cat','Dog'],['🐕','Dog','Fish'],['🍎','Apple','Sun'],['🚌','Bus','Cat'],['🐟','Fish','Bus'],['☀️','Sun','Apple']];
+let index = 0;
+function render() {
+  score.textContent = 'Score: ' + index + '/6';
+  choices.replaceChildren();
+  restart.hidden = index < cards.length;
+  if (!restart.hidden) { picture.textContent = 'Finished'; return; }
+  const [icon, answer, other] = cards[index];
+  picture.textContent = icon;
+  for (const label of [answer, other].sort()) {
+    const button = document.createElement('button');
+    button.textContent = label;
+    button.onclick = () => {
+      if (label !== answer) { feedback.textContent = 'Try again'; return; }
+      index++;
+      feedback.textContent = '';
+      render();
+    };
+    choices.append(button);
+  }
+}
+restart.onclick = () => { index = 0; render(); };
+render();
+</script></html>

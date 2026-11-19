@@ -45,3 +45,8 @@ AI 编码俱乐部是一个精心策划的平台，帮你利用 AI 助手学编�
 3. **构建项目** - 立即应用你学到的东西
 
 准备好开始了吗？从 [第 0 阶段：Vibecoding](/docs/roadmap/stage0/) 开始吧！
+
+## 动手教程
+
+- [用候选编码模型亲手解一道“两难金额”题](/zh/docs/tutorials/test-coding-model-rounding/)
+- [零门槛 AI 小应用制作：六图卡离线测验](/zh/docs/tutorials/offline-picture-quiz/)

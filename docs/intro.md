@@ -45,3 +45,8 @@ Already building with Coding Agents? Use [Coding Agent Engineering: From Prompt 
 3. **Build projects** - apply what you learn immediately
 
 Ready to begin? Start with [Stage 0: Vibecoding](/docs/roadmap/stage0/)!
+
+## Hands-on tutorials
+
+- [Test Your Coding Assistant: Rounding the Right Way](/docs/tutorials/test-coding-model-rounding/)
+- [Build Your Own Six-Card AI Picture Quiz (Offline)](/docs/tutorials/offline-picture-quiz/)
