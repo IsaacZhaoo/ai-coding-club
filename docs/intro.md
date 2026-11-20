@@ -53,3 +53,4 @@ Ready to begin? Start with [Stage 0: Vibecoding](/docs/roadmap/stage0/)!
 - [Supervising Long Claude Code Tasks in tmux](/docs/tutorials/resume-claude-code-tmux/)
 - [Diagnosing a Timer Left Running When Exiting a Page](/docs/tutorials/diagnose-page-timers/)
 - [Quick Guide: Checking cli/cli PR #14057 with gh](/docs/tutorials/read-pr-checks-and-reviews/)
+- [Return the saved signup ID on retry with PostgreSQL 19](/docs/tutorials/postgres19-get-or-create/)
